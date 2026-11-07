@@ -1,6 +1,6 @@
 # ADR-0003: Fiabilidad del color, con el origen guardado y "aproximado" derivado
 
-- **Estado:** aceptada
+- **Estado:** sustituida por ADR-0014
 - **Fecha:** 2026-10-31
 
 ## Contexto

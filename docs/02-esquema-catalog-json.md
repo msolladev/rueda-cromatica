@@ -29,12 +29,15 @@
       "title": "Acme conversion chart",
       "publisher": "Acme Paints",
       "url": "https://example.com/acme-chart.pdf",
-      "retrievedAt": "2026-10-31"
+      "archiveUrl": null,
+      "retrievedAt": "2026-10-31",
+      "license": "terms-of-use",
+      "attribution": null
     }
   ],
   "brands": [
-    { "id": "acme", "name": "Acme Paints" },
-    { "id": "globex", "name": "Globex Colours" }
+    { "id": "acme", "name": "Acme Paints", "aliases": [] },
+    { "id": "globex", "name": "Globex Colours", "aliases": [] }
   ],
   "ranges": [
     {
@@ -111,20 +114,24 @@
 
 ### `sources`
 
-| Campo                | Tipo           | Reglas                                    |
-| -------------------- | -------------- | ----------------------------------------- |
-| `id`                 | `SourceId`     | slug ([03](03-identificadores.md)), único |
-| `kind`               | enum           | `manufacturer` \| `third-party`           |
-| `title`, `publisher` | string         | no vacíos                                 |
-| `url`                | string \| null | URL `https://` o `null`                   |
-| `retrievedAt`        | `IsoDate`      | `AAAA-MM-DD` y fecha válida               |
+| Campo                | Tipo           | Reglas                                                                                            |
+| -------------------- | -------------- | ------------------------------------------------------------------------------------------------- |
+| `id`                 | `SourceId`     | slug ([03](03-identificadores.md)), único                                                         |
+| `kind`               | enum           | `manufacturer` \| `third-party`                                                                   |
+| `title`, `publisher` | string         | no vacíos                                                                                         |
+| `url`                | string \| null | URL `http://` o `https://` oficial, o `null` en fuentes impresas                                  |
+| `archiveUrl`         | string \| null | URL que empieza por `https://web.archive.org/`, o `null`. Tiene que ser `null` si `url` es `null` |
+| `retrievedAt`        | `IsoDate`      | `AAAA-MM-DD` y fecha válida                                                                       |
+| `license`            | string         | no vacío: identificador SPDX, `terms-of-use` o `unknown`                                          |
+| `attribution`        | string \| null | si no es `null`, no puede estar vacío                                                             |
 
 ### `brands`
 
-| Campo  | Tipo      | Reglas      |
-| ------ | --------- | ----------- |
-| `id`   | `BrandId` | slug, único |
-| `name` | string    | no vacío    |
+| Campo     | Tipo      | Reglas                              |
+| --------- | --------- | ----------------------------------- |
+| `id`      | `BrandId` | slug, único                         |
+| `name`    | string    | no vacío                            |
+| `aliases` | string[]  | sin duplicados y sin repetir `name` |
 
 ### `ranges`
 
@@ -144,7 +151,7 @@
 | `name`               | string         | no vacío                                                                                                                  |
 | `aliases`            | string[]       | sin duplicados y sin repetir `name`                                                                                       |
 | `manufacturerCode`   | string \| null | si no es `null`, no puede estar vacío                                                                                     |
-| `type`               | enum           | `base` \| `layer` \| `wash` \| `contrast` \| `technical`                                                                  |
+| `type`               | enum           | `base` \| `layer` \| `standard` \| `wash` \| `ink` \| `glaze` \| `contrast` \| `technical` \| `dry`                       |
 | `metallic`           | boolean        |                                                                                                                           |
 | `color`              | objeto \| null | `hex` con formato `^#[0-9a-f]{6}$`; `origin` es `manufacturer` \| `measured` \| `community`; `sourceId` tiene que existir |
 | `status`             | objeto         | `{ kind: "active" }` o `{ kind: "discontinued", replacement }`                                                            |
