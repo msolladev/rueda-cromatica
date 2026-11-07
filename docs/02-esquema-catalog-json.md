@@ -5,7 +5,7 @@
 - **Normalizado y plano**: una colección por entidad, con referencias por ID ([ADR-0006](adr/0006-formato-catalogo.md)).
 - **Arrays, no objetos indexados por ID**: `JSON.parse` sobrescribe sin avisar las claves duplicadas, así que un ID repetido se perdería sin error. Con arrays, la unicidad se puede validar.
 - **Determinista**: la misma entrada produce el mismo fichero byte a byte ([ADR-0007](adr/0007-versionado-distribucion.md)). Para ello:
-  - Las colecciones se ordenan por `id`, y `equivalences` por `(from, to, sourceId)`.
+  - Las colecciones se ordenan por `id`, y `equivalences` por `(from, to, sourceId)`. Las cadenas se comparan por unidad de código, sin _locale_, para que el orden no dependa de la máquina. `parseCatalog` comprueba el orden.
   - Las claves siguen el orden de este documento.
   - Indentación de 2 espacios, UTF-8 sin BOM y salto de línea al final.
   - Ninguna marca de tiempo de generación.
@@ -193,7 +193,7 @@ La terna `(from, to, sourceId)` es única.
 ### Fases
 
 1. **Lectura**. En la web, `fetch` + `JSON.parse`; en el builder, el objeto ya está en memoria. Los errores de red o de JSON mal formado son de infraestructura y se gestionan fuera de `domain`.
-2. **Control de versión**. Un esquema mínimo lee solo `meta.schemaVersion`. Si no coincide con la soportada, se devuelve error y no se intenta validar el resto.
+2. **Control de versión**. Un esquema mínimo lee solo `meta.schemaVersion`. Si existe y no coincide con la soportada, se devuelve `unsupported-schema-version` y no se intenta validar el resto. Si no existe, la entrada no es un catálogo de ninguna versión: la fase siguiente lo informa como `invalid-structure`, para no presentar un fichero corrupto como una app desactualizada.
 3. **Estructura (Zod)**. Comprueba tipos, formatos y enums. Las claves desconocidas se descartan, que es el comportamiento por defecto de Zod, para tolerar campos añadidos en el futuro.
 4. **Integridad e invariantes**. Una función pura de `domain` comprueba las referencias y las reglas cruzadas. Recoge **todas** las violaciones en lugar de detenerse en la primera.
 5. **Construcción**. Se crea el agregado `Catalog` con sus índices.

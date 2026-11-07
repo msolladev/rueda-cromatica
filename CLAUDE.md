@@ -21,7 +21,7 @@ Es un proyecto de aprendizaje del ecosistema Node/TS: prioriza las buenas práct
 
 ## Estructura objetivo
 
-El monorepo está montado; los paquetes todavía no tienen lógica. La separación en paquetes, la organización interna por módulos y los patrones están en el [ADR-0018](docs/adr/0018-organizacion-codigo-patrones.md).
+El monorepo está montado. `domain` ya tiene el contrato del catálogo (esquema, `parseCatalog`, agregado `Catalog` y reglas derivadas); el resto de paquetes todavía no tiene lógica. La separación en paquetes, la organización interna por módulos y los patrones están en el [ADR-0018](docs/adr/0018-organizacion-codigo-patrones.md).
 
 - `packages/domain`: TS puro, con el modelo, las armonías, las conversiones, el Delta E (culori) y la validación del catálogo (Zod). Sin dependencias de React ni del navegador.
 - `packages/catalog-builder`: script Node que importa las fuentes, las normaliza y genera `catalog.json`. Arquitectura hexagonal en sus bordes (disco y red).
