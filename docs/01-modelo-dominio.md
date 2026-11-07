@@ -210,12 +210,12 @@ interface CalculatedMatch {
 
 ## 5. Reglas derivadas (funciones de domain)
 
-| Regla                             | Definición                                                                                                                                                                                                                                                           |
-| --------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `isColorApproximate(paint)`       | `true` si `color !== null` y se cumple al menos una condición: `metallic`, `type ∈ {wash, ink, glaze, contrast, technical}` o `color.origin === 'community'`.                                                                                                        |
-| `resolveReplacement(catalog, id)` | Sigue la cadena de sustitutas hasta llegar a una pintura activa o al final de la cadena. Siempre termina, porque los ciclos están prohibidos.                                                                                                                        |
-| Equivalencias calculadas          | Se calculan con CIEDE2000 en el cliente y nunca se persisten. Excluyen las pinturas sin color. Si el origen o el destino tienen un color aproximado, el resultado lleva `approximate: true` y la interfaz lo avisa. Los umbrales y el orden se definen en la fase 4. |
-| Equivalencias oficiales           | Se leen solo en su dirección. No se infieren ni las inversas ni las transitivas.                                                                                                                                                                                     |
+| Regla                             | Definición                                                                                                                                                                                                                                                                                                    |
+| --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `isColorApproximate(paint)`       | `true` si `color !== null` y se cumple al menos una condición: `metallic`, `type ∈ {wash, ink, glaze, contrast, technical}` o `color.origin === 'community'`.                                                                                                                                                 |
+| `resolveReplacement(catalog, id)` | Sigue la cadena de sustitutas hasta llegar a una pintura activa o al final de la cadena, y devuelve esa pintura. Devuelve `null` si la pintura no tiene sustituta. Un `id` que no está en el catálogo es un error de programación y lanza una excepción. Siempre termina, porque los ciclos están prohibidos. |
+| Equivalencias calculadas          | Se calculan con CIEDE2000 en el cliente y nunca se persisten. Excluyen las pinturas sin color. Si el origen o el destino tienen un color aproximado, el resultado lleva `approximate: true` y la interfaz lo avisa. Los umbrales y el orden se definen en la fase 4.                                          |
+| Equivalencias oficiales           | Se leen solo en su dirección. No se infieren ni las inversas ni las transitivas.                                                                                                                                                                                                                              |
 
 ## 6. Invariantes
 
@@ -229,3 +229,4 @@ Se comprueban al cargar el catálogo; el detalle está en [02-esquema-catalog-js
 6. En una equivalencia, `from ≠ to`, y la terna `(from, to, sourceId)` es única.
 7. `name` no está vacío. En marcas y pinturas, `aliases` no tiene duplicados ni repite `name`.
 8. Si `Source.url` es `null`, `Source.archiveUrl` también lo es.
+9. Las colecciones están ordenadas como exige [02-esquema-catalog-json.md](02-esquema-catalog-json.md) §1.
