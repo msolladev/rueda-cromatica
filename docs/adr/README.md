@@ -14,6 +14,10 @@ Cada fichero recoge una decisión relevante: su contexto, la decisión tomada, l
 | [0006](0006-formato-catalogo.md) | Formato del catálogo normalizado, plano y determinista | aceptada |
 | [0007](0007-versionado-distribucion.md) | Versionado y distribución del catálogo | aceptada |
 | [0008](0008-clasificacion-pinturas.md) | Clasificación por gama comercial, tipo funcional y acabado metálico | aceptada |
+| [0009](0009-toolchain-pnpm-node.md) | Toolchain con pnpm y versiones fijadas de forma exacta | aceptada |
+| [0010](0010-lint-formato.md) | Lint con ESLint y formato con Prettier | aceptada |
+| [0011](0011-ci-cd.md) | CI/CD con GitHub Actions | aceptada |
+| [0012](0012-entornos.md) | Entornos de desarrollo, preproducción y producción | aceptada |
 
 ## Normas
 
