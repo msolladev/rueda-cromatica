@@ -1,6 +1,6 @@
 # Modelo de dominio: catálogo de pinturas
 
-> Fase 1. Especifica el modelo del catálogo. Las armonías y la rueda se tratan en la fase 3.
+> Fase 1. Especifica el modelo del catálogo. Las armonías y la rueda se tratan en la fase 4.
 
 ## 1. Convenciones
 
@@ -46,7 +46,7 @@ Cualquier dato que no sea trivial (un color, una sustitución, una equivalencia)
 
 ### Marca (`Brand`) y gama (`Range`)
 
-Una gama es una línea comercial tal como la vende el fabricante ([ADR-0008](adr/0008-clasificacion-pinturas.md)). La granularidad concreta, por ejemplo cómo se divide "Citadel antigua", se decide en la fase 2 a partir de las fuentes.
+Una gama es una línea comercial tal como la vende el fabricante ([ADR-0008](adr/0008-clasificacion-pinturas.md)). La granularidad concreta, por ejemplo cómo se divide "Citadel antigua", se decide en la fase 3 a partir de las fuentes.
 
 ### Pintura (`Paint`)
 
@@ -190,7 +190,7 @@ interface CalculatedMatch {
 | --------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `isColorApproximate(paint)`       | `true` si `color !== null` y se cumple al menos una condición: `metallic`, `type ∈ {wash, contrast, technical}` o `color.origin === 'community'`.                                                                                                                    |
 | `resolveReplacement(catalog, id)` | Sigue la cadena de sustitutas hasta llegar a una pintura activa o al final de la cadena. Siempre termina, porque los ciclos están prohibidos.                                                                                                                        |
-| Equivalencias calculadas          | Se calculan con CIEDE2000 en el cliente y nunca se persisten. Excluyen las pinturas sin color. Si el origen o el destino tienen un color aproximado, el resultado lleva `approximate: true` y la interfaz lo avisa. Los umbrales y el orden se definen en la fase 3. |
+| Equivalencias calculadas          | Se calculan con CIEDE2000 en el cliente y nunca se persisten. Excluyen las pinturas sin color. Si el origen o el destino tienen un color aproximado, el resultado lleva `approximate: true` y la interfaz lo avisa. Los umbrales y el orden se definen en la fase 4. |
 | Equivalencias oficiales           | Se leen solo en su dirección. No se infieren ni las inversas ni las transitivas.                                                                                                                                                                                     |
 
 ## 6. Invariantes
@@ -205,7 +205,7 @@ Se comprueban al cargar el catálogo; el detalle está en [02-esquema-catalog-js
 6. En una equivalencia, `from ≠ to`, y la terna `(from, to, sourceId)` es única.
 7. `name` no está vacío. `aliases` no tiene duplicados ni repite `name`.
 
-## 7. Puntos abiertos (fase 2)
+## 7. Puntos abiertos (fase 3)
 
 - **Granularidad de las gamas**, sobre todo la de Citadel antigua.
 - **Tipos no cubiertos**: pincel seco, aerógrafo y a qué tipo se asignan los productos de otras marcas parecidos a contrast. Añadir un valor al enum es un cambio incompatible y obliga a subir `schemaVersion`.
