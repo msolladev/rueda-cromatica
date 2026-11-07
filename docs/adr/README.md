@@ -23,6 +23,7 @@ Cada fichero recoge una decisión relevante: su contexto, la decisión tomada, l
 | [0015](0015-fuentes-trazabilidad-licencias.md) | Fuentes: trazabilidad, licencias y desactivación                     | aceptada                |
 | [0016](0016-datos-curados-json.md)             | Datos curados en JSON de dos capas                                   | aceptada                |
 | [0017](0017-arquitectura-objetivo-backend.md)  | Arquitectura objetivo con backend                                    | aceptada                |
+| [0018](0018-organizacion-codigo-patrones.md)   | Organización del código y patrones                                   | aceptada                |
 
 ## Normas
 
