@@ -52,11 +52,13 @@ Desde la raíz. pnpm cambia solo a la versión de `packageManager` y descarga el
 
 - **Equivalencias oficiales**: aristas dirigidas (origen → destino) con una fuente del fabricante obligatoria. No se infieren ni las inversas ni las transitivas.
 - **Equivalencias calculadas**: CIEDE2000 en el cliente. No se guardan en el JSON.
-- **Color aproximado**: un hex es aproximado si la pintura es metálica, si es lavado, contrast o técnica, o si el hex es de origen comunitario. Se calcula en el dominio; en el JSON solo se guardan el origen y la fuente del hex. No se ofrecen equivalencias calculadas con colores aproximados sin avisar.
+- **Color aproximado**: un hex es aproximado si la pintura es metálica, si su tipo es lavado, tinta, veladura, contrast o técnica, o si el hex es de origen comunitario. Se calcula en el dominio; en el JSON solo se guardan el origen y la fuente del hex. No se ofrecen equivalencias calculadas con colores aproximados sin avisar.
+- **Origen del color**: un único hex por pintura, elegido por prioridad `measured` > `manufacturer` > `community`. Los degradados oficiales de Citadel se reducen a su punto medio en CIELAB ([ADR-0014](docs/adr/0014-origen-seleccion-color.md)).
+- **Sustitución frente a equivalencia**: solo hay sustituta si la fuente del fabricante dice que X sustituye a Y. Las cartas de conversión son equivalencias oficiales.
 - **Sombra**: es una variación de la base (menos luminosa, menos saturada y con un ligero cambio de tono), no el complementario tal cual. El complementario y las tríadas se usan para el secundario y el acento.
 - **Rueda**: devuelve el color teórico y la pintura real más parecida, filtrando por las marcas activas.
 - **Pintura**:
-  - Tipo según su función: base, capa, lavado, contrast o técnica.
+  - Tipo según su función: base, capa, estándar (opaca sin distinción base/capa), lavado, tinta, veladura, contrast (función de una capa, de cualquier marca), técnica o pincel seco ([ADR-0013](docs/adr/0013-clasificacion-pinturas.md)).
   - Metálica, como atributo independiente del tipo.
   - Estado: activa o descatalogada. Si está descatalogada, con su sustituta y la fuente del fabricante, si las hay.
 - **IDs**: slugs jerárquicos (`marca/gama/pintura`) que se generan una vez y nunca se recalculan. El código no los descompone.
@@ -66,28 +68,28 @@ El modelo completo está en [docs/01-modelo-dominio.md](docs/01-modelo-dominio.m
 ## Alcance
 
 - **MVP**: rueda con armonías, esquema de miniatura, traducción a pintura real, buscador de equivalencias y funcionamiento offline.
-- **Marcas del MVP**: Citadel (actual y antigua), Vallejo (Model Color y Game Color), Army Painter y AK.
-- **Futuro** (no implementar sin pedirlo): mi colección, recetas, lista de la compra, cuentagotas sobre foto, sugerencia de lavados, mezclas y backend con sincronización.
+- **Marcas y líneas del MVP**:
+  - Warhammer Colour, antes Citadel: Base, Layer, Shade, Contrast, Technical y Dry, y las líneas antiguas (Citadel Colour, Foundation, Washes de 2008, tintas, Glaze y Edge).
+  - Vallejo: Model Color y Game Color, con sus subfamilias e incluido Xpress Color.
+  - Army Painter: Warpaints Fanatic, Warpaints originales y Speedpaint 2.0.
+  - AK: 3rd Gen y Quick Gen.
+  - Fuera del catálogo: productos sin color (mediums, barnices, diluyentes).
+- **Futuro** (no implementar sin pedirlo): mi colección, recetas, lista de la compra, cuentagotas sobre foto, sugerencia de lavados, mezclas, backend con sincronización, Tone Pro, líneas de aerógrafo, Spray, Speedpaint 1.0 y búsqueda por código antiguo.
 - Si una propuesta se sale del MVP, indícalo antes de implementarla.
 
 ## Estado y hoja de ruta
 
 1. **Arquitectura y modelo de datos**: cerrada. Ver docs/01-03 y los ADR 0001-0008.
 2. **Montar el monorepo y la toolchain**, según los ADR 0009-0011: hecho. Falta el paso 4 de la CI (diff de `catalog.json`), que llegará con el builder.
-3. **Investigación de fuentes de datos**. Puntos abiertos:
-   - Granularidad de las gamas, sobre todo Citadel antigua.
-   - Tipos que faltan: pincel seco y aerógrafo.
-   - Prioridad entre orígenes de color cuando varias fuentes dan hex distintos.
-   - Si las tablas de equivalencias de terceros entran o no.
-   - Formato de los datos curados donde se guardan los IDs.
-4. **Prototipo de la rueda**.
+3. **Investigación de fuentes de datos**: cerrada. Ver el [informe](docs/investigacion/2026-11-fuentes-datos.md), docs/04 y los ADR 0013-0016.
+4. **Builder, importadores y prototipo de la rueda**: `catalog-builder` con sus importadores y el script `archive-sources`, el paso 4 de la CI y el prototipo de la rueda.
 
-Pendiente fuera de la hoja de ruta: provisionar la preproducción en el homelab y decidir dónde va producción.
+Pendiente fuera de la hoja de ruta: provisionar la preproducción en el homelab y decidir dónde va producción. Antes de cualquier despliegue público hay que revisar las fuentes con licencia `unknown` o `terms-of-use`.
 
 ## Documentación
 
 - **Fuente de verdad**: el repositorio. Las especificaciones están en `docs/` y los ADR en `docs/adr/` (un fichero por ADR; el README tiene el índice y las normas).
-- **Este documento** recoge las decisiones vigentes. El proyecto de claude.ai lo carga desde GitHub junto con docs/01-03.
+- **Este documento** recoge las decisiones vigentes. El proyecto de claude.ai lo carga desde GitHub junto con docs/01-04.
 - **Informes de investigación**: en `docs/investigacion/`, fechados e inmutables. Las normas están en su [README](docs/investigacion/README.md).
 - **Especificaciones y ADR**: las especificaciones describen lo vigente; los ADR, por qué se decidió. Un ADR aceptado no se reescribe: se sustituye por otro nuevo.
 

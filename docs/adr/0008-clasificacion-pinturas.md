@@ -1,6 +1,6 @@
 # ADR-0008: Clasificación de pinturas por gama comercial, tipo funcional y acabado metálico
 
-- **Estado:** aceptada
+- **Estado:** sustituida por ADR-0013
 - **Fecha:** 2026-10-31
 
 ## Contexto
