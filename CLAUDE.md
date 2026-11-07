@@ -82,7 +82,12 @@ El modelo completo está en [docs/01-modelo-dominio.md](docs/01-modelo-dominio.m
 1. **Arquitectura y modelo de datos**: cerrada. Ver docs/01-03 y los ADR 0001-0008.
 2. **Montar el monorepo y la toolchain**, según los ADR 0009-0011: hecho. Falta el paso 4 de la CI (diff de `catalog.json`), que llegará con el builder.
 3. **Investigación de fuentes de datos**: cerrada. Ver el [informe](docs/investigacion/2026-11-fuentes-datos.md), docs/04 y los ADR 0013-0016.
-4. **Builder, importadores y prototipo de la rueda**: `catalog-builder` con sus importadores y el script `archive-sources`, el paso 4 de la CI y el prototipo de la rueda.
+4. **Builder, importadores y prototipo de la rueda**: es la fase siguiente. Incluye `catalog-builder` con sus importadores y el script `archive-sources`, el paso 4 de la CI y el prototipo de la rueda. Al curar los datos hay que verificar:
+   - Si citadelcolour.com da acceso a los hex. Si no, Citadel usa hex `community`.
+   - Si existe una copia fiel de la carta de GW de 2012. Si no, esa carta no entra ([ADR-0015](docs/adr/0015-fuentes-trazabilidad-licencias.md)).
+   - El número de referencias de Quick Gen (79+1 según AK y 82 según Paint Vault), contrastado con la página oficial.
+   - La retirada de 25 Contrast en 2026. Mientras GW no la confirme, no se marcan como `discontinued`.
+   - El reparto en gamas de Vallejo, Army Painter y AK; por ejemplo, si Xpress Color es una gama propia o parte de Game Color. Se aplica la regla de una gama por línea de venta ([ADR-0013](docs/adr/0013-clasificacion-pinturas.md)).
 
 Pendiente fuera de la hoja de ruta: provisionar la preproducción en el homelab y decidir dónde va producción. Antes de cualquier despliegue público hay que revisar las fuentes con licencia `unknown` o `terms-of-use`.
 
