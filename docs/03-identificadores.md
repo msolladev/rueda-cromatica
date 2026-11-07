@@ -2,12 +2,12 @@
 
 ## 1. Formato
 
-| Entidad | Formato | Ejemplo |
-|---|---|---|
-| Marca | `<slug>` | `citadel` |
-| Gama | `<brandId>/<slug>` | `citadel/base` |
+| Entidad | Formato            | Ejemplo                      |
+| ------- | ------------------ | ---------------------------- |
+| Marca   | `<slug>`           | `citadel`                    |
+| Gama    | `<brandId>/<slug>` | `citadel/base`               |
 | Pintura | `<rangeId>/<slug>` | `citadel/base/abaddon-black` |
-| Fuente | `<slug>` | `acme-conversion-chart` |
+| Fuente  | `<slug>`           | `acme-conversion-chart`      |
 
 Los ejemplos ilustran el formato. Los IDs reales de las gamas dependen de la granularidad que se decida en la fase 2.
 
@@ -31,10 +31,10 @@ El slug se genera una sola vez, aplicando estos pasos al nombre:
 4. Sustituir cada secuencia de caracteres no alfanuméricos por `-`.
 5. Quitar los guiones del principio y del final.
 
-| Nombre | Slug |
-|---|---|
-| `Rojo Óxido` | `rojo-oxido` |
-| `Bob's Blue` | `bobs-blue` |
+| Nombre           | Slug           |
+| ---------------- | -------------- |
+| `Rojo Óxido`     | `rojo-oxido`   |
+| `Bob's Blue`     | `bobs-blue`    |
 | `Grey / Green 2` | `grey-green-2` |
 
 El generador es una utilidad del builder que **propone** el ID. El resultado se guarda en los datos curados y se versiona.
@@ -48,14 +48,14 @@ Si el slug ya existe (colisión), el builder falla y se elige a mano un sufijo c
 
 ## 5. Casos
 
-| Caso | ID | Qué cambia |
-|---|---|---|
-| Renombrado | igual | `name`; el nombre anterior pasa a `aliases` |
-| Cambio de gama | igual (el prefijo queda desfasado) | `rangeId` |
-| Mismo producto reformulado | igual | `color` y su fuente |
-| Producto nuevo con un nombre reutilizado | nuevo (con sufijo si colisiona) | la antigua pasa a `discontinued`, con `replacement` si hay fuente |
-| Descatalogación | igual | `status` |
-| Alta errónea | se retira (lápida) | — |
+| Caso                                     | ID                                 | Qué cambia                                                        |
+| ---------------------------------------- | ---------------------------------- | ----------------------------------------------------------------- |
+| Renombrado                               | igual                              | `name`; el nombre anterior pasa a `aliases`                       |
+| Cambio de gama                           | igual (el prefijo queda desfasado) | `rangeId`                                                         |
+| Mismo producto reformulado               | igual                              | `color` y su fuente                                               |
+| Producto nuevo con un nombre reutilizado | nuevo (con sufijo si colisiona)    | la antigua pasa a `discontinued`, con `replacement` si hay fuente |
+| Descatalogación                          | igual                              | `status`                                                          |
+| Alta errónea                             | se retira (lápida)                 | —                                                                 |
 
 Para distinguir entre "reformulado" y "producto nuevo" manda la fuente del fabricante. Si no lo aclara, se trata como el mismo producto y se deja anotado en los datos curados.
 
