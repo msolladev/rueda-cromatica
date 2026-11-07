@@ -9,7 +9,7 @@
 | Pintura | `<rangeId>/<slug>` | `citadel/base/abaddon-black` |
 | Fuente  | `<slug>`           | `acme-conversion-chart`      |
 
-Los ejemplos ilustran el formato. Los IDs reales de las gamas dependen de la granularidad que se decida en la fase 2.
+Los ejemplos ilustran el formato. Los IDs reales de las gamas dependen de la granularidad que se decida en la fase 3.
 
 - Slug: `^[a-z0-9]+(?:-[a-z0-9]+)*$`
 - Pintura: `^[a-z0-9]+(?:-[a-z0-9]+)*(?:/[a-z0-9]+(?:-[a-z0-9]+)*){2}$`
@@ -43,7 +43,7 @@ Si el slug ya existe (colisión), el builder falla y se elige a mano un sufijo c
 
 ## 4. Congelación
 
-- El ID se guarda en los datos curados de `catalog-builder`, junto a la clave con la que se reconoce la pintura en cada fuente. El formato de esos datos se define en la fase 2.
+- El ID se guarda en los datos curados de `catalog-builder`, junto a la clave con la que se reconoce la pintura en cada fuente. El formato de esos datos se define en la fase 3.
 - El builder nunca recalcula un ID que ya existe.
 
 ## 5. Casos

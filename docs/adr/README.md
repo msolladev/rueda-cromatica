@@ -25,6 +25,7 @@ Cada fichero recoge una decisión relevante: su contexto, la decisión tomada, l
 - **Inmutabilidad**: un ADR aceptado no se reescribe. Si una decisión cambia, se crea un ADR nuevo y el antiguo pasa a `sustituida por ADR-NNNN`.
 - **Estados posibles**: `propuesta`, `aceptada`, `rechazada`, `sustituida por ADR-NNNN`.
 - **Índice**: cada ADR nuevo se añade a la tabla anterior en el mismo commit en que se crea.
+- **Numeración de fases**: los ADR 0001-0008 usan la numeración de la hoja de ruta anterior a 2026-11. Su «fase 2» es la actual fase 3 (investigación de fuentes de datos) y su «fase 3», la actual fase 4 (prototipo de la rueda).
 
 ## Plantilla
 

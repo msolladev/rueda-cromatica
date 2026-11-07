@@ -239,4 +239,4 @@ No hay carga parcial por dos motivos. Un catálogo con referencias rotas provoca
 
 ### Rendimiento
 
-El volumen esperado es de unos pocos miles de pinturas como mucho, y la validación se hace una sola vez al arrancar. Se medirá en la fase 3 antes de optimizar nada.
+El volumen esperado es de unos pocos miles de pinturas como mucho, y la validación se hace una sola vez al arrancar. Se medirá en la fase 4 antes de optimizar nada.

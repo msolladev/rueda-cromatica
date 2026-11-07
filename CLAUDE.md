@@ -88,6 +88,7 @@ Pendiente fuera de la hoja de ruta: provisionar la preproducción en el homelab 
 
 - **Fuente de verdad**: el repositorio. Las especificaciones están en `docs/` y los ADR en `docs/adr/` (un fichero por ADR; el README tiene el índice y las normas).
 - **Este documento** recoge las decisiones vigentes. El proyecto de claude.ai lo carga desde GitHub junto con docs/01-03.
+- **Informes de investigación**: en `docs/investigacion/`, fechados e inmutables. Las normas están en su [README](docs/investigacion/README.md).
 - **Especificaciones y ADR**: las especificaciones describen lo vigente; los ADR, por qué se decidió. Un ADR aceptado no se reescribe: se sustituye por otro nuevo.
 
 ## Reglas de trabajo
