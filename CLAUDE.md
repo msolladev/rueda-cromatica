@@ -12,14 +12,16 @@ Es un proyecto de aprendizaje del ecosistema Node/TS: prioriza las buenas práct
 - **Plataforma**: PWA instalable y offline, sin app nativa. React + Vite + TypeScript (strict) + vite-plugin-pwa, sin Next.
 - **Monorepo**: pnpm workspaces, sin orquestador (Turborepo, Nx) mientras no haga falta.
 - **Versiones fijadas de forma exacta** en `package.json`: Node en `devEngines.runtime` (lo gestiona pnpm) y pnpm en `packageManager`. Nunca rangos ni "latest". Solo se actualizan mediante un PR validado por la CI ([ADR-0009](docs/adr/0009-toolchain-pnpm-node.md)).
-- **Calidad**: ESLint 10 (*flat config*, `typescript-eslint` con `strictTypeChecked`) y Prettier. ESLint no se encarga del formato ([ADR-0010](docs/adr/0010-lint-formato.md)).
+- **Calidad**: ESLint 10 (_flat config_, `typescript-eslint` con `strictTypeChecked`) y Prettier. ESLint no se encarga del formato ([ADR-0010](docs/adr/0010-lint-formato.md)).
+- **TypeScript 6.0**, no la 7: `typescript-eslint` exige `<6.1.0`. Se sube cuando lo admita.
+- **Madurez de dependencias**: `minimumReleaseAge` de 7 días en `pnpm-workspace.yaml`, y `cooldown` equivalente en Dependabot. Las versiones compartidas entre paquetes van en el `catalog:` de pnpm.
 - **Tests**: Vitest, obligatorios en `domain` y `catalog-builder`.
 - **CI/CD**: GitHub Actions ([ADR-0011](docs/adr/0011-ci-cd.md)).
 - **Entornos**: desarrollo en WSL 2, preproducción en el homelab y producción por decidir ([ADR-0012](docs/adr/0012-entornos.md)).
 
 ## Estructura objetivo
 
-El monorepo todavía no está montado.
+El monorepo está montado; los paquetes todavía no tienen lógica.
 
 - `packages/domain`: TS puro, con el modelo, las armonías, las conversiones, el Delta E (culori) y la validación del catálogo (Zod). Sin dependencias de React ni del navegador.
 - `packages/catalog-builder`: script Node que importa las fuentes, las normaliza y genera `catalog.json`.
@@ -28,7 +30,16 @@ El monorepo todavía no está montado.
 
 ## Comandos
 
-Pendiente: completar esta sección al montar el monorepo.
+Desde la raíz. pnpm cambia solo a la versión de `packageManager` y descarga el Node de `devEngines.runtime`.
+
+- `pnpm install`: instala las dependencias. La CI usa `--frozen-lockfile`.
+- `pnpm lint`: ESLint con tipos en todo el monorepo.
+- `pnpm format` / `pnpm format:check`: aplica o comprueba el formato de Prettier.
+- `pnpm typecheck`: `tsc` en la raíz y en cada paquete.
+- `pnpm test`: Vitest en `domain` y `catalog-builder`.
+- `pnpm build`: build de `apps/web` (Vite + PWA).
+- `pnpm --filter @rueda-cromatica/web dev`: servidor de desarrollo.
+- `pnpm --filter <paquete> <script>`: ejecuta un script de un paquete concreto.
 
 ## Catálogo
 
@@ -62,7 +73,7 @@ El modelo completo está en [docs/01-modelo-dominio.md](docs/01-modelo-dominio.m
 ## Estado y hoja de ruta
 
 1. **Arquitectura y modelo de datos**: cerrada. Ver docs/01-03 y los ADR 0001-0008.
-2. **Montar el monorepo y la toolchain**, según los ADR 0009-0011.
+2. **Montar el monorepo y la toolchain**, según los ADR 0009-0011: hecho. Falta el paso 4 de la CI (diff de `catalog.json`), que llegará con el builder.
 3. **Investigación de fuentes de datos**. Puntos abiertos:
    - Granularidad de las gamas, sobre todo Citadel antigua.
    - Tipos que faltan: pincel seco y aerógrafo.

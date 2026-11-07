@@ -1,0 +1,15 @@
+packages:
+  - apps/*
+  - packages/*
+
+# Dependencias directas con versión exacta (ADR-0009).
+savePrefix: ""
+
+# Solo versiones publicadas hace al menos 7 días (en minutos).
+minimumReleaseAge: 10080
+
+# Versiones compartidas entre paquetes (protocolo `catalog:`).
+catalog:
+  "@types/node": 26.6.6
+  typescript: 6.0.3
+  vitest: 5.0.5
