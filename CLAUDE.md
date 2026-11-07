@@ -97,8 +97,8 @@ El modelo completo está en [docs/01-modelo-dominio.md](docs/01-modelo-dominio.m
 
 5. **Backend, administración del catálogo y sesiones de usuario**, después del MVP ([ADR-0017](docs/adr/0017-arquitectura-objetivo-backend.md)). Incluye:
    - Una API REST con base de datos y una web de administración del catálogo, con el frontal y el backend separados.
-   - Una instantánea pública del catálogo, pedida por versión de esquema, para que la PWA actualice su catálogo local sin volver a desplegarse. La PWA no consume el resto de la API.
-   - Sesiones de usuario y sincronización de los datos del usuario.
+   - Una instantánea pública del catálogo, pedida por versión de esquema, para que la PWA actualice su catálogo local sin volver a desplegarse. De la API, la PWA solo consume esa instantánea y los endpoints de usuario. La API de administración solo la usa `apps/admin`.
+   - Cuentas, sesiones y roles (usuario y administrador), gestionados desde `apps/admin`, con los datos del usuario sincronizados entre dispositivos y offline primero.
 
 Pendiente fuera de la hoja de ruta: provisionar la preproducción en el homelab y decidir dónde va producción. Antes de cualquier despliegue público hay que revisar las fuentes con licencia `unknown` o `terms-of-use`.
 
