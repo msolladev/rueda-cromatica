@@ -4,20 +4,20 @@ Cada fichero recoge una decisión relevante: su contexto, la decisión tomada, l
 
 ## Índice
 
-| ADR | Decisión | Estado |
-|---|---|---|
-| [0001](0001-identificadores-slug-congelado.md) | Identificadores de pintura legibles y congelados | aceptada |
-| [0002](0002-validacion-catalogo-zod.md) | Validación del catálogo con Zod en `domain` | aceptada |
-| [0003](0003-fiabilidad-color.md) | Fiabilidad del color, con el origen guardado y "aproximado" derivado | aceptada |
-| [0004](0004-equivalencias-dirigidas.md) | Equivalencias oficiales como relaciones dirigidas | aceptada |
-| [0005](0005-sustitucion-en-estado.md) | Sustitución como parte del estado de la pintura | aceptada |
-| [0006](0006-formato-catalogo.md) | Formato del catálogo normalizado, plano y determinista | aceptada |
-| [0007](0007-versionado-distribucion.md) | Versionado y distribución del catálogo | aceptada |
-| [0008](0008-clasificacion-pinturas.md) | Clasificación por gama comercial, tipo funcional y acabado metálico | aceptada |
-| [0009](0009-toolchain-pnpm-node.md) | Toolchain con pnpm y versiones fijadas de forma exacta | aceptada |
-| [0010](0010-lint-formato.md) | Lint con ESLint y formato con Prettier | aceptada |
-| [0011](0011-ci-cd.md) | CI/CD con GitHub Actions | aceptada |
-| [0012](0012-entornos.md) | Entornos de desarrollo, preproducción y producción | aceptada |
+| ADR                                            | Decisión                                                             | Estado   |
+| ---------------------------------------------- | -------------------------------------------------------------------- | -------- |
+| [0001](0001-identificadores-slug-congelado.md) | Identificadores de pintura legibles y congelados                     | aceptada |
+| [0002](0002-validacion-catalogo-zod.md)        | Validación del catálogo con Zod en `domain`                          | aceptada |
+| [0003](0003-fiabilidad-color.md)               | Fiabilidad del color, con el origen guardado y "aproximado" derivado | aceptada |
+| [0004](0004-equivalencias-dirigidas.md)        | Equivalencias oficiales como relaciones dirigidas                    | aceptada |
+| [0005](0005-sustitucion-en-estado.md)          | Sustitución como parte del estado de la pintura                      | aceptada |
+| [0006](0006-formato-catalogo.md)               | Formato del catálogo normalizado, plano y determinista               | aceptada |
+| [0007](0007-versionado-distribucion.md)        | Versionado y distribución del catálogo                               | aceptada |
+| [0008](0008-clasificacion-pinturas.md)         | Clasificación por gama comercial, tipo funcional y acabado metálico  | aceptada |
+| [0009](0009-toolchain-pnpm-node.md)            | Toolchain con pnpm y versiones fijadas de forma exacta               | aceptada |
+| [0010](0010-lint-formato.md)                   | Lint con ESLint y formato con Prettier                               | aceptada |
+| [0011](0011-ci-cd.md)                          | CI/CD con GitHub Actions                                             | aceptada |
+| [0012](0012-entornos.md)                       | Entornos de desarrollo, preproducción y producción                   | aceptada |
 
 ## Normas
 
@@ -35,7 +35,10 @@ Cada fichero recoge una decisión relevante: su contexto, la decisión tomada, l
 - **Fecha:** AAAA-MM-DD
 
 ## Contexto
+
 ## Decisión
+
 ## Alternativas descartadas
+
 ## Consecuencias
 ```
