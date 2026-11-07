@@ -27,6 +27,10 @@ El monorepo está montado; los paquetes todavía no tienen lógica.
 - `packages/catalog-builder`: script Node que importa las fuentes, las normaliza y genera `catalog.json`.
 - `apps/web`: React, solo presentación. La lógica vive en el dominio.
 - `docs/`: especificaciones, y `docs/adr/` con los ADR.
+- Futuro, en la fase 5 ([ADR-0017](docs/adr/0017-arquitectura-objetivo-backend.md)):
+  - `apps/api`: backend REST con base de datos, que expone la instantánea pública del catálogo.
+  - `apps/admin`: frontal de mantenimiento del catálogo.
+  - `packages/importers`: la importación de fuentes, extraída de `catalog-builder`.
 
 ## Comandos
 
@@ -74,7 +78,7 @@ El modelo completo está en [docs/01-modelo-dominio.md](docs/01-modelo-dominio.m
   - Army Painter: Warpaints Fanatic, Warpaints originales y Speedpaint 2.0.
   - AK: 3rd Gen y Quick Gen.
   - Fuera del catálogo: productos sin color (mediums, barnices, diluyentes).
-- **Futuro** (no implementar sin pedirlo): mi colección, recetas, lista de la compra, cuentagotas sobre foto, sugerencia de lavados, mezclas, backend con sincronización, Tone Pro, líneas de aerógrafo, Spray, Speedpaint 1.0 y búsqueda por código antiguo.
+- **Futuro** (no implementar sin pedirlo): mi colección, recetas, lista de la compra, cuentagotas sobre foto, sugerencia de lavados, mezclas, Tone Pro, líneas de aerógrafo, Spray, Speedpaint 1.0 y búsqueda por código antiguo.
 - Si una propuesta se sale del MVP, indícalo antes de implementarla.
 
 ## Estado y hoja de ruta
@@ -88,6 +92,13 @@ El modelo completo está en [docs/01-modelo-dominio.md](docs/01-modelo-dominio.m
    - El número de referencias de Quick Gen (79+1 según AK y 82 según Paint Vault), contrastado con la página oficial.
    - La retirada de 25 Contrast en 2026. Mientras GW no la confirme, no se marcan como `discontinued`.
    - El reparto en gamas de Vallejo, Army Painter y AK; por ejemplo, si Xpress Color es una gama propia o parte de Game Color. Se aplica la regla de una gama por línea de venta ([ADR-0013](docs/adr/0013-clasificacion-pinturas.md)).
+
+   Los importadores se escriben como funciones puras (fuente → filas), sin acceso a disco dentro de la lógica, para poder reutilizarlos en la fase 5.
+
+5. **Backend, administración del catálogo y sesiones de usuario**, después del MVP ([ADR-0017](docs/adr/0017-arquitectura-objetivo-backend.md)). Incluye:
+   - Una API REST con base de datos y una web de administración del catálogo, con el frontal y el backend separados.
+   - Una instantánea pública del catálogo, pedida por versión de esquema, para que la PWA actualice su catálogo local sin volver a desplegarse. La PWA no consume el resto de la API.
+   - Sesiones de usuario y sincronización de los datos del usuario.
 
 Pendiente fuera de la hoja de ruta: provisionar la preproducción en el homelab y decidir dónde va producción. Antes de cualquier despliegue público hay que revisar las fuentes con licencia `unknown` o `terms-of-use`.
 
