@@ -62,6 +62,13 @@ describe("importSimoGecko", () => {
     expect(paint?.color?.hex).toBe("#777777");
   });
 
+  it("corrects the names the table misspells", () => {
+    const [paint] = imported(
+      table(`| Nurgles Rot | technical |  | \`#9D8B16\` | ${box} |`),
+    );
+    expect(paint?.name).toBe("Nurgle's Rot");
+  });
+
   it("leaves out lines outside the MVP and products without colour", () => {
     expect(
       imported(

@@ -26,6 +26,12 @@ const FINISHES = new Set(["", "metal", "medium", "gloss", "texture"]);
 
 const COLOR_CELL = /^`(#[0-9a-f]{6})(?:_(#[0-9a-f]{6}))?`$/i;
 
+/** Names misspelt in the table, with the manufacturer page that proves it. */
+const NAME_ERRATA: Readonly<Record<string, string>> = {
+  // https://www.warhammer.com/en-GB/shop/Technical-Nurgles-Rot-2019
+  "Nurgles Rot": "Nurgle's Rot",
+};
+
 export function importSimoGecko(
   markdown: string,
   sourceId: string,
@@ -37,7 +43,8 @@ export function importSimoGecko(
     const cells = tableCells(line);
     // Data rows are the ones whose colour cell is code-formatted.
     if (cells?.[3]?.startsWith("`") !== true) return;
-    const [name = "", typeCell = "", finish = "", colorCell = ""] = cells;
+    const [written = "", typeCell = "", finish = "", colorCell = ""] = cells;
+    const name = NAME_ERRATA[written] ?? written;
     const at = `line ${String(i + 1)}`;
 
     if (!Object.hasOwn(LINES, typeCell)) {
