@@ -43,7 +43,7 @@ Si el slug ya existe (colisión), el builder falla y se elige a mano un sufijo c
 
 ## 4. Congelación
 
-- El ID se guarda en los datos curados de `catalog-builder`, junto a la clave con la que se reconoce la pintura en cada fuente. El formato de esos datos está en [04-datos-curados.md](04-datos-curados.md).
+- El ID se guarda en el fichero de su marca, en los datos de `catalog-builder`. El formato de esos datos está en [04-datos-curados.md](04-datos-curados.md).
 - El builder nunca recalcula un ID que ya existe.
 
 ## 5. Casos
@@ -57,13 +57,15 @@ Si el slug ya existe (colisión), el builder falla y se elige a mano un sufijo c
 | Descatalogación                          | igual                              | `status`                                                          |
 | Alta errónea                             | se retira (lápida)                 | —                                                                 |
 
-Para distinguir entre "reformulado" y "producto nuevo" manda la fuente del fabricante. Si no lo aclara, se trata como el mismo producto y se deja anotado en los datos curados.
+Para distinguir entre "reformulado" y "producto nuevo" manda la fuente del fabricante. Si no lo aclara, se trata como el mismo producto y se deja anotado en el mensaje del commit.
 
-Un renombrado se da por probado cuando el mismo código aparece con nombres distintos en dos documentos del fabricante. Una reseña de terceros es una pista, no una prueba. Si cambia el código y no el nombre, y el fabricante no lo aclara, también se trata como el mismo producto: cambia `manufacturerCode`, y el código anterior queda como clave de su fuente en los datos curados.
+Un renombrado se da por probado cuando el mismo código aparece con nombres distintos en dos documentos del fabricante. Una reseña de terceros es una pista, no una prueba. Si cambia el código y no el nombre, y el fabricante no lo aclara, también se trata como el mismo producto: cambia `manufacturerCode`, y el código anterior queda en el historial de git.
 
 El cambio de nombre de una marca sigue la misma regla: el ID no cambia, y el nombre anterior pasa a `Brand.aliases` (p. ej., `citadel`, que ahora se llama «Warhammer Colour»).
 
 ## 6. Bajas y lápidas
+
+> Las lápidas y el test de estabilidad (§7) se implementan antes de la primera publicación ([ADR-0019](adr/0019-alcance-minimo-mvp.md)). Hasta entonces ningún usuario guarda IDs, así que se pueden corregir libremente.
 
 - Un ID publicado no se borra nunca: la pintura se marca como descatalogada.
 - La única excepción son los errores de alta. Esos IDs se retiran mediante una lista explícita de IDs retirados (lápidas) en el builder, y un ID retirado no se reutiliza jamás.

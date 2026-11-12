@@ -1,6 +1,6 @@
 # ADR-0015: Fuentes: trazabilidad, licencias y desactivación
 
-- **Estado:** aceptada
+- **Estado:** aceptada; aplazada en parte por ADR-0019
 - **Fecha:** 2026-11-07
 
 ## Contexto

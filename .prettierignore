@@ -2,3 +2,4 @@ pnpm-lock.yaml
 dist/
 dev-dist/
 coverage/
+apps/web/public/catalog.json

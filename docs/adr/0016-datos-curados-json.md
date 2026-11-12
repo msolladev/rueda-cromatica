@@ -1,6 +1,6 @@
 # ADR-0016: Datos curados en JSON de dos capas
 
-- **Estado:** aceptada
+- **Estado:** sustituida por ADR-0019
 - **Fecha:** 2026-11-07
 
 ## Contexto
