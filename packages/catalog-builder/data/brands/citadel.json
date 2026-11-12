@@ -2,7 +2,7 @@
   "brand": {
     "id": "citadel",
     "name": "Warhammer Colour",
-    "aliases": ["Citadel Colour"]
+    "aliases": ["Citadel", "Citadel Colour"]
   },
   "ranges": [
     {

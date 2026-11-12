@@ -1,9 +1,20 @@
 {
   "meta": {
     "schemaVersion": 1,
-    "dataVersion": "sha256:8f3d53b62bc7399b487a58afe79d8e4e868a119338edfa81a73be5690cbb1895"
+    "dataVersion": "sha256:57f98d12e4ff2da493c14a84fbf2b991de3f741d2f3183a166c3be134b68caf7"
   },
   "sources": [
+    {
+      "id": "donnervs-miniature-paints",
+      "kind": "third-party",
+      "title": "Name, Set, RGB, and Hex values of Miniature Paints",
+      "publisher": "DonnervS",
+      "url": "https://github.com/DonnervS/miniature-paints/tree/7097a03e4fe2cf9b815a5a5a4eab85478a14737b",
+      "archiveUrl": null,
+      "retrievedAt": "2026-11-13",
+      "license": "MIT",
+      "attribution": "DonnervS/miniature-paints, based on Arcturus5404/miniature-paints (MIT, © 2022 Rick Fleuren)"
+    },
     {
       "id": "simogecko-citadel-colours",
       "kind": "third-party",
@@ -21,8 +32,14 @@
       "id": "citadel",
       "name": "Warhammer Colour",
       "aliases": [
+        "Citadel",
         "Citadel Colour"
       ]
+    },
+    {
+      "id": "the-army-painter",
+      "name": "The Army Painter",
+      "aliases": []
     }
   ],
   "ranges": [
@@ -60,6 +77,18 @@
       "id": "citadel/technical",
       "brandId": "citadel",
       "name": "Technical",
+      "status": "active"
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0",
+      "brandId": "the-army-painter",
+      "name": "Speedpaint 2.0",
+      "status": "active"
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic",
+      "brandId": "the-army-painter",
+      "name": "Warpaints Fanatic",
       "status": "active"
     }
   ],
@@ -4668,6 +4697,5089 @@
         "hex": "#2d5842",
         "origin": "community",
         "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/absolution-green",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Absolution Green",
+      "aliases": [],
+      "manufacturerCode": "WP2007P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#1d3f21",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/aged-hide",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Aged Hide",
+      "aliases": [],
+      "manufacturerCode": "WP2036P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#bf5d45",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/algae-green",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Algae Green",
+      "aliases": [],
+      "manufacturerCode": "WP2045P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#747a43",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/ancient-honey",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Ancient Honey",
+      "aliases": [],
+      "manufacturerCode": "WP2060P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#fbd13c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/ashen-stone",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Ashen Stone",
+      "aliases": [],
+      "manufacturerCode": "WP2025P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#848884",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/aztec-gold",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Aztec Gold",
+      "aliases": [],
+      "manufacturerCode": "WP2075P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#55622e",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/battleship-grey",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Battleship Grey",
+      "aliases": [],
+      "manufacturerCode": "WP2024P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#b3bfc2",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/beowulf-blue",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Beowulf Blue",
+      "aliases": [],
+      "manufacturerCode": "WP2049P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#06366d",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/blinding-light",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Blinding Light",
+      "aliases": [],
+      "manufacturerCode": "WP2076P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#f3f1ee",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/blood-red",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Blood Red",
+      "aliases": [],
+      "manufacturerCode": "WP2010P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#f34e3f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/bony-matter",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Bony Matter",
+      "aliases": [],
+      "manufacturerCode": "WP2039P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#9e8363",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/brazen-copper",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Brazen Copper",
+      "aliases": [],
+      "manufacturerCode": "WP2073P",
+      "type": "contrast",
+      "metallic": true,
+      "color": {
+        "hex": "#6f4540",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/bright-red",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Bright Red",
+      "aliases": [],
+      "manufacturerCode": "WP2058P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#cd5237",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/broadsword-silver",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Broadsword Silver",
+      "aliases": [],
+      "manufacturerCode": "WP2030P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#545350",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/brownish-decay",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Brownish Decay",
+      "aliases": [],
+      "manufacturerCode": "WP2067P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#706333",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/burnished-red",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Burnished Red",
+      "aliases": [],
+      "manufacturerCode": "WP2083P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#552f28",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/burnt-moss",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Burnt Moss",
+      "aliases": [],
+      "manufacturerCode": "WP2026P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#424d44",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/camo-cloak",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Camo Cloak",
+      "aliases": [],
+      "manufacturerCode": "WP2008P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#516235",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/caribbean-ocean",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Caribbean Ocean",
+      "aliases": [],
+      "manufacturerCode": "WP2046P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#099fae",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/carmine-dragon",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Carmine Dragon",
+      "aliases": [],
+      "manufacturerCode": "WP2055P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#ce2b4e",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/charming-chartreuse",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Charming Chartreuse",
+      "aliases": [],
+      "manufacturerCode": "WP2048P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#bec444",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/cloudburst-blue",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Cloudburst Blue",
+      "aliases": [],
+      "manufacturerCode": "WP2022P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#303645",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/crusader-skin",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Crusader Skin",
+      "aliases": [],
+      "manufacturerCode": "WP2004P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#dd9156",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/dark-wood",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Dark Wood",
+      "aliases": [],
+      "manufacturerCode": "WP2005P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#3f2716",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/desolate-brown",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Desolate Brown",
+      "aliases": [],
+      "manufacturerCode": "WP2040P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#776f3d",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/dusk-red",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Dusk Red",
+      "aliases": [],
+      "manufacturerCode": "WP2054P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#523331",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/enchanted-steel",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Enchanted Steel",
+      "aliases": [],
+      "manufacturerCode": "WP2072P",
+      "type": "contrast",
+      "metallic": true,
+      "color": {
+        "hex": "#555d5e",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/familiar-pink",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Familiar Pink",
+      "aliases": [],
+      "manufacturerCode": "WP2033P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#bf2970",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/fire-drake",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Fire Drake",
+      "aliases": [],
+      "manufacturerCode": "WP2062P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#e5a27e",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/fire-giant-orange",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Fire Giant Orange",
+      "aliases": [],
+      "manufacturerCode": "WP2017P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#dd7422",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/forest-sprite",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Forest Sprite",
+      "aliases": [],
+      "manufacturerCode": "WP2044P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#6e9b45",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/ghillie-dew",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Ghillie Dew",
+      "aliases": [],
+      "manufacturerCode": "WP2042P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#a3bf40",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/ghoul-green",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Ghoul Green",
+      "aliases": [],
+      "manufacturerCode": "WP2047P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#449f5f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/glittering-loot",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Glittering Loot",
+      "aliases": [],
+      "manufacturerCode": "WP2070P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#9a925d",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/goddess-glow",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Goddess Glow",
+      "aliases": [],
+      "manufacturerCode": "WP2038P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#7f4442",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/golden-armour",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Golden Armour",
+      "aliases": [],
+      "manufacturerCode": "WP2069P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#65430c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/gravelord-grey",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Gravelord Grey",
+      "aliases": [],
+      "manufacturerCode": "WP2002P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#3f4145",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/grim-black",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Grim Black",
+      "aliases": [],
+      "manufacturerCode": "WP2001P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#13120e",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/gunner-camo",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Gunner Camo",
+      "aliases": [],
+      "manufacturerCode": "WP2043P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#344d3f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/hardened-leather",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Hardened Leather",
+      "aliases": [],
+      "manufacturerCode": "WP2023P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#734217",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/highlord-blue",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Highlord Blue",
+      "aliases": [],
+      "manufacturerCode": "WP2015P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#154467",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/hive-dweller-purple",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Hive Dweller Purple",
+      "aliases": [],
+      "manufacturerCode": "WP2018P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#422953",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/hoard-bronze",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Hoard Bronze",
+      "aliases": [],
+      "manufacturerCode": "WP2074P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#938250",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/holy-white",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Holy White",
+      "aliases": [],
+      "manufacturerCode": "WP2003P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#f2f0ed",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/hoplite-gold",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Hoplite Gold",
+      "aliases": [],
+      "manufacturerCode": "WP2028P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#756230",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/howling-sand",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Howling Sand",
+      "aliases": [],
+      "manufacturerCode": "WP2077P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#e1e1c4",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/lizardfolk-cyan",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Lizardfolk Cyan",
+      "aliases": [],
+      "manufacturerCode": "WP2082P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#358e92",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/maggot-skin",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Maggot Skin",
+      "aliases": [],
+      "manufacturerCode": "WP2079P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#dfdd72",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/magic-blue",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Magic Blue",
+      "aliases": [],
+      "manufacturerCode": "WP2014P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#0970a0",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/maize-yellow",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Maize Yellow",
+      "aliases": [],
+      "manufacturerCode": "WP2059P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#f2d120",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/malignant-green",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Malignant Green",
+      "aliases": [],
+      "manufacturerCode": "WP2011P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#d2e052",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/moody-mauve",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Moody Mauve",
+      "aliases": [],
+      "manufacturerCode": "WP2032P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#b1638f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/moonlake-coral",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Moonlake Coral",
+      "aliases": [],
+      "manufacturerCode": "WP2034P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#b64f7f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/mummified-grime",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Mummified Grime",
+      "aliases": [],
+      "manufacturerCode": "WP2078P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#616145",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/murder-scene",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Murder Scene",
+      "aliases": [],
+      "manufacturerCode": "WP2057P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#60242f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/noble-skin",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Noble Skin",
+      "aliases": [],
+      "manufacturerCode": "WP2063P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#433e34",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/nuclear-sunrise",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Nuclear Sunrise",
+      "aliases": [],
+      "manufacturerCode": "WP2061P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#f98040",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/occultist-cloak",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Occultist Cloak",
+      "aliases": [],
+      "manufacturerCode": "WP2027P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#282930",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/ochre-clay",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Ochre Clay",
+      "aliases": [],
+      "manufacturerCode": "WP2066P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#afa134",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/orc-skin",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Orc Skin",
+      "aliases": [],
+      "manufacturerCode": "WP2009P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#247b32",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/pallid-bone",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Pallid Bone",
+      "aliases": [],
+      "manufacturerCode": "WP2006P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#f4dea5",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/pastel-indigo",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Pastel Indigo",
+      "aliases": [],
+      "manufacturerCode": "WP2088P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#aecff1",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/pastel-lavender",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Pastel Lavender",
+      "aliases": [],
+      "manufacturerCode": "WP2087P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#c2b1bf",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/pastel-salmon",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Pastel Salmon",
+      "aliases": [],
+      "manufacturerCode": "WP2085P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#f8cca0",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/pastel-seafoam",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Pastel Seafoam",
+      "aliases": [],
+      "manufacturerCode": "WP2089P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#b2cfc1",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/pastel-yellow",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Pastel Yellow",
+      "aliases": [],
+      "manufacturerCode": "WP2084P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#f1dd76",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/peachy-flesh",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Peachy Flesh",
+      "aliases": [],
+      "manufacturerCode": "WP2037P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#f5ac70",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/periwinkle-purple",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Periwinkle Purple",
+      "aliases": [],
+      "manufacturerCode": "WP2035P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#54508d",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/plasmatic-bolt",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Plasmatic Bolt",
+      "aliases": [],
+      "manufacturerCode": "WP2019P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#079081",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/polished-silver",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Polished Silver",
+      "aliases": [],
+      "manufacturerCode": "WP2071P",
+      "type": "contrast",
+      "metallic": true,
+      "color": {
+        "hex": "#74736f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/poppy-red",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Poppy Red",
+      "aliases": [],
+      "manufacturerCode": "WP2056P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#b94136",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/princess-pink",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Princess Pink",
+      "aliases": [],
+      "manufacturerCode": "WP2086P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#f5b0c3",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/purple-alchemy",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Purple Alchemy",
+      "aliases": [],
+      "manufacturerCode": "WP2021P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#9e3b60",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/purple-swarm",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Purple Swarm",
+      "aliases": [],
+      "manufacturerCode": "WP2031P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#61337d",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/raging-sea",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Raging Sea",
+      "aliases": [],
+      "manufacturerCode": "WP2053P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#16828c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/rigor-mortis",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Rigor Mortis",
+      "aliases": [],
+      "manufacturerCode": "WP2080P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#c3c07f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/royal-robes",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Royal Robes",
+      "aliases": [],
+      "manufacturerCode": "WP2050P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#606fae",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/ruddy-fur",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Ruddy Fur",
+      "aliases": [],
+      "manufacturerCode": "WP2065P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#914322",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/runic-grey",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Runic Grey",
+      "aliases": [],
+      "manufacturerCode": "WP2016P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#56727f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/sand-golem",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Sand Golem",
+      "aliases": [],
+      "manufacturerCode": "WP2020P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#c18f12",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/satchel-brown",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Satchel Brown",
+      "aliases": [],
+      "manufacturerCode": "WP2068P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#50382f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/shamrock-green",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Shamrock Green",
+      "aliases": [],
+      "manufacturerCode": "WP2041P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#569a26",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/slaughter-red",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Slaughter Red",
+      "aliases": [],
+      "manufacturerCode": "WP2012P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#8c1621",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/talos-bronze",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Talos Bronze",
+      "aliases": [],
+      "manufacturerCode": "WP2029P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#5f3025",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/thunderbird-blue",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Thunderbird Blue",
+      "aliases": [],
+      "manufacturerCode": "WP2081P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#63af92",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/tidal-wave",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Tidal Wave",
+      "aliases": [],
+      "manufacturerCode": "WP2052P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#1173ad",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/tyrian-navy",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Tyrian Navy",
+      "aliases": [],
+      "manufacturerCode": "WP2051P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#243741",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/warrior-skin",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Warrior Skin",
+      "aliases": [],
+      "manufacturerCode": "WP2064P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#8b6149",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/speedpaint-2-0/zealot-yellow",
+      "rangeId": "the-army-painter/speedpaint-2-0",
+      "name": "Zealot Yellow",
+      "aliases": [],
+      "manufacturerCode": "WP2013P",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#e2c106",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/abyssal-blue",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Abyssal Blue",
+      "aliases": [],
+      "manufacturerCode": "WP3032P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#094455",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/aegis-aqua",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Aegis Aqua",
+      "aliases": [],
+      "manufacturerCode": "WP3036P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#2895a5",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/afterglow",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Afterglow",
+      "aliases": [],
+      "manufacturerCode": "WP3060P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#c0c471",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/agate-skin",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Agate Skin",
+      "aliases": [],
+      "manufacturerCode": "WP3146P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#b67263",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/alien-purple",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Alien Purple",
+      "aliases": [],
+      "manufacturerCode": "WP3128P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#544882",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/alpha-blue",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Alpha Blue",
+      "aliases": [],
+      "manufacturerCode": "WP3022P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#566994",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/amber-skin",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Amber Skin",
+      "aliases": [],
+      "manufacturerCode": "WP3160P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#a48467",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/amulet-aqua",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Amulet Aqua",
+      "aliases": [],
+      "manufacturerCode": "WP3048P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#57a38b",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/ancient-stone",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Ancient Stone",
+      "aliases": [],
+      "manufacturerCode": "WP3088P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#b0a482",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/angel-green",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Angel Green",
+      "aliases": [],
+      "manufacturerCode": "WP3049P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#1b3627",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/angelic-red",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Angelic Red",
+      "aliases": [],
+      "manufacturerCode": "WP3104P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#b3262e",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/aqua-alchemy",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Aqua Alchemy",
+      "aliases": [],
+      "manufacturerCode": "WP3047P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#1f977b",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/aquamarine",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Aquamarine",
+      "aliases": [],
+      "manufacturerCode": "WP3040P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#47a29c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/arctic-gem",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Arctic Gem",
+      "aliases": [],
+      "manufacturerCode": "WP3029P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#177ba3",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/army-green",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Army Green",
+      "aliases": [],
+      "manufacturerCode": "WP3068P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#516443",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/ash-grey",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Ash Grey",
+      "aliases": [],
+      "manufacturerCode": "WP3004P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#737370",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/augur-blue",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Augur Blue",
+      "aliases": [],
+      "manufacturerCode": "WP3024P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#93a0b2",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/autumn-sage",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Autumn Sage",
+      "aliases": [],
+      "manufacturerCode": "WP3064P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#638f77",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/barbarian-flesh",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Barbarian Flesh",
+      "aliases": [],
+      "manufacturerCode": "WP3147P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#d18166",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/baron-blue",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Baron Blue",
+      "aliases": [],
+      "manufacturerCode": "WP3023P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#697c9f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/barren-dune",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Barren Dune",
+      "aliases": [],
+      "manufacturerCode": "WP3084P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#b49858",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/basilisk-red",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Basilisk Red",
+      "aliases": [],
+      "manufacturerCode": "WP3115P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#612431",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/blood-chalice",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Blood Chalice",
+      "aliases": [],
+      "manufacturerCode": "WP3119P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#b33d3e",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/blue-tone",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Blue Tone",
+      "aliases": [],
+      "manufacturerCode": "WP3210P",
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#243d53",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/bony-spikes",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Bony Spikes",
+      "aliases": [],
+      "manufacturerCode": "WP3089P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#c9b294",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/bootstrap-brown",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Bootstrap Brown",
+      "aliases": [],
+      "manufacturerCode": "WP3074P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#524441",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/brainmatter-beige",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Brainmatter Beige",
+      "aliases": [],
+      "manufacturerCode": "WP3011P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#bab5a3",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/brigade-grey",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Brigade Grey",
+      "aliases": [],
+      "manufacturerCode": "WP3006P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#ada9a3",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/brigandine-brown",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Brigandine Brown",
+      "aliases": [],
+      "manufacturerCode": "WP3073P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#231717",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/bright-gold",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Bright Gold",
+      "aliases": [],
+      "manufacturerCode": "WP3189P",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#d6c124",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/bright-sapphire",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Bright Sapphire",
+      "aliases": [],
+      "manufacturerCode": "WP3030P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#71a7ba",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/buffed-hide",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Buffed Hide",
+      "aliases": [],
+      "manufacturerCode": "WP3114P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#956253",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/burning-ore",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Burning Ore",
+      "aliases": [],
+      "manufacturerCode": "WP3098P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#ca5531",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/burnt-turf",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Burnt Turf",
+      "aliases": [],
+      "manufacturerCode": "WP3083P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#a18047",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/camouflage-green",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Camouflage Green",
+      "aliases": [],
+      "manufacturerCode": "WP3069P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#5c6b45",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/carnelian-skin",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Carnelian Skin",
+      "aliases": [],
+      "manufacturerCode": "WP3151P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#523739",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/cobalt-metal",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Cobalt Metal",
+      "aliases": [],
+      "manufacturerCode": "WP3194P",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#2c4240",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/command-khaki",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Command Khaki",
+      "aliases": [],
+      "manufacturerCode": "WP3077P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#95796a",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/company-grey",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Company Grey",
+      "aliases": [],
+      "manufacturerCode": "WP3005P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#9a9a95",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/crystal-blue",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Crystal Blue",
+      "aliases": [],
+      "manufacturerCode": "WP3028P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#096293",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/cultist-purple",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Cultist Purple",
+      "aliases": [],
+      "manufacturerCode": "WP3129P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#5d5487",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/daemonic-yellow",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Daemonic Yellow",
+      "aliases": [],
+      "manufacturerCode": "WP3093P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#d5a822",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/dark-blue-tone",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Dark Blue Tone",
+      "aliases": [],
+      "manufacturerCode": "WP3211P",
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#1f2732",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/dark-emerald",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Dark Emerald",
+      "aliases": [],
+      "manufacturerCode": "WP3196P",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#374315",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/dark-red-tone",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Dark Red Tone",
+      "aliases": [],
+      "manufacturerCode": "WP3205P",
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#281517",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/dark-rust",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Dark Rust",
+      "aliases": [],
+      "manufacturerCode": "WP3166P",
+      "type": "technical",
+      "metallic": false,
+      "color": {
+        "hex": "#180b09",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/dark-skin-shade",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Dark Skin Shade",
+      "aliases": [],
+      "manufacturerCode": "WP3215P",
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#322625",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/dark-tone",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Dark Tone",
+      "aliases": [],
+      "manufacturerCode": "WP3199P",
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#242321",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/data-system-glow",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Data System Glow",
+      "aliases": [],
+      "manufacturerCode": "WP3177P",
+      "type": "technical",
+      "metallic": false,
+      "color": {
+        "hex": "#5f8446",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/death-metal",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Death Metal",
+      "aliases": [],
+      "manufacturerCode": "WP3195P",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#484230",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/deep-azure",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Deep Azure",
+      "aliases": [],
+      "manufacturerCode": "WP3037P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#07585e",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/deep-grey",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Deep Grey",
+      "aliases": [],
+      "manufacturerCode": "WP3002P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#434751",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/deep-ocean-blue",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Deep Ocean Blue",
+      "aliases": [],
+      "manufacturerCode": "WP3031P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#1b2a36",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/demigod-flames",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Demigod Flames",
+      "aliases": [],
+      "manufacturerCode": "WP3091P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#aa6434",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/desert-yellow",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Desert Yellow",
+      "aliases": [],
+      "manufacturerCode": "WP3081P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#6c5c37",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/diabolic-plum",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Diabolic Plum",
+      "aliases": [],
+      "manufacturerCode": "WP3133P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#4a2859",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/disgusting-slime",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Disgusting Slime",
+      "aliases": [],
+      "manufacturerCode": "WP3163P",
+      "type": "technical",
+      "metallic": false,
+      "color": {
+        "hex": "#6f8425",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/diviner-light",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Diviner Light",
+      "aliases": [],
+      "manufacturerCode": "WP3138P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#b0839b",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/doomfire-drab",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Doomfire Drab",
+      "aliases": [],
+      "manufacturerCode": "WP3126P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#d2b4b5",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/dorado-skin",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Dorado Skin",
+      "aliases": [],
+      "manufacturerCode": "WP3161P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#c5a47a",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/dragon-red",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Dragon Red",
+      "aliases": [],
+      "manufacturerCode": "WP3117P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#a2262f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/dry-blood",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Dry Blood",
+      "aliases": [],
+      "manufacturerCode": "WP3164P",
+      "type": "technical",
+      "metallic": false,
+      "color": {
+        "hex": "#1a0609",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/dryad-brown",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Dryad Brown",
+      "aliases": [],
+      "manufacturerCode": "WP3111P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#553129",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/dusty-skull",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Dusty Skull",
+      "aliases": [],
+      "manufacturerCode": "WP3085P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#756753",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/elder-flower",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Elder Flower",
+      "aliases": [],
+      "manufacturerCode": "WP3141P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#8d4a61",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/electric-lime",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Electric Lime",
+      "aliases": [],
+      "manufacturerCode": "WP3058P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#9bab26",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/emerald-forest",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Emerald Forest",
+      "aliases": [],
+      "manufacturerCode": "WP3055P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#4a953a",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/enchanted-pink",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Enchanted Pink",
+      "aliases": [],
+      "manufacturerCode": "WP3137P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#965a82",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/eternal-hunt",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Eternal Hunt",
+      "aliases": [],
+      "manufacturerCode": "WP3052P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#24793a",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/evergreen-fog",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Evergreen Fog",
+      "aliases": [],
+      "manufacturerCode": "WP3061P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#34544b",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/evil-chrome",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Evil Chrome",
+      "aliases": [],
+      "manufacturerCode": "WP3185P",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#b15633",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/ferocious-green",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Ferocious Green",
+      "aliases": [],
+      "manufacturerCode": "WP3054P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#65a25f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/fiendish-yellow",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Fiendish Yellow",
+      "aliases": [],
+      "manufacturerCode": "WP3092P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#c27d38",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/figgy-pink",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Figgy Pink",
+      "aliases": [],
+      "manufacturerCode": "WP3143P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#c1919b",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/flickering-flame",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Flickering Flame",
+      "aliases": [],
+      "manufacturerCode": "WP3100P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#d07532",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/forbidden-fruit",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Forbidden Fruit",
+      "aliases": [],
+      "manufacturerCode": "WP3142P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#ac7281",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/forest-faun",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Forest Faun",
+      "aliases": [],
+      "manufacturerCode": "WP3065P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#86a587",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/fresh-rust",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Fresh Rust",
+      "aliases": [],
+      "manufacturerCode": "WP3167P",
+      "type": "technical",
+      "metallic": false,
+      "color": {
+        "hex": "#7d351a",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/frost-blue",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Frost Blue",
+      "aliases": [],
+      "manufacturerCode": "WP3018P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#819caa",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/fur-brown",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Fur Brown",
+      "aliases": [],
+      "manufacturerCode": "WP3112P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#663b37",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/gargoyle-grey",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Gargoyle Grey",
+      "aliases": [],
+      "manufacturerCode": "WP3008P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#8c8573",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/gemstone-red",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Gemstone Red",
+      "aliases": [],
+      "manufacturerCode": "WP3198P",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#491516",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/glittering-green",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Glittering Green",
+      "aliases": [],
+      "manufacturerCode": "WP3197P",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#0c521d",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/glowing-inferno",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Glowing Inferno",
+      "aliases": [],
+      "manufacturerCode": "WP3101P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#d18236",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/gothic-blue",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Gothic Blue",
+      "aliases": [],
+      "manufacturerCode": "WP3020P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#28365d",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/great-hall-grey",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Great Hall Grey",
+      "aliases": [],
+      "manufacturerCode": "WP3009P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#9c9682",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/greedy-gold",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Greedy Gold",
+      "aliases": [],
+      "manufacturerCode": "WP3188P",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#d8a225",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/green-tone",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Green Tone",
+      "aliases": [],
+      "manufacturerCode": "WP3208P",
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#233724",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/greenskin",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Greenskin",
+      "aliases": [],
+      "manufacturerCode": "WP3051P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#1d6437",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/grey-castle",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Grey Castle",
+      "aliases": [],
+      "manufacturerCode": "WP3007P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#787568",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/grotesque-green",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Grotesque Green",
+      "aliases": [],
+      "manufacturerCode": "WP3072P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#94a07a",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/guardian-green",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Guardian Green",
+      "aliases": [],
+      "manufacturerCode": "WP3050P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#21543c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/gun-metal",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Gun Metal",
+      "aliases": [],
+      "manufacturerCode": "WP3193P",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#7f8080",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/hexed-violet",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Hexed Violet",
+      "aliases": [],
+      "manufacturerCode": "WP3130P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#5c5272",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/hydra-turquoise",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Hydra Turquoise",
+      "aliases": [],
+      "manufacturerCode": "WP3038P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#167b77",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/ice-yellow",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Ice Yellow",
+      "aliases": [],
+      "manufacturerCode": "WP3096P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#d5c588",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/imperial-navy",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Imperial Navy",
+      "aliases": [],
+      "manufacturerCode": "WP3025P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#0b2c4c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/impish-rouge",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Impish Rouge",
+      "aliases": [],
+      "manufacturerCode": "WP3122P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#b4487a",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/inner-light",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Inner Light",
+      "aliases": [],
+      "manufacturerCode": "WP3102P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#d3a54b",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/jasper-skin",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Jasper Skin",
+      "aliases": [],
+      "manufacturerCode": "WP3154P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#9a605a",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/kraken-lavender",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Kraken Lavender",
+      "aliases": [],
+      "manufacturerCode": "WP3132P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#b3a7b1",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/lava-orange",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Lava Orange",
+      "aliases": [],
+      "manufacturerCode": "WP3099P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#cb6422",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/leafy-green",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Leafy Green",
+      "aliases": [],
+      "manufacturerCode": "WP3056P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#639c35",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/leather-brown",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Leather Brown",
+      "aliases": [],
+      "manufacturerCode": "WP3075P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#684d42",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/legendary-red",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Legendary Red",
+      "aliases": [],
+      "manufacturerCode": "WP3105P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#c83f32",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/lens-flare-glow",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Lens Flare Glow",
+      "aliases": [],
+      "manufacturerCode": "WP3178P",
+      "type": "technical",
+      "metallic": false,
+      "color": {
+        "hex": "#a8a142",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/leopard-stone-skin",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Leopard Stone Skin",
+      "aliases": [],
+      "manufacturerCode": "WP3156P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#c09589",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/light-tone",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Light Tone",
+      "aliases": [],
+      "manufacturerCode": "WP3202P",
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#815416",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/magecast-magenta",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Magecast Magenta",
+      "aliases": [],
+      "manufacturerCode": "WP3134P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#5f3677",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/magenta-tone",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Magenta Tone",
+      "aliases": [],
+      "manufacturerCode": "WP3213P",
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#760941",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/marine-mist",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Marine Mist",
+      "aliases": [],
+      "manufacturerCode": "WP3042P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#7caba1",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/matt-black",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Matt Black",
+      "aliases": [],
+      "manufacturerCode": "WP3001P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#070706",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/matt-white",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Matt White",
+      "aliases": [],
+      "manufacturerCode": "WP3012P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#d7d3c7",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/medieval-forest",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Medieval Forest",
+      "aliases": [],
+      "manufacturerCode": "WP3062P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#3b6756",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/military-shade",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Military Shade",
+      "aliases": [],
+      "manufacturerCode": "WP3209P",
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#30331a",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/mithril",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Mithril",
+      "aliases": [],
+      "manufacturerCode": "WP3190P",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#c5c0b5",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/mocca-skin",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Mocca Skin",
+      "aliases": [],
+      "manufacturerCode": "WP3159P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#6d5548",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/moldy-wine",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Moldy Wine",
+      "aliases": [],
+      "manufacturerCode": "WP3140P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#682c3c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/molten-lava",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Molten Lava",
+      "aliases": [],
+      "manufacturerCode": "WP3097P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#c84b32",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/moonstone-skin",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Moonstone Skin",
+      "aliases": [],
+      "manufacturerCode": "WP3145P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#a3655a",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/mossy-green",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Mossy Green",
+      "aliases": [],
+      "manufacturerCode": "WP3066P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#94b597",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/mulled-berry",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Mulled Berry",
+      "aliases": [],
+      "manufacturerCode": "WP3139P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#542c39",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/necrotic-flesh",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Necrotic Flesh",
+      "aliases": [],
+      "manufacturerCode": "WP3071P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#818a66",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/neptune-glow",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Neptune Glow",
+      "aliases": [],
+      "manufacturerCode": "WP3041P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#66a7a3",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/night-sky",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Night Sky",
+      "aliases": [],
+      "manufacturerCode": "WP3013P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#2a3a48",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/oak-brown",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Oak Brown",
+      "aliases": [],
+      "manufacturerCode": "WP3109P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#342424",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/obsidian-skin",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Obsidian Skin",
+      "aliases": [],
+      "manufacturerCode": "WP3157P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#3f3636",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/oil-stains",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Oil Stains",
+      "aliases": [],
+      "manufacturerCode": "WP3169P",
+      "type": "technical",
+      "metallic": false,
+      "color": {
+        "hex": "#111616",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/olive-drab",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Olive Drab",
+      "aliases": [],
+      "manufacturerCode": "WP3070P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#65754a",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/onyx-skin",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Onyx Skin",
+      "aliases": [],
+      "manufacturerCode": "WP3158P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#56413b",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/oozing-vomit",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Oozing Vomit",
+      "aliases": [],
+      "manufacturerCode": "WP3170P",
+      "type": "technical",
+      "metallic": false,
+      "color": {
+        "hex": "#624e19",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/opal-skin",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Opal Skin",
+      "aliases": [],
+      "manufacturerCode": "WP3149P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#d1ad98",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/orange-tone",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Orange Tone",
+      "aliases": [],
+      "manufacturerCode": "WP3207P",
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#723516",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/pale-sand",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Pale Sand",
+      "aliases": [],
+      "manufacturerCode": "WP3090P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#c8c1a5",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/paratrooper-tan",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Paratrooper Tan",
+      "aliases": [],
+      "manufacturerCode": "WP3076P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#816357",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/patagon-pine",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Patagon Pine",
+      "aliases": [],
+      "manufacturerCode": "WP3063P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#537964",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/pearl-skin",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Pearl Skin",
+      "aliases": [],
+      "manufacturerCode": "WP3150P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#d2baa7",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/phalanx-blue",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Phalanx Blue",
+      "aliases": [],
+      "manufacturerCode": "WP3034P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#0d7288",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/pharaoh-guard",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Pharaoh Guard",
+      "aliases": [],
+      "manufacturerCode": "WP3045P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#0c664c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/pink-potion",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Pink Potion",
+      "aliases": [],
+      "manufacturerCode": "WP3125P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#a27982",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/pixie-pink",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Pixie Pink",
+      "aliases": [],
+      "manufacturerCode": "WP3123P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#8b4766",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/plasma-coil-glow",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Plasma Coil Glow",
+      "aliases": [],
+      "manufacturerCode": "WP3176P",
+      "type": "technical",
+      "metallic": false,
+      "color": {
+        "hex": "#338297",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/plate-mail-metal",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Plate Mail Metal",
+      "aliases": [],
+      "manufacturerCode": "WP3192P",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#a6a5a0",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/power-node-glow",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Power Node Glow",
+      "aliases": [],
+      "manufacturerCode": "WP3180P",
+      "type": "technical",
+      "metallic": false,
+      "color": {
+        "hex": "#a15671",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/prairie-ochre",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Prairie Ochre",
+      "aliases": [],
+      "manufacturerCode": "WP3080P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#595436",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/pure-red",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Pure Red",
+      "aliases": [],
+      "manufacturerCode": "WP3118P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#aa1619",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/purple-tone",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Purple Tone",
+      "aliases": [],
+      "manufacturerCode": "WP3212P",
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#36283d",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/quartz-skin",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Quartz Skin",
+      "aliases": [],
+      "manufacturerCode": "WP3162P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#c8a988",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/radiation-glow",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Radiation Glow",
+      "aliases": [],
+      "manufacturerCode": "WP3179P",
+      "type": "technical",
+      "metallic": false,
+      "color": {
+        "hex": "#a47548",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/raging-rose",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Raging Rose",
+      "aliases": [],
+      "manufacturerCode": "WP3120P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#c2554c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/raging-rouge",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Raging Rouge",
+      "aliases": [],
+      "manufacturerCode": "WP3108P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#ca7564",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/rainforest",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Rainforest",
+      "aliases": [],
+      "manufacturerCode": "WP3057P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#77a433",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/red-copper",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Red Copper",
+      "aliases": [],
+      "manufacturerCode": "WP3182P",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#7d4037",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/red-tone",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Red Tone",
+      "aliases": [],
+      "manufacturerCode": "WP3206P",
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#532126",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/regal-blue",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Regal Blue",
+      "aliases": [],
+      "manufacturerCode": "WP3026P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#09436b",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/resplendent-red",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Resplendent Red",
+      "aliases": [],
+      "manufacturerCode": "WP3103P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#822526",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/rough-iron",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Rough Iron",
+      "aliases": [],
+      "manufacturerCode": "WP3181P",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#2d241c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/royal-blue",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Royal Blue",
+      "aliases": [],
+      "manufacturerCode": "WP3027P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#095289",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/ruby-skin",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Ruby Skin",
+      "aliases": [],
+      "manufacturerCode": "WP3148P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#d0977b",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/ruddy-umber",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Ruddy Umber",
+      "aliases": [],
+      "manufacturerCode": "WP3113P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#73463b",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/runic-cobalt",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Runic Cobalt",
+      "aliases": [],
+      "manufacturerCode": "WP3017P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#627987",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/rust-tone",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Rust Tone",
+      "aliases": [],
+      "manufacturerCode": "WP3204P",
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#4e3219",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/sacred-scarlet",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Sacred Scarlet",
+      "aliases": [],
+      "manufacturerCode": "WP3106P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#c7513c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/scarab-green",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Scarab Green",
+      "aliases": [],
+      "manufacturerCode": "WP3043P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#1b3437",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/sepia-tone",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Sepia Tone",
+      "aliases": [],
+      "manufacturerCode": "WP3203P",
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#744219",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/shieldwall-blue",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Shieldwall Blue",
+      "aliases": [],
+      "manufacturerCode": "WP3035P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#0a859b",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/shining-silver",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Shining Silver",
+      "aliases": [],
+      "manufacturerCode": "WP3191P",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#a5a49f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/skeleton-bone",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Skeleton Bone",
+      "aliases": [],
+      "manufacturerCode": "WP3087P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#a19473",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/soft-tone",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Soft Tone",
+      "aliases": [],
+      "manufacturerCode": "WP3201P",
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#523e2a",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/space-dust",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Space Dust",
+      "aliases": [],
+      "manufacturerCode": "WP3095P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#d3bb67",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/spellbound-fuchsia",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Spellbound Fuchsia",
+      "aliases": [],
+      "manufacturerCode": "WP3136P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#93447c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/stratos-blue",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Stratos Blue",
+      "aliases": [],
+      "manufacturerCode": "WP3015P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#2b546e",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/strong-skin-shade",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Strong Skin Shade",
+      "aliases": [],
+      "manufacturerCode": "WP3214P",
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#37231f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/strong-tone",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Strong Tone",
+      "aliases": [],
+      "manufacturerCode": "WP3200P",
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#2b2117",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/tainted-gold",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Tainted Gold",
+      "aliases": [],
+      "manufacturerCode": "WP3187P",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#a5914d",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/talisman-teal",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Talisman Teal",
+      "aliases": [],
+      "manufacturerCode": "WP3046P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#139372",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/temple-gate-teal",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Temple Gate Teal",
+      "aliases": [],
+      "manufacturerCode": "WP3044P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#0c5242",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/terrestrial-titan",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Terrestrial Titan",
+      "aliases": [],
+      "manufacturerCode": "WP3127P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#282637",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/thunderous-blue",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Thunderous Blue",
+      "aliases": [],
+      "manufacturerCode": "WP3014P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#314b62",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/tidal-blue",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Tidal Blue",
+      "aliases": [],
+      "manufacturerCode": "WP3033P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#0a5a74",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/tigers-eye-skin",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Tiger's Eye Skin",
+      "aliases": [],
+      "manufacturerCode": "WP3152P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#7b4342",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/tomb-king-tan",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Tomb King Tan",
+      "aliases": [],
+      "manufacturerCode": "WP3086P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#86775c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/topaz-skin",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Topaz Skin",
+      "aliases": [],
+      "manufacturerCode": "WP3153P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#974c43",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/tourmaline-skin",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Tourmaline Skin",
+      "aliases": [],
+      "manufacturerCode": "WP3155P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#c18371",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/tree-ancient",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Tree Ancient",
+      "aliases": [],
+      "manufacturerCode": "WP3110P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#432e28",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/triumphant-navy",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Triumphant Navy",
+      "aliases": [],
+      "manufacturerCode": "WP3019P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#1a2745",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/true-blood",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "True Blood",
+      "aliases": [],
+      "manufacturerCode": "WP3165P",
+      "type": "technical",
+      "metallic": false,
+      "color": {
+        "hex": "#5b0916",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/true-brass",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "True Brass",
+      "aliases": [],
+      "manufacturerCode": "WP3186P",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#c4b48e",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/true-copper",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "True Copper",
+      "aliases": [],
+      "manufacturerCode": "WP3184P",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#c67140",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/tundra-taupe",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Tundra Taupe",
+      "aliases": [],
+      "manufacturerCode": "WP3079P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#434534",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/turquoise-siren",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Turquoise Siren",
+      "aliases": [],
+      "manufacturerCode": "WP3039P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#249692",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/ultramarine-blue",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Ultramarine Blue",
+      "aliases": [],
+      "manufacturerCode": "WP3021P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#264473",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/uniform-grey",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Uniform Grey",
+      "aliases": [],
+      "manufacturerCode": "WP3003P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#5a5d60",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/urban-buff",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Urban Buff",
+      "aliases": [],
+      "manufacturerCode": "WP3078P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#b69883",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/verdigris",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Verdigris",
+      "aliases": [],
+      "manufacturerCode": "WP3168P",
+      "type": "technical",
+      "metallic": false,
+      "color": {
+        "hex": "#417961",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/violent-vermilion",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Violent Vermilion",
+      "aliases": [],
+      "manufacturerCode": "WP3107P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#c8634c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/violet-coven",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Violet Coven",
+      "aliases": [],
+      "manufacturerCode": "WP3131P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#72667e",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/vivid-volt",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Vivid Volt",
+      "aliases": [],
+      "manufacturerCode": "WP3059P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#abb43e",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/warlock-magenta",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Warlock Magenta",
+      "aliases": [],
+      "manufacturerCode": "WP3135P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#74437e",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/warped-yellow",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Warped Yellow",
+      "aliases": [],
+      "manufacturerCode": "WP3094P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#d3ad39",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/wasteland-clay",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Wasteland Clay",
+      "aliases": [],
+      "manufacturerCode": "WP3082P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#897143",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/weapon-bronze",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Weapon Bronze",
+      "aliases": [],
+      "manufacturerCode": "WP3183P",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#d6700a",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/weird-elixir",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Weird Elixir",
+      "aliases": [],
+      "manufacturerCode": "WP3124P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#956076",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/wicked-pink",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Wicked Pink",
+      "aliases": [],
+      "manufacturerCode": "WP3121P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#aa0c66",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/wild-green",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Wild Green",
+      "aliases": [],
+      "manufacturerCode": "WP3053P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#3b9644",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/wilted-rose",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Wilted Rose",
+      "aliases": [],
+      "manufacturerCode": "WP3144P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#c5a3a8",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/wolf-grey",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Wolf Grey",
+      "aliases": [],
+      "manufacturerCode": "WP3016P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#466781",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/woodland-camo",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Woodland Camo",
+      "aliases": [],
+      "manufacturerCode": "WP3067P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#41503b",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/worn-stone",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Worn Stone",
+      "aliases": [],
+      "manufacturerCode": "WP3010P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#a09d87",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints-fanatic/wyvern-fury",
+      "rangeId": "the-army-painter/warpaints-fanatic",
+      "name": "Wyvern Fury",
+      "aliases": [],
+      "manufacturerCode": "WP3116P",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#832c36",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
       },
       "status": {
         "kind": "active"
