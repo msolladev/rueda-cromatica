@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 1,
-    "dataVersion": "sha256:57f98d12e4ff2da493c14a84fbf2b991de3f741d2f3183a166c3be134b68caf7"
+    "dataVersion": "sha256:1dc05c8287e1c043faf556a4f41964b6efe29f741ec75894b8725ce652325e47"
   },
   "sources": [
     {
@@ -6627,7 +6627,9 @@
       "id": "the-army-painter/warpaints-fanatic/bony-spikes",
       "rangeId": "the-army-painter/warpaints-fanatic",
       "name": "Bony Spikes",
-      "aliases": [],
+      "aliases": [
+        "Boney Spikes"
+      ],
       "manufacturerCode": "WP3089P",
       "type": "standard",
       "metallic": false,
@@ -9279,7 +9281,9 @@
       "id": "the-army-painter/warpaints-fanatic/tigers-eye-skin",
       "rangeId": "the-army-painter/warpaints-fanatic",
       "name": "Tiger's Eye Skin",
-      "aliases": [],
+      "aliases": [
+        "Tigers Eye Skin"
+      ],
       "manufacturerCode": "WP3152P",
       "type": "standard",
       "metallic": false,
