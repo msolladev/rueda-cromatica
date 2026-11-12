@@ -1,5 +1,16 @@
 [
   {
+    "id": "donnervs-miniature-paints",
+    "kind": "third-party",
+    "title": "Name, Set, RGB, and Hex values of Miniature Paints",
+    "publisher": "DonnervS",
+    "url": "https://github.com/DonnervS/miniature-paints/tree/7097a03e4fe2cf9b815a5a5a4eab85478a14737b",
+    "archiveUrl": null,
+    "retrievedAt": "2026-11-13",
+    "license": "MIT",
+    "attribution": "DonnervS/miniature-paints, based on Arcturus5404/miniature-paints (MIT, © 2022 Rick Fleuren)"
+  },
+  {
     "id": "simogecko-citadel-colours",
     "kind": "third-party",
     "title": "Citadel Official Colours Table",
