@@ -4517,8 +4517,8 @@
     {
       "id": "citadel/technical/nurgles-rot",
       "rangeId": "citadel/technical",
-      "name": "Nurgles Rot",
-      "aliases": [],
+      "name": "Nurgle's Rot",
+      "aliases": ["Nurgles Rot"],
       "manufacturerCode": null,
       "type": "technical",
       "metallic": false,

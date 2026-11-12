@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 1,
-    "dataVersion": "sha256:8ba87571a23c80b2dc4014db642600a0fc3e1d93c10156b990fe00400e80646e"
+    "dataVersion": "sha256:8f3d53b62bc7399b487a58afe79d8e4e868a119338edfa81a73be5690cbb1895"
   },
   "sources": [
     {
@@ -4538,8 +4538,10 @@
     {
       "id": "citadel/technical/nurgles-rot",
       "rangeId": "citadel/technical",
-      "name": "Nurgles Rot",
-      "aliases": [],
+      "name": "Nurgle's Rot",
+      "aliases": [
+        "Nurgles Rot"
+      ],
       "manufacturerCode": null,
       "type": "technical",
       "metallic": false,
