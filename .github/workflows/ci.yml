@@ -29,5 +29,6 @@ jobs:
       - run: pnpm lint
       - run: pnpm typecheck
       - run: pnpm test
-      # TODO: generar catalog.json y fallar si difiere del versionado (ADR-0011, paso 4) cuando exista el builder.
+      # Paso 4 (ADR-0011): regenera catalog.json y falla si difiere del versionado.
+      - run: pnpm --filter @rueda-cromatica/catalog-builder build-catalog --check
       - run: pnpm --filter @rueda-cromatica/web build

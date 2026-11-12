@@ -4,8 +4,13 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "build-catalog": "node src/cli/build-catalog.ts",
     "typecheck": "tsc",
-    "test": "vitest run --passWithNoTests"
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@rueda-cromatica/domain": "workspace:*",
+    "zod": "catalog:"
   },
   "devDependencies": {
     "@types/node": "catalog:",

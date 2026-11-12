@@ -253,6 +253,13 @@ importers:
         version: 7.4.1
 
   packages/catalog-builder:
+    dependencies:
+      '@rueda-cromatica/domain':
+        specifier: workspace:*
+        version: link:../domain
+      zod:
+        specifier: 'catalog:'
+        version: 4.6.7
     devDependencies:
       '@types/node':
         specifier: 'catalog:'
