@@ -179,7 +179,7 @@ La terna `(from, to, sourceId)` es única.
 
 ### `dataVersion`
 
-- Es `sha256:` seguido del hash de la serialización canónica de todo el fichero salvo `meta`. Lo calcula el builder con `node:crypto`, sin dependencias externas.
+- Es `sha256:` seguido del hash de la serialización canónica de todo el fichero salvo `meta`: el JSON compacto, sin indentación ni saltos de línea, con las claves en el orden de este documento. Lo calcula el builder con `node:crypto`, sin dependencias externas.
 - Se usa para mostrar la versión de los datos en la interfaz, para trazabilidad y en el test de estabilidad.
 - **No** lo usa el service worker (ver la sección siguiente).
 

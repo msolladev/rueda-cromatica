@@ -1,6 +1,6 @@
 # ADR-0001: Identificadores de pintura legibles y congelados
 
-- **Estado:** aceptada
+- **Estado:** aceptada; aplazada en parte por ADR-0019
 - **Fecha:** 2026-10-31
 
 ## Contexto

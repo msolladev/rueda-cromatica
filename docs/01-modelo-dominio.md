@@ -68,7 +68,7 @@ Cada color guarda tres cosas: el hex sRGB, su origen y la fuente. Los orígenes 
 - `manufacturer`: hex publicado por el fabricante.
 - `community`: cualquier otro, incluidos los hex sacados de fotos y por scraping.
 
-Cada pintura tiene un único color. Lo elige el builder entre los candidatos de los datos curados, por prioridad `measured` > `manufacturer` > `community` ([04-datos-curados.md](04-datos-curados.md)). Si ninguna fuente aporta un hex, el color es `null`: la pintura sigue apareciendo en el catálogo y en las equivalencias oficiales, pero no en la rueda ni en las equivalencias calculadas ([ADR-0014](adr/0014-origen-seleccion-color.md)).
+Cada pintura tiene un único color, que se fija al importar sus datos ([04-datos-curados.md](04-datos-curados.md)). Elegir entre varios candidatos por prioridad `measured` > `manufacturer` > `community` está aplazado ([ADR-0019](adr/0019-alcance-minimo-mvp.md)). Si ninguna fuente aporta un hex, el color es `null`: la pintura sigue apareciendo en el catálogo y en las equivalencias oficiales, pero no en la rueda ni en las equivalencias calculadas ([ADR-0014](adr/0014-origen-seleccion-color.md)).
 
 ### Estado y sustituta (`PaintStatus`, `Replacement`)
 

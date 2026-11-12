@@ -2,8 +2,8 @@
 
 App personal para pintar miniaturas de Warhammer, en forma de PWA. Tiene dos funcionalidades:
 
-1. **Rueda de color** que funciona como una física, con una plantilla giratoria. Genera armonías (complementario, complementario dividido, análogos, tríada y tétrada) y un esquema de miniatura: base, sombra, luz y acento.
-2. **Equivalencias** entre pinturas de distintas marcas, incluidas las gamas descatalogadas.
+1. **Rueda de color** que funciona como una física, con una plantilla giratoria. Genera armonías y un esquema de miniatura: base, sombra, luz y acento.
+2. **Equivalencias** entre pinturas de distintas marcas.
 
 Es un proyecto de aprendizaje del ecosistema Node/TS: prioriza las buenas prácticas sobre los atajos.
 
@@ -27,7 +27,7 @@ El monorepo está montado. `domain` ya tiene el contrato del catálogo (esquema,
 - `packages/catalog-builder`: script Node que importa las fuentes, las normaliza y genera `catalog.json`. Arquitectura hexagonal en sus bordes (disco y red).
 - `apps/web`: React, solo presentación. La lógica vive en el dominio.
 - `docs/`: especificaciones, y `docs/adr/` con los ADR.
-- Futuro, en la fase 5 ([ADR-0017](docs/adr/0017-arquitectura-objetivo-backend.md)):
+- Futuro, en la fase 6 ([ADR-0017](docs/adr/0017-arquitectura-objetivo-backend.md)):
   - `apps/api`: backend REST con base de datos, que expone la instantánea pública del catálogo.
   - `apps/admin`: frontal de mantenimiento del catálogo.
   - `packages/importers`: la importación de fuentes, extraída de `catalog-builder`.
@@ -57,10 +57,10 @@ Desde la raíz. pnpm cambia solo a la versión de `packageManager` y descarga el
 - **Equivalencias oficiales**: aristas dirigidas (origen → destino) con una fuente del fabricante obligatoria. No se infieren ni las inversas ni las transitivas.
 - **Equivalencias calculadas**: CIEDE2000 en el cliente. No se guardan en el JSON.
 - **Color aproximado**: un hex es aproximado si la pintura es metálica, si su tipo es lavado, tinta, veladura, contrast o técnica, o si el hex es de origen comunitario. Se calcula en el dominio; en el JSON solo se guardan el origen y la fuente del hex. No se ofrecen equivalencias calculadas con colores aproximados sin avisar.
-- **Origen del color**: un único hex por pintura, elegido por prioridad `measured` > `manufacturer` > `community`. Los degradados oficiales de Citadel se reducen a su punto medio en CIELAB ([ADR-0014](docs/adr/0014-origen-seleccion-color.md)).
+- **Origen del color**: un único hex por pintura, con su origen (`measured`, `manufacturer` o `community`) y su fuente. Los degradados oficiales de Citadel se reducen a su punto medio en CIELAB ([ADR-0014](docs/adr/0014-origen-seleccion-color.md)). En el MVP cada pintura tiene una sola fuente de color ([ADR-0019](docs/adr/0019-alcance-minimo-mvp.md)).
 - **Sustitución frente a equivalencia**: solo hay sustituta si la fuente del fabricante dice que X sustituye a Y. Las cartas de conversión son equivalencias oficiales.
 - **Sombra**: es una variación de la base (menos luminosa, menos saturada y con un ligero cambio de tono), no el complementario tal cual. El complementario y las tríadas se usan para el secundario y el acento.
-- **Rueda**: devuelve el color teórico y la pintura real más parecida, filtrando por las marcas activas.
+- **Rueda**: calcula en modelo RYB (el de la pintura física) o digital (RGB/HSL), a elección del usuario. Devuelve el color teórico y la pintura real más parecida, filtrando por las marcas activas.
 - **Pintura**:
   - Tipo según su función: base, capa, estándar (opaca sin distinción base/capa), lavado, tinta, veladura, contrast (función de una capa, de cualquier marca), técnica o pincel seco ([ADR-0013](docs/adr/0013-clasificacion-pinturas.md)).
   - Metálica, como atributo independiente del tipo.
@@ -71,11 +71,15 @@ El modelo completo está en [docs/01-modelo-dominio.md](docs/01-modelo-dominio.m
 
 ## Alcance
 
-- **MVP**: rueda con armonías, esquema de miniatura, traducción a pintura real, buscador de equivalencias y funcionamiento offline.
-- **Marcas y líneas del MVP**:
-  - Warhammer Colour, antes Citadel: Base, Layer, Shade, Contrast, Technical y Dry, y las líneas antiguas (Citadel Colour, Foundation, Washes de 2008, tintas, Glaze y Edge).
+El alcance mínimo y lo aplazado están razonados en el [ADR-0019](docs/adr/0019-alcance-minimo-mvp.md).
+
+- **MVP**: la rueda y, para cada uno de sus colores, las pinturas más parecidas de cada marca, con funcionamiento offline.
+  - **Armonías**: complementario, complementario dividido, análogos, análogos con acento, tríada, tétrada rectangular, cuadrado y monocromático, además del esquema de miniatura.
+  - **Equivalencias**: solo las calculadas. Las oficiales están aplazadas a la fase 5.
+- **Marcas y líneas del MVP**, solo las vigentes:
+  - Warhammer Colour, antes Citadel: Base, Layer, Shade, Contrast, Technical y Dry.
   - Vallejo: Model Color y Game Color, con sus subfamilias e incluido Xpress Color.
-  - Army Painter: Warpaints Fanatic, Warpaints originales y Speedpaint 2.0.
+  - Army Painter: Warpaints Fanatic y Speedpaint 2.0.
   - AK: 3rd Gen y Quick Gen.
   - Fuera del catálogo: productos sin color (mediums, barnices, diluyentes).
 - **Futuro** (no implementar sin pedirlo): mi colección, recetas, lista de la compra, cuentagotas sobre foto, sugerencia de lavados, mezclas, Tone Pro, líneas de aerógrafo, Spray, Speedpaint 1.0 y búsqueda por código antiguo.
@@ -86,16 +90,31 @@ El modelo completo está en [docs/01-modelo-dominio.md](docs/01-modelo-dominio.m
 1. **Arquitectura y modelo de datos**: cerrada. Ver docs/01-03 y los ADR 0001-0008.
 2. **Montar el monorepo y la toolchain**, según los ADR 0009-0011: hecho. Falta el paso 4 de la CI (diff de `catalog.json`), que llegará con el builder.
 3. **Investigación de fuentes de datos**: cerrada. Ver el [informe](docs/investigacion/2026-11-fuentes-datos.md), docs/04 y los ADR 0013-0016.
-4. **Builder, importadores y prototipo de la rueda**: es la fase siguiente. Incluye `catalog-builder` con sus importadores y el script `archive-sources`, el paso 4 de la CI y el prototipo de la rueda. Al curar los datos hay que verificar:
+4. **Builder, importadores y prototipo de la rueda**: en curso, con el alcance del [ADR-0019](docs/adr/0019-alcance-minimo-mvp.md). Etapas:
+   1. Contrato del catálogo en `domain`: hecho.
+   2. Builder mínimo según docs/04, con el paso 4 de la CI.
+   3. Datos: una marca desde una sola fuente y después el resto, una por iteración.
+   4. Color en `domain`: los dos modelos de rueda, las armonías, el esquema de miniatura y el ΔE.
+   5. Web: la rueda con su plantilla, el selector de modelo, el filtro de marcas, el aviso de color aproximado y la carga del catálogo.
+
+   Al curar los datos hay que verificar:
    - Si citadelcolour.com da acceso a los hex. Si no, Citadel usa hex `community`.
-   - Si existe una copia fiel de la carta de GW de 2012. Si no, esa carta no entra ([ADR-0015](docs/adr/0015-fuentes-trazabilidad-licencias.md)).
    - El número de referencias de Quick Gen (79+1 según AK y 82 según Paint Vault), contrastado con la página oficial.
    - La retirada de 25 Contrast en 2026. Mientras GW no la confirme, no se marcan como `discontinued`.
    - El reparto en gamas de Vallejo, Army Painter y AK; por ejemplo, si Xpress Color es una gama propia o parte de Game Color. Se aplica la regla de una gama por línea de venta ([ADR-0013](docs/adr/0013-clasificacion-pinturas.md)).
 
-   Los importadores se escriben como funciones puras (fuente → filas), sin acceso a disco dentro de la lógica, para poder reutilizarlos en la fase 5.
+   Los importadores se escriben como funciones puras (fuente → filas), sin acceso a disco dentro de la lógica, para poder reutilizarlos en la fase 6.
 
-5. **Backend, administración del catálogo y sesiones de usuario**, después del MVP ([ADR-0017](docs/adr/0017-arquitectura-objetivo-backend.md)). Incluye:
+5. **Catálogo completo**, aplazado del MVP ([ADR-0019](docs/adr/0019-alcance-minimo-mvp.md)):
+   - Equivalencias oficiales y sustituciones, incluida la carta de GW de 2012 si existe una copia fiel ([ADR-0015](docs/adr/0015-fuentes-trazabilidad-licencias.md)).
+   - Líneas descatalogadas: las antiguas de Citadel (Citadel Colour, Foundation, Washes de 2008, tintas, Glaze y Edge) y los Warpaints originales.
+   - Datos curados en dos capas, con transcripciones literales, claves por documento y exclusiones.
+   - Varios candidatos de color por pintura, con prioridad `measured` > `manufacturer` > `community` y elección manual.
+   - Desactivación de fuentes con su resumen de cambios, y el script `archive-sources` (Wayback Machine y SHA-256).
+
+   Las lápidas y el test de estabilidad de IDs no esperan a esta fase: se implementan antes de la primera publicación.
+
+6. **Backend, administración del catálogo y sesiones de usuario**, la última fase ([ADR-0017](docs/adr/0017-arquitectura-objetivo-backend.md)). Incluye:
    - Una API REST con base de datos y una web de administración del catálogo, con el frontal y el backend separados.
    - Una instantánea pública del catálogo, pedida por versión de esquema, para que la PWA actualice su catálogo local sin volver a desplegarse. De la API, la PWA solo consume esa instantánea y los endpoints de usuario. La API de administración solo la usa `apps/admin`.
    - Cuentas, sesiones y roles (usuario y administrador), gestionados desde `apps/admin`, con los datos del usuario sincronizados entre dispositivos y offline primero.

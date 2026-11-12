@@ -1,6 +1,6 @@
 # ADR-0014: Origen y selección del color
 
-- **Estado:** aceptada
+- **Estado:** aceptada; aplazada en parte por ADR-0019
 - **Fecha:** 2026-11-07
 - **Sustituye a:** [ADR-0003](0003-fiabilidad-color.md)
 
