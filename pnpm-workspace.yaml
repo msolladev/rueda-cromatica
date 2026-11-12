@@ -10,7 +10,9 @@ minimumReleaseAge: 10080
 
 # Versiones compartidas entre paquetes (protocolo `catalog:`).
 catalog:
+  "@types/culori": 4.0.1
   "@types/node": 26.6.6
+  culori: 4.0.2
   typescript: 6.0.3
   vitest: 5.0.5
   zod: 4.6.7

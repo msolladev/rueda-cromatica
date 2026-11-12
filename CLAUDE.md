@@ -24,7 +24,7 @@ Es un proyecto de aprendizaje del ecosistema Node/TS: prioriza las buenas práct
 El monorepo está montado. `domain` ya tiene el contrato del catálogo (esquema, `parseCatalog`, agregado `Catalog` y reglas derivadas) y `catalog-builder` genera `catalog.json`; `apps/web` todavía no tiene lógica. La separación en paquetes, la organización interna por módulos y los patrones están en el [ADR-0018](docs/adr/0018-organizacion-codigo-patrones.md).
 
 - `packages/domain`: TS puro, con el modelo, las armonías, las conversiones, el Delta E (culori) y la validación del catálogo (Zod). Sin dependencias de React ni del navegador.
-- `packages/catalog-builder`: script Node que importa las fuentes, las normaliza y genera `catalog.json`. Arquitectura hexagonal en sus bordes (disco y red).
+- `packages/catalog-builder`: script Node que importa las fuentes, las normaliza (culori para el punto medio de los degradados) y genera `catalog.json`. Arquitectura hexagonal en sus bordes (disco y red).
 - `apps/web`: React, solo presentación. La lógica vive en el dominio.
 - `docs/`: especificaciones, y `docs/adr/` con los ADR.
 - Futuro, en la fase 6 ([ADR-0017](docs/adr/0017-arquitectura-objetivo-backend.md)):
@@ -44,6 +44,7 @@ Desde la raíz. pnpm cambia solo a la versión de `packageManager` y descarga el
 - `pnpm build`: build de `apps/web` (Vite + PWA).
 - `pnpm --filter @rueda-cromatica/web dev`: servidor de desarrollo.
 - `pnpm --filter @rueda-cromatica/catalog-builder build-catalog`: regenera `apps/web/public/catalog.json` a partir de los datos. Con `--check` no escribe nada y falla si el versionado está desactualizado.
+- `pnpm --filter @rueda-cromatica/catalog-builder import-simogecko`: importa Citadel de la tabla de SimoGecko a `data/brands/citadel.json`. Se ejecuta a demanda; después, `pnpm format` y `build-catalog`.
 - `pnpm --filter <paquete> <script>`: ejecuta un script de un paquete concreto.
 
 ## Catálogo
@@ -94,12 +95,11 @@ El alcance mínimo y lo aplazado están razonados en el [ADR-0019](docs/adr/0019
 4. **Builder, importadores y prototipo de la rueda**: en curso, con el alcance del [ADR-0019](docs/adr/0019-alcance-minimo-mvp.md). Etapas:
    1. Contrato del catálogo en `domain`: hecho.
    2. Builder mínimo según docs/04, con el paso 4 de la CI: hecho.
-   3. Datos: una marca desde una sola fuente y después el resto, una por iteración.
+   3. Datos: una marca desde una sola fuente y después el resto, una por iteración. Citadel: hecho, desde la tabla de SimoGecko con hex `community`, porque citadelcolour.com (hoy paint.warhammer.com) no publica los hex.
    4. Color en `domain`: los dos modelos de rueda, las armonías, el esquema de miniatura y el ΔE.
    5. Web: la rueda con su plantilla, el selector de modelo, el filtro de marcas, el aviso de color aproximado y la carga del catálogo.
 
    Al curar los datos hay que verificar:
-   - Si citadelcolour.com da acceso a los hex. Si no, Citadel usa hex `community`.
    - El número de referencias de Quick Gen (79+1 según AK y 82 según Paint Vault), contrastado con la página oficial.
    - La retirada de 25 Contrast en 2026. Mientras GW no la confirme, no se marcan como `discontinued`.
    - El reparto en gamas de Vallejo, Army Painter y AK; por ejemplo, si Xpress Color es una gama propia o parte de Game Color. Se aplica la regla de una gama por línea de venta ([ADR-0013](docs/adr/0013-clasificacion-pinturas.md)).

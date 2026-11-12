@@ -1,0 +1,4654 @@
+{
+  "brand": {
+    "id": "citadel",
+    "name": "Warhammer Colour",
+    "aliases": ["Citadel Colour"]
+  },
+  "ranges": [
+    {
+      "id": "citadel/base",
+      "brandId": "citadel",
+      "name": "Base",
+      "status": "active"
+    },
+    {
+      "id": "citadel/contrast",
+      "brandId": "citadel",
+      "name": "Contrast",
+      "status": "active"
+    },
+    {
+      "id": "citadel/dry",
+      "brandId": "citadel",
+      "name": "Dry",
+      "status": "active"
+    },
+    {
+      "id": "citadel/layer",
+      "brandId": "citadel",
+      "name": "Layer",
+      "status": "active"
+    },
+    {
+      "id": "citadel/shade",
+      "brandId": "citadel",
+      "name": "Shade",
+      "status": "active"
+    },
+    {
+      "id": "citadel/technical",
+      "brandId": "citadel",
+      "name": "Technical",
+      "status": "active"
+    }
+  ],
+  "paints": [
+    {
+      "id": "citadel/base/abaddon-black",
+      "rangeId": "citadel/base",
+      "name": "Abaddon Black",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#000000",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/base/averland-sunset",
+      "rangeId": "citadel/base",
+      "name": "Averland Sunset",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#fbb81c",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/base/balthasar-gold",
+      "rangeId": "citadel/base",
+      "name": "Balthasar Gold",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": true,
+      "color": {
+        "hex": "#846146",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/base/barak-nar-burgundy",
+      "rangeId": "citadel/base",
+      "name": "Barak-Nar Burgundy",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#451636",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/base/bugmans-glow",
+      "rangeId": "citadel/base",
+      "name": "Bugman's Glow",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#804c43",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/base/caledor-sky",
+      "rangeId": "citadel/base",
+      "name": "Caledor Sky",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#366699",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/base/caliban-green",
+      "rangeId": "citadel/base",
+      "name": "Caliban Green",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#003d15",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/base/castellan-green",
+      "rangeId": "citadel/base",
+      "name": "Castellan Green",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#264715",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/base/catachan-flesh",
+      "rangeId": "citadel/base",
+      "name": "Catachan Flesh",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#442b25",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/base/celestra-grey",
+      "rangeId": "citadel/base",
+      "name": "Celestra Grey",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#8ba3a3",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/base/corax-white",
+      "rangeId": "citadel/base",
+      "name": "Corax White",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#ffffff",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/base/corvus-black",
+      "rangeId": "citadel/base",
+      "name": "Corvus Black",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#171314",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/base/daemonette-hide",
+      "rangeId": "citadel/base",
+      "name": "Daemonette Hide",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#655f81",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/base/death-guard-green",
+      "rangeId": "citadel/base",
+      "name": "Death Guard Green",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#6d774d",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/base/death-korps-drab",
+      "rangeId": "citadel/base",
+      "name": "Death Korps Drab",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#3d4539",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/base/deathworld-forest",
+      "rangeId": "citadel/base",
+      "name": "Deathworld Forest",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#556229",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/base/dryad-bark",
+      "rangeId": "citadel/base",
+      "name": "Dryad Bark",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#2b2a24",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/base/gal-vorbak-red",
+      "rangeId": "citadel/base",
+      "name": "Gal Vorbak Red",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#4b213c",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/base/grey-knights-steel",
+      "rangeId": "citadel/base",
+      "name": "Grey Knights Steel",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": true,
+      "color": {
+        "hex": "#9ea8ae",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/base/grey-seer",
+      "rangeId": "citadel/base",
+      "name": "Grey Seer",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#a2a5a7",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/base/hobgrot-hide",
+      "rangeId": "citadel/base",
+      "name": "Hobgrot Hide",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#a1812a",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/base/incubi-darkness",
+      "rangeId": "citadel/base",
+      "name": "Incubi Darkness",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#082e32",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/base/ionrach-skin",
+      "rangeId": "citadel/base",
+      "name": "Ionrach Skin",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#97a384",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/base/iron-hands-steel",
+      "rangeId": "citadel/base",
+      "name": "Iron Hands Steel",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": true,
+      "color": {
+        "hex": "#95938f",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/base/iron-warriors",
+      "rangeId": "citadel/base",
+      "name": "Iron Warriors",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": true,
+      "color": {
+        "hex": "#787776",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/base/jokaero-orange",
+      "rangeId": "citadel/base",
+      "name": "Jokaero Orange",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#ed3814",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/base/kantor-blue",
+      "rangeId": "citadel/base",
+      "name": "Kantor Blue",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#02134e",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/base/khorne-red",
+      "rangeId": "citadel/base",
+      "name": "Khorne Red",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#650001",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/base/leadbelcher",
+      "rangeId": "citadel/base",
+      "name": "Leadbelcher",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": true,
+      "color": {
+        "hex": "#7a7f82",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/base/lupercal-green",
+      "rangeId": "citadel/base",
+      "name": "Lupercal Green",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#002c2b",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/base/macragge-blue",
+      "rangeId": "citadel/base",
+      "name": "Macragge Blue",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#0f3d7c",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/base/mechanicus-standard-grey",
+      "rangeId": "citadel/base",
+      "name": "Mechanicus Standard Grey",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#39484a",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/base/mephiston-red",
+      "rangeId": "citadel/base",
+      "name": "Mephiston Red",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#960c09",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/base/morghast-bone",
+      "rangeId": "citadel/base",
+      "name": "Morghast Bone",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#c0a973",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/base/mournfang-brown",
+      "rangeId": "citadel/base",
+      "name": "Mournfang Brown",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#490f06",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/base/naggaroth-night",
+      "rangeId": "citadel/base",
+      "name": "Naggaroth Night",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#3b2b50",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/base/night-lords-blue",
+      "rangeId": "citadel/base",
+      "name": "Night Lords Blue",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#002b5c",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/base/nocturne-green",
+      "rangeId": "citadel/base",
+      "name": "Nocturne Green",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#162a29",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/base/orruk-flesh",
+      "rangeId": "citadel/base",
+      "name": "Orruk Flesh",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#8cc276",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/base/phoenician-purple",
+      "rangeId": "citadel/base",
+      "name": "Phoenician Purple",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#440052",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/base/rakarth-flesh",
+      "rangeId": "citadel/base",
+      "name": "Rakarth Flesh",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#9c998d",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/base/ratskin-flesh",
+      "rangeId": "citadel/base",
+      "name": "Ratskin Flesh",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#a86648",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/base/retributor-armour",
+      "rangeId": "citadel/base",
+      "name": "Retributor Armour",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": true,
+      "color": {
+        "hex": "#c9a789",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/base/rhinox-hide",
+      "rangeId": "citadel/base",
+      "name": "Rhinox Hide",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#462f30",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/base/runelord-brass",
+      "rangeId": "citadel/base",
+      "name": "Runelord Brass",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": true,
+      "color": {
+        "hex": "#7d746d",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/base/screamer-pink",
+      "rangeId": "citadel/base",
+      "name": "Screamer Pink",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#7a0e44",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/base/screaming-bell",
+      "rangeId": "citadel/base",
+      "name": "Screaming Bell",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": true,
+      "color": {
+        "hex": "#ae8667",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/base/steel-legion-drab",
+      "rangeId": "citadel/base",
+      "name": "Steel Legion Drab",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#584e2d",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/base/stegadon-scale-green",
+      "rangeId": "citadel/base",
+      "name": "Stegadon Scale Green",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#06455d",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/base/the-fang",
+      "rangeId": "citadel/base",
+      "name": "The Fang",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#405b71",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/base/thondia-brown",
+      "rangeId": "citadel/base",
+      "name": "Thondia Brown",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#54302a",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/base/thousand-sons-blue",
+      "rangeId": "citadel/base",
+      "name": "Thousand Sons Blue",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#00506f",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/base/waaagh-flesh",
+      "rangeId": "citadel/base",
+      "name": "Waaagh! Flesh",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#0b3b36",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/base/warplock-bronze",
+      "rangeId": "citadel/base",
+      "name": "Warplock Bronze",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": true,
+      "color": {
+        "hex": "#996253",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/base/wraithbone",
+      "rangeId": "citadel/base",
+      "name": "Wraithbone",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#dbd1b2",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/base/xv-88",
+      "rangeId": "citadel/base",
+      "name": "XV-88",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#6c4811",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/base/zandri-dust",
+      "rangeId": "citadel/base",
+      "name": "Zandri Dust",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#988e56",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/contrast/aeldari-emerald",
+      "rangeId": "citadel/contrast",
+      "name": "Aeldari Emerald",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#017166",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/contrast/aethermatic-blue",
+      "rangeId": "citadel/contrast",
+      "name": "Aethermatic Blue",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#4f94a5",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/contrast/aggaros-dunes",
+      "rangeId": "citadel/contrast",
+      "name": "Aggaros Dunes",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#908351",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/contrast/akhelian-green",
+      "rangeId": "citadel/contrast",
+      "name": "Akhelian Green",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#005e77",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/contrast/apothecary-white",
+      "rangeId": "citadel/contrast",
+      "name": "Apothecary White",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#c2d3e3",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/contrast/asurmen-blue",
+      "rangeId": "citadel/contrast",
+      "name": "Asurmen Blue",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#015993",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/contrast/baal-red",
+      "rangeId": "citadel/contrast",
+      "name": "Baal Red",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#ca1a26",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/contrast/bad-moon-yellow",
+      "rangeId": "citadel/contrast",
+      "name": "Bad Moon Yellow",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#fec710",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/contrast/basilicanum-grey",
+      "rangeId": "citadel/contrast",
+      "name": "Basilicanum Grey",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#4a4a49",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/contrast/black-legion",
+      "rangeId": "citadel/contrast",
+      "name": "Black Legion",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#242425",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/contrast/black-templar",
+      "rangeId": "citadel/contrast",
+      "name": "Black Templar",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#363635",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/contrast/blood-angels-red",
+      "rangeId": "citadel/contrast",
+      "name": "Blood Angels Red",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#9b0e12",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/contrast/briar-queen-chill",
+      "rangeId": "citadel/contrast",
+      "name": "Briar Queen Chill",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#6ca8b9",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/contrast/celestium-blue",
+      "rangeId": "citadel/contrast",
+      "name": "Celestium Blue",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#174a86",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/contrast/creed-camo",
+      "rangeId": "citadel/contrast",
+      "name": "Creed Camo",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#356f45",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/contrast/cygor-brown",
+      "rangeId": "citadel/contrast",
+      "name": "Cygor Brown",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#512a29",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/contrast/dark-angels-green",
+      "rangeId": "citadel/contrast",
+      "name": "Dark Angels Green",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#0e2925",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/contrast/darkoath-flesh",
+      "rangeId": "citadel/contrast",
+      "name": "Darkoath Flesh",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#af756a",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/contrast/doomfire-magenta",
+      "rangeId": "citadel/contrast",
+      "name": "Doomfire Magenta",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#c90077",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/contrast/dreadful-visage",
+      "rangeId": "citadel/contrast",
+      "name": "Dreadful Visage",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#b6a0b6",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/contrast/flesh-tearers-red",
+      "rangeId": "citadel/contrast",
+      "name": "Flesh Tearers Red",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#5f0608",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/contrast/frostheart",
+      "rangeId": "citadel/contrast",
+      "name": "Frostheart",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#005479",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/contrast/fyreslayer-flesh",
+      "rangeId": "citadel/contrast",
+      "name": "Fyreslayer Flesh",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#8c5c4b",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/contrast/garaghaks-sewer",
+      "rangeId": "citadel/contrast",
+      "name": "Garaghak's Sewer",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#6e502a",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/contrast/gore-grunta-fur",
+      "rangeId": "citadel/contrast",
+      "name": "Gore-Grunta Fur",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#723d19",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/contrast/gryph-charger-grey",
+      "rangeId": "citadel/contrast",
+      "name": "Gryph-Charger Grey",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#6189a6",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/contrast/gryph-hound-orange",
+      "rangeId": "citadel/contrast",
+      "name": "Gryph-Hound Orange",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#b1411b",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/contrast/guilliman-flesh",
+      "rangeId": "citadel/contrast",
+      "name": "Guilliman Flesh",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#b46857",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/contrast/gutrippa-flesh",
+      "rangeId": "citadel/contrast",
+      "name": "Gutrippa Flesh",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#588755",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/contrast/hexwraith-flame",
+      "rangeId": "citadel/contrast",
+      "name": "Hexwraith Flame",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#00a237",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/contrast/imperial-fist",
+      "rangeId": "citadel/contrast",
+      "name": "Imperial Fist",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#fbad17",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/contrast/ironjawz-yellow",
+      "rangeId": "citadel/contrast",
+      "name": "Ironjawz Yellow",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#d5a239",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/contrast/iyanden-yellow",
+      "rangeId": "citadel/contrast",
+      "name": "Iyanden Yellow",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#e79a16",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/contrast/karandras-green",
+      "rangeId": "citadel/contrast",
+      "name": "Karandras Green",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#007837",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/contrast/kroxigor-scales",
+      "rangeId": "citadel/contrast",
+      "name": "Kroxigor Scales",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#01798c",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/contrast/leviadon-blue",
+      "rangeId": "citadel/contrast",
+      "name": "Leviadon Blue",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#0e1a2e",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/contrast/leviathan-purple",
+      "rangeId": "citadel/contrast",
+      "name": "Leviathan Purple",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#1b044c",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/contrast/luxion-purple",
+      "rangeId": "citadel/contrast",
+      "name": "Luxion Purple",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#350e60",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/contrast/magmadroth-flame",
+      "rangeId": "citadel/contrast",
+      "name": "Magmadroth Flame",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#e45826",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/contrast/magos-purple",
+      "rangeId": "citadel/contrast",
+      "name": "Magos Purple",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#94648b",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/contrast/mantis-warriors-green",
+      "rangeId": "citadel/contrast",
+      "name": "Mantis Warriors Green",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#5d893c",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/contrast/militarum-green",
+      "rangeId": "citadel/contrast",
+      "name": "Militarum Green",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#7b842c",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/contrast/nazdreg-yellow",
+      "rangeId": "citadel/contrast",
+      "name": "Nazdreg Yellow",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#906602",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/contrast/nighthaunt-gloom",
+      "rangeId": "citadel/contrast",
+      "name": "Nighthaunt Gloom",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#4c838a",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/contrast/ork-flesh",
+      "rangeId": "citadel/contrast",
+      "name": "Ork Flesh",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#006823",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/contrast/plaguebearer-flesh",
+      "rangeId": "citadel/contrast",
+      "name": "Plaguebearer Flesh",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#919b57",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/contrast/pylar-glacier",
+      "rangeId": "citadel/contrast",
+      "name": "Pylar Glacier",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#4fafe5",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/contrast/ratling-grime",
+      "rangeId": "citadel/contrast",
+      "name": "Ratling Grime",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#655f5d",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/contrast/shyish-purple",
+      "rangeId": "citadel/contrast",
+      "name": "Shyish Purple",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#3b2050",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/contrast/sigvald-burgundy",
+      "rangeId": "citadel/contrast",
+      "name": "Sigvald Burgundy",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#6d004e",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/contrast/skeleton-horde",
+      "rangeId": "citadel/contrast",
+      "name": "Skeleton Horde",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#bdb08b",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/contrast/snakebite-leather",
+      "rangeId": "citadel/contrast",
+      "name": "Snakebite Leather",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#835725",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/contrast/space-wolves-grey",
+      "rangeId": "citadel/contrast",
+      "name": "Space Wolves Grey",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#4c698a",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/contrast/stormfiend",
+      "rangeId": "citadel/contrast",
+      "name": "Stormfiend",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#00517d",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/contrast/striking-scorpion-green",
+      "rangeId": "citadel/contrast",
+      "name": "Striking Scorpion Green",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#067e3a",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/contrast/talassar-blue",
+      "rangeId": "citadel/contrast",
+      "name": "Talassar Blue",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#004e8c",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/contrast/terradon-turquoise",
+      "rangeId": "citadel/contrast",
+      "name": "Terradon Turquoise",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#006a79",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/contrast/ultramarines-blue",
+      "rangeId": "citadel/contrast",
+      "name": "Ultramarines Blue",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#122c5d",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/contrast/volupus-pink",
+      "rangeId": "citadel/contrast",
+      "name": "Volupus Pink",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#700129",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/contrast/warp-lightning",
+      "rangeId": "citadel/contrast",
+      "name": "Warp Lightning",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#017134",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/contrast/wyldwood",
+      "rangeId": "citadel/contrast",
+      "name": "Wyldwood",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#513630",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/dry/astorath-red",
+      "rangeId": "citadel/dry",
+      "name": "Astorath Red",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "dry",
+      "metallic": false,
+      "color": {
+        "hex": "#a9311e",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/dry/dawnstone",
+      "rangeId": "citadel/dry",
+      "name": "Dawnstone",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "dry",
+      "metallic": false,
+      "color": {
+        "hex": "#697068",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/dry/eldar-flesh",
+      "rangeId": "citadel/dry",
+      "name": "Eldar Flesh",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "dry",
+      "metallic": false,
+      "color": {
+        "hex": "#e8c07f",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/dry/etherium-blue",
+      "rangeId": "citadel/dry",
+      "name": "Etherium Blue",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "dry",
+      "metallic": false,
+      "color": {
+        "hex": "#9eb5ce",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/dry/golden-griffon",
+      "rangeId": "citadel/dry",
+      "name": "Golden Griffon",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "dry",
+      "metallic": true,
+      "color": {
+        "hex": "#c7af8e",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/dry/golgfag-brown",
+      "rangeId": "citadel/dry",
+      "name": "Golgfag Brown",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "dry",
+      "metallic": false,
+      "color": {
+        "hex": "#8f502a",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/dry/hexos-palesun",
+      "rangeId": "citadel/dry",
+      "name": "Hexos Palesun",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "dry",
+      "metallic": false,
+      "color": {
+        "hex": "#fff55a",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/dry/hoeth-blue",
+      "rangeId": "citadel/dry",
+      "name": "Hoeth Blue",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "dry",
+      "metallic": false,
+      "color": {
+        "hex": "#4c78af",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/dry/imrik-blue",
+      "rangeId": "citadel/dry",
+      "name": "Imrik Blue",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "dry",
+      "metallic": false,
+      "color": {
+        "hex": "#208abf",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/dry/longbeard-grey",
+      "rangeId": "citadel/dry",
+      "name": "Longbeard Grey",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "dry",
+      "metallic": false,
+      "color": {
+        "hex": "#dbdcc6",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/dry/lucius-lilac",
+      "rangeId": "citadel/dry",
+      "name": "Lucius Lilac",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "dry",
+      "metallic": false,
+      "color": {
+        "hex": "#b598c9",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/dry/necron-compound",
+      "rangeId": "citadel/dry",
+      "name": "Necron Compound",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "dry",
+      "metallic": true,
+      "color": {
+        "hex": "#cbced0",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/dry/niblet-green",
+      "rangeId": "citadel/dry",
+      "name": "Niblet Green",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "dry",
+      "metallic": false,
+      "color": {
+        "hex": "#378c35",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/dry/nurgling-green",
+      "rangeId": "citadel/dry",
+      "name": "Nurgling Green",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "dry",
+      "metallic": false,
+      "color": {
+        "hex": "#7e975e",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/dry/praxeti-white",
+      "rangeId": "citadel/dry",
+      "name": "Praxeti White",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "dry",
+      "metallic": false,
+      "color": {
+        "hex": "#ffffff",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/dry/ryza-rust",
+      "rangeId": "citadel/dry",
+      "name": "Ryza Rust",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "dry",
+      "metallic": false,
+      "color": {
+        "hex": "#f16c23",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/dry/sigmarite",
+      "rangeId": "citadel/dry",
+      "name": "Sigmarite",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "dry",
+      "metallic": true,
+      "color": {
+        "hex": "#dea755",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/dry/skink-blue",
+      "rangeId": "citadel/dry",
+      "name": "Skink Blue",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "dry",
+      "metallic": false,
+      "color": {
+        "hex": "#54bdca",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/dry/stormfang",
+      "rangeId": "citadel/dry",
+      "name": "Stormfang",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "dry",
+      "metallic": false,
+      "color": {
+        "hex": "#5a7fa3",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/dry/sylvaneth-bark",
+      "rangeId": "citadel/dry",
+      "name": "Sylvaneth Bark",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "dry",
+      "metallic": false,
+      "color": {
+        "hex": "#4e483b",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/dry/terminatus-stone",
+      "rangeId": "citadel/dry",
+      "name": "Terminatus Stone",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "dry",
+      "metallic": false,
+      "color": {
+        "hex": "#c8b79d",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/dry/tyrant-skull",
+      "rangeId": "citadel/dry",
+      "name": "Tyrant Skull",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "dry",
+      "metallic": false,
+      "color": {
+        "hex": "#c8c483",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/dry/underhive-ash",
+      "rangeId": "citadel/dry",
+      "name": "Underhive Ash",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "dry",
+      "metallic": false,
+      "color": {
+        "hex": "#bcbb7e",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/dry/wrack-white",
+      "rangeId": "citadel/dry",
+      "name": "Wrack White",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "dry",
+      "metallic": false,
+      "color": {
+        "hex": "#d3d0cf",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/administratum-grey",
+      "rangeId": "citadel/layer",
+      "name": "Administratum Grey",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#989c94",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/ahriman-blue",
+      "rangeId": "citadel/layer",
+      "name": "Ahriman Blue",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#00708a",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/alaitoc-blue",
+      "rangeId": "citadel/layer",
+      "name": "Alaitoc Blue",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#2f4f85",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/altdorf-guard-blue",
+      "rangeId": "citadel/layer",
+      "name": "Altdorf Guard Blue",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#2d4696",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/auric-armour-gold",
+      "rangeId": "citadel/layer",
+      "name": "Auric Armour Gold",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": true,
+      "color": {
+        "hex": "#dca573",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/baharroth-blue",
+      "rangeId": "citadel/layer",
+      "name": "Baharroth Blue",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#54bdca",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/balor-brown",
+      "rangeId": "citadel/layer",
+      "name": "Balor Brown",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#875408",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/baneblade-brown",
+      "rangeId": "citadel/layer",
+      "name": "Baneblade Brown",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#8f7c68",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/bestigor-flesh",
+      "rangeId": "citadel/layer",
+      "name": "Bestigor Flesh",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#d08951",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/bloodreaver-flesh",
+      "rangeId": "citadel/layer",
+      "name": "Bloodreaver Flesh",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#6a4848",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/blue-horror",
+      "rangeId": "citadel/layer",
+      "name": "Blue Horror",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#9eb5ce",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/brass-scorpion",
+      "rangeId": "citadel/layer",
+      "name": "Brass Scorpion",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": true,
+      "color": {
+        "hex": "#996033",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/cadian-fleshtone",
+      "rangeId": "citadel/layer",
+      "name": "Cadian Fleshtone",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#c47652",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/calgar-blue",
+      "rangeId": "citadel/layer",
+      "name": "Calgar Blue",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#2a497f",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/canoptek-alloy",
+      "rangeId": "citadel/layer",
+      "name": "Canoptek Alloy",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": true,
+      "color": {
+        "hex": "#cabdba",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/castellax-bronze",
+      "rangeId": "citadel/layer",
+      "name": "Castellax Bronze",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": true,
+      "color": {
+        "hex": "#9b7363",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/dark-reaper",
+      "rangeId": "citadel/layer",
+      "name": "Dark Reaper",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#354d4c",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/dawnstone",
+      "rangeId": "citadel/layer",
+      "name": "Dawnstone",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#697068",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/deathclaw-brown",
+      "rangeId": "citadel/layer",
+      "name": "Deathclaw Brown",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#af634f",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/dechala-lilac",
+      "rangeId": "citadel/layer",
+      "name": "Dechala Lilac",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#b598c9",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/deepkin-flesh",
+      "rangeId": "citadel/layer",
+      "name": "Deepkin Flesh",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#a9b79f",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/doombull-brown",
+      "rangeId": "citadel/layer",
+      "name": "Doombull Brown",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#570003",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/dorn-yellow",
+      "rangeId": "citadel/layer",
+      "name": "Dorn Yellow",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#fff55a",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/elysian-green",
+      "rangeId": "citadel/layer",
+      "name": "Elysian Green",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#6b8c37",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/emperors-children",
+      "rangeId": "citadel/layer",
+      "name": "Emperor's Children",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#b74073",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/eshin-grey",
+      "rangeId": "citadel/layer",
+      "name": "Eshin Grey",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#484b4e",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/evil-sunz-scarlet",
+      "rangeId": "citadel/layer",
+      "name": "Evil Sunz Scarlet",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#c01411",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/fenrisian-grey",
+      "rangeId": "citadel/layer",
+      "name": "Fenrisian Grey",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#6d94b3",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/fire-dragon-bright",
+      "rangeId": "citadel/layer",
+      "name": "Fire Dragon Bright",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#f4874e",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/flash-gitz-yellow",
+      "rangeId": "citadel/layer",
+      "name": "Flash Gitz Yellow",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#fff300",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/flayed-one-flesh",
+      "rangeId": "citadel/layer",
+      "name": "Flayed One Flesh",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#eec483",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/fulgrim-pink",
+      "rangeId": "citadel/layer",
+      "name": "Fulgrim Pink",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#f3abca",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/fulgurite-copper",
+      "rangeId": "citadel/layer",
+      "name": "Fulgurite Copper",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": true,
+      "color": {
+        "hex": "#ae7d69",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/gauss-blaster-green",
+      "rangeId": "citadel/layer",
+      "name": "Gauss Blaster Green",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#7fc1a5",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/gehennas-gold",
+      "rangeId": "citadel/layer",
+      "name": "Gehenna's Gold",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": true,
+      "color": {
+        "hex": "#b87c1e",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/genestealer-purple",
+      "rangeId": "citadel/layer",
+      "name": "Genestealer Purple",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#7658a5",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/gorthor-brown",
+      "rangeId": "citadel/layer",
+      "name": "Gorthor Brown",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#5f463f",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/hashut-copper",
+      "rangeId": "citadel/layer",
+      "name": "Hashut Copper",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": true,
+      "color": {
+        "hex": "#a07346",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/hoeth-blue",
+      "rangeId": "citadel/layer",
+      "name": "Hoeth Blue",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#4c78af",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/ironbreaker",
+      "rangeId": "citadel/layer",
+      "name": "Ironbreaker",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": true,
+      "color": {
+        "hex": "#959595",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/kabalite-green",
+      "rangeId": "citadel/layer",
+      "name": "Kabalite Green",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#008962",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/kakophoni-purple",
+      "rangeId": "citadel/layer",
+      "name": "Kakophoni Purple",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#8869ae",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/karak-stone",
+      "rangeId": "citadel/layer",
+      "name": "Karak Stone",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#b7945c",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/kislev-flesh",
+      "rangeId": "citadel/layer",
+      "name": "Kislev Flesh",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#d1a570",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/knight-questor-flesh",
+      "rangeId": "citadel/layer",
+      "name": "Knight-Questor Flesh",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#996563",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/krieg-khaki",
+      "rangeId": "citadel/layer",
+      "name": "Krieg Khaki",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#bcbb7e",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/liberator-gold",
+      "rangeId": "citadel/layer",
+      "name": "Liberator Gold",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": true,
+      "color": {
+        "hex": "#c7af8e",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/loren-forest",
+      "rangeId": "citadel/layer",
+      "name": "Loren Forest",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#486c25",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/lothern-blue",
+      "rangeId": "citadel/layer",
+      "name": "Lothern Blue",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#2c9bcc",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/lugganath-orange",
+      "rangeId": "citadel/layer",
+      "name": "Lugganath Orange",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#f69b82",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/moot-green",
+      "rangeId": "citadel/layer",
+      "name": "Moot Green",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#3daf44",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/nurgling-green",
+      "rangeId": "citadel/layer",
+      "name": "Nurgling Green",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#7e975e",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/ogryn-camo",
+      "rangeId": "citadel/layer",
+      "name": "Ogryn Camo",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#96a648",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/pallid-wych-flesh",
+      "rangeId": "citadel/layer",
+      "name": "Pallid Wych Flesh",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#caccbb",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/phalanx-yellow",
+      "rangeId": "citadel/layer",
+      "name": "Phalanx Yellow",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#ffe200",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/pink-horror",
+      "rangeId": "citadel/layer",
+      "name": "Pink Horror",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#8e2757",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/runefang-steel",
+      "rangeId": "citadel/layer",
+      "name": "Runefang Steel",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": true,
+      "color": {
+        "hex": "#b4b7b9",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/russ-grey",
+      "rangeId": "citadel/layer",
+      "name": "Russ Grey",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#507085",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/screaming-skull",
+      "rangeId": "citadel/layer",
+      "name": "Screaming Skull",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#b9c099",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/skarsnik-green",
+      "rangeId": "citadel/layer",
+      "name": "Skarsnik Green",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#588f6b",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/skavenblight-dinge",
+      "rangeId": "citadel/layer",
+      "name": "Skavenblight Dinge",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#45413b",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/skrag-brown",
+      "rangeId": "citadel/layer",
+      "name": "Skrag Brown",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#8b4806",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/skullcrusher-brass",
+      "rangeId": "citadel/layer",
+      "name": "Skullcrusher Brass",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": true,
+      "color": {
+        "hex": "#e6c29e",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/slaanesh-grey",
+      "rangeId": "citadel/layer",
+      "name": "Slaanesh Grey",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#8b8893",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/sons-of-horus-green",
+      "rangeId": "citadel/layer",
+      "name": "Sons of Horus Green",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#00545e",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/sotek-green",
+      "rangeId": "citadel/layer",
+      "name": "Sotek Green",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#0b6371",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/squig-orange",
+      "rangeId": "citadel/layer",
+      "name": "Squig Orange",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#a74d42",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/stormhost-silver",
+      "rangeId": "citadel/layer",
+      "name": "Stormhost Silver",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": true,
+      "color": {
+        "hex": "#cbced0",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/stormvermin-fur",
+      "rangeId": "citadel/layer",
+      "name": "Stormvermin Fur",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#6d655f",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/straken-green",
+      "rangeId": "citadel/layer",
+      "name": "Straken Green",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#597f1c",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/sybarite-green",
+      "rangeId": "citadel/layer",
+      "name": "Sybarite Green",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#17a166",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/sycorax-bronze",
+      "rangeId": "citadel/layer",
+      "name": "Sycorax Bronze",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": true,
+      "color": {
+        "hex": "#ab928f",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/tallarn-sand",
+      "rangeId": "citadel/layer",
+      "name": "Tallarn Sand",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#a07409",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/tau-light-ochre",
+      "rangeId": "citadel/layer",
+      "name": "Tau Light Ochre",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#bc6b10",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/teclis-blue",
+      "rangeId": "citadel/layer",
+      "name": "Teclis Blue",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#3877bf",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/temple-guard-blue",
+      "rangeId": "citadel/layer",
+      "name": "Temple Guard Blue",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#239489",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/thunderhawk-blue",
+      "rangeId": "citadel/layer",
+      "name": "Thunderhawk Blue",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#396a70",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/troll-slayer-orange",
+      "rangeId": "citadel/layer",
+      "name": "Troll Slayer Orange",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#f16c23",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/tuskgor-fur",
+      "rangeId": "citadel/layer",
+      "name": "Tuskgor Fur",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#863231",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/ulthuan-grey",
+      "rangeId": "citadel/layer",
+      "name": "Ulthuan Grey",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#c4ddd5",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/ungor-flesh",
+      "rangeId": "citadel/layer",
+      "name": "Ungor Flesh",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#d1a560",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/ushabti-bone",
+      "rangeId": "citadel/layer",
+      "name": "Ushabti Bone",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#aba173",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/vulkan-green",
+      "rangeId": "citadel/layer",
+      "name": "Vulkan Green",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#223c2e",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/warboss-green",
+      "rangeId": "citadel/layer",
+      "name": "Warboss Green",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#317e57",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/warpfiend-grey",
+      "rangeId": "citadel/layer",
+      "name": "Warpfiend Grey",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#66656e",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/warpstone-glow",
+      "rangeId": "citadel/layer",
+      "name": "Warpstone Glow",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#0f702a",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/wazdakka-red",
+      "rangeId": "citadel/layer",
+      "name": "Wazdakka Red",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#880804",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/white-scar",
+      "rangeId": "citadel/layer",
+      "name": "White Scar",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#ffffff",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/wild-rider-red",
+      "rangeId": "citadel/layer",
+      "name": "Wild Rider Red",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#e82e1b",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/word-bearers-red",
+      "rangeId": "citadel/layer",
+      "name": "Word Bearers Red",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#620104",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/xereus-purple",
+      "rangeId": "citadel/layer",
+      "name": "Xereus Purple",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#47125a",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/yriel-yellow",
+      "rangeId": "citadel/layer",
+      "name": "Yriel Yellow",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#ffd900",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/layer/zamesi-desert",
+      "rangeId": "citadel/layer",
+      "name": "Zamesi Desert",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "layer",
+      "metallic": false,
+      "color": {
+        "hex": "#d89d1b",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/shade/agrax-earthshade",
+      "rangeId": "citadel/shade",
+      "name": "Agrax Earthshade",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#837263",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/shade/athonian-camoshade",
+      "rangeId": "citadel/shade",
+      "name": "Athonian Camoshade",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#838460",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/shade/berserker-bloodshade",
+      "rangeId": "citadel/shade",
+      "name": "Berserker Bloodshade",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#d58286",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/shade/biel-tan-green",
+      "rangeId": "citadel/shade",
+      "name": "Biel-Tan Green",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#5c7f5d",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/shade/carroburg-crimson",
+      "rangeId": "citadel/shade",
+      "name": "Carroburg Crimson",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#935971",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/shade/casandora-yellow",
+      "rangeId": "citadel/shade",
+      "name": "Casandora Yellow",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#f6b878",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/shade/coelia-greenshade",
+      "rangeId": "citadel/shade",
+      "name": "Coelia Greenshade",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#1c736b",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/shade/drakenhof-nightshade",
+      "rangeId": "citadel/shade",
+      "name": "Drakenhof Nightshade",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#6f747e",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/shade/druchii-violet",
+      "rangeId": "citadel/shade",
+      "name": "Druchii Violet",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#6d4870",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/shade/fuegan-orange",
+      "rangeId": "citadel/shade",
+      "name": "Fuegan Orange",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#a65d34",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/shade/kroak-green",
+      "rangeId": "citadel/shade",
+      "name": "Kroak Green",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#afcdb4",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/shade/mortarion-grime",
+      "rangeId": "citadel/shade",
+      "name": "Mortarion Grime",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#ccbe7b",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/shade/nuln-oil",
+      "rangeId": "citadel/shade",
+      "name": "Nuln Oil",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#6f6c6b",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/shade/poxwalker",
+      "rangeId": "citadel/shade",
+      "name": "Poxwalker",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#9cb9b9",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/shade/reikland-fleshshade",
+      "rangeId": "citadel/shade",
+      "name": "Reikland Fleshshade",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#92705a",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/shade/seraphim-sepia",
+      "rangeId": "citadel/shade",
+      "name": "Seraphim Sepia",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#856240",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/shade/soulblight-grey",
+      "rangeId": "citadel/shade",
+      "name": "Soulblight Grey",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#c2bdbd",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/shade/targor-rageshade",
+      "rangeId": "citadel/shade",
+      "name": "Targor Rageshade",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#9e919c",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/shade/tyran-blue",
+      "rangeId": "citadel/shade",
+      "name": "Tyran Blue",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#91add1",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/technical/agrellan-badland",
+      "rangeId": "citadel/technical",
+      "name": "Agrellan Badland",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "technical",
+      "metallic": false,
+      "color": {
+        "hex": "#a38f72",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/technical/agrellan-earth",
+      "rangeId": "citadel/technical",
+      "name": "Agrellan Earth",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "technical",
+      "metallic": false,
+      "color": {
+        "hex": "#a38f72",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/technical/armageddon-dust",
+      "rangeId": "citadel/technical",
+      "name": "Armageddon Dust",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "technical",
+      "metallic": false,
+      "color": {
+        "hex": "#dec045",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/technical/astrogranite",
+      "rangeId": "citadel/technical",
+      "name": "Astrogranite",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "technical",
+      "metallic": false,
+      "color": {
+        "hex": "#898989",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/technical/blood-for-the-blood-god",
+      "rangeId": "citadel/technical",
+      "name": "Blood For The Blood God",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "technical",
+      "metallic": false,
+      "color": {
+        "hex": "#7a2d2c",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/technical/martian-ironcrust",
+      "rangeId": "citadel/technical",
+      "name": "Martian Ironcrust",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "technical",
+      "metallic": false,
+      "color": {
+        "hex": "#b5604f",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/technical/martian-ironearth",
+      "rangeId": "citadel/technical",
+      "name": "Martian Ironearth",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "technical",
+      "metallic": false,
+      "color": {
+        "hex": "#b5604f",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/technical/mordant-earth",
+      "rangeId": "citadel/technical",
+      "name": "Mordant Earth",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "technical",
+      "metallic": false,
+      "color": {
+        "hex": "#302c2d",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/technical/nihilakh-oxide",
+      "rangeId": "citadel/technical",
+      "name": "Nihilakh Oxide",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "technical",
+      "metallic": false,
+      "color": {
+        "hex": "#66b39a",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/technical/nurgles-rot",
+      "rangeId": "citadel/technical",
+      "name": "Nurgles Rot",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "technical",
+      "metallic": false,
+      "color": {
+        "hex": "#9d8b16",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/technical/soulstone-blue",
+      "rangeId": "citadel/technical",
+      "name": "Soulstone Blue",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "technical",
+      "metallic": false,
+      "color": {
+        "hex": "#313a69",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/technical/spiritstone-red",
+      "rangeId": "citadel/technical",
+      "name": "Spiritstone Red",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "technical",
+      "metallic": false,
+      "color": {
+        "hex": "#943c2c",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/technical/stirland-mud",
+      "rangeId": "citadel/technical",
+      "name": "Stirland Mud",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "technical",
+      "metallic": false,
+      "color": {
+        "hex": "#5b3a07",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/technical/tesseract-glow",
+      "rangeId": "citadel/technical",
+      "name": "Tesseract Glow",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "technical",
+      "metallic": false,
+      "color": {
+        "hex": "#49ad33",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/technical/typhus-corrosion",
+      "rangeId": "citadel/technical",
+      "name": "Typhus Corrosion",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "technical",
+      "metallic": false,
+      "color": {
+        "hex": "#373a22",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/technical/valhallan-blizzard",
+      "rangeId": "citadel/technical",
+      "name": "Valhallan Blizzard",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "technical",
+      "metallic": false,
+      "color": {
+        "hex": "#f0f0f0",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/technical/waystone-green",
+      "rangeId": "citadel/technical",
+      "name": "Waystone Green",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "technical",
+      "metallic": false,
+      "color": {
+        "hex": "#2d5842",
+        "origin": "community",
+        "sourceId": "simogecko-citadel-colours"
+      },
+      "status": {
+        "kind": "active"
+      }
+    }
+  ]
+}

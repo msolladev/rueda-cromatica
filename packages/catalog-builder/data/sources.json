@@ -1,1 +1,13 @@
-[]
+[
+  {
+    "id": "simogecko-citadel-colours",
+    "kind": "third-party",
+    "title": "Citadel Official Colours Table",
+    "publisher": "SimoGecko",
+    "url": "https://github.com/SimoGecko/CitadelColours/blob/0ea153b7c6e747cf15691dd16b8e8cc6a4551244/tables/citadel_official_colors_table.md",
+    "archiveUrl": null,
+    "retrievedAt": "2026-11-12",
+    "license": "unknown",
+    "attribution": "SimoGecko/CitadelColours"
+  }
+]

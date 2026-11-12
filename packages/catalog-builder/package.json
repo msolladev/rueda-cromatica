@@ -5,14 +5,17 @@
   "type": "module",
   "scripts": {
     "build-catalog": "node src/cli/build-catalog.ts",
+    "import-simogecko": "node src/cli/import-simogecko.ts",
     "typecheck": "tsc",
     "test": "vitest run"
   },
   "dependencies": {
     "@rueda-cromatica/domain": "workspace:*",
+    "culori": "catalog:",
     "zod": "catalog:"
   },
   "devDependencies": {
+    "@types/culori": "catalog:",
     "@types/node": "catalog:",
     "typescript": "catalog:",
     "vitest": "catalog:"

@@ -6,28 +6,15 @@
  *   pnpm --filter @rueda-cromatica/catalog-builder build-catalog [--check]
  */
 import { mkdir, readdir, readFile, writeFile } from "node:fs/promises";
-import { basename, dirname, join, relative, resolve } from "node:path";
-import type { RawFile } from "../curated/files.ts";
+import { basename, dirname, join } from "node:path";
 import { buildCatalog } from "../pipeline/build-catalog.ts";
-
-const PACKAGE_DIR = resolve(import.meta.dirname, "../..");
-const REPO_DIR = resolve(PACKAGE_DIR, "../..");
-const DATA_DIR = join(PACKAGE_DIR, "data");
-const SOURCES_FILE = join(DATA_DIR, "sources.json");
-const BRANDS_DIR = join(DATA_DIR, "brands");
-const OUTPUT_FILE = join(REPO_DIR, "apps/web/public/catalog.json");
-
-const fromRepo = (path: string): string => relative(REPO_DIR, path);
-
-/** Files are named by their base name, as the pipeline checks brand files. */
-async function readJson(path: string): Promise<RawFile | string> {
-  try {
-    const content: unknown = JSON.parse(await readFile(path, "utf8"));
-    return { name: basename(path), content };
-  } catch (error) {
-    return `${fromRepo(path)}: ${error instanceof Error ? error.message : String(error)}`;
-  }
-}
+import {
+  BRANDS_DIR,
+  fromRepo,
+  OUTPUT_FILE,
+  readJson,
+  SOURCES_FILE,
+} from "./data-files.ts";
 
 async function main(check: boolean): Promise<number> {
   // Alphabetical order, so the run does not depend on the file system.
