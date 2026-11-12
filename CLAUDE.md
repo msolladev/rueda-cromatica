@@ -21,7 +21,7 @@ Es un proyecto de aprendizaje del ecosistema Node/TS: prioriza las buenas práct
 
 ## Estructura objetivo
 
-El monorepo está montado. `domain` ya tiene el contrato del catálogo (esquema, `parseCatalog`, agregado `Catalog` y reglas derivadas); el resto de paquetes todavía no tiene lógica. La separación en paquetes, la organización interna por módulos y los patrones están en el [ADR-0018](docs/adr/0018-organizacion-codigo-patrones.md).
+El monorepo está montado. `domain` ya tiene el contrato del catálogo (esquema, `parseCatalog`, agregado `Catalog` y reglas derivadas) y `catalog-builder` genera `catalog.json`; `apps/web` todavía no tiene lógica. La separación en paquetes, la organización interna por módulos y los patrones están en el [ADR-0018](docs/adr/0018-organizacion-codigo-patrones.md).
 
 - `packages/domain`: TS puro, con el modelo, las armonías, las conversiones, el Delta E (culori) y la validación del catálogo (Zod). Sin dependencias de React ni del navegador.
 - `packages/catalog-builder`: script Node que importa las fuentes, las normaliza y genera `catalog.json`. Arquitectura hexagonal en sus bordes (disco y red).
@@ -43,6 +43,7 @@ Desde la raíz. pnpm cambia solo a la versión de `packageManager` y descarga el
 - `pnpm test`: Vitest en `domain` y `catalog-builder`.
 - `pnpm build`: build de `apps/web` (Vite + PWA).
 - `pnpm --filter @rueda-cromatica/web dev`: servidor de desarrollo.
+- `pnpm --filter @rueda-cromatica/catalog-builder build-catalog`: regenera `apps/web/public/catalog.json` a partir de los datos. Con `--check` no escribe nada y falla si el versionado está desactualizado.
 - `pnpm --filter <paquete> <script>`: ejecuta un script de un paquete concreto.
 
 ## Catálogo
@@ -88,11 +89,11 @@ El alcance mínimo y lo aplazado están razonados en el [ADR-0019](docs/adr/0019
 ## Estado y hoja de ruta
 
 1. **Arquitectura y modelo de datos**: cerrada. Ver docs/01-03 y los ADR 0001-0008.
-2. **Montar el monorepo y la toolchain**, según los ADR 0009-0011: hecho. Falta el paso 4 de la CI (diff de `catalog.json`), que llegará con el builder.
+2. **Montar el monorepo y la toolchain**, según los ADR 0009-0011: hecho.
 3. **Investigación de fuentes de datos**: cerrada. Ver el [informe](docs/investigacion/2026-11-fuentes-datos.md), docs/04 y los ADR 0013-0016.
 4. **Builder, importadores y prototipo de la rueda**: en curso, con el alcance del [ADR-0019](docs/adr/0019-alcance-minimo-mvp.md). Etapas:
    1. Contrato del catálogo en `domain`: hecho.
-   2. Builder mínimo según docs/04, con el paso 4 de la CI.
+   2. Builder mínimo según docs/04, con el paso 4 de la CI: hecho.
    3. Datos: una marca desde una sola fuente y después el resto, una por iteración.
    4. Color en `domain`: los dos modelos de rueda, las armonías, el esquema de miniatura y el ΔE.
    5. Web: la rueda con su plantilla, el selector de modelo, el filtro de marcas, el aviso de color aproximado y la carga del catálogo.
