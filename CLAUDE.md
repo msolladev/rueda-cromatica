@@ -2,7 +2,7 @@
 
 App personal para pintar miniaturas de Warhammer, en forma de PWA. Tiene dos funcionalidades:
 
-1. **Rueda de color** que funciona como una física, con una plantilla giratoria. Genera armonías y un esquema de miniatura: base, sombra, luz y acento.
+1. **Rueda de color** que funciona como una física, con una plantilla giratoria. Genera armonías y un esquema de miniatura: base, tríada, complementario, sombra y luz.
 2. **Equivalencias** entre pinturas de distintas marcas.
 
 Es un proyecto de aprendizaje del ecosistema Node/TS: prioriza las buenas prácticas sobre los atajos.
@@ -23,7 +23,8 @@ Es un proyecto de aprendizaje del ecosistema Node/TS: prioriza las buenas práct
 
 El monorepo está montado. `domain` ya tiene el contrato del catálogo (esquema, `parseCatalog`, agregado `Catalog` y reglas derivadas) y `catalog-builder` genera `catalog.json`; `apps/web` todavía no tiene lógica. La separación en paquetes, la organización interna por módulos y los patrones están en el [ADR-0018](docs/adr/0018-organizacion-codigo-patrones.md).
 
-- `packages/domain`: TS puro, con el modelo, las armonías, las conversiones, el Delta E (culori) y la validación del catálogo (Zod). Sin dependencias de React ni del navegador.
+- `packages/color-wheel`: la rueda, solo con colores y sin pinturas: los modelos RYB y digital, las armonías y el esquema de miniatura (culori). TS puro, sin React ni navegador, y sin depender de `domain`. Se diseña como publicable, pero no se publica en npm ([ADR-0020](docs/adr/0020-rueda-paquete-independiente.md)).
+- `packages/domain`: TS puro, con el modelo del catálogo, su validación (Zod) y la búsqueda de la pintura más parecida con el Delta E (culori). Sin dependencias de React ni del navegador.
 - `packages/catalog-builder`: script Node que importa las fuentes, las normaliza (culori para el punto medio de los degradados) y genera `catalog.json`. Arquitectura hexagonal en sus bordes (disco y red).
 - `apps/web`: React, solo presentación. La lógica vive en el dominio.
 - `docs/`: especificaciones, y `docs/adr/` con los ADR.
@@ -62,7 +63,10 @@ Desde la raíz. pnpm cambia solo a la versión de `packageManager` y descarga el
 - **Color aproximado**: un hex es aproximado si la pintura es metálica, si su tipo es lavado, tinta, veladura, contrast o técnica, o si el hex es de origen comunitario. Se calcula en el dominio; en el JSON solo se guardan el origen y la fuente del hex. No se ofrecen equivalencias calculadas con colores aproximados sin avisar.
 - **Origen del color**: un único hex por pintura, con su origen (`measured`, `manufacturer` o `community`) y su fuente. Los degradados oficiales de Citadel se reducen a su punto medio en CIELAB ([ADR-0014](docs/adr/0014-origen-seleccion-color.md)). En el MVP cada pintura tiene una sola fuente de color ([ADR-0019](docs/adr/0019-alcance-minimo-mvp.md)).
 - **Sustitución frente a equivalencia**: solo hay sustituta si la fuente del fabricante dice que X sustituye a Y. Las cartas de conversión son equivalencias oficiales.
-- **Sombra**: es una variación de la base (menos luminosa, menos saturada y con un ligero cambio de tono), no el complementario tal cual. El complementario y las tríadas se usan para el secundario y el acento.
+- **Esquema de miniatura** ([ADR-0020](docs/adr/0020-rueda-paquete-independiente.md)): la base, los otros dos colores de su tríada, su complementario, y la sombra y la luz de la base.
+  - Sombra: la base mezclada con su complementario.
+  - Luz: la base mezclada con su vecino en la rueda, aclarado; hacia el amarillo si es cálida y hacia el azul si es fría.
+  - Solo se muestra el color resultante y la pintura más cercana; la receta de la mezcla está en «Futuro».
 - **Rueda**: calcula en modelo RYB (el de la pintura física) o digital (RGB/HSL), a elección del usuario. Devuelve el color teórico y la pintura real más parecida, filtrando por las marcas activas.
 - **Pintura**:
   - Tipo según su función: base, capa, estándar (opaca sin distinción base/capa), lavado, tinta, veladura, contrast (función de una capa, de cualquier marca), técnica o pincel seco ([ADR-0013](docs/adr/0013-clasificacion-pinturas.md)).
@@ -98,7 +102,7 @@ El alcance mínimo y lo aplazado están razonados en el [ADR-0019](docs/adr/0019
    1. Contrato del catálogo en `domain`: hecho.
    2. Builder mínimo según docs/04, con el paso 4 de la CI: hecho.
    3. Datos: hecho, una marca por iteración, cada una desde una sola fuente. Citadel: desde la tabla de SimoGecko con hex `community`, porque citadelcolour.com (hoy paint.warhammer.com) no publica los hex. The Army Painter: desde DonnervS con hex `community`; Warpaints Fanatic es una sola gama (lavados, metálicos y efectos se distinguen por el tipo y el atributo metálico). AK Interactive: desde DonnervS con hex `community`; 3Gen Acrylics es una sola gama con todas las etiquetas de AK (STANDARD, AFV, FIGURES…) salvo AIR, que es de aerógrafo; Quick Gen tiene 79 colores, comprobado en la web de AK. Vallejo: desde DonnervS con hex `community`, contrastado con las cartas oficiales CC329 (Model Color) y CC266 (Game Color y Xpress Color); Model Color y Game Color son una gama cada una, con sus subgrupos (lavados, tintas, metálicos, fluorescentes y Special FX) distinguidos por el tipo, y Xpress Color, con Intense, es una gama propia.
-   4. Color en `domain`: los dos modelos de rueda, las armonías, el esquema de miniatura y el ΔE.
+   4. Color: el paquete `color-wheel` con los dos modelos de rueda, las armonías y el esquema de miniatura, y en `domain` la búsqueda de la pintura más parecida con el ΔE.
    5. Web: la rueda con su plantilla, el selector de modelo, el filtro de marcas, el aviso de color aproximado y la carga del catálogo.
 
    Al curar los datos hay que verificar:
