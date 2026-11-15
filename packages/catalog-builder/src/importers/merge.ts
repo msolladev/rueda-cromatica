@@ -20,7 +20,10 @@ export type PaintRow = z.input<typeof paintSchema>;
 export type ImportedPaint = Pick<
   PaintRow,
   "rangeId" | "name" | "manufacturerCode" | "type" | "metallic" | "color"
->;
+> & {
+  /** Slug chosen by hand when the proposed one collides (docs/03 §3). */
+  readonly slug?: string;
+};
 
 export interface MergedPaints {
   /** Every paint of the brand, sorted by ID. */
@@ -33,13 +36,16 @@ export function mergePaints(
   existing: readonly PaintRow[],
   imported: readonly ImportedPaint[],
 ): Result<MergedPaints, readonly string[]> {
+  // By code within the range; by name only when a side has no code, since
+  // two paints of a range can share a name (docs/04 §4).
   const byCode = new Map<string, PaintRow>();
   const byName = new Map<string, PaintRow>();
+  const byNameWithoutCode = new Map<string, PaintRow>();
   for (const paint of existing) {
-    if (paint.manufacturerCode !== null) {
-      byCode.set(key(paint.rangeId, paint.manufacturerCode), paint);
-    }
-    byName.set(key(paint.rangeId, paint.name), paint);
+    const nameKey = key(paint.rangeId, paint.name);
+    byName.set(nameKey, paint);
+    if (paint.manufacturerCode === null) byNameWithoutCode.set(nameKey, paint);
+    else byCode.set(key(paint.rangeId, paint.manufacturerCode), paint);
   }
 
   const issues: string[] = [];
@@ -55,18 +61,19 @@ export function mergePaints(
     }
     seen.add(rowKey);
 
+    const nameKey = key(row.rangeId, row.name);
     const match =
-      (row.manufacturerCode === null
-        ? undefined
-        : byCode.get(key(row.rangeId, row.manufacturerCode))) ??
-      byName.get(key(row.rangeId, row.name));
+      row.manufacturerCode === null
+        ? byName.get(nameKey)
+        : (byCode.get(key(row.rangeId, row.manufacturerCode)) ??
+          byNameWithoutCode.get(nameKey));
 
     if (match !== undefined) {
       merged.set(match.id, update(match, row));
       continue;
     }
 
-    const id = `${row.rangeId}/${proposeSlug(row.name)}`;
+    const id = `${row.rangeId}/${row.slug ?? proposeSlug(row.name)}`;
     if (ids.has(id)) {
       issues.push(
         `${id}: already taken; choose a suffix by hand for "${row.name}" (docs/03 §3)`,

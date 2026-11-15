@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 1,
-    "dataVersion": "sha256:1dc05c8287e1c043faf556a4f41964b6efe29f741ec75894b8725ce652325e47"
+    "dataVersion": "sha256:bc09f8c955dd1e17c4bdb3d60ea9cf6b1b2ec265f40dd34707c1285fbbc80513"
   },
   "sources": [
     {
@@ -29,6 +29,11 @@
   ],
   "brands": [
     {
+      "id": "ak-interactive",
+      "name": "AK Interactive",
+      "aliases": []
+    },
+    {
       "id": "citadel",
       "name": "Warhammer Colour",
       "aliases": [
@@ -43,6 +48,18 @@
     }
   ],
   "ranges": [
+    {
+      "id": "ak-interactive/3gen-acrylics",
+      "brandId": "ak-interactive",
+      "name": "3Gen Acrylics",
+      "status": "active"
+    },
+    {
+      "id": "ak-interactive/quick-gen",
+      "brandId": "ak-interactive",
+      "name": "Quick Gen",
+      "status": "active"
+    },
     {
       "id": "citadel/base",
       "brandId": "citadel",
@@ -93,6 +110,7333 @@
     }
   ],
   "paints": [
+    {
+      "id": "ak-interactive/3gen-acrylics/3b-au-zb-au",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "3B AU/ZB AU",
+      "aliases": [],
+      "manufacturerCode": "AK11387",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#261a10",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/afro-shadow",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Afro shadow",
+      "aliases": [],
+      "manufacturerCode": "AK11276",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#070c14",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/alga-green",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Alga Green",
+      "aliases": [],
+      "manufacturerCode": "AK11152",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#555f21",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/aluminium",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Aluminium",
+      "aliases": [],
+      "manufacturerCode": "AK11207",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#acacac",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/amaranth-red",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Amaranth Red",
+      "aliases": [],
+      "manufacturerCode": "AK11086",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#d04e26",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/amethyst-blue",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Amethyst Blue",
+      "aliases": [],
+      "manufacturerCode": "AK11183",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#332946",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/anodized-violet",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Anodized Violet",
+      "aliases": [],
+      "manufacturerCode": "AK11202",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#9b8393",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/anthracite-grey",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Anthracite Grey",
+      "aliases": [],
+      "manufacturerCode": "AK11167",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#1c2a2c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/apc-interior-light-green-fs24533",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "APC Interior Light Green (FS24533)",
+      "aliases": [],
+      "manufacturerCode": "AK11345",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#c9cda3",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/aquatic-turquoise",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Aquatic Turquoise",
+      "aliases": [],
+      "manufacturerCode": "AK11170",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#016456",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/archaic-turquoise",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Archaic Turquoise",
+      "aliases": [],
+      "manufacturerCode": "AK11172",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#003739",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/ash-grey",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Ash Grey",
+      "aliases": [],
+      "manufacturerCode": "AK11024",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#424138",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/astral-beryllium",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Astral Beryllium",
+      "aliases": [],
+      "manufacturerCode": "AK11200",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#477470",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/australian-camouflage-brown",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Australian Camouflage Brown",
+      "aliases": [],
+      "manufacturerCode": "AK11347",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#a98c58",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/australian-camouflage-green",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Australian Camouflage Green",
+      "aliases": [],
+      "manufacturerCode": "AK11348",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#5e6120",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/basalt-grey",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Basalt Grey",
+      "aliases": [],
+      "manufacturerCode": "AK11021",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#5c615c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/base-flesh",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Base Flesh",
+      "aliases": [],
+      "manufacturerCode": "AK11401",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#814b2f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/base-green-protective",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Base Green (Protective)",
+      "aliases": [],
+      "manufacturerCode": "AK11367",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#363622",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/basic-skin-tone",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Basic Skin Tone",
+      "aliases": [],
+      "manufacturerCode": "AK11052",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#f8b57b",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/beast-brown",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Beast brown",
+      "aliases": [],
+      "manufacturerCode": "AK11278",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#b54124",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/beige",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Beige",
+      "aliases": [],
+      "manufacturerCode": "AK11030",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#e2b948",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/beige-red",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Beige Red",
+      "aliases": [],
+      "manufacturerCode": "AK11064",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#de935a",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/black",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Black",
+      "aliases": [],
+      "manufacturerCode": "AK11029",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#10100a",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/black-green",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Black Green",
+      "aliases": [],
+      "manufacturerCode": "AK11160",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#162014",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/black-purple",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Black purple",
+      "aliases": [],
+      "manufacturerCode": "AK11270",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#21112b",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/black-red",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Black Red",
+      "aliases": [],
+      "manufacturerCode": "AK11098",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#41261d",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/black-uniform-base",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Black Uniform Base",
+      "aliases": [],
+      "manufacturerCode": "AK11407",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#10100f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/blood-effect",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Blood effect",
+      "aliases": [],
+      "manufacturerCode": "AK11260",
+      "type": "technical",
+      "metallic": false,
+      "color": {
+        "hex": "#ffffff",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/blood-red",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Blood Red",
+      "aliases": [],
+      "manufacturerCode": "AK11089",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#c6241c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/blue-green",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Blue-Green",
+      "aliases": [],
+      "manufacturerCode": "AK11169",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#338477",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/blue-grey",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Blue-Grey",
+      "aliases": [],
+      "manufacturerCode": "AK11011",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#c6cfcd",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/blue-violet",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Blue Violet",
+      "aliases": [],
+      "manufacturerCode": "AK11070",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#886ca4",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/bordeaux-red",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Bordeaux Red",
+      "aliases": [],
+      "manufacturerCode": "AK11094",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#a13b2f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/brass",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Brass",
+      "aliases": [],
+      "manufacturerCode": "AK11194",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#96671c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/brick-red",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Brick Red",
+      "aliases": [],
+      "manufacturerCode": "AK11093",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#9e4428",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/british-dark-olive-green-pfi",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "British Dark Olive Green PFI",
+      "aliases": [],
+      "manufacturerCode": "AK11381",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#4a452f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/british-desert-pink-zi",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "British Desert Pink ZI",
+      "aliases": [],
+      "manufacturerCode": "AK11382",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#f0905f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/british-khaki",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "British Khaki",
+      "aliases": [],
+      "manufacturerCode": "AK11127",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#674d1e",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/british-light-mud",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "British Light Mud",
+      "aliases": [],
+      "manufacturerCode": "AK11383",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#827d49",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/british-sand-yellow",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "British Sand Yellow",
+      "aliases": [],
+      "manufacturerCode": "AK11362",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#e1a439",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/british-uniform-base",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "British Uniform Base",
+      "aliases": [],
+      "manufacturerCode": "AK11437",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#70522d",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/british-uniform-lights",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "British Uniform Lights",
+      "aliases": [],
+      "manufacturerCode": "AK11438",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#8c692a",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/bronze",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Bronze",
+      "aliases": [],
+      "manufacturerCode": "AK11196",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#947d16",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/brown-black",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Brown Black",
+      "aliases": [],
+      "manufacturerCode": "AK11418",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#22160f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/brown-rose",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Brown Rose",
+      "aliases": [],
+      "manufacturerCode": "AK11063",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#d88362",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/brownish-green",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Brownish Green",
+      "aliases": [],
+      "manufacturerCode": "AK11151",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#564614",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/buff",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Buff",
+      "aliases": [],
+      "manufacturerCode": "AK11031",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#d1ac5c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/burn-orange",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Burn Orange",
+      "aliases": [],
+      "manufacturerCode": "AK11079",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#db5e2f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/burnt-red",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Burnt Red",
+      "aliases": [],
+      "manufacturerCode": "AK11097",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#533124",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/burnt-tin",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Burnt Tin",
+      "aliases": [],
+      "manufacturerCode": "AK11198",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#3c2512",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/burnt-umber",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Burnt Umber",
+      "aliases": [],
+      "manufacturerCode": "AK11111",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#291e10",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/cadmium-red",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Cadmium Red",
+      "aliases": [],
+      "manufacturerCode": "AK11085",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#e9582c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/camouflage-green",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Camouflage Green",
+      "aliases": [],
+      "manufacturerCode": "AK11156",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#4d411c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/canvas-tone",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Canvas Tone",
+      "aliases": [],
+      "manufacturerCode": "AK11436",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#514928",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/carc-tan-686a-fs33446",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "CARC Tan 686A (FS33446)",
+      "aliases": [],
+      "manufacturerCode": "AK11349",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#b79362",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/carmine",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Carmine",
+      "aliases": [],
+      "manufacturerCode": "AK11091",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#b93d24",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/chipping-effect",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Chipping effect",
+      "aliases": [],
+      "manufacturerCode": "AK11262",
+      "type": "technical",
+      "metallic": false,
+      "color": {
+        "hex": "#ffffff",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/chocolate-chipping",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Chocolate (Chipping)",
+      "aliases": [],
+      "manufacturerCode": "AK11113",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#301f11",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/clear-blue",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Clear Blue",
+      "aliases": [],
+      "manufacturerCode": "AK11214",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#212d56",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/clear-green",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Clear Green",
+      "aliases": [],
+      "manufacturerCode": "AK11216",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#029939",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/clear-orange",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Clear Orange",
+      "aliases": [],
+      "manufacturerCode": "AK11218",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#ea5d0a",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/clear-red",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Clear Red",
+      "aliases": [],
+      "manufacturerCode": "AK11213",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#c61617",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/clear-smoke",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Clear Smoke",
+      "aliases": [],
+      "manufacturerCode": "AK11215",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#754e22",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/clear-yellow",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Clear Yellow",
+      "aliases": [],
+      "manufacturerCode": "AK11217",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#f39405",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/cobalt-blue",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Cobalt Blue",
+      "aliases": [],
+      "manufacturerCode": "AK11201",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#0e2334",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/cold-green",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Cold green",
+      "aliases": [],
+      "manufacturerCode": "AK11273",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#116851",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/command-green",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Command Green",
+      "aliases": [],
+      "manufacturerCode": "AK11155",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#2f2e17",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/copper",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Copper",
+      "aliases": [],
+      "manufacturerCode": "AK11197",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#964a19",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/cork",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Cork",
+      "aliases": [],
+      "manufacturerCode": "AK11119",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#a17547",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/cremeweiss",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Cremeweiss",
+      "aliases": [],
+      "manufacturerCode": "AK11333",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#e8ddad",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/dark-aluminium",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Dark Aluminium",
+      "aliases": [],
+      "manufacturerCode": "AK11208",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#757575",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/dark-blue",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Dark Blue",
+      "aliases": [],
+      "manufacturerCode": "AK11181",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#1d2d4b",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/dark-blue-grey",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Dark Blue-Grey",
+      "aliases": [],
+      "manufacturerCode": "AK11164",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#4a5d53",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/dark-brown",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Dark Brown",
+      "aliases": [],
+      "manufacturerCode": "AK11109",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#533916",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/dark-flesh",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Dark Flesh",
+      "aliases": [],
+      "manufacturerCode": "AK11056",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#eca538",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/dark-green",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Dark Green",
+      "aliases": [],
+      "manufacturerCode": "AK11146",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#24461f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/dark-green-figures",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Dark Green",
+      "aliases": [],
+      "manufacturerCode": "AK11410",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#1f2d22",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/dark-green-fs34102",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Dark Green (FS34102)",
+      "aliases": [],
+      "manufacturerCode": "AK11342",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#333c1e",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/dark-green-grey",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Dark Green-Grey",
+      "aliases": [],
+      "manufacturerCode": "AK11133",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#394d3c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/dark-grey",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Dark Grey",
+      "aliases": [],
+      "manufacturerCode": "AK11022",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#494945",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/dark-olive-green",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Dark Olive Green",
+      "aliases": [],
+      "manufacturerCode": "AK11421",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#2c361a",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/dark-prussian-blue",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Dark Prussian Blue",
+      "aliases": [],
+      "manufacturerCode": "AK11189",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#0c0d19",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/dark-rust",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Dark Rust",
+      "aliases": [],
+      "manufacturerCode": "AK11107",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#522510",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/dark-sand",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Dark Sand",
+      "aliases": [],
+      "manufacturerCode": "AK11033",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#e6bc56",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/dark-sea-blue",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Dark Sea Blue",
+      "aliases": [],
+      "manufacturerCode": "AK11190",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#0c1814",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/dark-sea-grey",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Dark Sea Grey",
+      "aliases": [],
+      "manufacturerCode": "AK11015",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#7b7873",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/dark-shadow-flesh",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Dark Shadow Flesh",
+      "aliases": [],
+      "manufacturerCode": "AK11405",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#5b2b25",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/dead-red",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Dead Red",
+      "aliases": [],
+      "manufacturerCode": "AK11083",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#e94a4c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/deck-tan",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Deck Tan",
+      "aliases": [],
+      "manufacturerCode": "AK11114",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#cdc4af",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/decomposed-flesh",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Decomposed Flesh",
+      "aliases": [],
+      "manufacturerCode": "AK11058",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#b9a260",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/deep-blue",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Deep Blue",
+      "aliases": [],
+      "manufacturerCode": "AK11182",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#184066",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/deep-brown",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Deep Brown",
+      "aliases": [],
+      "manufacturerCode": "AK11102",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#854a28",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/deep-green",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Deep Green",
+      "aliases": [],
+      "manufacturerCode": "AK11142",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#1d632c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/deep-orange",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Deep Orange",
+      "aliases": [],
+      "manufacturerCode": "AK11080",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#eb6025",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/deep-purple",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Deep Purple",
+      "aliases": [],
+      "manufacturerCode": "AK11074",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#794969",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/deep-red",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Deep Red",
+      "aliases": [],
+      "manufacturerCode": "AK11088",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#db2119",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/deep-sky-blue",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Deep Sky Blue",
+      "aliases": [],
+      "manufacturerCode": "AK11176",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#69b5c6",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/deep-violet",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Deep Violet",
+      "aliases": [],
+      "manufacturerCode": "AK11072",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#71536c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/deep-yellow",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Deep Yellow",
+      "aliases": [],
+      "manufacturerCode": "AK11045",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#fdc500",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/denison-tan-base",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Denison Tan Base",
+      "aliases": [],
+      "manufacturerCode": "AK11413",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#916c45",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/desert-uniform-base",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Desert Uniform Base",
+      "aliases": [],
+      "manufacturerCode": "AK11440",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#9a6b12",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/dirty-red",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Dirty Red",
+      "aliases": [],
+      "manufacturerCode": "AK11095",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#7e1910",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/dirty-yellow",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Dirty Yellow",
+      "aliases": [],
+      "manufacturerCode": "AK11043",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#eda81b",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/dot44-brown-base",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Dot44 Brown Base",
+      "aliases": [],
+      "manufacturerCode": "AK11408",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#544530",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/dragon-blood",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Dragon blood",
+      "aliases": [],
+      "manufacturerCode": "AK11272",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#891c66",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/ducat-blue",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Ducat Blue",
+      "aliases": [],
+      "manufacturerCode": "AK11177",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#3a889f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/emerald",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Emerald",
+      "aliases": [],
+      "manufacturerCode": "AK11144",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#096142",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/emerald-metallic-green",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Emerald Metallic Green",
+      "aliases": [],
+      "manufacturerCode": "AK11204",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#21763a",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/english-grey",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "English Grey",
+      "aliases": [],
+      "manufacturerCode": "AK11020",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#6d6d65",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/extra-dark-green",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Extra Dark Green",
+      "aliases": [],
+      "manufacturerCode": "AK11153",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#223028",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/faded-green",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Faded Green",
+      "aliases": [],
+      "manufacturerCode": "AK11135",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#7c8972",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/field-drab",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Field Drab",
+      "aliases": [],
+      "manufacturerCode": "AK11435",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#7e5937",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/field-drab-fs30118",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Field Drab (FS30118)",
+      "aliases": [],
+      "manufacturerCode": "AK11344",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#58411d",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/field-grey-base-1-green-uniform",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Field Grey Base #1 (Green uniform)",
+      "aliases": [],
+      "manufacturerCode": "AK11425",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#423d23",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/field-grey-base-2-grey-uniform",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Field Grey Base #2 (Grey Uniform)",
+      "aliases": [],
+      "manufacturerCode": "AK11423",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#414436",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/fluorescent-blue",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Fluorescent Blue",
+      "aliases": [],
+      "manufacturerCode": "AK11178",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#004063",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/fluorescent-green",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Fluorescent Green",
+      "aliases": [],
+      "manufacturerCode": "AK11129",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#97c221",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/fluorescent-magenta",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Fluorescent Magenta",
+      "aliases": [],
+      "manufacturerCode": "AK11068",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#e94e69",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/fluorescent-orange",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Fluorescent Orange",
+      "aliases": [],
+      "manufacturerCode": "AK11081",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#e9551f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/fluorescent-yellow",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Fluorescent Yellow",
+      "aliases": [],
+      "manufacturerCode": "AK11049",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#eee422",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/forest-green-fs34079",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Forest Green (FS34079)",
+      "aliases": [],
+      "manufacturerCode": "AK11346",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#2b351b",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/foundry-red",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Foundry Red",
+      "aliases": [],
+      "manufacturerCode": "AK11203",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#c53632",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/french-army-desert-sand",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "French Army Desert Sand",
+      "aliases": [],
+      "manufacturerCode": "AK11363",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#d2a76d",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/french-army-green",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "French Army Green",
+      "aliases": [],
+      "manufacturerCode": "AK11364",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#4c594d",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/french-army-grey-blue",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "French Army Grey-Blue",
+      "aliases": [],
+      "manufacturerCode": "AK11365",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#2e4747",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/french-blue",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "French Blue",
+      "aliases": [],
+      "manufacturerCode": "AK11166",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#535653",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/french-greyish-blue",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "French Greyish Blue",
+      "aliases": [],
+      "manufacturerCode": "AK11439",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#435056",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/frog-green",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Frog Green",
+      "aliases": [],
+      "manufacturerCode": "AK11136",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#98b91f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/frost-effect",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Frost effect",
+      "aliases": [],
+      "manufacturerCode": "AK11263",
+      "type": "technical",
+      "metallic": false,
+      "color": {
+        "hex": "#ffffff",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/german-field-grey",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "German Field Grey",
+      "aliases": [],
+      "manufacturerCode": "AK11154",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#413d24",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/german-grey",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "German Grey",
+      "aliases": [],
+      "manufacturerCode": "AK11025",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#38372f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/gold",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Gold",
+      "aliases": [],
+      "manufacturerCode": "AK11191",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#b38a35",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/golden-brown",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Golden Brown",
+      "aliases": [],
+      "manufacturerCode": "AK11117",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#ac7613",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/golden-olive",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Golden Olive",
+      "aliases": [],
+      "manufacturerCode": "AK11139",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#747b26",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/golden-yellow",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Golden Yellow",
+      "aliases": [],
+      "manufacturerCode": "AK11041",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#f8b14c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/graphite",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Graphite",
+      "aliases": [],
+      "manufacturerCode": "AK11019",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#6d6e60",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/grass-green",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Grass Green",
+      "aliases": [],
+      "manufacturerCode": "AK11140",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#61822c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/green-brown",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Green-Brown",
+      "aliases": [],
+      "manufacturerCode": "AK11126",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#6f5922",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/green-grey",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Green-Grey",
+      "aliases": [],
+      "manufacturerCode": "AK11132",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#dee4bc",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/green-ochre",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Green Ochre",
+      "aliases": [],
+      "manufacturerCode": "AK11122",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#a68236",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/green-sky",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Green Sky",
+      "aliases": [],
+      "manufacturerCode": "AK11134",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#88b082",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/green-uniform-base",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Green Uniform Base",
+      "aliases": [],
+      "manufacturerCode": "AK11427",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#2f381f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/greenish-white",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Greenish White",
+      "aliases": [],
+      "manufacturerCode": "AK11005",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#e4edcc",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/greenskin-punch",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Greenskin punch",
+      "aliases": [],
+      "manufacturerCode": "AK11274",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#115928",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/grey-blue",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Grey-Blue",
+      "aliases": [],
+      "manufacturerCode": "AK11165",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#5e6772",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/grey-blue-figures",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Grey Blue",
+      "aliases": [],
+      "manufacturerCode": "AK11426",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#737878",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/grey-brown",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Grey-Brown",
+      "aliases": [],
+      "manufacturerCode": "AK11125",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#6f5b3a",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/grey-green",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Grey-Green",
+      "aliases": [],
+      "manufacturerCode": "AK11016",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#7f7f64",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/grey-green-figures",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Grey Green",
+      "aliases": [],
+      "manufacturerCode": "AK11424",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#9a924f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/grim-brown",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Grim Brown",
+      "aliases": [],
+      "manufacturerCode": "AK11112",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#1d150d",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/grimy-grey",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Grimy Grey",
+      "aliases": [],
+      "manufacturerCode": "AK11008",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#dfc999",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/gun-metal",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Gun Metal",
+      "aliases": [],
+      "manufacturerCode": "AK11212",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#4a4a47",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/gunship-green",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Gunship Green",
+      "aliases": [],
+      "manufacturerCode": "AK11150",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#465234",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/highlight-flesh",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Highlight Flesh",
+      "aliases": [],
+      "manufacturerCode": "AK11403",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#fbd0a4",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/hull-red",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Hull Red",
+      "aliases": [],
+      "manufacturerCode": "AK11108",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#331b0f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/ice-yellow",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Ice Yellow",
+      "aliases": [],
+      "manufacturerCode": "AK11036",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#ffef8e",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/idf-early-sand-yellow",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "IDF Early Sand Yellow",
+      "aliases": [],
+      "manufacturerCode": "AK11354",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#917e4b",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/idf-green",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "IDF Green",
+      "aliases": [],
+      "manufacturerCode": "AK11355",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#31351d",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/idf-modern-grey",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "IDF Modern Grey",
+      "aliases": [],
+      "manufacturerCode": "AK11352",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#6d582e",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/idf-sand-grey-1970s-1980s",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "IDF Sand Grey 1970s-1980s",
+      "aliases": [],
+      "manufacturerCode": "AK11353",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#75643b",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/imperial-blue",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Imperial Blue",
+      "aliases": [],
+      "manufacturerCode": "AK11180",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#21274e",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/intense-pink",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Intense Pink",
+      "aliases": [],
+      "manufacturerCode": "AK11065",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#eb748f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/interior-yellow-green",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Interior Yellow Green",
+      "aliases": [],
+      "manufacturerCode": "AK11138",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#aba215",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/intermediate-blue",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Intermediate Blue",
+      "aliases": [],
+      "manufacturerCode": "AK11163",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#676966",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/intermediate-green",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Intermediate Green",
+      "aliases": [],
+      "manufacturerCode": "AK11149",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#516e32",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/ivory",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Ivory",
+      "aliases": [],
+      "manufacturerCode": "AK11004",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#f2edc5",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/japanese-brown",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Japanese Brown",
+      "aliases": [],
+      "manufacturerCode": "AK11123",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#956d1a",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/khaki-green-no-3",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Khaki green No.3",
+      "aliases": [],
+      "manufacturerCode": "AK11373",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#514331",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/king-purple",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "King purple",
+      "aliases": [],
+      "manufacturerCode": "AK11271",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#42235b",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/laf-green",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "LAF Green",
+      "aliases": [],
+      "manufacturerCode": "AK11357",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#2f3123",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/laser-magenta",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Laser Magenta",
+      "aliases": [],
+      "manufacturerCode": "AK11066",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#6a102f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/laser-yellow",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Laser Yellow",
+      "aliases": [],
+      "manufacturerCode": "AK11048",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#efe538",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/lead-grey",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Lead Grey",
+      "aliases": [],
+      "manufacturerCode": "AK11023",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#454741",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/leather-brown",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Leather Brown",
+      "aliases": [],
+      "manufacturerCode": "AK11110",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#45301d",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/lemon-yellow",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Lemon Yellow",
+      "aliases": [],
+      "manufacturerCode": "AK11047",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#ffe11a",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/light-brown",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Light Brown",
+      "aliases": [],
+      "manufacturerCode": "AK11100",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#cf8039",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/light-earth",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Light Earth",
+      "aliases": [],
+      "manufacturerCode": "AK11115",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#cfb57d",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/light-flesh",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Light Flesh",
+      "aliases": [],
+      "manufacturerCode": "AK11050",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#fdddb3",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/light-flesh-figures",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Light Flesh",
+      "aliases": [],
+      "manufacturerCode": "AK11402",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#d2957a",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/light-green",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Light Green",
+      "aliases": [],
+      "manufacturerCode": "AK11141",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#599231",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/light-green-figures",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Light Green",
+      "aliases": [],
+      "manufacturerCode": "AK11411",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#758e42",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/light-green-uniform",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Light Green Uniform",
+      "aliases": [],
+      "manufacturerCode": "AK11428",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#555f2c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/light-orange",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Light Orange",
+      "aliases": [],
+      "manufacturerCode": "AK11077",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#ef7a3b",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/light-prussian-blue",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Light Prussian Blue",
+      "aliases": [],
+      "manufacturerCode": "AK11186",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#102a38",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/light-rust",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Light Rust",
+      "aliases": [],
+      "manufacturerCode": "AK11105",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#da5613",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/light-stone-no-61",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Light Stone No.61",
+      "aliases": [],
+      "manufacturerCode": "AK11377",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#cfa344",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/lilac",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Lilac",
+      "aliases": [],
+      "manufacturerCode": "AK11071",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#656073",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/lime-green",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Lime Green",
+      "aliases": [],
+      "manufacturerCode": "AK11137",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#829e28",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/lizard-green",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Lizard Green",
+      "aliases": [],
+      "manufacturerCode": "AK11145",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#185a31",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/luminous-flesh",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Luminous Flesh",
+      "aliases": [],
+      "manufacturerCode": "AK11051",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#eec17f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/luminous-green",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Luminous Green",
+      "aliases": [],
+      "manufacturerCode": "AK11128",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#cbd742",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/luminous-orange",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Luminous Orange",
+      "aliases": [],
+      "manufacturerCode": "AK11082",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#f08506",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/magenta",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Magenta",
+      "aliases": [],
+      "manufacturerCode": "AK11067",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#b1325d",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/mahogany-brown",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Mahogany Brown",
+      "aliases": [],
+      "manufacturerCode": "AK11106",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#622b0e",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/matt-red",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Matt Red",
+      "aliases": [],
+      "manufacturerCode": "AK11092",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#b4321a",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/medium-blue",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Medium Blue",
+      "aliases": [],
+      "manufacturerCode": "AK11184",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#173948",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/medium-flesh-tone",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Medium Flesh Tone",
+      "aliases": [],
+      "manufacturerCode": "AK11054",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#c8812f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/medium-green",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Medium Green",
+      "aliases": [],
+      "manufacturerCode": "AK11412",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#293c1f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/medium-grey",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Medium Grey",
+      "aliases": [],
+      "manufacturerCode": "AK11010",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#b6b9a1",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/medium-olive-green",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Medium Olive Green",
+      "aliases": [],
+      "manufacturerCode": "AK11148",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#3e5120",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/medium-orange",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Medium Orange",
+      "aliases": [],
+      "manufacturerCode": "AK11078",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#ec6733",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/medium-rust",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Medium Rust",
+      "aliases": [],
+      "manufacturerCode": "AK11103",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#9d4b2f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/medium-sand",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Medium Sand",
+      "aliases": [],
+      "manufacturerCode": "AK11034",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#ca9933",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/medium-sea-grey",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Medium Sea Grey",
+      "aliases": [],
+      "manufacturerCode": "AK11014",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#9f9a81",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/merdc-sand-fs30277",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "MERDC Sand (FS30277)",
+      "aliases": [],
+      "manufacturerCode": "AK11343",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#dcc49a",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/metallic-blue",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Metallic Blue",
+      "aliases": [],
+      "manufacturerCode": "AK11199",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#498f97",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/metallic-green",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Metallic Green",
+      "aliases": [],
+      "manufacturerCode": "AK11205",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#72964d",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/middle-stone",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Middle Stone",
+      "aliases": [],
+      "manufacturerCode": "AK11124",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#8a7029",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/mint-green",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Mint Green",
+      "aliases": [],
+      "manufacturerCode": "AK11143",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#008c60",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/modern-spanish-green",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Modern Spanish Green",
+      "aliases": [],
+      "manufacturerCode": "AK11350",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#50562c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/mud-brown",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Mud Brown",
+      "aliases": [],
+      "manufacturerCode": "AK11120",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#6f5330",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/mustard-yellow",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Mustard Yellow",
+      "aliases": [],
+      "manufacturerCode": "AK11366",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#c9982d",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/nato-black",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "NATO Black",
+      "aliases": [],
+      "manufacturerCode": "AK11360",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#242324",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/nato-brown",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "NATO Brown",
+      "aliases": [],
+      "manufacturerCode": "AK11359",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#483425",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/nato-green",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "NATO Green",
+      "aliases": [],
+      "manufacturerCode": "AK11358",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#2b3e25",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/natural-steel",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Natural Steel",
+      "aliases": [],
+      "manufacturerCode": "AK11210",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#a2a39c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/neutral-grey",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Neutral Grey",
+      "aliases": [],
+      "manufacturerCode": "AK11018",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#676e69",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/new-iraqi-army-sand",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "New Iraqi Army Sand",
+      "aliases": [],
+      "manufacturerCode": "AK11361",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#d9bc7e",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/no1-light-green-fs34151",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Nº1 Light Green (FS34151)",
+      "aliases": [],
+      "manufacturerCode": "AK11335",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#5e6120",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/no13-desert-sand-fs30279",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Nº13 Desert Sand (FS30279)",
+      "aliases": [],
+      "manufacturerCode": "AK11340",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#a78462",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/no5-earth-brown-fs30099",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Nº5 Earth Brown (FS30099)",
+      "aliases": [],
+      "manufacturerCode": "AK11336",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#4f3927",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/no6-earth-yellow-fs30257",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Nº6 Earth Yellow (FS30257)",
+      "aliases": [],
+      "manufacturerCode": "AK11337",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#936224",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/no8-earth-red-fs30117",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Nº8 Earth Red (FS30117)",
+      "aliases": [],
+      "manufacturerCode": "AK11338",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#6d3c25",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/no9-olive-drab-fs33070",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Nº9 Olive Drab (FS33070)",
+      "aliases": [],
+      "manufacturerCode": "AK11339",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#3c4024",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/ocean-blue",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Ocean Blue",
+      "aliases": [],
+      "manufacturerCode": "AK11173",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#1e3635",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/ocean-gray-fs35164",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Ocean Gray (FS35164)",
+      "aliases": [],
+      "manufacturerCode": "AK11341",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#4c5c6a",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/ocher-khaki",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Ocher Khaki",
+      "aliases": [],
+      "manufacturerCode": "AK11422",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#a3853b",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/ocher-orange",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Ocher Orange",
+      "aliases": [],
+      "manufacturerCode": "AK11099",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#f6a75e",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/ochre",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Ochre",
+      "aliases": [],
+      "manufacturerCode": "AK11118",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#c6942e",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/offwhite",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Offwhite",
+      "aliases": [],
+      "manufacturerCode": "AK11002",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#ecebe1",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/oily-steel",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Oily Steel",
+      "aliases": [],
+      "manufacturerCode": "AK11211",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#a39f8b",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/old-gold",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Old Gold",
+      "aliases": [],
+      "manufacturerCode": "AK11192",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#b49e43",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/old-rose",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Old Rose",
+      "aliases": [],
+      "manufacturerCode": "AK11062",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#f2947c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/olive-drab-base",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Olive Drab Base",
+      "aliases": [],
+      "manufacturerCode": "AK11334",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#57542d",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/olive-green",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Olive Green",
+      "aliases": [],
+      "manufacturerCode": "AK11147",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#4b6024",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/orange-brown",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Orange Brown",
+      "aliases": [],
+      "manufacturerCode": "AK11101",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#b1571c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/orange-tan",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Orange Tan",
+      "aliases": [],
+      "manufacturerCode": "AK11409",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#ca8b48",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/oxford",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Oxford",
+      "aliases": [],
+      "manufacturerCode": "AK11188",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#353841",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/pale-blue",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Pale Blue",
+      "aliases": [],
+      "manufacturerCode": "AK11161",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#b5c4b7",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/pale-grey",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Pale Grey",
+      "aliases": [],
+      "manufacturerCode": "AK11013",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#aeafb4",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/pale-sand",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Pale Sand",
+      "aliases": [],
+      "manufacturerCode": "AK11032",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#f0d681",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/pale-yellow",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Pale Yellow",
+      "aliases": [],
+      "manufacturerCode": "AK11038",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#fedd57",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/pastel-blue",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Pastel Blue",
+      "aliases": [],
+      "manufacturerCode": "AK11168",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#bcdcb9",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/pastel-green",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Pastel Green",
+      "aliases": [],
+      "manufacturerCode": "AK11131",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#aad198",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/pastel-peach",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Pastel Peach",
+      "aliases": [],
+      "manufacturerCode": "AK11076",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#f49a53",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/pastel-pink",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Pastel Pink",
+      "aliases": [],
+      "manufacturerCode": "AK11059",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#f8c2a9",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/pastel-violet",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Pastel Violet",
+      "aliases": [],
+      "manufacturerCode": "AK11069",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#fbe7f1",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/pastel-yellow",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Pastel Yellow",
+      "aliases": [],
+      "manufacturerCode": "AK11037",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#fedb75",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/pearl",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Pearl",
+      "aliases": [],
+      "manufacturerCode": "AK11206",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#faf6db",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/pistachio",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Pistachio",
+      "aliases": [],
+      "manufacturerCode": "AK11130",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#dbd125",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/portland-stone-no-64",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Portland Stone No.64",
+      "aliases": [],
+      "manufacturerCode": "AK11378",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#e5c38a",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/protective-green-1920s-1930s",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Protective Green 1920s-1930s",
+      "aliases": [],
+      "manufacturerCode": "AK11371",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#24361f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/purple",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Purple",
+      "aliases": [],
+      "manufacturerCode": "AK11073",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#594550",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/purulent-yellow",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Purulent Yellow",
+      "aliases": [],
+      "manufacturerCode": "AK11039",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#ecd13a",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/radiant-flesh",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Radiant Flesh",
+      "aliases": [],
+      "manufacturerCode": "AK11053",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#f8b058",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/radiant-yellow",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Radiant Yellow",
+      "aliases": [],
+      "manufacturerCode": "AK11046",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#ffd306",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/ral-1039-f9-sandbeige",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "RAL 1039 F9 Sandbeige",
+      "aliases": [],
+      "manufacturerCode": "AK11325",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#bc9c61",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/ral-6003-olivgrun-opt-1",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "RAL 6003 Olivgrün opt.1",
+      "aliases": [],
+      "manufacturerCode": "AK11309",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#4e5322",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/ral-6003-olivgrun-opt-2",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "RAL 6003 Olivgrün opt.2",
+      "aliases": [],
+      "manufacturerCode": "AK11310",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#3b371a",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/ral-6007-grun",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "RAL 6007 Grün",
+      "aliases": [],
+      "manufacturerCode": "AK11308",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#416231",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/ral-6011-resedagrun",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "RAL 6011 Resedagrün",
+      "aliases": [],
+      "manufacturerCode": "AK11311",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#626e3e",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/ral-6011b-resedagrun",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "RAL 6011B Resedagrün",
+      "aliases": [],
+      "manufacturerCode": "AK11312",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#596434",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/ral-6040-f9-helloliv",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "RAL 6040 F9 Helloliv",
+      "aliases": [],
+      "manufacturerCode": "AK11323",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#66582f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/ral-7008-graugrun",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "RAL 7008 Graugrün",
+      "aliases": [],
+      "manufacturerCode": "AK11313",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#827135",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/ral-7008-graugrun-opt-2",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "RAL 7008 Graugrün Opt 2",
+      "aliases": [],
+      "manufacturerCode": "AK11314",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#6c7537",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/ral-7009-hellgrau",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "RAL 7009 Hellgrau",
+      "aliases": [],
+      "manufacturerCode": "AK11307",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#7d6c32",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/ral-7017-dunkelbraun",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "RAL 7017 Dunkelbraun",
+      "aliases": [],
+      "manufacturerCode": "AK11315",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#4f3c2d",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/ral-7021-dunkelgrau",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "RAL 7021 Dunkelgrau",
+      "aliases": [],
+      "manufacturerCode": "AK11316",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#1d201f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/ral-7027-grau",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "RAL 7027 Grau",
+      "aliases": [],
+      "manufacturerCode": "AK11317",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#716447",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/ral-7028-dunkelgelb-ausgabe-1944",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "RAL 7028 Dunkelgelb Ausgabe 1944",
+      "aliases": [],
+      "manufacturerCode": "AK11319",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#b7a176",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/ral-7028-dunkelgelb-initial",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "RAL 7028 Dunkelgelb (Initial)",
+      "aliases": [],
+      "manufacturerCode": "AK11318",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#998952",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/ral-7028-dunkelgelb-variant",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "RAL 7028 Dunkelgelb (Variant)",
+      "aliases": [],
+      "manufacturerCode": "AK11320",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#b49a57",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/ral-8000-gelbbraun",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "RAL 8000 Gelbbraun",
+      "aliases": [],
+      "manufacturerCode": "AK11327",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#84693a",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/ral-8012-rotbraun",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "RAL 8012 Rotbraun",
+      "aliases": [],
+      "manufacturerCode": "AK11328",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#6c2213",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/ral-8013-rotbraun",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "RAL 8013 Rotbraun",
+      "aliases": [],
+      "manufacturerCode": "AK11329",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#521912",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/ral-8017-rotbraun",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "RAL 8017 Rotbraun",
+      "aliases": [],
+      "manufacturerCode": "AK11330",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#3b261d",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/ral-8020-braun",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "RAL 8020 Braun",
+      "aliases": [],
+      "manufacturerCode": "AK11331",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#ad8555",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/ral-8031-f9-sandbraun",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "RAL 8031 F9 Sandbraun",
+      "aliases": [],
+      "manufacturerCode": "AK11326",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#8e6634",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/red-brown",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Red Brown",
+      "aliases": [],
+      "manufacturerCode": "AK11434",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#7a4230",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/reddish-black",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Reddish Black",
+      "aliases": [],
+      "manufacturerCode": "AK11406",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#3b2321",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/reddish-grey",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Reddish Grey",
+      "aliases": [],
+      "manufacturerCode": "AK11017",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#796a52",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/reflective-green",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Reflective Green",
+      "aliases": [],
+      "manufacturerCode": "AK11158",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#352e16",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/rock-grey",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Rock Grey",
+      "aliases": [],
+      "manufacturerCode": "AK11007",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#c0b794",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/rubber-black",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Rubber Black",
+      "aliases": [],
+      "manufacturerCode": "AK11027",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#29251a",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/ruby",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Ruby",
+      "aliases": [],
+      "manufacturerCode": "AK11084",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#cf4847",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/russet-shadow",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Russet Shadow",
+      "aliases": [],
+      "manufacturerCode": "AK11277",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#cc5426",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/russian-blue-base",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Russian Blue Base",
+      "aliases": [],
+      "manufacturerCode": "AK11432",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#13161f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/russian-blue-lights",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Russian Blue Lights",
+      "aliases": [],
+      "manufacturerCode": "AK11431",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#212835",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/russian-dark-brown-6k",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Russian Dark Brown 6K",
+      "aliases": [],
+      "manufacturerCode": "AK11369",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#392e16",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/russian-green",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Russian Green",
+      "aliases": [],
+      "manufacturerCode": "AK11159",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#282816",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/russian-green-4bo",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Russian Green 4BO",
+      "aliases": [],
+      "manufacturerCode": "AK11368",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#3e4c28",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/russian-sand-7",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Russian Sand 7",
+      "aliases": [],
+      "manufacturerCode": "AK11370",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#85632c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/russian-uniform-base",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Russian Uniform Base",
+      "aliases": [],
+      "manufacturerCode": "AK11430",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#575d21",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/russian-uniform-lights",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Russian Uniform Lights",
+      "aliases": [],
+      "manufacturerCode": "AK11429",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#6e7223",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/rusty-brass",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Rusty Brass",
+      "aliases": [],
+      "manufacturerCode": "AK11195",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#965a18",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/rusty-gold",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Rusty Gold",
+      "aliases": [],
+      "manufacturerCode": "AK11193",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#6d5c27",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/s-c-c-no-15-olive-drab",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "S.C.C. No.15 Olive Drab",
+      "aliases": [],
+      "manufacturerCode": "AK11386",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#414129",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/s-c-c-no-1a-very-dark-brown",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "S.C.C. No.1A Very Dark Brown",
+      "aliases": [],
+      "manufacturerCode": "AK11384",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#402e21",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/s-c-c-no-2-brown",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "S.C.C. No.2 Brown",
+      "aliases": [],
+      "manufacturerCode": "AK11385",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#7e502a",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/saddle-brown",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Saddle Brown",
+      "aliases": [],
+      "manufacturerCode": "AK11104",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#693b2c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/sahara-yellow",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Sahara Yellow",
+      "aliases": [],
+      "manufacturerCode": "AK11040",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#b1930e",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/salmon",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Salmon",
+      "aliases": [],
+      "manufacturerCode": "AK11061",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#f4a075",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/sand-yellow",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Sand Yellow",
+      "aliases": [],
+      "manufacturerCode": "AK11035",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#e8bc37",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/scarlet-red",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Scarlet Red",
+      "aliases": [],
+      "manufacturerCode": "AK11087",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#ce3b27",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/shadow-flesh",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Shadow Flesh",
+      "aliases": [],
+      "manufacturerCode": "AK11404",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#92423b",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/sickly-pink",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Sickly Pink",
+      "aliases": [],
+      "manufacturerCode": "AK11060",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#f6b092",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/silver",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Silver",
+      "aliases": [],
+      "manufacturerCode": "AK11209",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#96a0a2",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/silver-grey",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Silver Grey",
+      "aliases": [],
+      "manufacturerCode": "AK11006",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#e3d7b7",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/silver-grey-no-28",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Silver Grey No.28",
+      "aliases": [],
+      "manufacturerCode": "AK11374",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#99945d",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/sky-blue",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Sky Blue",
+      "aliases": [],
+      "manufacturerCode": "AK11175",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#86c2cb",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/sky-grey-fs-36463",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Sky Grey FS 36463",
+      "aliases": [],
+      "manufacturerCode": "AK11012",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#b9b9b5",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/sla-blue",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "SLA Blue",
+      "aliases": [],
+      "manufacturerCode": "AK11356",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#45605d",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/slate-no-34",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Slate No.34",
+      "aliases": [],
+      "manufacturerCode": "AK11375",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#4e4c2d",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/slime-green",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Slime green",
+      "aliases": [],
+      "manufacturerCode": "AK11275",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#8cbc26",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/smoke-black",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Smoke Black",
+      "aliases": [],
+      "manufacturerCode": "AK11028",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#2b2b20",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/snow-blue",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Snow Blue",
+      "aliases": [],
+      "manufacturerCode": "AK11174",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#c8e3e0",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/spectrum-blue",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Spectrum Blue",
+      "aliases": [],
+      "manufacturerCode": "AK11162",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#b3bdbd",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/splittermuster-base",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Splittermuster Base",
+      "aliases": [],
+      "manufacturerCode": "AK11414",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#726b44",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/splittermuster-green-spots",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Splittermuster Green Spots",
+      "aliases": [],
+      "manufacturerCode": "AK11415",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#2f3d26",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/star-blue",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Star Blue",
+      "aliases": [],
+      "manufacturerCode": "AK11185",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#00475f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/strong-dark-blue",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Strong Dark Blue",
+      "aliases": [],
+      "manufacturerCode": "AK11187",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#07141e",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/sun-red",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Sun red",
+      "aliases": [],
+      "manufacturerCode": "AK11279",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#af421c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/sunny-skin-tone",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Sunny Skin Tone",
+      "aliases": [],
+      "manufacturerCode": "AK11055",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#f6a653",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/tan-earth",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Tan Earth",
+      "aliases": [],
+      "manufacturerCode": "AK11121",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#7d5b33",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/tan-yellow",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Tan Yellow",
+      "aliases": [],
+      "manufacturerCode": "AK11116",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#d29746",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/tenebrous-grey",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Tenebrous Grey",
+      "aliases": [],
+      "manufacturerCode": "AK11026",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#302c20",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/turquoise",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Turquoise",
+      "aliases": [],
+      "manufacturerCode": "AK11171",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#00494c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/ultramarine",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Ultramarine",
+      "aliases": [],
+      "manufacturerCode": "AK11179",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#233775",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/us-dark-green",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "US Dark Green",
+      "aliases": [],
+      "manufacturerCode": "AK11157",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#423917",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/us-olive-base-uniform",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "US Olive Base Uniform",
+      "aliases": [],
+      "manufacturerCode": "AK11433",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#524b1d",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/vampiric-flesh",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Vampiric Flesh",
+      "aliases": [],
+      "manufacturerCode": "AK11057",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#cebb81",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/vermillion",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Vermillion",
+      "aliases": [],
+      "manufacturerCode": "AK11090",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#c54d33",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/violet-red",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Violet Red",
+      "aliases": [],
+      "manufacturerCode": "AK11075",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#573436",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/viscera-effect",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Viscera effect",
+      "aliases": [],
+      "manufacturerCode": "AK11261",
+      "type": "technical",
+      "metallic": false,
+      "color": {
+        "hex": "#ffffff",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/volcanic-yellow",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Volcanic Yellow",
+      "aliases": [],
+      "manufacturerCode": "AK11042",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#ef9114",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/waffen-brown",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Waffen Brown",
+      "aliases": [],
+      "manufacturerCode": "AK11417",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#634426",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/waffen-brown-grey",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Waffen Brown Grey",
+      "aliases": [],
+      "manufacturerCode": "AK11416",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#4b3a2e",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/waffen-green",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Waffen Green",
+      "aliases": [],
+      "manufacturerCode": "AK11420",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#334022",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/waffen-red-brown",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Waffen Red Brown",
+      "aliases": [],
+      "manufacturerCode": "AK11419",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#4c2e24",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/warm-grey",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Warm Grey",
+      "aliases": [],
+      "manufacturerCode": "AK11009",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#b4a889",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/washable-white-paint",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Washable White Paint",
+      "aliases": [],
+      "manufacturerCode": "AK11372",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#ffffff",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/white",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "White",
+      "aliases": [],
+      "manufacturerCode": "AK11001",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#ffffff",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/white-grey",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "White Grey",
+      "aliases": [],
+      "manufacturerCode": "AK11003",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#f5f4ee",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/wine-red",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Wine Red",
+      "aliases": [],
+      "manufacturerCode": "AK11096",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#68150f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/wood-base",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Wood Base",
+      "aliases": [],
+      "manufacturerCode": "AK11351",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#a49569",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/wwi-british-khaki-brown-base",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "WWI British Khaki Brown Base",
+      "aliases": [],
+      "manufacturerCode": "AK11301",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#53412d",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/wwi-french-artillery-grey",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "WWI French Artillery Grey",
+      "aliases": [],
+      "manufacturerCode": "AK11303",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#535d6c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/wwi-french-brown",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "WWI French Brown",
+      "aliases": [],
+      "manufacturerCode": "AK11304",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#4d2a17",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/wwi-french-green-1",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "WWI French Green 1",
+      "aliases": [],
+      "manufacturerCode": "AK11305",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#363f2b",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/wwi-french-green-2",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "WWI French Green 2",
+      "aliases": [],
+      "manufacturerCode": "AK11306",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#2b271b",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/wwi-french-milky-coffee",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "WWI French Milky Coffee",
+      "aliases": [],
+      "manufacturerCode": "AK11302",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#9b7c4e",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/3gen-acrylics/yellow",
+      "rangeId": "ak-interactive/3gen-acrylics",
+      "name": "Yellow",
+      "aliases": [],
+      "manufacturerCode": "AK11044",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#fab611",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/bile-yellow",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Bile Yellow",
+      "aliases": [],
+      "manufacturerCode": "AK17008",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#e5e02a",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/black",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Black",
+      "aliases": [],
+      "manufacturerCode": "AK17049",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#3b3c3c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/blue-black",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Blue Black",
+      "aliases": [],
+      "manufacturerCode": "AK17051",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#232b35",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/bluish-grey",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Bluish Grey",
+      "aliases": [],
+      "manufacturerCode": "AK17042",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#3b5259",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/bone-brown",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Bone Brown",
+      "aliases": [],
+      "manufacturerCode": "AK17058",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#683a1e",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/british-uniform",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "British Uniform",
+      "aliases": [],
+      "manufacturerCode": "AK17076",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#87581a",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/bronze",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Bronze",
+      "aliases": [],
+      "manufacturerCode": "AK17069",
+      "type": "contrast",
+      "metallic": true,
+      "color": {
+        "hex": "#80451d",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/brown-black",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Brown Black",
+      "aliases": [],
+      "manufacturerCode": "AK17047",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#4f3c34",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/camel-brown",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Camel Brown",
+      "aliases": [],
+      "manufacturerCode": "AK17059",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#916513",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/cold-steel",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Cold Steel",
+      "aliases": [],
+      "manufacturerCode": "AK17070",
+      "type": "contrast",
+      "metallic": true,
+      "color": {
+        "hex": "#495d75",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/copper",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Copper",
+      "aliases": [],
+      "manufacturerCode": "AK17066",
+      "type": "contrast",
+      "metallic": true,
+      "color": {
+        "hex": "#bf7626",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/crimson-red",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Crimson Red",
+      "aliases": [],
+      "manufacturerCode": "AK17031",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#78181c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/dak-green",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Dak Green",
+      "aliases": [],
+      "manufacturerCode": "AK17073",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#4b531e",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/dark-flesh",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Dark Flesh",
+      "aliases": [],
+      "manufacturerCode": "AK17061",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#5f3925",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/dark-leather",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Dark Leather",
+      "aliases": [],
+      "manufacturerCode": "AK17048",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#4a2019",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/dark-steel",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Dark Steel",
+      "aliases": [],
+      "manufacturerCode": "AK17067",
+      "type": "contrast",
+      "metallic": true,
+      "color": {
+        "hex": "#5d5d5c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/demon-purple",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Demon Purple",
+      "aliases": [],
+      "manufacturerCode": "AK17006",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#4f2059",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/desert-sand",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Desert Sand",
+      "aliases": [],
+      "manufacturerCode": "AK17079",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#a06c12",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/desert-yellow",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Desert Yellow",
+      "aliases": [],
+      "manufacturerCode": "AK17063",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#7e6415",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/dirty-grey",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Dirty Grey",
+      "aliases": [],
+      "manufacturerCode": "AK17046",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#6d664b",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/dirty-yellow",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Dirty Yellow",
+      "aliases": [],
+      "manufacturerCode": "AK17007",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#f2ba02",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/dwarf-flesh",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Dwarf Flesh",
+      "aliases": [],
+      "manufacturerCode": "AK17032",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#ed8135",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/field-grey",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Field Grey",
+      "aliases": [],
+      "manufacturerCode": "AK17072",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#4c4c43",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/forest-green",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Forest Green",
+      "aliases": [],
+      "manufacturerCode": "AK17021",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#495720",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/german-grey",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "German Grey",
+      "aliases": [],
+      "manufacturerCode": "AK17071",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#3e3e46",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/gold",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Gold",
+      "aliases": [],
+      "manufacturerCode": "AK17065",
+      "type": "contrast",
+      "metallic": true,
+      "color": {
+        "hex": "#d9a623",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/grey-shadow",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Grey Shadow",
+      "aliases": [],
+      "manufacturerCode": "AK17040",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#7d6c74",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/human-flesh",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Human Flesh",
+      "aliases": [],
+      "manufacturerCode": "AK17057",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#83452a",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/ice-blue",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Ice Blue",
+      "aliases": [],
+      "manufacturerCode": "AK17024",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#71c2e5",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/infernal-red",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Infernal Red",
+      "aliases": [],
+      "manufacturerCode": "AK17037",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#8f2719",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/jade-green",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Jade Green",
+      "aliases": [],
+      "manufacturerCode": "AK17015",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#098260",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/lavender",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Lavender",
+      "aliases": [],
+      "manufacturerCode": "AK17004",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#7a4f9b",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/leaf-green",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Leaf Green",
+      "aliases": [],
+      "manufacturerCode": "AK17020",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#7d7c2e",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/leather",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Leather",
+      "aliases": [],
+      "manufacturerCode": "AK17053",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#683a1e",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/light-grey-shadow",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Light Grey Shadow",
+      "aliases": [],
+      "manufacturerCode": "AK17039",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#b6a2b3",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/light-leather",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Light Leather",
+      "aliases": [],
+      "manufacturerCode": "AK17060",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#8f4a13",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/light-yellow",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Light Yellow",
+      "aliases": [],
+      "manufacturerCode": "AK17014",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#f8ee71",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/necromancer-purple",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Necromancer Purple",
+      "aliases": [],
+      "manufacturerCode": "AK17005",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#412984",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/night-black",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Night Black",
+      "aliases": [],
+      "manufacturerCode": "AK17052",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#353244",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/night-blood",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Night Blood",
+      "aliases": [],
+      "manufacturerCode": "AK17038",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#66221e",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/night-blue",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Night Blue",
+      "aliases": [],
+      "manufacturerCode": "AK17025",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#104a6f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/ochre-green",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Ochre Green",
+      "aliases": [],
+      "manufacturerCode": "AK17075",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#845c11",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/old-gold",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Old Gold",
+      "aliases": [],
+      "manufacturerCode": "AK17068",
+      "type": "contrast",
+      "metallic": true,
+      "color": {
+        "hex": "#e8bf6a",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/orange",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Orange",
+      "aliases": [],
+      "manufacturerCode": "AK17033",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#e76219",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/orange-brown",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Orange Brown",
+      "aliases": [],
+      "manufacturerCode": "AK17054",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#8e4c14",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/orc-flesh",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Orc Flesh",
+      "aliases": [],
+      "manufacturerCode": "AK17023",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#067a34",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/pink-flesh",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Pink Flesh",
+      "aliases": [],
+      "manufacturerCode": "AK17002",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#d75a9c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/plague-yellow",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Plague Yellow",
+      "aliases": [],
+      "manufacturerCode": "AK17013",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#f4c20b",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/power-blue",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Power Blue",
+      "aliases": [],
+      "manufacturerCode": "AK17026",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#004c8a",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/purple-flesh",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Purple Flesh",
+      "aliases": [],
+      "manufacturerCode": "AK17003",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#6f2c5f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/putrid-white",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Putrid White",
+      "aliases": [],
+      "manufacturerCode": "AK17055",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#887b1b",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/reddish-flesh",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Reddish Flesh",
+      "aliases": [],
+      "manufacturerCode": "AK17056",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#8c433c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/reddish-orange",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Reddish Orange",
+      "aliases": [],
+      "manufacturerCode": "AK17035",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#d15022",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/rotten-green",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Rotten Green",
+      "aliases": [],
+      "manufacturerCode": "AK17022",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#85a326",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/russian-blue",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Russian Blue",
+      "aliases": [],
+      "manufacturerCode": "AK17078",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#0f395f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/russian-uniform",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Russian Uniform",
+      "aliases": [],
+      "manufacturerCode": "AK17077",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#4f5720",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/soft-black",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Soft Black",
+      "aliases": [],
+      "manufacturerCode": "AK17050",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#726e70",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/solar-yellow",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Solar Yellow",
+      "aliases": [],
+      "manufacturerCode": "AK17012",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#eba800",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/space-dark-green",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Space Dark Green",
+      "aliases": [],
+      "manufacturerCode": "AK17019",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#1f6354",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/space-green",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Space Green",
+      "aliases": [],
+      "manufacturerCode": "AK17017",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#0e6530",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/space-grey",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Space Grey",
+      "aliases": [],
+      "manufacturerCode": "AK17045",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#a4a4b4",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/space-magenta",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Space Magenta",
+      "aliases": [],
+      "manufacturerCode": "AK17001",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#91125a",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/space-red",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Space Red",
+      "aliases": [],
+      "manufacturerCode": "AK17034",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#c13a2e",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/space-yellow",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Space Yellow",
+      "aliases": [],
+      "manufacturerCode": "AK17011",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#f4cd00",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/spectral-blue",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Spectral Blue",
+      "aliases": [],
+      "manufacturerCode": "AK17028",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#309e9a",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/spectral-green",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Spectral Green",
+      "aliases": [],
+      "manufacturerCode": "AK17016",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#8fc25c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/strong-grey",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Strong Grey",
+      "aliases": [],
+      "manufacturerCode": "AK17044",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#5a5b66",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/turquoise-blue",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Turquoise Blue",
+      "aliases": [],
+      "manufacturerCode": "AK17029",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#006183",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/turquoise-green",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Turquoise Green",
+      "aliases": [],
+      "manufacturerCode": "AK17030",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#006661",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/ultramarine-blue",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Ultramarine Blue",
+      "aliases": [],
+      "manufacturerCode": "AK17027",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#21366f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/us-olive-uniform",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Us Olive Uniform",
+      "aliases": [],
+      "manufacturerCode": "AK17074",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#726a29",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/vampire-flesh",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Vampire Flesh",
+      "aliases": [],
+      "manufacturerCode": "AK17064",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#9a737a",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/vivid-flesh",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Vivid Flesh",
+      "aliases": [],
+      "manufacturerCode": "AK17036",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#df663e",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/vivid-green",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Vivid Green",
+      "aliases": [],
+      "manufacturerCode": "AK17018",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#1d7630",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/warm-orange",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Warm Orange",
+      "aliases": [],
+      "manufacturerCode": "AK17009",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#f18b15",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/warm-yellow",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Warm Yellow",
+      "aliases": [],
+      "manufacturerCode": "AK17010",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#fcc215",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/white-shadow",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "White Shadow",
+      "aliases": [],
+      "manufacturerCode": "AK17043",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#cac8c8",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/winter-grey",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Winter Grey",
+      "aliases": [],
+      "manufacturerCode": "AK17041",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#76898d",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "ak-interactive/quick-gen/wood",
+      "rangeId": "ak-interactive/quick-gen",
+      "name": "Wood",
+      "aliases": [],
+      "manufacturerCode": "AK17062",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#5f2f17",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
     {
       "id": "citadel/base/abaddon-black",
       "rangeId": "citadel/base",
