@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 1,
-    "dataVersion": "sha256:bc09f8c955dd1e17c4bdb3d60ea9cf6b1b2ec265f40dd34707c1285fbbc80513"
+    "dataVersion": "sha256:e46236cbf3f8c7c4cc21956ee1fcdab936eabe9027118a5344f73307c9e2cf9f"
   },
   "sources": [
     {
@@ -44,6 +44,11 @@
     {
       "id": "the-army-painter",
       "name": "The Army Painter",
+      "aliases": []
+    },
+    {
+      "id": "vallejo",
+      "name": "Vallejo",
       "aliases": []
     }
   ],
@@ -106,6 +111,24 @@
       "id": "the-army-painter/warpaints-fanatic",
       "brandId": "the-army-painter",
       "name": "Warpaints Fanatic",
+      "status": "active"
+    },
+    {
+      "id": "vallejo/game-color",
+      "brandId": "vallejo",
+      "name": "Game Color",
+      "status": "active"
+    },
+    {
+      "id": "vallejo/model-color",
+      "brandId": "vallejo",
+      "name": "Model Color",
+      "status": "active"
+    },
+    {
+      "id": "vallejo/xpress-color",
+      "brandId": "vallejo",
+      "name": "Xpress Color",
       "status": "active"
     }
   ],
@@ -17126,6 +17149,6670 @@
       "metallic": false,
       "color": {
         "hex": "#832c36",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/abyssal-turquoise",
+      "rangeId": "vallejo/game-color",
+      "name": "Abyssal Turquoise",
+      "aliases": [],
+      "manufacturerCode": "72.120",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#1b3e54",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/acid",
+      "rangeId": "vallejo/game-color",
+      "name": "Acid",
+      "aliases": [],
+      "manufacturerCode": "72.607",
+      "type": "technical",
+      "metallic": false,
+      "color": {
+        "hex": "#539e5d",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/alien-purple",
+      "rangeId": "vallejo/game-color",
+      "name": "Alien Purple",
+      "aliases": [],
+      "manufacturerCode": "72.076",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#7161a8",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/angel-green",
+      "rangeId": "vallejo/game-color",
+      "name": "Angel Green",
+      "aliases": [],
+      "manufacturerCode": "72.123",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#324d2c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/aquamarine",
+      "rangeId": "vallejo/game-color",
+      "name": "Aquamarine",
+      "aliases": [],
+      "manufacturerCode": "72.119",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#007c74",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/athena-skin",
+      "rangeId": "vallejo/game-color",
+      "name": "Athena Skin",
+      "aliases": [],
+      "manufacturerCode": "72.107",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#c85b54",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/barbarian-skin",
+      "rangeId": "vallejo/game-color",
+      "name": "Barbarian Skin",
+      "aliases": [],
+      "manufacturerCode": "72.071",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#926641",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/beasty-brown",
+      "rangeId": "vallejo/game-color",
+      "name": "Beasty Brown",
+      "aliases": [],
+      "manufacturerCode": "72.043",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#7f5525",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/bile",
+      "rangeId": "vallejo/game-color",
+      "name": "Bile",
+      "aliases": [],
+      "manufacturerCode": "72.606",
+      "type": "technical",
+      "metallic": false,
+      "color": {
+        "hex": "#a4c600",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/bile-green",
+      "rangeId": "vallejo/game-color",
+      "name": "Bile Green",
+      "aliases": [],
+      "manufacturerCode": "72.122",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#d5d900",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/black",
+      "rangeId": "vallejo/game-color",
+      "name": "Black",
+      "aliases": [],
+      "manufacturerCode": "72.051",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#000000",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/black-green-ink",
+      "rangeId": "vallejo/game-color",
+      "name": "Black Green Ink",
+      "aliases": [],
+      "manufacturerCode": "72.090",
+      "type": "ink",
+      "metallic": false,
+      "color": {
+        "hex": "#3d634a",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/black-ink",
+      "rangeId": "vallejo/game-color",
+      "name": "Black Ink",
+      "aliases": [],
+      "manufacturerCode": "72.094",
+      "type": "ink",
+      "metallic": false,
+      "color": {
+        "hex": "#000000",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/black-wash",
+      "rangeId": "vallejo/game-color",
+      "name": "Black Wash",
+      "aliases": [],
+      "manufacturerCode": "73.201",
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#343235",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/bloody-red",
+      "rangeId": "vallejo/game-color",
+      "name": "Bloody Red",
+      "aliases": [],
+      "manufacturerCode": "72.010",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#d41c1c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/blue-ink",
+      "rangeId": "vallejo/game-color",
+      "name": "Blue Ink",
+      "aliases": [],
+      "manufacturerCode": "72.088",
+      "type": "ink",
+      "metallic": false,
+      "color": {
+        "hex": "#00528e",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/blue-wash",
+      "rangeId": "vallejo/game-color",
+      "name": "Blue Wash",
+      "aliases": [],
+      "manufacturerCode": "73.207",
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#1a5b9b",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/bone-white",
+      "rangeId": "vallejo/game-color",
+      "name": "Bone White",
+      "aliases": [],
+      "manufacturerCode": "72.034",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#bea374",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/brassy-brass",
+      "rangeId": "vallejo/game-color",
+      "name": "Brassy Brass",
+      "aliases": [],
+      "manufacturerCode": "72.058",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#e9d7cb",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/bright-bronze",
+      "rangeId": "vallejo/game-color",
+      "name": "Bright Bronze",
+      "aliases": [],
+      "manufacturerCode": "72.057",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#e7d5bf",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/bronze-brown",
+      "rangeId": "vallejo/game-color",
+      "name": "Bronze Brown",
+      "aliases": [],
+      "manufacturerCode": "72.036",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#b16921",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/camouflage-green",
+      "rangeId": "vallejo/game-color",
+      "name": "Camouflage Green",
+      "aliases": [],
+      "manufacturerCode": "72.031",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#8b7732",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/cayman-green",
+      "rangeId": "vallejo/game-color",
+      "name": "Cayman Green",
+      "aliases": [],
+      "manufacturerCode": "72.067",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#59542a",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/chainmail",
+      "rangeId": "vallejo/game-color",
+      "name": "Chainmail",
+      "aliases": [],
+      "manufacturerCode": "72.053",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#e4e5e9",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/charcoal",
+      "rangeId": "vallejo/game-color",
+      "name": "Charcoal",
+      "aliases": [],
+      "manufacturerCode": "72.155",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#363638",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/charred-brown",
+      "rangeId": "vallejo/game-color",
+      "name": "Charred Brown",
+      "aliases": [],
+      "manufacturerCode": "72.045",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#422a26",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/corrosion",
+      "rangeId": "vallejo/game-color",
+      "name": "Corrosion",
+      "aliases": [],
+      "manufacturerCode": "72.608",
+      "type": "technical",
+      "metallic": false,
+      "color": {
+        "hex": "#572922",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/dark-fleshtone",
+      "rangeId": "vallejo/game-color",
+      "name": "Dark Fleshtone",
+      "aliases": [],
+      "manufacturerCode": "72.044",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#603429",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/dark-green",
+      "rangeId": "vallejo/game-color",
+      "name": "Dark Green",
+      "aliases": [],
+      "manufacturerCode": "72.028",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#1f3727",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/dark-gunmetal",
+      "rangeId": "vallejo/game-color",
+      "name": "Dark Gunmetal",
+      "aliases": [],
+      "manufacturerCode": "72.054",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#dadada",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/dark-turquoise-ink",
+      "rangeId": "vallejo/game-color",
+      "name": "Dark Turquoise Ink",
+      "aliases": [],
+      "manufacturerCode": "72.084",
+      "type": "ink",
+      "metallic": false,
+      "color": {
+        "hex": "#01708b",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/dead-flesh",
+      "rangeId": "vallejo/game-color",
+      "name": "Dead Flesh",
+      "aliases": [],
+      "manufacturerCode": "72.035",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#c3aa4d",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/dead-white",
+      "rangeId": "vallejo/game-color",
+      "name": "Dead White",
+      "aliases": [],
+      "manufacturerCode": "72.001",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#ffffff",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/deep-magenta",
+      "rangeId": "vallejo/game-color",
+      "name": "Deep Magenta",
+      "aliases": [],
+      "manufacturerCode": "72.113",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#622640",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/demon-blood",
+      "rangeId": "vallejo/game-color",
+      "name": "Demon Blood",
+      "aliases": [],
+      "manufacturerCode": "72.603",
+      "type": "technical",
+      "metallic": false,
+      "color": {
+        "hex": "#66477e",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/desert-yellow",
+      "rangeId": "vallejo/game-color",
+      "name": "Desert Yellow",
+      "aliases": [],
+      "manufacturerCode": "72.063",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#996732",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/dirty-grey",
+      "rangeId": "vallejo/game-color",
+      "name": "Dirty Grey",
+      "aliases": [],
+      "manufacturerCode": "72.145",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#675f30",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/earth",
+      "rangeId": "vallejo/game-color",
+      "name": "Earth",
+      "aliases": [],
+      "manufacturerCode": "72.062",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#775730",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/electric-blue",
+      "rangeId": "vallejo/game-color",
+      "name": "Electric Blue",
+      "aliases": [],
+      "manufacturerCode": "72.023",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#4399b2",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/elf-skin-tone",
+      "rangeId": "vallejo/game-color",
+      "name": "Elf Skin Tone",
+      "aliases": [],
+      "manufacturerCode": "72.004",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#ca8854",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/elfic-blue",
+      "rangeId": "vallejo/game-color",
+      "name": "Elfic Blue",
+      "aliases": [],
+      "manufacturerCode": "72.117",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#50617d",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/elfic-flesh",
+      "rangeId": "vallejo/game-color",
+      "name": "Elfic Flesh",
+      "aliases": [],
+      "manufacturerCode": "72.098",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#ead7b9",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/evil-red",
+      "rangeId": "vallejo/game-color",
+      "name": "Evil Red",
+      "aliases": [],
+      "manufacturerCode": "72.112",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#461e26",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/flesh-wash",
+      "rangeId": "vallejo/game-color",
+      "name": "Flesh Wash",
+      "aliases": [],
+      "manufacturerCode": "73.204",
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#b67c78",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/fluorescent-blue",
+      "rangeId": "vallejo/game-color",
+      "name": "Fluorescent Blue",
+      "aliases": [],
+      "manufacturerCode": "72.160",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#0082cd",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/fluorescent-cold-green",
+      "rangeId": "vallejo/game-color",
+      "name": "Fluorescent Cold Green",
+      "aliases": [],
+      "manufacturerCode": "72.161",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#007074",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/fluorescent-green",
+      "rangeId": "vallejo/game-color",
+      "name": "Fluorescent Green",
+      "aliases": [],
+      "manufacturerCode": "72.104",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#74b72c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/fluorescent-magenta",
+      "rangeId": "vallejo/game-color",
+      "name": "Fluorescent Magenta",
+      "aliases": [],
+      "manufacturerCode": "72.158",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#e8348d",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/fluorescent-orange",
+      "rangeId": "vallejo/game-color",
+      "name": "Fluorescent Orange",
+      "aliases": [],
+      "manufacturerCode": "72.156",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#e84e10",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/fluorescent-red",
+      "rangeId": "vallejo/game-color",
+      "name": "Fluorescent Red",
+      "aliases": [],
+      "manufacturerCode": "72.157",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#dd2f52",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/fluorescent-violet",
+      "rangeId": "vallejo/game-color",
+      "name": "Fluorescent Violet",
+      "aliases": [],
+      "manufacturerCode": "72.159",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#6f257a",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/fluorescent-yellow",
+      "rangeId": "vallejo/game-color",
+      "name": "Fluorescent Yellow",
+      "aliases": [],
+      "manufacturerCode": "72.103",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#f0e639",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/foul-green",
+      "rangeId": "vallejo/game-color",
+      "name": "Foul Green",
+      "aliases": [],
+      "manufacturerCode": "72.025",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#00a27d",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/fresh-blood",
+      "rangeId": "vallejo/game-color",
+      "name": "Fresh Blood",
+      "aliases": [],
+      "manufacturerCode": "72.601",
+      "type": "technical",
+      "metallic": false,
+      "color": {
+        "hex": "#f27466",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/frost",
+      "rangeId": "vallejo/game-color",
+      "name": "Frost",
+      "aliases": [],
+      "manufacturerCode": "72.604",
+      "type": "technical",
+      "metallic": false,
+      "color": {
+        "hex": "#8ac9e3",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/galvanic-corrosion",
+      "rangeId": "vallejo/game-color",
+      "name": "Galvanic Corrosion",
+      "aliases": [],
+      "manufacturerCode": "72.610",
+      "type": "technical",
+      "metallic": false,
+      "color": {
+        "hex": "#eeae76",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/ghost-green",
+      "rangeId": "vallejo/game-color",
+      "name": "Ghost Green",
+      "aliases": [],
+      "manufacturerCode": "72.121",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#83c192",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/glacier-blue",
+      "rangeId": "vallejo/game-color",
+      "name": "Glacier Blue",
+      "aliases": [],
+      "manufacturerCode": "72.095",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#cdd9f1",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/glorious-gold",
+      "rangeId": "vallejo/game-color",
+      "name": "Glorious Gold",
+      "aliases": [],
+      "manufacturerCode": "72.056",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#f4e3c5",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/goblin-green",
+      "rangeId": "vallejo/game-color",
+      "name": "Goblin Green",
+      "aliases": [],
+      "manufacturerCode": "72.030",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#576033",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/gold-yellow",
+      "rangeId": "vallejo/game-color",
+      "name": "Gold Yellow",
+      "aliases": [],
+      "manufacturerCode": "72.007",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#d67419",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/gorgon-brown",
+      "rangeId": "vallejo/game-color",
+      "name": "Gorgon Brown",
+      "aliases": [],
+      "manufacturerCode": "72.124",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#5a2e23",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/gory-red",
+      "rangeId": "vallejo/game-color",
+      "name": "Gory Red",
+      "aliases": [],
+      "manufacturerCode": "72.011",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#7d1f1f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/green-ink",
+      "rangeId": "vallejo/game-color",
+      "name": "Green Ink",
+      "aliases": [],
+      "manufacturerCode": "72.089",
+      "type": "ink",
+      "metallic": false,
+      "color": {
+        "hex": "#007133",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/green-rust",
+      "rangeId": "vallejo/game-color",
+      "name": "Green Rust",
+      "aliases": [],
+      "manufacturerCode": "72.605",
+      "type": "technical",
+      "metallic": false,
+      "color": {
+        "hex": "#8cc5b2",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/grunge-brown",
+      "rangeId": "vallejo/game-color",
+      "name": "Grunge Brown",
+      "aliases": [],
+      "manufacturerCode": "72.115",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#864326",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/hammered-copper",
+      "rangeId": "vallejo/game-color",
+      "name": "Hammered Copper",
+      "aliases": [],
+      "manufacturerCode": "72.059",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#dccfc7",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/hexed-lichen",
+      "rangeId": "vallejo/game-color",
+      "name": "Hexed Lichen",
+      "aliases": [],
+      "manufacturerCode": "72.015",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#4b2753",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/hot-orange",
+      "rangeId": "vallejo/game-color",
+      "name": "Hot Orange",
+      "aliases": [],
+      "manufacturerCode": "72.009",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#e23922",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/imperial-blue",
+      "rangeId": "vallejo/game-color",
+      "name": "Imperial Blue",
+      "aliases": [],
+      "manufacturerCode": "72.020",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#262a47",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/jade-green",
+      "rangeId": "vallejo/game-color",
+      "name": "Jade Green",
+      "aliases": [],
+      "manufacturerCode": "72.026",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#007155",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/khaki",
+      "rangeId": "vallejo/game-color",
+      "name": "Khaki",
+      "aliases": [],
+      "manufacturerCode": "72.061",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#9a7b4c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/leather-brown",
+      "rangeId": "vallejo/game-color",
+      "name": "Leather Brown",
+      "aliases": [],
+      "manufacturerCode": "72.040",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#8d5e2a",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/lustful-purple",
+      "rangeId": "vallejo/game-color",
+      "name": "Lustful Purple",
+      "aliases": [],
+      "manufacturerCode": "72.114",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#b78bbc",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/magenta-ink",
+      "rangeId": "vallejo/game-color",
+      "name": "Magenta Ink",
+      "aliases": [],
+      "manufacturerCode": "72.083",
+      "type": "ink",
+      "metallic": false,
+      "color": {
+        "hex": "#a62355",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/magic-blue",
+      "rangeId": "vallejo/game-color",
+      "name": "Magic Blue",
+      "aliases": [],
+      "manufacturerCode": "72.021",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#0069aa",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/midnight-purple",
+      "rangeId": "vallejo/game-color",
+      "name": "Midnight Purple",
+      "aliases": [],
+      "manufacturerCode": "72.116",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#2d1e33",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/moon-yellow",
+      "rangeId": "vallejo/game-color",
+      "name": "Moon Yellow",
+      "aliases": [],
+      "manufacturerCode": "72.005",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#eeb800",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/moss-and-lichen",
+      "rangeId": "vallejo/game-color",
+      "name": "Moss and Lichen",
+      "aliases": [],
+      "manufacturerCode": "72.611",
+      "type": "technical",
+      "metallic": false,
+      "color": {
+        "hex": "#dad76c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/neutral-grey",
+      "rangeId": "vallejo/game-color",
+      "name": "Neutral Grey",
+      "aliases": [],
+      "manufacturerCode": "72.050",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#6f6d61",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/night-blue",
+      "rangeId": "vallejo/game-color",
+      "name": "Night Blue",
+      "aliases": [],
+      "manufacturerCode": "72.019",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#202430",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/nocturnal-red",
+      "rangeId": "vallejo/game-color",
+      "name": "Nocturnal Red",
+      "aliases": [],
+      "manufacturerCode": "72.111",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#551c22",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/off-white",
+      "rangeId": "vallejo/game-color",
+      "name": "Off-White",
+      "aliases": [],
+      "manufacturerCode": "72.101",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#fef3dd",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/orange-fire",
+      "rangeId": "vallejo/game-color",
+      "name": "Orange Fire",
+      "aliases": [],
+      "manufacturerCode": "72.008",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#eb5b1e",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/pale-flesh",
+      "rangeId": "vallejo/game-color",
+      "name": "Pale Flesh",
+      "aliases": [],
+      "manufacturerCode": "72.003",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#cba37f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/parasite-brown",
+      "rangeId": "vallejo/game-color",
+      "name": "Parasite Brown",
+      "aliases": [],
+      "manufacturerCode": "72.042",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#a35c1e",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/plague-brown",
+      "rangeId": "vallejo/game-color",
+      "name": "Plague Brown",
+      "aliases": [],
+      "manufacturerCode": "72.039",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#ab7131",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/polished-gold",
+      "rangeId": "vallejo/game-color",
+      "name": "Polished Gold",
+      "aliases": [],
+      "manufacturerCode": "72.055",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#f8ecc2",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/red-ink",
+      "rangeId": "vallejo/game-color",
+      "name": "Red Ink",
+      "aliases": [],
+      "manufacturerCode": "72.086",
+      "type": "ink",
+      "metallic": false,
+      "color": {
+        "hex": "#cd1316",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/red-wash",
+      "rangeId": "vallejo/game-color",
+      "name": "Red Wash",
+      "aliases": [],
+      "manufacturerCode": "73.206",
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#d55e86",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/rosy-flesh",
+      "rangeId": "vallejo/game-color",
+      "name": "Rosy Flesh",
+      "aliases": [],
+      "manufacturerCode": "72.100",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#e58a6b",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/royal-purple",
+      "rangeId": "vallejo/game-color",
+      "name": "Royal Purple",
+      "aliases": [],
+      "manufacturerCode": "72.016",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#302337",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/rust",
+      "rangeId": "vallejo/game-color",
+      "name": "Rust",
+      "aliases": [],
+      "manufacturerCode": "72.609",
+      "type": "technical",
+      "metallic": false,
+      "color": {
+        "hex": "#64504b",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/scarlet-blood",
+      "rangeId": "vallejo/game-color",
+      "name": "Scarlet Blood",
+      "aliases": [],
+      "manufacturerCode": "72.106",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#c22222",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/scarlet-red",
+      "rangeId": "vallejo/game-color",
+      "name": "Scarlet Red",
+      "aliases": [],
+      "manufacturerCode": "72.012",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#761e1d",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/scorpy-green",
+      "rangeId": "vallejo/game-color",
+      "name": "Scorpy Green",
+      "aliases": [],
+      "manufacturerCode": "72.032",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#4f8436",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/scrofulous-brown",
+      "rangeId": "vallejo/game-color",
+      "name": "Scrofulous Brown",
+      "aliases": [],
+      "manufacturerCode": "72.038",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#a7691c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/scurvy-green",
+      "rangeId": "vallejo/game-color",
+      "name": "Scurvy Green",
+      "aliases": [],
+      "manufacturerCode": "72.027",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#1f4d43",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/sepia-ink",
+      "rangeId": "vallejo/game-color",
+      "name": "Sepia Ink",
+      "aliases": [],
+      "manufacturerCode": "72.091",
+      "type": "ink",
+      "metallic": false,
+      "color": {
+        "hex": "#563d27",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/sepia-wash",
+      "rangeId": "vallejo/game-color",
+      "name": "Sepia Wash",
+      "aliases": [],
+      "manufacturerCode": "73.200",
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#8b622c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/sick-green",
+      "rangeId": "vallejo/game-color",
+      "name": "Sick Green",
+      "aliases": [],
+      "manufacturerCode": "72.029",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#406037",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/silver",
+      "rangeId": "vallejo/game-color",
+      "name": "Silver",
+      "aliases": [],
+      "manufacturerCode": "72.052",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#ebedec",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/skin-ink",
+      "rangeId": "vallejo/game-color",
+      "name": "Skin Ink",
+      "aliases": [],
+      "manufacturerCode": "72.093",
+      "type": "ink",
+      "metallic": false,
+      "color": {
+        "hex": "#5c2d27",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/skin-tone",
+      "rangeId": "vallejo/game-color",
+      "name": "Skin Tone",
+      "aliases": [],
+      "manufacturerCode": "72.099",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#e5ab85",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/sombre-grey",
+      "rangeId": "vallejo/game-color",
+      "name": "Sombre Grey",
+      "aliases": [],
+      "manufacturerCode": "72.048",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#535d69",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/squid-pink",
+      "rangeId": "vallejo/game-color",
+      "name": "Squid Pink",
+      "aliases": [],
+      "manufacturerCode": "72.013",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#c778a5",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/steel-grey",
+      "rangeId": "vallejo/game-color",
+      "name": "Steel Grey",
+      "aliases": [],
+      "manufacturerCode": "72.102",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#7b92a2",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/stonewall-grey",
+      "rangeId": "vallejo/game-color",
+      "name": "Stonewall Grey",
+      "aliases": [],
+      "manufacturerCode": "72.049",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#9c9384",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/succubus-skin",
+      "rangeId": "vallejo/game-color",
+      "name": "Succubus Skin",
+      "aliases": [],
+      "manufacturerCode": "72.108",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#933d46",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/sun-yellow",
+      "rangeId": "vallejo/game-color",
+      "name": "Sun Yellow",
+      "aliases": [],
+      "manufacturerCode": "72.006",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#f6a300",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/sunrise-blue",
+      "rangeId": "vallejo/game-color",
+      "name": "Sunrise Blue",
+      "aliases": [],
+      "manufacturerCode": "72.118",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#73c9ec",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/sunset-orange",
+      "rangeId": "vallejo/game-color",
+      "name": "Sunset Orange",
+      "aliases": [],
+      "manufacturerCode": "72.110",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#f4973a",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/tan",
+      "rangeId": "vallejo/game-color",
+      "name": "Tan",
+      "aliases": [],
+      "manufacturerCode": "72.066",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#95604e",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/thick-blood",
+      "rangeId": "vallejo/game-color",
+      "name": "Thick Blood",
+      "aliases": [],
+      "manufacturerCode": "72.602",
+      "type": "technical",
+      "metallic": false,
+      "color": {
+        "hex": "#954e43",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/tinny-tin",
+      "rangeId": "vallejo/game-color",
+      "name": "Tinny Tin",
+      "aliases": [],
+      "manufacturerCode": "72.060",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#d5c7c6",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/toxic-yellow",
+      "rangeId": "vallejo/game-color",
+      "name": "Toxic Yellow",
+      "aliases": [],
+      "manufacturerCode": "72.109",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#e8d457",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/turquoise",
+      "rangeId": "vallejo/game-color",
+      "name": "Turquoise",
+      "aliases": [],
+      "manufacturerCode": "72.024",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#016160",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/ultramarine-blue",
+      "rangeId": "vallejo/game-color",
+      "name": "Ultramarine Blue",
+      "aliases": [],
+      "manufacturerCode": "72.022",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#383967",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/umber-wash",
+      "rangeId": "vallejo/game-color",
+      "name": "Umber Wash",
+      "aliases": [],
+      "manufacturerCode": "73.203",
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#766053",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/verdigris",
+      "rangeId": "vallejo/game-color",
+      "name": "Verdigris",
+      "aliases": [],
+      "manufacturerCode": "72.096",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#86c7a9",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/violet-ink",
+      "rangeId": "vallejo/game-color",
+      "name": "Violet Ink",
+      "aliases": [],
+      "manufacturerCode": "72.087",
+      "type": "ink",
+      "metallic": false,
+      "color": {
+        "hex": "#6e3d74",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/violet-wash",
+      "rangeId": "vallejo/game-color",
+      "name": "Violet Wash",
+      "aliases": [],
+      "manufacturerCode": "73.209",
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#886ca7",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/vomit",
+      "rangeId": "vallejo/game-color",
+      "name": "Vomit",
+      "aliases": [],
+      "manufacturerCode": "72.600",
+      "type": "technical",
+      "metallic": false,
+      "color": {
+        "hex": "#faac42",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/warlord-purple",
+      "rangeId": "vallejo/game-color",
+      "name": "Warlord Purple",
+      "aliases": [],
+      "manufacturerCode": "72.014",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#862351",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/warm-grey",
+      "rangeId": "vallejo/game-color",
+      "name": "Warm Grey",
+      "aliases": [],
+      "manufacturerCode": "72.148",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#b29e9d",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/white-ink",
+      "rangeId": "vallejo/game-color",
+      "name": "White Ink",
+      "aliases": [],
+      "manufacturerCode": "72.082",
+      "type": "ink",
+      "metallic": false,
+      "color": {
+        "hex": "#ffffff",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/wolf-grey",
+      "rangeId": "vallejo/game-color",
+      "name": "Wolf Grey",
+      "aliases": [],
+      "manufacturerCode": "72.047",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#c3d1d1",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/yellow-ink",
+      "rangeId": "vallejo/game-color",
+      "name": "Yellow Ink",
+      "aliases": [],
+      "manufacturerCode": "72.085",
+      "type": "ink",
+      "metallic": false,
+      "color": {
+        "hex": "#eba90c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/game-color/yellow-wash",
+      "rangeId": "vallejo/game-color",
+      "name": "Yellow Wash",
+      "aliases": [],
+      "manufacturerCode": "73.208",
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#e9e85c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/amaranth-red",
+      "rangeId": "vallejo/model-color",
+      "name": "Amaranth Red",
+      "aliases": [],
+      "manufacturerCode": "70.829",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#d14e30",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/andrea-blue",
+      "rangeId": "vallejo/model-color",
+      "name": "Andrea Blue",
+      "aliases": [],
+      "manufacturerCode": "70.841",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#0270af",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/azure",
+      "rangeId": "vallejo/model-color",
+      "name": "Azure",
+      "aliases": [],
+      "manufacturerCode": "70.902",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#5b6b9e",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/basalt-grey",
+      "rangeId": "vallejo/model-color",
+      "name": "Basalt Grey",
+      "aliases": [],
+      "manufacturerCode": "70.869",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#5c5a5d",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/basic-skin-tone",
+      "rangeId": "vallejo/model-color",
+      "name": "Basic Skin Tone",
+      "aliases": [],
+      "manufacturerCode": "70.815",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#e9ac8d",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/bc-dark-brown",
+      "rangeId": "vallejo/model-color",
+      "name": "BC Dark Brown",
+      "aliases": [],
+      "manufacturerCode": "70.768",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#76563d",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/beige",
+      "rangeId": "vallejo/model-color",
+      "name": "Beige",
+      "aliases": [],
+      "manufacturerCode": "70.917",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#dfbe6f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/beige-brown",
+      "rangeId": "vallejo/model-color",
+      "name": "Beige Brown",
+      "aliases": [],
+      "manufacturerCode": "70.875",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#816041",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/beige-red",
+      "rangeId": "vallejo/model-color",
+      "name": "Beige Red",
+      "aliases": [],
+      "manufacturerCode": "70.804",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#b06e4b",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/black",
+      "rangeId": "vallejo/model-color",
+      "name": "Black",
+      "aliases": [],
+      "manufacturerCode": "70.950",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#231d1d",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/black-green",
+      "rangeId": "vallejo/model-color",
+      "name": "Black Green",
+      "aliases": [],
+      "manufacturerCode": "70.980",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#2a342b",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/black-grey",
+      "rangeId": "vallejo/model-color",
+      "name": "Black Grey",
+      "aliases": [],
+      "manufacturerCode": "70.862",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#302722",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/black-red",
+      "rangeId": "vallejo/model-color",
+      "name": "Black Red",
+      "aliases": [],
+      "manufacturerCode": "70.859",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#552f2c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/black-violet",
+      "rangeId": "vallejo/model-color",
+      "name": "Black Violet",
+      "aliases": [],
+      "manufacturerCode": "70.751",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#392a31",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/blue",
+      "rangeId": "vallejo/model-color",
+      "name": "Blue",
+      "aliases": [],
+      "manufacturerCode": "70.925",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#372c4c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/blue-green",
+      "rangeId": "vallejo/model-color",
+      "name": "Blue Green",
+      "aliases": [],
+      "manufacturerCode": "70.808",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#007a89",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/blue-grey-pale",
+      "rangeId": "vallejo/model-color",
+      "name": "Blue Grey Pale",
+      "aliases": [],
+      "manufacturerCode": "70.905",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#808686",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/blue-violet",
+      "rangeId": "vallejo/model-color",
+      "name": "Blue Violet",
+      "aliases": [],
+      "manufacturerCode": "70.811",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#59467e",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/brass",
+      "rangeId": "vallejo/model-color",
+      "name": "Brass",
+      "aliases": [],
+      "manufacturerCode": "70.801",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#643b1d",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/bright-green",
+      "rangeId": "vallejo/model-color",
+      "name": "Bright Green",
+      "aliases": [],
+      "manufacturerCode": "70.758",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#6f8349",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/bright-orange",
+      "rangeId": "vallejo/model-color",
+      "name": "Bright Orange",
+      "aliases": [],
+      "manufacturerCode": "70.851",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#e05921",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/bronze",
+      "rangeId": "vallejo/model-color",
+      "name": "Bronze",
+      "aliases": [],
+      "manufacturerCode": "70.998",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#533c1d",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/bronze-green",
+      "rangeId": "vallejo/model-color",
+      "name": "Bronze Green",
+      "aliases": [],
+      "manufacturerCode": "70.897",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#313a29",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/brown-rose",
+      "rangeId": "vallejo/model-color",
+      "name": "Brown Rose",
+      "aliases": [],
+      "manufacturerCode": "70.803",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#9c6560",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/brown-sand",
+      "rangeId": "vallejo/model-color",
+      "name": "Brown Sand",
+      "aliases": [],
+      "manufacturerCode": "70.876",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#906145",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/buff",
+      "rangeId": "vallejo/model-color",
+      "name": "Buff",
+      "aliases": [],
+      "manufacturerCode": "70.976",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#d7af4d",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/burnt-red",
+      "rangeId": "vallejo/model-color",
+      "name": "Burnt Red",
+      "aliases": [],
+      "manufacturerCode": "70.814",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#763c3a",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/burnt-umber",
+      "rangeId": "vallejo/model-color",
+      "name": "Burnt Umber",
+      "aliases": [],
+      "manufacturerCode": "70.941",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#513b2e",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/camouflage-black-brown",
+      "rangeId": "vallejo/model-color",
+      "name": "Camouflage Black Brown",
+      "aliases": [],
+      "manufacturerCode": "70.822",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#403436",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/camouflage-black-green",
+      "rangeId": "vallejo/model-color",
+      "name": "Camouflage Black Green",
+      "aliases": [],
+      "manufacturerCode": "70.741",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#313129",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/camouflage-dark-green",
+      "rangeId": "vallejo/model-color",
+      "name": "Camouflage Dark Green",
+      "aliases": [],
+      "manufacturerCode": "70.979",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#263025",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/camouflage-middle-brown",
+      "rangeId": "vallejo/model-color",
+      "name": "Camouflage Middle Brown",
+      "aliases": [],
+      "manufacturerCode": "70.740",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#513e20",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/camouflage-olive-green",
+      "rangeId": "vallejo/model-color",
+      "name": "Camouflage Olive Green",
+      "aliases": [],
+      "manufacturerCode": "70.894",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#3c3d2f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/canvas",
+      "rangeId": "vallejo/model-color",
+      "name": "Canvas",
+      "aliases": [],
+      "manufacturerCode": "70.763",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#4d3e1f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/carmine-red",
+      "rangeId": "vallejo/model-color",
+      "name": "Carmine Red",
+      "aliases": [],
+      "manufacturerCode": "70.908",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#97211f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/cavalry-brown",
+      "rangeId": "vallejo/model-color",
+      "name": "Cavalry Brown",
+      "aliases": [],
+      "manufacturerCode": "70.982",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#84443a",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/chestnut-brown",
+      "rangeId": "vallejo/model-color",
+      "name": "Chestnut Brown",
+      "aliases": [],
+      "manufacturerCode": "70.746",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#603f36",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/chocolate-brown",
+      "rangeId": "vallejo/model-color",
+      "name": "Chocolate Brown",
+      "aliases": [],
+      "manufacturerCode": "70.872",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#58443d",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/clear-orange",
+      "rangeId": "vallejo/model-color",
+      "name": "Clear Orange",
+      "aliases": [],
+      "manufacturerCode": "70.956",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#cc4527",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/cold-white",
+      "rangeId": "vallejo/model-color",
+      "name": "Cold White",
+      "aliases": [],
+      "manufacturerCode": "70.919",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#f6f6f8",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/continental-blue",
+      "rangeId": "vallejo/model-color",
+      "name": "Continental Blue",
+      "aliases": [],
+      "manufacturerCode": "70.754",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#25242a",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/copper",
+      "rangeId": "vallejo/model-color",
+      "name": "Copper",
+      "aliases": [],
+      "manufacturerCode": "70.999",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#803427",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/cork-brown",
+      "rangeId": "vallejo/model-color",
+      "name": "Cork Brown",
+      "aliases": [],
+      "manufacturerCode": "70.843",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#a16f4e",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/cream-white",
+      "rangeId": "vallejo/model-color",
+      "name": "Cream White",
+      "aliases": [],
+      "manufacturerCode": "70.766",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#e3d1c3",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/dark-blue",
+      "rangeId": "vallejo/model-color",
+      "name": "Dark Blue",
+      "aliases": [],
+      "manufacturerCode": "70.930",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#273461",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/dark-blue-grey",
+      "rangeId": "vallejo/model-color",
+      "name": "Dark Blue Grey",
+      "aliases": [],
+      "manufacturerCode": "70.867",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#424345",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/dark-flesh",
+      "rangeId": "vallejo/model-color",
+      "name": "Dark Flesh",
+      "aliases": [],
+      "manufacturerCode": "70.927",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#d3933b",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/dark-grey",
+      "rangeId": "vallejo/model-color",
+      "name": "Dark Grey",
+      "aliases": [],
+      "manufacturerCode": "70.994",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#312f32",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/dark-prussian-blue",
+      "rangeId": "vallejo/model-color",
+      "name": "Dark Prussian Blue",
+      "aliases": [],
+      "manufacturerCode": "70.899",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#372741",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/dark-purple",
+      "rangeId": "vallejo/model-color",
+      "name": "Dark Purple",
+      "aliases": [],
+      "manufacturerCode": "70.749",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#452733",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/dark-red",
+      "rangeId": "vallejo/model-color",
+      "name": "Dark Red",
+      "aliases": [],
+      "manufacturerCode": "70.946",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#692f24",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/dark-rose",
+      "rangeId": "vallejo/model-color",
+      "name": "Dark Rose",
+      "aliases": [],
+      "manufacturerCode": "70.745",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#805252",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/dark-rust",
+      "rangeId": "vallejo/model-color",
+      "name": "Dark Rust",
+      "aliases": [],
+      "manufacturerCode": "70.771",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#3b2625",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/dark-sand",
+      "rangeId": "vallejo/model-color",
+      "name": "Dark Sand",
+      "aliases": [],
+      "manufacturerCode": "70.847",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#cba868",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/dark-sea-blue",
+      "rangeId": "vallejo/model-color",
+      "name": "Dark Sea Blue",
+      "aliases": [],
+      "manufacturerCode": "70.898",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#262c38",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/dark-sea-green",
+      "rangeId": "vallejo/model-color",
+      "name": "Dark Sea Green",
+      "aliases": [],
+      "manufacturerCode": "70.868",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#4b4545",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/dark-sea-grey",
+      "rangeId": "vallejo/model-color",
+      "name": "Dark Sea Grey",
+      "aliases": [],
+      "manufacturerCode": "70.991",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#6c6b69",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/dark-vermilion",
+      "rangeId": "vallejo/model-color",
+      "name": "Dark Vermilion",
+      "aliases": [],
+      "manufacturerCode": "70.947",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#b52a27",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/dark-yellow",
+      "rangeId": "vallejo/model-color",
+      "name": "Dark Yellow",
+      "aliases": [],
+      "manufacturerCode": "70.978",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#90873a",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/deck-tan",
+      "rangeId": "vallejo/model-color",
+      "name": "Deck Tan",
+      "aliases": [],
+      "manufacturerCode": "70.986",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#aba390",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/deep-green",
+      "rangeId": "vallejo/model-color",
+      "name": "Deep Green",
+      "aliases": [],
+      "manufacturerCode": "70.970",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#1b4b33",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/deep-sky-blue",
+      "rangeId": "vallejo/model-color",
+      "name": "Deep Sky Blue",
+      "aliases": [],
+      "manufacturerCode": "70.844",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#4d95c5",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/deep-yellow",
+      "rangeId": "vallejo/model-color",
+      "name": "Deep Yellow",
+      "aliases": [],
+      "manufacturerCode": "70.915",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#f1c701",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/desert-brown",
+      "rangeId": "vallejo/model-color",
+      "name": "Desert Brown",
+      "aliases": [],
+      "manufacturerCode": "70.767",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#ab8556",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/desert-tan",
+      "rangeId": "vallejo/model-color",
+      "name": "Desert Tan",
+      "aliases": [],
+      "manufacturerCode": "70.765",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#b5a286",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/desert-yellow",
+      "rangeId": "vallejo/model-color",
+      "name": "Desert Yellow",
+      "aliases": [],
+      "manufacturerCode": "70.977",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#b6854a",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/emerald",
+      "rangeId": "vallejo/model-color",
+      "name": "Emerald",
+      "aliases": [],
+      "manufacturerCode": "70.838",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#00624b",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/english-uniform",
+      "rangeId": "vallejo/model-color",
+      "name": "English Uniform",
+      "aliases": [],
+      "manufacturerCode": "70.921",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#6f532b",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/extra-dark-green",
+      "rangeId": "vallejo/model-color",
+      "name": "Extra Dark Green",
+      "aliases": [],
+      "manufacturerCode": "70.896",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#282a14",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/faded-red",
+      "rangeId": "vallejo/model-color",
+      "name": "Faded Red",
+      "aliases": [],
+      "manufacturerCode": "70.747",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#ba584f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/fern-green",
+      "rangeId": "vallejo/model-color",
+      "name": "Fern Green",
+      "aliases": [],
+      "manufacturerCode": "70.833",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#475436",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/field-blue",
+      "rangeId": "vallejo/model-color",
+      "name": "Field Blue",
+      "aliases": [],
+      "manufacturerCode": "70.964",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#4d5256",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/flat-blue",
+      "rangeId": "vallejo/model-color",
+      "name": "Flat Blue",
+      "aliases": [],
+      "manufacturerCode": "70.962",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#3f4873",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/flat-brown",
+      "rangeId": "vallejo/model-color",
+      "name": "Flat Brown",
+      "aliases": [],
+      "manufacturerCode": "70.984",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#703f38",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/flat-earth",
+      "rangeId": "vallejo/model-color",
+      "name": "Flat Earth",
+      "aliases": [],
+      "manufacturerCode": "70.983",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#69442a",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/flat-flesh",
+      "rangeId": "vallejo/model-color",
+      "name": "Flat Flesh",
+      "aliases": [],
+      "manufacturerCode": "70.955",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#e09959",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/flat-green",
+      "rangeId": "vallejo/model-color",
+      "name": "Flat Green",
+      "aliases": [],
+      "manufacturerCode": "70.968",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#374b2f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/flat-red",
+      "rangeId": "vallejo/model-color",
+      "name": "Flat Red",
+      "aliases": [],
+      "manufacturerCode": "70.957",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#a12b29",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/flat-yellow",
+      "rangeId": "vallejo/model-color",
+      "name": "Flat Yellow",
+      "aliases": [],
+      "manufacturerCode": "70.953",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#f6ba36",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/german-beige-wwii",
+      "rangeId": "vallejo/model-color",
+      "name": "German Beige WWII",
+      "aliases": [],
+      "manufacturerCode": "70.821",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#796950",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/german-fieldgrey-wwii",
+      "rangeId": "vallejo/model-color",
+      "name": "German Fieldgrey WWII",
+      "aliases": [],
+      "manufacturerCode": "70.830",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#58523c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/german-grey",
+      "rangeId": "vallejo/model-color",
+      "name": "German Grey",
+      "aliases": [],
+      "manufacturerCode": "70.995",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#2e2e2c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/german-orange",
+      "rangeId": "vallejo/model-color",
+      "name": "German Orange",
+      "aliases": [],
+      "manufacturerCode": "70.805",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#ba6254",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/german-tank-crew",
+      "rangeId": "vallejo/model-color",
+      "name": "German Tank Crew",
+      "aliases": [],
+      "manufacturerCode": "70.759",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#544a3e",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/german-uniform",
+      "rangeId": "vallejo/model-color",
+      "name": "German Uniform",
+      "aliases": [],
+      "manufacturerCode": "70.920",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#434d42",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/german-yellow",
+      "rangeId": "vallejo/model-color",
+      "name": "German Yellow",
+      "aliases": [],
+      "manufacturerCode": "70.806",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#ceb65e",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/gloss-black",
+      "rangeId": "vallejo/model-color",
+      "name": "Gloss Black",
+      "aliases": [],
+      "manufacturerCode": "70.861",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#241e1e",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/gold",
+      "rangeId": "vallejo/model-color",
+      "name": "Gold",
+      "aliases": [],
+      "manufacturerCode": "70.996",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#996728",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/gold-brown",
+      "rangeId": "vallejo/model-color",
+      "name": "Gold Brown",
+      "aliases": [],
+      "manufacturerCode": "70.877",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#bf873c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/golden-yellow",
+      "rangeId": "vallejo/model-color",
+      "name": "Golden Yellow",
+      "aliases": [],
+      "manufacturerCode": "70.948",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#f8a734",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/green-brown",
+      "rangeId": "vallejo/model-color",
+      "name": "Green Brown",
+      "aliases": [],
+      "manufacturerCode": "70.879",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#816d32",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/green-grey",
+      "rangeId": "vallejo/model-color",
+      "name": "Green Grey",
+      "aliases": [],
+      "manufacturerCode": "70.886",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#65624f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/green-ochre",
+      "rangeId": "vallejo/model-color",
+      "name": "Green Ochre",
+      "aliases": [],
+      "manufacturerCode": "70.914",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#a17f35",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/green-sky",
+      "rangeId": "vallejo/model-color",
+      "name": "Green Sky",
+      "aliases": [],
+      "manufacturerCode": "70.974",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#7a9165",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/green-yellow",
+      "rangeId": "vallejo/model-color",
+      "name": "Green Yellow",
+      "aliases": [],
+      "manufacturerCode": "70.881",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#6e653c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/grey-blue",
+      "rangeId": "vallejo/model-color",
+      "name": "Grey Blue",
+      "aliases": [],
+      "manufacturerCode": "70.943",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#596d85",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/grey-brown",
+      "rangeId": "vallejo/model-color",
+      "name": "Grey Brown",
+      "aliases": [],
+      "manufacturerCode": "70.762",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#5b4923",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/grey-green",
+      "rangeId": "vallejo/model-color",
+      "name": "Grey Green",
+      "aliases": [],
+      "manufacturerCode": "70.866",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#41403e",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/gunmetal",
+      "rangeId": "vallejo/model-color",
+      "name": "Gunmetal",
+      "aliases": [],
+      "manufacturerCode": "70.863",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#352a2e",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/gunmetal-blue",
+      "rangeId": "vallejo/model-color",
+      "name": "Gunmetal Blue",
+      "aliases": [],
+      "manufacturerCode": "70.800",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#282834",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/gunship-green",
+      "rangeId": "vallejo/model-color",
+      "name": "Gunship Green",
+      "aliases": [],
+      "manufacturerCode": "70.895",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#4c5840",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/hull-red",
+      "rangeId": "vallejo/model-color",
+      "name": "Hull Red",
+      "aliases": [],
+      "manufacturerCode": "70.985",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#5c383c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/ice-yellow",
+      "rangeId": "vallejo/model-color",
+      "name": "Ice Yellow",
+      "aliases": [],
+      "manufacturerCode": "70.858",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#eecf72",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/infantry-blue",
+      "rangeId": "vallejo/model-color",
+      "name": "Infantry Blue",
+      "aliases": [],
+      "manufacturerCode": "70.752",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#25212f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/intermediate-green",
+      "rangeId": "vallejo/model-color",
+      "name": "Intermediate Green",
+      "aliases": [],
+      "manufacturerCode": "70.891",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#506544",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/iraqi-sand",
+      "rangeId": "vallejo/model-color",
+      "name": "Iraqi Sand",
+      "aliases": [],
+      "manufacturerCode": "70.819",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#b49360",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/ivory",
+      "rangeId": "vallejo/model-color",
+      "name": "Ivory",
+      "aliases": [],
+      "manufacturerCode": "70.918",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#ebe2d1",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/japanese-uniform-wwii",
+      "rangeId": "vallejo/model-color",
+      "name": "Japanese Uniform WWII",
+      "aliases": [],
+      "manufacturerCode": "70.923",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#9f7f2a",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/khaki",
+      "rangeId": "vallejo/model-color",
+      "name": "Khaki",
+      "aliases": [],
+      "manufacturerCode": "70.988",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#6f5f3b",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/khaki-grey",
+      "rangeId": "vallejo/model-color",
+      "name": "Khaki Grey",
+      "aliases": [],
+      "manufacturerCode": "70.880",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#7e6338",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/lavender-grey",
+      "rangeId": "vallejo/model-color",
+      "name": "Lavender Grey",
+      "aliases": [],
+      "manufacturerCode": "70.774",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#7f6f6f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/leather-brown",
+      "rangeId": "vallejo/model-color",
+      "name": "Leather Brown",
+      "aliases": [],
+      "manufacturerCode": "70.871",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#594335",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/lemon-yellow",
+      "rangeId": "vallejo/model-color",
+      "name": "Lemon Yellow",
+      "aliases": [],
+      "manufacturerCode": "70.952",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#e4d202",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/light-blue-green",
+      "rangeId": "vallejo/model-color",
+      "name": "Light Blue Green",
+      "aliases": [],
+      "manufacturerCode": "70.753",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#0097a5",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/light-brown",
+      "rangeId": "vallejo/model-color",
+      "name": "Light Brown",
+      "aliases": [],
+      "manufacturerCode": "70.929",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#a25b31",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/light-emerald",
+      "rangeId": "vallejo/model-color",
+      "name": "Light Emerald",
+      "aliases": [],
+      "manufacturerCode": "70.755",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#007c73",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/light-flesh",
+      "rangeId": "vallejo/model-color",
+      "name": "Light Flesh",
+      "aliases": [],
+      "manufacturerCode": "70.928",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#f3d4b8",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/light-green-blue",
+      "rangeId": "vallejo/model-color",
+      "name": "Light Green Blue",
+      "aliases": [],
+      "manufacturerCode": "70.972",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#86958e",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/light-green-grey",
+      "rangeId": "vallejo/model-color",
+      "name": "Light Green Grey",
+      "aliases": [],
+      "manufacturerCode": "70.971",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#b5b6ae",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/light-grey",
+      "rangeId": "vallejo/model-color",
+      "name": "Light Grey",
+      "aliases": [],
+      "manufacturerCode": "70.990",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#919294",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/light-mud",
+      "rangeId": "vallejo/model-color",
+      "name": "Light Mud",
+      "aliases": [],
+      "manufacturerCode": "70.760",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#7c745d",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/light-orange",
+      "rangeId": "vallejo/model-color",
+      "name": "Light Orange",
+      "aliases": [],
+      "manufacturerCode": "70.911",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#ee7228",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/light-pink",
+      "rangeId": "vallejo/model-color",
+      "name": "Light Pink",
+      "aliases": [],
+      "manufacturerCode": "70.748",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#e18da3",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/light-turquoise",
+      "rangeId": "vallejo/model-color",
+      "name": "Light Turquoise",
+      "aliases": [],
+      "manufacturerCode": "70.840",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#006989",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/light-violet",
+      "rangeId": "vallejo/model-color",
+      "name": "Light Violet",
+      "aliases": [],
+      "manufacturerCode": "70.750",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#a893bc",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/light-yellow",
+      "rangeId": "vallejo/model-color",
+      "name": "Light Yellow",
+      "aliases": [],
+      "manufacturerCode": "70.949",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#f8d347",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/lime-green",
+      "rangeId": "vallejo/model-color",
+      "name": "Lime Green",
+      "aliases": [],
+      "manufacturerCode": "70.827",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#7f9435",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/london-grey",
+      "rangeId": "vallejo/model-color",
+      "name": "London Grey",
+      "aliases": [],
+      "manufacturerCode": "70.836",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#696363",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/luftwaffe-green",
+      "rangeId": "vallejo/model-color",
+      "name": "Luftwaffe Green",
+      "aliases": [],
+      "manufacturerCode": "70.823",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#393f25",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/luftwaffe-uniform",
+      "rangeId": "vallejo/model-color",
+      "name": "Luftwaffe Uniform",
+      "aliases": [],
+      "manufacturerCode": "70.816",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#44404e",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/magenta",
+      "rangeId": "vallejo/model-color",
+      "name": "Magenta",
+      "aliases": [],
+      "manufacturerCode": "70.945",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#903153",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/mahogany-brown",
+      "rangeId": "vallejo/model-color",
+      "name": "Mahogany Brown",
+      "aliases": [],
+      "manufacturerCode": "70.846",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#79504a",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/mahogany-ink",
+      "rangeId": "vallejo/model-color",
+      "name": "Mahogany Ink",
+      "aliases": [],
+      "manufacturerCode": "70.828",
+      "type": "ink",
+      "metallic": false,
+      "color": {
+        "hex": "#674641",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/medium-blue",
+      "rangeId": "vallejo/model-color",
+      "name": "Medium Blue",
+      "aliases": [],
+      "manufacturerCode": "70.963",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#16416c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/medium-brown",
+      "rangeId": "vallejo/model-color",
+      "name": "Medium Brown",
+      "aliases": [],
+      "manufacturerCode": "70.826",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#5b483a",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/medium-flesh-tone",
+      "rangeId": "vallejo/model-color",
+      "name": "Medium Flesh Tone",
+      "aliases": [],
+      "manufacturerCode": "70.860",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#b07940",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/medium-grey",
+      "rangeId": "vallejo/model-color",
+      "name": "Medium Grey",
+      "aliases": [],
+      "manufacturerCode": "70.987",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#867259",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/medium-grey-blue",
+      "rangeId": "vallejo/model-color",
+      "name": "Medium Grey Blue",
+      "aliases": [],
+      "manufacturerCode": "70.772",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#779d92",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/medium-olive",
+      "rangeId": "vallejo/model-color",
+      "name": "Medium Olive",
+      "aliases": [],
+      "manufacturerCode": "70.850",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#414e32",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/medium-sea-grey",
+      "rangeId": "vallejo/model-color",
+      "name": "Medium Sea Grey",
+      "aliases": [],
+      "manufacturerCode": "70.870",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#7d7b7c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/middle-stone",
+      "rangeId": "vallejo/model-color",
+      "name": "Middle Stone",
+      "aliases": [],
+      "manufacturerCode": "70.882",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#937f42",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/military-green",
+      "rangeId": "vallejo/model-color",
+      "name": "Military Green",
+      "aliases": [],
+      "manufacturerCode": "70.975",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#434434",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/military-yellow",
+      "rangeId": "vallejo/model-color",
+      "name": "Military Yellow",
+      "aliases": [],
+      "manufacturerCode": "70.764",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#937626",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/mustard-brown",
+      "rangeId": "vallejo/model-color",
+      "name": "Mustard Brown",
+      "aliases": [],
+      "manufacturerCode": "70.769",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#9d714a",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/natural-steel",
+      "rangeId": "vallejo/model-color",
+      "name": "Natural Steel",
+      "aliases": [],
+      "manufacturerCode": "70.864",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#535258",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/neutral-grey",
+      "rangeId": "vallejo/model-color",
+      "name": "Neutral Grey",
+      "aliases": [],
+      "manufacturerCode": "70.992",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#61615f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/new-wood",
+      "rangeId": "vallejo/model-color",
+      "name": "New Wood",
+      "aliases": [],
+      "manufacturerCode": "70.770",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#8a633c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/ochre-brown",
+      "rangeId": "vallejo/model-color",
+      "name": "Ochre Brown",
+      "aliases": [],
+      "manufacturerCode": "70.856",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#aa793e",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/off-white",
+      "rangeId": "vallejo/model-color",
+      "name": "Off-White",
+      "aliases": [],
+      "manufacturerCode": "70.820",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#f5ece7",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/oily-steel",
+      "rangeId": "vallejo/model-color",
+      "name": "Oily Steel",
+      "aliases": [],
+      "manufacturerCode": "70.865",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#484246",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/old-gold",
+      "rangeId": "vallejo/model-color",
+      "name": "Old Gold",
+      "aliases": [],
+      "manufacturerCode": "70.878",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#55371d",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/old-rose",
+      "rangeId": "vallejo/model-color",
+      "name": "Old Rose",
+      "aliases": [],
+      "manufacturerCode": "70.944",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#bc6d70",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/old-wood",
+      "rangeId": "vallejo/model-color",
+      "name": "Old Wood",
+      "aliases": [],
+      "manufacturerCode": "70.761",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#816d53",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/olive-brown",
+      "rangeId": "vallejo/model-color",
+      "name": "Olive Brown",
+      "aliases": [],
+      "manufacturerCode": "70.889",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#3f3126",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/olive-green",
+      "rangeId": "vallejo/model-color",
+      "name": "Olive Green",
+      "aliases": [],
+      "manufacturerCode": "70.967",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#526138",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/olive-grey",
+      "rangeId": "vallejo/model-color",
+      "name": "Olive Grey",
+      "aliases": [],
+      "manufacturerCode": "70.888",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#40422d",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/orange-brown",
+      "rangeId": "vallejo/model-color",
+      "name": "Orange Brown",
+      "aliases": [],
+      "manufacturerCode": "70.981",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#ad623a",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/orange-ochre",
+      "rangeId": "vallejo/model-color",
+      "name": "Orange Ochre",
+      "aliases": [],
+      "manufacturerCode": "70.824",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#ac8035",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/oxford-blue",
+      "rangeId": "vallejo/model-color",
+      "name": "Oxford Blue",
+      "aliases": [],
+      "manufacturerCode": "70.807",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#3e3a53",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/pacific-green",
+      "rangeId": "vallejo/model-color",
+      "name": "Pacific Green",
+      "aliases": [],
+      "manufacturerCode": "70.757",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#587064",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/pale-blue",
+      "rangeId": "vallejo/model-color",
+      "name": "Pale Blue",
+      "aliases": [],
+      "manufacturerCode": "70.906",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#90a3a9",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/pale-brown",
+      "rangeId": "vallejo/model-color",
+      "name": "Pale Brown",
+      "aliases": [],
+      "manufacturerCode": "70.825",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#9f8375",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/pale-grey-blue",
+      "rangeId": "vallejo/model-color",
+      "name": "Pale Grey Blue",
+      "aliases": [],
+      "manufacturerCode": "70.907",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#a7b6b3",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/pale-sand",
+      "rangeId": "vallejo/model-color",
+      "name": "Pale Sand",
+      "aliases": [],
+      "manufacturerCode": "70.837",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#e3c28f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/park-green-flat",
+      "rangeId": "vallejo/model-color",
+      "name": "Park Green Flat",
+      "aliases": [],
+      "manufacturerCode": "70.969",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#21624a",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/pastel-blue",
+      "rangeId": "vallejo/model-color",
+      "name": "Pastel Blue",
+      "aliases": [],
+      "manufacturerCode": "70.901",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#607a93",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/pastel-green",
+      "rangeId": "vallejo/model-color",
+      "name": "Pastel Green",
+      "aliases": [],
+      "manufacturerCode": "70.885",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#939870",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/pink",
+      "rangeId": "vallejo/model-color",
+      "name": "Pink",
+      "aliases": [],
+      "manufacturerCode": "70.958",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#b04f7c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/prussian-blue",
+      "rangeId": "vallejo/model-color",
+      "name": "Prussian Blue",
+      "aliases": [],
+      "manufacturerCode": "70.965",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#3c405d",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/purple",
+      "rangeId": "vallejo/model-color",
+      "name": "Purple",
+      "aliases": [],
+      "manufacturerCode": "70.959",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#533152",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/red",
+      "rangeId": "vallejo/model-color",
+      "name": "Red",
+      "aliases": [],
+      "manufacturerCode": "70.926",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#792825",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/red-leather",
+      "rangeId": "vallejo/model-color",
+      "name": "Red Leather",
+      "aliases": [],
+      "manufacturerCode": "70.818",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#95543e",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/refractive-green",
+      "rangeId": "vallejo/model-color",
+      "name": "Refractive Green",
+      "aliases": [],
+      "manufacturerCode": "70.890",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#474a35",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/royal-blue",
+      "rangeId": "vallejo/model-color",
+      "name": "Royal Blue",
+      "aliases": [],
+      "manufacturerCode": "70.809",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#1a427d",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/royal-purple",
+      "rangeId": "vallejo/model-color",
+      "name": "Royal Purple",
+      "aliases": [],
+      "manufacturerCode": "70.810",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#4d2740",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/russian-uniform-wwii",
+      "rangeId": "vallejo/model-color",
+      "name": "Russian Uniform WWII",
+      "aliases": [],
+      "manufacturerCode": "70.924",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#585336",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/saddle-brown",
+      "rangeId": "vallejo/model-color",
+      "name": "Saddle Brown",
+      "aliases": [],
+      "manufacturerCode": "70.940",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#8c645c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/salmon-rose",
+      "rangeId": "vallejo/model-color",
+      "name": "Salmon Rose",
+      "aliases": [],
+      "manufacturerCode": "70.835",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#e28f7f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/sand-yellow",
+      "rangeId": "vallejo/model-color",
+      "name": "Sand Yellow",
+      "aliases": [],
+      "manufacturerCode": "70.916",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#eabf56",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/scarlet",
+      "rangeId": "vallejo/model-color",
+      "name": "Scarlet",
+      "aliases": [],
+      "manufacturerCode": "70.817",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#c23d2e",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/silver",
+      "rangeId": "vallejo/model-color",
+      "name": "Silver",
+      "aliases": [],
+      "manufacturerCode": "70.997",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#939290",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/silver-grey",
+      "rangeId": "vallejo/model-color",
+      "name": "Silver Grey",
+      "aliases": [],
+      "manufacturerCode": "70.883",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#d8cdc9",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/sky-blue",
+      "rangeId": "vallejo/model-color",
+      "name": "Sky Blue",
+      "aliases": [],
+      "manufacturerCode": "70.961",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#74b8cf",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/sky-grey",
+      "rangeId": "vallejo/model-color",
+      "name": "Sky Grey",
+      "aliases": [],
+      "manufacturerCode": "70.989",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#aaabad",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/smoke-ink",
+      "rangeId": "vallejo/model-color",
+      "name": "Smoke Ink",
+      "aliases": [],
+      "manufacturerCode": "70.939",
+      "type": "ink",
+      "metallic": false,
+      "color": {
+        "hex": "#5c4847",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/splinter-green",
+      "rangeId": "vallejo/model-color",
+      "name": "Splinter Green",
+      "aliases": [],
+      "manufacturerCode": "70.756",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#456341",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/stone-grey",
+      "rangeId": "vallejo/model-color",
+      "name": "Stone Grey",
+      "aliases": [],
+      "manufacturerCode": "70.884",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#8c7c63",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/sunny-skin-tone",
+      "rangeId": "vallejo/model-color",
+      "name": "Sunny Skin Tone",
+      "aliases": [],
+      "manufacturerCode": "70.845",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#ed9646",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/sunset-red",
+      "rangeId": "vallejo/model-color",
+      "name": "Sunset Red",
+      "aliases": [],
+      "manufacturerCode": "70.802",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#c02b49",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/tan-earth",
+      "rangeId": "vallejo/model-color",
+      "name": "Tan Earth",
+      "aliases": [],
+      "manufacturerCode": "70.874",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#997457",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/turquoise",
+      "rangeId": "vallejo/model-color",
+      "name": "Turquoise",
+      "aliases": [],
+      "manufacturerCode": "70.966",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#0c425a",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/uniform-green",
+      "rangeId": "vallejo/model-color",
+      "name": "Uniform Green",
+      "aliases": [],
+      "manufacturerCode": "70.922",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#4b5230",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/us-dark-green",
+      "rangeId": "vallejo/model-color",
+      "name": "US Dark Green",
+      "aliases": [],
+      "manufacturerCode": "70.893",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#494b36",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/us-field-drab",
+      "rangeId": "vallejo/model-color",
+      "name": "US Field Drab",
+      "aliases": [],
+      "manufacturerCode": "70.873",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#826545",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/us-olive-drab",
+      "rangeId": "vallejo/model-color",
+      "name": "US Olive Drab",
+      "aliases": [],
+      "manufacturerCode": "70.887",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#59513c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/vermilion",
+      "rangeId": "vallejo/model-color",
+      "name": "Vermilion",
+      "aliases": [],
+      "manufacturerCode": "70.909",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#c42a28",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/violet",
+      "rangeId": "vallejo/model-color",
+      "name": "Violet",
+      "aliases": [],
+      "manufacturerCode": "70.960",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#3c2c49",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/violet-grey",
+      "rangeId": "vallejo/model-color",
+      "name": "Violet Grey",
+      "aliases": [],
+      "manufacturerCode": "70.773",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#5a5957",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/violet-red",
+      "rangeId": "vallejo/model-color",
+      "name": "Violet Red",
+      "aliases": [],
+      "manufacturerCode": "70.812",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#64353f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/white",
+      "rangeId": "vallejo/model-color",
+      "name": "White",
+      "aliases": [],
+      "manufacturerCode": "70.951",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#ffffff",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/white-grey",
+      "rangeId": "vallejo/model-color",
+      "name": "White Grey",
+      "aliases": [],
+      "manufacturerCode": "70.993",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#e3e2e0",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/yellow-green",
+      "rangeId": "vallejo/model-color",
+      "name": "Yellow Green",
+      "aliases": [],
+      "manufacturerCode": "70.954",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#dede26",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/yellow-ochre",
+      "rangeId": "vallejo/model-color",
+      "name": "Yellow Ochre",
+      "aliases": [],
+      "manufacturerCode": "70.913",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#deaa47",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/model-color/yellow-olive",
+      "rangeId": "vallejo/model-color",
+      "name": "Yellow Olive",
+      "aliases": [],
+      "manufacturerCode": "70.892",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#383b32",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/xpress-color/armor-green",
+      "rangeId": "vallejo/xpress-color",
+      "name": "Armor Green",
+      "aliases": [],
+      "manufacturerCode": "72.466",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#1e462b",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/xpress-color/bag-of-bones",
+      "rangeId": "vallejo/xpress-color",
+      "name": "Bag of Bones",
+      "aliases": [],
+      "manufacturerCode": "72.450",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#c1a16e",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/xpress-color/battledress-brown",
+      "rangeId": "vallejo/xpress-color",
+      "name": "Battledress Brown",
+      "aliases": [],
+      "manufacturerCode": "72.473",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#5d4c32",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/xpress-color/black-lotus",
+      "rangeId": "vallejo/xpress-color",
+      "name": "Black Lotus",
+      "aliases": [],
+      "manufacturerCode": "72.423",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#302627",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/xpress-color/camouflage-green",
+      "rangeId": "vallejo/xpress-color",
+      "name": "Camouflage Green",
+      "aliases": [],
+      "manufacturerCode": "72.467",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#605d32",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/xpress-color/cardinal-purple",
+      "rangeId": "vallejo/xpress-color",
+      "name": "Cardinal Purple",
+      "aliases": [],
+      "manufacturerCode": "72.408",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#c81928",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/xpress-color/caribbean-turquoise",
+      "rangeId": "vallejo/xpress-color",
+      "name": "Caribbean Turquoise",
+      "aliases": [],
+      "manufacturerCode": "72.414",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#005961",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/xpress-color/chameleon-orange",
+      "rangeId": "vallejo/xpress-color",
+      "name": "Chameleon Orange",
+      "aliases": [],
+      "manufacturerCode": "72.455",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#ce652e",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/xpress-color/commando-green",
+      "rangeId": "vallejo/xpress-color",
+      "name": "Commando Green",
+      "aliases": [],
+      "manufacturerCode": "72.468",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#3e4f3c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/xpress-color/copper-brown",
+      "rangeId": "vallejo/xpress-color",
+      "name": "Copper Brown",
+      "aliases": [],
+      "manufacturerCode": "72.421",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#532c25",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/xpress-color/deep-purple",
+      "rangeId": "vallejo/xpress-color",
+      "name": "Deep Purple",
+      "aliases": [],
+      "manufacturerCode": "72.409",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#6f2b42",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/xpress-color/demonic-skin",
+      "rangeId": "vallejo/xpress-color",
+      "name": "Demonic Skin",
+      "aliases": [],
+      "manufacturerCode": "72.458",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#965c58",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/xpress-color/desert-ochre",
+      "rangeId": "vallejo/xpress-color",
+      "name": "Desert Ochre",
+      "aliases": [],
+      "manufacturerCode": "72.454",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#9d6729",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/xpress-color/dreadnought-yellow",
+      "rangeId": "vallejo/xpress-color",
+      "name": "Dreadnought Yellow",
+      "aliases": [],
+      "manufacturerCode": "72.477",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#d38821",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/xpress-color/dwarf-skin",
+      "rangeId": "vallejo/xpress-color",
+      "name": "Dwarf Skin",
+      "aliases": [],
+      "manufacturerCode": "72.402",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#833e2f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/xpress-color/fairy-skin",
+      "rangeId": "vallejo/xpress-color",
+      "name": "Fairy Skin",
+      "aliases": [],
+      "manufacturerCode": "72.457",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#ca8774",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/xpress-color/fluid-pink",
+      "rangeId": "vallejo/xpress-color",
+      "name": "Fluid Pink",
+      "aliases": [],
+      "manufacturerCode": "72.459",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#c06793",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/xpress-color/forest-green",
+      "rangeId": "vallejo/xpress-color",
+      "name": "Forest Green",
+      "aliases": [],
+      "manufacturerCode": "72.465",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#11662d",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/xpress-color/gloomy-violet",
+      "rangeId": "vallejo/xpress-color",
+      "name": "Gloomy Violet",
+      "aliases": [],
+      "manufacturerCode": "72.410",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#402f59",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/xpress-color/greasy-black",
+      "rangeId": "vallejo/xpress-color",
+      "name": "Greasy Black",
+      "aliases": [],
+      "manufacturerCode": "72.476",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#413736",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/xpress-color/heretic-turquoise",
+      "rangeId": "vallejo/xpress-color",
+      "name": "Heretic Turquoise",
+      "aliases": [],
+      "manufacturerCode": "72.481",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#13514b",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/xpress-color/hospitallier-black",
+      "rangeId": "vallejo/xpress-color",
+      "name": "Hospitallier Black",
+      "aliases": [],
+      "manufacturerCode": "72.484",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#252527",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/xpress-color/iceberg-grey",
+      "rangeId": "vallejo/xpress-color",
+      "name": "Iceberg Grey",
+      "aliases": [],
+      "manufacturerCode": "72.463",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#42576c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/xpress-color/imperial-yellow",
+      "rangeId": "vallejo/xpress-color",
+      "name": "Imperial Yellow",
+      "aliases": [],
+      "manufacturerCode": "72.403",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#f59f2e",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/xpress-color/khaki-drill",
+      "rangeId": "vallejo/xpress-color",
+      "name": "Khaki Drill",
+      "aliases": [],
+      "manufacturerCode": "72.451",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#c7945b",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/xpress-color/landser-grey",
+      "rangeId": "vallejo/xpress-color",
+      "name": "Landser Grey",
+      "aliases": [],
+      "manufacturerCode": "72.469",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#524f48",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/xpress-color/legacy-blue",
+      "rangeId": "vallejo/xpress-color",
+      "name": "Legacy Blue",
+      "aliases": [],
+      "manufacturerCode": "72.480",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#272961",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/xpress-color/lizard-green",
+      "rangeId": "vallejo/xpress-color",
+      "name": "Lizard Green",
+      "aliases": [],
+      "manufacturerCode": "72.418",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#223a2c",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/xpress-color/mahogany",
+      "rangeId": "vallejo/xpress-color",
+      "name": "Mahogany",
+      "aliases": [],
+      "manufacturerCode": "72.472",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#5a3930",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/xpress-color/martian-orange",
+      "rangeId": "vallejo/xpress-color",
+      "name": "Martian Orange",
+      "aliases": [],
+      "manufacturerCode": "72.405",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#cd4619",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/xpress-color/military-yellow",
+      "rangeId": "vallejo/xpress-color",
+      "name": "Military Yellow",
+      "aliases": [],
+      "manufacturerCode": "72.453",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#805e30",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/xpress-color/monastic-green",
+      "rangeId": "vallejo/xpress-color",
+      "name": "Monastic Green",
+      "aliases": [],
+      "manufacturerCode": "72.482",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#004b37",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/xpress-color/muddy-ground",
+      "rangeId": "vallejo/xpress-color",
+      "name": "Muddy Ground",
+      "aliases": [],
+      "manufacturerCode": "72.475",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#452e28",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/xpress-color/mummy-white",
+      "rangeId": "vallejo/xpress-color",
+      "name": "Mummy White",
+      "aliases": [],
+      "manufacturerCode": "72.449",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#cfb496",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/xpress-color/mystic-blue",
+      "rangeId": "vallejo/xpress-color",
+      "name": "Mystic Blue",
+      "aliases": [],
+      "manufacturerCode": "72.411",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#004a87",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/xpress-color/nuclear-yellow",
+      "rangeId": "vallejo/xpress-color",
+      "name": "Nuclear Yellow",
+      "aliases": [],
+      "manufacturerCode": "72.404",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#dd9213",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/xpress-color/omega-blue",
+      "rangeId": "vallejo/xpress-color",
+      "name": "Omega Blue",
+      "aliases": [],
+      "manufacturerCode": "72.413",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#3a365b",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/xpress-color/orc-skin",
+      "rangeId": "vallejo/xpress-color",
+      "name": "Orc Skin",
+      "aliases": [],
+      "manufacturerCode": "72.415",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#5e752d",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/xpress-color/phoenix-orange",
+      "rangeId": "vallejo/xpress-color",
+      "name": "Phoenix Orange",
+      "aliases": [],
+      "manufacturerCode": "72.478",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#b1401e",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/xpress-color/plague-green",
+      "rangeId": "vallejo/xpress-color",
+      "name": "Plague Green",
+      "aliases": [],
+      "manufacturerCode": "72.419",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#4c4d2e",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/xpress-color/plasma-red",
+      "rangeId": "vallejo/xpress-color",
+      "name": "Plasma Red",
+      "aliases": [],
+      "manufacturerCode": "72.406",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#a52822",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/xpress-color/rotten-flesh",
+      "rangeId": "vallejo/xpress-color",
+      "name": "Rotten Flesh",
+      "aliases": [],
+      "manufacturerCode": "72.452",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#89763b",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/xpress-color/seraph-red",
+      "rangeId": "vallejo/xpress-color",
+      "name": "Seraph Red",
+      "aliases": [],
+      "manufacturerCode": "72.479",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#6b1411",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/xpress-color/snake-green",
+      "rangeId": "vallejo/xpress-color",
+      "name": "Snake Green",
+      "aliases": [],
+      "manufacturerCode": "72.417",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#015a46",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/xpress-color/space-grey",
+      "rangeId": "vallejo/xpress-color",
+      "name": "Space Grey",
+      "aliases": [],
+      "manufacturerCode": "72.422",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#2d5a5d",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/xpress-color/starship-steel",
+      "rangeId": "vallejo/xpress-color",
+      "name": "Starship Steel",
+      "aliases": [],
+      "manufacturerCode": "72.462",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#517375",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/xpress-color/storm-blue",
+      "rangeId": "vallejo/xpress-color",
+      "name": "Storm Blue",
+      "aliases": [],
+      "manufacturerCode": "72.412",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#303a7f",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/xpress-color/tanned-skin",
+      "rangeId": "vallejo/xpress-color",
+      "name": "Tanned Skin",
+      "aliases": [],
+      "manufacturerCode": "72.471",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#81452d",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/xpress-color/templar-white",
+      "rangeId": "vallejo/xpress-color",
+      "name": "Templar White",
+      "aliases": [],
+      "manufacturerCode": "72.401",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#cccecd",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/xpress-color/troll-green",
+      "rangeId": "vallejo/xpress-color",
+      "name": "Troll Green",
+      "aliases": [],
+      "manufacturerCode": "72.416",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#015e32",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/xpress-color/twilight-rose",
+      "rangeId": "vallejo/xpress-color",
+      "name": "Twilight Rose",
+      "aliases": [],
+      "manufacturerCode": "72.460",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#774755",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/xpress-color/vampiric-purple",
+      "rangeId": "vallejo/xpress-color",
+      "name": "Vampiric Purple",
+      "aliases": [],
+      "manufacturerCode": "72.461",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#492857",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/xpress-color/velvet-red",
+      "rangeId": "vallejo/xpress-color",
+      "name": "Velvet Red",
+      "aliases": [],
+      "manufacturerCode": "72.407",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#81282e",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/xpress-color/viking-grey",
+      "rangeId": "vallejo/xpress-color",
+      "name": "Viking Grey",
+      "aliases": [],
+      "manufacturerCode": "72.483",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#374855",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/xpress-color/wagram-blue",
+      "rangeId": "vallejo/xpress-color",
+      "name": "Wagram Blue",
+      "aliases": [],
+      "manufacturerCode": "72.464",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#014461",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/xpress-color/wasteland-brown",
+      "rangeId": "vallejo/xpress-color",
+      "name": "Wasteland Brown",
+      "aliases": [],
+      "manufacturerCode": "72.420",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#684527",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/xpress-color/wicked-purple",
+      "rangeId": "vallejo/xpress-color",
+      "name": "Wicked Purple",
+      "aliases": [],
+      "manufacturerCode": "72.456",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#756566",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/xpress-color/willow-bark",
+      "rangeId": "vallejo/xpress-color",
+      "name": "Willow Bark",
+      "aliases": [],
+      "manufacturerCode": "72.474",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#392b27",
+        "origin": "community",
+        "sourceId": "donnervs-miniature-paints"
+      },
+      "status": {
+        "kind": "active"
+      }
+    },
+    {
+      "id": "vallejo/xpress-color/zombie-flesh",
+      "rangeId": "vallejo/xpress-color",
+      "name": "Zombie Flesh",
+      "aliases": [],
+      "manufacturerCode": "72.470",
+      "type": "contrast",
+      "metallic": false,
+      "color": {
+        "hex": "#856b5a",
         "origin": "community",
         "sourceId": "donnervs-miniature-paints"
       },
