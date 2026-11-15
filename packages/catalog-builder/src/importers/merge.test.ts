@@ -67,6 +67,24 @@ describe("mergePaints (docs/04 §4)", () => {
     ]);
   });
 
+  it("does not take a paint with another code for the same paint by name", () => {
+    const standard = stored({ manufacturerCode: "AC-01" });
+    const figures = row({ manufacturerCode: "AC-02", slug: "red-figures" });
+    const { paints } = merged(
+      [standard],
+      [row({ manufacturerCode: "AC-01" }), figures],
+    );
+    expect(paints.map((p) => `${p.id} ${String(p.manufacturerCode)}`)).toEqual([
+      "acme/core/red AC-01",
+      "acme/core/red-figures AC-02",
+    ]);
+  });
+
+  it("matches by name a paint stored without code", () => {
+    const { paints } = merged([stored()], [row({ manufacturerCode: "AC-01" })]);
+    expect(paints).toEqual([stored({ manufacturerCode: "AC-01" })]);
+  });
+
   it("only matches within the same range", () => {
     const { paints } = merged(
       [stored()],
