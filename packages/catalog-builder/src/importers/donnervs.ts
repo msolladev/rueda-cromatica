@@ -175,9 +175,130 @@ const AK_INTERACTIVE: DonnervSBrand = {
   photoOverMeasured: new Set(["AK11057"]),
 };
 
+/** Model Color metallics: positions 195-204 of the chart CC329. */
+const MODEL_COLOR_METALLICS = new Set([
+  "70.997",
+  "70.865",
+  "70.864",
+  "70.863",
+  "70.996",
+  "70.878",
+  "70.998",
+  "70.801",
+  "70.999",
+  "70.800",
+]);
+
+/** Game Color Ink section of the chart CC266. */
+const GAME_COLOR_INKS = new Set([
+  "72.082",
+  "72.083",
+  "72.084",
+  "72.085",
+  "72.086",
+  "72.087",
+  "72.088",
+  "72.089",
+  "72.090",
+  "72.091",
+  "72.093",
+  "72.094",
+]);
+
+/**
+ * Vallejo: Model Color (chart CC329-R00, 2024) and Game Color with Xpress
+ * Color (chart CC266-Rev03, 2025). The charts present Wash, Ink, Metallic,
+ * Fluo and Special FX as parts of Game Color, and Xpress Color (Intense
+ * included) as a line of its own.
+ * https://acrylicosvallejo.com/wp-content/uploads/2024/03/CC329-R00-Model-Color-NewIC.pdf
+ * https://3d.nice-cdn.com/upload/file/CC266-Game_Color_2_.pdf
+ */
+const VALLEJO: DonnervSBrand = {
+  file: "paints/json/Vallejo.json",
+  lines: {
+    "Model Color": {
+      rangeId: "vallejo/model-color",
+      type: "standard",
+      metallic: false,
+    },
+    "Game Color": {
+      rangeId: "vallejo/game-color",
+      type: "standard",
+      metallic: false,
+    },
+    "Game Color Wash": {
+      rangeId: "vallejo/game-color",
+      type: "wash",
+      metallic: false,
+    },
+    "Game Color Special FX": {
+      rangeId: "vallejo/game-color",
+      type: "technical",
+      metallic: false,
+    },
+    "Xpress Color": {
+      rangeId: "vallejo/xpress-color",
+      type: "contrast",
+      metallic: false,
+    },
+    "Xpress Color Intense": {
+      rangeId: "vallejo/xpress-color",
+      type: "contrast",
+      metallic: false,
+    },
+    "Arte Deco": null,
+    "Arte Deco Colores Fluoresecents": null,
+    "Auxiliary Products": null,
+    "Game Air": null,
+    "Hobby Paint": null,
+    "Liquid Gold": null,
+    "Mecha Color": null,
+    "Metal Color": null,
+    "Model Air": null,
+    "Nocturna Models": null,
+    "Panzer Aces": null,
+    "Pigment FX": null,
+    "Premium Airbrush Color": null,
+    "Surface Primer": null,
+    "True Metallic Metal": null,
+    "Wash FX": null,
+    "Weathering FX": null,
+  },
+  excluded: (code) =>
+    [
+      "72.448", // Xpress Medium
+      "73.300", // Sepia Wash and Black Wash: not in the 2025 chart
+      "73.301",
+    ].includes(code),
+  override: (code) => {
+    if (MODEL_COLOR_METALLICS.has(code)) return { metallic: true };
+    if (codeIn([72052, 72060])(code)) return { metallic: true }; // Game Color Metallic
+    if (GAME_COLOR_INKS.has(code) || code === "70.828" || code === "70.939") {
+      return { type: "ink" }; // Game Color Ink; Mahogany and Smoke Ink
+    }
+    if (code.startsWith("73.2")) return { type: "wash" }; // filed under Game Color
+    return undefined;
+  },
+  // The chart names inks and washes bare under their heading ("Black");
+  // DonnervS adds "Wash" to washes, and inks get "Ink" alike.
+  cleanName: (name, code) => (GAME_COLOR_INKS.has(code) ? `${name} Ink` : name),
+  nameErrata: {
+    "70.816": "Luftwaffe Uniform",
+    "70.860": "Medium Flesh Tone",
+    "70.861": "Gloss Black",
+    "70.971": "Light Green Grey",
+    "72.601": "Fresh Blood",
+    "72.605": "Green Rust",
+    "73.209": "Violet Wash",
+  },
+  slugs: {},
+  photoOverMeasured: new Set(),
+};
+
 export const DONNERVS_BRANDS: Readonly<Record<string, DonnervSBrand>> = {
   "ak-interactive": AK_INTERACTIVE,
   "the-army-painter": THE_ARMY_PAINTER,
+  vallejo: VALLEJO,
 };
 
 const fileSchema = z.object({
