@@ -5,7 +5,7 @@
 
 ## Contexto
 
-La rueda trabaja solo con colores: recibe uno y devuelve otros. No necesita saber nada de pinturas ni de marcas. La parte propia de Warhammer empieza después, al buscar la pintura más parecida a cada color que devuelve la rueda.
+La rueda trabaja solo con colores: se dibuja, se gira su plantilla y devuelve los colores que marca. No necesita saber nada de pinturas ni de marcas. La parte propia de Warhammer empieza después, al buscar la pintura más parecida a cada color que devuelve la rueda.
 
 El [ADR-0018](0018-organizacion-codigo-patrones.md) colocaba la rueda dentro de `domain`, en los módulos `color`, `harmony` y `scheme`, junto al catálogo. Miguel propuso separarla como una librería que la web use y sobre la que enganche las pinturas.
 
@@ -15,9 +15,10 @@ Además, el [ADR-0019](0019-alcance-minimo-mvp.md) describía el esquema de mini
 
 ### Paquete
 
-- **`packages/color-wheel`** (`@rueda-cromatica/color-wheel`): TypeScript puro, sin React, sin navegador y sin depender de `domain`. Su única dependencia es culori.
+- **`packages/color-wheel`** (`@rueda-cromatica/color-wheel`): la rueda completa, con sus cálculos, su dibujo y su plantilla giratoria. Sin React y sin depender de `domain`. Su única dependencia es culori.
 - **No se publica en npm por ahora**, pero se diseña como si fuera a publicarse: API pública en `index.ts`, tests y ningún concepto de pinturas.
-- **Solo la lógica.** El dibujo de la rueda con su plantilla giratoria se hace en `apps/web` en la etapa 5. Si después conviene reutilizarlo, se extrae a otro paquete.
+- **Agnóstico del framework**: la rueda se entrega como un componente web (_custom element_), un estándar del navegador que funciona en React y en cualquier otro framework. La app lo coloca, le indica el modelo y recibe los colores cada vez que cambian.
+- **Los cálculos no tocan el DOM**, para probarlos sin navegador. Siguen siendo parte del paquete y de su API.
 - **Dependencias**: `apps/web` usa `color-wheel` y `domain`; `catalog-builder` usa `domain`. Entre `color-wheel` y `domain` no hay dependencia.
 - **La búsqueda de la pintura más parecida (ΔE CIEDE2000) sigue en `domain`**, en el módulo `matching`, porque necesita el catálogo.
 
@@ -59,7 +60,8 @@ Ejemplo: verde en RYB con luz cálida. Tríada: naranja y violeta. Complementari
 
 - **La rueda dentro de `domain`**, como preveía el ADR-0018: la frontera entre la rueda y el catálogo dependería de la disciplina. Un paquete propio la hace obligatoria.
 - **Publicarla ya en npm**: obliga a compilar, versionar cada cambio de la API, elegir licencia y mantener un proceso de publicación mientras el diseño todavía cambia. No aporta nada a la app.
-- **Incluir el componente de React en el paquete**: ataría la lógica a React sin necesidad.
+- **Dibujar la rueda en `apps/web`**: repartiría la rueda entre dos sitios, y cualquier otra app tendría que volver a dibujarla.
+- **Un componente de React**: ataría la rueda a un framework sin necesidad.
 - **Devolver todas las armonías a la vez**: quien usa la rueda elige una plantilla, como en una rueda física, y solo necesita sus colores.
 - **El esquema de miniatura como una armonía más**: responde a otra pregunta (cómo pintar una zona) y lleva sombra y luz, que no salen de girar la plantilla.
 - **Sombra como la base oscurecida y luz como la base aclarada con colores fijos**: no es como se pinta. Las fuentes coinciden en que el tono se desplaza, no solo la luminosidad.
@@ -70,4 +72,6 @@ Ejemplo: verde en RYB con luz cálida. Tríada: naranja y violeta. Complementari
 - El esquema de miniatura del ADR-0019 («base, sombra, luz y acento») queda precisado por este ADR.
 - La geometría de cada armonía y la conversión entre RYB y digital se especifican en la etapa 4, antes de implementarlas.
 - Mostrar al usuario qué pinturas mezclar para conseguir la sombra o la luz es la funcionalidad de mezclas, que sigue en «Futuro». En el MVP se muestra el color resultante y la pintura más cercana.
+- Los tests del dibujo necesitan un navegador, simulado o real. La herramienta se elige y se justifica en la etapa 4.
+- `apps/web` no dibuja la rueda: coloca el componente y busca las pinturas más parecidas a los colores que recibe.
 - Publicar el paquete en npm requerirá un ADR nuevo.
