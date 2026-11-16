@@ -134,6 +134,13 @@ Pendiente fuera de la hoja de ruta: provisionar la preproducción en el homelab 
 - **Informes de investigación**: en `docs/investigacion/`, fechados e inmutables. Las normas están en su [README](docs/investigacion/README.md).
 - **Especificaciones y ADR**: las especificaciones describen lo vigente; los ADR, por qué se decidió. Un ADR aceptado no se reescribe: se sustituye por otro nuevo.
 
+## Interfaz
+
+- **Accesibilidad**: HTML semántico y WCAG 2.2 nivel AA. Todo se maneja con ratón, teclado y pantalla táctil, y el táctil tiene que ser preciso.
+- **Mobile first**: se diseña primero para el móvil, y en escritorio tiene que funcionar y verse igual de bien.
+- **Adaptable de verdad**: un único marcado que se ajusta con CSS. Nada de elementos distintos para móvil y escritorio.
+- **UX/UI cuidadas** en cada pantalla, y **buen SEO** en la web.
+
 ## Reglas de trabajo
 
 - No inventes valores hex, códigos de pintura ni equivalencias oficiales. Si un dato no procede de una fuente verificable, dilo.
