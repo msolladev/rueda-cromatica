@@ -25,7 +25,7 @@ Cada fichero recoge una decisión relevante: su contexto, la decisión tomada, l
 | [0017](0017-arquitectura-objetivo-backend.md)  | Arquitectura objetivo con backend                                    | aceptada                                 |
 | [0018](0018-organizacion-codigo-patrones.md)   | Organización del código y patrones                                   | aceptada                                 |
 | [0019](0019-alcance-minimo-mvp.md)             | Alcance mínimo del MVP                                               | aceptada                                 |
-| [0020](0020-rueda-paquete-independiente.md)    | La rueda de color como paquete independiente                         | propuesta                                |
+| [0020](0020-rueda-paquete-independiente.md)    | La rueda de color como paquete independiente                         | aceptada                                 |
 
 ## Normas
 

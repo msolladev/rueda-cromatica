@@ -15,7 +15,7 @@ Es un proyecto de aprendizaje del ecosistema Node/TS: prioriza las buenas práct
 - **Calidad**: ESLint 10 (_flat config_, `typescript-eslint` con `strictTypeChecked`) y Prettier. ESLint no se encarga del formato ([ADR-0010](docs/adr/0010-lint-formato.md)).
 - **TypeScript 6.0**, no la 7: `typescript-eslint` exige `<6.1.0`. Se sube cuando lo admita.
 - **Madurez de dependencias**: `minimumReleaseAge` de 7 días en `pnpm-workspace.yaml`, y `cooldown` equivalente en Dependabot. Las versiones compartidas entre paquetes van en el `catalog:` de pnpm.
-- **Tests**: Vitest, obligatorios en `domain` y `catalog-builder`.
+- **Tests**: Vitest, obligatorios en `domain`, `catalog-builder` y `color-wheel`. El componente de la rueda se prueba en un navegador real (modo navegador de Vitest con Playwright).
 - **CI/CD**: GitHub Actions ([ADR-0011](docs/adr/0011-ci-cd.md)).
 - **Entornos**: desarrollo en WSL 2, preproducción en el homelab y producción por decidir ([ADR-0012](docs/adr/0012-entornos.md)).
 
@@ -23,7 +23,7 @@ Es un proyecto de aprendizaje del ecosistema Node/TS: prioriza las buenas práct
 
 El monorepo está montado. `domain` ya tiene el contrato del catálogo (esquema, `parseCatalog`, agregado `Catalog` y reglas derivadas) y `catalog-builder` genera `catalog.json`; `apps/web` todavía no tiene lógica. La separación en paquetes, la organización interna por módulos y los patrones están en el [ADR-0018](docs/adr/0018-organizacion-codigo-patrones.md).
 
-- `packages/color-wheel`: la rueda completa, solo con colores y sin pinturas: los modelos RYB y digital, las armonías, el esquema de miniatura (culori) y el dibujo con la plantilla giratoria y sus controles. Es un componente completo y agnóstico del framework, que se inicializa sobre un contenedor y se entrega compilado a JS con sus tipos. No depende de `domain`. Se diseña como publicable, pero no se publica en npm ([ADR-0020](docs/adr/0020-rueda-paquete-independiente.md)).
+- `packages/color-wheel`: la rueda completa, solo con colores y sin pinturas: los modelos RYB y digital, las armonías, el esquema de miniatura (culori, y spectral.js para las mezclas) y el dibujo con la plantilla giratoria y sus controles. Es un componente completo y agnóstico del framework, que se inicializa sobre un contenedor y se entrega compilado a JS con sus tipos. No depende de `domain`. Se diseña como publicable, pero no se publica en npm ([ADR-0020](docs/adr/0020-rueda-paquete-independiente.md), [docs/05](docs/05-rueda-de-color.md)).
 - `packages/domain`: TS puro, con el modelo del catálogo, su validación (Zod) y la búsqueda de la pintura más parecida con el Delta E (culori). Sin dependencias de React ni del navegador.
 - `packages/catalog-builder`: script Node que importa las fuentes, las normaliza (culori para el punto medio de los degradados) y genera `catalog.json`. Arquitectura hexagonal en sus bordes (disco y red).
 - `apps/web`: React, solo presentación. La lógica vive en el dominio y la rueda en `color-wheel`.
@@ -63,11 +63,12 @@ Desde la raíz. pnpm cambia solo a la versión de `packageManager` y descarga el
 - **Color aproximado**: un hex es aproximado si la pintura es metálica, si su tipo es lavado, tinta, veladura, contrast o técnica, o si el hex es de origen comunitario. Se calcula en el dominio; en el JSON solo se guardan el origen y la fuente del hex. No se ofrecen equivalencias calculadas con colores aproximados sin avisar.
 - **Origen del color**: un único hex por pintura, con su origen (`measured`, `manufacturer` o `community`) y su fuente. Los degradados oficiales de Citadel se reducen a su punto medio en CIELAB ([ADR-0014](docs/adr/0014-origen-seleccion-color.md)). En el MVP cada pintura tiene una sola fuente de color ([ADR-0019](docs/adr/0019-alcance-minimo-mvp.md)).
 - **Sustitución frente a equivalencia**: solo hay sustituta si la fuente del fabricante dice que X sustituye a Y. Las cartas de conversión son equivalencias oficiales.
-- **Esquema de miniatura** ([ADR-0020](docs/adr/0020-rueda-paquete-independiente.md)): la base, los otros dos colores de su tríada, su complementario, y la sombra y la luz de la base.
+- **Esquema de miniatura** ([ADR-0020](docs/adr/0020-rueda-paquete-independiente.md)): la base con su sombra y su luz, los otros dos colores de su tríada y su complementario, en ese orden.
+  - Las mezclas simulan pigmentos (Kubelka-Munk), no luz.
   - Sombra: la base mezclada con su complementario.
   - Luz: la base mezclada con su vecino en la rueda, aclarado; hacia el amarillo si es cálida y hacia el azul si es fría.
   - Solo se muestra el color resultante y la pintura más cercana; la receta de la mezcla está en «Futuro».
-- **Rueda**: calcula en modelo RYB (el de la pintura física) o digital (RGB/HSL), a elección del usuario. Devuelve el color teórico y la pintura real más parecida, filtrando por las marcas activas.
+- **Rueda**: continua, con un anillo de tono y un triángulo de blanco y negro, así que la base puede ser cualquier color. Las armonías giran el tono con los ángulos fijos de la rueda de 12 tonos y conservan las proporciones de blanco y negro de la base. Calcula en modelo RYB (el de la pintura física) o digital (RGB/HSL), a elección del usuario. La web busca, para cada color, la pintura real más parecida, filtrando por las marcas activas. El detalle está en [docs/05](docs/05-rueda-de-color.md).
 - **Pintura**:
   - Tipo según su función: base, capa, estándar (opaca sin distinción base/capa), lavado, tinta, veladura, contrast (función de una capa, de cualquier marca), técnica o pincel seco ([ADR-0013](docs/adr/0013-clasificacion-pinturas.md)).
   - Metálica, como atributo independiente del tipo.
@@ -89,7 +90,7 @@ El alcance mínimo y lo aplazado están razonados en el [ADR-0019](docs/adr/0019
   - Army Painter: Warpaints Fanatic y Speedpaint 2.0.
   - AK: 3rd Gen y Quick Gen.
   - Fuera del catálogo: productos sin color (mediums, barnices, diluyentes).
-- **Futuro** (no implementar sin pedirlo): mi colección, recetas, lista de la compra, cuentagotas sobre foto, sugerencia de lavados, mezclas, Tone Pro, líneas de aerógrafo, Spray, Speedpaint 1.0 y búsqueda por código antiguo.
+- **Futuro** (no implementar sin pedirlo): mi colección, recetas, lista de la compra, cuentagotas sobre foto, sugerencia de lavados, mezclas, ángulos ajustables en la plantilla de la rueda, Tone Pro, líneas de aerógrafo, Spray, Speedpaint 1.0 y búsqueda por código antiguo.
 - **Búsqueda por nombre**, cuando se haga: sin distinguir mayúsculas, apóstrofos ni acentos y por fragmentos (`tigers skin` encuentra «Tiger's Eye Skin»). Después, tolerante a faltas de ortografía (`boney` encuentra «Bony»). Con eso sobran los alias que hoy cubren erratas, como «Nurgles Rot», «Tigers Eye Skin» y «Boney Spikes».
 - Si una propuesta se sale del MVP, indícalo antes de implementarla.
 
