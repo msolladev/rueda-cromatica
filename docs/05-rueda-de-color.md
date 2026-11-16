@@ -9,6 +9,8 @@ Este documento especifica el paquete `@rueda-cromatica/color-wheel`: cómo repre
 - **Completo y controlable**: trae sus controles, y todo lo que hace el usuario se puede hacer también desde código.
 - **Los cálculos no tocan el DOM**: solo el módulo `ui` usa el navegador, y el resto se prueba y se usa en Node.
 - **Los valores no válidos fallan**: un hex mal escrito o una armonía desconocida lanzan un error que explica qué falla, en lugar de ignorarse.
+- **Accesible**: HTML semántico, cumplimiento de WCAG 2.2 nivel AA y manejo completo con ratón, teclado y pantalla táctil (§6.2).
+- **Adaptable**: un único marcado que se ajusta con CSS al tamaño de su contenedor, del móvil al escritorio, sin elementos distintos según la pantalla.
 
 ## 2. Representación del color
 
@@ -135,7 +137,11 @@ wheel.addEventListener("change", (e) => {
 - **Plantilla**: líneas desde el centro hasta las marcas de cada color de la armonía en el anillo, y un punto en el triángulo que marca la base.
 - **Interacción**: arrastrar en el anillo cambia el tono, y arrastrar en el triángulo cambia las proporciones.
 - **Canvas**, con nitidez ajustada a la densidad de la pantalla. La rueda ocupa el ancho de su contenedor.
-- **Teclado**: el anillo y el triángulo reciben el foco y se manejan con las flechas. Todos los controles tienen nombre accesible.
+- **Ratón, teclado y pantalla táctil**, todo con la misma precisión:
+  - Ratón y táctil, con Pointer Events.
+  - El táctil tiene que ser totalmente preciso: el dedo no puede tapar ni desviar el punto que se mueve. Cómo conseguirlo se diseña al implementar el componente.
+  - Teclado: el anillo y el triángulo reciben el foco y se manejan con las flechas.
+- **HTML semántico**: los controles son elementos nativos (`<input>`, `<select>`, `<button>`, `<label>`) y la lista de resultados es una lista (`<ol>`). Todo tiene nombre accesible.
 
 ### 6.3. Controles
 
@@ -276,3 +282,11 @@ Vitest con dos proyectos:
 - **Navegador**, en Chromium con Playwright, para `ui`.
 
 Los dos corren en local y en la CI.
+
+## 9. Prototipos
+
+Demos hechas al diseñar la rueda, con código reutilizable. Son artifacts privados de claude.ai: solo los abre su propietario. Usan el modelo digital y no siguen todas las reglas de este documento.
+
+- [Rueda segmentada o continua](https://claude.ai/artifact/Hrto4CEvdkXeKM4nZqGvEn): compara una rueda de 12 segmentos con una continua, y la base limitada a un segmento frente a la base exacta.
+- [Rueda con variaciones](https://claude.ai/artifact/Vn7s24dhM7PVzAYS2rM8Lk): la rueda de anillos de AK frente a la del anillo de tono con triángulo, que es la elegida. Su dibujo en Canvas y su interacción son casi la versión final.
+- [Comparador de mezclas](https://claude.ai/artifact/BBABt2imHVGbrZQgxuxh79): la misma mezcla en RGB, RGB lineal, OKLab y con Kubelka-Munk (spectral.js), con colores del catálogo.
