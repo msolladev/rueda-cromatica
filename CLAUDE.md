@@ -15,13 +15,13 @@ Es un proyecto de aprendizaje del ecosistema Node/TS: prioriza las buenas práct
 - **Calidad**: ESLint 10 (_flat config_, `typescript-eslint` con `strictTypeChecked`) y Prettier. ESLint no se encarga del formato ([ADR-0010](docs/adr/0010-lint-formato.md)).
 - **TypeScript 6.0**, no la 7: `typescript-eslint` exige `<6.1.0`. Se sube cuando lo admita.
 - **Madurez de dependencias**: `minimumReleaseAge` de 7 días en `pnpm-workspace.yaml`, y `cooldown` equivalente en Dependabot. Las versiones compartidas entre paquetes van en el `catalog:` de pnpm.
-- **Tests**: Vitest, obligatorios en `domain`, `catalog-builder` y `color-wheel`. El componente de la rueda se prueba en un navegador real (modo navegador de Vitest con Playwright).
+- **Tests**: Vitest, obligatorios en `domain`, `catalog-builder` y `color-wheel`. El componente de la rueda se prueba en un navegador real (modo navegador de Vitest con Playwright), con entrada real de ratón y táctil, y con axe-core para la accesibilidad.
 - **CI/CD**: GitHub Actions ([ADR-0011](docs/adr/0011-ci-cd.md)).
 - **Entornos**: desarrollo en WSL 2, preproducción en el homelab y producción por decidir ([ADR-0012](docs/adr/0012-entornos.md)).
 
 ## Estructura objetivo
 
-El monorepo está montado. `domain` ya tiene el contrato del catálogo (esquema, `parseCatalog`, agregado `Catalog` y reglas derivadas), `catalog-builder` genera `catalog.json` y `color-wheel` tiene los cálculos de la rueda, todavía sin el componente; `apps/web` todavía no tiene lógica. La separación en paquetes, la organización interna por módulos y los patrones están en el [ADR-0018](docs/adr/0018-organizacion-codigo-patrones.md).
+El monorepo está montado. `domain` ya tiene el contrato del catálogo (esquema, `parseCatalog`, agregado `Catalog` y reglas derivadas), `catalog-builder` genera `catalog.json` y `color-wheel` tiene los cálculos de la rueda y el componente; `apps/web` todavía no tiene lógica. La separación en paquetes, la organización interna por módulos y los patrones están en el [ADR-0018](docs/adr/0018-organizacion-codigo-patrones.md).
 
 - `packages/color-wheel`: la rueda completa, solo con colores y sin pinturas: los modelos RYB y digital, las armonías, el esquema de miniatura (culori, y spectral.js para las mezclas) y el dibujo con la plantilla giratoria y sus controles. Es un componente completo y agnóstico del framework, que se inicializa sobre un contenedor y se entrega compilado a JS con sus tipos. No depende de `domain`. Se diseña como publicable, pero no se publica en npm ([ADR-0020](docs/adr/0020-rueda-paquete-independiente.md), [docs/05](docs/05-rueda-de-color.md)).
 - `packages/domain`: TS puro, con el modelo del catálogo, su validación (Zod) y la búsqueda de la pintura más parecida con el Delta E (culori). Sin dependencias de React ni del navegador.
@@ -46,6 +46,7 @@ Desde la raíz. pnpm cambia solo a la versión de `packageManager` y descarga el
   - en WSL, además, las librerías del sistema: `pnpm --filter @chromatic-wheel/color-wheel exec playwright install-deps chromium`, que pide la contraseña de `sudo`.
 - `pnpm build`: build de `color-wheel` (Vite en modo librería y `tsc`) y de `apps/web` (Vite + PWA).
 - `pnpm --filter @chromatic-wheel/web dev`: servidor de desarrollo.
+- `pnpm --filter @chromatic-wheel/color-wheel dev`: página de pruebas de la rueda, con el código fuente (docs/05 §8.4). Con `--host`, para abrirla desde el móvil.
 - `pnpm --filter @chromatic-wheel/catalog-builder build-catalog`: regenera `apps/web/public/catalog.json` a partir de los datos. Con `--check` no escribe nada y falla si el versionado está desactualizado.
 - `pnpm --filter @chromatic-wheel/catalog-builder import-simogecko`: importa Citadel de la tabla de SimoGecko a `data/brands/citadel.json`. Se ejecuta a demanda; después, `pnpm format` y `build-catalog`.
 - `pnpm --filter @chromatic-wheel/catalog-builder import-donnervs <brand-id>`: igual, para una marca desde los datos de DonnervS.
@@ -92,7 +93,7 @@ El alcance mínimo y lo aplazado están razonados en el [ADR-0019](docs/adr/0019
   - Army Painter: Warpaints Fanatic y Speedpaint 2.0.
   - AK: 3rd Gen y Quick Gen.
   - Fuera del catálogo: productos sin color (mediums, barnices, diluyentes).
-- **Futuro** (no implementar sin pedirlo): mi colección, recetas, lista de la compra, cuentagotas sobre foto, sugerencia de lavados, mezclas, ángulos ajustables en la plantilla de la rueda, Tone Pro, líneas de aerógrafo, Spray, Speedpaint 1.0 y búsqueda por código antiguo.
+- **Futuro** (no implementar sin pedirlo): mi colección, recetas, lista de la compra, cuentagotas sobre foto, sugerencia de lavados, mezclas, ángulos ajustables en la plantilla de la rueda, tutorial guiado de la rueda (cuando el MVP esté completo y haya usuarios reales), Tone Pro, líneas de aerógrafo, Spray, Speedpaint 1.0 y búsqueda por código antiguo.
 - **Búsqueda por nombre**, cuando se haga: sin distinguir mayúsculas, apóstrofos ni acentos y por fragmentos (`tigers skin` encuentra «Tiger's Eye Skin»). Después, tolerante a faltas de ortografía (`boney` encuentra «Bony»). Con eso sobran los alias que hoy cubren erratas, como «Nurgles Rot», «Tigers Eye Skin» y «Boney Spikes».
 - Si una propuesta se sale del MVP, indícalo antes de implementarla.
 
@@ -105,7 +106,7 @@ El alcance mínimo y lo aplazado están razonados en el [ADR-0019](docs/adr/0019
    1. Contrato del catálogo en `domain`: hecho.
    2. Builder mínimo según docs/04, con el paso 4 de la CI: hecho.
    3. Datos: hecho, una marca por iteración, cada una desde una sola fuente. Citadel: desde la tabla de SimoGecko con hex `community`, porque citadelcolour.com (hoy paint.warhammer.com) no publica los hex. The Army Painter: desde DonnervS con hex `community`; Warpaints Fanatic es una sola gama (lavados, metálicos y efectos se distinguen por el tipo y el atributo metálico). AK Interactive: desde DonnervS con hex `community`; 3Gen Acrylics es una sola gama con todas las etiquetas de AK (STANDARD, AFV, FIGURES…) salvo AIR, que es de aerógrafo; Quick Gen tiene 79 colores, comprobado en la web de AK. Vallejo: desde DonnervS con hex `community`, contrastado con las cartas oficiales CC329 (Model Color) y CC266 (Game Color y Xpress Color); Model Color y Game Color son una gama cada una, con sus subgrupos (lavados, tintas, metálicos, fluorescentes y Special FX) distinguidos por el tipo, y Xpress Color, con Intense, es una gama propia.
-   4. Color: el paquete `color-wheel` con los dos modelos de rueda, las armonías, el esquema de miniatura, y el componente completo con su dibujo, su plantilla giratoria y sus controles, y en `domain` la búsqueda de la pintura más parecida con el ΔE.
+   4. Color: el paquete `color-wheel` con los dos modelos de rueda, las armonías, el esquema de miniatura, y el componente completo con su dibujo, su plantilla giratoria y sus controles (hecho), y en `domain` la búsqueda de la pintura más parecida con el ΔE (pendiente).
    5. Web: la rueda integrada, el filtro de marcas, las pinturas más parecidas a cada color, el aviso de color aproximado y la carga del catálogo.
 
    Al curar los datos hay que verificar:
