@@ -31,6 +31,8 @@ export interface Labels {
     readonly pointerHelp: string;
     readonly touchHelp: string;
     readonly keyboardHelp: string;
+    /** Accessible name of the button that closes the help. */
+    readonly helpClose: string;
     readonly hexInvalid: string;
     /** `{count}`: number of colors; `{harmony}`: its name. */
     readonly resultsUpdated: string;

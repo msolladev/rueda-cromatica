@@ -93,7 +93,7 @@ El alcance mínimo y lo aplazado están razonados en el [ADR-0019](docs/adr/0019
   - Army Painter: Warpaints Fanatic y Speedpaint 2.0.
   - AK: 3rd Gen y Quick Gen.
   - Fuera del catálogo: productos sin color (mediums, barnices, diluyentes).
-- **Futuro** (no implementar sin pedirlo): mi colección, recetas, lista de la compra, cuentagotas sobre foto, sugerencia de lavados, mezclas, ángulos ajustables en la plantilla de la rueda, tutorial guiado de la rueda (cuando el MVP esté completo y haya usuarios reales), Tone Pro, líneas de aerógrafo, Spray, Speedpaint 1.0 y búsqueda por código antiguo.
+- **Futuro** (no implementar sin pedirlo): mi colección, recetas, lista de la compra, cuentagotas sobre foto, sugerencia de lavados, mezclas, ángulos ajustables en la plantilla de la rueda, tutorial guiado de la rueda (cuando el MVP esté completo y haya usuarios reales), icono de ayuda de la rueda personalizable por la web, Tone Pro, líneas de aerógrafo, Spray, Speedpaint 1.0 y búsqueda por código antiguo.
 - **Búsqueda por nombre**, cuando se haga: sin distinguir mayúsculas, apóstrofos ni acentos y por fragmentos (`tigers skin` encuentra «Tiger's Eye Skin»). Después, tolerante a faltas de ortografía (`boney` encuentra «Bony»). Con eso sobran los alias que hoy cubren erratas, como «Nurgles Rot», «Tigers Eye Skin» y «Boney Spikes».
 - Si una propuesta se sale del MVP, indícalo antes de implementarla.
 

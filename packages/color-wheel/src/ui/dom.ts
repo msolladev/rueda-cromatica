@@ -1,6 +1,8 @@
 // The markup of the component: native, semantic HTML, the same at every size
 // (docs/05 §6.2). The texts and values are filled in by `ColorWheel`.
 
+import { closeIcon, helpIcon } from "./icons.ts";
+
 let instances = 0;
 
 export interface Dom {
@@ -12,20 +14,24 @@ export interface Dom {
   readonly hexLabel: HTMLLabelElement;
   readonly hexInput: HTMLInputElement;
   readonly hexError: HTMLParagraphElement;
-  readonly modelField: HTMLDivElement;
-  readonly modelLabel: HTMLLabelElement;
-  readonly modelSelect: HTMLSelectElement;
+  readonly modelField: HTMLFieldSetElement;
+  readonly modelLegend: HTMLLegendElement;
+  readonly modelOptions: HTMLDivElement;
   readonly harmonyField: HTMLDivElement;
   readonly harmonyLabel: HTMLLabelElement;
   readonly harmonySelect: HTMLSelectElement;
-  readonly lightField: HTMLDivElement;
-  readonly lightLabel: HTMLLabelElement;
-  readonly lightSelect: HTMLSelectElement;
+  readonly lightField: HTMLFieldSetElement;
+  readonly lightLegend: HTMLLegendElement;
+  readonly lightOptions: HTMLDivElement;
   readonly results: HTMLElement;
   readonly resultsTitle: HTMLParagraphElement;
   readonly resultsList: HTMLOListElement;
-  readonly help: HTMLDetailsElement;
-  readonly helpSummary: HTMLElement;
+  readonly help: HTMLDivElement;
+  readonly helpButton: HTMLButtonElement;
+  readonly helpTitle: HTMLSpanElement;
+  readonly helpPopover: HTMLDivElement;
+  readonly helpHeading: HTMLParagraphElement;
+  readonly helpClose: HTMLButtonElement;
   readonly helpPointer: HTMLParagraphElement;
   readonly helpTouch: HTMLParagraphElement;
   readonly helpKeyboard: HTMLParagraphElement;
@@ -58,6 +64,17 @@ function field(
   return { field: container, label };
 }
 
+/**
+ * A segmented control: a group of native radio buttons, for the controls with
+ * only a few options (docs/05 §6.3).
+ */
+function segmented(parent: HTMLElement) {
+  const container = element("fieldset", "cw-field cw-segmented-field", parent);
+  const legend = element("legend", "cw-label", container);
+  const options = element("div", "cw-segmented", container);
+  return { field: container, legend, options };
+}
+
 function select(parent: HTMLElement, id: string) {
   const { field: container, label } = field(parent, id);
   const control = element("select", "cw-select", container);
@@ -70,6 +87,7 @@ export function createDom(): Dom {
   const id = (name: string) => `cw-${String(instances)}-${name}`;
 
   const root = element("div", "cw-root");
+  root.id = id("root");
   root.setAttribute("role", "group");
 
   const layout = element("div", "cw-layout", root);
@@ -102,10 +120,11 @@ export function createDom(): Dom {
   hexError.id = id("hex-error");
   hexError.hidden = true;
 
-  const model = select(controls, id("model"));
+  const model = segmented(controls);
   const harmony = select(controls, id("harmony"));
   harmony.field.classList.add("cw-field-wide");
-  const light = select(controls, id("light"));
+  const light = segmented(controls);
+  light.field.classList.add("cw-field-wide");
 
   const results = element("section", "cw-results", panel);
   const resultsTitle = element("p", "cw-results-title", results);
@@ -115,9 +134,34 @@ export function createDom(): Dom {
   // Safari drops the list semantics of a list without bullets.
   resultsList.setAttribute("role", "list");
 
-  const help = element("details", "cw-help", panel);
-  const helpSummary = element("summary", "cw-help-summary", help);
-  const helpBody = element("div", "cw-help-body", help);
+  // The help opens in a popover anchored to its button: it floats over the
+  // page instead of pushing it down (docs/05 §6.3). It is "manual" so that it
+  // stays open while the user tries the wheel.
+  const help = element("div", "cw-help", panel);
+  const helpButton = element("button", "cw-help-button", help);
+  helpButton.type = "button";
+  helpButton.append(helpIcon());
+  const helpTitle = element("span", "", helpButton);
+  const helpPopover = element("div", "cw-help-popover", help);
+  helpPopover.id = id("help");
+  helpPopover.setAttribute("popover", "manual");
+  helpPopover.setAttribute("role", "dialog");
+  helpButton.setAttribute("popovertarget", helpPopover.id);
+  // Each wheel anchors its popover to its own help block, which is as wide as
+  // the controls, so that the popover takes that same width.
+  const anchor = `--${id("help-anchor")}`;
+  help.style.setProperty("anchor-name", anchor);
+  helpPopover.style.setProperty("position-anchor", anchor);
+  const helpHeader = element("div", "cw-help-header", helpPopover);
+  const helpHeading = element("p", "cw-help-heading", helpHeader);
+  helpHeading.id = id("help-heading");
+  helpPopover.setAttribute("aria-labelledby", helpHeading.id);
+  const helpClose = element("button", "cw-help-close", helpHeader);
+  helpClose.type = "button";
+  helpClose.setAttribute("popovertarget", helpPopover.id);
+  helpClose.setAttribute("popovertargetaction", "hide");
+  helpClose.append(closeIcon());
+  const helpBody = element("div", "cw-help-body", helpPopover);
   const helpPointer = element("p", "cw-help-text", helpBody);
   const helpTouch = element("p", "cw-help-text", helpBody);
   const helpKeyboard = element("p", "cw-help-text", helpBody);
@@ -142,19 +186,23 @@ export function createDom(): Dom {
     hexInput,
     hexError,
     modelField: model.field,
-    modelLabel: model.label,
-    modelSelect: model.select,
+    modelLegend: model.legend,
+    modelOptions: model.options,
     harmonyField: harmony.field,
     harmonyLabel: harmony.label,
     harmonySelect: harmony.select,
     lightField: light.field,
-    lightLabel: light.label,
-    lightSelect: light.select,
+    lightLegend: light.legend,
+    lightOptions: light.options,
     results,
     resultsTitle,
     resultsList,
     help,
-    helpSummary,
+    helpButton,
+    helpTitle,
+    helpPopover,
+    helpHeading,
+    helpClose,
     helpPointer,
     helpTouch,
     helpKeyboard,
@@ -180,4 +228,37 @@ export function setOptions(
     );
   }
   control.value = value;
+}
+
+/**
+ * Replaces the radio buttons of a segmented control if they changed, and
+ * checks `value`. `name` groups them, so that the arrows move between them.
+ */
+export function setRadios(
+  container: HTMLElement,
+  name: string,
+  options: readonly (readonly [value: string, text: string])[],
+  value: string,
+): void {
+  const inputs = () => [...container.querySelectorAll("input")];
+  const current = inputs().map((input) => [
+    input.value,
+    input.parentElement?.textContent ?? "",
+  ]);
+  if (JSON.stringify(current) !== JSON.stringify(options)) {
+    container.replaceChildren(
+      ...options.map(([optionValue, text]) => {
+        const label = document.createElement("label");
+        label.className = "cw-segment";
+        const input = document.createElement("input");
+        input.className = "cw-segment-input";
+        input.type = "radio";
+        input.name = name;
+        input.value = optionValue;
+        label.append(input, text);
+        return label;
+      }),
+    );
+  }
+  for (const input of inputs()) input.checked = input.value === value;
 }
