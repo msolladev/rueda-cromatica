@@ -136,12 +136,18 @@ wheel.addEventListener("change", (e) => {
 - **Anillo de tono** continuo y **triángulo** interior con vértices en el color puro del tono de la base, el blanco y el negro. El triángulo gira con el tono.
 - **Plantilla**: líneas desde el centro hasta las marcas de cada color de la armonía en el anillo, y un punto en el triángulo que marca la base.
 - **Interacción**: arrastrar en el anillo cambia el tono, y arrastrar en el triángulo cambia las proporciones.
-- **Canvas**, con nitidez ajustada a la densidad de la pantalla. La rueda ocupa el ancho de su contenedor.
+- **Canvas**, con nitidez ajustada a la densidad de la pantalla. La rueda ocupa el ancho de su contenedor, hasta `--cw-wheel-max-size`.
+  - El anillo es un degradado cónico por las seis esquinas del modelo, y el triángulo, el negro más dos degradados lineales que se suman (el puro y el blanco, cada uno desde su vértice hasta el lado opuesto). Las dos cosas son exactas: los colores puros de los dos modelos varían de forma lineal entre esquinas (§3), y en un triángulo equilátero cada degradado es el peso de su vértice (§2).
+  - Las marcas y el punto de la base son blancos con un halo oscuro, para que se vean sobre cualquier color.
 - **Ratón, teclado y pantalla táctil**, todo con la misma precisión:
-  - Ratón y táctil, con Pointer Events.
-  - El táctil tiene que ser totalmente preciso: el dedo no puede tapar ni desviar el punto que se mueve. Cómo conseguirlo se diseña al implementar el componente.
-  - Teclado: el anillo y el triángulo reciben el foco y se manejan con las flechas.
-- **HTML semántico**: los controles son elementos nativos (`<input>`, `<select>`, `<button>`, `<label>`) y la lista de resultados es una lista (`<ol>`). Todo tiene nombre accesible.
+  - **Ratón y lápiz**, con Pointer Events: el punto va a donde está el puntero.
+  - **Táctil**, con Pointer Events: el punto no salta bajo el dedo. Se mueve lo mismo que el dedo, esté donde esté el dedo, así que sigue a la vista. En el anillo, el tono gira lo mismo que gira el dedo alrededor del centro. Un toque sin desplazamiento (menos de 6 px) sí coloca el punto donde cae, para los saltos grandes.
+  - **Teclado**: el anillo y el triángulo son deslizadores (`role="slider"`) que reciben el foco, y el foco se dibuja alrededor de su forma.
+    - Anillo: ← y ↓ restan 1°, → y ↑ suman 1°; con Mayúsculas, 10°. Re Pág y Av Pág mueven 30°, un paso de la rueda de 12 tonos.
+    - Triángulo: → y ← suben o bajan el color puro un 1 % y conservan la relación entre blanco y negro; ↑ y ↓ pasan un 1 % del negro al blanco, o al revés, y conservan el color puro. Con Mayúsculas, un 10 %. Los ejes significan siempre lo mismo, gire como gire el triángulo.
+    - El lector de pantalla anuncia el tono («30°») y las proporciones («45 % puro, 10 % blanco, 45 % negro»), y cada deslizador enlaza su explicación de teclas con `aria-describedby`.
+- **HTML semántico**: los controles son elementos nativos (`<input>`, `<select>`, `<details>`, `<label>`) y la lista de resultados es una lista (`<ol>`). Todo tiene nombre accesible. Los cambios de un control que cambian los colores se anuncian en una región `role="status"` («6 colores: Esquema de miniatura.»); los del anillo y el triángulo los anuncian los propios deslizadores.
+- **Adaptable**: un único marcado. Con el contenedor estrecho, todo va en una columna; desde 40rem de ancho del contenedor (consulta de contenedor, no de pantalla), la rueda a la izquierda y los controles a la derecha.
 
 ### 6.3. Controles
 
@@ -152,8 +158,13 @@ wheel.addEventListener("change", (e) => {
 | `harmony` | Selector de armonía, con las de `harmonies`                             |
 | `light`   | Selector de luz cálida o fría. Solo aparece con el esquema de miniatura |
 | `results` | Lista de los colores resultantes, con su papel                          |
+| `help`    | «Cómo se usa», plegado: el manejo con puntero, dedo y teclado           |
 
 El anillo y el triángulo no se pueden ocultar: son la rueda.
+
+- **`light`** solo es visible con el esquema de miniatura: `isControlVisible("light")` es `false` con las demás armonías, aunque no esté oculto.
+- **Desactivar** `hex`, `model`, `harmony` y `light` desactiva su elemento nativo; `help` no se puede desplegar; `results` atenúa las muestras. Con la rueda desactivada, además, el anillo y el triángulo no responden y salen del orden de tabulación.
+- **El hex** se aplica al confirmarlo (Intro o al salir del campo). Acepta `#rgb` o `#rrggbb`, con o sin `#`. Si no es válido, el campo se marca (`aria-invalid`), muestra el error enlazado con `aria-describedby` y la rueda no cambia.
 
 ### 6.4. Opciones y propiedades
 
@@ -175,7 +186,9 @@ Además, en el constructor:
 - `hiddenControls` y `disabledControls`: listas de controles de §6.3;
 - `disabled`: `true` para desactivar toda la rueda.
 
-Asignar una armonía o un modelo que no esté en `harmonies` o en `models` es un error.
+Asignar una armonía o un modelo que no esté en `harmonies` o en `models` es un error, y también asignar unas `harmonies` o unos `models` que no incluyan los actuales: para cambiar los dos a la vez está `update`. Si `harmonies` o `models` no incluyen el valor por defecto y no se indica otro, se toma el primero de la lista.
+
+Los valores no válidos, las opciones desconocidas y las listas vacías o con repetidos lanzan un error que dice qué falla (§1), y no se aplica nada. Asignar un valor igual al actual no emite `change`.
 
 **Cambio de modelo** ([ADR-0021](adr/0021-cambio-modelo-conserva-color.md)): la rueda conserva el color base, no su posición. Convierte a la otra rueda el último hex que recibió (por `color`, el campo hex, `update` o `setState`), no el color alcanzado, para que ir y volver no pierda los colores que el triángulo RYB no alcanza. Al arrastrar o usar el teclado, la posición pasa a mandar y ese hex se olvida.
 
@@ -197,12 +210,15 @@ Asignar una armonía o un modelo que no esté en `harmonies` o en `models` es un
 | `destroy()`                                   | Quita la rueda y sus oyentes. Después, cualquier llamada es un error    |
 | `ColorWheel.locales`                          | Propiedad estática con los idiomas incluidos                            |
 
+- **`getState()`** devuelve las propiedades, más `hiddenControls`, `disabledControls` y `disabled`. Su `color` es el último hex recibido (ADR-0021) o, si se movió la rueda, la base.
+- **`setState(state)`** necesita un estado completo, como el que devuelve `getState()`.
+
 ### 6.6. Eventos
 
 La clase hereda de `EventTarget`, así que se escucha con `addEventListener`.
 
 - **`input`**: se emite continuamente mientras el usuario arrastra en el anillo o en el triángulo.
-- **`change`**: se emite al soltar, y con cada cambio que no sea un arrastre: los controles, las propiedades, `update` y `setState`.
+- **`change`**: se emite al soltar, y con cada cambio que no sea un arrastre: el teclado, los controles, las propiedades, los métodos, `update` y `setState`. Solo se emite si cambian el estado o el resultado, y nunca al crear la rueda.
 
 El `detail` de los dos es `{ result, state, source }`, donde `source` vale `"user"` o `"api"`. Sirve para que la web no responda a sus propios cambios en un bucle.
 
@@ -229,9 +245,9 @@ Los papeles y su orden son los de §4.
 ### 6.8. Textos e idiomas
 
 - **Idiomas incluidos**: `en`, `es`, `fr`, `de`, `it`, `pt-BR`, `ru`, `zh-Hans`, `ja` y `ko`. Cada uno es un fichero JSON del paquete.
-- **El inglés es la referencia**: sus claves son la lista de textos, y los tests comprueban que todos los idiomas tienen las mismas.
+- **El tipo `Labels` es la referencia**: sus claves salen de las listas del código (armonías, papeles, modelos, luces y controles), así que un texto que falte en un JSON es un error de compilación. Los tests comprueban además que todos los idiomas tienen las mismas claves que el inglés. El tipo se entrega en las declaraciones, sin depender de los JSON.
 - **Idioma por defecto**: el primero de `navigator.languages` que coincida con uno incluido, primero exacto y después por idioma base (`pt-PT` → `pt-BR`). Si no hay ninguno, inglés.
-- **Claves anidadas**, un bloque por grupo de textos (`harmony`, `role`, `model`, `light` y `control`):
+- **Claves anidadas**, un bloque por grupo de textos (`harmony`, `role`, `model`, `light`, `control` y `wheel`, con los nombres accesibles, los valores anunciados, la ayuda y los avisos). Algunos textos de `wheel` llevan marcadores, como `{hue}` o `{count}`, que se sustituyen por su valor:
 
   ```json
   {
@@ -251,9 +267,11 @@ Los papeles y su orden son los de §4.
 
 ### 6.9. Estilos
 
-- Fichero aparte, `style.css`, que la web incluye con `<link>` o con `import "@chromatic-wheel/color-wheel/style.css"`.
-- Clases con el prefijo `cw-`, y el aspecto se adapta con variables CSS con el prefijo `--cw-` (colores, tipografía y tamaños).
-- Valores por defecto para tema claro y oscuro, según `prefers-color-scheme`.
+- Fichero aparte, `style.css` (en el código, `src/ui/style.css`), que la web incluye con `<link>` o con `import "@chromatic-wheel/color-wheel/style.css"`.
+- Clases con el prefijo `cw-`, y el aspecto se adapta con variables CSS con el prefijo `--cw-`: `--cw-font`, `--cw-font-size`, `--cw-text`, `--cw-muted`, `--cw-surface`, `--cw-field`, `--cw-border`, `--cw-focus`, `--cw-error`, `--cw-radius`, `--cw-gap`, `--cw-padding`, `--cw-control-height` y `--cw-wheel-max-size`.
+- Valores por defecto para tema claro y oscuro, según `prefers-color-scheme`, con contraste AA. La rueda pinta su propio fondo (`--cw-surface`), para que sus textos contrasten en cualquier página.
+- Los controles miden al menos 44 px de alto (`--cw-control-height`), para el dedo.
+- Los colores de cada muestra se asignan con CSSOM (`element.style`), que una CSP estricta permite.
 
 ## 7. Cálculo sin interfaz
 
@@ -264,6 +282,8 @@ El paquete exporta los cálculos, que no usan el DOM:
   - `light` se valida siempre, pero solo aparece en el resultado con el esquema de miniatura.
   - Una opción desconocida es un error.
 - `toWheelColor(hex, model, previousHue)` y `fromWheelColor(wheelColor, model)`: convierten entre un hex y la representación de §2. `previousHue` es opcional y es el tono que reciben los colores sin tono (§3.2).
+
+Con npm se importan por su nombre (`import { compute } from "@chromatic-wheel/color-wheel"`). En el fichero para `<script src>`, el global `ColorWheel` es la clase, y los cálculos son sus métodos estáticos: `ColorWheel.compute(...)`, `ColorWheel.toWheelColor(...)` y `ColorWheel.fromWheelColor(...)`. En npm también existen esos métodos estáticos, que llaman a las mismas funciones.
 
 Por dentro, `compute` y el componente usan el mismo cálculo, que da cada color con su papel, su hex y su posición en la rueda. `compute` quita la posición; el componente la usa para dibujar la plantilla. Los colores que salen de una mezcla (sombra, luz y variaciones del monocromático) se colocan convirtiendo su hex a la rueda.
 
@@ -277,22 +297,26 @@ packages/color-wheel/src/
   mixing/       mezclas con spectral.js (§5)
   harmony/      armonías y variaciones del monocromático (§4)
   scheme/       esquema de miniatura (§5.1-5.2)
-  calculation/  cálculo común de todas las armonías, valores por defecto y resultado (§7)
-  i18n/         idiomas en JSON y resolución del idioma (§6.8)
+  calculation/  cálculo común de todas las armonías, valores por defecto, resultado y `compute` (§7)
+  i18n/         idiomas en JSON (`texts.ts`) y resolución del idioma (`locales.ts`) (§6.8)
   ui/           componente, dibujo, controles y eventos (§6). El único que usa el DOM
+    testing/    ayudas de los tests de navegador: entrada real y axe-core (§8.3)
   errors.ts     ayudas comunes para los mensajes de error (§1)
-  index.ts      API pública
+  index.ts      API pública, para npm
+  index.umd.ts  entrada del fichero para `<script src>`: exporta solo la clase (§7)
 ```
 
-Dependencias entre módulos: `errors.ts` no depende de nada y lo pueden usar todos; `color` y `mixing` no dependen de nada más del paquete; `harmony` depende de `color` y `mixing`; `scheme`, de `color`, `mixing` y `harmony`; `calculation`, de `color`, `harmony` y `scheme`; `index.ts` y `ui`, de todos. No se admiten ciclos. Como en el [ADR-0018](adr/0018-organizacion-codigo-patrones.md), la regla de que solo `ui` use el DOM la hacen cumplir las herramientas.
+Dependencias entre módulos: `errors.ts` no depende de nada y lo pueden usar todos; `color` y `mixing` no dependen de nada más del paquete; `i18n`, tampoco; `harmony` depende de `color` y `mixing`; `scheme`, de `color`, `mixing` y `harmony`; `calculation`, de `color`, `harmony` y `scheme`; `ui`, de todos; `index.ts` e `index.umd.ts`, de todos. No se admiten ciclos.
+
+Como en el [ADR-0018](adr/0018-organizacion-codigo-patrones.md), la regla de que solo `ui` use el DOM la hacen cumplir las herramientas: `tsconfig.lib.json` compila los cálculos sin la librería DOM y fallaría si uno importara `ui`; `tsconfig.ui.json` añade el DOM para `ui` y las entradas, y `tsconfig.dev.json`, además, los tipos de Vite para los tests de navegador y la página de pruebas.
 
 ### 8.2. Compilación
 
 `pnpm build` en el paquete ejecuta Vite en modo librería y después `tsc`, y genera:
 
-- un módulo ESM sin culori ni spectral.js, para las webs que instalan con npm;
-- un fichero UMD con todo dentro, para `<script src>`, que es el que sirven los CDN;
-- `style.css`;
+- un módulo ESM sin culori ni spectral.js, para las webs que instalan con npm (`dist/color-wheel.js`, desde `src/index.ts`);
+- un fichero UMD con todo dentro, para `<script src>`, que es el que sirven los CDN (`dist/color-wheel.umd.js`, desde `src/index.umd.ts`);
+- `style.css`, copiado tal cual por un plugin de Vite de pocas líneas (`dist/style.css`, exportado como `./style.css`);
 - las declaraciones `.d.ts` de la API pública.
 
 spectral.js no trae tipos, así que el paquete incluye su declaración (`src/mixing/spectral.d.ts`) para compilar. No se entrega, porque la API pública no la usa: no expone objetos de culori ni de spectral.js, solo datos propios (hex y colores de la rueda). Si algún día ofrece mezclas, lo hará con funciones y datos propios, para que un cambio en esas librerías no rompa a quien use el paquete.
@@ -302,7 +326,7 @@ Las dos pasadas de Vite (el módulo ESM y el UMD) son necesarias porque cada fic
 **Dentro del monorepo**, el `exports` del paquete tiene dos rutas:
 
 - la normal, al `dist/`, que es la que recibiría cualquier otra web;
-- una condición propia, `@chromatic-wheel/source`, al código fuente (`src/index.ts`).
+- una condición propia, `@chromatic-wheel/source`, al código fuente (`src/index.ts` y `src/ui/style.css`).
 
 La web activa la condición en su servidor de desarrollo, para ver los cambios de la rueda sin compilarla, y la desactiva al generar la versión desplegable, que así usa el `dist/`. Su comprobación de tipos y su lint leen el código fuente. Se configura en la etapa 5.
 
@@ -310,10 +334,19 @@ La web activa la condición en su servidor de desarrollo, para ver los cambios d
 
 Vitest con dos proyectos:
 
-- **Node**, para `color`, `mixing`, `harmony`, `scheme` e `i18n`;
-- **Navegador**, en Chromium con Playwright, para `ui` (ficheros `*.browser.test.ts`). Mientras no exista `ui`, tiene una prueba mínima de que los cálculos funcionan en el navegador.
+- **Node**, para `color`, `mixing`, `harmony`, `scheme`, `calculation` e `i18n`;
+- **Navegador**, en Chromium con Playwright, para `ui` (ficheros `*.browser.test.ts`), con los estilos cargados.
 
 Los dos corren en local y en la CI. La CI guarda Chromium en caché según la versión de Playwright.
+
+- **Entrada real**: el ratón y el dedo se simulan con el protocolo de DevTools de Chromium (`cdp()` de Vitest, `Input.dispatchMouseEvent` e `Input.dispatchTouchEvent`), así que los eventos pasan por el mismo camino que los de una persona, con coordenadas reales. El contexto del navegador tiene pantalla táctil (`hasTouch`). El teclado usa `userEvent`.
+- **Accesibilidad automática**: [axe-core](https://github.com/dequelabs/axe-core) (MPL-2.0, sin dependencias, solo en desarrollo) revisa el componente con las reglas de WCAG 2.2 A y AA en varios estados: por defecto, desactivado, con controles desactivados, con un hex no válido, en japonés y con el tema oscuro. Es el motor de referencia (el de Lighthouse) y se usa directamente, sin adaptadores. No revisa el contenido del canvas ni sustituye las pruebas a mano con teclado y lector de pantalla.
+
+### 8.4. Página de pruebas
+
+`pnpm --filter @chromatic-wheel/color-wheel dev` sirve `playground/` con Vite. Carga el código fuente, no el `dist/`, y se recarga con cada cambio. Tiene la rueda, un registro de los eventos con su `source`, y controles para el ancho del contenedor, el idioma, ocultar y desactivar cada control, desactivar la rueda, `getState`, `setState` y `destroy`. No se entrega en el paquete.
+
+Para abrirla desde el móvil, Vite tiene que escuchar en la red: `pnpm --filter @chromatic-wheel/color-wheel dev --host`. En WSL 2 hace falta, además, el modo de red `mirrored` (`networkingMode=mirrored` en `.wslconfig`) o reenviar el puerto desde Windows.
 
 ## 9. Prototipos
 
