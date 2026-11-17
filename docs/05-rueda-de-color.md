@@ -59,7 +59,7 @@ No existe un RYB estándar. Los colores puros salen del cubo de [Gossett y Chen 
   1. El tono es el ángulo RYB cuyo color puro tiene el mismo tono HSV que el hex. Esa correspondencia es creciente en todo el anillo, así que se invierte sin ambigüedad; los tests lo comprueban.
   2. Las proporciones son las del punto del triángulo más cercano al hex (mínimos cuadrados en sRGB, con pesos no negativos).
   3. Si el hex queda fuera de lo que alcanza el triángulo RYB, como un cian intenso, la rueda toma ese punto más cercano y el campo hex muestra el color alcanzado.
-- **Colores sin tono** (blancos, grises y negros puros): conservan el tono que tenía la rueda.
+- **Colores sin tono** (blancos, grises y negros puros), en los dos modelos: conservan el tono que tenía la rueda, que la conversión recibe como dato opcional (§7). Si no lo recibe, el tono es 0°.
 
 ## 4. Armonías
 
@@ -99,9 +99,9 @@ La base mezclada con su complementario (180°, con las proporciones de la base),
 ### 5.2. Luz
 
 1. **Destino**: el amarillo si la luz es cálida y el azul si es fría. En RYB están a 120° y 240°; en digital, a 60° y 240°.
-2. **Vecino**: el tono se desplaza 30° desde la base hacia el destino por el camino más corto, sin pasarse del destino, y conserva las proporciones de la base.
+2. **Vecino**: el tono se desplaza 30° desde la base hacia el destino por el camino más corto, sin pasarse del destino, y conserva las proporciones de la base. Si la base está enfrente del destino y los dos caminos miden 180°, se desplaza hacia los ángulos crecientes (+30°). En los cuatro casos posibles (azul y amarillo en digital, violeta y naranja en RYB), la luz cálida pasa así por el rojo y la fría por el verde.
 3. **Casos límite**: si la base está a 15° o menos del destino, es decir, dentro de su segmento en la rueda de 12 tonos:
-   - cálida: el vecino es el propio amarillo, que se aclara como cualquier vecino;
+   - cálida: el vecino es el amarillo puro (`#ffff00` en los dos modelos), sin las proporciones de la base, y se aclara como cualquier vecino;
    - fría: el vecino es el blanco.
 4. **Aclarado**: el vecino se mezcla con blanco en la proporción `LIGHTEN_RATIO`.
 5. **Luz**: la base mezclada con el vecino aclarado, en la proporción `LIGHT_RATIO`.
@@ -227,7 +227,17 @@ Los papeles y su orden son los de §4.
 - **Idiomas incluidos**: `en`, `es`, `fr`, `de`, `it`, `pt-BR`, `ru`, `zh-Hans`, `ja` y `ko`. Cada uno es un fichero JSON del paquete.
 - **El inglés es la referencia**: sus claves son la lista de textos, y los tests comprueban que todos los idiomas tienen las mismas.
 - **Idioma por defecto**: el primero de `navigator.languages` que coincida con uno incluido, primero exacto y después por idioma base (`pt-PT` → `pt-BR`). Si no hay ninguno, inglés.
-- **`labels`** sustituye solo los textos que se le pasen. El resto sale del idioma.
+- **Claves anidadas**, un bloque por grupo de textos (`harmony`, `role`, `model`, `light` y `control`):
+
+  ```json
+  {
+    "harmony": { "triad": "Tríada" },
+    "role": { "light": "Luz" },
+    "control": { "light": "Tipo de luz" }
+  }
+  ```
+
+- **`labels`** sustituye solo los textos que se le pasen, con la misma forma (`{ harmony: { triad: "Paleta" } }`). El resto sale del idioma. Una clave que no existe es un error que la nombra con su ruta completa, por ejemplo `harmony.triadd`.
 - **Cargar textos desde una URL** lo hace la web, por ejemplo así:
 
   ```js
@@ -246,7 +256,12 @@ Los papeles y su orden son los de §4.
 El paquete exporta los cálculos, que no usan el DOM:
 
 - `compute({ color, model, harmony, light })`: devuelve el mismo resultado que §6.7.
-- `toWheelColor(hex, model)` y `fromWheelColor(wheelColor, model)`: convierten entre un hex y la representación de §2.
+  - Solo `color` es obligatorio. `model`, `harmony` y `light` toman los valores por defecto del componente (§6.4).
+  - `light` se valida siempre, pero solo aparece en el resultado con el esquema de miniatura.
+  - Una opción desconocida es un error.
+- `toWheelColor(hex, model, previousHue)` y `fromWheelColor(wheelColor, model)`: convierten entre un hex y la representación de §2. `previousHue` es opcional y es el tono que reciben los colores sin tono (§3.2).
+
+Por dentro, `compute` y el componente usan el mismo cálculo, que da cada color con su papel, su hex y su posición en la rueda. `compute` quita la posición; el componente la usa para dibujar la plantilla. Los colores que salen de una mezcla (sombra, luz y variaciones del monocromático) se colocan convirtiendo su hex a la rueda.
 
 ## 8. Paquete
 
@@ -274,14 +289,23 @@ Dependencias entre módulos: `color` y `mixing` no dependen de nada del paquete;
 - `style.css`;
 - las declaraciones `.d.ts`, incluida la de spectral.js, que no trae tipos.
 
+Las dos pasadas de Vite (el módulo ESM y el UMD) son necesarias porque cada fichero deja fuera dependencias distintas.
+
+**Dentro del monorepo**, el `exports` del paquete tiene dos rutas:
+
+- la normal, al `dist/`, que es la que recibiría cualquier otra web;
+- una condición propia, `@rueda-cromatica/source`, al código fuente (`src/index.ts`).
+
+La web activa la condición en su servidor de desarrollo, para ver los cambios de la rueda sin compilarla, y la desactiva al generar la versión desplegable, que así usa el `dist/`. Su comprobación de tipos y su lint leen el código fuente. Se configura en la etapa 5.
+
 ### 8.3. Tests
 
 Vitest con dos proyectos:
 
 - **Node**, para `color`, `mixing`, `harmony`, `scheme` e `i18n`;
-- **Navegador**, en Chromium con Playwright, para `ui`.
+- **Navegador**, en Chromium con Playwright, para `ui` (ficheros `*.browser.test.ts`). Mientras no exista `ui`, tiene una prueba mínima de que los cálculos funcionan en el navegador.
 
-Los dos corren en local y en la CI.
+Los dos corren en local y en la CI. La CI guarda Chromium en caché según la versión de Playwright.
 
 ## 9. Prototipos
 

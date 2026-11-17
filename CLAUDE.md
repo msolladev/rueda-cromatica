@@ -21,7 +21,7 @@ Es un proyecto de aprendizaje del ecosistema Node/TS: prioriza las buenas práct
 
 ## Estructura objetivo
 
-El monorepo está montado. `domain` ya tiene el contrato del catálogo (esquema, `parseCatalog`, agregado `Catalog` y reglas derivadas) y `catalog-builder` genera `catalog.json`; `apps/web` todavía no tiene lógica. La separación en paquetes, la organización interna por módulos y los patrones están en el [ADR-0018](docs/adr/0018-organizacion-codigo-patrones.md).
+El monorepo está montado. `domain` ya tiene el contrato del catálogo (esquema, `parseCatalog`, agregado `Catalog` y reglas derivadas), `catalog-builder` genera `catalog.json` y `color-wheel` tiene los cálculos de la rueda, todavía sin el componente; `apps/web` todavía no tiene lógica. La separación en paquetes, la organización interna por módulos y los patrones están en el [ADR-0018](docs/adr/0018-organizacion-codigo-patrones.md).
 
 - `packages/color-wheel`: la rueda completa, solo con colores y sin pinturas: los modelos RYB y digital, las armonías, el esquema de miniatura (culori, y spectral.js para las mezclas) y el dibujo con la plantilla giratoria y sus controles. Es un componente completo y agnóstico del framework, que se inicializa sobre un contenedor y se entrega compilado a JS con sus tipos. No depende de `domain`. Se diseña como publicable, pero no se publica en npm ([ADR-0020](docs/adr/0020-rueda-paquete-independiente.md), [docs/05](docs/05-rueda-de-color.md)).
 - `packages/domain`: TS puro, con el modelo del catálogo, su validación (Zod) y la búsqueda de la pintura más parecida con el Delta E (culori). Sin dependencias de React ni del navegador.
@@ -41,8 +41,10 @@ Desde la raíz. pnpm cambia solo a la versión de `packageManager` y descarga el
 - `pnpm lint`: ESLint con tipos en todo el monorepo.
 - `pnpm format` / `pnpm format:check`: aplica o comprueba el formato de Prettier.
 - `pnpm typecheck`: `tsc` en la raíz y en cada paquete.
-- `pnpm test`: Vitest en `domain` y `catalog-builder`.
-- `pnpm build`: build de `apps/web` (Vite + PWA).
+- `pnpm test`: Vitest en `domain`, `catalog-builder` y `color-wheel`. El proyecto de navegador de `color-wheel` necesita Chromium:
+  - `pnpm --filter @rueda-cromatica/color-wheel install-browsers`, una vez y cada vez que cambie la versión de Playwright;
+  - en WSL, además, las librerías del sistema: `pnpm --filter @rueda-cromatica/color-wheel exec playwright install-deps chromium`, que pide la contraseña de `sudo`.
+- `pnpm build`: build de `color-wheel` (Vite en modo librería y `tsc`) y de `apps/web` (Vite + PWA).
 - `pnpm --filter @rueda-cromatica/web dev`: servidor de desarrollo.
 - `pnpm --filter @rueda-cromatica/catalog-builder build-catalog`: regenera `apps/web/public/catalog.json` a partir de los datos. Con `--check` no escribe nada y falla si el versionado está desactualizado.
 - `pnpm --filter @rueda-cromatica/catalog-builder import-simogecko`: importa Citadel de la tabla de SimoGecko a `data/brands/citadel.json`. Se ejecuta a demanda; después, `pnpm format` y `build-catalog`.
