@@ -1,0 +1,43 @@
+{
+  "harmony": {
+    "complementary": "Комплементарная",
+    "split-complementary": "Расщеплённая комплементарная",
+    "analogous": "Аналоговая",
+    "accented-analogous": "Аналоговая с акцентом",
+    "triad": "Триада",
+    "square": "Квадрат",
+    "rectangle": "Прямоугольник",
+    "monochromatic": "Монохромная",
+    "miniature-scheme": "Схема для миниатюры"
+  },
+  "role": {
+    "base": "Основной",
+    "complement": "Дополнительный",
+    "split": "Расщеплённый дополнительный",
+    "analogous": "Аналоговый",
+    "accent": "Акцент",
+    "triad": "Триада",
+    "square": "Квадрат",
+    "tetrad": "Тетрада",
+    "tint": "С белым",
+    "tone": "С серым",
+    "shade": "С чёрным",
+    "shadow": "Тень",
+    "light": "Свет"
+  },
+  "model": {
+    "ryb": "RYB",
+    "digital": "Цифровая"
+  },
+  "light": {
+    "warm": "Тёплый",
+    "cold": "Холодный"
+  },
+  "control": {
+    "hex": "HEX",
+    "model": "Модель",
+    "harmony": "Гармония",
+    "light": "Свет",
+    "results": "Цвета"
+  }
+}

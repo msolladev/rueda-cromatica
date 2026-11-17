@@ -1,0 +1,43 @@
+{
+  "harmony": {
+    "complementary": "Complémentaire",
+    "split-complementary": "Complémentaire divisé",
+    "analogous": "Analogue",
+    "accented-analogous": "Analogue avec accent",
+    "triad": "Triade",
+    "square": "Carré",
+    "rectangle": "Rectangle",
+    "monochromatic": "Monochrome",
+    "miniature-scheme": "Schéma de figurine"
+  },
+  "role": {
+    "base": "Base",
+    "complement": "Complémentaire",
+    "split": "Complémentaire divisé",
+    "analogous": "Analogue",
+    "accent": "Accent",
+    "triad": "Triade",
+    "square": "Carré",
+    "tetrad": "Tétrade",
+    "tint": "Avec blanc",
+    "tone": "Avec gris",
+    "shade": "Avec noir",
+    "shadow": "Ombre",
+    "light": "Lumière"
+  },
+  "model": {
+    "ryb": "RYB",
+    "digital": "Numérique"
+  },
+  "light": {
+    "warm": "Chaude",
+    "cold": "Froide"
+  },
+  "control": {
+    "hex": "Hex",
+    "model": "Modèle",
+    "harmony": "Harmonie",
+    "light": "Lumière",
+    "results": "Couleurs"
+  }
+}

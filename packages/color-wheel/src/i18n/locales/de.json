@@ -1,0 +1,43 @@
+{
+  "harmony": {
+    "complementary": "Komplementär",
+    "split-complementary": "Geteilt komplementär",
+    "analogous": "Analog",
+    "accented-analogous": "Analog mit Akzent",
+    "triad": "Triade",
+    "square": "Quadrat",
+    "rectangle": "Rechteck",
+    "monochromatic": "Monochrom",
+    "miniature-scheme": "Miniaturschema"
+  },
+  "role": {
+    "base": "Basis",
+    "complement": "Komplementär",
+    "split": "Geteilt komplementär",
+    "analogous": "Analog",
+    "accent": "Akzent",
+    "triad": "Triade",
+    "square": "Quadrat",
+    "tetrad": "Tetrade",
+    "tint": "Mit Weiß",
+    "tone": "Mit Grau",
+    "shade": "Mit Schwarz",
+    "shadow": "Schatten",
+    "light": "Licht"
+  },
+  "model": {
+    "ryb": "RYB",
+    "digital": "Digital"
+  },
+  "light": {
+    "warm": "Warm",
+    "cold": "Kalt"
+  },
+  "control": {
+    "hex": "Hex",
+    "model": "Modell",
+    "harmony": "Harmonie",
+    "light": "Licht",
+    "results": "Farben"
+  }
+}

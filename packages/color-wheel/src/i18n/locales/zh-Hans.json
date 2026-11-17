@@ -1,0 +1,43 @@
+{
+  "harmony": {
+    "complementary": "互补色",
+    "split-complementary": "分裂互补色",
+    "analogous": "类似色",
+    "accented-analogous": "带强调色的类似色",
+    "triad": "三角色",
+    "square": "正方形",
+    "rectangle": "矩形",
+    "monochromatic": "单色",
+    "miniature-scheme": "微缩模型配色"
+  },
+  "role": {
+    "base": "基础色",
+    "complement": "互补色",
+    "split": "分裂互补色",
+    "analogous": "类似色",
+    "accent": "强调色",
+    "triad": "三角色",
+    "square": "正方形",
+    "tetrad": "四角色",
+    "tint": "加白",
+    "tone": "加灰",
+    "shade": "加黑",
+    "shadow": "阴影",
+    "light": "高光"
+  },
+  "model": {
+    "ryb": "RYB",
+    "digital": "数字"
+  },
+  "light": {
+    "warm": "暖光",
+    "cold": "冷光"
+  },
+  "control": {
+    "hex": "十六进制",
+    "model": "模型",
+    "harmony": "配色",
+    "light": "光线",
+    "results": "颜色"
+  }
+}
