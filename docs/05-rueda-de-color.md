@@ -289,7 +289,9 @@ Dependencias entre módulos: `errors.ts` no depende de nada y lo pueden usar tod
 - un módulo ESM sin culori ni spectral.js, para las webs que instalan con npm;
 - un fichero UMD con todo dentro, para `<script src>`, que es el que sirven los CDN;
 - `style.css`;
-- las declaraciones `.d.ts`, incluida la de spectral.js, que no trae tipos.
+- las declaraciones `.d.ts` de la API pública.
+
+spectral.js no trae tipos, así que el paquete incluye su declaración (`src/mixing/spectral.d.ts`) para compilar. No se entrega, porque la API pública no la usa: no expone objetos de culori ni de spectral.js, solo datos propios (hex y colores de la rueda). Si algún día ofrece mezclas, lo hará con funciones y datos propios, para que un cambio en esas librerías no rompa a quien use el paquete.
 
 Las dos pasadas de Vite (el módulo ESM y el UMD) son necesarias porque cada fichero deja fuera dependencias distintas.
 
