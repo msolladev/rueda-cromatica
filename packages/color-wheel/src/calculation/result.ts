@@ -1,6 +1,6 @@
 import type { Model } from "../color/model.ts";
 import type { Harmony, PlacedColor, Role } from "../harmony/harmony.ts";
-import type { Light } from "./light.ts";
+import type { Light } from "../scheme/light.ts";
 import type { Settings } from "./settings.ts";
 
 /** El resultado público (docs/05 §6.7): los colores sin su posición. */

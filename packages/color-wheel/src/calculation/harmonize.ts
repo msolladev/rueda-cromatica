@@ -2,7 +2,7 @@ import type { WheelColor } from "../color/wheel-color.ts";
 import type { PlacedColor } from "../harmony/harmony.ts";
 import { monochromaticColors } from "../harmony/monochromatic.ts";
 import { rotationColors } from "../harmony/rotations.ts";
-import { miniatureSchemeColors } from "./miniature-scheme.ts";
+import { miniatureSchemeColors } from "../scheme/miniature-scheme.ts";
 import type { Settings } from "./settings.ts";
 
 export interface HarmonizeInput extends Settings {
