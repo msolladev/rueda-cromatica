@@ -28,7 +28,23 @@ jobs:
       - run: pnpm format:check
       - run: pnpm lint
       - run: pnpm typecheck
+
+      # Chromium para el proyecto de navegador de Vitest de color-wheel (ADR-0020),
+      # en caché según la versión de Playwright. Las librerías del sistema que
+      # necesita no van en la caché y se instalan siempre.
+      - id: playwright
+        run: echo "version=$(pnpm --filter @rueda-cromatica/color-wheel exec playwright --version | cut -d' ' -f2)" >> "$GITHUB_OUTPUT"
+      - id: playwright-cache
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ steps.playwright.outputs.version }}
+      - if: steps.playwright-cache.outputs.cache-hit != 'true'
+        run: pnpm --filter @rueda-cromatica/color-wheel exec playwright install --with-deps --only-shell chromium
+      - if: steps.playwright-cache.outputs.cache-hit == 'true'
+        run: pnpm --filter @rueda-cromatica/color-wheel exec playwright install-deps chromium
+
       - run: pnpm test
       # Paso 4 (ADR-0011): regenera catalog.json y falla si difiere del versionado.
       - run: pnpm --filter @rueda-cromatica/catalog-builder build-catalog --check
-      - run: pnpm --filter @rueda-cromatica/web build
+      - run: pnpm build
