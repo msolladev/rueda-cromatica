@@ -177,6 +177,10 @@ Además, en el constructor:
 
 Asignar una armonía o un modelo que no esté en `harmonies` o en `models` es un error.
 
+**Cambio de modelo** ([ADR-0021](adr/0021-cambio-modelo-conserva-color.md)): la rueda conserva el color base, no su posición. Convierte a la otra rueda el último hex que recibió (por `color`, el campo hex, `update` o `setState`), no el color alcanzado, para que ir y volver no pierda los colores que el triángulo RYB no alcanza. Al arrastrar o usar el teclado, la posición pasa a mandar y ese hex se olvida.
+
+**`color` al leerse** devuelve la base que muestra la rueda: en RYB, el color alcanzado (§3.2).
+
 ### 6.5. Métodos
 
 | Método                                        | Qué hace                                                                |
