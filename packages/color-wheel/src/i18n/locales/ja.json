@@ -1,0 +1,43 @@
+{
+  "harmony": {
+    "complementary": "補色",
+    "split-complementary": "分裂補色",
+    "analogous": "類似色",
+    "accented-analogous": "アクセント付き類似色",
+    "triad": "トライアド",
+    "square": "スクエア",
+    "rectangle": "長方形",
+    "monochromatic": "モノクロマティック",
+    "miniature-scheme": "ミニチュア配色"
+  },
+  "role": {
+    "base": "ベース",
+    "complement": "補色",
+    "split": "分裂補色",
+    "analogous": "類似色",
+    "accent": "アクセント",
+    "triad": "トライアド",
+    "square": "スクエア",
+    "tetrad": "テトラード",
+    "tint": "白入り",
+    "tone": "グレー入り",
+    "shade": "黒入り",
+    "shadow": "シャドウ",
+    "light": "ハイライト"
+  },
+  "model": {
+    "ryb": "RYB",
+    "digital": "デジタル"
+  },
+  "light": {
+    "warm": "暖色光",
+    "cold": "寒色光"
+  },
+  "control": {
+    "hex": "16進数",
+    "model": "モデル",
+    "harmony": "配色",
+    "light": "光",
+    "results": "色"
+  }
+}

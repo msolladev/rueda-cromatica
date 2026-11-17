@@ -1,0 +1,43 @@
+{
+  "harmony": {
+    "complementary": "보색",
+    "split-complementary": "분할 보색",
+    "analogous": "유사색",
+    "accented-analogous": "강조 유사색",
+    "triad": "삼각",
+    "square": "정사각형",
+    "rectangle": "직사각형",
+    "monochromatic": "단색",
+    "miniature-scheme": "미니어처 배색"
+  },
+  "role": {
+    "base": "기본색",
+    "complement": "보색",
+    "split": "분할 보색",
+    "analogous": "유사색",
+    "accent": "강조색",
+    "triad": "삼각",
+    "square": "정사각",
+    "tetrad": "직사각",
+    "tint": "흰색 혼합",
+    "tone": "회색 혼합",
+    "shade": "검은색 혼합",
+    "shadow": "그림자",
+    "light": "하이라이트"
+  },
+  "model": {
+    "ryb": "RYB",
+    "digital": "디지털"
+  },
+  "light": {
+    "warm": "따뜻한 빛",
+    "cold": "차가운 빛"
+  },
+  "control": {
+    "hex": "HEX",
+    "model": "모델",
+    "harmony": "배색",
+    "light": "빛",
+    "results": "색상"
+  }
+}
