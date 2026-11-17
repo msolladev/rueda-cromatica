@@ -38,6 +38,21 @@
     "model": "Modelo",
     "harmony": "Harmonia",
     "light": "Luz",
-    "results": "Cores"
+    "results": "Cores",
+    "help": "Como usar"
+  },
+  "wheel": {
+    "label": "Roda de cores",
+    "ring": "Matiz",
+    "ringValue": "{hue}°",
+    "triangle": "Puro, branco e preto",
+    "triangleValue": "{pure}% puro, {white}% branco, {black}% preto",
+    "ringKeys": "Setas: 1°. Shift + setas: 10°. Page Up e Page Down: 30°, o próximo matiz.",
+    "triangleKeys": "Direita e esquerda: mais ou menos puro. Cima e baixo: mais claro ou mais escuro. 1% por passo, 10% com Shift.",
+    "pointerHelp": "Arraste no anel para mudar o matiz e dentro do triângulo para adicionar branco ou preto.",
+    "touchHelp": "Com o dedo, o ponto acompanha o movimento sem pular para baixo do dedo, então continua visível. Toque para pular para um ponto.",
+    "keyboardHelp": "No teclado, vá até o anel ou o triângulo com Tab e use as setas.",
+    "hexInvalid": "Digite uma cor hex, como #3daf44.",
+    "resultsUpdated": "{count} cores: {harmony}."
   }
 }

@@ -8,6 +8,10 @@
       "@chromatic-wheel/source": "./src/index.ts",
       "types": "./dist/types/index.d.ts",
       "default": "./dist/color-wheel.js"
+    },
+    "./style.css": {
+      "@chromatic-wheel/source": "./src/ui/style.css",
+      "default": "./dist/style.css"
     }
   },
   "unpkg": "./dist/color-wheel.umd.js",
@@ -17,6 +21,7 @@
   ],
   "scripts": {
     "build": "vite build && vite build --mode umd && tsc -p tsconfig.build.json",
+    "dev": "vite --mode playground",
     "install-browsers": "playwright install --only-shell chromium",
     "test": "vitest run",
     "typecheck": "tsc -b"
@@ -29,6 +34,7 @@
     "@types/culori": "catalog:",
     "@types/node": "catalog:",
     "@vitest/browser-playwright": "5.0.5",
+    "axe-core": "4.14.0",
     "playwright": "1.65.0",
     "typescript": "catalog:",
     "vite": "catalog:",

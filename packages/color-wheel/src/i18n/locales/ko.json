@@ -38,6 +38,21 @@
     "model": "모델",
     "harmony": "배색",
     "light": "빛",
-    "results": "색상"
+    "results": "색상",
+    "help": "사용 방법"
+  },
+  "wheel": {
+    "label": "색상환",
+    "ring": "색상",
+    "ringValue": "{hue}°",
+    "triangle": "순색, 흰색, 검은색",
+    "triangleValue": "순색 {pure}%, 흰색 {white}%, 검은색 {black}%",
+    "ringKeys": "화살표: 1°. Shift + 화살표: 10°. Page Up, Page Down: 30°, 다음 색상.",
+    "triangleKeys": "오른쪽, 왼쪽: 순도를 높이거나 낮춥니다. 위, 아래: 더 밝게 또는 더 어둡게. 한 단계에 1%, Shift를 누르면 10%.",
+    "pointerHelp": "링을 드래그하면 색상이 바뀌고, 삼각형 안을 드래그하면 흰색이나 검은색이 더해집니다.",
+    "touchHelp": "손가락으로 조작하면 점이 손가락 아래로 뛰지 않고 움직임을 따라가므로 항상 보입니다. 탭하면 그 위치로 이동합니다.",
+    "keyboardHelp": "키보드에서는 Tab 키로 링이나 삼각형으로 이동한 뒤 화살표 키를 사용합니다.",
+    "hexInvalid": "#3daf44처럼 16진수 색을 입력하세요.",
+    "resultsUpdated": "색 {count}개: {harmony}."
   }
 }

@@ -38,6 +38,21 @@
     "model": "モデル",
     "harmony": "配色",
     "light": "光",
-    "results": "色"
+    "results": "色",
+    "help": "使い方"
+  },
+  "wheel": {
+    "label": "カラーホイール",
+    "ring": "色相",
+    "ringValue": "{hue}°",
+    "triangle": "純色・白・黒",
+    "triangleValue": "純色 {pure}%、白 {white}%、黒 {black}%",
+    "ringKeys": "矢印キー：1°。Shift＋矢印キー：10°。Page Up と Page Down：30°（隣の色相）。",
+    "triangleKeys": "右と左：純度を上げる・下げる。上と下：明るく・暗く。1 ステップ 1%、Shift で 10%。",
+    "pointerHelp": "リングをドラッグすると色相が、三角形の中をドラッグすると白や黒の量が変わります。",
+    "touchHelp": "指で操作すると、点は指の下に飛ばずに指の動きに合わせて動くので、常に見えます。タップするとその位置に移動します。",
+    "keyboardHelp": "キーボードでは、Tab キーでリングか三角形に移動し、矢印キーを使います。",
+    "hexInvalid": "#3daf44 のような 16 進数の色を入力してください。",
+    "resultsUpdated": "{count} 色：{harmony}。"
   }
 }

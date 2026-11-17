@@ -38,6 +38,21 @@
     "model": "Modello",
     "harmony": "Armonia",
     "light": "Luce",
-    "results": "Colori"
+    "results": "Colori",
+    "help": "Come si usa"
+  },
+  "wheel": {
+    "label": "Ruota dei colori",
+    "ring": "Tonalità",
+    "ringValue": "{hue}°",
+    "triangle": "Puro, bianco e nero",
+    "triangleValue": "{pure}% puro, {white}% bianco, {black}% nero",
+    "ringKeys": "Frecce: 1°. Maiusc + frecce: 10°. Pag su e Pag giù: 30°, la tonalità successiva.",
+    "triangleKeys": "Destra e sinistra: più o meno puro. Su e giù: più chiaro o più scuro. 1% per passo, 10% con Maiusc.",
+    "pointerHelp": "Trascina sull’anello per cambiare la tonalità e dentro il triangolo per aggiungere bianco o nero.",
+    "touchHelp": "Con il dito, il punto segue il movimento senza saltare sotto il dito, così resta visibile. Tocca per saltare a un punto.",
+    "keyboardHelp": "Con la tastiera, raggiungi l’anello o il triangolo con Tab e usa le frecce.",
+    "hexInvalid": "Inserisci un colore hex, ad esempio #3daf44.",
+    "resultsUpdated": "{count} colori: {harmony}."
   }
 }

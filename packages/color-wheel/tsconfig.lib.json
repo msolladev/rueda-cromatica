@@ -2,7 +2,8 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     // Without the DOM library or the Node types: the calculations cannot use
-    // the browser (docs/05 §1). Only `ui` will have its own tsconfig with DOM.
+    // the browser (docs/05 §1). Only `ui` and the entries have the DOM, in
+    // tsconfig.ui.json; if a calculation imported them, this would fail.
     "lib": ["ES2024"],
     "types": [],
     "module": "ESNext",
@@ -10,5 +11,11 @@
     "resolveJsonModule": true,
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.lib.tsbuildinfo"
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": [
+    "src/ui",
+    "src/index.ts",
+    "src/index.umd.ts",
+    "src/**/*.browser.test.ts"
+  ]
 }

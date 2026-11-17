@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 
-import { assertLocale, LABELS, LOCALES, resolveLocale } from "./locales.ts";
+import { assertLocale, LOCALES, resolveLocale } from "./locales.ts";
+import { TEXTS } from "./texts.ts";
 
 /** The paths of every key of a labels object: `harmony.triad`… */
 function keyPaths(value: unknown, prefix = ""): string[] {
@@ -20,11 +21,11 @@ function values(value: unknown): unknown[] {
 
 describe("locales", () => {
   it.each(LOCALES)("%s has the same keys as English", (locale) => {
-    expect(keyPaths(LABELS[locale])).toEqual(keyPaths(LABELS.en));
+    expect(keyPaths(TEXTS[locale])).toEqual(keyPaths(TEXTS.en));
   });
 
   it.each(LOCALES)("%s has a non-empty text for every key", (locale) => {
-    for (const text of values(LABELS[locale])) {
+    for (const text of values(TEXTS[locale])) {
       expect(typeof text === "string" && text.trim() !== "").toBe(true);
     }
   });
