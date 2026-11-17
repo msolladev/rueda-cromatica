@@ -38,6 +38,21 @@
     "model": "Model",
     "harmony": "Harmony",
     "light": "Light",
-    "results": "Colors"
+    "results": "Colors",
+    "help": "How to use"
+  },
+  "wheel": {
+    "label": "Color wheel",
+    "ring": "Hue",
+    "ringValue": "{hue}°",
+    "triangle": "Pure, white and black",
+    "triangleValue": "{pure}% pure, {white}% white, {black}% black",
+    "ringKeys": "Arrows: 1°. Shift + arrows: 10°. Page Up and Page Down: 30°, the next hue.",
+    "triangleKeys": "Right and Left: more or less pure. Up and Down: lighter or darker. 1% per step, 10% with Shift.",
+    "pointerHelp": "Drag on the ring to change the hue, and inside the triangle to add white or black.",
+    "touchHelp": "With a finger, the point follows your movement without jumping under it, so it stays visible. Tap to jump to a spot.",
+    "keyboardHelp": "With the keyboard, move to the ring or the triangle with Tab and use the arrows.",
+    "hexInvalid": "Enter a hex color such as #3daf44.",
+    "resultsUpdated": "{count} colors: {harmony}."
   }
 }

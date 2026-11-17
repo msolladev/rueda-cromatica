@@ -1,0 +1,262 @@
+/*
+ * Styles of the color wheel (docs/05 §6.9). Classes use the `cw-` prefix and
+ * the look is adapted with `--cw-` variables. Mobile first: one column, and
+ * two when the container is wide enough.
+ */
+
+.cw-root {
+  --cw-font: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --cw-font-size: 1rem;
+  --cw-text: #1d1f22;
+  --cw-muted: #5a5f66;
+  --cw-surface: #ffffff;
+  --cw-field: #ffffff;
+  --cw-border: #767b82;
+  --cw-focus: #1a5fd0;
+  --cw-error: #b3261e;
+  --cw-radius: 0.5rem;
+  --cw-gap: 1rem;
+  --cw-padding: 1rem;
+  --cw-control-height: 2.75rem;
+  --cw-wheel-max-size: 26rem;
+
+  container-type: inline-size;
+  position: relative;
+  box-sizing: border-box;
+  padding: var(--cw-padding);
+  border-radius: var(--cw-radius);
+  background: var(--cw-surface);
+  color: var(--cw-text);
+  font-family: var(--cw-font);
+  font-size: var(--cw-font-size);
+  line-height: 1.5;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  .cw-root {
+    --cw-text: #e9eaec;
+    --cw-muted: #b5bac1;
+    --cw-surface: #17191c;
+    --cw-field: #202328;
+    --cw-border: #8a9099;
+    --cw-focus: #8ab4ff;
+    --cw-error: #ff8a80;
+
+    color-scheme: dark;
+  }
+}
+
+.cw-root *,
+.cw-root *::before,
+.cw-root *::after {
+  box-sizing: inherit;
+}
+
+.cw-root [hidden] {
+  display: none !important;
+}
+
+.cw-layout {
+  display: grid;
+  gap: var(--cw-gap);
+}
+
+@container (min-width: 40rem) {
+  .cw-layout {
+    grid-template-columns: minmax(0, 1fr) minmax(16rem, 1fr);
+    align-items: start;
+  }
+}
+
+/* The wheel: a square canvas with the two focusable sliders on top. */
+
+.cw-wheel {
+  position: relative;
+  width: 100%;
+  max-width: var(--cw-wheel-max-size);
+  aspect-ratio: 1;
+  margin-inline: auto;
+}
+
+.cw-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+  cursor: crosshair;
+}
+
+.cw-root.cw-is-disabled .cw-canvas {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* The focus of the sliders is drawn on the canvas, around their shape. */
+.cw-ring,
+.cw-triangle {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  outline: none;
+}
+
+/* Controls. */
+
+.cw-panel {
+  display: grid;
+  gap: var(--cw-gap);
+  min-width: 0;
+}
+
+.cw-controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  gap: var(--cw-gap);
+}
+
+.cw-field {
+  display: grid;
+  gap: 0.25rem;
+  align-content: start;
+}
+
+/* The harmony names are the longest: their selector takes a whole row. */
+.cw-field-wide {
+  grid-column: 1 / -1;
+}
+
+.cw-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.cw-input,
+.cw-select {
+  width: 100%;
+  min-height: var(--cw-control-height);
+  padding: 0 0.75rem;
+  border: 1px solid var(--cw-border);
+  border-radius: var(--cw-radius);
+  background: var(--cw-field);
+  color: var(--cw-text);
+  font: inherit;
+}
+
+.cw-input {
+  font-variant-numeric: tabular-nums;
+}
+
+.cw-input[aria-invalid="true"] {
+  border-color: var(--cw-error);
+  border-width: 2px;
+}
+
+.cw-input:disabled,
+.cw-select:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.cw-error {
+  margin: 0;
+  color: var(--cw-error);
+  font-size: 0.875rem;
+}
+
+.cw-root :focus-visible {
+  outline: 2px solid var(--cw-focus);
+  outline-offset: 2px;
+}
+
+/* Results. */
+
+.cw-results {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.cw-results-title {
+  margin: 0;
+  font-weight: 600;
+}
+
+.cw-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(7rem, 1fr));
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cw-item {
+  display: grid;
+  gap: 0.25rem;
+  align-content: start;
+}
+
+.cw-swatch {
+  height: 2.5rem;
+  border: 1px solid var(--cw-border);
+  border-radius: calc(var(--cw-radius) * 0.75);
+}
+
+.cw-role {
+  font-weight: 600;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.cw-hex {
+  color: var(--cw-muted);
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: 0.875rem;
+}
+
+.cw-results.cw-is-disabled .cw-swatch {
+  opacity: 0.4;
+}
+
+/* Help. */
+
+.cw-help-summary {
+  display: flex;
+  align-items: center;
+  min-height: var(--cw-control-height);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.cw-help.cw-is-disabled .cw-help-summary {
+  cursor: not-allowed;
+  color: var(--cw-muted);
+}
+
+.cw-help-body {
+  display: grid;
+  gap: 0.5rem;
+  color: var(--cw-muted);
+  font-size: 0.875rem;
+}
+
+.cw-help-text,
+.cw-help-keys {
+  margin: 0;
+}
+
+.cw-help-keys {
+  padding-inline-start: 1.25rem;
+}
+
+.cw-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}

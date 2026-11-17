@@ -1,11 +1,7 @@
 import { describe, expect, it } from "vitest";
 
-import {
-  compute,
-  fromWheelColor,
-  toWheelColor,
-  type ComputeInput,
-} from "./index.ts";
+import { fromWheelColor, toWheelColor } from "../color/convert.ts";
+import { compute, type ComputeInput } from "./compute.ts";
 
 describe("compute", () => {
   it("uses the default model, harmony and light", () => {

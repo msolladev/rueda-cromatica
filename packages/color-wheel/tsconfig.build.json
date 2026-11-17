@@ -1,5 +1,5 @@
 {
-  "extends": "./tsconfig.lib.json",
+  "extends": "./tsconfig.ui.json",
   "compilerOptions": {
     "noEmit": false,
     "declaration": true,
@@ -9,5 +9,6 @@
     "outDir": "dist/types",
     "tsBuildInfoFile": null
   },
-  "exclude": ["src/**/*.test.ts"]
+  "include": ["src"],
+  "exclude": ["src/**/*.test.ts", "src/ui/testing"]
 }

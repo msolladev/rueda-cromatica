@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.ui.json",
+  "compilerOptions": {
+    // Browser tests and the playground: the DOM and the types of Vite, for
+    // the CSS imports.
+    "types": ["vite/client"],
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.dev.tsbuildinfo"
+  },
+  "include": [
+    "src/**/*.browser.test.ts",
+    "src/ui/testing",
+    "src/mixing/spectral.d.ts",
+    "playground"
+  ],
+  "exclude": []
+}

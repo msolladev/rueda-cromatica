@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.lib.json",
+  "compilerOptions": {
+    // The component (docs/05 §6): the only code with the DOM.
+    "lib": ["ES2024", "DOM", "DOM.Iterable"],
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.ui.tsbuildinfo"
+  },
+  "include": [
+    "src/ui",
+    "src/index.ts",
+    "src/index.umd.ts",
+    "src/mixing/spectral.d.ts"
+  ],
+  "exclude": ["src/**/*.test.ts"]
+}

@@ -38,6 +38,21 @@
     "model": "Modèle",
     "harmony": "Harmonie",
     "light": "Lumière",
-    "results": "Couleurs"
+    "results": "Couleurs",
+    "help": "Mode d’emploi"
+  },
+  "wheel": {
+    "label": "Roue chromatique",
+    "ring": "Teinte",
+    "ringValue": "{hue}°",
+    "triangle": "Pur, blanc et noir",
+    "triangleValue": "{pure} % pur, {white} % blanc, {black} % noir",
+    "ringKeys": "Flèches : 1°. Maj + flèches : 10°. Page préc. et Page suiv. : 30°, la teinte suivante.",
+    "triangleKeys": "Droite et gauche : plus ou moins pur. Haut et bas : plus clair ou plus foncé. 1 % par pas, 10 % avec Maj.",
+    "pointerHelp": "Faites glisser sur l’anneau pour changer la teinte, et dans le triangle pour ajouter du blanc ou du noir.",
+    "touchHelp": "Au doigt, le point suit votre mouvement sans sauter sous le doigt, il reste donc visible. Touchez pour sauter à un endroit.",
+    "keyboardHelp": "Au clavier, allez sur l’anneau ou le triangle avec Tab et utilisez les flèches.",
+    "hexInvalid": "Saisissez une couleur hex, par exemple #3daf44.",
+    "resultsUpdated": "{count} couleurs : {harmony}."
   }
 }
