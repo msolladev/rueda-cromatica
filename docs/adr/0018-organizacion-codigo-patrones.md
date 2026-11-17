@@ -77,5 +77,5 @@ apps/web/src/
 ## Consecuencias
 
 - Las carpetas descritas aquí forman parte de la estructura prevista. Crearlas no requiere otra confirmación; una carpeta nueva fuera de esta lista, sí.
-- `apps/web` declarará `@rueda-cromatica/domain` como dependencia en la etapa 5, cuando lo use.
+- `apps/web` declarará `@chromatic-wheel/domain` como dependencia en la etapa 5, cuando lo use.
 - `apps/api`, `apps/admin` y `packages/importers` (fase 5) necesitarán su propia decisión de organización. La API tendrá infraestructura real (base de datos, autenticación), así que es previsible que use puertos de forma más amplia.

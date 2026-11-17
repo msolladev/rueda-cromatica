@@ -9,7 +9,7 @@ Los IDs de pintura se referencian desde las equivalencias, las sustituciones y, 
 
 ## Decisión
 
-- El ID es un slug jerárquico `marca/gama/pintura`.
+- El ID es un slug jerárquico `brand/range/paint`.
 - Se genera una sola vez a partir del nombre, se guarda en los datos curados y nunca se recalcula.
 - Es opaco para el código: nunca se descompone para obtener información.
 - Su estabilidad la garantizan un test del builder y una lista de lápidas.

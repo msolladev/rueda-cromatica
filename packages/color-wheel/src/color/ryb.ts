@@ -1,18 +1,18 @@
-// Modelo RYB (docs/05 §3.2). Los colores puros salen de las esquinas del cubo
-// de Gossett y Chen (2004), apéndice A, tal como las recoge la tabla de
-// docs/05 §3.2. Entre dos esquinas, el color puro se interpola de forma lineal.
+// RYB model (docs/05 §3.2). The pure colors come from the corners of the cube
+// by Gossett and Chen (2004), appendix A, as listed in the table of
+// docs/05 §3.2. Between two corners, the pure color is interpolated linearly.
 
 import { hsvHue, type Rgb } from "./rgb.ts";
 import type { WheelColor } from "./wheel-color.ts";
 
-/** Las seis esquinas de color, en el orden del anillo, cada 60°. */
+/** The six color corners, in ring order, every 60°. */
 const CORNERS: readonly Rgb[] = [
-  { r: 1, g: 0, b: 0 }, // rojo, 0°
-  { r: 1, g: 0.5, b: 0 }, // naranja, 60°
-  { r: 1, g: 1, b: 0 }, // amarillo, 120°
-  { r: 0, g: 0.66, b: 0.2 }, // verde, 180°
-  { r: 0.163, g: 0.373, b: 0.6 }, // azul, 240°
-  { r: 0.5, g: 0, b: 0.5 }, // violeta, 300°
+  { r: 1, g: 0, b: 0 }, // red, 0°
+  { r: 1, g: 0.5, b: 0 }, // orange, 60°
+  { r: 1, g: 1, b: 0 }, // yellow, 120°
+  { r: 0, g: 0.66, b: 0.2 }, // green, 180°
+  { r: 0.163, g: 0.373, b: 0.6 }, // blue, 240°
+  { r: 0.5, g: 0, b: 0.5 }, // violet, 300°
 ];
 
 const SEGMENT = 360 / CORNERS.length;
@@ -31,7 +31,7 @@ function lerp(a: Rgb, b: Rgb, t: number): Rgb {
   };
 }
 
-/** Color puro del tono RYB `hue`, en [0, 360). */
+/** Pure color of the RYB hue `hue`, in [0, 360). */
 export function rybPure(hue: number): Rgb {
   const segment = Math.floor(hue / SEGMENT);
   const t = (hue - segment * SEGMENT) / SEGMENT;
@@ -39,8 +39,8 @@ export function rybPure(hue: number): Rgb {
 }
 
 /**
- * Tono HSV del color puro RYB, desenrollado para que crezca de 0 a 360 en
- * todo el anillo: el último tramo (violeta → rojo) termina en 360, no en 0.
+ * HSV hue of the RYB pure color, unwrapped so that it grows from 0 to 360
+ * around the whole ring: the last segment (violet → red) ends at 360, not 0.
  */
 export function rybPureHsvHue(hue: number): number {
   const h = hsvHue(rybPure(hue)) ?? 0;
@@ -50,9 +50,9 @@ export function rybPureHsvHue(hue: number): number {
 const ITERATIONS = 50;
 
 /**
- * Invierte la correspondencia: el tono RYB cuyo color puro tiene el tono HSV
- * `target`. Como la correspondencia es creciente, basta con buscar el tramo y
- * dividirlo por la mitad hasta la precisión de los decimales.
+ * Inverts the mapping: the RYB hue whose pure color has the HSV hue `target`.
+ * Since the mapping is increasing, it is enough to find the segment and halve
+ * it down to floating-point precision.
  */
 export function rybHueForHsvHue(target: number): number {
   for (let segment = 0; segment < CORNERS.length; segment += 1) {
@@ -70,21 +70,21 @@ export function rybHueForHsvHue(target: number): number {
   throw new Error(`No RYB hue for HSV hue ${String(target)}.`);
 }
 
-/** Tono HSV al final de un tramo; el del último es 360. */
+/** HSV hue at the end of a segment; for the last one, 360. */
 function rybEndHue(hue: number): number {
   return hue >= 360 ? 360 : rybPureHsvHue(hue);
 }
 
 /**
- * Proporciones del punto del triángulo (puro, blanco y negro) más cercano a
- * `target`, por mínimos cuadrados en sRGB y con pesos no negativos. Si
- * `target` queda fuera del triángulo, es el punto alcanzable más cercano.
+ * Proportions of the triangle point (pure, white and black) nearest to
+ * `target`, by least squares in sRGB with non-negative weights. If `target`
+ * lies outside the triangle, it is the nearest reachable point.
  */
 export function nearestInTriangle(
   target: Rgb,
   pure: Rgb,
 ): Omit<WheelColor, "hue"> {
-  // El negro es el origen, así que el punto es pure · P + white · W.
+  // Black is the origin, so the point is pure · P + white · W.
   const candidates: [number, number][] = [];
   const pp = dot(pure, pure);
   const pw = pure.r + pure.g + pure.b;
@@ -98,7 +98,7 @@ export function nearestInTriangle(
     const w = (pp * tw - pw * tp) / det;
     if (p >= 0 && w >= 0 && p + w <= 1) candidates.push([p, w]);
   }
-  // Los tres lados: negro-blanco, negro-puro y blanco-puro.
+  // The three sides: black-white, black-pure and white-pure.
   candidates.push([0, clamp01(tw / ww)]);
   candidates.push([clamp01(tp / pp), 0]);
   const fromWhite = { r: pure.r - 1, g: pure.g - 1, b: pure.b - 1 };

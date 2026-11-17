@@ -19,7 +19,7 @@ jobs:
         with:
           persist-credentials: false
 
-      # Versión de pnpm desde `packageManager`; pnpm descarga Node según `devEngines.runtime`.
+      # pnpm version from `packageManager`; pnpm downloads Node per `devEngines.runtime`.
       - uses: pnpm/action-setup@ea17c68df8912ef543352723c149a84f56e3d413 # v6.1.0
         with:
           cache: true
@@ -29,22 +29,22 @@ jobs:
       - run: pnpm lint
       - run: pnpm typecheck
 
-      # Chromium para el proyecto de navegador de Vitest de color-wheel (ADR-0020),
-      # en caché según la versión de Playwright. Las librerías del sistema que
-      # necesita no van en la caché y se instalan siempre.
+      # Chromium for the Vitest browser project of color-wheel (ADR-0020), cached
+      # per Playwright version. The system libraries it needs are not cached and
+      # are always installed.
       - id: playwright
-        run: echo "version=$(pnpm --filter @rueda-cromatica/color-wheel exec playwright --version | cut -d' ' -f2)" >> "$GITHUB_OUTPUT"
+        run: echo "version=$(pnpm --filter @chromatic-wheel/color-wheel exec playwright --version | cut -d' ' -f2)" >> "$GITHUB_OUTPUT"
       - id: playwright-cache
         uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: ~/.cache/ms-playwright
           key: playwright-${{ runner.os }}-${{ steps.playwright.outputs.version }}
       - if: steps.playwright-cache.outputs.cache-hit != 'true'
-        run: pnpm --filter @rueda-cromatica/color-wheel exec playwright install --with-deps --only-shell chromium
+        run: pnpm --filter @chromatic-wheel/color-wheel exec playwright install --with-deps --only-shell chromium
       - if: steps.playwright-cache.outputs.cache-hit == 'true'
-        run: pnpm --filter @rueda-cromatica/color-wheel exec playwright install-deps chromium
+        run: pnpm --filter @chromatic-wheel/color-wheel exec playwright install-deps chromium
 
       - run: pnpm test
-      # Paso 4 (ADR-0011): regenera catalog.json y falla si difiere del versionado.
-      - run: pnpm --filter @rueda-cromatica/catalog-builder build-catalog --check
+      # Step 4 (ADR-0011): regenerates catalog.json and fails if it differs from the committed one.
+      - run: pnpm --filter @chromatic-wheel/catalog-builder build-catalog --check
       - run: pnpm build

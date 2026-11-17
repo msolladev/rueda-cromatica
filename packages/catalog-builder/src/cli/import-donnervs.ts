@@ -2,11 +2,11 @@
  * Imports one brand from DonnervS/miniature-paints into
  * `data/brands/<brand-id>.json` (docs/04 §4). Run on demand, never in the CI:
  *
- *   pnpm --filter @rueda-cromatica/catalog-builder import-donnervs <brand-id>
+ *   pnpm --filter @chromatic-wheel/catalog-builder import-donnervs <brand-id>
  *
  * The file is fetched at the commit pinned in the source's `url`.
  */
-import { err } from "@rueda-cromatica/domain";
+import { err } from "@chromatic-wheel/domain";
 import { DONNERVS_BRANDS, importDonnervS } from "../importers/donnervs.ts";
 import { rawUrl, runImport } from "./run-import.ts";
 

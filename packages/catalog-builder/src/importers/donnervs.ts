@@ -6,7 +6,7 @@
  * Paints are told apart by manufacturer code, since a range can repeat a
  * name (AK). Every classification below follows the manufacturer's site.
  */
-import { err, ok, type PaintType, type Result } from "@rueda-cromatica/domain";
+import { err, ok, type PaintType, type Result } from "@chromatic-wheel/domain";
 import { z } from "zod";
 import { normalizeHex } from "./color.ts";
 import type { ImportedPaint } from "./merge.ts";

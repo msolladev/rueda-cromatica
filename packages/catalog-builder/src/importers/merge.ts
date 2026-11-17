@@ -9,7 +9,7 @@ import {
   ok,
   type paintSchema,
   type Result,
-} from "@rueda-cromatica/domain";
+} from "@chromatic-wheel/domain";
 import type { z } from "zod";
 import { proposeSlug } from "./slug.ts";
 

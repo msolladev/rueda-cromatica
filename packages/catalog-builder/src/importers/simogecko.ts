@@ -3,7 +3,7 @@
  * swatch colours of citadelcolour.com, collected by a third party, so their
  * origin is `community` (ADR-0014). Pure: receives the Markdown already read.
  */
-import { err, ok, type PaintType, type Result } from "@rueda-cromatica/domain";
+import { err, ok, type PaintType, type Result } from "@chromatic-wheel/domain";
 import { gradientMidpoint, normalizeHex } from "./color.ts";
 import type { ImportedPaint } from "./merge.ts";
 

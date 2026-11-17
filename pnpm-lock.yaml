@@ -263,7 +263,7 @@ importers:
 
   packages/catalog-builder:
     dependencies:
-      '@rueda-cromatica/domain':
+      '@chromatic-wheel/domain':
         specifier: workspace:*
         version: link:../domain
       culori:

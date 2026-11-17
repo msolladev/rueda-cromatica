@@ -3,7 +3,7 @@
  * pure pipeline and writes `catalog.json`. With `--check` it writes nothing
  * and fails if the versioned file is out of date (ADR-0011, CI step 4).
  *
- *   pnpm --filter @rueda-cromatica/catalog-builder build-catalog [--check]
+ *   pnpm --filter @chromatic-wheel/catalog-builder build-catalog [--check]
  */
 import { mkdir, readdir, readFile, writeFile } from "node:fs/promises";
 import { basename, dirname, join } from "node:path";
@@ -50,7 +50,7 @@ async function main(check: boolean): Promise<number> {
     const current = await readFile(OUTPUT_FILE, "utf8").catch(() => null);
     if (current !== result.value.json) {
       console.error(
-        `${output} is out of date. Run: pnpm --filter @rueda-cromatica/catalog-builder build-catalog`,
+        `${output} is out of date. Run: pnpm --filter @chromatic-wheel/catalog-builder build-catalog`,
       );
       return 1;
     }

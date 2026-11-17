@@ -6,14 +6,14 @@ import { VARIATION_RATIO } from "../mixing/ratios.ts";
 import type { PlacedColor } from "./harmony.ts";
 import { placeMix } from "./placement.ts";
 
-/** Con qué se mezcla la base en cada variación (docs/05 §5.3). */
+/** What the base is mixed with in each variation (docs/05 §5.3). */
 const VARIATIONS = [
   { role: "tint", with: "#ffffff" },
   { role: "tone", with: "#808080" },
   { role: "shade", with: "#000000" },
 ] as const;
 
-/** La base y sus variaciones con blanco, gris y negro, en ese orden. */
+/** The base and its variations with white, gray and black, in that order. */
 export function monochromaticColors(
   base: WheelColor,
   model: Model,

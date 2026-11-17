@@ -8,12 +8,12 @@ import { LIGHT_RATIO, LIGHTEN_RATIO, SHADOW_RATIO } from "../mixing/ratios.ts";
 import { lightHex, neighborHex, shadowHex, type Light } from "./light.ts";
 import { miniatureSchemeColors } from "./miniature-scheme.ts";
 
-/** Un color de la rueda con el tono `hue` y mitad de puro y de negro. */
+/** A wheel color with hue `hue` and half pure, half black. */
 function dark(hue: number): WheelColor {
   return { hue, pure: 0.5, white: 0, black: 0.5 };
 }
 
-/** El hex del vecino esperado: el tono `hue` con las proporciones de `base`. */
+/** The expected neighbor's hex: hue `hue` with the proportions of `base`. */
 function at(base: WheelColor, hue: number, model: Model): string {
   return fromWheelColor({ ...base, hue }, model);
 }
@@ -81,9 +81,9 @@ describe("light", () => {
     );
   });
 
-  // [modelo, luz, tono de la base, tono del vecino]
+  // [model, light, base hue, neighbor hue]
   it.each<[Model, Light, number, number]>([
-    // 30° hacia el destino, por el camino más corto.
+    // 30° towards the destination, along the shortest path.
     ["ryb", "warm", 180, 150],
     ["ryb", "warm", 0, 30],
     ["ryb", "cold", 0, 330],
@@ -91,11 +91,11 @@ describe("light", () => {
     ["digital", "warm", 120, 90],
     ["digital", "warm", 0, 30],
     ["digital", "cold", 0, 330],
-    // Sin pasarse del destino: a menos de 30° y más de 15°, el propio destino.
+    // Without overshooting: under 30° and over 15° away, the destination itself.
     ["ryb", "warm", 140, 120],
     ["ryb", "warm", 100, 120],
     ["digital", "cold", 220, 240],
-    // Empate: la base enfrente del destino va hacia los ángulos crecientes.
+    // Tie: a base opposite the destination goes towards increasing angles.
     ["digital", "warm", 240, 270],
     ["digital", "cold", 60, 90],
     ["ryb", "warm", 300, 330],

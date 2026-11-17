@@ -4,9 +4,9 @@ import type { WheelColor } from "../color/wheel-color.ts";
 import type { PlacedColor, Role } from "./harmony.ts";
 
 /**
- * Coloca un color que sale de una mezcla. No sale de girar el tono, así que su
- * posición es la conversión de su hex a la rueda, con el tono de la base si
- * la mezcla queda sin tono.
+ * Places a color that comes from a mix. It does not come from rotating the
+ * hue, so its position is its hex converted to the wheel, with the base's hue
+ * if the mix has no hue.
  */
 export function placeMix(
   role: Role,

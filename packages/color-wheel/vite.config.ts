@@ -1,9 +1,9 @@
 import { playwright } from "@vitest/browser-playwright";
 import { defineConfig } from "vitest/config";
 
-// Dos pasadas de `vite build` (docs/05 §8.2):
-// - por defecto, el módulo ESM para npm, sin culori ni spectral.js;
-// - con `--mode umd`, el fichero para `<script src>`, con todo dentro.
+// Two passes of `vite build` (docs/05 §8.2):
+// - by default, the ESM module for npm, without culori or spectral.js;
+// - with `--mode umd`, the file for `<script src>`, with everything bundled.
 export default defineConfig(({ mode }) => {
   const umd = mode === "umd";
 
@@ -15,7 +15,7 @@ export default defineConfig(({ mode }) => {
         formats: [umd ? "umd" : "es"],
         fileName: () => (umd ? "color-wheel.umd.js" : "color-wheel.js"),
       },
-      // La segunda pasada no borra lo que dejó la primera.
+      // The second pass does not delete what the first one left.
       emptyOutDir: !umd,
       rolldownOptions: {
         external: umd ? [] : ["culori/fn", "spectral.js"],

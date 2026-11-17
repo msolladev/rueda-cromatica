@@ -1,8 +1,8 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    // Sin la librería DOM ni los tipos de Node: los cálculos no pueden usar
-    // el navegador (docs/05 §1). Solo `ui` tendrá su propio tsconfig con DOM.
+    // Without the DOM library or the Node types: the calculations cannot use
+    // the browser (docs/05 §1). Only `ui` will have its own tsconfig with DOM.
     "lib": ["ES2024"],
     "types": [],
     "module": "ESNext",

@@ -15,7 +15,7 @@ import {
   type Range,
   type Result,
   type Source,
-} from "@rueda-cromatica/domain";
+} from "@chromatic-wheel/domain";
 import { z } from "zod";
 
 /** A problem found in the data, located in its file. */

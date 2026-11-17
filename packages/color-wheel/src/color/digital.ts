@@ -1,5 +1,5 @@
-// Modelo digital (docs/05 §3.1): el color puro es el de HSL con saturación
-// 100 % y luminosidad 50 %, y la conversión desde un hex es exacta.
+// Digital model (docs/05 §3.1): the pure color is the HSL one with 100%
+// saturation and 50% lightness, and the conversion from a hex is exact.
 
 import { hslPure, hsvHue, type Rgb } from "./rgb.ts";
 import type { WheelColor } from "./wheel-color.ts";
