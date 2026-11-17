@@ -10,6 +10,9 @@
   --cw-text: #1d1f22;
   --cw-muted: #5a5f66;
   --cw-surface: #ffffff;
+  --cw-elevated: #ffffff;
+  --cw-shadow:
+    0 0.75rem 2rem rgb(0 0 0 / 0.18), 0 0.125rem 0.5rem rgb(0 0 0 / 0.12);
   --cw-field: #ffffff;
   --cw-border: #767b82;
   --cw-focus: #1a5fd0;
@@ -19,10 +22,14 @@
   --cw-padding: 1rem;
   --cw-control-height: 2.75rem;
   --cw-wheel-max-size: 26rem;
+  --cw-panel-max-size: 26rem;
+  --cw-max-size: 56rem;
 
   container-type: inline-size;
   position: relative;
   box-sizing: border-box;
+  max-width: var(--cw-max-size);
+  margin-inline: auto;
   padding: var(--cw-padding);
   border-radius: var(--cw-radius);
   background: var(--cw-surface);
@@ -38,6 +45,13 @@
     --cw-text: #e9eaec;
     --cw-muted: #b5bac1;
     --cw-surface: #17191c;
+    --cw-elevated: #2c3036;
+    /* A dark shadow barely shows on a dark page: a light inner edge on top and
+       a light gray glow around make the popover float, with a short dark
+       shadow under it. */
+    --cw-shadow:
+      inset 0 1px 0 rgb(255 255 255 / 0.08),
+      0 0 2.65rem rgb(160 170 185 / 0.26), 0 0.5rem 1.5rem rgb(0 0 0 / 0.6);
     --cw-field: #202328;
     --cw-border: #8a9099;
     --cw-focus: #8ab4ff;
@@ -62,10 +76,15 @@
   gap: var(--cw-gap);
 }
 
+/* Wide: the wheel and the panel side by side, each with its maximum width. */
 @container (min-width: 40rem) {
   .cw-layout {
-    grid-template-columns: minmax(0, 1fr) minmax(16rem, 1fr);
+    grid-template-columns:
+      minmax(0, var(--cw-wheel-max-size))
+      minmax(0, var(--cw-panel-max-size));
+    justify-content: center;
     align-items: start;
+    column-gap: calc(var(--cw-gap) * 2);
   }
 }
 
@@ -111,7 +130,7 @@
 
 .cw-controls {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--cw-gap);
 }
 
@@ -121,9 +140,69 @@
   align-content: start;
 }
 
-/* The harmony names are the longest: their selector takes a whole row. */
+/* Hex and model share the first row; the harmony names are the longest, and
+   the light goes under them: both take a whole row. */
 .cw-field-wide {
   grid-column: 1 / -1;
+}
+
+.cw-segmented-field {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.cw-segmented-field > .cw-label {
+  margin-bottom: 0.25rem;
+  padding: 0;
+}
+
+.cw-segmented {
+  display: grid;
+  grid-auto-columns: minmax(0, 1fr);
+  grid-auto-flow: column;
+  gap: 3px;
+  min-height: var(--cw-control-height);
+  padding: 3px;
+  border: 1px solid var(--cw-border);
+  border-radius: var(--cw-radius);
+  background: var(--cw-field);
+}
+
+.cw-segment {
+  position: relative;
+  display: grid;
+  place-items: center;
+  padding: 0 0.5rem;
+  border-radius: calc(var(--cw-radius) - 3px);
+  cursor: pointer;
+  text-align: center;
+}
+
+/* The radio button is invisible but still receives focus and clicks. */
+.cw-segment-input {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: inherit;
+}
+
+.cw-segment:has(.cw-segment-input:checked) {
+  background: var(--cw-text);
+  color: var(--cw-surface);
+  font-weight: 600;
+}
+
+.cw-segment:has(.cw-segment-input:focus-visible) {
+  outline: 2px solid var(--cw-focus);
+  outline-offset: 2px;
+}
+
+.cw-segmented-field:disabled .cw-segmented {
+  cursor: not-allowed;
+  opacity: 0.6;
 }
 
 .cw-label {
@@ -183,29 +262,36 @@
 
 .cw-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(7rem, 1fr));
-  gap: 0.75rem;
+  gap: 0.375rem;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
+/* A wide panel in one column (narrow container): two columns of rows. */
+@container (min-width: 28rem) and (max-width: 39.99rem) {
+  .cw-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: calc(var(--cw-gap) * 1.25);
+  }
+}
+
 .cw-item {
   display: grid;
-  gap: 0.25rem;
-  align-content: start;
+  grid-template-columns: 1.75rem minmax(0, 1fr) auto;
+  align-items: center;
+  column-gap: 0.75rem;
 }
 
 .cw-swatch {
-  height: 2.5rem;
+  width: 1.75rem;
+  height: 1.75rem;
   border: 1px solid var(--cw-border);
   border-radius: calc(var(--cw-radius) * 0.75);
 }
 
 .cw-role {
   font-weight: 600;
-  overflow-wrap: break-word;
-  hyphens: auto;
 }
 
 .cw-hex {
@@ -220,17 +306,114 @@
 
 /* Help. */
 
-.cw-help-summary {
+/* The help button looks like a link: underlined, so that it reads as
+   something to click. */
+.cw-help {
   display: flex;
+}
+
+.cw-help-button {
+  display: inline-flex;
+  gap: 0.375rem;
   align-items: center;
   min-height: var(--cw-control-height);
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--cw-muted);
+  font: inherit;
+  text-decoration: underline dotted;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.25em;
   cursor: pointer;
+}
+
+/* Highlighted only under a mouse: touch screens keep `:hover` on the last
+   element touched, and the button would stay highlighted after closing. */
+@media (hover: hover) {
+  .cw-help-button:enabled:hover {
+    color: var(--cw-text);
+    text-decoration-style: solid;
+  }
+}
+
+.cw-help-button:disabled {
+  cursor: not-allowed;
+  text-decoration: none;
+}
+
+.cw-icon {
+  flex: none;
+  width: 1.125em;
+  height: 1.125em;
+}
+
+/* The popover floats over the page. By default the browser centers it on the
+   screen; where anchor positioning exists, it takes the width of the help
+   block (that of the controls). */
+.cw-help-popover {
+  width: min(24rem, calc(100vw - 2rem));
+  /* At most half the screen, so that the wheel stays visible while reading;
+     dvh follows the visible height on mobile, with or without the browser
+     bars. The text scrolls inside if it does not fit. */
+  max-height: 50dvh;
+  padding: 0.75rem 1rem 1rem;
+  overflow: auto;
+  border: 1px solid var(--cw-border);
+  border-radius: var(--cw-radius);
+  background: var(--cw-elevated);
+  color: var(--cw-text);
+  font-family: var(--cw-font);
+  font-size: var(--cw-font-size);
+  line-height: 1.5;
+  box-shadow: var(--cw-shadow);
+}
+
+@supports (anchor-name: --cw-anchor) {
+  /* Below or above the help block, on the side with more room, and no taller
+     than that room. */
+  .cw-help-popover {
+    inset: auto;
+    width: anchor-size(width);
+    max-height: min(calc(100% - 0.5rem), 50dvh);
+    margin: 0.25rem 0;
+    position-area: block-end span-inline-end;
+    position-try-fallbacks: flip-block;
+    position-try-order: most-block-size;
+  }
+}
+
+.cw-help-header {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.25rem;
+}
+
+.cw-help-heading {
+  margin: 0;
   font-weight: 600;
 }
 
-.cw-help.cw-is-disabled .cw-help-summary {
-  cursor: not-allowed;
+.cw-help-close {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-inline-end: -0.75rem;
+  padding: 0;
+  border: 0;
+  border-radius: var(--cw-radius);
+  background: none;
   color: var(--cw-muted);
+  cursor: pointer;
+}
+
+@media (hover: hover) {
+  .cw-help-close:hover {
+    color: var(--cw-text);
+  }
 }
 
 .cw-help-body {

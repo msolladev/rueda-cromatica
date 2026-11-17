@@ -11,7 +11,7 @@ import type { Harmony, PlacedColor } from "../harmony/harmony.ts";
 import { LOCALES, resolveLocale, type Locale } from "../i18n/locales.ts";
 import type { Light } from "../scheme/light.ts";
 import { assertControl, CONTROLS, type Control } from "./controls.ts";
-import { createDom, setOptions, type Dom } from "./dom.ts";
+import { createDom, setOptions, setRadios, type Dom } from "./dom.ts";
 import { drawWheel } from "./draw.ts";
 import type { Zone } from "./geometry.ts";
 import { ringKey, triangleKey } from "./keyboard.ts";
@@ -603,31 +603,42 @@ export class ColorWheel extends EventTarget {
       { signal },
     );
 
-    const onSelect = (
-      control: HTMLSelectElement,
+    // The radio buttons and the select report their new value on `change`.
+    const onChange = (
+      control: HTMLElement,
       key: "model" | "harmony" | "light",
     ) => {
       control.addEventListener(
         "change",
-        () => {
+        (event) => {
+          const target = event.target as HTMLInputElement | HTMLSelectElement;
           this.#userControl(() => {
-            this.#apply({ [key]: control.value }, "user");
+            this.#apply({ [key]: target.value }, "user");
           });
         },
         { signal },
       );
     };
-    onSelect(dom.modelSelect, "model");
-    onSelect(dom.harmonySelect, "harmony");
-    onSelect(dom.lightSelect, "light");
+    onChange(dom.modelOptions, "model");
+    onChange(dom.harmonySelect, "harmony");
+    onChange(dom.lightOptions, "light");
 
-    dom.helpSummary.addEventListener(
-      "click",
+    // Esc closes the help, wherever the focus is, and returns the focus to
+    // its button if it was inside.
+    document.addEventListener(
+      "keydown",
       (event) => {
-        if (!this.#isEnabled("help")) event.preventDefault();
+        if (event.key !== "Escape" || !this.#isHelpOpen()) return;
+        const focusInside = dom.helpPopover.contains(document.activeElement);
+        dom.helpPopover.hidePopover();
+        if (focusInside) dom.helpButton.focus();
       },
       { signal },
     );
+  }
+
+  #isHelpOpen(): boolean {
+    return this.#dom.helpPopover.matches(":popover-open");
   }
 
   /** A change from a control: announced when it changes the colors. */
@@ -695,9 +706,10 @@ export class ColorWheel extends EventTarget {
       this.#clearHexError();
     }
 
-    dom.modelLabel.textContent = labels.control.model;
-    setOptions(
-      dom.modelSelect,
+    dom.modelLegend.textContent = labels.control.model;
+    setRadios(
+      dom.modelOptions,
+      `${dom.root.id}-model`,
       config.models.map((model) => [model, labels.model[model]]),
       config.model,
     );
@@ -707,9 +719,10 @@ export class ColorWheel extends EventTarget {
       config.harmonies.map((harmony) => [harmony, labels.harmony[harmony]]),
       config.harmony,
     );
-    dom.lightLabel.textContent = labels.control.light;
-    setOptions(
-      dom.lightSelect,
+    dom.lightLegend.textContent = labels.control.light;
+    setRadios(
+      dom.lightOptions,
+      `${dom.root.id}-light`,
       (["warm", "cold"] as const).map((light) => [light, labels.light[light]]),
       config.light,
     );
@@ -734,7 +747,9 @@ export class ColorWheel extends EventTarget {
       }),
     );
 
-    dom.helpSummary.textContent = labels.control.help;
+    dom.helpTitle.textContent = labels.control.help;
+    dom.helpHeading.textContent = labels.control.help;
+    dom.helpClose.setAttribute("aria-label", labels.wheel.helpClose);
     dom.helpPointer.textContent = labels.wheel.pointerHelp;
     dom.helpTouch.textContent = labels.wheel.touchHelp;
     dom.helpKeyboard.textContent = labels.wheel.keyboardHelp;
@@ -755,15 +770,15 @@ export class ColorWheel extends EventTarget {
       fields[name].classList.toggle("cw-is-disabled", !enabled);
     }
     dom.hexInput.disabled = !this.#isEnabled("hex");
-    dom.modelSelect.disabled = !this.#isEnabled("model");
+    dom.modelField.disabled = !this.#isEnabled("model");
     dom.harmonySelect.disabled = !this.#isEnabled("harmony");
-    dom.lightSelect.disabled = !this.#isEnabled("light");
-    const helpEnabled = this.#isEnabled("help");
-    dom.helpSummary.tabIndex = helpEnabled ? 0 : -1;
-    if (helpEnabled) dom.helpSummary.removeAttribute("aria-disabled");
-    else {
-      dom.helpSummary.setAttribute("aria-disabled", "true");
-      dom.help.open = false;
+    dom.lightField.disabled = !this.#isEnabled("light");
+    dom.helpButton.disabled = !this.#isEnabled("help");
+    if (
+      (dom.helpButton.disabled || !this.#isVisible("help")) &&
+      this.#isHelpOpen()
+    ) {
+      dom.helpPopover.hidePopover();
     }
 
     this.#draw();

@@ -46,16 +46,8 @@ function query<T extends Element>(selector: string, type: new () => T): T {
 
 /** The element that each control shows or hides. */
 function controlElement(name: Control): HTMLElement {
-  const selectors: Record<Control, string> = {
-    hex: ".cw-input",
-    model: "select:nth-of-type(1)",
-    harmony: "select",
-    light: "select",
-    results: ".cw-results",
-    help: ".cw-help",
-  };
   if (name === "results" || name === "help") {
-    return query(selectors[name], HTMLElement);
+    return query(`.cw-${name}`, HTMLElement);
   }
   const index = { hex: 0, model: 1, harmony: 2, light: 3 }[name];
   const field = container.querySelectorAll<HTMLElement>(".cw-field")[index];
@@ -420,8 +412,9 @@ describe("disabled controls", () => {
   it("disables the native elements", () => {
     const created = create({ disabledControls: ["hex", "model"] });
     expect(query(".cw-input", HTMLInputElement).disabled).toBe(true);
-    const [model, harmony] = container.querySelectorAll("select");
-    expect(model?.disabled).toBe(true);
+    const model = query(".cw-segmented-field", HTMLFieldSetElement);
+    const harmony = container.querySelector("select");
+    expect(model.disabled).toBe(true);
     expect(harmony?.disabled).toBe(false);
     created.disable();
     expect(harmony?.disabled).toBe(true);
@@ -430,10 +423,12 @@ describe("disabled controls", () => {
     expect(harmony?.disabled).toBe(false);
   });
 
-  it("keeps a disabled help closed", async () => {
-    create({ disabledControls: ["help"] });
-    await userEvent.click(query(".cw-help-summary", HTMLElement));
-    expect(query(".cw-help", HTMLDetailsElement).open).toBe(false);
+  it("disables the help button and closes the help", () => {
+    const created = create();
+    query(".cw-help-popover", HTMLElement).showPopover();
+    created.disableControl("help");
+    expect(query(".cw-help-button", HTMLButtonElement).disabled).toBe(true);
+    expect(helpOpen()).toBe(false);
   });
 
   it("shows the light only with the miniature scheme", () => {
@@ -451,6 +446,62 @@ describe("disabled controls", () => {
   });
 });
 
+function helpOpen(): boolean {
+  return query(".cw-help-popover", HTMLElement).matches(":popover-open");
+}
+
+describe("help", () => {
+  it("opens over the page without moving it, and closes with its button", async () => {
+    create();
+    const results = query(".cw-results", HTMLElement);
+    // Positions within the panel: clicking may scroll the page itself.
+    const before = results.offsetTop;
+    const panelHeight = query(".cw-panel", HTMLElement).offsetHeight;
+    await userEvent.click(query(".cw-help-button", HTMLButtonElement));
+    expect(helpOpen()).toBe(true);
+    expect(results.offsetTop).toBe(before);
+    expect(query(".cw-panel", HTMLElement).offsetHeight).toBe(panelHeight);
+    await userEvent.click(query(".cw-help-button", HTMLButtonElement));
+    expect(helpOpen()).toBe(false);
+  });
+
+  it("stays open while the wheel is used, and closes with Esc", async () => {
+    create();
+    await userEvent.click(query(".cw-help-button", HTMLButtonElement));
+    query(".cw-ring", HTMLElement).focus();
+    await userEvent.keyboard("{ArrowRight}");
+    expect(helpOpen()).toBe(true);
+    await userEvent.keyboard("{Escape}");
+    expect(helpOpen()).toBe(false);
+  });
+
+  it("closes with its close button and returns the focus", async () => {
+    create({ locale: "es" });
+    await userEvent.click(query(".cw-help-button", HTMLButtonElement));
+    const close = query(".cw-help-close", HTMLButtonElement);
+    expect(close.getAttribute("aria-label")).toBe("Cerrar");
+    await userEvent.click(close);
+    expect(helpOpen()).toBe(false);
+  });
+
+  it("is a dialog named by its heading", () => {
+    create();
+    const popover = query(".cw-help-popover", HTMLElement);
+    expect(popover.getAttribute("role")).toBe("dialog");
+    const heading = document.getElementById(
+      popover.getAttribute("aria-labelledby") ?? "",
+    );
+    expect(heading?.textContent).toBe("How to use");
+  });
+
+  it("closes when it is hidden", () => {
+    const created = create();
+    query(".cw-help-popover", HTMLElement).showPopover();
+    created.hideControl("help");
+    expect(helpOpen()).toBe(false);
+  });
+});
+
 describe("locales and labels", () => {
   it("shows the texts of the locale and changes them with it", () => {
     const created = create({ harmony: "triad" });
@@ -461,7 +512,7 @@ describe("locales and labels", () => {
     expect(query(".cw-root", HTMLElement).getAttribute("aria-label")).toBe(
       "Rueda de color",
     );
-    const harmony = container.querySelectorAll("select")[1];
+    const harmony = container.querySelector("select");
     expect(harmony?.selectedOptions[0]?.text).toBe("Tríada");
   });
 
@@ -474,7 +525,7 @@ describe("locales and labels", () => {
     const labels = created.getEffectiveLabels();
     expect(labels.harmony.triad).toBe("Paleta");
     expect(labels.harmony.square).toBe("Cuadrado");
-    const harmony = container.querySelectorAll("select")[1];
+    const harmony = container.querySelector("select");
     expect(harmony?.selectedOptions[0]?.text).toBe("Paleta");
   });
 
@@ -572,10 +623,16 @@ describe("accessibility", () => {
       expect(slider.getAttribute("aria-label")).not.toBe("");
       expect(slider.getAttribute("aria-describedby")).not.toBeNull();
     }
-    for (const control of container.querySelectorAll("input, select")) {
+    for (const control of container.querySelectorAll(".cw-input, select")) {
       expect(
         container.querySelector(`label[for="${control.id}"]`),
       ).not.toBeNull();
+    }
+    for (const group of container.querySelectorAll("fieldset")) {
+      expect(group.querySelector("legend")?.textContent).not.toBe("");
+      for (const radio of group.querySelectorAll("input[type=radio]")) {
+        expect(radio.closest("label")?.textContent).not.toBe("");
+      }
     }
   });
 
@@ -597,7 +654,7 @@ describe("accessibility", () => {
     ["in Japanese", { locale: "ja" }],
   ])("passes the automatic WCAG 2.2 AA check %s", async (_, options) => {
     create(options);
-    query(".cw-help", HTMLDetailsElement).open = true;
+    query(".cw-help-popover", HTMLElement).showPopover();
     await expectNoAxeViolations(container);
   });
 
@@ -610,7 +667,7 @@ describe("accessibility", () => {
       expect(getComputedStyle(query(".cw-root", HTMLElement)).colorScheme).toBe(
         "dark",
       );
-      query(".cw-help", HTMLDetailsElement).open = true;
+      query(".cw-help-popover", HTMLElement).showPopover();
       await expectNoAxeViolations(container);
     } finally {
       await cdp().send("Emulation.setEmulatedMedia", { features: [] });

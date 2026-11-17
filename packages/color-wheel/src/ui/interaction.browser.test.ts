@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
-import { userEvent } from "vitest/browser";
+import { page, userEvent } from "vitest/browser";
 
 import "./style.css";
 import { ColorWheel, type ColorWheelEvent } from "../index.ts";
@@ -242,25 +242,35 @@ describe("controls", () => {
     expect(events).toEqual([]);
   });
 
-  it("changes the model, the harmony and the light from their selectors", async () => {
+  it("changes the model, the harmony and the light from their controls", async () => {
     create({ harmony: "miniature-scheme" });
-    const [model, harmony, light] = container.querySelectorAll("select");
-    if (model === undefined || harmony === undefined || light === undefined) {
-      throw new Error("Missing selectors.");
-    }
-    await userEvent.selectOptions(light, "cold");
+    const harmony = container.querySelector("select");
+    if (harmony === null) throw new Error("No harmony selector.");
+    // The model and the light are segmented controls: native radio buttons.
+    await userEvent.click(page.getByRole("radio", { name: "Cold" }));
     expect(wheel.light).toBe("cold");
-    await userEvent.selectOptions(model, "ryb");
+    await userEvent.click(page.getByRole("radio", { name: "RYB" }));
     expect(wheel.model).toBe("ryb");
     await userEvent.selectOptions(harmony, "triad");
     expect(wheel.harmony).toBe("triad");
-    // The light selector only appears with the miniature scheme.
-    expect(light.closest(".cw-field")?.hasAttribute("hidden")).toBe(true);
+    // The light only appears with the miniature scheme.
+    expect(
+      container
+        .querySelectorAll(".cw-segmented-field")[1]
+        ?.hasAttribute("hidden"),
+    ).toBe(true);
     expect(events.map((event) => event.source)).toEqual([
       "user",
       "user",
       "user",
     ]);
+  });
+
+  it("moves between the options of a segmented control with the arrows", async () => {
+    create({ model: "ryb" });
+    page.getByRole("radio", { name: "RYB" }).element().focus();
+    await userEvent.keyboard("{ArrowRight}");
+    expect(wheel.model).toBe("digital");
   });
 
   it("lists the results with their role and hex", () => {

@@ -147,20 +147,25 @@ wheel.addEventListener("change", (e) => {
     - Triángulo: → y ← suben o bajan el color puro un 1 % y conservan la relación entre blanco y negro; ↑ y ↓ pasan un 1 % del negro al blanco, o al revés, y conservan el color puro. Con Mayúsculas, un 10 %. Los ejes significan siempre lo mismo, gire como gire el triángulo.
     - El lector de pantalla anuncia el tono («30°») y las proporciones («45 % puro, 10 % blanco, 45 % negro»), y cada deslizador enlaza su explicación de teclas con `aria-describedby`.
 - **HTML semántico**: los controles son elementos nativos (`<input>`, `<select>`, `<details>`, `<label>`) y la lista de resultados es una lista (`<ol>`). Todo tiene nombre accesible. Los cambios de un control que cambian los colores se anuncian en una región `role="status"` («6 colores: Esquema de miniatura.»); los del anillo y el triángulo los anuncian los propios deslizadores.
-- **Adaptable**: un único marcado. Con el contenedor estrecho, todo va en una columna; desde 40rem de ancho del contenedor (consulta de contenedor, no de pantalla), la rueda a la izquierda y los controles a la derecha.
+- **Adaptable**: un único marcado, con consultas de contenedor, no de pantalla.
+  - Con el contenedor estrecho, todo va en una columna. Desde 40rem de ancho del contenedor, la rueda a la izquierda y el panel a la derecha, centrados y cada uno con su ancho máximo (`--cw-wheel-max-size` y `--cw-panel-max-size`). El componente entero mide como mucho `--cw-max-size` y se centra.
+  - Controles: Hex y Modelo en la primera fila, y Armonía y Luz, cada una a todo el ancho, porque los nombres de las armonías son los más largos en todos los idiomas. Ningún texto se corta ni se parte.
+  - Resultados: una lista de filas, con la muestra, el papel y el hex. Una columna, salvo con el contenedor estrecho pero de 28rem o más, donde van en dos.
 
 ### 6.3. Controles
 
-| Control   | Qué hace                                                                |
-| --------- | ----------------------------------------------------------------------- |
-| `hex`     | Campo para leer o escribir el color base en hex                         |
-| `model`   | Selector de modelo: RYB o digital                                       |
-| `harmony` | Selector de armonía, con las de `harmonies`                             |
-| `light`   | Selector de luz cálida o fría. Solo aparece con el esquema de miniatura |
-| `results` | Lista de los colores resultantes, con su papel                          |
-| `help`    | «Cómo se usa», plegado: el manejo con puntero, dedo y teclado           |
+| Control   | Qué hace                                                                   |
+| --------- | -------------------------------------------------------------------------- |
+| `hex`     | Campo para leer o escribir el color base en hex                            |
+| `model`   | Selector segmentado de modelo: RYB o digital                               |
+| `harmony` | Selector de armonía, con las de `harmonies`                                |
+| `light`   | Selector segmentado de luz cálida o fría. Solo con el esquema de miniatura |
+| `results` | Lista de los colores resultantes, con su papel                             |
+| `help`    | «Cómo se usa», plegado y con icono: el manejo con puntero, dedo y teclado  |
 
 El anillo y el triángulo no se pueden ocultar: son la rueda.
+
+- **Selectores segmentados** para los controles de pocas opciones (`model` y `light`): botones de opción nativos (`<input type="radio">` en un `<fieldset>` con `<legend>`), que se ven todos a la vez, se cambian de un toque y se recorren con las flechas. La armonía, con nueve opciones, es un `<select>`.
 
 - **`light`** solo es visible con el esquema de miniatura: `isControlVisible("light")` es `false` con las demás armonías, aunque no esté oculto.
 - **Desactivar** `hex`, `model`, `harmony` y `light` desactiva su elemento nativo; `help` no se puede desplegar; `results` atenúa las muestras. Con la rueda desactivada, además, el anillo y el triángulo no responden y salen del orden de tabulación.
@@ -268,9 +273,10 @@ Los papeles y su orden son los de §4.
 ### 6.9. Estilos
 
 - Fichero aparte, `style.css` (en el código, `src/ui/style.css`), que la web incluye con `<link>` o con `import "@chromatic-wheel/color-wheel/style.css"`.
-- Clases con el prefijo `cw-`, y el aspecto se adapta con variables CSS con el prefijo `--cw-`: `--cw-font`, `--cw-font-size`, `--cw-text`, `--cw-muted`, `--cw-surface`, `--cw-field`, `--cw-border`, `--cw-focus`, `--cw-error`, `--cw-radius`, `--cw-gap`, `--cw-padding`, `--cw-control-height` y `--cw-wheel-max-size`.
+- Clases con el prefijo `cw-`, y el aspecto se adapta con variables CSS con el prefijo `--cw-`: `--cw-font`, `--cw-font-size`, `--cw-text`, `--cw-muted`, `--cw-surface`, `--cw-field`, `--cw-border`, `--cw-focus`, `--cw-error`, `--cw-radius`, `--cw-gap`, `--cw-padding`, `--cw-control-height`, `--cw-wheel-max-size`, `--cw-panel-max-size` y `--cw-max-size`.
 - Valores por defecto para tema claro y oscuro, según `prefers-color-scheme`, con contraste AA. La rueda pinta su propio fondo (`--cw-surface`), para que sus textos contrasten en cualquier página.
 - Los controles miden al menos 44 px de alto (`--cw-control-height`), para el dedo.
+- **Icono de ayuda**: `circle-question-mark` de [Lucide](https://lucide.dev), la librería de iconos del proyecto. Se copia en `src/ui/icons.ts` en lugar de depender de `lucide` por un solo icono: un paquete publicable no gana nada con una dependencia que publica versión casi a diario. La copia indica su origen y versión y conserva los avisos de licencia (ISC de Lucide y MIT de Feather, de donde deriva el icono), que el build mantiene en el `dist/`. Se crea con el DOM, sin texto HTML, y es decorativo (`aria-hidden`). Si `color-wheel` necesitara varios iconos, se reconsideraría la dependencia.
 - Los colores de cada muestra se asignan con CSSOM (`element.style`), que una CSP estricta permite.
 
 ## 7. Cálculo sin interfaz

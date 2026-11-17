@@ -46,12 +46,13 @@
     "ring": "Farbton",
     "ringValue": "{hue}°",
     "triangle": "Rein, Weiß und Schwarz",
-    "triangleValue": "{pure} % rein, {white} % Weiß, {black} % Schwarz",
+    "triangleValue": "{pure} % rein, {white} % Weiß, {black} % Schwarz",
     "ringKeys": "Pfeiltasten: 1°. Umschalt + Pfeiltasten: 10°. Bild auf und Bild ab: 30°, der nächste Farbton.",
-    "triangleKeys": "Rechts und links: mehr oder weniger rein. Auf und ab: heller oder dunkler. 1 % pro Schritt, 10 % mit Umschalt.",
+    "triangleKeys": "Rechts und links: mehr oder weniger rein. Auf und ab: heller oder dunkler. 1 % pro Schritt, 10 % mit Umschalt.",
     "pointerHelp": "Auf dem Ring ziehen, um den Farbton zu ändern, und im Dreieck, um Weiß oder Schwarz hinzuzufügen.",
     "touchHelp": "Mit dem Finger folgt der Punkt der Bewegung, ohne unter den Finger zu springen, und bleibt so sichtbar. Tippen springt an die Stelle.",
     "keyboardHelp": "Mit der Tastatur per Tab zum Ring oder zum Dreieck wechseln und die Pfeiltasten verwenden.",
+    "helpClose": "Schließen",
     "hexInvalid": "Eine Hex-Farbe eingeben, z. B. #3daf44.",
     "resultsUpdated": "{count} Farben: {harmony}."
   }

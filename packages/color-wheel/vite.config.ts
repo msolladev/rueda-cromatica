@@ -40,6 +40,9 @@ export default defineConfig(({ mode }) => {
       emptyOutDir: !umd,
       rolldownOptions: {
         external: umd ? [] : ["culori/fn", "spectral.js"],
+        // Keeps the license notices (`@license`), such as that of the copied
+        // Lucide icon.
+        output: { comments: { legal: true } },
       },
     },
     test: {
