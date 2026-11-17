@@ -2,9 +2,9 @@
 
 import { toWheelColor } from "./color/convert.ts";
 import { describeValue, isPlainObject } from "./errors.ts";
-import { harmonize } from "./scheme/harmonize.ts";
-import { toResult, type Result } from "./scheme/result.ts";
-import { resolveSettings } from "./scheme/settings.ts";
+import { harmonize } from "./calculation/harmonize.ts";
+import { toResult, type Result } from "./calculation/result.ts";
+import { resolveSettings } from "./calculation/settings.ts";
 import type { Model } from "./color/model.ts";
 import type { Harmony } from "./harmony/harmony.ts";
 import type { Light } from "./scheme/light.ts";
@@ -14,7 +14,7 @@ export type { Model } from "./color/model.ts";
 export type { WheelColor } from "./color/wheel-color.ts";
 export type { Harmony, Role } from "./harmony/harmony.ts";
 export type { Light } from "./scheme/light.ts";
-export type { Result } from "./scheme/result.ts";
+export type { Result } from "./calculation/result.ts";
 
 export interface ComputeInput {
   /** Color base en hex. */

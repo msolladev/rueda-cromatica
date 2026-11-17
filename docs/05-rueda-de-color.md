@@ -269,17 +269,18 @@ Por dentro, `compute` y el componente usan el mismo cálculo, que da cada color 
 
 ```
 packages/color-wheel/src/
-  color/     representación (§2) y modelos (§3)
-  mixing/    mezclas con spectral.js (§5)
-  harmony/   armonías y variaciones del monocromático (§4)
-  scheme/    esquema de miniatura (§5.1-5.2)
-  i18n/      idiomas en JSON y resolución del idioma (§6.8)
-  ui/        componente, dibujo, controles y eventos (§6). El único que usa el DOM
-  errors.ts  ayudas comunes para los mensajes de error (§1)
-  index.ts   API pública
+  color/        representación (§2) y modelos (§3)
+  mixing/       mezclas con spectral.js (§5)
+  harmony/      armonías y variaciones del monocromático (§4)
+  scheme/       esquema de miniatura (§5.1-5.2)
+  calculation/  cálculo común de todas las armonías, valores por defecto y resultado (§7)
+  i18n/         idiomas en JSON y resolución del idioma (§6.8)
+  ui/           componente, dibujo, controles y eventos (§6). El único que usa el DOM
+  errors.ts     ayudas comunes para los mensajes de error (§1)
+  index.ts      API pública
 ```
 
-Dependencias entre módulos: `errors.ts` no depende de nada y lo pueden usar todos; `color` y `mixing` no dependen de nada más del paquete; `harmony` depende de `color` y `mixing`; `scheme`, de `harmony`; `ui`, de todos. No se admiten ciclos. Como en el [ADR-0018](adr/0018-organizacion-codigo-patrones.md), la regla de que solo `ui` use el DOM la hacen cumplir las herramientas.
+Dependencias entre módulos: `errors.ts` no depende de nada y lo pueden usar todos; `color` y `mixing` no dependen de nada más del paquete; `harmony` depende de `color` y `mixing`; `scheme`, de `color`, `mixing` y `harmony`; `calculation`, de `color`, `harmony` y `scheme`; `index.ts` y `ui`, de todos. No se admiten ciclos. Como en el [ADR-0018](adr/0018-organizacion-codigo-patrones.md), la regla de que solo `ui` use el DOM la hacen cumplir las herramientas.
 
 ### 8.2. Compilación
 

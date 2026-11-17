@@ -1,6 +1,6 @@
 import { assertModel, type Model } from "../color/model.ts";
 import { assertHarmony, type Harmony } from "../harmony/harmony.ts";
-import { assertLight, type Light } from "./light.ts";
+import { assertLight, type Light } from "../scheme/light.ts";
 
 /** Lo que se calcula, además del color base. */
 export interface Settings {
