@@ -19,7 +19,7 @@ El detalle vigente (ángulos, conversión, mezclas y API) está en [05-rueda-de-
 
 ### Paquete
 
-- **`packages/color-wheel`** (`@rueda-cromatica/color-wheel`): la rueda completa, con sus cálculos, su dibujo, su plantilla giratoria y sus controles. Sin depender de `domain` ni de ningún framework. Sus dependencias son culori y spectral.js.
+- **`packages/color-wheel`** (`@chromatic-wheel/color-wheel`): la rueda completa, con sus cálculos, su dibujo, su plantilla giratoria y sus controles. Sin depender de `domain` ni de ningún framework. Sus dependencias son culori y spectral.js.
 - **Agnóstico**: funciona en cualquier web, use el framework o la librería que use, o ninguno.
 - **No se publica en npm por ahora**, pero se diseña como si fuera a publicarse: API pública en `index.ts`, tests y ningún concepto de pinturas.
 - **Dependencias**: `apps/web` usa `color-wheel` y `domain`; `catalog-builder` usa `domain`. Entre `color-wheel` y `domain` no hay dependencia.

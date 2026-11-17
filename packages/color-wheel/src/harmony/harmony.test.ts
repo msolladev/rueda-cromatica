@@ -10,7 +10,7 @@ import { assertHarmony } from "./harmony.ts";
 import { monochromaticColors } from "./monochromatic.ts";
 import { rotationColors, type RotationHarmony } from "./rotations.ts";
 
-/** Un marrón: el tono naranja con bastante negro (docs/05 §2). */
+/** A brown: the orange hue with plenty of black (docs/05 §2). */
 const BROWN: WheelColor = { hue: 30, pure: 0.45, white: 0.1, black: 0.45 };
 
 const EXPECTED: Record<RotationHarmony, [string, number][]> = {

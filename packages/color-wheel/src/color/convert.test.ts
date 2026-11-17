@@ -6,7 +6,7 @@ import { parseHexColor } from "./rgb.ts";
 import { rybPure, rybPureHsvHue } from "./ryb.ts";
 import type { WheelColor } from "./wheel-color.ts";
 
-/** Hex de una rejilla de 16 niveles por canal: 4096 colores. */
+/** Hexes of a grid with 16 levels per channel: 4096 colors. */
 function hexGrid(): string[] {
   const levels = Array.from({ length: 16 }, (_, i) =>
     (i * 17).toString(16).padStart(2, "0"),
@@ -16,7 +16,7 @@ function hexGrid(): string[] {
   );
 }
 
-/** Colores de la rueda repartidos por el anillo y el triángulo. */
+/** Wheel colors spread over the ring and the triangle. */
 function wheelGrid(): WheelColor[] {
   const colors: WheelColor[] = [];
   const steps = 8;
@@ -37,13 +37,13 @@ function wheelGrid(): WheelColor[] {
 }
 
 /**
- * Compara dos colores de la rueda con el margen del redondeo del hex a 8 bits.
- * Con poco color puro, el hex tiene pocos niveles de tono, así que el tono
- * solo se compara a partir de la mitad de color puro.
+ * Compares two wheel colors within the margin of rounding the hex to 8 bits.
+ * With little pure color, the hex has few hue levels, so the hue is only
+ * compared from half pure color upwards.
  */
 function expectSameWheelColor(actual: WheelColor, expected: WheelColor) {
-  // En RYB el color puro puede llevar algo de blanco (el azul), y el redondeo
-  // de cada canal afecta a más de una proporción.
+  // In RYB the pure color may contain some white (the blue), and rounding
+  // each channel affects more than one proportion.
   const step = 3 / 255;
   expect(Math.abs(actual.pure - expected.pure)).toBeLessThan(step);
   expect(Math.abs(actual.white - expected.white)).toBeLessThan(step);
@@ -144,7 +144,7 @@ describe("RYB model", () => {
     const color = toWheelColor(hex, "ryb");
     const reached = fromWheelColor(color, "ryb");
     expect(reached).not.toBe(hex);
-    // Ningún punto del triángulo de ese tono está más cerca del cian.
+    // No point of the triangle of that hue is closer to cyan.
     const error = channelSquared(reached, hex);
     for (let pure = 0; pure <= 1; pure += 0.02) {
       for (let white = 0; white <= 1 - pure + 1e-9; white += 0.02) {

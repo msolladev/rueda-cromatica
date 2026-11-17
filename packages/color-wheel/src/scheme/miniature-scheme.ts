@@ -6,8 +6,8 @@ import { placeRotation } from "../harmony/rotations.ts";
 import { lightHex, shadowHex, type Light } from "./light.ts";
 
 /**
- * El esquema de miniatura: la base, su sombra, su luz, los otros dos colores
- * de su tríada y su complementario, en ese orden (docs/05 §4).
+ * The miniature scheme: the base, its shadow, its light, the other two colors
+ * of its triad and its complement, in that order (docs/05 §4).
  */
 export function miniatureSchemeColors(
   base: WheelColor,

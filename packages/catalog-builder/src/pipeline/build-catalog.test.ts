@@ -1,5 +1,5 @@
 import { createHash } from "node:crypto";
-import { parseCatalog } from "@rueda-cromatica/domain";
+import { parseCatalog } from "@chromatic-wheel/domain";
 import { describe, expect, it } from "vitest";
 import { acmeFile, globexFile, patchPaint, sourcesFile } from "../fixtures.ts";
 import { buildCatalog, type CuratedData } from "./build-catalog.ts";

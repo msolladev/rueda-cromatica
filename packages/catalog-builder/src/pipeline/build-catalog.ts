@@ -13,7 +13,7 @@ import {
   SUPPORTED_SCHEMA_VERSION,
   type CatalogDocument,
   type Result,
-} from "@rueda-cromatica/domain";
+} from "@chromatic-wheel/domain";
 import {
   readBrandFile,
   readSourcesFile,

@@ -5,7 +5,7 @@
  */
 import { writeFile } from "node:fs/promises";
 import { join } from "node:path";
-import type { Result } from "@rueda-cromatica/domain";
+import type { Result } from "@chromatic-wheel/domain";
 import { readBrandFile, readSourcesFile } from "../curated/files.ts";
 import { mergePaints, type ImportedPaint } from "../importers/merge.ts";
 import { BRANDS_DIR, fromRepo, readJson, SOURCES_FILE } from "./data-files.ts";

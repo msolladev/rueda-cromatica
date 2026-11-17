@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 
 import { assertLocale, LABELS, LOCALES, resolveLocale } from "./locales.ts";
 
-/** Las rutas de todas las claves de un objeto de textos: `harmony.triad`… */
+/** The paths of every key of a labels object: `harmony.triad`… */
 function keyPaths(value: unknown, prefix = ""): string[] {
   if (typeof value !== "object" || value === null) return [prefix];
   return Object.entries(value)
@@ -35,14 +35,14 @@ describe("resolveLocale", () => {
     [["es"], "es"],
     [["pt-BR"], "pt-BR"],
     [["pt-br"], "pt-BR"],
-    // Por idioma base.
+    // By base language.
     [["es-ES"], "es"],
     [["pt-PT"], "pt-BR"],
     [["zh-CN"], "zh-Hans"],
-    // El primero que coincide, aunque sea por idioma base.
+    // The first match, even by base language.
     [["pt-PT", "en"], "pt-BR"],
     [["nl", "de-AT", "fr"], "de"],
-    // Ninguno: inglés.
+    // None: English.
     [["nl", "sv"], "en"],
     [[], "en"],
   ])("%j resolves to %s", (preferred, expected) => {

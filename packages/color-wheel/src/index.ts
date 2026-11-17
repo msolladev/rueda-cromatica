@@ -1,4 +1,4 @@
-// API pública del paquete (docs/05 §7). Los cálculos no usan el DOM.
+// Public API of the package (docs/05 §7). The calculations do not use the DOM.
 
 import { toWheelColor } from "./color/convert.ts";
 import { describeValue, isPlainObject } from "./errors.ts";
@@ -17,19 +17,19 @@ export type { Light } from "./scheme/light.ts";
 export type { Result } from "./calculation/result.ts";
 
 export interface ComputeInput {
-  /** Color base en hex. */
+  /** Base color in hex. */
   readonly color: string;
-  /** Por defecto, `"ryb"`. */
+  /** Defaults to `"ryb"`. */
   readonly model?: Model;
-  /** Por defecto, `"miniature-scheme"`. */
+  /** Defaults to `"miniature-scheme"`. */
   readonly harmony?: Harmony;
-  /** Por defecto, `"warm"`. Solo cuenta en el esquema de miniatura. */
+  /** Defaults to `"warm"`. Only used by the miniature scheme. */
   readonly light?: Light;
 }
 
 const COMPUTE_KEYS: readonly string[] = ["color", "model", "harmony", "light"];
 
-/** Calcula los colores de una armonía o del esquema de miniatura. */
+/** Computes the colors of a harmony or of the miniature scheme. */
 export function compute(input: ComputeInput): Result {
   if (!isPlainObject(input)) {
     throw new TypeError(

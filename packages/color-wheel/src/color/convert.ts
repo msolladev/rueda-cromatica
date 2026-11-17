@@ -9,15 +9,14 @@ import {
 import { rybFromRgb, rybPure } from "./ryb.ts";
 import { assertHue, assertWheelColor, type WheelColor } from "./wheel-color.ts";
 
-/** Color puro del tono `hue` en el anillo del modelo. */
+/** Pure color of the hue `hue` on the model's ring. */
 export function pureColor(hue: number, model: Model): Rgb {
   return model === "ryb" ? rybPure(hue) : digitalPure(hue);
 }
 
 /**
- * Convierte un hex a la rueda del modelo (docs/05 §3). Los colores sin tono
- * (blancos, grises y negros puros) conservan `previousHue`, el tono que tenía
- * la rueda.
+ * Converts a hex to the model's wheel (docs/05 §3). Colors without hue (pure
+ * whites, grays and blacks) keep `previousHue`, the hue the wheel had.
  */
 export function toWheelColor(
   hex: string,
@@ -33,8 +32,8 @@ export function toWheelColor(
 }
 
 /**
- * Convierte un color de la rueda a hex: la suma ponderada, en sRGB, del color
- * puro, el blanco y el negro (docs/05 §2).
+ * Converts a wheel color to hex: the weighted sum, in sRGB, of the pure color,
+ * white and black (docs/05 §2).
  */
 export function fromWheelColor(color: WheelColor, model: Model): string {
   assertWheelColor(color);
@@ -44,7 +43,7 @@ export function fromWheelColor(color: WheelColor, model: Model): string {
   return formatHexColor({ r: mix(pure.r), g: mix(pure.g), b: mix(pure.b) });
 }
 
-/** Gira el tono `degrees` grados y conserva las proporciones. */
+/** Rotates the hue by `degrees` and keeps the proportions. */
 export function rotate(color: WheelColor, degrees: number): WheelColor {
   return { ...color, hue: normalizeHue(color.hue + degrees) };
 }

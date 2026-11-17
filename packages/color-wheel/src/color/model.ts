@@ -1,6 +1,6 @@
 import { describeValue, oneOf } from "../errors.ts";
 
-/** Modelo de la rueda: RYB (el de la pintura física) o digital (RGB/HSL). */
+/** Wheel model: RYB (that of physical paint) or digital (RGB/HSL). */
 export const MODELS = ["ryb", "digital"] as const;
 
 export type Model = (typeof MODELS)[number];

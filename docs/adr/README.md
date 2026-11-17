@@ -31,6 +31,7 @@ Cada fichero recoge una decisión relevante: su contexto, la decisión tomada, l
 
 - **Nombre del fichero**: `NNNN-titulo-en-kebab-case.md`, con numeración correlativa que no se reutiliza nunca.
 - **Inmutabilidad**: un ADR aceptado no se reescribe. Si una decisión cambia, se crea un ADR nuevo y el antiguo pasa a `sustituida por ADR-NNNN`.
+- **Nombres del código**: los nombres del código que cita un ADR aceptado (paquetes, rutas, identificadores) se actualizan cuando cambian sin que cambie la decisión. El contenido de la decisión no se toca, y el cambio queda en el historial de git.
 - **Estados posibles**: `propuesta`, `aceptada`, `rechazada`, `sustituida por ADR-NNNN` y `aceptada; aplazada en parte por ADR-NNNN`. El último indica que la decisión sigue vigente, pero que parte de ella no se aplica hasta una fase posterior.
 - **Índice**: cada ADR nuevo se añade a la tabla anterior en el mismo commit en que se crea.
 - **Numeración de fases**: los ADR 0001-0008 usan la numeración de la hoja de ruta anterior a 2026-11. Su «fase 2» es la actual fase 3 (investigación de fuentes de datos) y su «fase 3», la actual fase 4 (builder, importadores y prototipo de la rueda). Además, los ADR 0017 y 0018 llaman «fase 5» a la del backend, que desde el ADR-0019 es la fase 6; la fase 5 es ahora la del catálogo completo.

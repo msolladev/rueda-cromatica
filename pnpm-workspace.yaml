@@ -2,13 +2,13 @@ packages:
   - apps/*
   - packages/*
 
-# Dependencias directas con versión exacta (ADR-0009).
+# Direct dependencies with exact versions (ADR-0009).
 savePrefix: ""
 
-# Solo versiones publicadas hace al menos 7 días (en minutos).
+# Only versions published at least 7 days ago (in minutes).
 minimumReleaseAge: 10080
 
-# Versiones compartidas entre paquetes (protocolo `catalog:`).
+# Versions shared between packages (`catalog:` protocol).
 catalog:
   "@types/culori": 4.0.1
   "@types/node": 26.6.6

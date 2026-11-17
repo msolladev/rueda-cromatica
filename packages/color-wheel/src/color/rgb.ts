@@ -9,7 +9,7 @@ import {
 
 import { describeValue } from "../errors.ts";
 
-/** Un color sRGB con los canales entre 0 y 1. */
+/** An sRGB color with channels between 0 and 1. */
 export interface Rgb {
   readonly r: number;
   readonly g: number;
@@ -22,7 +22,7 @@ useMode(modeHsl);
 
 const HEX = /^#(?:[0-9a-f]{3}|[0-9a-f]{6})$/i;
 
-/** Lee un hex `#rgb` o `#rrggbb`. Cualquier otro valor es un error. */
+/** Reads a `#rgb` or `#rrggbb` hex. Any other value is an error. */
 export function parseHexColor(hex: unknown): Rgb {
   if (typeof hex !== "string") {
     throw new TypeError(
@@ -38,18 +38,18 @@ export function parseHexColor(hex: unknown): Rgb {
   return { r: parsed.r, g: parsed.g, b: parsed.b };
 }
 
-/** Escribe un color como `#rrggbb`, en minúsculas y redondeado a 8 bits. */
+/** Writes a color as `#rrggbb`, lowercase and rounded to 8 bits. */
 export function formatHexColor({ r, g, b }: Rgb): string {
   return formatHex({ mode: "rgb", r, g, b });
 }
 
-/** Tono HSV en [0, 360), o `undefined` si el color no tiene tono (grises). */
+/** HSV hue in [0, 360), or `undefined` if the color has no hue (grays). */
 export function hsvHue({ r, g, b }: Rgb): number | undefined {
   const { h } = toHsv({ mode: "rgb", r, g, b });
   return h === undefined ? undefined : normalizeHue(h);
 }
 
-/** Color de HSL con saturación 100 % y luminosidad 50 %: el puro digital. */
+/** HSL color with 100% saturation and 50% lightness: the digital pure. */
 export function hslPure(hue: number): Rgb {
   const { r, g, b } = toRgb({ mode: "hsl", h: hue, s: 1, l: 0.5 });
   return { r, g, b };

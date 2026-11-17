@@ -1,18 +1,18 @@
 import { describeValue, isPlainObject } from "../errors.ts";
 
 /**
- * Un color de la rueda (docs/05 §2): el tono en el anillo del modelo activo y
- * las proporciones de color puro, blanco y negro, que suman 1.
+ * A wheel color (docs/05 §2): the hue on the ring of the active model and the
+ * proportions of pure color, white and black, which add up to 1.
  */
 export interface WheelColor {
-  /** Ángulo en el anillo, en [0, 360). */
+  /** Angle on the ring, in [0, 360). */
   readonly hue: number;
   readonly pure: number;
   readonly white: number;
   readonly black: number;
 }
 
-/** Margen para las proporciones y su suma, por el redondeo de los decimales. */
+/** Tolerance for the proportions and their sum, due to floating-point rounding. */
 const TOLERANCE = 1e-6;
 
 export function assertHue(

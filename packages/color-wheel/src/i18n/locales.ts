@@ -10,7 +10,7 @@ import ptBR from "./locales/pt-BR.json";
 import ru from "./locales/ru.json";
 import zhHans from "./locales/zh-Hans.json";
 
-/** Idiomas incluidos (docs/05 §6.8). */
+/** Included locales (docs/05 §6.8). */
 export const LOCALES = [
   "en",
   "es",
@@ -26,7 +26,7 @@ export const LOCALES = [
 
 export type Locale = (typeof LOCALES)[number];
 
-/** Los textos de la rueda. El inglés es la referencia: sus claves son la lista. */
+/** The wheel's texts. English is the reference: its keys are the list. */
 export type Labels = typeof en;
 
 export const LABELS: Readonly<Record<Locale, Labels>> = {
@@ -52,16 +52,15 @@ export function assertLocale(value: unknown): asserts value is Locale {
   }
 }
 
-/** Subetiqueta del idioma base: `pt-PT` → `pt`. */
+/** Base language subtag: `pt-PT` → `pt`. */
 function baseLanguage(tag: string): string {
   return tag.split("-")[0]?.toLowerCase() ?? "";
 }
 
 /**
- * El idioma por defecto (docs/05 §6.8): el primero de `preferred` que coincida
- * con uno incluido, primero de forma exacta y después por idioma base
- * (`pt-PT` → `pt-BR`). Si no coincide ninguno, inglés. El componente le pasa
- * `navigator.languages`.
+ * The default locale (docs/05 §6.8): the first of `preferred` that matches an
+ * included one, first exactly and then by base language (`pt-PT` → `pt-BR`).
+ * If none matches, English. The component passes `navigator.languages`.
  */
 export function resolveLocale(preferred: readonly string[]): Locale {
   for (const tag of preferred) {

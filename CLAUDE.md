@@ -42,13 +42,13 @@ Desde la raíz. pnpm cambia solo a la versión de `packageManager` y descarga el
 - `pnpm format` / `pnpm format:check`: aplica o comprueba el formato de Prettier.
 - `pnpm typecheck`: `tsc` en la raíz y en cada paquete.
 - `pnpm test`: Vitest en `domain`, `catalog-builder` y `color-wheel`. El proyecto de navegador de `color-wheel` necesita Chromium:
-  - `pnpm --filter @rueda-cromatica/color-wheel install-browsers`, una vez y cada vez que cambie la versión de Playwright;
-  - en WSL, además, las librerías del sistema: `pnpm --filter @rueda-cromatica/color-wheel exec playwright install-deps chromium`, que pide la contraseña de `sudo`.
+  - `pnpm --filter @chromatic-wheel/color-wheel install-browsers`, una vez y cada vez que cambie la versión de Playwright;
+  - en WSL, además, las librerías del sistema: `pnpm --filter @chromatic-wheel/color-wheel exec playwright install-deps chromium`, que pide la contraseña de `sudo`.
 - `pnpm build`: build de `color-wheel` (Vite en modo librería y `tsc`) y de `apps/web` (Vite + PWA).
-- `pnpm --filter @rueda-cromatica/web dev`: servidor de desarrollo.
-- `pnpm --filter @rueda-cromatica/catalog-builder build-catalog`: regenera `apps/web/public/catalog.json` a partir de los datos. Con `--check` no escribe nada y falla si el versionado está desactualizado.
-- `pnpm --filter @rueda-cromatica/catalog-builder import-simogecko`: importa Citadel de la tabla de SimoGecko a `data/brands/citadel.json`. Se ejecuta a demanda; después, `pnpm format` y `build-catalog`.
-- `pnpm --filter @rueda-cromatica/catalog-builder import-donnervs <brand-id>`: igual, para una marca desde los datos de DonnervS.
+- `pnpm --filter @chromatic-wheel/web dev`: servidor de desarrollo.
+- `pnpm --filter @chromatic-wheel/catalog-builder build-catalog`: regenera `apps/web/public/catalog.json` a partir de los datos. Con `--check` no escribe nada y falla si el versionado está desactualizado.
+- `pnpm --filter @chromatic-wheel/catalog-builder import-simogecko`: importa Citadel de la tabla de SimoGecko a `data/brands/citadel.json`. Se ejecuta a demanda; después, `pnpm format` y `build-catalog`.
+- `pnpm --filter @chromatic-wheel/catalog-builder import-donnervs <brand-id>`: igual, para una marca desde los datos de DonnervS.
 - `pnpm --filter <paquete> <script>`: ejecuta un script de un paquete concreto.
 
 ## Catálogo
@@ -75,7 +75,7 @@ Desde la raíz. pnpm cambia solo a la versión de `packageManager` y descarga el
   - Tipo según su función: base, capa, estándar (opaca sin distinción base/capa), lavado, tinta, veladura, contrast (función de una capa, de cualquier marca), técnica o pincel seco ([ADR-0013](docs/adr/0013-clasificacion-pinturas.md)).
   - Metálica, como atributo independiente del tipo.
   - Estado: activa o descatalogada. Si está descatalogada, con su sustituta y la fuente del fabricante, si las hay.
-- **IDs**: slugs jerárquicos (`marca/gama/pintura`) que se generan una vez y nunca se recalculan. El código no los descompone.
+- **IDs**: slugs jerárquicos (`brand/range/paint`) que se generan una vez y nunca se recalculan. El código no los descompone.
 
 El modelo completo está en [docs/01-modelo-dominio.md](docs/01-modelo-dominio.md) y los IDs en [docs/03-identificadores.md](docs/03-identificadores.md).
 

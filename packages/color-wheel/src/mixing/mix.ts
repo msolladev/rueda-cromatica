@@ -1,9 +1,9 @@
 import { Color, mix } from "spectral.js";
 
 /**
- * Mezcla dos colores como pigmentos (Kubelka-Munk, con spectral.js y la fuerza
- * de tinte por defecto). `ratio` es la parte de `other` en la mezcla, entre 0
- * y 1. Recibe y devuelve hex `#rrggbb`.
+ * Mixes two colors as pigments (Kubelka-Munk, with spectral.js and the default
+ * tinting strength). `ratio` is the share of `other` in the mix, between 0
+ * and 1. Takes and returns `#rrggbb` hexes.
  */
 export function mixPaint(base: string, other: string, ratio: number): string {
   if (!(ratio >= 0 && ratio <= 1)) {

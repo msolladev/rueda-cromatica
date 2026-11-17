@@ -1,11 +1,11 @@
 {
-  "name": "@rueda-cromatica/color-wheel",
+  "name": "@chromatic-wheel/color-wheel",
   "version": "0.0.0",
   "private": true,
   "type": "module",
   "exports": {
     ".": {
-      "@rueda-cromatica/source": "./src/index.ts",
+      "@chromatic-wheel/source": "./src/index.ts",
       "types": "./dist/types/index.d.ts",
       "default": "./dist/color-wheel.js"
     }

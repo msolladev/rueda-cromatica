@@ -1,14 +1,14 @@
-// Proporciones de las mezclas (docs/05 §5). Son valores de partida que se
-// ajustan al ver los resultados en la etapa 5: ninguna fuente da cifras.
+// Mix ratios (docs/05 §5). They are starting values, to be tuned after seeing
+// the results in stage 5: no source gives figures.
 
-/** Cuánto complementario lleva la sombra. */
+/** How much complement the shadow contains. */
 export const SHADOW_RATIO = 0.25;
 
-/** Cuánto vecino aclarado lleva la luz. */
+/** How much lightened neighbor the light contains. */
 export const LIGHT_RATIO = 0.25;
 
-/** Cuánto blanco lleva el vecino al aclararlo. */
+/** How much white the neighbor gets when lightened. */
 export const LIGHTEN_RATIO = 0.5;
 
-/** Cuánto blanco, gris o negro llevan las variaciones del monocromático. */
+/** How much white, gray or black the monochromatic variations contain. */
 export const VARIATION_RATIO = 0.5;

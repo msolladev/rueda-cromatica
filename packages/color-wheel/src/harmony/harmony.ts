@@ -1,7 +1,7 @@
 import { describeValue, oneOf } from "../errors.ts";
 import type { WheelColor } from "../color/wheel-color.ts";
 
-/** Las armonías de docs/05 §4, además del esquema de miniatura. */
+/** The harmonies of docs/05 §4, plus the miniature scheme. */
 export const HARMONIES = [
   "complementary",
   "split-complementary",
@@ -16,7 +16,7 @@ export const HARMONIES = [
 
 export type Harmony = (typeof HARMONIES)[number];
 
-/** Papel de cada color en el resultado (docs/05 §4). */
+/** Role of each color in the result (docs/05 §4). */
 export type Role =
   | "base"
   | "complement"
@@ -32,7 +32,7 @@ export type Role =
   | "shadow"
   | "light";
 
-/** Un color del resultado, con su papel, su hex y su posición en la rueda. */
+/** A result color, with its role, its hex and its position on the wheel. */
 export interface PlacedColor {
   readonly role: Role;
   readonly hex: string;

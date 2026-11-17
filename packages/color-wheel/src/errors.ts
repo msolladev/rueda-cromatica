@@ -1,7 +1,7 @@
-// Ayudas para los mensajes de error: los valores no válidos fallan con un
-// mensaje que explica qué falla (docs/05 §1).
+// Helpers for error messages: invalid values fail with a message that
+// explains what is wrong (docs/05 §1).
 
-/** Representa un valor recibido para mostrarlo en un mensaje de error. */
+/** Describes a received value to show it in an error message. */
 export function describeValue(value: unknown): string {
   if (typeof value === "string") return JSON.stringify(value);
   if (typeof value === "number" || typeof value === "boolean") {
@@ -12,7 +12,7 @@ export function describeValue(value: unknown): string {
   return Array.isArray(value) ? "an array" : `a value of type ${typeof value}`;
 }
 
-/** Lista los valores admitidos: `one of "a", "b"`. */
+/** Lists the accepted values: `one of "a", "b"`. */
 export function oneOf(values: readonly string[]): string {
   return `one of ${values.map((v) => JSON.stringify(v)).join(", ")}`;
 }

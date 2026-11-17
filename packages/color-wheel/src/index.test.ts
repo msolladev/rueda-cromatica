@@ -72,7 +72,7 @@ describe("compute", () => {
       [{ color: "#xyz" }, /Invalid hex color "#xyz"/],
       [{ color: "#3daf44", model: "rgb" }, /Unknown model "rgb"/],
       [{ color: "#3daf44", harmony: "triadd" }, /Unknown harmony "triadd"/],
-      // La luz se valida aunque la armonía no la use.
+      // The light is validated even if the harmony does not use it.
       [
         { color: "#3daf44", harmony: "triad", light: "hot" },
         /Unknown light "hot"/,

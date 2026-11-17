@@ -1,6 +1,6 @@
 # Rueda de color
 
-Este documento especifica el paquete `@rueda-cromatica/color-wheel`: cómo representa los colores, cómo calcula las armonías, el esquema de miniatura y las mezclas, y su API. Por qué se decidió así está en el [ADR-0020](adr/0020-rueda-paquete-independiente.md).
+Este documento especifica el paquete `@chromatic-wheel/color-wheel`: cómo representa los colores, cómo calcula las armonías, el esquema de miniatura y las mezclas, y su API. Por qué se decidió así está en el [ADR-0020](adr/0020-rueda-paquete-independiente.md).
 
 ## 1. Principios
 
@@ -247,7 +247,7 @@ Los papeles y su orden son los de §4.
 
 ### 6.9. Estilos
 
-- Fichero aparte, `style.css`, que la web incluye con `<link>` o con `import "@rueda-cromatica/color-wheel/style.css"`.
+- Fichero aparte, `style.css`, que la web incluye con `<link>` o con `import "@chromatic-wheel/color-wheel/style.css"`.
 - Clases con el prefijo `cw-`, y el aspecto se adapta con variables CSS con el prefijo `--cw-` (colores, tipografía y tamaños).
 - Valores por defecto para tema claro y oscuro, según `prefers-color-scheme`.
 
@@ -298,7 +298,7 @@ Las dos pasadas de Vite (el módulo ESM y el UMD) son necesarias porque cada fic
 **Dentro del monorepo**, el `exports` del paquete tiene dos rutas:
 
 - la normal, al `dist/`, que es la que recibiría cualquier otra web;
-- una condición propia, `@rueda-cromatica/source`, al código fuente (`src/index.ts`).
+- una condición propia, `@chromatic-wheel/source`, al código fuente (`src/index.ts`).
 
 La web activa la condición en su servidor de desarrollo, para ver los cambios de la rueda sin compilarla, y la desactiva al generar la versión desplegable, que así usa el `dist/`. Su comprobación de tipos y su lint leen el código fuente. Se configura en la etapa 5.
 

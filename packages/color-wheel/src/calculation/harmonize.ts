@@ -10,8 +10,8 @@ export interface HarmonizeInput extends Settings {
 }
 
 /**
- * El único cálculo de los colores de una armonía o del esquema de miniatura.
- * Lo usan `compute` y el componente. Recibe datos ya validados.
+ * The single calculation of the colors of a harmony or of the miniature
+ * scheme. Used by `compute` and by the component. Receives validated data.
  */
 export function harmonize({
   color,

@@ -3,7 +3,7 @@ import type { Model } from "../color/model.ts";
 import type { WheelColor } from "../color/wheel-color.ts";
 import type { Harmony, PlacedColor, Role } from "./harmony.ts";
 
-/** Armonías que solo giran el tono de la base. */
+/** Harmonies that only rotate the base's hue. */
 export type RotationHarmony = Exclude<
   Harmony,
   "monochromatic" | "miniature-scheme"
@@ -11,11 +11,11 @@ export type RotationHarmony = Exclude<
 
 interface Rotation {
   readonly role: Role;
-  /** Grados que se gira el tono; un paso de la rueda de 12 tonos son 30°. */
+  /** Degrees the hue rotates; one step of the 12-hue wheel is 30°. */
   readonly degrees: number;
 }
 
-/** Colores de cada armonía, en el orden del resultado (docs/05 §4). */
+/** Colors of each harmony, in result order (docs/05 §4). */
 export const ROTATIONS: Readonly<Record<RotationHarmony, readonly Rotation[]>> =
   {
     complementary: [
@@ -43,7 +43,7 @@ export const ROTATIONS: Readonly<Record<RotationHarmony, readonly Rotation[]>> =
       { role: "triad", degrees: 120 },
       { role: "triad", degrees: 240 },
     ],
-    // Cuadrado y tétrada rectangular, por parejas de opuestos.
+    // Square and rectangle, in pairs of opposites.
     square: [
       { role: "base", degrees: 0 },
       { role: "complement", degrees: 180 },
@@ -58,7 +58,7 @@ export const ROTATIONS: Readonly<Record<RotationHarmony, readonly Rotation[]>> =
     ],
   };
 
-/** Coloca un color girado: conserva las proporciones de la base. */
+/** Places a rotated color: it keeps the base's proportions. */
 export function placeRotation(
   base: WheelColor,
   model: Model,
