@@ -275,10 +275,11 @@ packages/color-wheel/src/
   scheme/    esquema de miniatura (§5.1-5.2)
   i18n/      idiomas en JSON y resolución del idioma (§6.8)
   ui/        componente, dibujo, controles y eventos (§6). El único que usa el DOM
+  errors.ts  ayudas comunes para los mensajes de error (§1)
   index.ts   API pública
 ```
 
-Dependencias entre módulos: `color` y `mixing` no dependen de nada del paquete; `harmony` depende de `color` y `mixing`; `scheme`, de `harmony`; `ui`, de todos. No se admiten ciclos. Como en el [ADR-0018](adr/0018-organizacion-codigo-patrones.md), la regla de que solo `ui` use el DOM la hacen cumplir las herramientas.
+Dependencias entre módulos: `errors.ts` no depende de nada y lo pueden usar todos; `color` y `mixing` no dependen de nada más del paquete; `harmony` depende de `color` y `mixing`; `scheme`, de `harmony`; `ui`, de todos. No se admiten ciclos. Como en el [ADR-0018](adr/0018-organizacion-codigo-patrones.md), la regla de que solo `ui` use el DOM la hacen cumplir las herramientas.
 
 ### 8.2. Compilación
 
