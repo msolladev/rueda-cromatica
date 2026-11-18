@@ -39,7 +39,7 @@ export interface Filters {
   readonly includeDiscontinued: boolean;
 }
 
-/** What is restored of the wheel (decision 6). */
+/** What is restored of the wheel (docs/07 §6). */
 export interface WheelPreferences {
   readonly color: string;
   readonly model: Model;
