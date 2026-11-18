@@ -1,7 +1,7 @@
 import type { Model } from "../color/model.ts";
 import { describeValue, isPlainObject } from "../errors.ts";
 import type { Harmony, Role } from "../harmony/harmony.ts";
-import type { Locale } from "../i18n/locales.ts";
+import { assertLocale, type Locale } from "../i18n/locales.ts";
 import { TEXTS } from "../i18n/texts.ts";
 import type { Light } from "../scheme/light.ts";
 import type { Control } from "./controls.ts";
@@ -119,6 +119,27 @@ export function mergeLabels(locale: Locale, labels: PartialLabels): Labels {
     control: { ...base.control, ...labels.control },
     wheel: { ...base.wheel, ...labels.wheel },
   };
+}
+
+/**
+ * The texts that the wheel uses in a locale, without creating a wheel: the
+ * names of the harmonies, roles, models and lights, and the rest of
+ * {@link Labels}. A page can use them to name the wheel's colors in its own
+ * content, for example when it renders on a server.
+ *
+ * @param locale - One of the included locales.
+ * @returns A new object with every text of the locale.
+ * @throws RangeError if `locale` is not an included locale.
+ *
+ * @example
+ * ```ts
+ * labelsFor("es").harmony.triad; // "Tríada"
+ * labelsFor("en").role.shadow; // "Shadow"
+ * ```
+ */
+export function labelsFor(locale: Locale): Labels {
+  assertLocale(locale);
+  return mergeLabels(locale, {});
 }
 
 /** Replaces each `{name}` of `template` with its value. */
