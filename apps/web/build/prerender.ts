@@ -81,39 +81,43 @@ export function prerender(options: PrerenderOptions): Plugin {
     },
 
     configureServer(server) {
-      return () => {
-        server.middlewares.use((request, response, next) => {
-          void (async () => {
-            const url = new URL(request.url ?? "/", "http://localhost");
-            const entry = (await server.ssrLoadModule(
-              `/${SERVER_ENTRY}`,
-            )) as ServerEntry;
-            const page = entry
-              .allPages()
-              .find((p) => entry.pathOf(p) === url.pathname);
-            if (page === undefined) {
-              next();
-              return;
-            }
-            const catalog: unknown = JSON.parse(
-              readFileSync(join(config.publicDir, "catalog.json"), "utf8"),
-            );
-            // In development the licenses are not collected: only the build
-            // knows what is shipped.
-            const render = entry.createRenderer({
-              catalog,
-              licenses: [],
-              origin: options.origin,
-            });
-            const template = await server.transformIndexHtml(
-              url.pathname,
-              readFileSync(join(config.root, "index.html"), "utf8"),
-            );
-            response.setHeader("Content-Type", "text/html; charset=utf-8");
-            response.end(fillTemplate(template, render(page), { csp: false }));
-          })().catch(next);
-        });
-      };
+      // Before Vite's own HTML middleware, which would serve index.html as is.
+      server.middlewares.use((request, response, next) => {
+        void (async () => {
+          const url = new URL(request.url ?? "/", "http://localhost");
+          // Pages end in `/`; anything else is an asset.
+          if (!url.pathname.endsWith("/")) {
+            next();
+            return;
+          }
+          const entry = (await server.ssrLoadModule(
+            `/${SERVER_ENTRY}`,
+          )) as ServerEntry;
+          const page = entry
+            .allPages()
+            .find((p) => entry.pathOf(p) === url.pathname);
+          if (page === undefined) {
+            next();
+            return;
+          }
+          const catalog: unknown = JSON.parse(
+            readFileSync(join(config.publicDir, "catalog.json"), "utf8"),
+          );
+          // In development the licenses are not collected: only the build
+          // knows what is shipped.
+          const render = entry.createRenderer({
+            catalog,
+            licenses: [],
+            origin: options.origin,
+          });
+          const template = await server.transformIndexHtml(
+            url.pathname,
+            readFileSync(join(config.root, "index.html"), "utf8"),
+          );
+          response.setHeader("Content-Type", "text/html; charset=utf-8");
+          response.end(fillTemplate(template, render(page), { csp: false }));
+        })().catch(next);
+      });
     },
 
     closeBundle: {
