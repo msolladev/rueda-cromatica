@@ -23,7 +23,20 @@ export function useServiceWorkerUpdate(): {
           setAvailable(true);
         },
       });
-      setApply(() => () => updateSW(true));
+      setApply(() => async () => {
+        // vite-plugin-pwa only reloads after updates it found itself in the
+        // first 200 ms; the browser usually finds them later, on navigation.
+        // The page reloads when the new version takes control, whoever
+        // found it.
+        navigator.serviceWorker.addEventListener(
+          "controllerchange",
+          () => {
+            location.reload();
+          },
+          { once: true },
+        );
+        await updateSW(true);
+      });
     });
     return () => {
       current = false;

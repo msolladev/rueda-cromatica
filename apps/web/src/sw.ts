@@ -4,6 +4,7 @@
  * version waits until the page asks it to take over (the «Update» button),
  * or until the app is opened again.
  */
+import { clientsClaim } from "workbox-core";
 import { cleanupOutdatedCaches, precacheAndRoute } from "workbox-precaching";
 
 declare const self: ServiceWorkerGlobalScope & {
@@ -13,6 +14,9 @@ declare const self: ServiceWorkerGlobalScope & {
 // `/es/` is served from the precached `/es/index.html`.
 precacheAndRoute(self.__WB_MANIFEST);
 cleanupOutdatedCaches();
+// The first version controls the open page at once, so it works offline
+// without reloading. Later versions wait for SKIP_WAITING.
+clientsClaim();
 
 self.addEventListener("message", (event) => {
   if ((event.data as { type?: unknown } | null)?.type === "SKIP_WAITING") {

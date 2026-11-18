@@ -20,14 +20,15 @@
     <!--app-theme-->
     <noscript>
       <style>
+        /* !important: the app's stylesheet loads after this. */
         .panel[data-inactive] {
-          display: block;
+          display: block !important;
         }
         .wheel-host,
         .tabs,
         .legend,
         .toolbar {
-          display: none;
+          display: none !important;
         }
       </style>
     </noscript>
