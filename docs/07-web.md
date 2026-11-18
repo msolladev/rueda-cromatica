@@ -15,12 +15,19 @@ Este documento especifica `apps/web`: la PWA que integra la rueda de `color-whee
   4. Una pestaña por color de la armonía, con su muestra y su papel. En el móvil se quedan fijas bajo la barra de navegación al desplazar. Se recorren con las flechas, Inicio y Fin (patrón `tablist`).
   5. La leyenda de la muestra partida (§2), una línea de texto sin recuadro.
   6. El panel del color elegido.
-- **Pinturas por marca**: 3, con un botón «Ver más» que añade 3 cada vez a esa marca. En «Las más parecidas», lo mismo con la lista conjunta. Lo pedido con «Ver más» se reinicia al cambiar de color, de vista o de filtros. Una marca sin candidatas dice «Sin pinturas con estos filtros», y sin ninguna marca elegida, el panel pide elegir una.
+- **Pinturas por marca**: 3, con un botón «Ver más» que añade 3 cada vez a esa marca, y «Ver menos», que vuelve a las 3 primeras. En «Las más parecidas», lo mismo con la lista conjunta. Lo pedido con «Ver más» se reinicia al cambiar de color, de vista o de filtros. Una marca sin candidatas dice «Sin pinturas con estos filtros», y sin ninguna marca elegida, el panel pide elegir una.
 - **Debajo**, las armonías explicadas, con el nombre que les da la rueda.
+- **Movimiento**, que responde a cada acción sin estorbar:
+  - El marco de la pestaña elegida se desliza hasta la nueva, su muestra crece un poco y la pestaña se hunde al pulsarla. El marco es un único elemento que un poco de JavaScript coloca midiendo la pestaña, para que funcione en todos los navegadores; sin JavaScript, la pestaña se marca sola. El marco se dibuja encima del borde, así que la pestaña no cambia de tamaño.
+  - Los selectores segmentados («Mostrar», el tema, y «Modelo» y «Luz» de la rueda): el fondo de la opción elegida es una pastilla que se desliza hasta la nueva. Se coloca igual que el marco de las pestañas, midiendo la opción con JavaScript, para que funcione en todos los navegadores.
+  - Al elegir otra pestaña, sus filas entran con un fundido corto y escalonado; las que añade «Ver más» entran una tras otra, y las que quita «Ver menos» salen antes de desaparecer. Las filas que cambian mientras se arrastra la rueda no se animan.
+  - Los desplegables (filtros, «Detalles» y los de créditos y errores) se abren animando su altura donde el navegador lo admite, y su flecha (`chevron-down` de Lucide) gira.
+  - Los botones se hunden al pulsarlos, y las filas se resaltan al pasar el ratón con una banda del mismo ancho que sus separadores.
+  - Sin movimiento si el sistema pide reducirlo (`prefers-reduced-motion`).
 
 ## 2. Cada pintura
 
-- **A primera vista**: la muestra partida, el nombre, la gama (con la marca delante en «Las más parecidas»), las fichas del tipo, «Metálica» y «Descatalogada» si lo es, y la etiqueta de calidad (docs/06 §3).
+- **A primera vista**: la muestra partida, el nombre, la gama (con la marca delante en «Las más parecidas»), las fichas del tipo, «Metálica» y «Descatalogada» si lo es, y la etiqueta de calidad (docs/06 §3), como una pastilla con un color por nivel (verde, verde claro, ámbar y gris), con contraste de al menos 6:1 en los dos temas. El texto siempre dice el nivel, así que no depende solo del color.
 - **En «Detalles»** (`<details>`): el código del fabricante, el ΔE con un decimal, el hex con su fuente y su origen («#3daf44, de SimoGecko (comunitario)»), que es la fuente breve del color que pide el [ADR-0015](adr/0015-fuentes-trazabilidad-licencias.md), y la razón de que el color sea aproximado (`colorApproximationReasons`) o «Exacto».
 - **Muestra partida**: arriba el color de la rueda y abajo el de la pintura, para compararlos sin mover la vista. Es decorativa: su información está en el texto.
 
@@ -72,7 +79,7 @@ En la fase 6 las preferencias pasarán a la cuenta del usuario ([ADR-0017](adr/0
 
 ## 7. Carga del catálogo y errores
 
-- **La rueda funciona desde el principio**; solo los resultados esperan al catálogo. Mientras se descarga, el panel muestra el ejemplo prerenderizado si nada ha cambiado, o «Cargando las pinturas…», anunciado a los lectores de pantalla.
+- **La rueda funciona desde el principio**; solo los resultados esperan al catálogo. Mientras se descarga, el panel muestra el ejemplo prerenderizado si nada ha cambiado, o unas filas grises con la forma de los resultados y un brillo que avanza, que se anuncian como «Cargando las pinturas…» a los lectores de pantalla.
 - **Si falla, el error ocupa el panel** y la rueda sigue funcionando. Nunca se usa un catálogo a medias (docs/02 §5).
 
 | Causa                                              | Mensaje                                                                                                                                                 | Acción            |
@@ -112,8 +119,9 @@ En la fase 6 las preferencias pasarán a la cuenta del usuario ([ADR-0017](adr/0
 
 - **Barra fija arriba**: el nombre a la izquierda, que lleva a la principal; a la derecha, el idioma y el tema. En pantallas estrechas, el idioma y el tema se recogen en un menú hamburguesa que se despliega bajo la barra, no modal, con `aria-expanded`, y se cierra con Esc. Admite más enlaces en el futuro.
 - **Tema**: un selector segmentado con tres iconos (sistema, claro y oscuro), con su nombre accesible y su texto al pasar el ratón. Lo aplica el atributo `data-theme` de `<html>`, y el CSS lo convierte en `color-scheme` para la web y en `--cw-color-scheme` para la rueda (docs/05 §6.6). Sin elección, el del sistema.
+- **Cambio de tema**: el tema nuevo crece en un círculo desde la opción pulsada y, dentro del círculo, se funde con el anterior (View Transitions). Sin soporte o con movimiento reducido, cambia al momento.
 - **Sin parpadeo**: cada página declara `<meta name="color-scheme" content="light dark">` antes de la hoja de estilos, para que el navegador no pinte en blanco mientras la carga, también al pasar de una página a otra. El script en línea (§6) aplica el tema guardado, en `data-theme` y en esa etiqueta, antes de pintar nada.
-- **Iconos**: `sun`, `moon`, `monitor`, `menu` y `x` de Lucide, copiados como en `color-wheel`, con su aviso de licencia.
+- **Iconos**: `sun`, `moon`, `monitor`, `menu` y `x` de Lucide, copiados como en `color-wheel`, con su aviso de licencia, y `chevron-down` en los desplegables, dibujado en el CSS como en la rueda (docs/05 §6.6).
 
 ## 12. Páginas y rutas
 
@@ -126,6 +134,7 @@ En la fase 6 las preferencias pasarán a la cuenta del usuario ([ADR-0017](adr/0
 - **El idioma va delante**, en minúsculas (`pt-BR` → `/pt-br/`). El nombre de la ruta de créditos es fijo, en inglés.
 - **`/`** lleva al idioma guardado o al detectado. Sin JavaScript, enlaza a los 10 idiomas.
 - **Enlaces normales**, sin router en el cliente: cada página es un HTML completo y, sin conexión, sale del precaché.
+- **Fundido entre páginas**, en todos los navegadores: al pulsar un enlace a otra página de la web, o al cambiar de idioma, el contenido se funde hacia fuera y entonces se navega. La página nueva entra con un fundido, que el script en línea del `<head>` marca antes de pintar, solo si se llega desde un enlace de la web: al abrirla o al volver atrás aparece sin más. La barra de navegación no se anima. Los enlaces con una tecla modificadora, a otro sitio o con destino propio funcionan como siempre. Sin movimiento si el sistema pide reducirlo.
 
 ## 13. Créditos y fuentes
 
@@ -137,7 +146,7 @@ En la fase 6 las preferencias pasarán a la cuenta del usuario ([ADR-0017](adr/0
 - **Node**: el reductor, las preferencias, las rutas, la cabecera, la carga del catálogo, la búsqueda, los textos de los 10 idiomas, la plantilla HTML con la CSP, el plugin de licencias y el prerenderizado de las 21 páginas.
 - **Navegador** (modo navegador de Vitest con Playwright): que el navegador toma el HTML prerenderizado sin diferencias, las pestañas con teclado, los filtros, «Ver más», la vista, el tema, el menú, las preferencias guardadas y el error de red, con axe-core (WCAG 2.2 A y AA) en varios estados.
 - **De extremo a extremo** (`@playwright/test`), en Chromium completo, no en la versión recortada para tests, que no pinta como un navegador real:
-  - sobre la web compilada: que se sirven todas las rutas en su idioma, el contenido sin JavaScript, que `/` va al idioma detectado, el selector de idioma, que el tema guardado se aplica antes de pintar y que la página declara `color-scheme` antes de la hoja de estilos, que nunca se ven los valores por defecto con preferencias guardadas (fotograma a fotograma), el funcionamiento sin conexión y el aviso de versión nueva;
+  - sobre la web compilada (en Chromium, y lo que no depende del service worker también en Firefox): que se sirven todas las rutas en su idioma, el fundido entre páginas, el contenido sin JavaScript, que `/` va al idioma detectado, el selector de idioma, que el tema guardado se aplica antes de pintar y que la página declara `color-scheme` antes de la hoja de estilos, que nunca se ven los valores por defecto con preferencias guardadas (fotograma a fotograma), el funcionamiento sin conexión y el aviso de versión nueva;
   - sobre el servidor de desarrollo: que cada página sale con sus estilos antes de que arranque el JavaScript, y que el navegador la toma sin errores.
 
 ## 15. Prototipos

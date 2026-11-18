@@ -166,6 +166,33 @@ describe("the home page", () => {
     });
   });
 
+  it("takes the added paints away with «See less»", async () => {
+    mount(ES);
+    await vi.waitFor(() => {
+      expect(activePanel().querySelectorAll(".paint")).toHaveLength(12);
+    });
+    const button = (name: string) => {
+      const found = [
+        ...activePanel().querySelectorAll<HTMLButtonElement>(".link-button"),
+      ].find((b) => b.textContent === name);
+      if (found === undefined) throw new Error(`Missing «${name}»`);
+      return found;
+    };
+    await userEvent.click(button("Ver más"));
+    await vi.waitFor(() => {
+      expect(activePanel().querySelectorAll(".paint")).toHaveLength(15);
+    });
+    await userEvent.click(button("Ver menos"));
+    await vi.waitFor(() => {
+      expect(activePanel().querySelectorAll(".paint")).toHaveLength(12);
+    });
+    expect(
+      [...activePanel().querySelectorAll(".link-button")].map(
+        (b) => b.textContent,
+      ),
+    ).not.toContain("Ver menos");
+  });
+
   it("shows the closest of all brands, each with its brand", async () => {
     mount(ES);
     await userEvent.click(
@@ -232,6 +259,35 @@ describe("the home page", () => {
     await userEvent.keyboard("{Escape}");
     expect(burger.getAttribute("aria-expanded")).toBe("false");
     expect(document.activeElement).toBe(burger);
+  });
+
+  it("shows rows with the shape of the results while the catalog arrives", async () => {
+    const { promise: pending, resolve: release } =
+      Promise.withResolvers<null>();
+    const real = window.fetch.bind(window);
+    vi.spyOn(window, "fetch").mockImplementation(async (...args) => {
+      await pending;
+      return real(...args);
+    });
+    mount(ES);
+    await vi.waitFor(() => {
+      expect(container.querySelector("canvas")).not.toBeNull();
+    });
+    // Something changed, so the prerendered example no longer applies.
+    await userEvent.click(query(".filters summary", HTMLElement));
+    await userEvent.click(
+      query(".filters input[type=checkbox]", HTMLInputElement),
+    );
+    const skeleton = query(
+      '[role="tabpanel"]:not([hidden]) .skeleton',
+      HTMLElement,
+    );
+    expect(skeleton.getAttribute("role")).toBe("status");
+    expect(skeleton.textContent).toBe("Cargando las pinturas…");
+    release(null);
+    await vi.waitFor(() => {
+      expect(activePanel().querySelector(".skeleton")).toBeNull();
+    });
   });
 
   it("says why there are no paints when the catalog cannot be downloaded", async () => {

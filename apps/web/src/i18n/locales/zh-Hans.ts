@@ -55,6 +55,7 @@ export const zhHans: Messages = {
     legendPaint: "下方是颜料的颜色",
     legendEnd: "，便于比较。",
     seeMore: "查看更多",
+    seeLess: "收起",
     noPaints: "没有符合这些筛选条件的颜料。",
     noBrands: "请在筛选中至少选择一个品牌。",
     loading: "正在加载颜料…",

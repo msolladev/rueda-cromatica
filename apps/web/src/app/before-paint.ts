@@ -12,3 +12,11 @@ export const STORAGE_KEY = "rueda-cromatica.preferences.v1";
  * prerendered page are never seen.
  */
 export const RESTORING = "restoring";
+
+/**
+ * The `sessionStorage` key that says the page was reached through a link of
+ * the app, so that it enters with a fade (docs/07 §12); and the `<html>`
+ * data attribute that the inline script sets for it.
+ */
+export const ARRIVING_KEY = "rueda-cromatica.arriving";
+export const ARRIVING = "arriving";

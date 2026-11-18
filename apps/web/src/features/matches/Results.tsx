@@ -4,6 +4,7 @@
  * legend of the split swatch and the panel of the selected color.
  */
 import type { Labels, Role } from "@chromatic-wheel/color-wheel";
+import { DEFAULT_LIMIT } from "@chromatic-wheel/domain";
 import { useRef, type KeyboardEvent, type ReactNode } from "react";
 import {
   OVERALL,
@@ -13,8 +14,15 @@ import {
 } from "../../app/state.ts";
 import type { CatalogLoadError } from "../../catalog/load.ts";
 import { CatalogError } from "../../catalog/CatalogError.tsx";
+import { useSlidingIndicator } from "../../app/sliding-indicator.ts";
 import { format } from "../../i18n/i18n.ts";
 import type { Messages } from "../../i18n/messages.ts";
+import {
+  entranceIndex,
+  isLeaving,
+  useEntrance,
+  type Entrance,
+} from "./entrance.ts";
 import { Filters, type BrandOption } from "./Filters.tsx";
 import { PaintRow } from "./PaintRow.tsx";
 import type { ColorResults, PaintView } from "./search.ts";
@@ -65,6 +73,30 @@ export function Results(props: ResultsProps) {
   const active = panels[tab];
   const shown =
     active?.kind === "results" ? shownPaints(active.results, view) : [];
+  const { entrance, start, leave } = useEntrance();
+  const viewOptions = useRef<HTMLDivElement>(null);
+  useSlidingIndicator(viewOptions, "label:has(input:checked)", view);
+  // Picking a tab or «See more» makes rows enter; the rest goes as is.
+  const act = (action: Action) => {
+    if (action.type === "select-tab" && action.index !== tab) {
+      start({ kind: "panel" });
+    } else if (action.type === "show-more" && active?.kind === "results") {
+      const from =
+        action.key === OVERALL
+          ? active.results.overall.length
+          : (active.results.byBrand.find((b) => b.brandId === action.key)
+              ?.paints.length ?? 0);
+      start({ kind: "more", key: action.key, from });
+    } else if (action.type === "show-less") {
+      // The added rows leave first; then they are removed.
+      leave(action.key, DEFAULT_LIMIT, () => {
+        dispatch(action);
+      });
+      return;
+    }
+    dispatch(action);
+  };
+  const withEntrance = { ...props, dispatch: act };
   const approximate = shown.filter((paint) => paint.reasons.length > 0).length;
   // docs/07 §3: a general notice if all are approximate; if they are mixed,
   // the notice explains the chip and only the approximate ones carry it.
@@ -75,7 +107,7 @@ export function Results(props: ResultsProps) {
       <div className="toolbar">
         <fieldset className="segmented">
           <legend>{m.results.show}</legend>
-          <div className="segmented-options">
+          <div className="segmented-options" ref={viewOptions}>
             {(
               [
                 ["by-brand", m.results.byBrand],
@@ -113,7 +145,7 @@ export function Results(props: ResultsProps) {
           </span>
         </p>
       )}
-      <ColorTabs {...props} />
+      <ColorTabs {...withEntrance} />
       <p className="legend">
         <span className="split split-mini" aria-hidden="true">
           <span style={{ background: colors[tab]?.hex }} />
@@ -149,7 +181,8 @@ export function Results(props: ResultsProps) {
               {props.wheelLabels.role[color.role]} <code>{color.hex}</code>
             </h3>
             <PanelBody
-              {...props}
+              {...withEntrance}
+              entrance={index === tab ? entrance : null}
               panel={panel}
               target={color.hex}
               mixed={mixed}
@@ -169,6 +202,11 @@ function ColorTabs({
   wheelLabels,
 }: ResultsProps) {
   const list = useRef<HTMLDivElement>(null);
+  useSlidingIndicator(
+    list,
+    '[aria-selected="true"]',
+    `${String(tab)}/${String(colors.length)}`,
+  );
   const select = (index: number) => {
     dispatch({ type: "select-tab", index });
     list.current
@@ -234,20 +272,42 @@ function ColorTabs({
 
 interface PanelBodyProps extends ResultsProps {
   readonly panel: PanelContent;
+  readonly entrance: Entrance | null;
   readonly target: string;
   readonly mixed: boolean;
 }
 
 function PanelBody(props: PanelBodyProps): ReactNode {
-  const { panel, view, dispatch, messages: m, target, mixed, locale } = props;
+  const {
+    panel,
+    view,
+    dispatch,
+    messages: m,
+    target,
+    mixed,
+    locale,
+    entrance,
+  } = props;
   switch (panel.kind) {
     case "empty":
       return null;
     case "loading":
+      // Rows with the shape of the results while the catalog arrives; the
+      // text is for screen readers.
       return (
-        <p className="loading" role="status">
-          {m.results.loading}
-        </p>
+        <div className="skeleton" role="status">
+          <span className="visually-hidden">{m.results.loading}</span>
+          {[0, 1, 2].map((row) => (
+            <div className="skeleton-row" key={row} aria-hidden="true">
+              <span className="skeleton-block skeleton-swatch" />
+              <span className="skeleton-lines">
+                <span className="skeleton-block" />
+                <span className="skeleton-block skeleton-short" />
+              </span>
+              <span className="skeleton-block skeleton-label" />
+            </div>
+          ))}
+        </div>
       );
     case "error":
       return (
@@ -262,9 +322,16 @@ function PanelBody(props: PanelBodyProps): ReactNode {
       break;
   }
   const { results } = panel;
-  const row = (paint: PaintView, showBrand: boolean) => (
+  const row = (
+    paint: PaintView,
+    showBrand: boolean,
+    key: string,
+    index: number,
+  ) => (
     <PaintRow
       key={paint.id}
+      enter={entranceIndex(entrance, key, index)}
+      leaving={isLeaving(entrance, key, index)}
       paint={paint}
       target={target}
       showBrand={showBrand}
@@ -273,17 +340,34 @@ function PanelBody(props: PanelBodyProps): ReactNode {
       locale={locale}
     />
   );
-  const more = (key: string) => (
-    <button
-      type="button"
-      className="link-button"
-      onClick={() => {
-        dispatch({ type: "show-more", key });
-      }}
-    >
-      {m.results.seeMore}
-    </button>
-  );
+  // «See more» while there are more, and «See less» once it showed more.
+  const moreOrLess = (key: string, hasMore: boolean, shown: number) =>
+    hasMore || shown > DEFAULT_LIMIT ? (
+      <div className="more-less">
+        {hasMore && (
+          <button
+            type="button"
+            className="link-button"
+            onClick={() => {
+              dispatch({ type: "show-more", key });
+            }}
+          >
+            {m.results.seeMore}
+          </button>
+        )}
+        {shown > DEFAULT_LIMIT && (
+          <button
+            type="button"
+            className="link-button"
+            onClick={() => {
+              dispatch({ type: "show-less", key });
+            }}
+          >
+            {m.results.seeLess}
+          </button>
+        )}
+      </div>
+    ) : null;
   if (results.byBrand.length === 0) {
     return <p className="empty">{m.results.noBrands}</p>;
   }
@@ -291,9 +375,9 @@ function PanelBody(props: PanelBodyProps): ReactNode {
     return (
       <div className="brand-group">
         <ol className="paints">
-          {results.overall.map((paint) => row(paint, true))}
+          {results.overall.map((paint, i) => row(paint, true, OVERALL, i))}
         </ol>
-        {results.overallHasMore && more(OVERALL)}
+        {moreOrLess(OVERALL, results.overallHasMore, results.overall.length)}
       </div>
     );
   }
@@ -306,10 +390,12 @@ function PanelBody(props: PanelBodyProps): ReactNode {
             <p className="empty">{m.results.noPaints}</p>
           ) : (
             <ol className="paints">
-              {brand.paints.map((paint) => row(paint, false))}
+              {brand.paints.map((paint, i) =>
+                row(paint, false, brand.brandId, i),
+              )}
             </ol>
           )}
-          {brand.hasMore && more(brand.brandId)}
+          {moreOrLess(brand.brandId, brand.hasMore, brand.paints.length)}
         </div>
       ))}
     </div>

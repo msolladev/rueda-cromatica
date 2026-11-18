@@ -77,6 +77,17 @@ describe("reduce", () => {
     expect(limitOf(state, "citadel")).toBe(3);
   });
 
+  it("goes back to the first three of a key with «See less»", () => {
+    const state = run(
+      { type: "show-more", key: "vallejo" },
+      { type: "show-more", key: OVERALL },
+      { type: "show-less", key: "vallejo" },
+    );
+    expect(limitOf(state, "vallejo")).toBe(3);
+    expect(limitOf(state, OVERALL)).toBe(6);
+    expect(reduce(state, { type: "show-less", key: OVERALL }).more).toEqual({});
+  });
+
   it("resets «See more» when the tab or the view changes", () => {
     const more = run({ type: "show-more", key: "vallejo" });
     expect(reduce(more, { type: "select-tab", index: 2 }).more).toEqual({});

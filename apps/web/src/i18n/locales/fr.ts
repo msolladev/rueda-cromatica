@@ -61,6 +61,7 @@ export const fr: Messages = {
     legendPaint: "en bas celle de la peinture",
     legendEnd: ", pour les comparer.",
     seeMore: "Voir plus",
+    seeLess: "Voir moins",
     noPaints: "Aucune peinture avec ces filtres.",
     noBrands: "Choisissez au moins une marque dans les filtres.",
     loading: "Chargement des peintures…",
