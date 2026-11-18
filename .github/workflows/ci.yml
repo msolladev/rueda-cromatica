@@ -31,8 +31,9 @@ jobs:
       # API reference (ADR-0023): fails on any TypeDoc warning. Nothing is published.
       - run: pnpm docs:api
 
-      # Chromium for the Vitest browser project of color-wheel (ADR-0020), cached
-      # per Playwright version. The system libraries it needs are not cached and
+      # Chromium for the Vitest browser projects of color-wheel (ADR-0020) and
+      # web, and for the end-to-end tests of web (ADR-0024), cached per
+      # Playwright version (the same in every package). The system libraries it needs are not cached and
       # are always installed.
       - id: playwright
         run: echo "version=$(pnpm --filter @chromatic-wheel/color-wheel exec playwright --version | cut -d' ' -f2)" >> "$GITHUB_OUTPUT"
@@ -50,3 +51,6 @@ jobs:
       # Step 4 (ADR-0011): regenerates catalog.json and fails if it differs from the committed one.
       - run: pnpm --filter @chromatic-wheel/catalog-builder build-catalog --check
       - run: pnpm build
+      # End-to-end tests of the built web (ADR-0024): routes, content without
+      # JavaScript, offline and the new-version notice.
+      - run: pnpm --filter @chromatic-wheel/web test:e2e
