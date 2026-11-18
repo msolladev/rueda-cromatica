@@ -77,7 +77,9 @@ function segmented(parent: HTMLElement) {
 
 function select(parent: HTMLElement, id: string) {
   const { field: container, label } = field(parent, id);
-  const control = element("select", "cw-select", container);
+  // The box draws the chevron next to the select (style.css).
+  const box = element("span", "cw-select-box", container);
+  const control = element("select", "cw-select", box);
   control.id = id;
   return { field: container, label, select: control };
 }
@@ -261,4 +263,27 @@ export function setRadios(
     );
   }
   for (const input of inputs()) input.checked = input.value === value;
+  placeIndicator(container);
+}
+
+/**
+ * Places the pill of a segmented control under its checked option (docs/05
+ * §6.3): writes its measured place on `--cw-indicator-*` and marks the
+ * control with `data-indicator`, and the CSS slides a single pill there with
+ * a transition, in every browser. A hidden control measures nothing and keeps
+ * its last place until it is shown and measured again.
+ */
+export function placeIndicator(container: HTMLElement): void {
+  const checked = container.querySelector("input:checked")?.parentElement;
+  if (!(checked instanceof HTMLElement) || checked.offsetWidth === 0) return;
+  const place = {
+    x: checked.offsetLeft,
+    y: checked.offsetTop,
+    w: checked.offsetWidth,
+    h: checked.offsetHeight,
+  };
+  for (const [name, size] of Object.entries(place)) {
+    container.style.setProperty(`--cw-indicator-${name}`, `${String(size)}px`);
+  }
+  container.dataset["indicator"] = "";
 }

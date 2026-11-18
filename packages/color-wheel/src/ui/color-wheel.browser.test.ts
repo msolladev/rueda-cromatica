@@ -593,6 +593,88 @@ describe("drawing", () => {
   });
 });
 
+describe("segmented pill", () => {
+  const pill = (segmented: HTMLElement) => {
+    const style = getComputedStyle(segmented, "::before");
+    return {
+      x: parseFloat(style.translate) || 0,
+      width: parseFloat(style.width),
+    };
+  };
+
+  it("slides to the checked option and ends exactly on it", async () => {
+    container.style.width = "400px";
+    create({ color: "#3daf44", model: "ryb" });
+    const segmented = query(".cw-segmented", HTMLElement);
+    expect(segmented.hasAttribute("data-indicator")).toBe(true);
+    const [ryb, digital] = [...segmented.querySelectorAll("label")];
+    if (ryb === undefined || digital === undefined) {
+      throw new Error("Missing an option");
+    }
+    expect(pill(segmented)).toEqual({
+      x: ryb.offsetLeft,
+      width: ryb.offsetWidth,
+    });
+    await userEvent.click(digital);
+    await new Promise((resolve) => setTimeout(resolve, 80));
+    const halfway = pill(segmented).x;
+    expect(halfway).toBeGreaterThan(ryb.offsetLeft);
+    expect(halfway).toBeLessThan(digital.offsetLeft);
+    await new Promise((resolve) => setTimeout(resolve, 400));
+    expect(pill(segmented)).toEqual({
+      x: digital.offsetLeft,
+      width: digital.offsetWidth,
+    });
+  });
+});
+
+describe("template motion", () => {
+  const pixels = (wheel: Element) =>
+    wheel.querySelector("canvas")?.toDataURL() ?? "";
+
+  async function drawnAs(options: Partial<ColorWheelOptions>) {
+    const other = document.createElement("div");
+    other.style.width = "400px";
+    document.body.append(other);
+    const reference = new ColorWheel(other, { color: "#3daf44", ...options });
+    await new Promise((resolve) => requestAnimationFrame(resolve));
+    const url = pixels(other);
+    reference.destroy();
+    other.remove();
+    return url;
+  }
+
+  it("moves the marks to a new harmony and ends exactly on it", async () => {
+    container.style.width = "400px";
+    const created = create({ color: "#3daf44", harmony: "triad" });
+    await new Promise((resolve) => requestAnimationFrame(resolve));
+    created.harmony = "complementary";
+    await new Promise((resolve) => setTimeout(resolve, 100));
+    const final = await drawnAs({ harmony: "complementary" });
+    // Halfway, the marks are still travelling.
+    expect(pixels(container)).not.toBe(final);
+    await new Promise((resolve) => setTimeout(resolve, 500));
+    expect(pixels(container)).toBe(final);
+  });
+
+  it("jumps at once when the system asks to reduce motion", async () => {
+    await cdp().send("Emulation.setEmulatedMedia", {
+      features: [{ name: "prefers-reduced-motion", value: "reduce" }],
+    });
+    try {
+      container.style.width = "400px";
+      const created = create({ color: "#3daf44", harmony: "triad" });
+      await new Promise((resolve) => requestAnimationFrame(resolve));
+      created.harmony = "complementary";
+      expect(pixels(container)).toBe(
+        await drawnAs({ harmony: "complementary" }),
+      );
+    } finally {
+      await cdp().send("Emulation.setEmulatedMedia", { features: [] });
+    }
+  });
+});
+
 describe("destroy", () => {
   it("removes the wheel and makes any later call an error", () => {
     const created = create();

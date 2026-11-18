@@ -5,7 +5,6 @@ import { pureColor } from "../color/convert.ts";
 import type { Model } from "../color/model.ts";
 import { formatHexColor } from "../color/rgb.ts";
 import type { WheelColor } from "../color/wheel-color.ts";
-import type { PlacedColor } from "../harmony/harmony.ts";
 import {
   MARK_RADIUS,
   pointAt,
@@ -22,7 +21,11 @@ export const WHEEL_SCALE = 0.94;
 export interface DrawInput {
   readonly model: Model;
   readonly position: WheelColor;
-  readonly colors: readonly PlacedColor[];
+  /**
+   * The hue of each mark of the template, the base first. While the
+   * template moves it can have more marks than colors (docs/05 §6.2).
+   */
+  readonly template: readonly number[];
   /** The part with visible keyboard focus, if any. */
   readonly focus: Zone | undefined;
   readonly focusColor: string;
@@ -49,7 +52,7 @@ export function drawWheel(
 
   drawRing(context, input.model);
   drawTriangle(context, input.model, input.position.hue);
-  drawTemplate(context, input.colors, px);
+  drawTemplate(context, input.template, px);
   drawBase(context, input.position, px);
   if (input.focus === "ring") {
     circle(context, { x: 0, y: 0 }, 1 + 3 * px);
@@ -127,16 +130,14 @@ function vertexGradient(
 /** Lines from the center to a mark on the ring for each color. */
 function drawTemplate(
   context: CanvasRenderingContext2D,
-  colors: readonly PlacedColor[],
+  template: readonly number[],
   px: number,
 ): void {
   // The base last, so that it stays on top.
-  const ordered = [...colors.slice(1)].reverse();
-  const base = colors[0];
-  if (base !== undefined) ordered.push(base);
-  for (const color of ordered) {
-    const isBase = color === base;
-    const mark = pointAt(color.position.hue, MARK_RADIUS);
+  const ordered = template.map((hue, index) => ({ hue, isBase: index === 0 }));
+  ordered.push(...ordered.splice(0, 1));
+  for (const { hue, isBase } of ordered) {
+    const mark = pointAt(hue, MARK_RADIUS);
     context.setLineDash(isBase ? [] : [6 * px, 5 * px]);
     context.beginPath();
     context.moveTo(0, 0);
