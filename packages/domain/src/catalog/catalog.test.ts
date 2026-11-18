@@ -32,6 +32,13 @@ describe("Catalog", () => {
     expect(catalog.paint(paintId("acme/core/missing"))).toBeUndefined();
   });
 
+  it("lists the sources in catalog order", () => {
+    expect(ids(catalog.sources())).toEqual([
+      "acme-conversion-chart",
+      "community-hex",
+    ]);
+  });
+
   it("lists brands and the ranges of a brand", () => {
     expect(ids(catalog.brands())).toEqual(["acme", "globex"]);
     expect(ids(catalog.rangesOf(brandId("acme")))).toEqual([
