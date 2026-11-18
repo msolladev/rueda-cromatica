@@ -23,6 +23,7 @@ La especificación está en [docs/06](../06-pinturas-parecidas.md).
 - **Orden**: ΔE redondeado a 2 decimales y, en los empates, el ID de la pintura.
 - **El color aproximado no cambia el orden**: solo lleva el aviso.
 - **El tipo de pintura es un filtro**, que elige el usuario. Por defecto, solo las opacas (base, layer, standard y dry) y no metálicas.
+- **Las descatalogadas también son un filtro del usuario**, desactivado por defecto. El índice las incluye.
 - **Índice propio en `matching`**: `buildPaintIndex` convierte una vez el color de cada pintura a CIELAB. Lo construye la web al cargar el catálogo.
 
 ## Alternativas descartadas
@@ -36,6 +37,7 @@ La especificación está en [docs/06](../06-pinturas-parecidas.md).
 - **Poner detrás las pinturas aproximadas, o penalizar su ΔE**: hoy no cambia nada, porque todas lo son. Con colores medidos, una pintura medida lejana pasaría delante de una comunitaria casi idéntica, y la penalización no tiene fuente.
 - **Ordenar por tipo en lugar de filtrar**: una opaca lejana iría delante de un contrast casi idéntico.
 - **Filtro de tipos fijo en el dominio**: quien pinta con Contrast no podría elegirlos.
+- **Excluir siempre las descatalogadas**: quien todavía las tiene no podría buscarlas.
 - **Precalcular el color dentro del agregado `Catalog`**: `catalog` dependería de la conversión de color, al revés de lo que fija el ADR-0018 (`matching` depende de `catalog`).
 - **No precalcular**: las 6 búsquedas tardaban 6,7 ms en escritorio, frente a 1,8 ms con el índice. Es mucho margen de los 16 ms de un fotograma si la web actualiza los resultados mientras se arrastra.
 
@@ -43,5 +45,5 @@ La especificación está en [docs/06](../06-pinturas-parecidas.md).
 
 - `domain` depende de culori, con la versión del `catalog:` del workspace.
 - docs/01 §4 deja de definir `CalculatedMatch` y remite a docs/06.
-- La etapa 5 incluye el selector de vista y el filtro de tipos, además del de marcas.
+- La etapa 5 incluye el selector de vista y los filtros de tipos y de descatalogadas, además del de marcas.
 - Cuando haya colores medidos (fase 5), conviene revisar las etiquetas y el trato de los aproximados con datos reales.

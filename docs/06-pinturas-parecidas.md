@@ -64,8 +64,8 @@ Ejemplos con datos reales:
 function buildPaintIndex(catalog: Catalog): PaintIndex;
 ```
 
-- **Contenido**: las pinturas activas con color, agrupadas por marca en el orden del catálogo y, dentro de cada marca, por ID. Cada una lleva su color ya convertido a CIELAB.
-- **Excluye**: las pinturas sin color (docs/01 §3) y las descatalogadas.
+- **Contenido**: todas las pinturas con color, también las descatalogadas, que filtra la búsqueda (§6.1), agrupadas por marca en el orden del catálogo y, dentro de cada marca, por ID. Cada una lleva su color ya convertido a CIELAB.
+- **Excluye**: las pinturas sin color (docs/01 §3).
 - **Una vez por catálogo**: la web lo construye al cargar `catalog.json` y lo reutiliza en cada búsqueda.
 - `PaintIndex` es opaco: solo lo leen las funciones de este módulo.
 
@@ -84,6 +84,7 @@ interface MatchOptions {
   readonly brandIds: readonly BrandId[] | "all";
   readonly paintTypes?: readonly PaintType[]; // por defecto, DEFAULT_PAINT_TYPES
   readonly includeMetallic?: boolean; // por defecto, false
+  readonly includeDiscontinued?: boolean; // por defecto, false
   readonly limit?: number; // por marca; por defecto, DEFAULT_LIMIT
 }
 
@@ -128,6 +129,7 @@ Los resultados están congelados (`Object.freeze`).
 - **Color**: `#rrggbb`, en mayúsculas o minúsculas, como los que da la rueda (docs/05 §6.7). Otro formato es un `invalid-color`.
 - **Marcas**: `brandIds` con las marcas activas, en cualquier orden y con repeticiones; el resultado sigue el orden del catálogo. Un ID que no está en el catálogo se ignora, como en `Catalog.paints()`. `"all"` busca en todas.
 - **Candidatas**: las pinturas cuyo tipo está en `paintTypes` y, si `includeMetallic` es `false`, que no son metálicas. Por defecto, solo las opacas no metálicas: son las que se aplican como el color plano de la rueda. Los contrast, lavados, tintas, veladuras, technical y metálicas se añaden a petición.
+- **Descatalogadas**: solo si `includeDiscontinued` es `true`. Por defecto no, porque ya no se pueden comprar, pero quien las tenga puede pedirlas.
 - **Por marca**: las `limit` primeras candidatas en el orden de §4. Una marca seleccionada sin candidatas sigue en el resultado, con `matches` vacío, para que la interfaz lo pueda decir.
 - **`limit`**: entero positivo. 0, un negativo, un decimal, `NaN` o `Infinity` son un `invalid-limit`.
 
@@ -158,6 +160,7 @@ Comparando los hex sin el índice, las 6 búsquedas tardaban 6,7 ms. No hay medi
 - La web construye el índice al cargar el catálogo y busca con el `result` de los eventos de la rueda (docs/05 §6.6).
 - **Marcas**: el usuario elige cuáles ver. Por defecto, todas.
 - **Tipos de pintura**: el usuario puede añadir tipos y metálicas al filtro por defecto.
+- **Descatalogadas**: el usuario elige si se incluyen. Por defecto, no.
 - **Vista**: el usuario elige entre ver los resultados por marca (`byBrand`) o las más parecidas sin distinguir marca (`rankOverall`). Propuesta de textos: un control «Mostrar» con «Por marca» y «Las más parecidas».
 - **Tipo de cada pintura**: cada resultado muestra su tipo y si es metálica.
 - **Aviso de aproximado**: mientras todos los hex sean comunitarios, todos los resultados son aproximados. Además del aviso en cada resultado, hará falta probablemente un aviso general.

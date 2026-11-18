@@ -33,8 +33,8 @@ export interface PaintIndex {
 }
 
 /**
- * Indexes the active paints that have a colour. Paints without colour never
- * reach a search (docs/01 §3), and discontinued ones are not offered.
+ * Indexes every paint that has a colour, discontinued ones included: the
+ * search filters them. Paints without colour never reach a search (docs/01 §3).
  */
 export function buildPaintIndex(catalog: Catalog): PaintIndex {
   const brands = catalog.brands().map((brand): BrandEntries =>
@@ -42,7 +42,7 @@ export function buildPaintIndex(catalog: Catalog): PaintIndex {
       brand,
       paints: Object.freeze(
         catalog
-          .paints({ brandIds: [brand.id], includeDiscontinued: false })
+          .paints({ brandIds: [brand.id], includeDiscontinued: true })
           .flatMap((paint) => {
             if (paint.color === null) return [];
             return [
