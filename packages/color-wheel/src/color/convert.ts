@@ -15,8 +15,16 @@ export function pureColor(hue: number, model: Model): Rgb {
 }
 
 /**
- * Converts a hex to the model's wheel (docs/05 §3). Colors without hue (pure
- * whites, grays and blacks) keep `previousHue`, the hue the wheel had.
+ * Converts a hex to the model's wheel. In RYB, a hex that the triangle cannot
+ * reach, such as an intense cyan, becomes the closest color it reaches.
+ *
+ * @param hex - `#rgb` or `#rrggbb`.
+ * @param model - The model of the wheel.
+ * @param previousHue - The hue that colors without hue (pure whites, grays
+ *   and blacks) keep, usually the hue the wheel had. In [0, 360).
+ * @throws TypeError if `hex` is not a string or `previousHue` is not a finite
+ *   number.
+ * @throws RangeError if `hex`, `model` or `previousHue` are not valid.
  */
 export function toWheelColor(
   hex: string,
@@ -33,7 +41,13 @@ export function toWheelColor(
 
 /**
  * Converts a wheel color to hex: the weighted sum, in sRGB, of the pure color,
- * white and black (docs/05 §2).
+ * white and black.
+ *
+ * @returns The color, as `#rrggbb` in lowercase.
+ * @throws TypeError if `color` is not an object or a value is not a finite
+ *   number.
+ * @throws RangeError if `hue` is not in [0, 360), a proportion is not in
+ *   [0, 1], the proportions do not add up to 1, or `model` is not valid.
  */
 export function fromWheelColor(color: WheelColor, model: Model): string {
   assertWheelColor(color);

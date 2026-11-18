@@ -14,8 +14,11 @@ import type {
   SourceId,
 } from "./schema.ts";
 
+/** A problem found in a catalog. */
 export interface CatalogIssue {
+  /** Where, such as `paints[12].status`. Empty for the whole document. */
   readonly path: string;
+  /** What is wrong, in English. */
   readonly message: string;
 }
 
@@ -194,10 +197,18 @@ function indexUnique<T extends Identified>(
 // The single definition of the order: the check below and whoever sorts a
 // catalog (tests now, the builder later) use these.
 
+/**
+ * The sort key of an entity in the catalog: its ID. For
+ * {@link compareSortKeys}.
+ */
 export const idSortKey = (item: { readonly id: string }): readonly string[] => [
   item.id,
 ];
 
+/**
+ * The sort key of an official equivalence: origin, destination and source.
+ * For {@link compareSortKeys}.
+ */
 export const edgeSortKey = (edge: {
   readonly from: string;
   readonly to: string;

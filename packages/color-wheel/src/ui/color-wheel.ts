@@ -35,27 +35,48 @@ import {
 } from "./options.ts";
 import { attachPointer } from "./pointer.ts";
 
-/** Who caused a change: the person using the wheel or the code. */
+/**
+ * Who caused a change: `"user"`, the person using the wheel (dragging, keys or
+ * the controls), or `"api"`, the code (properties and methods). It lets a page
+ * ignore the events caused by its own changes and avoid a loop.
+ */
 export type ChangeSource = "user" | "api";
 
+/** The `detail` of the `input` and `change` events. */
 export interface ColorWheelEventDetail {
+  /** The colors after the change, as {@link ColorWheel.getResult} returns them. */
   readonly result: Result;
+  /** The state after the change, as {@link ColorWheel.getState} returns it. */
   readonly state: ColorWheelState;
+  /** Who caused the change. */
   readonly source: ChangeSource;
 }
 
+/** The event that the wheel emits, with its {@link ColorWheelEventDetail}. */
 export type ColorWheelEvent = CustomEvent<ColorWheelEventDetail>;
 
+/** The events of the wheel, by name. */
 export interface ColorWheelEventMap {
-  /** Continuously while the user drags on the ring or the triangle. */
+  /**
+   * Emitted continuously while the user drags on the ring or the triangle.
+   * Its `source` is always `"user"`.
+   */
   readonly input: ColorWheelEvent;
-  /** When a drag ends, and with every other change. */
+  /**
+   * Emitted when a drag ends, and with every other change: keys, controls,
+   * properties and methods. Only when the state or the result changes, and
+   * never while the wheel is being created.
+   */
   readonly change: ColorWheelEvent;
 }
 
-type ColorWheelListener<K extends keyof ColorWheelEventMap> =
+/** A listener of one of the wheel's events: a function or an object. */
+export type ColorWheelListener<K extends keyof ColorWheelEventMap> =
   | ((event: ColorWheelEventMap[K]) => void)
-  | { handleEvent: (event: ColorWheelEventMap[K]) => void };
+  | {
+      /** Called with each event, as with a listener function. */
+      handleEvent: (event: ColorWheelEventMap[K]) => void;
+    };
 
 /** The properties, without the color: what the wheel computes with. */
 interface Config {
@@ -71,15 +92,42 @@ interface Config {
 const FALLBACK_FOCUS_COLOR = "#1a5fd0";
 
 /**
- * The color wheel component (docs/05 §6). It is created on a container,
- * draws the wheel and its controls inside it, and emits `input` and `change`.
+ * The color wheel component. It is created on a container, draws the wheel
+ * and its controls inside it, and emits `input` and `change`
+ * ({@link ColorWheelEventMap}).
+ *
+ * Every property can be read and assigned. Assigning one validates it and is
+ * the same as calling {@link ColorWheel.update} with it. An invalid value
+ * throws and changes nothing, and a value equal to the current one does not
+ * emit `change`.
+ *
+ * After {@link ColorWheel.destroy}, every property and method throws an
+ * `Error`.
+ *
+ * @example
+ * ```ts
+ * const wheel = new ColorWheel(document.querySelector("#wheel")!, {
+ *   color: "#3daf44",
+ *   harmony: "miniature-scheme",
+ * });
+ * wheel.addEventListener("change", (event) => {
+ *   for (const { role, hex } of event.detail.result.colors) {
+ *     console.log(role, hex);
+ *   }
+ * });
+ * ```
  */
 export class ColorWheel extends EventTarget {
-  /** The included locales. */
+  /** The included locales, the same as {@link LOCALES}. */
   static readonly locales: readonly Locale[] = LOCALES;
-  /** The calculations without the component (docs/05 §7). */
+  /**
+   * {@link compute}, for the `<script src>` file, where the global
+   * `ColorWheel` is the only export.
+   */
   static readonly compute = compute;
+  /** {@link toWheelColor}, for the `<script src>` file. */
   static readonly toWheelColor = toWheelColor;
+  /** {@link fromWheelColor}, for the `<script src>` file. */
   static readonly fromWheelColor = fromWheelColor;
 
   #config: Config;
@@ -97,6 +145,20 @@ export class ColorWheel extends EventTarget {
   readonly #abort = new AbortController();
   readonly #observer: ResizeObserver;
 
+  /**
+   * Creates the wheel and appends it to `container`. It does not emit
+   * `change`.
+   *
+   * @param container - The element the wheel is drawn in. The wheel takes its
+   *   width, up to `--cw-max-size`.
+   * @param options - The initial properties and state of the controls. Only
+   *   `color` is required.
+   * @throws TypeError if `container` is not an HTML element, `options` is not
+   *   an object, it has an unknown key, `color` is missing or a value has the
+   *   wrong type.
+   * @throws RangeError if a value is not valid, a list is empty or repeats a
+   *   value, or `model` or `harmony` are not in `models` or `harmonies`.
+   */
   constructor(container: HTMLElement, options: ColorWheelOptions) {
     super();
     if (!(container instanceof HTMLElement)) {
@@ -144,79 +206,169 @@ export class ColorWheel extends EventTarget {
     this.#resize();
   }
 
-  // Properties (docs/05 §6.4). Assigning one is the same as `update`.
+  // Properties. Assigning one is the same as `update`.
 
-  /** The base the wheel shows. In RYB, the color the triangle reaches. */
+  /**
+   * The base color, as `#rrggbb` in lowercase.
+   *
+   * Reading it returns the base that the wheel shows. In RYB it is the color
+   * the triangle reaches, which can differ from the hex assigned. Assigning
+   * it accepts `#rgb` or `#rrggbb`.
+   *
+   * @throws TypeError if the assigned value is not a string.
+   * @throws RangeError if the assigned value is not a valid hex.
+   */
   get color(): string {
     this.#check();
     return this.#baseHex();
   }
+  /** Same as `update({ color })`. */
   set color(value: string) {
     this.update({ color: value });
   }
 
+  /**
+   * The model the wheel computes with. Changing it keeps the base color, not
+   * its position: the wheel converts to the other model the last hex it
+   * received (by `color`, the hex field, `update` or `setState`), so going
+   * back and forth does not lose colors that the RYB triangle cannot reach.
+   * Dragging or using the keys forgets that hex.
+   *
+   * @defaultValue `"ryb"`, or the first of `models` if it does not include it.
+   * @throws RangeError if the value is not one of {@link MODELS} or is not in
+   *   `models`.
+   */
   get model(): Model {
     this.#check();
     return this.#config.model;
   }
+  /** Same as `update({ model })`. */
   set model(value: Model) {
     this.update({ model: value });
   }
 
+  /**
+   * The harmony whose colors the wheel computes.
+   *
+   * @defaultValue `"miniature-scheme"`, or the first of `harmonies` if it does
+   *   not include it.
+   * @throws RangeError if the value is not one of {@link HARMONIES} or is not
+   *   in `harmonies`.
+   */
   get harmony(): Harmony {
     this.#check();
     return this.#config.harmony;
   }
+  /** Same as `update({ harmony })`. */
   set harmony(value: Harmony) {
     this.update({ harmony: value });
   }
 
+  /**
+   * The type of light of the miniature scheme. The other harmonies ignore it,
+   * but it is validated and kept.
+   *
+   * @defaultValue `"warm"`
+   * @throws RangeError if the value is not one of {@link LIGHTS}.
+   */
   get light(): Light {
     this.#check();
     return this.#config.light;
   }
+  /** Same as `update({ light })`. */
   set light(value: Light) {
     this.update({ light: value });
   }
 
+  /**
+   * The harmonies that the selector offers, in that order. To change it and
+   * `harmony` at once, use {@link ColorWheel.update}.
+   *
+   * @defaultValue all of {@link HARMONIES}
+   * @throws TypeError if the value is not an array.
+   * @throws RangeError if it is empty, repeats or has an unknown value, or
+   *   does not include the current `harmony`.
+   */
   get harmonies(): readonly Harmony[] {
     this.#check();
     return [...this.#config.harmonies];
   }
+  /** Same as `update({ harmonies })`. */
   set harmonies(value: readonly Harmony[]) {
     this.update({ harmonies: value });
   }
 
+  /**
+   * The models that the selector offers, in that order. To change it and
+   * `model` at once, use {@link ColorWheel.update}.
+   *
+   * @defaultValue both of {@link MODELS}
+   * @throws TypeError if the value is not an array.
+   * @throws RangeError if it is empty, repeats or has an unknown value, or
+   *   does not include the current `model`.
+   */
   get models(): readonly Model[] {
     this.#check();
     return [...this.#config.models];
   }
+  /** Same as `update({ models })`. */
   set models(value: readonly Model[]) {
     this.update({ models: value });
   }
 
+  /**
+   * The language of the texts.
+   *
+   * @defaultValue the first of `navigator.languages` that matches one of
+   *   {@link LOCALES}, first exactly and then by base language (`pt-PT` gives
+   *   `pt-BR`), or `"en"` if none matches.
+   * @throws RangeError if the value is not one of {@link LOCALES}.
+   */
   get locale(): Locale {
     this.#check();
     return this.#config.locale;
   }
+  /** Same as `update({ locale })`. */
   set locale(value: Locale) {
     this.update({ locale: value });
   }
 
+  /**
+   * The texts that replace those of `locale`. Only the texts passed are
+   * replaced; assigning it replaces the previous `labels` as a whole.
+   *
+   * @defaultValue `{}`
+   * @throws TypeError if a group is not an object or a text is not a string.
+   * @throws RangeError if a group or a key does not exist. The message names
+   *   it with its full path, such as `harmony.triadd`.
+   */
   get labels(): PartialLabels {
     this.#check();
     return copyLabels(this.#config.labels);
   }
+  /** Same as `update({ labels })`. */
   set labels(value: PartialLabels) {
     this.update({ labels: value });
   }
 
-  // Methods (docs/05 §6.5).
+  // Methods.
 
+  /**
+   * Hides a control. The ring and the triangle are the wheel and cannot be
+   * hidden.
+   *
+   * @throws RangeError if `name` is not one of {@link CONTROLS}.
+   */
   hideControl(name: Control): void {
     this.#controlMethod(name, () => this.#hidden.add(name));
   }
 
+  /**
+   * Shows a control hidden by {@link ColorWheel.hideControl}. `light` is still
+   * only visible with the miniature scheme.
+   *
+   * @throws RangeError if `name` is not one of {@link CONTROLS}.
+   */
   showControl(name: Control): void {
     this.#controlMethod(name, () => this.#hidden.delete(name));
   }
@@ -224,6 +376,8 @@ export class ColorWheel extends EventTarget {
   /**
    * Whether the control is visible: not hidden and, for `light`, only with the
    * miniature scheme.
+   *
+   * @throws RangeError if `name` is not one of {@link CONTROLS}.
    */
   isControlVisible(name: Control): boolean {
     this.#check();
@@ -231,21 +385,42 @@ export class ColorWheel extends EventTarget {
     return this.#isVisible(name);
   }
 
+  /**
+   * Disables a control: `hex`, `model`, `harmony` and `light` disable their
+   * native element, `help` disables its button and closes the help, and
+   * `results` dims the swatches.
+   *
+   * @throws RangeError if `name` is not one of {@link CONTROLS}.
+   */
   disableControl(name: Control): void {
     this.#controlMethod(name, () => this.#disabledControls.add(name));
   }
 
+  /**
+   * Enables a control disabled by {@link ColorWheel.disableControl}. It stays
+   * disabled while the whole wheel is.
+   *
+   * @throws RangeError if `name` is not one of {@link CONTROLS}.
+   */
   enableControl(name: Control): void {
     this.#controlMethod(name, () => this.#disabledControls.delete(name));
   }
 
-  /** Whether the control is enabled: neither it nor the wheel is disabled. */
+  /**
+   * Whether the control is enabled: neither it nor the wheel is disabled.
+   *
+   * @throws RangeError if `name` is not one of {@link CONTROLS}.
+   */
   isControlEnabled(name: Control): boolean {
     this.#check();
     assertControl(name);
     return this.#isEnabled(name);
   }
 
+  /**
+   * Disables the whole wheel: every control, and the ring and the triangle,
+   * which stop responding and leave the tab order.
+   */
   disable(): void {
     this.#check();
     this.#change("api", () => {
@@ -253,6 +428,10 @@ export class ColorWheel extends EventTarget {
     });
   }
 
+  /**
+   * Enables the wheel disabled by {@link ColorWheel.disable}. The controls
+   * disabled one by one stay disabled.
+   */
   enable(): void {
     this.#check();
     this.#change("api", () => {
@@ -260,24 +439,46 @@ export class ColorWheel extends EventTarget {
     });
   }
 
+  /** Whether the whole wheel is disabled. */
   isDisabled(): boolean {
     this.#check();
     return this.#disabled;
   }
 
-  /** Changes several properties at once and emits a single `change`. */
+  /**
+   * Changes several properties at once and emits a single `change`. They are
+   * validated together, so `harmonies` and `harmony` (or `models` and
+   * `model`) can change in the same call. If one is not valid, none is
+   * applied.
+   *
+   * @throws TypeError if `properties` is not an object, it has an unknown key
+   *   or a value has the wrong type.
+   * @throws RangeError if a value is not valid, as with each property.
+   */
   update(properties: Partial<ColorWheelProperties>): void {
     this.#check();
     assertKeys(properties, PROPERTY_KEYS, "property");
     this.#apply(properties, "api");
   }
 
+  /**
+   * Returns every property and the state of the controls, to restore them
+   * with {@link ColorWheel.setState}. Its `color` is the last hex received,
+   * or the base shown if the wheel was moved since.
+   */
   getState(): ColorWheelState {
     this.#check();
     return this.#state();
   }
 
-  /** Restores a whole state, as `getState` returns it. */
+  /**
+   * Restores a whole state, as {@link ColorWheel.getState} returns it. Every
+   * key is required. If one is not valid, nothing is applied.
+   *
+   * @throws TypeError if `state` is not an object, it misses or has an unknown
+   *   key, or a value has the wrong type.
+   * @throws RangeError if a value is not valid, as with each property.
+   */
   setState(state: ColorWheelState): void {
     this.#check();
     assertKeys(state, STATE_KEYS, "state");
@@ -297,12 +498,16 @@ export class ColorWheel extends EventTarget {
     });
   }
 
+  /** Returns the colors the wheel shows now. */
   getResult(): Result {
     this.#check();
     return this.#result();
   }
 
-  /** The texts shown: those of the locale, with `labels` replaced. */
+  /**
+   * Returns the texts shown: those of `locale`, with `labels` replaced. A page
+   * that hides the `help` control can show these texts its own way.
+   */
   getEffectiveLabels(): Labels {
     this.#check();
     return this.#labels();
@@ -317,8 +522,12 @@ export class ColorWheel extends EventTarget {
     this.#destroyed = true;
   }
 
-  // Events (docs/05 §6.6).
+  // Events.
 
+  /**
+   * Listens to an event of {@link ColorWheelEventMap}, with its typed
+   * `detail`, or to any other event, as `EventTarget` does.
+   */
   override addEventListener<K extends keyof ColorWheelEventMap>(
     type: K,
     listener: ColorWheelListener<K> | null,
@@ -338,6 +547,7 @@ export class ColorWheel extends EventTarget {
     super.addEventListener(type, listener, options);
   }
 
+  /** Stops listening to an event, as `EventTarget` does. */
   override removeEventListener<K extends keyof ColorWheelEventMap>(
     type: K,
     listener: ColorWheelListener<K> | null,
@@ -357,6 +567,7 @@ export class ColorWheel extends EventTarget {
     super.removeEventListener(type, listener, options);
   }
 
+  /** Dispatches an event, as `EventTarget` does. */
   override dispatchEvent(event: Event): boolean {
     this.#check();
     return super.dispatchEvent(event);

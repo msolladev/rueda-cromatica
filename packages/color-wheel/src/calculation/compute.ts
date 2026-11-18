@@ -7,20 +7,47 @@ import { harmonize } from "./harmonize.ts";
 import { toResult, type Result } from "./result.ts";
 import { resolveSettings } from "./settings.ts";
 
+/** What {@link compute} computes with. Only `color` is required. */
 export interface ComputeInput {
-  /** Base color in hex. */
+  /** Base color: `#rgb` or `#rrggbb`. */
   readonly color: string;
-  /** Defaults to `"ryb"`. */
+  /**
+   * The model of the wheel.
+   *
+   * @defaultValue `"ryb"`
+   */
   readonly model?: Model;
-  /** Defaults to `"miniature-scheme"`. */
+  /**
+   * The harmony to compute.
+   *
+   * @defaultValue `"miniature-scheme"`
+   */
   readonly harmony?: Harmony;
-  /** Defaults to `"warm"`. Only used by the miniature scheme. */
+  /**
+   * The light of the miniature scheme. It is always validated, but only
+   * appears in the result with the miniature scheme.
+   *
+   * @defaultValue `"warm"`
+   */
   readonly light?: Light;
 }
 
 const COMPUTE_KEYS: readonly string[] = ["color", "model", "harmony", "light"];
 
-/** Computes the colors of a harmony or of the miniature scheme. */
+/**
+ * Computes the colors of a harmony or of the miniature scheme, without the
+ * component and without the DOM. It gives the same result as the component
+ * with the same properties.
+ *
+ * @throws TypeError if `input` is not an object, it has an unknown key, or
+ *   `color` is not a string.
+ * @throws RangeError if a value is not valid.
+ *
+ * @example
+ * ```ts
+ * compute({ color: "#3daf44", harmony: "triad" });
+ * ```
+ */
 export function compute(input: ComputeInput): Result {
   if (!isPlainObject(input)) {
     throw new TypeError(

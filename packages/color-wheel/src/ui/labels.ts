@@ -7,39 +7,68 @@ import type { Light } from "../scheme/light.ts";
 import type { Control } from "./controls.ts";
 
 /**
- * The component's texts (docs/05 §6.8). The keys come from the lists of the
- * code (harmonies, roles, models, lights and controls), so a missing text in
- * a locale file is a compile error.
+ * The component's texts, in groups. The keys come from the lists of the code
+ * (harmonies, roles, models, lights and controls), so every locale has every
+ * text. Some texts have placeholders, such as `{hue}`, that the component
+ * replaces with their value.
  */
 export interface Labels {
+  /** The name of each harmony, in the selector and the announcements. */
   readonly harmony: Readonly<Record<Harmony, string>>;
+  /** The name of each role, in the list of results. */
   readonly role: Readonly<Record<Role, string>>;
+  /** The name of each model, in its selector. */
   readonly model: Readonly<Record<Model, string>>;
+  /** The name of each light, in its selector. */
   readonly light: Readonly<Record<Light, string>>;
+  /** The label of each control. `help` is also the title of the help. */
   readonly control: Readonly<Record<Control, string>>;
+  /** The texts of the wheel itself: accessible names, values, help and errors. */
   readonly wheel: {
     /** Accessible name of the whole component. */
     readonly label: string;
+    /** Accessible name of the ring slider. */
     readonly ring: string;
-    /** `{hue}`: the hue in degrees. */
+    /** Value that the ring announces. `{hue}`: the hue in degrees. */
     readonly ringValue: string;
+    /** Accessible name of the triangle slider. */
     readonly triangle: string;
-    /** `{pure}`, `{white}`, `{black}`: percentages. */
+    /**
+     * Value that the triangle announces. `{pure}`, `{white}`, `{black}`: the
+     * proportions, as whole percentages.
+     */
     readonly triangleValue: string;
+    /** The ring's keys, linked to its slider by `aria-describedby`. */
     readonly ringKeys: string;
+    /** The triangle's keys, linked to its slider by `aria-describedby`. */
     readonly triangleKeys: string;
+    /** Help on using the wheel with a mouse or a pen. */
     readonly pointerHelp: string;
+    /** Help on using the wheel with a finger. */
     readonly touchHelp: string;
+    /** Help on using the wheel with the keyboard. */
     readonly keyboardHelp: string;
     /** Accessible name of the button that closes the help. */
     readonly helpClose: string;
+    /** Error shown under the hex field when the typed hex is not valid. */
     readonly hexInvalid: string;
-    /** `{count}`: number of colors; `{harmony}`: its name. */
+    /**
+     * Announced when a control changes the colors. `{count}`: number of
+     * colors; `{harmony}`: its name.
+     */
     readonly resultsUpdated: string;
   };
 }
 
-/** Texts that replace those of the locale, with the same shape. */
+/**
+ * Texts that replace those of the locale, with the same shape as
+ * {@link Labels} and only the texts to replace.
+ *
+ * @example
+ * ```ts
+ * const labels: PartialLabels = { harmony: { triad: "Palette" } };
+ * ```
+ */
 export type PartialLabels = {
   readonly [Group in keyof Labels]?: Partial<Labels[Group]>;
 };

@@ -1,6 +1,8 @@
 import { describeValue, oneOf } from "../errors.ts";
 
-/** Included locales (docs/05 §6.8). */
+/**
+ * The included locales. Each one has every text of {@link Labels}.
+ */
 export const LOCALES = [
   "en",
   "es",
@@ -14,6 +16,7 @@ export const LOCALES = [
   "ko",
 ] as const;
 
+/** One of the {@link LOCALES}. */
 export type Locale = (typeof LOCALES)[number];
 
 export const DEFAULT_LOCALE: Locale = "en";

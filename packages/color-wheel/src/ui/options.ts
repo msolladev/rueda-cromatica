@@ -6,39 +6,68 @@ import { assertLight, type Light } from "../scheme/light.ts";
 import { assertControl, type Control } from "./controls.ts";
 import { assertPartialLabels, type PartialLabels } from "./labels.ts";
 
-/** The properties of the component (docs/05 §6.4). */
+/**
+ * The properties of the component. The same names are the constructor's
+ * options and the class's properties, where their defaults, valid values and
+ * errors are documented ({@link ColorWheel.color} and the following).
+ */
 export interface ColorWheelProperties {
-  /** Base color in hex. */
+  /** Base color: `#rgb` or `#rrggbb`. See {@link ColorWheel.color}. */
   readonly color: string;
-  /** Defaults to `"ryb"`. */
+  /** See {@link ColorWheel.model}. */
   readonly model: Model;
-  /** Defaults to `"miniature-scheme"`. */
+  /** See {@link ColorWheel.harmony}. */
   readonly harmony: Harmony;
-  /** Defaults to `"warm"`. Only used by the miniature scheme. */
+  /** See {@link ColorWheel.light}. */
   readonly light: Light;
-  /** Harmonies offered by the selector, in order. Defaults to all. */
+  /** See {@link ColorWheel.harmonies}. */
   readonly harmonies: readonly Harmony[];
-  /** Models offered by the selector, in order. Defaults to both. */
+  /** See {@link ColorWheel.models}. */
   readonly models: readonly Model[];
-  /** Defaults to the browser's language, or `"en"`. */
+  /** See {@link ColorWheel.locale}. */
   readonly locale: Locale;
-  /** Texts that replace those of the locale. Defaults to `{}`. */
+  /** See {@link ColorWheel.labels}. */
   readonly labels: PartialLabels;
 }
 
-/** Options of the constructor: the properties, plus the controls' state. */
+/**
+ * Options of the constructor: the properties, of which only `color` is
+ * required, plus the initial state of the controls.
+ */
 export interface ColorWheelOptions extends Partial<ColorWheelProperties> {
+  /** Base color: `#rgb` or `#rrggbb`. Required. */
   readonly color: string;
+  /**
+   * Controls hidden from the start, without repeated values.
+   *
+   * @defaultValue `[]`
+   */
   readonly hiddenControls?: readonly Control[];
+  /**
+   * Controls disabled from the start, without repeated values.
+   *
+   * @defaultValue `[]`
+   */
   readonly disabledControls?: readonly Control[];
-  /** `true` disables the whole wheel. */
+  /**
+   * `true` disables the whole wheel, as {@link ColorWheel.disable}.
+   *
+   * @defaultValue `false`
+   */
   readonly disabled?: boolean;
 }
 
-/** Everything `getState` returns and `setState` restores. */
+/**
+ * Everything {@link ColorWheel.getState} returns and
+ * {@link ColorWheel.setState} restores: the properties and the state of the
+ * controls.
+ */
 export interface ColorWheelState extends ColorWheelProperties {
+  /** The hidden controls, in the order of {@link CONTROLS}. */
   readonly hiddenControls: readonly Control[];
+  /** The disabled controls, in the order of {@link CONTROLS}. */
   readonly disabledControls: readonly Control[];
+  /** Whether the whole wheel is disabled. */
   readonly disabled: boolean;
 }
 

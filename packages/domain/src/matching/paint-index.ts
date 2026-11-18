@@ -24,17 +24,24 @@ export interface BrandEntries {
 }
 
 /**
- * Opaque to callers: only `buildPaintIndex` creates it and only the matching
- * functions read it.
+ * The search index of a catalog, built by {@link buildPaintIndex}. It is
+ * opaque: only {@link findClosestPaints} reads it.
  */
 export interface PaintIndex {
-  /** Every brand of the catalog, in catalog order, each with its paints by ID. */
+  /**
+   * Every brand of the catalog, in catalog order, each with its paints by ID.
+   *
+   * @internal
+   */
   readonly brands: readonly BrandEntries[];
 }
 
 /**
- * Indexes every paint that has a colour, discontinued ones included: the
- * search filters them. Paints without colour never reach a search (docs/01 §3).
+ * Builds the search index of a catalog: every paint with a colour, its colour
+ * already converted to CIELAB, discontinued ones included, because the search
+ * filters them. Paints without colour never reach a search.
+ *
+ * Build it once per catalog, when it is loaded, and reuse it in every search.
  */
 export function buildPaintIndex(catalog: Catalog): PaintIndex {
   const brands = catalog.brands().map((brand): BrandEntries =>

@@ -6,9 +6,13 @@ import { describeValue, oneOf } from "../errors.ts";
 import { mixPaint } from "../mixing/mix.ts";
 import { LIGHT_RATIO, LIGHTEN_RATIO, SHADOW_RATIO } from "../mixing/ratios.ts";
 
-/** Light type: warm (towards yellow) or cold (towards blue). */
+/**
+ * Light types of the miniature scheme: warm (towards yellow) or cold
+ * (towards blue).
+ */
 export const LIGHTS = ["warm", "cold"] as const;
 
+/** One of the {@link LIGHTS}. */
 export type Light = (typeof LIGHTS)[number];
 
 export function assertLight(value: unknown): asserts value is Light {

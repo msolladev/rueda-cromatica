@@ -17,23 +17,54 @@ import type {
 } from "./schema.ts";
 import type { CatalogIndexes } from "./integrity.ts";
 
+/** Which paints {@link Catalog.paints} returns. Both fields are required. */
 export interface PaintQuery {
+  /**
+   * The brands, in any order and with repetitions, or `"all"`. An ID that is
+   * not in the catalog is ignored.
+   */
   readonly brandIds: readonly BrandId[] | "all";
+  /** Whether discontinued paints are included. */
   readonly includeDiscontinued: boolean;
 }
 
+/**
+ * The catalog, already validated and read-only. It is the only access to the
+ * data from the interface, and hides its internal indexes. Only
+ * {@link parseCatalog} creates it, and everything it returns is frozen.
+ */
 export interface Catalog {
+  /** Versions of the format and of the data. */
   readonly meta: CatalogMeta;
+  /** Every brand, in catalog order. */
   brands(): readonly Brand[];
+  /**
+   * The ranges of a brand, in catalog order. Empty if the brand has none or
+   * is not in the catalog.
+   */
   rangesOf(brandId: BrandId): readonly Range[];
+  /** The brand with that ID, or `undefined`. */
   brand(id: BrandId): Brand | undefined;
+  /** The range with that ID, or `undefined`. */
   range(id: RangeId): Range | undefined;
+  /** The paint with that ID, or `undefined`. */
   paint(id: PaintId): Paint | undefined;
+  /** The source with that ID, or `undefined`. */
   source(id: SourceId): Source | undefined;
+  /**
+   * The paints of the brands of `query`, grouped by brand in catalog order
+   * and, within each brand, by ID, whatever the order of `brandIds`.
+   */
   paints(query: PaintQuery): readonly Paint[];
-  /** Cannot fail for a paint of this catalog; throws if its ID is not here. */
+  /**
+   * The brand of a paint, through its range. It never reads the ID's prefix.
+   *
+   * @throws Error if the paint is not in this catalog.
+   */
   brandOf(paint: Paint): Brand;
+  /** The official equivalences whose origin is the paint, in catalog order. */
   officialEquivalencesFrom(id: PaintId): readonly OfficialEquivalence[];
+  /** The official equivalences whose destination is the paint, in catalog order. */
   officialEquivalencesTo(id: PaintId): readonly OfficialEquivalence[];
 }
 
