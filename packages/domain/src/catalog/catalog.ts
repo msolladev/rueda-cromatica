@@ -51,6 +51,8 @@ export interface Catalog {
   paint(id: PaintId): Paint | undefined;
   /** The source with that ID, or `undefined`. */
   source(id: SourceId): Source | undefined;
+  /** Every source, in catalog order. */
+  sources(): readonly Source[];
   /**
    * The paints of the brands of `query`, grouped by brand in catalog order
    * and, within each brand, by ID, whatever the order of `brandIds`.
@@ -104,6 +106,7 @@ export function createCatalog(
     range: (id) => ranges.get(id),
     paint: (id) => paints.get(id),
     source: (id) => sources.get(id),
+    sources: () => doc.sources,
     // Grouped by brand in catalog order, then by ID, whatever the order or
     // repetitions of `brandIds`. Only the selected brands are visited.
     paints: ({ brandIds, includeDiscontinued }) => {

@@ -13,7 +13,17 @@ export {
   parseCatalog,
   type CatalogParseError,
 } from "./catalog/parse.ts";
-export { isColorApproximate, resolveReplacement } from "./catalog/rules.ts";
+export {
+  colorApproximationReasons,
+  isColorApproximate,
+  resolveReplacement,
+  type ApproximationReason,
+} from "./catalog/rules.ts";
+export {
+  sourceContributions,
+  type BrandColorContribution,
+  type SourceContribution,
+} from "./catalog/contributions.ts";
 
 export {
   compareMatches,

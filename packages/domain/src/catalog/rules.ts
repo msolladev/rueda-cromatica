@@ -11,18 +11,44 @@ const APPROXIMATE_TYPES: ReadonlySet<PaintType> = new Set([
 ]);
 
 /**
- * Whether the hex is only an approximation of the real paint (ADR-0014):
- * the paint is metallic, its type is `wash`, `ink`, `glaze`, `contrast` or
- * `technical`, or its hex is from the community. A paint without colour is
- * not approximate: it has no colour to compare.
+ * Why a paint's hex is only an approximation of the real paint (ADR-0014):
+ *
+ * - `"metallic"`: the paint is metallic;
+ * - `"paint-type"`: its type is `wash`, `ink`, `glaze`, `contrast` or
+ *   `technical`, which do not look like a flat colour;
+ * - `"community-color"`: its hex is from the community, not measured or from
+ *   the manufacturer.
+ */
+export type ApproximationReason = "metallic" | "paint-type" | "community-color";
+
+/**
+ * The reasons why the paint's hex is approximate, in the order of
+ * {@link ApproximationReason}. Empty if it is not approximate, and always
+ * empty for a paint without colour: it has no colour to compare.
+ *
+ * @example
+ * ```ts
+ * colorApproximationReasons(paint); // ["metallic", "community-color"]
+ * ```
+ */
+export function colorApproximationReasons(
+  paint: Paint,
+): readonly ApproximationReason[] {
+  if (paint.color === null) return [];
+  const reasons: ApproximationReason[] = [];
+  if (paint.metallic) reasons.push("metallic");
+  if (APPROXIMATE_TYPES.has(paint.type)) reasons.push("paint-type");
+  if (paint.color.origin === "community") reasons.push("community-color");
+  return Object.freeze(reasons);
+}
+
+/**
+ * Whether the hex is only an approximation of the real paint: whether
+ * {@link colorApproximationReasons} gives any reason. A paint without colour
+ * is not approximate.
  */
 export function isColorApproximate(paint: Paint): boolean {
-  if (paint.color === null) return false;
-  return (
-    paint.metallic ||
-    APPROXIMATE_TYPES.has(paint.type) ||
-    paint.color.origin === "community"
-  );
+  return colorApproximationReasons(paint).length > 0;
 }
 
 /**
