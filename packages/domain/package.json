@@ -11,9 +11,11 @@
     "test": "vitest run"
   },
   "dependencies": {
+    "culori": "catalog:",
     "zod": "catalog:"
   },
   "devDependencies": {
+    "@types/culori": "catalog:",
     "typescript": "catalog:",
     "vitest": "catalog:"
   }
