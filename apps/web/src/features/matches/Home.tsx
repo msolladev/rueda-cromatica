@@ -4,7 +4,8 @@ import {
   type Locale,
   type Result,
 } from "@chromatic-wheel/color-wheel";
-import { useDeferredValue, useMemo, useState } from "react";
+import { useDeferredValue, useEffect, useMemo, useState } from "react";
+import { endRestoring } from "../../app/restoring.ts";
 import { useHydrated } from "../../app/hydrated.ts";
 import type { HomeData } from "../../app/page-data.ts";
 import {
@@ -73,6 +74,14 @@ export function Home({
       limitOf({ more }, key),
     );
   }, [hydrated, load, colors, tab, filters, more]);
+
+  // docs/07 §6: what the inline script hid is shown once the wheel has the
+  // saved state and the results are searched with the saved filters (or the
+  // catalog failed). The wheel's own effect runs before this one.
+  const settled = state.restored && (live !== null || load.status === "error");
+  useEffect(() => {
+    if (settled) endRestoring();
+  }, [settled]);
 
   const panels = colors.map((_, index): PanelContent => {
     const example = data.example[index];

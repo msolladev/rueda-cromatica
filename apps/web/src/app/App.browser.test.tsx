@@ -14,7 +14,7 @@ import { createRenderer } from "../entry-server.tsx";
 import "./app.css";
 import { App } from "./App.tsx";
 import type { Page } from "./pages.ts";
-import { STORAGE_KEY } from "./storage-key.ts";
+import { STORAGE_KEY } from "./before-paint.ts";
 
 let render: ReturnType<typeof createRenderer>;
 let container: HTMLElement;

@@ -30,6 +30,9 @@
   --gap: 1rem;
   --control: 2.75rem;
   --navbar-height: 3.75rem;
+  /* The space a legend takes above its control. */
+  --legend-size: 0.8rem;
+  --legend-gap: 0.25rem;
 }
 
 :root[data-theme="light"] {
@@ -179,8 +182,9 @@ fieldset {
 
 legend {
   padding: 0;
-  margin-bottom: 0.25rem;
-  font-size: 0.8rem;
+  margin-bottom: var(--legend-gap);
+  font-size: var(--legend-size);
+  line-height: 1.5;
   color: var(--muted);
 }
 
@@ -397,6 +401,20 @@ legend {
 
 /* ---------- Wheel and results (docs/07 §1) ---------- */
 
+/* docs/07 §6: hidden while the saved preferences are applied, so that the
+   defaults of the prerendered page are never seen. Shown anyway after 3 s,
+   in case the app never ends. */
+:root[data-restoring] .workspace {
+  visibility: hidden;
+  animation: show-after-restoring 0s 3s forwards;
+}
+
+@keyframes show-after-restoring {
+  to {
+    visibility: visible;
+  }
+}
+
 .workspace {
   display: grid;
   gap: var(--gap);
@@ -436,10 +454,11 @@ legend {
   gap: 0.75rem;
 }
 
+/* Aligned at the top, so that opening the filters does not move «Show». */
 .toolbar {
   display: flex;
   flex-wrap: wrap;
-  align-items: end;
+  align-items: flex-start;
   gap: 0.75rem 1rem;
 }
 
@@ -451,8 +470,11 @@ legend {
 }
 
 @media (min-width: 60rem) {
+  /* Beside «Show», the filters leave the space of its legend above, so
+     that both bars line up. */
   .filters {
     flex: 1 1 18rem;
+    margin-top: calc(var(--legend-size) * 1.5 + var(--legend-gap));
   }
 }
 

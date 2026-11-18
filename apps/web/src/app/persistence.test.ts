@@ -5,7 +5,7 @@ import {
   writePreferences,
 } from "./persistence.ts";
 import { DEFAULT_PREFERENCES } from "./state.ts";
-import { STORAGE_KEY } from "./storage-key.ts";
+import { STORAGE_KEY } from "./before-paint.ts";
 
 class MemoryStorage implements Storage {
   readonly #items = new Map<string, string>();

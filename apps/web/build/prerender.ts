@@ -11,7 +11,12 @@
 import { mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { join, resolve } from "node:path";
 import { pathToFileURL } from "node:url";
-import { build, type Plugin, type ResolvedConfig } from "vite";
+import {
+  build,
+  type Plugin,
+  type ResolvedConfig,
+  type ViteDevServer,
+} from "vite";
 import { fillTemplate } from "./html.ts";
 import { licenseCollector, type LicenseCollector } from "./licenses.ts";
 
@@ -25,6 +30,35 @@ export interface PrerenderOptions {
 }
 
 const SERVER_ENTRY = "src/entry-server.tsx";
+const CLIENT_ENTRY = "/src/entry-client.tsx";
+
+/**
+ * The stylesheets that the browser code imports, as `<link>` tags. In
+ * development Vite adds them from JavaScript, after the page is shown, so the
+ * prerendered HTML would show for a moment without styles; in the build they
+ * are already `<link>` tags in the `<head>`.
+ */
+async function devStylesheets(server: ViteDevServer): Promise<string> {
+  const client = server.environments.client;
+  const seen = new Set<string>();
+  const sheets: string[] = [];
+  const visit = async (url: string): Promise<void> => {
+    if (seen.has(url)) return;
+    seen.add(url);
+    await client.transformRequest(url);
+    const module = await client.moduleGraph.getModuleByUrl(url);
+    if (module === undefined) return;
+    if (/\.css($|\?)/.test(module.url)) sheets.push(module.url);
+    for (const imported of module.importedModules) await visit(imported.url);
+  };
+  await visit(CLIENT_ENTRY);
+  return sheets
+    .map(
+      (url) =>
+        `<link rel="stylesheet" href="${url}${url.includes("?") ? "&" : "?"}direct" />`,
+    )
+    .join("\n    ");
+}
 
 function sitemap(entry: ServerEntry, origin: string): string {
   const urls = entry.allPages().map((page) => {
@@ -110,10 +144,12 @@ export function prerender(options: PrerenderOptions): Plugin {
             licenses: [],
             origin: options.origin,
           });
-          const template = await server.transformIndexHtml(
-            url.pathname,
-            readFileSync(join(config.root, "index.html"), "utf8"),
-          );
+          const template = (
+            await server.transformIndexHtml(
+              url.pathname,
+              readFileSync(join(config.root, "index.html"), "utf8"),
+            )
+          ).replace("</head>", `${await devStylesheets(server)}\n  </head>`);
           response.setHeader("Content-Type", "text/html; charset=utf-8");
           response.end(fillTemplate(template, render(page), { csp: false }));
         })().catch(next);
