@@ -1,7 +1,8 @@
 /**
  * @license
  * Icons "circle-question-mark" and "x" copied from Lucide v1.71.0
- * (https://lucide.dev), both derived from Feather (https://feathericons.com).
+ * (https://lucide.dev), and "chevron-down", copied in style.css; all three
+ * derived from Feather (https://feathericons.com).
  *
  * ISC License. Copyright (c) 2026 Lucide Icons and Contributors.
  * Permission to use, copy, modify, and/or distribute this software for any

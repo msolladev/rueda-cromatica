@@ -11,7 +11,13 @@ import type { Harmony, PlacedColor } from "../harmony/harmony.ts";
 import { LOCALES, resolveLocale, type Locale } from "../i18n/locales.ts";
 import type { Light } from "../scheme/light.ts";
 import { assertControl, CONTROLS, type Control } from "./controls.ts";
-import { createDom, setOptions, setRadios, type Dom } from "./dom.ts";
+import {
+  createDom,
+  placeIndicator,
+  setOptions,
+  setRadios,
+  type Dom,
+} from "./dom.ts";
 import { drawWheel } from "./draw.ts";
 import type { Zone } from "./geometry.ts";
 import { ringKey, triangleKey } from "./keyboard.ts";
@@ -34,6 +40,12 @@ import {
   type ColorWheelState,
 } from "./options.ts";
 import { attachPointer } from "./pointer.ts";
+import {
+  easeOut,
+  interpolateTemplate,
+  sameTemplate,
+  TEMPLATE_DURATION,
+} from "./template-motion.ts";
 
 /**
  * Who caused a change: `"user"`, the person using the wheel (dragging, keys or
@@ -141,6 +153,9 @@ export class ColorWheel extends EventTarget {
   #destroyed = false;
   #dragSnapshot: string | undefined;
   #announceToggle = false;
+  /** The template on its way to the new marks (docs/05 §6.2). */
+  #motion: { from: number[]; to: number[]; start: number } | undefined;
+  #motionFrame = 0;
   readonly #dom: Dom;
   readonly #abort = new AbortController();
   readonly #observer: ResizeObserver;
@@ -199,8 +214,14 @@ export class ColorWheel extends EventTarget {
     this.#listen();
     this.#observer = new ResizeObserver(() => {
       this.#resize();
+      placeIndicator(this.#dom.modelOptions);
+      placeIndicator(this.#dom.lightOptions);
     });
     this.#observer.observe(this.#dom.canvas);
+    // The pills of the segmented controls follow their size, and are placed
+    // when a hidden control (the light) is shown.
+    this.#observer.observe(this.#dom.modelOptions);
+    this.#observer.observe(this.#dom.lightOptions);
     this.#watchPixelRatio();
     this.#render();
     this.#resize();
@@ -516,6 +537,7 @@ export class ColorWheel extends EventTarget {
   /** Removes the wheel and its listeners. Any later call is an error. */
   destroy(): void {
     this.#check();
+    cancelAnimationFrame(this.#motionFrame);
     this.#abort.abort();
     this.#observer.disconnect();
     this.#dom.root.remove();
@@ -697,8 +719,11 @@ export class ColorWheel extends EventTarget {
   /** Mutates, renders, and emits `change` if the state or result changed. */
   #change(source: ChangeSource, mutate: () => void): boolean {
     const before = this.#snapshot();
+    const template = this.#template();
+    const base = this.#position;
     mutate();
     this.#colors = this.#harmonize();
+    this.#moveTemplate(template, base);
     this.#render();
     if (this.#snapshot() === before) return false;
     this.#emit("change", source);
@@ -714,8 +739,53 @@ export class ColorWheel extends EventTarget {
     super.dispatchEvent(new CustomEvent(type, { detail }));
   }
 
+  /** The hues of the marks as drawn now, the base first. */
+  #template(now = performance.now()): number[] {
+    const motion = this.#motion;
+    const hues = this.#colors.map((color) => color.position.hue);
+    if (motion === undefined) return hues;
+    const t = Math.min((now - motion.start) / TEMPLATE_DURATION, 1);
+    if (t >= 1) {
+      this.#motion = undefined;
+      return hues;
+    }
+    return interpolateTemplate(motion.from, motion.to, easeOut(t));
+  }
+
+  /**
+   * Starts moving the template from `from` to the current marks if the base
+   * stayed where it was: a new harmony or light. When the base moves (drag,
+   * keys, color, model) the triangle turns with it, and the marks follow at
+   * once. Without motion if the system asks to reduce it.
+   */
+  #moveTemplate(from: number[], base: WheelColor): void {
+    const to = this.#colors.map((color) => color.position.hue);
+    const baseStayed =
+      base.hue === this.#position.hue &&
+      base.pure === this.#position.pure &&
+      base.white === this.#position.white;
+    if (
+      !baseStayed ||
+      sameTemplate(from, to) ||
+      matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      this.#motion = undefined;
+      return;
+    }
+    this.#motion = { from, to, start: performance.now() };
+    cancelAnimationFrame(this.#motionFrame);
+    const frame = () => {
+      this.#draw();
+      if (this.#motion !== undefined) {
+        this.#motionFrame = requestAnimationFrame(frame);
+      }
+    };
+    this.#motionFrame = requestAnimationFrame(frame);
+  }
+
   /** Moves the base from the wheel itself: the position rules from now on. */
   #movePosition(position: WheelColor): void {
+    this.#motion = undefined;
     this.#position = position;
     this.#sourceHex = undefined;
     this.#colors = this.#harmonize();
@@ -1038,7 +1108,7 @@ export class ColorWheel extends EventTarget {
     drawWheel(context, {
       model: this.#config.model,
       position: this.#position,
-      colors: this.#colors,
+      template: this.#template(),
       focus,
       focusColor,
       pixelRatio: devicePixelRatio,
