@@ -1,4 +1,4 @@
-// The texts of each locale, one JSON file per locale (docs/05 §6.8). Only the
+// The texts of each locale, one JSON file per locale (docs/05 §6.5). Only the
 // component reads them; their type is `Labels`, checked in `ui/labels.ts`.
 
 import de from "./locales/de.json";

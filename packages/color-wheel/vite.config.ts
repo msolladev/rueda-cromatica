@@ -4,7 +4,7 @@ import { playwright } from "@vitest/browser-playwright";
 import type { Plugin } from "vite";
 import { defineConfig } from "vitest/config";
 
-/** Copies `style.css` to the ESM build, as is (docs/05 §6.9). */
+/** Copies `style.css` to the ESM build, as is (docs/05 §6.6). */
 function styleAsset(): Plugin {
   return {
     name: "color-wheel-style",

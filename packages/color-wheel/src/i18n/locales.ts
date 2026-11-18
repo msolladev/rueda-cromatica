@@ -35,7 +35,7 @@ function baseLanguage(tag: string): string {
 }
 
 /**
- * The default locale (docs/05 §6.8): the first of `preferred` that matches an
+ * The default locale (docs/05 §6.5): the first of `preferred` that matches an
  * included one, first exactly and then by base language (`pt-PT` → `pt-BR`).
  * If none matches, English. The component passes `navigator.languages`.
  */
