@@ -28,6 +28,8 @@ jobs:
       - run: pnpm format:check
       - run: pnpm lint
       - run: pnpm typecheck
+      # API reference (ADR-0023): fails on any TypeDoc warning. Nothing is published.
+      - run: pnpm docs:api
 
       # Chromium for the Vitest browser project of color-wheel (ADR-0020), cached
       # per Playwright version. The system libraries it needs are not cached and
