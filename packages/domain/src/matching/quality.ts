@@ -3,17 +3,33 @@
  * cited there; the visible texts belong to the web.
  */
 
+/**
+ * How close a paint is, by its ΔE2000 rounded to 2 decimals. The limits are
+ * in {@link MATCH_QUALITY_LIMITS}:
+ *
+ * - `"near-identical"`: below what can be perceived;
+ * - `"very-similar"`: within the demanding tolerance;
+ * - `"similar"`: within the less demanding tolerance;
+ * - `"nearest-available"`: the closest there is, without claiming that it is
+ *   similar.
+ */
 export type MatchQuality =
   "near-identical" | "very-similar" | "similar" | "nearest-available";
 
 /** Upper limits, inclusive, of each band. Beyond the last one: nearest-available. */
 export const MATCH_QUALITY_LIMITS = Object.freeze({
+  /** Up to 1, about the smallest perceptible difference. */
   "near-identical": 1,
+  /** Up to 2. */
   "very-similar": 2,
+  /** Up to 5. */
   similar: 5,
 } as const);
 
-/** Labels the ΔE at the precision of `roundDeltaE`, as the search orders it. */
+/**
+ * The quality label of a ΔE2000, rounded to 2 decimals first, as the search
+ * orders them.
+ */
 export function matchQuality(deltaE: number): MatchQuality {
   const rounded = roundDeltaE(deltaE);
   if (rounded <= MATCH_QUALITY_LIMITS["near-identical"])

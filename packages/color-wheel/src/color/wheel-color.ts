@@ -5,10 +5,13 @@ import { describeValue, isPlainObject } from "../errors.ts";
  * proportions of pure color, white and black, which add up to 1.
  */
 export interface WheelColor {
-  /** Angle on the ring, in [0, 360). */
+  /** Angle on the ring, in degrees, in [0, 360). */
   readonly hue: number;
+  /** Proportion of the pure color of the hue, in [0, 1]. */
   readonly pure: number;
+  /** Proportion of white, in [0, 1]. */
   readonly white: number;
+  /** Proportion of black, in [0, 1]. */
   readonly black: number;
 }
 

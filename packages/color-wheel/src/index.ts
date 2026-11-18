@@ -7,20 +7,21 @@ export type {
   ColorWheelEvent,
   ColorWheelEventDetail,
   ColorWheelEventMap,
+  ColorWheelListener,
 } from "./ui/color-wheel.ts";
 export type {
   ColorWheelOptions,
   ColorWheelProperties,
   ColorWheelState,
 } from "./ui/options.ts";
-export type { Control } from "./ui/controls.ts";
+export { CONTROLS, type Control } from "./ui/controls.ts";
 export type { Labels, PartialLabels } from "./ui/labels.ts";
-export type { Locale } from "./i18n/locales.ts";
+export { LOCALES, type Locale } from "./i18n/locales.ts";
 
 export { compute, type ComputeInput } from "./calculation/compute.ts";
 export { fromWheelColor, toWheelColor } from "./color/convert.ts";
-export type { Model } from "./color/model.ts";
+export { MODELS, type Model } from "./color/model.ts";
 export type { WheelColor } from "./color/wheel-color.ts";
-export type { Harmony, Role } from "./harmony/harmony.ts";
-export type { Light } from "./scheme/light.ts";
+export { HARMONIES, type Harmony, type Role } from "./harmony/harmony.ts";
+export { LIGHTS, type Light } from "./scheme/light.ts";
 export type { Result } from "./calculation/result.ts";

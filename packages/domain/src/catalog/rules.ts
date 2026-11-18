@@ -11,8 +11,10 @@ const APPROXIMATE_TYPES: ReadonlySet<PaintType> = new Set([
 ]);
 
 /**
- * Whether the hex is only an approximation of the real paint (ADR-0014).
- * A paint without colour is not approximate: it has no colour to compare.
+ * Whether the hex is only an approximation of the real paint (ADR-0014):
+ * the paint is metallic, its type is `wash`, `ink`, `glaze`, `contrast` or
+ * `technical`, or its hex is from the community. A paint without colour is
+ * not approximate: it has no colour to compare.
  */
 export function isColorApproximate(paint: Paint): boolean {
   if (paint.color === null) return false;
@@ -28,9 +30,10 @@ export function isColorApproximate(paint: Paint): boolean {
  * the chain, and returns that paint. Returns `null` if the paint has no
  * replacement (active, or discontinued without one).
  *
- * Throws for an ID that is not in the catalog: callers resolve IDs with
- * `catalog.paint()` first. Always terminates, because `parseCatalog` rejects
- * cycles; the guard only turns a broken invariant into an error.
+ * Always terminates, because {@link parseCatalog} rejects cycles.
+ *
+ * @throws Error if `id` is not in the catalog, which is a programming error:
+ *   callers resolve IDs with {@link Catalog.paint} first.
  */
 export function resolveReplacement(
   catalog: Catalog,
