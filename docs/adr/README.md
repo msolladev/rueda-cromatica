@@ -28,6 +28,7 @@ Cada fichero recoge una decisión relevante: su contexto, la decisión tomada, l
 | [0020](0020-rueda-paquete-independiente.md)    | La rueda de color como paquete independiente                         | aceptada; corregida en parte por ADR-0021 |
 | [0021](0021-cambio-modelo-conserva-color.md)   | El cambio de modelo conserva el color base                           | aceptada                                  |
 | [0022](0022-busqueda-pinturas-parecidas.md)    | Búsqueda de las pinturas parecidas                                   | aceptada                                  |
+| [0023](0023-documentacion-tecnica.md)          | Documentación técnica                                                | aceptada                                  |
 
 ## Normas
 
