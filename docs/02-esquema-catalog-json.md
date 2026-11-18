@@ -231,11 +231,11 @@ Los errores esperables se devuelven como valor (`Result`), lo que permite tratar
 
 ### Dónde se ejecuta
 
-| Lugar                      | Cuándo                       | Si falla                                        |
-| -------------------------- | ---------------------------- | ----------------------------------------------- |
-| `catalog-builder`          | antes de escribir el fichero | el build falla y no se escribe nada             |
-| tests de `catalog-builder` | en CI                        | test en rojo                                    |
-| `apps/web`                 | al arrancar                  | pantalla de error bloqueante, sin carga parcial |
+| Lugar                      | Cuándo                       | Si falla                                                                                                  |
+| -------------------------- | ---------------------------- | --------------------------------------------------------------------------------------------------------- |
+| `catalog-builder`          | antes de escribir el fichero | el build falla y no se escribe nada                                                                       |
+| tests de `catalog-builder` | en CI                        | test en rojo                                                                                              |
+| `apps/web`                 | al arrancar                  | error en lugar de los resultados, sin carga parcial; la rueda sigue funcionando ([docs/07](07-web.md) §7) |
 
 No hay carga parcial por dos motivos. Un catálogo con referencias rotas provoca fallos sutiles lejos de su origen. Y como el builder ya aplica la misma validación, un fallo en el cliente indica un bug, no un dato erróneo que haya que tolerar.
 

@@ -14,18 +14,18 @@ Es un proyecto de aprendizaje del ecosistema Node/TS: prioriza las buenas práct
 - **Calidad**: ESLint 10 (_flat config_, `typescript-eslint` con `strictTypeChecked`) y Prettier. ESLint no se encarga del formato ([ADR-0010](docs/adr/0010-lint-formato.md)).
 - **TypeScript 6.0**, no la 7: `typescript-eslint` exige `<6.1.0`. Se sube cuando lo admita.
 - **Madurez de dependencias**: `minimumReleaseAge` de 7 días en `pnpm-workspace.yaml`, y `cooldown` equivalente en Dependabot. Las versiones compartidas entre paquetes van en el `catalog:` de pnpm.
-- **Tests**: Vitest, obligatorios en `domain`, `catalog-builder` y `color-wheel`. El componente de la rueda se prueba en un navegador real (modo navegador de Vitest con Playwright), con entrada real de ratón y táctil, y con axe-core para la accesibilidad.
+- **Tests**: Vitest, obligatorios en `domain`, `catalog-builder`, `color-wheel` y `apps/web`. El componente de la rueda y la web se prueban en un navegador real (modo navegador de Vitest con Playwright), con axe-core para la accesibilidad; la rueda, además, con entrada real de ratón y táctil. La web compilada tiene tests de extremo a extremo con `@playwright/test`: rutas, contenido sin JavaScript y funcionamiento sin conexión ([ADR-0024](docs/adr/0024-web.md)).
 - **CI/CD**: GitHub Actions ([ADR-0011](docs/adr/0011-ci-cd.md)).
 - **Entornos**: desarrollo en WSL 2, preproducción en el homelab y producción por decidir ([ADR-0012](docs/adr/0012-entornos.md)).
 
 ## Estructura objetivo
 
-El monorepo está montado. `domain` ya tiene el contrato del catálogo (esquema, `parseCatalog`, agregado `Catalog` y reglas derivadas) y la búsqueda de las pinturas parecidas, `catalog-builder` genera `catalog.json` y `color-wheel` tiene los cálculos de la rueda y el componente; `apps/web` todavía no tiene lógica. La separación en paquetes, la organización interna por módulos y los patrones están en el [ADR-0018](docs/adr/0018-organizacion-codigo-patrones.md).
+El monorepo está montado. `domain` ya tiene el contrato del catálogo (esquema, `parseCatalog`, agregado `Catalog` y reglas derivadas) y la búsqueda de las pinturas parecidas, `catalog-builder` genera `catalog.json` `color-wheel` tiene los cálculos de la rueda y el componente, y `apps/web` integra la rueda y las pinturas parecidas ([docs/07](docs/07-web.md)). La separación en paquetes, la organización interna por módulos y los patrones están en el [ADR-0018](docs/adr/0018-organizacion-codigo-patrones.md).
 
 - `packages/color-wheel`: la rueda completa, solo con colores y sin pinturas: los modelos RYB y digital, las armonías, el esquema de miniatura (culori, y spectral.js para las mezclas) y el dibujo con la plantilla giratoria y sus controles. Es un componente completo y agnóstico del framework, que se inicializa sobre un contenedor y se entrega compilado a JS con sus tipos. No depende de `domain`. Se diseña como publicable, pero no se publica en npm ([ADR-0020](docs/adr/0020-rueda-paquete-independiente.md), [docs/05](docs/05-rueda-de-color.md)).
 - `packages/domain`: TS puro, con el modelo del catálogo, su validación (Zod) y la búsqueda de la pintura más parecida con el Delta E (culori) ([docs/06](docs/06-pinturas-parecidas.md)). Sin dependencias de React ni del navegador.
 - `packages/catalog-builder`: script Node que importa las fuentes, las normaliza (culori para el punto medio de los degradados) y genera `catalog.json`. Arquitectura hexagonal en sus bordes (disco y red).
-- `apps/web`: React, solo presentación. La lógica vive en el dominio y la rueda en `color-wheel`.
+- `apps/web`: React, solo presentación. La lógica vive en el dominio y la rueda en `color-wheel`. Cada página de cada idioma se prerenderiza en el build, y el navegador la toma ([docs/07](docs/07-web.md), [ADR-0024](docs/adr/0024-web.md)).
 - `docs/`: especificaciones, y `docs/adr/` con los ADR.
 - Futuro, en la fase 6 ([ADR-0017](docs/adr/0017-arquitectura-objetivo-backend.md)):
   - `apps/api`: backend REST con base de datos, que expone la instantánea pública del catálogo.
@@ -67,13 +67,14 @@ El alcance mínimo y lo aplazado están razonados en el [ADR-0019](docs/adr/0019
 - **MVP**: la rueda y, para cada uno de sus colores, las pinturas más parecidas de cada marca, con funcionamiento offline.
   - **Armonías**: complementario, complementario dividido, análogos, análogos con acento, tríada, tétrada rectangular, cuadrado y monocromático, además del esquema de miniatura.
   - **Equivalencias**: solo las calculadas. Las oficiales están aplazadas a la fase 5.
+  - **Web**: en los 10 idiomas de la rueda, con selector de idioma y de tema (sistema, claro u oscuro), y con las preferencias (marcas, filtros, vista, tema, idioma y rueda) guardadas en el navegador. En la fase 6 pasan a la cuenta del usuario.
 - **Marcas y líneas del MVP**, solo las vigentes:
   - Warhammer Colour, antes Citadel: Base, Layer, Shade, Contrast, Technical y Dry.
   - Vallejo: Model Color y Game Color, con sus subfamilias e incluido Xpress Color.
   - Army Painter: Warpaints Fanatic y Speedpaint 2.0.
   - AK: 3rd Gen y Quick Gen.
   - Fuera del catálogo: productos sin color (mediums, barnices, diluyentes).
-- **Futuro** (no implementar sin pedirlo): mi colección, recetas, lista de la compra, cuentagotas sobre foto, sugerencia de lavados, mezclas, ángulos ajustables en la plantilla de la rueda, tutorial guiado de la rueda (cuando el MVP esté completo y haya usuarios reales), icono de ayuda de la rueda personalizable por la web, Tone Pro, líneas de aerógrafo, Spray, Speedpaint 1.0 y búsqueda por código antiguo.
+- **Futuro** (no implementar sin pedirlo): mi colección, recetas, lista de la compra, cuentagotas sobre foto, sugerencia de lavados, mezclas, ángulos ajustables en la plantilla de la rueda, tutorial guiado de la rueda (cuando el MVP esté completo y haya usuarios reales), icono de ayuda de la rueda personalizable por la web, Tone Pro, líneas de aerógrafo, Spray, Speedpaint 1.0, búsqueda por código antiguo y una página estática por pintura con sus equivalentes en las otras marcas, para el SEO.
 - **Búsqueda por nombre**, cuando se haga: sin distinguir mayúsculas, apóstrofos ni acentos y por fragmentos (`tigers skin` encuentra «Tiger's Eye Skin»). Después, tolerante a faltas de ortografía (`boney` encuentra «Bony»). Con eso sobran los alias que hoy cubren erratas, como «Nurgles Rot», «Tigers Eye Skin» y «Boney Spikes».
 - Si una propuesta se sale del MVP, indícalo antes de implementarla.
 
@@ -87,7 +88,7 @@ El alcance mínimo y lo aplazado están razonados en el [ADR-0019](docs/adr/0019
    2. Builder mínimo según docs/04, con el paso 4 de la CI: hecho.
    3. Datos: hecho, una marca por iteración, cada una desde una sola fuente. Citadel: desde la tabla de SimoGecko con hex `community`, porque citadelcolour.com (hoy paint.warhammer.com) no publica los hex. The Army Painter: desde DonnervS con hex `community`; Warpaints Fanatic es una sola gama (lavados, metálicos y efectos se distinguen por el tipo y el atributo metálico). AK Interactive: desde DonnervS con hex `community`; 3Gen Acrylics es una sola gama con todas las etiquetas de AK (STANDARD, AFV, FIGURES…) salvo AIR, que es de aerógrafo; Quick Gen tiene 79 colores, comprobado en la web de AK. Vallejo: desde DonnervS con hex `community`, contrastado con las cartas oficiales CC329 (Model Color) y CC266 (Game Color y Xpress Color); Model Color y Game Color son una gama cada una, con sus subgrupos (lavados, tintas, metálicos, fluorescentes y Special FX) distinguidos por el tipo, y Xpress Color, con Intense, es una gama propia.
    4. Color: el paquete `color-wheel` con los dos modelos de rueda, las armonías, el esquema de miniatura, y el componente completo con su dibujo, su plantilla giratoria y sus controles (hecho), y en `domain` la búsqueda de la pintura más parecida con el ΔE, según docs/06 (hecho).
-   5. Web: la rueda integrada, el filtro de marcas, las pinturas más parecidas a cada color (con los filtros de tipos y de descatalogadas y la vista por marca o sin distinguir marca, docs/06 §8), el aviso de color aproximado y la carga del catálogo.
+   5. Web ([docs/07](docs/07-web.md), [ADR-0024](docs/adr/0024-web.md)): hecho. La rueda integrada, las pinturas más parecidas a cada color en pestañas, con los filtros, la vista por marca o sin distinguir marca y el aviso de color aproximado; la carga del catálogo; 10 idiomas, tema y preferencias; créditos y fuentes con las licencias de terceros; prerenderizado con SEO, y PWA instalable y sin conexión.
 
    Al curar los datos hay que verificar:
    - La retirada de 25 Contrast en 2026. Mientras GW no la confirme, no se marcan como `discontinued`.
@@ -111,9 +112,10 @@ El alcance mínimo y lo aplazado están razonados en el [ADR-0019](docs/adr/0019
 
 Pendiente fuera de la hoja de ruta:
 
-- Provisionar la preproducción en el homelab y decidir dónde va producción. Para el MVP, que es estático, statichost.eu es una opción recomendada, sin evaluar todavía.
+- Provisionar la preproducción en el homelab y decidir dónde va producción. Para el MVP, que es estático, statichost.eu es una opción recomendada, sin evaluar todavía. Cada entorno define `SITE_ORIGIN` al compilar la web.
 - Al pasar a producción, publicar con la CI la referencia de los paquetes que genera TypeDoc, que hasta entonces solo se genera en local.
 - Antes de cualquier despliegue público, revisar las fuentes con licencia `unknown` o `terms-of-use`.
+- Antes de cualquier despliegue público, revisar los textos de la web en francés, alemán, italiano, portugués, ruso, chino, japonés y coreano, que nadie ha revisado, y sustituir el icono provisional de la web.
 
 ## Documentación
 
@@ -129,7 +131,8 @@ Pendiente fuera de la hoja de ruta:
 - **Accesibilidad**: HTML semántico y WCAG 2.2 nivel AA. Todo se maneja con ratón, teclado y pantalla táctil, y el táctil tiene que ser preciso.
 - **Mobile first**: se diseña primero para el móvil, y en escritorio tiene que funcionar y verse igual de bien.
 - **Adaptable de verdad**: un único marcado que se ajusta con CSS. Nada de elementos distintos para móvil y escritorio.
-- **UX/UI cuidadas** en cada pantalla, y **buen SEO** en la web.
+- **UX/UI cuidadas** en cada pantalla.
+- **Muy buen SEO en todas las páginas y en todos los idiomas**: los metadatos, los textos fijos y el contenido llegan en el HTML, sin JavaScript. Solo la rueda y lo interactivo lo necesitan.
 
 ## Reglas de trabajo
 

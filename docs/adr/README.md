@@ -23,12 +23,13 @@ Cada fichero recoge una decisión relevante: su contexto, la decisión tomada, l
 | [0015](0015-fuentes-trazabilidad-licencias.md) | Fuentes: trazabilidad, licencias y desactivación                     | aceptada; aplazada en parte por ADR-0019  |
 | [0016](0016-datos-curados-json.md)             | Datos curados en JSON de dos capas                                   | sustituida por ADR-0019                   |
 | [0017](0017-arquitectura-objetivo-backend.md)  | Arquitectura objetivo con backend                                    | aceptada                                  |
-| [0018](0018-organizacion-codigo-patrones.md)   | Organización del código y patrones                                   | aceptada                                  |
+| [0018](0018-organizacion-codigo-patrones.md)   | Organización del código y patrones                                   | aceptada; corregida en parte por ADR-0024 |
 | [0019](0019-alcance-minimo-mvp.md)             | Alcance mínimo del MVP                                               | aceptada                                  |
 | [0020](0020-rueda-paquete-independiente.md)    | La rueda de color como paquete independiente                         | aceptada; corregida en parte por ADR-0021 |
 | [0021](0021-cambio-modelo-conserva-color.md)   | El cambio de modelo conserva el color base                           | aceptada                                  |
 | [0022](0022-busqueda-pinturas-parecidas.md)    | Búsqueda de las pinturas parecidas                                   | aceptada                                  |
 | [0023](0023-documentacion-tecnica.md)          | Documentación técnica                                                | aceptada                                  |
+| [0024](0024-web.md)                            | La web: integración, estado, prerenderizado y PWA                    | aceptada                                  |
 
 ## Normas
 

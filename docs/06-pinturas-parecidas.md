@@ -101,12 +101,6 @@ Medido el 2026-11-18 en un Intel i5-12600 de escritorio con Node 26 y culori 4.0
 
 Comparando los hex sin el índice, las 6 búsquedas tardaban 6,7 ms. No hay medidas en un móvil.
 
-## 8. Uso en la web (etapa 5)
+## 8. Uso en la web
 
-- La web construye el índice al cargar el catálogo y busca con el `result` de los eventos de la rueda (docs/05 §6.4).
-- **Marcas**: el usuario elige cuáles ver. Por defecto, todas.
-- **Tipos de pintura**: el usuario puede añadir tipos y metálicas al filtro por defecto.
-- **Descatalogadas**: el usuario elige si se incluyen. Por defecto, no.
-- **Vista**: el usuario elige entre ver los resultados por marca (`byBrand`) o las más parecidas sin distinguir marca (`rankOverall`). Propuesta de textos: un control «Mostrar» con «Por marca» y «Las más parecidas».
-- **Tipo de cada pintura**: cada resultado muestra su tipo y si es metálica.
-- **Aviso de aproximado**: mientras todos los hex sean comunitarios, todos los resultados son aproximados. Además del aviso en cada resultado, hará falta probablemente un aviso general.
+La web construye el índice al cargar el catálogo y busca con el resultado de la rueda. Cómo se eligen las marcas, los tipos y las descatalogadas, la vista «Por marca» o «Las más parecidas», qué muestra cada pintura y el aviso de color aproximado están en [docs/07](07-web.md) §1-3.
