@@ -1,0 +1,22 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    // The build (Vite plugins, prerendering) and the end-to-end tests run in
+    // Node; the prerendering imports the app, which needs the DOM types.
+    "lib": ["ES2024", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "jsx": "react-jsx",
+    "resolveJsonModule": true,
+    "types": ["node", "vite/client", "vite-plugin-pwa/client"],
+    "customConditions": ["@chromatic-wheel/source"],
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo"
+  },
+  "include": [
+    "vite.config.ts",
+    "playwright.config.ts",
+    "build",
+    "e2e",
+    "../../packages/color-wheel/src/mixing/spectral.d.ts"
+  ]
+}

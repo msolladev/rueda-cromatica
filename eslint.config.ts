@@ -27,6 +27,11 @@ export default defineConfig(
     languageOptions: { globals: globals.browser },
   },
   {
+    // Entry points, not components: they are never hot-reloaded.
+    files: ["apps/web/src/entry-*.tsx"],
+    rules: { "react-refresh/only-export-components": "off" },
+  },
+  {
     files: ["packages/catalog-builder/**/*.ts"],
     languageOptions: { globals: globals.node },
   },
