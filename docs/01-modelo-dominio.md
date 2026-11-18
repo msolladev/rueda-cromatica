@@ -199,23 +199,18 @@ interface Catalog {
   officialEquivalencesFrom(id: PaintId): readonly OfficialEquivalence[];
   officialEquivalencesTo(id: PaintId): readonly OfficialEquivalence[];
 }
-
-// ── No persistido: equivalencia calculada ───────────────────
-interface CalculatedMatch {
-  readonly paintId: PaintId;
-  readonly deltaE2000: number;
-  readonly approximate: boolean; // true si cualquiera de los dos colores es aproximado
-}
 ```
+
+La equivalencia calculada (`CalculatedMatch`) no se persiste. Su tipo está en [06-pinturas-parecidas.md](06-pinturas-parecidas.md) §6.
 
 ## 5. Reglas derivadas (funciones de domain)
 
-| Regla                             | Definición                                                                                                                                                                                                                                                                                                    |
-| --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `isColorApproximate(paint)`       | `true` si `color !== null` y se cumple al menos una condición: `metallic`, `type ∈ {wash, ink, glaze, contrast, technical}` o `color.origin === 'community'`.                                                                                                                                                 |
-| `resolveReplacement(catalog, id)` | Sigue la cadena de sustitutas hasta llegar a una pintura activa o al final de la cadena, y devuelve esa pintura. Devuelve `null` si la pintura no tiene sustituta. Un `id` que no está en el catálogo es un error de programación y lanza una excepción. Siempre termina, porque los ciclos están prohibidos. |
-| Equivalencias calculadas          | Se calculan con CIEDE2000 en el cliente y nunca se persisten. Excluyen las pinturas sin color. Si el origen o el destino tienen un color aproximado, el resultado lleva `approximate: true` y la interfaz lo avisa. Los umbrales y el orden se definen en la fase 4.                                          |
-| Equivalencias oficiales           | Se leen solo en su dirección. No se infieren ni las inversas ni las transitivas.                                                                                                                                                                                                                              |
+| Regla                             | Definición                                                                                                                                                                                                                                                                                                                          |
+| --------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `isColorApproximate(paint)`       | `true` si `color !== null` y se cumple al menos una condición: `metallic`, `type ∈ {wash, ink, glaze, contrast, technical}` o `color.origin === 'community'`.                                                                                                                                                                       |
+| `resolveReplacement(catalog, id)` | Sigue la cadena de sustitutas hasta llegar a una pintura activa o al final de la cadena, y devuelve esa pintura. Devuelve `null` si la pintura no tiene sustituta. Un `id` que no está en el catálogo es un error de programación y lanza una excepción. Siempre termina, porque los ciclos están prohibidos.                       |
+| Equivalencias calculadas          | Se calculan con CIEDE2000 en el cliente y nunca se persisten. Excluyen las pinturas sin color. Si el origen o el destino tienen un color aproximado, el resultado lleva `approximate: true` y la interfaz lo avisa. Las etiquetas de calidad, el orden y los filtros están en [06-pinturas-parecidas.md](06-pinturas-parecidas.md). |
+| Equivalencias oficiales           | Se leen solo en su dirección. No se infieren ni las inversas ni las transitivas.                                                                                                                                                                                                                                                    |
 
 ## 6. Invariantes
 

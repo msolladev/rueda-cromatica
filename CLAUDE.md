@@ -21,10 +21,10 @@ Es un proyecto de aprendizaje del ecosistema Node/TS: prioriza las buenas práct
 
 ## Estructura objetivo
 
-El monorepo está montado. `domain` ya tiene el contrato del catálogo (esquema, `parseCatalog`, agregado `Catalog` y reglas derivadas), `catalog-builder` genera `catalog.json` y `color-wheel` tiene los cálculos de la rueda y el componente; `apps/web` todavía no tiene lógica. La separación en paquetes, la organización interna por módulos y los patrones están en el [ADR-0018](docs/adr/0018-organizacion-codigo-patrones.md).
+El monorepo está montado. `domain` ya tiene el contrato del catálogo (esquema, `parseCatalog`, agregado `Catalog` y reglas derivadas) y la búsqueda de las pinturas parecidas, `catalog-builder` genera `catalog.json` y `color-wheel` tiene los cálculos de la rueda y el componente; `apps/web` todavía no tiene lógica. La separación en paquetes, la organización interna por módulos y los patrones están en el [ADR-0018](docs/adr/0018-organizacion-codigo-patrones.md).
 
 - `packages/color-wheel`: la rueda completa, solo con colores y sin pinturas: los modelos RYB y digital, las armonías, el esquema de miniatura (culori, y spectral.js para las mezclas) y el dibujo con la plantilla giratoria y sus controles. Es un componente completo y agnóstico del framework, que se inicializa sobre un contenedor y se entrega compilado a JS con sus tipos. No depende de `domain`. Se diseña como publicable, pero no se publica en npm ([ADR-0020](docs/adr/0020-rueda-paquete-independiente.md), [docs/05](docs/05-rueda-de-color.md)).
-- `packages/domain`: TS puro, con el modelo del catálogo, su validación (Zod) y la búsqueda de la pintura más parecida con el Delta E (culori). Sin dependencias de React ni del navegador.
+- `packages/domain`: TS puro, con el modelo del catálogo, su validación (Zod) y la búsqueda de la pintura más parecida con el Delta E (culori) ([docs/06](docs/06-pinturas-parecidas.md)). Sin dependencias de React ni del navegador.
 - `packages/catalog-builder`: script Node que importa las fuentes, las normaliza (culori para el punto medio de los degradados) y genera `catalog.json`. Arquitectura hexagonal en sus bordes (disco y red).
 - `apps/web`: React, solo presentación. La lógica vive en el dominio y la rueda en `color-wheel`.
 - `docs/`: especificaciones, y `docs/adr/` con los ADR.
@@ -62,7 +62,7 @@ Desde la raíz. pnpm cambia solo a la versión de `packageManager` y descarga el
 ## Reglas de dominio
 
 - **Equivalencias oficiales**: aristas dirigidas (origen → destino) con una fuente del fabricante obligatoria. No se infieren ni las inversas ni las transitivas.
-- **Equivalencias calculadas**: CIEDE2000 en el cliente. No se guardan en el JSON.
+- **Equivalencias calculadas**: CIEDE2000 en el cliente. No se guardan en el JSON. Se agrupan por marca, con una etiqueta de calidad por tramos de ΔE y sin umbral que oculte resultados. Por defecto solo son candidatas las pinturas opacas no metálicas ([docs/06](docs/06-pinturas-parecidas.md), [ADR-0022](docs/adr/0022-busqueda-pinturas-parecidas.md)).
 - **Color aproximado**: un hex es aproximado si la pintura es metálica, si su tipo es lavado, tinta, veladura, contrast o técnica, o si el hex es de origen comunitario. Se calcula en el dominio; en el JSON solo se guardan el origen y la fuente del hex. No se ofrecen equivalencias calculadas con colores aproximados sin avisar.
 - **Origen del color**: un único hex por pintura, con su origen (`measured`, `manufacturer` o `community`) y su fuente. Los degradados oficiales de Citadel se reducen a su punto medio en CIELAB ([ADR-0014](docs/adr/0014-origen-seleccion-color.md)). En el MVP cada pintura tiene una sola fuente de color ([ADR-0019](docs/adr/0019-alcance-minimo-mvp.md)).
 - **Sustitución frente a equivalencia**: solo hay sustituta si la fuente del fabricante dice que X sustituye a Y. Las cartas de conversión son equivalencias oficiales.
@@ -106,8 +106,8 @@ El alcance mínimo y lo aplazado están razonados en el [ADR-0019](docs/adr/0019
    1. Contrato del catálogo en `domain`: hecho.
    2. Builder mínimo según docs/04, con el paso 4 de la CI: hecho.
    3. Datos: hecho, una marca por iteración, cada una desde una sola fuente. Citadel: desde la tabla de SimoGecko con hex `community`, porque citadelcolour.com (hoy paint.warhammer.com) no publica los hex. The Army Painter: desde DonnervS con hex `community`; Warpaints Fanatic es una sola gama (lavados, metálicos y efectos se distinguen por el tipo y el atributo metálico). AK Interactive: desde DonnervS con hex `community`; 3Gen Acrylics es una sola gama con todas las etiquetas de AK (STANDARD, AFV, FIGURES…) salvo AIR, que es de aerógrafo; Quick Gen tiene 79 colores, comprobado en la web de AK. Vallejo: desde DonnervS con hex `community`, contrastado con las cartas oficiales CC329 (Model Color) y CC266 (Game Color y Xpress Color); Model Color y Game Color son una gama cada una, con sus subgrupos (lavados, tintas, metálicos, fluorescentes y Special FX) distinguidos por el tipo, y Xpress Color, con Intense, es una gama propia.
-   4. Color: el paquete `color-wheel` con los dos modelos de rueda, las armonías, el esquema de miniatura, y el componente completo con su dibujo, su plantilla giratoria y sus controles (hecho), y en `domain` la búsqueda de la pintura más parecida con el ΔE (pendiente).
-   5. Web: la rueda integrada, el filtro de marcas, las pinturas más parecidas a cada color, el aviso de color aproximado y la carga del catálogo.
+   4. Color: el paquete `color-wheel` con los dos modelos de rueda, las armonías, el esquema de miniatura, y el componente completo con su dibujo, su plantilla giratoria y sus controles (hecho), y en `domain` la búsqueda de la pintura más parecida con el ΔE, según docs/06 (hecho).
+   5. Web: la rueda integrada, el filtro de marcas, las pinturas más parecidas a cada color (con el filtro de tipos y la vista por marca o sin distinguir marca, docs/06 §8), el aviso de color aproximado y la carga del catálogo.
 
    Al curar los datos hay que verificar:
    - La retirada de 25 Contrast en 2026. Mientras GW no la confirme, no se marcan como `discontinued`.
