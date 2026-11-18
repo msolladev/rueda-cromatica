@@ -1031,9 +1031,10 @@ export class ColorWheel extends EventTarget {
       : dom.triangle.matches(":focus-visible")
         ? "triangle"
         : undefined;
+    // The canvas's `color` is `--cw-focus` resolved for the theme: the
+    // variable itself may be an unresolved `light-dark()`.
     const focusColor =
-      getComputedStyle(dom.root).getPropertyValue("--cw-focus").trim() ||
-      FALLBACK_FOCUS_COLOR;
+      getComputedStyle(dom.canvas).color.trim() || FALLBACK_FOCUS_COLOR;
     drawWheel(context, {
       model: this.#config.model,
       position: this.#position,

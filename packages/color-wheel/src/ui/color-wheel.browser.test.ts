@@ -12,6 +12,12 @@ import {
 } from "../index.ts";
 import { expectNoAxeViolations } from "./testing/axe.ts";
 
+// The text and focus colors of style.css, as getComputedStyle gives them.
+const LIGHT_TEXT = "rgb(29, 31, 34)";
+const DARK_TEXT = "rgb(233, 234, 236)";
+const LIGHT_FOCUS = "rgb(26, 95, 208)";
+const DARK_FOCUS = "rgb(138, 180, 255)";
+
 const CONTROLS: readonly Control[] = [
   "hex",
   "model",
@@ -664,12 +670,39 @@ describe("accessibility", () => {
     });
     try {
       create();
-      expect(getComputedStyle(query(".cw-root", HTMLElement)).colorScheme).toBe(
-        "dark",
+      expect(getComputedStyle(query(".cw-root", HTMLElement)).color).toBe(
+        DARK_TEXT,
       );
       query(".cw-help-popover", HTMLElement).showPopover();
       await expectNoAxeViolations(container);
     } finally {
+      await cdp().send("Emulation.setEmulatedMedia", { features: [] });
+    }
+  });
+
+  it("follows the theme of the page through --cw-color-scheme", async () => {
+    await cdp().send("Emulation.setEmulatedMedia", {
+      features: [{ name: "prefers-color-scheme", value: "dark" }],
+    });
+    try {
+      create();
+      const root = query(".cw-root", HTMLElement);
+      const canvas = query(".cw-canvas", HTMLCanvasElement);
+      // Without the variable, the system's theme (dark here).
+      expect(getComputedStyle(root).color).toBe(DARK_TEXT);
+      expect(getComputedStyle(canvas).color).toBe(DARK_FOCUS);
+
+      container.style.setProperty("--cw-color-scheme", "light");
+      expect(getComputedStyle(root).color).toBe(LIGHT_TEXT);
+      expect(getComputedStyle(canvas).color).toBe(LIGHT_FOCUS);
+
+      await cdp().send("Emulation.setEmulatedMedia", { features: [] });
+      container.style.setProperty("--cw-color-scheme", "dark");
+      expect(getComputedStyle(root).color).toBe(DARK_TEXT);
+      query(".cw-help-popover", HTMLElement).showPopover();
+      await expectNoAxeViolations(container);
+    } finally {
+      container.style.removeProperty("--cw-color-scheme");
       await cdp().send("Emulation.setEmulatedMedia", { features: [] });
     }
   });
