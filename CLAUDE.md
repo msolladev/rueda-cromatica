@@ -1,9 +1,8 @@
 # rueda-cromatica
 
-App personal para pintar miniaturas de Warhammer, en forma de PWA. Tiene dos funcionalidades:
+Qué es el proyecto, cómo se instala y los comandos están en el README:
 
-1. **Rueda de color** que funciona como una física, con una plantilla giratoria. Genera armonías y un esquema de miniatura: base, tríada, complementario, sombra y luz.
-2. **Equivalencias** entre pinturas de distintas marcas.
+@README.md
 
 Es un proyecto de aprendizaje del ecosistema Node/TS: prioriza las buenas prácticas sobre los atajos.
 
@@ -32,25 +31,6 @@ El monorepo está montado. `domain` ya tiene el contrato del catálogo (esquema,
   - `apps/api`: backend REST con base de datos, que expone la instantánea pública del catálogo.
   - `apps/admin`: frontal de mantenimiento del catálogo.
   - `packages/importers`: la importación de fuentes, extraída de `catalog-builder`.
-
-## Comandos
-
-Desde la raíz. pnpm cambia solo a la versión de `packageManager` y descarga el Node de `devEngines.runtime`.
-
-- `pnpm install`: instala las dependencias. La CI usa `--frozen-lockfile`.
-- `pnpm lint`: ESLint con tipos en todo el monorepo.
-- `pnpm format` / `pnpm format:check`: aplica o comprueba el formato de Prettier.
-- `pnpm typecheck`: `tsc` en la raíz y en cada paquete.
-- `pnpm test`: Vitest en `domain`, `catalog-builder` y `color-wheel`. El proyecto de navegador de `color-wheel` necesita Chromium:
-  - `pnpm --filter @chromatic-wheel/color-wheel install-browsers`, una vez y cada vez que cambie la versión de Playwright;
-  - en WSL, además, las librerías del sistema: `pnpm --filter @chromatic-wheel/color-wheel exec playwright install-deps chromium`, que pide la contraseña de `sudo`.
-- `pnpm build`: build de `color-wheel` (Vite en modo librería y `tsc`) y de `apps/web` (Vite + PWA).
-- `pnpm --filter @chromatic-wheel/web dev`: servidor de desarrollo.
-- `pnpm --filter @chromatic-wheel/color-wheel dev`: página de pruebas de la rueda, con el código fuente (docs/05 §8.4). Con `--host`, para abrirla desde el móvil.
-- `pnpm --filter @chromatic-wheel/catalog-builder build-catalog`: regenera `apps/web/public/catalog.json` a partir de los datos. Con `--check` no escribe nada y falla si el versionado está desactualizado.
-- `pnpm --filter @chromatic-wheel/catalog-builder import-simogecko`: importa Citadel de la tabla de SimoGecko a `data/brands/citadel.json`. Se ejecuta a demanda; después, `pnpm format` y `build-catalog`.
-- `pnpm --filter @chromatic-wheel/catalog-builder import-donnervs <brand-id>`: igual, para una marca desde los datos de DonnervS.
-- `pnpm --filter <paquete> <script>`: ejecuta un script de un paquete concreto.
 
 ## Catálogo
 
