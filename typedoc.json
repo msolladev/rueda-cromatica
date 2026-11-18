@@ -1,0 +1,19 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPointStrategy": "packages",
+  "entryPoints": ["packages/color-wheel", "packages/domain"],
+  "out": "dist/reference",
+  "name": "Chromatic Wheel",
+  "treatWarningsAsErrors": true,
+  "packageOptions": {
+    "excludeInternal": true,
+    "validation": {
+      "notExported": true,
+      "invalidLink": true,
+      "invalidPath": true,
+      "rewrittenLink": true,
+      "notDocumented": true,
+      "unusedMergeModuleWith": true
+    }
+  }
+}
