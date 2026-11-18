@@ -109,7 +109,7 @@ En la fase 6 las preferencias pasarán a la cuenta del usuario ([ADR-0017](adr/0
 
 - **Barra fija arriba**: el nombre a la izquierda, que lleva a la principal; a la derecha, el idioma y el tema. En pantallas estrechas, el idioma y el tema se recogen en un menú hamburguesa que se despliega bajo la barra, no modal, con `aria-expanded`, y se cierra con Esc. Admite más enlaces en el futuro.
 - **Tema**: un selector segmentado con tres iconos (sistema, claro y oscuro), con su nombre accesible y su texto al pasar el ratón. Lo aplica el atributo `data-theme` de `<html>`, y el CSS lo convierte en `color-scheme` para la web y en `--cw-color-scheme` para la rueda (docs/05 §6.6). Sin elección, el del sistema.
-- **Sin parpadeo**: un script mínimo en línea aplica el tema guardado antes de pintar nada.
+- **Sin parpadeo**: cada página declara `<meta name="color-scheme" content="light dark">` antes de la hoja de estilos, para que el navegador no pinte en blanco mientras la carga, también al pasar de una página a otra. Un script mínimo en línea aplica el tema guardado, en `data-theme` y en esa etiqueta, antes de pintar nada.
 - **Iconos**: `sun`, `moon`, `monitor`, `menu` y `x` de Lucide, copiados como en `color-wheel`, con su aviso de licencia.
 
 ## 12. Páginas y rutas

@@ -76,3 +76,48 @@ test("the language selector goes to the same page in another language", async ({
   await page.goto("/");
   await expect(page).toHaveURL(/\/de\/$/);
 });
+
+test.describe("the theme from the first paint", () => {
+  test("every page declares the color scheme before its stylesheet", async ({
+    request,
+  }) => {
+    for (const path of paths) {
+      const html = await (await request.get(path)).text();
+      const meta = html.indexOf(
+        '<meta name="color-scheme" content="light dark" />',
+      );
+      const css = html.indexOf('rel="stylesheet"');
+      expect(meta, path).toBeGreaterThan(-1);
+      expect(meta, path).toBeLessThan(css);
+    }
+  });
+
+  test("the saved theme is applied before the page shows", async ({
+    browser,
+  }) => {
+    // The system in dark and «Light» chosen: the page must start light.
+    const context = await browser.newContext({ colorScheme: "dark" });
+    const page = await context.newPage();
+    await page.goto("/es/");
+    await page.evaluate(() => {
+      localStorage.setItem(
+        "rueda-cromatica.preferences.v1",
+        JSON.stringify({ theme: "light" }),
+      );
+    });
+    // Read before any script of the app runs: only the inline one has.
+    await page.route("**/assets/*.js", (route) => route.abort());
+    await page.goto("/es/credits/");
+    await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
+    await expect(page.locator('meta[name="color-scheme"]')).toHaveAttribute(
+      "content",
+      "light",
+    );
+    expect(
+      await page.evaluate(
+        () => getComputedStyle(document.body).backgroundColor,
+      ),
+    ).toBe("rgb(246, 247, 249)");
+    await context.close();
+  });
+});
