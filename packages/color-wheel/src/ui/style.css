@@ -7,6 +7,7 @@
 .cw-root {
   --cw-font: system-ui, -apple-system, "Segoe UI", sans-serif;
   --cw-font-size: 1rem;
+  /* Light colors: also the fallback where `light-dark()` is not supported. */
   --cw-text: #1d1f22;
   --cw-muted: #5a5f66;
   --cw-surface: #ffffff;
@@ -37,27 +38,32 @@
   font-family: var(--cw-font);
   font-size: var(--cw-font-size);
   line-height: 1.5;
-  color-scheme: light;
+  /* The theme: the page sets `--cw-color-scheme` to `light` or `dark`;
+     without it, the system's. */
+  color-scheme: var(--cw-color-scheme, light dark);
 }
 
-@media (prefers-color-scheme: dark) {
+/* Each color, light or dark depending on `color-scheme`. */
+@supports (color: light-dark(#000, #fff)) {
   .cw-root {
-    --cw-text: #e9eaec;
-    --cw-muted: #b5bac1;
-    --cw-surface: #17191c;
-    --cw-elevated: #2c3036;
-    /* A dark shadow barely shows on a dark page: a light inner edge on top and
-       a light gray glow around make the popover float, with a short dark
+    --cw-text: light-dark(#1d1f22, #e9eaec);
+    --cw-muted: light-dark(#5a5f66, #b5bac1);
+    --cw-surface: light-dark(#ffffff, #17191c);
+    --cw-elevated: light-dark(#ffffff, #2c3036);
+    /* The same five layers in both themes, with the unused ones transparent.
+       In the dark theme a dark shadow barely shows: a light inner edge on top
+       and a light gray glow around make the popover float, with a short dark
        shadow under it. */
     --cw-shadow:
-      inset 0 1px 0 rgb(255 255 255 / 0.08),
-      0 0 2.65rem rgb(160 170 185 / 0.26), 0 0.5rem 1.5rem rgb(0 0 0 / 0.6);
-    --cw-field: #202328;
-    --cw-border: #8a9099;
-    --cw-focus: #8ab4ff;
-    --cw-error: #ff8a80;
-
-    color-scheme: dark;
+      inset 0 1px 0 light-dark(transparent, rgb(255 255 255 / 0.08)),
+      0 0 2.65rem light-dark(transparent, rgb(160 170 185 / 0.26)),
+      0 0.5rem 1.5rem light-dark(transparent, rgb(0 0 0 / 0.6)),
+      0 0.75rem 2rem light-dark(rgb(0 0 0 / 0.18), transparent),
+      0 0.125rem 0.5rem light-dark(rgb(0 0 0 / 0.12), transparent);
+    --cw-field: light-dark(#ffffff, #202328);
+    --cw-border: light-dark(#767b82, #8a9099);
+    --cw-focus: light-dark(#1a5fd0, #8ab4ff);
+    --cw-error: light-dark(#b3261e, #ff8a80);
   }
 }
 
@@ -104,6 +110,9 @@
   height: 100%;
   touch-action: none;
   cursor: crosshair;
+  /* The canvas has no text: its color is the focus color, already resolved
+     for the theme, which the drawing reads to outline the focused zone. */
+  color: var(--cw-focus);
 }
 
 .cw-root.cw-is-disabled .cw-canvas {
