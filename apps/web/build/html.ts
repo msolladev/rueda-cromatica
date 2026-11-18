@@ -1,5 +1,5 @@
 /** Fills the HTML template of Vite with a prerendered page (docs/07 §10). */
-import { themeScriptSource, THEME_SCRIPT } from "./theme-script.ts";
+import { inlineScriptSource, INLINE_SCRIPT } from "./inline-script.ts";
 
 export interface PageParts {
   readonly lang: string;
@@ -9,14 +9,14 @@ export interface PageParts {
 }
 
 /**
- * The Content Security Policy of the pages. Only the theme script runs
+ * The Content Security Policy of the pages. Only the script of build/inline-script.ts runs
  * inline; inline styles are allowed because the swatches of the prerendered
  * HTML carry their color in a `style` attribute.
  */
 export function contentSecurityPolicy(): string {
   return [
     "default-src 'self'",
-    `script-src 'self' ${themeScriptSource()}`,
+    `script-src 'self' ${inlineScriptSource()}`,
     "style-src 'self' 'unsafe-inline'",
     "img-src 'self' data:",
     "connect-src 'self'",
@@ -46,7 +46,7 @@ export function fillTemplate(
         : "",
     )
     .replace("<!--app-head-->", page.head)
-    .replace("<!--app-theme-->", `<script>${THEME_SCRIPT}</script>`)
+    .replace("<!--app-inline-script-->", `<script>${INLINE_SCRIPT}</script>`)
     .replace("<!--app-html-->", page.html)
     .replace(
       "<!--app-data-->",

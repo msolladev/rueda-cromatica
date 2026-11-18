@@ -6,6 +6,7 @@ import { InstallBanner } from "../features/pwa/InstallBanner.tsx";
 import { useInstall } from "../features/pwa/install.ts";
 import { useServiceWorkerUpdate } from "../features/pwa/update.ts";
 import { applyTheme } from "../features/theme/theme.ts";
+import { endRestoring } from "./restoring.ts";
 import {
   LANGUAGE_NAMES,
   LOCALES,
@@ -58,6 +59,12 @@ function LocalizedApp({
   useEffect(() => {
     if (restored) applyTheme(preferences.theme);
   }, [restored, preferences.theme]);
+
+  // The home page shows its wheel and results once they reflect the saved
+  // preferences; the other pages have nothing to wait for.
+  useEffect(() => {
+    if (restored && data.kind !== "home") endRestoring();
+  }, [restored, data.kind]);
 
   const onLocale = (next: Locale) => {
     // Saved before leaving: the effect would not run in time.

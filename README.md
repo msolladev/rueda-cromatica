@@ -26,7 +26,7 @@ pnpm install
 
 Los tests de navegador de `color-wheel` y `apps/web`, y los de extremo a extremo de `apps/web`, necesitan Chromium:
 
-- `pnpm --filter @chromatic-wheel/color-wheel install-browsers`, una vez y cada vez que cambie la versión de Playwright;
+- `pnpm --filter @chromatic-wheel/color-wheel install-browsers` (la versión recortada para tests) y `pnpm --filter @chromatic-wheel/web install-browsers` (el Chromium completo, para los tests de extremo a extremo), una vez y cada vez que cambie la versión de Playwright;
 - en WSL, además, las librerías del sistema: `pnpm --filter @chromatic-wheel/color-wheel exec playwright install-deps chromium`, que pide la contraseña de `sudo`.
 
 ## Comandos

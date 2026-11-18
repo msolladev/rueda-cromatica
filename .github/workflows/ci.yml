@@ -32,7 +32,8 @@ jobs:
       - run: pnpm docs:api
 
       # Chromium for the Vitest browser projects of color-wheel (ADR-0020) and
-      # web, and for the end-to-end tests of web (ADR-0024), cached per
+      # web (the headless shell), and the full Chromium for the end-to-end
+      # tests of web (ADR-0024), which paints like a real browser. Cached per
       # Playwright version (the same in every package). The system libraries it needs are not cached and
       # are always installed.
       - id: playwright
@@ -43,7 +44,7 @@ jobs:
           path: ~/.cache/ms-playwright
           key: playwright-${{ runner.os }}-${{ steps.playwright.outputs.version }}
       - if: steps.playwright-cache.outputs.cache-hit != 'true'
-        run: pnpm --filter @chromatic-wheel/color-wheel exec playwright install --with-deps --only-shell chromium
+        run: pnpm --filter @chromatic-wheel/color-wheel exec playwright install --with-deps chromium
       - if: steps.playwright-cache.outputs.cache-hit == 'true'
         run: pnpm --filter @chromatic-wheel/color-wheel exec playwright install-deps chromium
 

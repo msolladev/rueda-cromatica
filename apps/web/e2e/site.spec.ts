@@ -121,3 +121,93 @@ test.describe("the theme from the first paint", () => {
     await context.close();
   });
 });
+
+test.describe("saved preferences", () => {
+  const saved = {
+    filters: {
+      excludedBrands: ["vallejo"],
+      extraTypes: [],
+      includeMetallic: false,
+      includeDiscontinued: false,
+    },
+    view: "by-brand",
+    theme: "system",
+    locale: null,
+    installDismissed: false,
+    wheel: {
+      color: "#dc212f",
+      model: "ryb",
+      harmony: "complementary",
+      light: "warm",
+    },
+  };
+
+  test("the defaults of the prerendered page are never seen", async ({
+    page,
+  }) => {
+    await page.goto("/es/credits/");
+    // Once the page has saved its own (default) preferences, so that it does
+    // not overwrite these.
+    await page.waitForFunction(
+      () => localStorage.getItem("rueda-cromatica.preferences.v1") !== null,
+    );
+    await page.evaluate((value) => {
+      localStorage.setItem(
+        "rueda-cromatica.preferences.v1",
+        JSON.stringify(value),
+      );
+    }, saved);
+    // On every frame from the start, note whether the wheel and the results
+    // were visible with the defaults (the six colors of the scheme).
+    await page.addInitScript(() => {
+      const seen: string[] = [];
+      (window as unknown as { seen: string[] }).seen = seen;
+      const check = () => {
+        const workspace = document.querySelector(".workspace");
+        if (
+          workspace !== null &&
+          getComputedStyle(workspace).visibility === "visible"
+        ) {
+          seen.push(
+            `${String(document.querySelectorAll('[role="tab"]').length)} tabs`,
+          );
+        }
+        if (seen.length < 200) requestAnimationFrame(check);
+      };
+      requestAnimationFrame(check);
+    });
+    await page.goto("/es/");
+    await expect(page.locator('[role="tab"]')).toHaveCount(2);
+    await expect(page.locator("html")).not.toHaveAttribute("data-restoring");
+    await expect(
+      page.locator(".panel:not([hidden]) .brand-heading"),
+    ).toHaveCount(3);
+    const seen = await page.evaluate(
+      () => (window as unknown as { seen: string[] }).seen,
+    );
+    expect(seen.length).toBeGreaterThan(0);
+    expect(seen.filter((frame) => frame !== "2 tabs")).toEqual([]);
+  });
+
+  test("without the app, the wheel and the results are hidden for 3 s at most", async ({
+    page,
+  }) => {
+    await page.goto("/es/credits/");
+    // Once the page has saved its own (default) preferences, so that it does
+    // not overwrite these.
+    await page.waitForFunction(
+      () => localStorage.getItem("rueda-cromatica.preferences.v1") !== null,
+    );
+    await page.evaluate((value) => {
+      localStorage.setItem(
+        "rueda-cromatica.preferences.v1",
+        JSON.stringify(value),
+      );
+    }, saved);
+    await page.route("**/assets/*.js", (route) => route.abort());
+    await page.goto("/es/");
+    await expect(page.locator("html")).toHaveAttribute("data-restoring", "");
+    await expect(page.locator(".workspace")).toBeHidden();
+    await expect(page.locator(".workspace")).toBeVisible({ timeout: 5000 });
+  });
+});

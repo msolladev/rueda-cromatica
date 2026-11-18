@@ -15,7 +15,7 @@ import {
 } from "@chromatic-wheel/color-wheel";
 import { paintTypeSchema, type PaintType } from "@chromatic-wheel/domain";
 import { isTheme } from "../features/theme/theme.ts";
-import { STORAGE_KEY } from "./storage-key.ts";
+import { STORAGE_KEY } from "./before-paint.ts";
 import {
   EXTRA_PAINT_TYPES,
   type Filters,

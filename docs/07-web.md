@@ -64,7 +64,9 @@ Se guardan en `localStorage`, en una clave con la versión del formato:
 - si se cerró el banner de instalar;
 - el color, el modelo, la armonía y la luz de la rueda, al cambiar (no mientras se arrastra).
 
-No se guardan la pestaña, lo pedido con «Ver más» ni si el desplegable está abierto. Lo leído se valida: si no es válido, se descarta entero. Un `localStorage` bloqueado o lleno se ignora. Se leen después de que el navegador tome la página (§10), así que la rueda aparece un instante con el color de partida antes del guardado.
+No se guardan la pestaña, lo pedido con «Ver más» ni si el desplegable está abierto. Lo leído se valida: si no es válido, se descarta entero. Un `localStorage` bloqueado o lleno se ignora.
+
+Se aplican después de que el navegador tome la página (§10), porque el HTML prerenderizado es igual para todos. Para que no se vean un instante los valores por defecto, el script en línea del `<head>`, si hay preferencias guardadas, marca `<html data-restoring>`, y la rueda y los resultados quedan ocultos hasta que tienen el estado guardado y las pinturas buscadas con él. Si algo falla, el CSS los muestra a los 3 segundos. Sin preferencias guardadas (la primera visita, los buscadores) no se oculta nada.
 
 En la fase 6 las preferencias pasarán a la cuenta del usuario ([ADR-0017](adr/0017-arquitectura-objetivo-backend.md)).
 
@@ -99,17 +101,18 @@ En la fase 6 las preferencias pasarán a la cuenta del usuario ([ADR-0017](adr/0
 
 - **Cada página de cada idioma se prerenderiza en el build** como su propio `index.html`, con React en Node. El navegador toma ese HTML (`hydrateRoot`) con los mismos datos, que van en la propia página (`<script type="application/json">`).
 - **Sin JavaScript** se ven los metadatos, los textos fijos, las armonías explicadas, un ejemplo real completo (el color de partida, los 6 colores de su esquema de miniatura y las pinturas de cada marca, calculados en el build) y los créditos completos. Los 6 colores salen seguidos, como secciones. En el sitio de la rueda, el aviso «La rueda interactiva necesita JavaScript».
-- **En el primer render no se lee nada del navegador** (preferencias, idioma del navegador, catálogo): lo que depende de él se aplica justo después. Un test renderiza todas las páginas en Node para garantizarlo.
+- **En el primer render no se lee nada del navegador** (preferencias, idioma del navegador, catálogo): lo que depende de él se aplica justo después (§6). Un test renderiza todas las páginas en Node para garantizarlo.
+- **En desarrollo**, el servidor renderiza cada página igual, y pone en el `<head>` como `<link>` los CSS que importa la web. Vite los añadiría desde JavaScript, y la página se vería un instante sin estilos.
 - **Cabecera de cada página**: título y descripción en su idioma, `lang`, URL canónica, `hreflang` a los otros 9 idiomas y `x-default` a `/`, metadatos para compartir (Open Graph y la tarjeta de X) y, en la principal, datos estructurados `WebApplication`.
 - **`sitemap.xml`** con las alternativas de idioma, y **`robots.txt`**.
 - **El origen del sitio** (para las URL absolutas) lo da la variable `SITE_ORIGIN` al compilar. Sin ella, el de `vite preview`.
-- **CSP** en una etiqueta `<meta>`: solo scripts propios y el script del tema (§11), autorizado por su hash. Los estilos en línea se permiten porque las muestras del HTML prerenderizado llevan su color en el atributo `style`.
+- **CSP** en una etiqueta `<meta>`: solo scripts propios y el script en línea del `<head>` (§6 y §11), autorizado por su hash. Los estilos en línea se permiten porque las muestras del HTML prerenderizado llevan su color en el atributo `style`.
 
 ## 11. Barra de navegación y tema
 
 - **Barra fija arriba**: el nombre a la izquierda, que lleva a la principal; a la derecha, el idioma y el tema. En pantallas estrechas, el idioma y el tema se recogen en un menú hamburguesa que se despliega bajo la barra, no modal, con `aria-expanded`, y se cierra con Esc. Admite más enlaces en el futuro.
 - **Tema**: un selector segmentado con tres iconos (sistema, claro y oscuro), con su nombre accesible y su texto al pasar el ratón. Lo aplica el atributo `data-theme` de `<html>`, y el CSS lo convierte en `color-scheme` para la web y en `--cw-color-scheme` para la rueda (docs/05 §6.6). Sin elección, el del sistema.
-- **Sin parpadeo**: cada página declara `<meta name="color-scheme" content="light dark">` antes de la hoja de estilos, para que el navegador no pinte en blanco mientras la carga, también al pasar de una página a otra. Un script mínimo en línea aplica el tema guardado, en `data-theme` y en esa etiqueta, antes de pintar nada.
+- **Sin parpadeo**: cada página declara `<meta name="color-scheme" content="light dark">` antes de la hoja de estilos, para que el navegador no pinte en blanco mientras la carga, también al pasar de una página a otra. El script en línea (§6) aplica el tema guardado, en `data-theme` y en esa etiqueta, antes de pintar nada.
 - **Iconos**: `sun`, `moon`, `monitor`, `menu` y `x` de Lucide, copiados como en `color-wheel`, con su aviso de licencia.
 
 ## 12. Páginas y rutas
@@ -133,7 +136,9 @@ En la fase 6 las preferencias pasarán a la cuenta del usuario ([ADR-0017](adr/0
 
 - **Node**: el reductor, las preferencias, las rutas, la cabecera, la carga del catálogo, la búsqueda, los textos de los 10 idiomas, la plantilla HTML con la CSP, el plugin de licencias y el prerenderizado de las 21 páginas.
 - **Navegador** (modo navegador de Vitest con Playwright): que el navegador toma el HTML prerenderizado sin diferencias, las pestañas con teclado, los filtros, «Ver más», la vista, el tema, el menú, las preferencias guardadas y el error de red, con axe-core (WCAG 2.2 A y AA) en varios estados.
-- **De extremo a extremo** (`@playwright/test`), sobre la web compilada: que se sirven todas las rutas en su idioma, el contenido sin JavaScript, que `/` va al idioma detectado, el selector de idioma, el funcionamiento sin conexión y el aviso de versión nueva.
+- **De extremo a extremo** (`@playwright/test`), en Chromium completo, no en la versión recortada para tests, que no pinta como un navegador real:
+  - sobre la web compilada: que se sirven todas las rutas en su idioma, el contenido sin JavaScript, que `/` va al idioma detectado, el selector de idioma, que el tema guardado se aplica antes de pintar y que la página declara `color-scheme` antes de la hoja de estilos, que nunca se ven los valores por defecto con preferencias guardadas (fotograma a fotograma), el funcionamiento sin conexión y el aviso de versión nueva;
+  - sobre el servidor de desarrollo: que cada página sale con sus estilos antes de que arranque el JavaScript, y que el navegador la toma sin errores.
 
 ## 15. Prototipos
 
