@@ -39,7 +39,9 @@ function packageRoot(file: string): string | undefined {
   }
 }
 
-function repositoryUrl(repository: PackageJson["repository"]): string | null {
+export function repositoryUrl(
+  repository: PackageJson["repository"],
+): string | null {
   const raw = typeof repository === "string" ? repository : repository?.url;
   if (raw === undefined) return null;
   const url = raw

@@ -4,3 +4,5 @@ dev-dist/
 coverage/
 *.tsbuildinfo
 .vitest/
+test-results/
+playwright-report/

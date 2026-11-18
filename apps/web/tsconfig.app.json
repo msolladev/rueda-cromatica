@@ -19,5 +19,5 @@
     // spectral.js ships no types; color-wheel declares what it uses.
     "../../packages/color-wheel/src/mixing/spectral.d.ts"
   ],
-  "exclude": ["src/sw.ts"]
+  "exclude": ["src/sw.ts", "src/**/*.test.ts"]
 }
