@@ -141,7 +141,7 @@ Pendiente fuera de la hoja de ruta:
 - **Este documento** recoge las decisiones vigentes. El proyecto de claude.ai lo carga desde GitHub junto con docs/01-04.
 - **Informes de investigación**: en `docs/investigacion/`, fechados e inmutables. Las normas están en su [README](docs/investigacion/README.md).
 - **Especificaciones y ADR**: las especificaciones describen lo vigente; los ADR, por qué se decidió. Un ADR aceptado no se reescribe: se sustituye por otro nuevo.
-- **Referencia de la API** de `color-wheel` y `domain`: la generan TypeDoc y los comentarios TSDoc del código, en inglés. `pnpm docs` la genera en local y la CI comprueba que se genera sin errores. Las especificaciones describen el comportamiento y enlazan a ella, sin repetir firmas ni tipos ([ADR-0023](docs/adr/0023-documentacion-tecnica.md)).
+- **Referencia de la API** de `color-wheel` y `domain`: la generan TypeDoc y los comentarios TSDoc del código, en inglés. `pnpm docs:api` la genera en local y la CI comprueba que se genera sin errores. Las especificaciones describen el comportamiento y enlazan a ella, sin repetir firmas ni tipos ([ADR-0023](docs/adr/0023-documentacion-tecnica.md)).
 - **READMEs**, en castellano. El de la raíz explica qué es el proyecto, cómo se instala y los comandos. El de cada paquete explica qué hace, con un ejemplo mínimo y los enlaces a su especificación y a la referencia.
 
 ## Interfaz
