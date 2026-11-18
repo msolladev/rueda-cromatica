@@ -1,4 +1,4 @@
-/** Derived rules over catalog entities (docs/01 §5). */
+/** Derived rules over catalog entities (docs/01 §4). */
 import type { Catalog } from "./catalog.ts";
 import type { Paint, PaintId, PaintType } from "./schema.ts";
 

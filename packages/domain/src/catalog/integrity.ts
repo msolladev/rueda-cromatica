@@ -1,5 +1,5 @@
 /**
- * Referential integrity and cross-field invariants (docs/01 §6, docs/02 §3).
+ * Referential integrity and cross-field invariants (docs/01 §5, docs/02 §3).
  * Runs on a structurally valid document and collects every violation.
  */
 import type {

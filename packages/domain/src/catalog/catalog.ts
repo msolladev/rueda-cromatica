@@ -1,5 +1,5 @@
 /**
- * Read-only aggregate over a validated catalog (docs/01 §3-4). The indexes are
+ * Read-only aggregate over a validated catalog (docs/01 §3). The indexes are
  * private to the closure; only `parseCatalog` builds instances.
  */
 import type {

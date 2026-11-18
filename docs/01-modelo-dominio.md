@@ -21,7 +21,7 @@
 - **Identificadores nominales** (_branded types_): un `PaintId` no se acepta donde se espera un `RangeId`, aunque ambos sean `string`. El formato está en [03-identificadores.md](03-identificadores.md).
 - **Ausencia de valor**: en las entidades persistidas se usa `null` explícito, nunca un campo opcional (`?`). Así el JSON y el tipo tienen la misma forma y solo hay una manera de expresar "sin dato".
 - **Datos y comportamiento separados**: las entidades son solo datos. El comportamiento vive en funciones del dominio y en el agregado `Catalog`.
-- **Fuente de verdad de los tipos**: en el código se infieren del esquema Zod ([ADR-0002](adr/0002-validacion-catalogo-zod.md)). Este documento es la especificación que ese esquema debe cumplir.
+- **Fuente de verdad de los tipos**: en el código se infieren del esquema Zod ([ADR-0002](adr/0002-validacion-catalogo-zod.md)). Este documento es la especificación que ese esquema debe cumplir. Los tipos exactos, con sus campos, están en la referencia de la API, que se genera desde el código con `pnpm docs:api` ([README](../README.md#comandos)).
 
 ## 2. Relaciones
 
@@ -44,7 +44,7 @@ Cualquier dato que no sea trivial (un color, una sustitución, una equivalencia)
 
 `kind` indica **quién es el autor** del contenido: `manufacturer` es la propia marca y `third-party` cualquier otro. Una copia fiel de un documento del fabricante alojada por un tercero sigue siendo `manufacturer`.
 
-Cada fuente guarda su URL oficial (`url`), una captura de la Wayback Machine (`archiveUrl`), su licencia (`license`) y el texto de atribución (`attribution`). La interfaz muestra las licencias y las atribuciones en la página «Créditos y fuentes», no en la rueda ni en las fichas ([ADR-0015](adr/0015-fuentes-trazabilidad-licencias.md)). No hay que confundirlo con el origen del color (`ColorOrigin`), que indica **cómo se obtuvo** el valor.
+Cada fuente guarda su URL oficial (`url`, o `null` en las fuentes impresas), una captura de la Wayback Machine (`archiveUrl`), su licencia (`license`) y el texto de atribución (`attribution`). La interfaz muestra las licencias y las atribuciones en la página «Créditos y fuentes», no en la rueda ni en las fichas ([ADR-0015](adr/0015-fuentes-trazabilidad-licencias.md)). No hay que confundirlo con el origen del color (`ColorOrigin`), que indica **cómo se obtuvo** el valor.
 
 ### Marca (`Brand`) y gama (`Range`)
 
@@ -80,130 +80,9 @@ Es una arista dirigida `from → to` con una fuente del fabricante obligatoria. 
 
 ### Catálogo (`Catalog`)
 
-Es el agregado de solo lectura que se construye al cargar `catalog.json` ya validado. Es el único punto de acceso a los datos desde la interfaz y oculta sus índices internos.
+Es el agregado de solo lectura que se construye al cargar `catalog.json` ya validado. Es el único punto de acceso a los datos desde la interfaz y oculta sus índices internos. Las consultas de pinturas indican siempre las marcas y si se incluyen las descatalogadas, sin valores por defecto ocultos.
 
-## 4. Especificación TypeScript
-
-```ts
-// ── Identificadores ──────────────────────────────────────────
-// El mecanismo concreto de branding lo aporta Zod; aquí se indica la intención.
-type Branded<T, Name extends string> = T & { readonly __brand: Name };
-
-type BrandId = Branded<string, "BrandId">; // "citadel"
-type RangeId = Branded<string, "RangeId">; // "citadel/base"
-type PaintId = Branded<string, "PaintId">; // "citadel/base/abaddon-black"
-type SourceId = Branded<string, "SourceId">;
-type HexColor = Branded<string, "HexColor">; // "#rrggbb", en minúsculas
-type IsoDate = Branded<string, "IsoDate">; // "AAAA-MM-DD"
-
-// ── Fuente ───────────────────────────────────────────────────
-type SourceKind = "manufacturer" | "third-party";
-
-interface Source {
-  readonly id: SourceId;
-  readonly kind: SourceKind;
-  readonly title: string;
-  readonly publisher: string;
-  readonly url: string | null; // URL oficial; null en fuentes impresas
-  readonly archiveUrl: string | null; // captura de la Wayback Machine
-  readonly retrievedAt: IsoDate; // fecha de consulta
-  readonly license: string; // SPDX, "terms-of-use" o "unknown"
-  readonly attribution: string | null;
-}
-
-// ── Marca y gama ─────────────────────────────────────────────
-interface Brand {
-  readonly id: BrandId;
-  readonly name: string;
-  readonly aliases: readonly string[];
-}
-
-type RangeStatus = "active" | "discontinued";
-
-interface Range {
-  readonly id: RangeId;
-  readonly brandId: BrandId;
-  readonly name: string;
-  readonly status: RangeStatus;
-}
-
-// ── Pintura ──────────────────────────────────────────────────
-type PaintType =
-  | "base"
-  | "layer"
-  | "standard"
-  | "wash"
-  | "ink"
-  | "glaze"
-  | "contrast"
-  | "technical"
-  | "dry";
-
-type ColorOrigin = "manufacturer" | "measured" | "community";
-
-interface PaintColor {
-  readonly hex: HexColor; // sRGB
-  readonly origin: ColorOrigin;
-  readonly sourceId: SourceId;
-}
-
-interface Replacement {
-  readonly paintId: PaintId;
-  readonly sourceId: SourceId; // siempre con kind = 'manufacturer'
-}
-
-type PaintStatus =
-  | { readonly kind: "active" }
-  | { readonly kind: "discontinued"; readonly replacement: Replacement | null };
-
-interface Paint {
-  readonly id: PaintId;
-  readonly rangeId: RangeId;
-  readonly name: string;
-  readonly aliases: readonly string[];
-  readonly manufacturerCode: string | null;
-  readonly type: PaintType;
-  readonly metallic: boolean;
-  readonly color: PaintColor | null;
-  readonly status: PaintStatus;
-}
-
-// ── Equivalencia oficial ─────────────────────────────────────
-interface OfficialEquivalence {
-  readonly from: PaintId;
-  readonly to: PaintId;
-  readonly sourceId: SourceId; // siempre con kind = 'manufacturer'
-}
-
-// ── Catálogo (agregado en memoria) ───────────────────────────
-interface CatalogMeta {
-  readonly schemaVersion: number;
-  readonly dataVersion: string; // "sha256:<64 caracteres hex>"
-}
-
-interface PaintQuery {
-  readonly brandIds: readonly BrandId[] | "all";
-  readonly includeDiscontinued: boolean; // explícito: sin valores por defecto ocultos
-}
-
-interface Catalog {
-  readonly meta: CatalogMeta;
-  brands(): readonly Brand[];
-  rangesOf(brandId: BrandId): readonly Range[];
-  brand(id: BrandId): Brand | undefined;
-  range(id: RangeId): Range | undefined;
-  paint(id: PaintId): Paint | undefined;
-  source(id: SourceId): Source | undefined;
-  paints(query: PaintQuery): readonly Paint[];
-  brandOf(paint: Paint): Brand; // no puede fallar: la integridad se valida al cargar
-  officialEquivalencesFrom(id: PaintId): readonly OfficialEquivalence[];
-  officialEquivalencesTo(id: PaintId): readonly OfficialEquivalence[];
-}
-```
-
-La equivalencia calculada (`CalculatedMatch`) no se persiste. Su tipo está en [06-pinturas-parecidas.md](06-pinturas-parecidas.md) §6.
-
-## 5. Reglas derivadas (funciones de domain)
+## 4. Reglas derivadas (funciones de domain)
 
 | Regla                             | Definición                                                                                                                                                                                                                                                                                                                          |
 | --------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -212,7 +91,7 @@ La equivalencia calculada (`CalculatedMatch`) no se persiste. Su tipo está en [
 | Equivalencias calculadas          | Se calculan con CIEDE2000 en el cliente y nunca se persisten. Excluyen las pinturas sin color. Si el origen o el destino tienen un color aproximado, el resultado lleva `approximate: true` y la interfaz lo avisa. Las etiquetas de calidad, el orden y los filtros están en [06-pinturas-parecidas.md](06-pinturas-parecidas.md). |
 | Equivalencias oficiales           | Se leen solo en su dirección. No se infieren ni las inversas ni las transitivas.                                                                                                                                                                                                                                                    |
 
-## 6. Invariantes
+## 5. Invariantes
 
 Se comprueban al cargar el catálogo; el detalle está en [02-esquema-catalog-json.md](02-esquema-catalog-json.md).
 

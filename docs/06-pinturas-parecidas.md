@@ -1,6 +1,6 @@
 # Pinturas parecidas
 
-Este documento especifica el módulo `matching` de `@chromatic-wheel/domain`: la búsqueda de las pinturas del catálogo más parecidas a un color, que son las equivalencias calculadas de [docs/01](01-modelo-dominio.md) §5. Por qué se decidió así está en el [ADR-0022](adr/0022-busqueda-pinturas-parecidas.md).
+Este documento especifica el módulo `matching` de `@chromatic-wheel/domain`: la búsqueda de las pinturas del catálogo más parecidas a un color, que son las equivalencias calculadas de [docs/01](01-modelo-dominio.md) §4. Por qué se decidió así está en el [ADR-0022](adr/0022-busqueda-pinturas-parecidas.md).
 
 ## 1. Principios
 
@@ -13,7 +13,7 @@ Este documento especifica el módulo `matching` de `@chromatic-wheel/domain`: la
 
 - **Fórmula**: ΔE CIEDE2000, de culori (`differenceCiede2000`), con los factores paramétricos kL = kC = kH = 1.
 - **Espacio**: CIELAB con el blanco D65 (`lab65` de culori). El color de cada pintura se convierte una vez, al construir el índice (§5).
-- **El color de la rueda es exacto**: lo genera la propia rueda, así que un resultado es aproximado solo si lo es el color de la pintura (`isColorApproximate`, docs/01 §5).
+- **El color de la rueda es exacto**: lo genera la propia rueda, así que un resultado es aproximado solo si lo es el color de la pintura (`isColorApproximate`, docs/01 §4).
 
 ## 3. Etiquetas de calidad
 
@@ -60,86 +60,32 @@ Ejemplos con datos reales:
 
 ## 5. Índice
 
-```ts
-function buildPaintIndex(catalog: Catalog): PaintIndex;
-```
-
 - **Contenido**: todas las pinturas con color, también las descatalogadas, que filtra la búsqueda (§6.1), agrupadas por marca en el orden del catálogo y, dentro de cada marca, por ID. Cada una lleva su color ya convertido a CIELAB.
 - **Excluye**: las pinturas sin color (docs/01 §3).
 - **Una vez por catálogo**: la web lo construye al cargar `catalog.json` y lo reutiliza en cada búsqueda.
-- `PaintIndex` es opaco: solo lo leen las funciones de este módulo.
+- **Es opaco**: solo lo leen las funciones de este módulo.
 
-## 6. API
+## 6. Búsqueda
 
-```ts
-const DEFAULT_LIMIT = 3;
-const DEFAULT_PAINT_TYPES: readonly PaintType[] = [
-  "base",
-  "layer",
-  "standard",
-  "dry",
-];
+Las funciones, sus opciones, sus resultados y sus errores, con sus valores válidos y por defecto, están en la referencia de la API, que se genera desde el código con `pnpm docs:api` ([README](../README.md#comandos)). Esta sección recoge solo las reglas de comportamiento. Los resultados están congelados (`Object.freeze`).
 
-interface MatchOptions {
-  readonly brandIds: readonly BrandId[] | "all";
-  readonly paintTypes?: readonly PaintType[]; // por defecto, DEFAULT_PAINT_TYPES
-  readonly includeMetallic?: boolean; // por defecto, false
-  readonly includeDiscontinued?: boolean; // por defecto, false
-  readonly limit?: number; // por marca; por defecto, DEFAULT_LIMIT
-}
+### 6.1. Por marca
 
-interface CalculatedMatch {
-  readonly paint: Paint;
-  readonly brand: Brand;
-  readonly deltaE2000: number; // sin redondear
-  readonly quality: MatchQuality; // §3
-  readonly approximate: boolean; // isColorApproximate(paint)
-}
-
-interface BrandMatches {
-  readonly brand: Brand;
-  readonly matches: readonly CalculatedMatch[]; // vacío si ninguna pasa los filtros
-}
-
-interface ClosestPaints {
-  readonly limit: number;
-  readonly byBrand: readonly BrandMatches[];
-}
-
-type MatchingError =
-  | { readonly kind: "invalid-color"; readonly color: string }
-  | { readonly kind: "invalid-limit"; readonly limit: number };
-
-function findClosestPaints(
-  index: PaintIndex,
-  hex: string,
-  options: MatchOptions,
-): Result<ClosestPaints, MatchingError>;
-
-function rankOverall(closest: ClosestPaints): readonly CalculatedMatch[];
-
-function matchQuality(deltaE: number): MatchQuality;
-function compareMatches(a: CalculatedMatch, b: CalculatedMatch): number; // §4
-```
-
-Los resultados están congelados (`Object.freeze`).
-
-### 6.1. `findClosestPaints`
-
-- **Color**: `#rrggbb`, en mayúsculas o minúsculas, como los que da la rueda (docs/05 §6.7). Otro formato es un `invalid-color`.
-- **Marcas**: `brandIds` con las marcas activas, en cualquier orden y con repeticiones; el resultado sigue el orden del catálogo. Un ID que no está en el catálogo se ignora, como en `Catalog.paints()`. `"all"` busca en todas.
-- **Candidatas**: las pinturas cuyo tipo está en `paintTypes` y, si `includeMetallic` es `false`, que no son metálicas. Por defecto, solo las opacas no metálicas: son las que se aplican como el color plano de la rueda. Los contrast, lavados, tintas, veladuras, technical y metálicas se añaden a petición.
-- **Descatalogadas**: solo si `includeDiscontinued` es `true`. Por defecto no, porque ya no se pueden comprar, pero quien las tenga puede pedirlas.
-- **Por marca**: las `limit` primeras candidatas en el orden de §4. Una marca seleccionada sin candidatas sigue en el resultado, con `matches` vacío, para que la interfaz lo pueda decir.
-- **`limit`**: entero positivo. 0, un negativo, un decimal, `NaN` o `Infinity` son un `invalid-limit`.
+- **Color**: `#rrggbb`, en mayúsculas o minúsculas, como los que da la rueda (docs/05 §6.4). Otro formato es un error.
+- **Marcas**: las marcas activas, en cualquier orden y con repeticiones; el resultado sigue el orden del catálogo. Un ID que no está en el catálogo se ignora, como en el agregado del catálogo. También se puede buscar en todas.
+- **Candidatas**: por defecto, solo las pinturas opacas no metálicas (base, capa, estándar y pincel seco): son las que se aplican como el color plano de la rueda. Los contrast, lavados, tintas, veladuras, technical y metálicas se añaden a petición.
+- **Descatalogadas**: por defecto no, porque ya no se pueden comprar, pero quien las tenga puede pedirlas.
+- **Por marca**: las primeras candidatas en el orden de §4, hasta un límite, que por defecto es 3. Una marca seleccionada sin candidatas sigue en el resultado, sin pinturas, para que la interfaz lo pueda decir.
+- **Límite**: un entero positivo. 0, un negativo, un decimal, `NaN` o `Infinity` son un error.
+- **Resultado**: cada pintura con su marca, su ΔE (§4), su etiqueta de calidad (§3) y si su color es aproximado (§2).
 
 Ejemplo con datos reales: con `#3daf44` (el hex de Moot Green) y el filtro por defecto, Citadel da Moot Green (0), Sybarite Green (9,69) y Orruk Flesh (10,61). Con todos los tipos, da Moot Green, Tesseract Glow (technical, 2,71) y Hexwraith Flame (contrast, 4,80).
 
-### 6.2. `rankOverall`
+### 6.2. Todas las marcas juntas
 
 Junta los resultados de todas las marcas en una lista, con el orden de §4, sin recalcular ningún ΔE.
 
-Devuelve como mucho `closest.limit` resultados. Más allá de esa posición, el orden no sería fiable: una marca podría tener una pintura mejor que la búsqueda no devolvió porque solo trae `limit` por marca. Para ver las N más parecidas de todas las marcas, hay que buscar con `limit` ≥ N.
+Devuelve como mucho tantos resultados como el límite de la búsqueda. Más allá de esa posición, el orden no sería fiable: una marca podría tener una pintura mejor que la búsqueda no devolvió porque solo trae ese límite por marca. Para ver las N más parecidas de todas las marcas, hay que buscar con un límite de N o más.
 
 Ejemplo con datos reales: con `#3daf44`, todas las marcas y el filtro por defecto, da Moot Green (Citadel, 0), Ferocious Green (Army Painter, 7,44) y Clear Green (AK, 7,55).
 
@@ -157,7 +103,7 @@ Comparando los hex sin el índice, las 6 búsquedas tardaban 6,7 ms. No hay medi
 
 ## 8. Uso en la web (etapa 5)
 
-- La web construye el índice al cargar el catálogo y busca con el `result` de los eventos de la rueda (docs/05 §6.6).
+- La web construye el índice al cargar el catálogo y busca con el `result` de los eventos de la rueda (docs/05 §6.4).
 - **Marcas**: el usuario elige cuáles ver. Por defecto, todas.
 - **Tipos de pintura**: el usuario puede añadir tipos y metálicas al filtro por defecto.
 - **Descatalogadas**: el usuario elige si se incluyen. Por defecto, no.

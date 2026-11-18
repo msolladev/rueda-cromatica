@@ -15,7 +15,7 @@ describe("compute", () => {
     );
   });
 
-  it("returns the result of docs/05 §6.7 for the miniature scheme", () => {
+  it("returns the result of docs/05 §4 for the miniature scheme", () => {
     const result = compute({ color: "#3daf44", light: "cold" });
     expect(result).toMatchObject({
       harmony: "miniature-scheme",

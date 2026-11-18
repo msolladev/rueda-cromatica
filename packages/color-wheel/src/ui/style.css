@@ -1,5 +1,5 @@
 /*
- * Styles of the color wheel (docs/05 §6.9). Classes use the `cw-` prefix and
+ * Styles of the color wheel (docs/05 §6.6). Classes use the `cw-` prefix and
  * the look is adapted with `--cw-` variables. Mobile first: one column, and
  * two when the container is wide enough.
  */

@@ -174,83 +174,20 @@ El anillo y el triángulo no se pueden ocultar: son la rueda.
 - **Desactivar** `hex`, `model`, `harmony` y `light` desactiva su elemento nativo; `help` desactiva su botón y cierra la explicación; `results` atenúa las muestras. Con la rueda desactivada, además, el anillo y el triángulo no responden y salen del orden de tabulación.
 - **El hex** se aplica al confirmarlo (Intro o al salir del campo). Acepta `#rgb` o `#rrggbb`, con o sin `#`. Si no es válido, el campo se marca (`aria-invalid`), muestra el error enlazado con `aria-describedby` y la rueda no cambia.
 
-### 6.4. Opciones y propiedades
+### 6.4. API
 
-Las opciones del constructor y las propiedades son las mismas. Cada propiedad se lee y se asigna, y al asignarse valida el valor.
+Las opciones, las propiedades, los métodos, los eventos y el resultado, con sus valores válidos, sus valores por defecto y sus errores, están en la referencia de la API, que se genera desde el código con `pnpm docs:api` ([README](../README.md#comandos)). Esta sección recoge solo las reglas de comportamiento.
 
-| Propiedad   | Valor                                         | Por defecto                   |
-| ----------- | --------------------------------------------- | ----------------------------- |
-| `color`     | hex                                           | Obligatoria en el constructor |
-| `model`     | `"ryb"` o `"digital"`                         | `"ryb"`                       |
-| `harmony`   | uno de los valores de §4                      | `"miniature-scheme"`          |
-| `light`     | `"warm"` o `"cold"`                           | `"warm"`                      |
-| `harmonies` | lista de valores de §4 que ofrece el selector | todos                         |
-| `models`    | lista de modelos que ofrece el selector       | los dos                       |
-| `locale`    | uno de los idiomas de §6.8                    | el del navegador, o `"en"`    |
-| `labels`    | objeto con los textos que se sustituyen       | `{}`                          |
+- **Opciones y propiedades**: son las mismas. Solo el color es obligatorio. Cada propiedad se lee y se asigna, y asignarla equivale a `update` con ella.
+- **Validación**: los valores no válidos, las claves desconocidas y las listas vacías o con repetidos lanzan un error que dice qué falla (§1), y no se aplica nada. Asignar un valor igual al actual no emite `change`.
+- **Listas de armonías y modelos**: la armonía y el modelo tienen que estar en las listas que ofrecen los selectores. Para cambiar una lista y su valor a la vez está `update`. Si una lista no incluye el valor por defecto y no se indica otro, se toma el primero de la lista.
+- **Cambio de modelo** ([ADR-0021](adr/0021-cambio-modelo-conserva-color.md)): la rueda conserva el color base, no su posición. Convierte a la otra rueda el último hex que recibió (por la propiedad, el campo hex, `update` o `setState`), no el color alcanzado, para que ir y volver no pierda los colores que el triángulo RYB no alcanza. Al arrastrar o usar el teclado, la posición pasa a mandar y ese hex se olvida.
+- **El color, al leerse**, es la base que muestra la rueda: en RYB, el color alcanzado (§3.2). El estado que se guarda con `getState`, en cambio, lleva el último hex recibido, o la base si se movió la rueda.
+- **Eventos**: `input` se emite continuamente mientras se arrastra en el anillo o en el triángulo, y `change`, al soltar y con cualquier otro cambio (teclado, controles, propiedades y métodos). `change` solo se emite si cambian el estado o el resultado, y nunca al crear la rueda. Cada evento dice si el cambio lo hizo la persona o el código, para que la web no responda a sus propios cambios en un bucle.
+- **Resultado**: la armonía, el modelo, la luz (solo con el esquema de miniatura) y los colores, cada uno con su papel y su hex, en el orden de §4.
+- **Después de `destroy`**, cualquier llamada es un error.
 
-Además, en el constructor:
-
-- `hiddenControls` y `disabledControls`: listas de controles de §6.3;
-- `disabled`: `true` para desactivar toda la rueda.
-
-Asignar una armonía o un modelo que no esté en `harmonies` o en `models` es un error, y también asignar unas `harmonies` o unos `models` que no incluyan los actuales: para cambiar los dos a la vez está `update`. Si `harmonies` o `models` no incluyen el valor por defecto y no se indica otro, se toma el primero de la lista.
-
-Los valores no válidos, las opciones desconocidas y las listas vacías o con repetidos lanzan un error que dice qué falla (§1), y no se aplica nada. Asignar un valor igual al actual no emite `change`.
-
-**Cambio de modelo** ([ADR-0021](adr/0021-cambio-modelo-conserva-color.md)): la rueda conserva el color base, no su posición. Convierte a la otra rueda el último hex que recibió (por `color`, el campo hex, `update` o `setState`), no el color alcanzado, para que ir y volver no pierda los colores que el triángulo RYB no alcanza. Al arrastrar o usar el teclado, la posición pasa a mandar y ese hex se olvida.
-
-**`color` al leerse** devuelve la base que muestra la rueda: en RYB, el color alcanzado (§3.2).
-
-### 6.5. Métodos
-
-| Método                                        | Qué hace                                                                |
-| --------------------------------------------- | ----------------------------------------------------------------------- |
-| `hideControl(name)`, `showControl(name)`      | Oculta o muestra un control                                             |
-| `isControlVisible(name)`                      | Dice si un control está visible                                         |
-| `disableControl(name)`, `enableControl(name)` | Desactiva o activa un control                                           |
-| `isControlEnabled(name)`                      | Dice si un control está activo                                          |
-| `disable()`, `enable()`, `isDisabled()`       | Lo mismo para toda la rueda                                             |
-| `update(partial)`                             | Cambia varias propiedades a la vez y emite un solo `change`             |
-| `getState()`, `setState(state)`               | Lee o restaura todas las propiedades y el estado de los controles       |
-| `getResult()`                                 | Devuelve el resultado actual                                            |
-| `getEffectiveLabels()`                        | Devuelve los textos que se muestran: los del idioma más los sustituidos |
-| `destroy()`                                   | Quita la rueda y sus oyentes. Después, cualquier llamada es un error    |
-| `ColorWheel.locales`                          | Propiedad estática con los idiomas incluidos                            |
-
-- **`getState()`** devuelve las propiedades, más `hiddenControls`, `disabledControls` y `disabled`. Su `color` es el último hex recibido (ADR-0021) o, si se movió la rueda, la base.
-- **`setState(state)`** necesita un estado completo, como el que devuelve `getState()`.
-
-### 6.6. Eventos
-
-La clase hereda de `EventTarget`, así que se escucha con `addEventListener`.
-
-- **`input`**: se emite continuamente mientras el usuario arrastra en el anillo o en el triángulo.
-- **`change`**: se emite al soltar, y con cada cambio que no sea un arrastre: el teclado, los controles, las propiedades, los métodos, `update` y `setState`. Solo se emite si cambian el estado o el resultado, y nunca al crear la rueda.
-
-El `detail` de los dos es `{ result, state, source }`, donde `source` vale `"user"` o `"api"`. Sirve para que la web no responda a sus propios cambios en un bucle.
-
-### 6.7. Resultado
-
-```js
-{
-  harmony: "miniature-scheme",
-  model: "ryb",
-  light: "warm",            // solo en el esquema de miniatura
-  colors: [
-    { role: "base", hex: "#3daf44" },
-    { role: "shadow", hex: "#…" },
-    { role: "light", hex: "#…" },
-    { role: "triad", hex: "#…" },
-    { role: "triad", hex: "#…" },
-    { role: "complement", hex: "#…" },
-  ],
-}
-```
-
-Los papeles y su orden son los de §4.
-
-### 6.8. Textos e idiomas
+### 6.5. Textos e idiomas
 
 - **Idiomas incluidos**: `en`, `es`, `fr`, `de`, `it`, `pt-BR`, `ru`, `zh-Hans`, `ja` y `ko`. Cada uno es un fichero JSON del paquete.
 - **El tipo `Labels` es la referencia**: sus claves salen de las listas del código (armonías, papeles, modelos, luces y controles), así que un texto que falte en un JSON es un error de compilación. Los tests comprueban además que todos los idiomas tienen las mismas claves que el inglés. El tipo se entrega en las declaraciones, sin depender de los JSON.
@@ -273,7 +210,7 @@ Los papeles y su orden son los de §4.
   new ColorWheel(el, { color: "#3daf44", locale: "es", labels });
   ```
 
-### 6.9. Estilos
+### 6.6. Estilos
 
 - Fichero aparte, `style.css` (en el código, `src/ui/style.css`), que la web incluye con `<link>` o con `import "@chromatic-wheel/color-wheel/style.css"`.
 - Clases con el prefijo `cw-`, y el aspecto se adapta con variables CSS con el prefijo `--cw-`: `--cw-font`, `--cw-font-size`, `--cw-text`, `--cw-muted`, `--cw-surface`, `--cw-elevated` (lo que flota, como la ayuda), `--cw-shadow`, `--cw-field`, `--cw-border`, `--cw-focus`, `--cw-error`, `--cw-radius`, `--cw-gap`, `--cw-padding`, `--cw-control-height`, `--cw-wheel-max-size`, `--cw-panel-max-size` y `--cw-max-size`.
@@ -286,13 +223,10 @@ Los papeles y su orden son los de §4.
 
 El paquete exporta los cálculos, que no usan el DOM:
 
-- `compute({ color, model, harmony, light })`: devuelve el mismo resultado que §6.7.
-  - Solo `color` es obligatorio. `model`, `harmony` y `light` toman los valores por defecto del componente (§6.4).
-  - `light` se valida siempre, pero solo aparece en el resultado con el esquema de miniatura.
-  - Una opción desconocida es un error.
-- `toWheelColor(hex, model, previousHue)` y `fromWheelColor(wheelColor, model)`: convierten entre un hex y la representación de §2. `previousHue` es opcional y es el tono que reciben los colores sin tono (§3.2).
+- **El cálculo de una armonía** da el mismo resultado que el componente con las mismas propiedades (§6.4). Solo el color es obligatorio, y el resto toma los valores por defecto del componente. La luz se valida siempre, pero solo aparece en el resultado con el esquema de miniatura. Una opción desconocida es un error.
+- **Las conversiones** entre un hex y la representación de §2, en los dos sentidos. Al convertir un hex, se puede indicar el tono que reciben los colores sin tono (§3.2).
 
-Con npm se importan por su nombre (`import { compute } from "@chromatic-wheel/color-wheel"`). En el fichero para `<script src>`, el global `ColorWheel` es la clase, y los cálculos son sus métodos estáticos: `ColorWheel.compute(...)`, `ColorWheel.toWheelColor(...)` y `ColorWheel.fromWheelColor(...)`. En npm también existen esos métodos estáticos, que llaman a las mismas funciones.
+Con npm se importan por su nombre (`import { compute } from "@chromatic-wheel/color-wheel"`). En el fichero para `<script src>`, el global `ColorWheel` es la clase, y los cálculos son sus métodos estáticos (`ColorWheel.compute`, `ColorWheel.toWheelColor` y `ColorWheel.fromWheelColor`). En npm también existen esos métodos estáticos, que llaman a las mismas funciones.
 
 Por dentro, `compute` y el componente usan el mismo cálculo, que da cada color con su papel, su hex y su posición en la rueda. `compute` quita la posición; el componente la usa para dibujar la plantilla. Los colores que salen de una mezcla (sombra, luz y variaciones del monocromático) se colocan convirtiendo su hex a la rueda.
 
@@ -307,7 +241,7 @@ packages/color-wheel/src/
   harmony/      armonías y variaciones del monocromático (§4)
   scheme/       esquema de miniatura (§5.1-5.2)
   calculation/  cálculo común de todas las armonías, valores por defecto, resultado y `compute` (§7)
-  i18n/         idiomas en JSON (`texts.ts`) y resolución del idioma (`locales.ts`) (§6.8)
+  i18n/         idiomas en JSON (`texts.ts`) y resolución del idioma (`locales.ts`) (§6.5)
   ui/           componente, dibujo, controles y eventos (§6). El único que usa el DOM
     testing/    ayudas de los tests de navegador: entrada real y axe-core (§8.3)
   errors.ts     ayudas comunes para los mensajes de error (§1)

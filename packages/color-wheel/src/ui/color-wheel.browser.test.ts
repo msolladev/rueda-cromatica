@@ -72,7 +72,7 @@ afterEach(() => {
 });
 
 describe("constructor", () => {
-  it("uses the defaults of docs/05 §6.4", () => {
+  it("uses the default values of the properties", () => {
     const created = create();
     expect(created.getState()).toEqual({
       color: "#3daf44",

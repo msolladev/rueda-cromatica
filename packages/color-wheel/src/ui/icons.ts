@@ -33,7 +33,7 @@
  * USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-// The icons of the component (docs/05 §6.9), copied instead of depending on
+// The icons of the component (docs/05 §6.6), copied instead of depending on
 // a library for two icons. Built with the DOM, without HTML strings.
 
 const SVG = "http://www.w3.org/2000/svg";
