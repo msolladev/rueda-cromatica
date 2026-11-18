@@ -7,7 +7,7 @@ const indexedIds = (index: ReturnType<typeof buildPaintIndex>): string[] =>
   index.brands.flatMap(({ paints }) => paints.map(({ paint }) => paint.id));
 
 describe("buildPaintIndex", () => {
-  it("indexes every paint of today's catalog, by brand in catalog order", () => {
+  it("indexes every paint of the catalog, by brand in catalog order", () => {
     const catalog = realCatalog();
     const index = buildPaintIndex(catalog);
     expect(index.brands.map(({ brand }) => brand.id)).toEqual(
@@ -15,7 +15,7 @@ describe("buildPaintIndex", () => {
     );
     expect(indexedIds(index)).toEqual(
       catalog
-        .paints({ brandIds: "all", includeDiscontinued: false })
+        .paints({ brandIds: "all", includeDiscontinued: true })
         .map((paint) => paint.id),
     );
   });
@@ -28,15 +28,13 @@ describe("buildPaintIndex", () => {
     );
   });
 
-  it("leaves out discontinued paints", () => {
+  it("keeps discontinued paints, for the search to filter", () => {
     const draft = realDraft();
     find(draft.paints, "citadel/layer/moot-green").status = {
       kind: "discontinued",
       replacement: null,
     };
-    expect(indexedIds(indexOf(draft))).not.toContain(
-      "citadel/layer/moot-green",
-    );
+    expect(indexedIds(indexOf(draft))).toContain("citadel/layer/moot-green");
   });
 
   it("keeps a brand whose paints have no colour, with no paints", () => {

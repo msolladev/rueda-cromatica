@@ -157,6 +157,31 @@ describe("findClosestPaints", () => {
     });
   });
 
+  describe("discontinued paints", () => {
+    const firstCitadel = (includeDiscontinued?: boolean) => {
+      const draft = realDraft();
+      find(draft.paints, "citadel/layer/moot-green").status = {
+        kind: "discontinued",
+        replacement: null,
+      };
+      const result = findClosestPaints(indexOf(draft), MOOT_GREEN, {
+        brandIds: [brandId("citadel")],
+        ...(includeDiscontinued === undefined ? {} : { includeDiscontinued }),
+      });
+      if (!result.ok) throw new Error("Expected a result");
+      return result.value.byBrand[0]?.matches[0]?.paint.id;
+    };
+
+    it("are not offered by default", () => {
+      expect(firstCitadel()).toBe("citadel/layer/sybarite-green");
+      expect(firstCitadel(false)).toBe("citadel/layer/sybarite-green");
+    });
+
+    it("are offered when asked", () => {
+      expect(firstCitadel(true)).toBe("citadel/layer/moot-green");
+    });
+  });
+
   it("never offers a paint without colour", () => {
     const draft = realDraft();
     find(draft.paints, "citadel/layer/moot-green").color = null;

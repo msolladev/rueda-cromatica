@@ -26,6 +26,8 @@ export interface MatchOptions {
   readonly paintTypes?: readonly PaintType[];
   /** Whether metallic paints are candidates. Default: `false`. */
   readonly includeMetallic?: boolean;
+  /** Whether discontinued paints are candidates. Default: `false`. */
+  readonly includeDiscontinued?: boolean;
   /** Maximum results per brand, a positive integer. Default: `DEFAULT_LIMIT`. */
   readonly limit?: number;
 }
@@ -72,6 +74,7 @@ export function findClosestPaints(
     brandIds,
     paintTypes = DEFAULT_PAINT_TYPES,
     includeMetallic = false,
+    includeDiscontinued = false,
     limit = DEFAULT_LIMIT,
   }: MatchOptions,
 ): Result<ClosestPaints, MatchingError> {
@@ -83,7 +86,9 @@ export function findClosestPaints(
   const target = labOf(hex.toLowerCase());
   const types = new Set(paintTypes);
   const isCandidate = ({ paint }: IndexedPaint): boolean =>
-    types.has(paint.type) && (includeMetallic || !paint.metallic);
+    types.has(paint.type) &&
+    (includeMetallic || !paint.metallic) &&
+    (includeDiscontinued || paint.status.kind === "active");
   const wanted = brandIds === "all" ? null : new Set(brandIds);
 
   const byBrand = index.brands
