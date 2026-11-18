@@ -14,3 +14,22 @@ export {
   type CatalogParseError,
 } from "./catalog/parse.ts";
 export { isColorApproximate, resolveReplacement } from "./catalog/rules.ts";
+
+export {
+  compareMatches,
+  DEFAULT_LIMIT,
+  DEFAULT_PAINT_TYPES,
+  findClosestPaints,
+  rankOverall,
+  type BrandMatches,
+  type CalculatedMatch,
+  type ClosestPaints,
+  type MatchingError,
+  type MatchOptions,
+} from "./matching/closest-paints.ts";
+export { buildPaintIndex, type PaintIndex } from "./matching/paint-index.ts";
+export {
+  MATCH_QUALITY_LIMITS,
+  matchQuality,
+  type MatchQuality,
+} from "./matching/quality.ts";
