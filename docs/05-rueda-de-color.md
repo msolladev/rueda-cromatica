@@ -273,7 +273,7 @@ Las dos pasadas de Vite (el módulo ESM y el UMD) son necesarias porque cada fic
 - la normal, al `dist/`, que es la que recibiría cualquier otra web;
 - una condición propia, `@chromatic-wheel/source`, al código fuente (`src/index.ts` y `src/ui/style.css`).
 
-La web activa la condición en su servidor de desarrollo, para ver los cambios de la rueda sin compilarla, y la desactiva al generar la versión desplegable, que así usa el `dist/`. Su comprobación de tipos y su lint leen el código fuente. Se configura en la etapa 5.
+La web activa la condición en su servidor de desarrollo, para ver los cambios de la rueda sin compilarla, y la desactiva al generar la versión desplegable, que así usa el `dist/`. Su comprobación de tipos, su lint y sus tests leen el código fuente ([docs/07](07-web.md)).
 
 ### 8.3. Tests
 
