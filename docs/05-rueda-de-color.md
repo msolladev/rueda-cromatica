@@ -191,7 +191,7 @@ Las opciones, las propiedades, los métodos, los eventos y el resultado, con sus
 
 - **Idiomas incluidos**: `en`, `es`, `fr`, `de`, `it`, `pt-BR`, `ru`, `zh-Hans`, `ja` y `ko`. Cada uno es un fichero JSON del paquete.
 - **El tipo `Labels` es la referencia**: sus claves salen de las listas del código (armonías, papeles, modelos, luces y controles), así que un texto que falte en un JSON es un error de compilación. Los tests comprueban además que todos los idiomas tienen las mismas claves que el inglés. El tipo se entrega en las declaraciones, sin depender de los JSON.
-- **Idioma por defecto**: el primero de `navigator.languages` que coincida con uno incluido, primero exacto y después por idioma base (`pt-PT` → `pt-BR`). Si no hay ninguno, inglés. El paquete exporta esa misma regla (`resolveLocale`), para que una web elija el idioma de sus textos igual que la rueda.
+- **Idioma por defecto**: el primero de `navigator.languages` que coincida con uno incluido, primero exacto y después por idioma base (`pt-PT` → `pt-BR`). Si no hay ninguno, inglés. El paquete exporta esa misma regla (`resolveLocale`), para que una web elija el idioma de sus textos igual que la rueda. También exporta los textos de cada idioma (`labelsFor`), para que una web nombre las armonías y los papeles igual que la rueda sin crearla, por ejemplo al renderizar en el servidor.
 - **Claves anidadas**, un bloque por grupo de textos (`harmony`, `role`, `model`, `light`, `control` y `wheel`, con los nombres accesibles, los valores anunciados, la ayuda y los avisos). Algunos textos de `wheel` llevan marcadores, como `{hue}` o `{count}`, que se sustituyen por su valor:
 
   ```json

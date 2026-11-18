@@ -1,6 +1,12 @@
 import { describe, expect, it } from "vitest";
 
-import { assertLocale, LOCALES, resolveLocale } from "./locales.ts";
+import { labelsFor } from "../ui/labels.ts";
+import {
+  assertLocale,
+  LOCALES,
+  resolveLocale,
+  type Locale,
+} from "./locales.ts";
 import { TEXTS } from "./texts.ts";
 
 /** The paths of every key of a labels object: `harmony.triad`… */
@@ -56,5 +62,22 @@ describe("assertLocale", () => {
     expect(() => {
       assertLocale("pt");
     }).toThrow(/Unknown locale "pt"/);
+  });
+});
+
+describe("labelsFor", () => {
+  it("gives the texts of a locale without a wheel", () => {
+    expect(labelsFor("es").harmony.triad).toBe("Tríada");
+    expect(labelsFor("en").role.shadow).toBe("Shadow");
+  });
+
+  it("gives a new object each time", () => {
+    const first = labelsFor("fr");
+    expect(labelsFor("fr")).not.toBe(first);
+    expect(labelsFor("fr")).toEqual(first);
+  });
+
+  it("rejects an unknown locale", () => {
+    expect(() => labelsFor("xx" as Locale)).toThrow(RangeError);
   });
 });
