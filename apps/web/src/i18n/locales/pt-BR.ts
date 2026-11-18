@@ -59,6 +59,7 @@ export const ptBR: Messages = {
     legendPaint: "embaixo a da tinta",
     legendEnd: ", para compará-las.",
     seeMore: "Ver mais",
+    seeLess: "Ver menos",
     noPaints: "Nenhuma tinta com estes filtros.",
     noBrands: "Escolha pelo menos uma marca nos filtros.",
     loading: "Carregando as tintas…",

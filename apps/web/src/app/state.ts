@@ -84,6 +84,8 @@ export type Action =
   | { readonly type: "set-view"; readonly view: View }
   | { readonly type: "select-tab"; readonly index: number }
   | { readonly type: "show-more"; readonly key: string }
+  /** Back to the first results of a key of «See more». */
+  | { readonly type: "show-less"; readonly key: string }
   | { readonly type: "colors-changed"; readonly count: number }
   | { readonly type: "wheel-changed"; readonly wheel: WheelPreferences }
   | { readonly type: "set-theme"; readonly theme: Theme }
@@ -184,6 +186,15 @@ export function reduce(state: ScreenState, action: Action): ScreenState {
           [action.key]: limitOf(state, action.key) + DEFAULT_LIMIT,
         },
       };
+    case "show-less": {
+      const rest = Object.fromEntries(
+        Object.entries(state.more).filter(([key]) => key !== action.key),
+      );
+      return {
+        ...state,
+        more: Object.keys(rest).length === 0 ? NO_MORE : rest,
+      };
+    }
     case "colors-changed": {
       // The tab stays on the same position if the harmony still has it.
       const tab = Math.min(state.tab, Math.max(action.count - 1, 0));

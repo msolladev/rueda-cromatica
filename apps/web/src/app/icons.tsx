@@ -1,7 +1,8 @@
 /**
  * @license
  * Icons "sun", "moon", "monitor", "menu" and "x" copied from Lucide v1.71.0
- * (https://lucide.dev); "moon", "monitor" and "x" are derived from Feather
+ * (https://lucide.dev), and "chevron-down", copied in app.css; "moon",
+ * "monitor", "x" and "chevron-down" are derived from Feather
  * (https://feathericons.com).
  *
  * ISC License. Copyright (c) 2026 Lucide Icons and Contributors.

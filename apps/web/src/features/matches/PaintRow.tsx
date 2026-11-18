@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import { format } from "../../i18n/i18n.ts";
 import type { Messages } from "../../i18n/messages.ts";
 import type { PaintView } from "./search.ts";
@@ -12,6 +13,10 @@ interface PaintRowProps {
   readonly markApproximate: boolean;
   readonly messages: Messages;
   readonly locale: string;
+  /** Its place in an entrance animation, if it enters (docs/07 §1). */
+  readonly enter?: number | undefined;
+  /** Whether it is leaving, before «See less» removes it. */
+  readonly leaving?: boolean;
 }
 
 /** One paint (docs/07 §2): what decides the choice in sight, the rest in «Details». */
@@ -22,13 +27,28 @@ export function PaintRow({
   markApproximate,
   messages: m,
   locale,
+  enter,
+  leaving = false,
 }: PaintRowProps) {
   const deltaE = new Intl.NumberFormat(locale, {
     minimumFractionDigits: 1,
     maximumFractionDigits: 1,
   }).format(paint.deltaE);
   return (
-    <li className="paint">
+    <li
+      className={
+        leaving
+          ? "paint paint-leave"
+          : enter === undefined
+            ? "paint"
+            : "paint paint-enter"
+      }
+      style={
+        enter === undefined
+          ? undefined
+          : ({ "--enter": enter } as CSSProperties)
+      }
+    >
       <span className="split" aria-hidden="true">
         <span style={{ background: target }} />
         <span style={{ background: paint.hex }} />
@@ -51,7 +71,9 @@ export function PaintRow({
           )}
         </span>
       </div>
-      <span className="paint-quality">{m.quality[paint.quality]}</span>
+      <span className="paint-quality" data-quality={paint.quality}>
+        {m.quality[paint.quality]}
+      </span>
       <details className="paint-details">
         <summary>{m.results.details}</summary>
         <dl>

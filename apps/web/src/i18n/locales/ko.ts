@@ -57,6 +57,7 @@ export const ko: Messages = {
     legendPaint: "아래는 물감의 색",
     legendEnd: "이며 비교할 수 있습니다.",
     seeMore: "더 보기",
+    seeLess: "간략히 보기",
     noPaints: "이 필터에 맞는 물감이 없습니다.",
     noBrands: "필터에서 브랜드를 하나 이상 고르세요.",
     loading: "물감을 불러오는 중…",

@@ -6,7 +6,7 @@
   "scripts": {
     "build": "vite build",
     "dev": "vite",
-    "install-browsers": "playwright install chromium",
+    "install-browsers": "playwright install chromium firefox",
     "preview": "vite preview",
     "test": "vitest run",
     "test:e2e": "playwright test",

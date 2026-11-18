@@ -58,6 +58,7 @@ export const ja: Messages = {
     legendPaint: "下が塗料の色",
     legendEnd: "で、比較できます。",
     seeMore: "もっと見る",
+    seeLess: "表示を減らす",
     noPaints: "このフィルターに合う塗料はありません。",
     noBrands: "フィルターでブランドを少なくとも 1 つ選んでください。",
     loading: "塗料を読み込んでいます…",

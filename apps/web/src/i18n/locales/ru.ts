@@ -61,6 +61,7 @@ export const ru: Messages = {
     legendPaint: "снизу цвет краски",
     legendEnd: ", чтобы их сравнить.",
     seeMore: "Показать ещё",
+    seeLess: "Показать меньше",
     noPaints: "Нет красок с этими фильтрами.",
     noBrands: "Выберите в фильтрах хотя бы одну марку.",
     loading: "Загрузка красок…",

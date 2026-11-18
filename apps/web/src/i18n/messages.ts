@@ -54,6 +54,7 @@ export interface Messages {
     readonly legendPaint: string;
     readonly legendEnd: string;
     readonly seeMore: string;
+    readonly seeLess: string;
     readonly noPaints: string;
     readonly noBrands: string;
     readonly loading: string;

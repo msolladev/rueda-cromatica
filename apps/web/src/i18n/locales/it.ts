@@ -60,6 +60,7 @@ export const it: Messages = {
     legendPaint: "in basso quello della vernice",
     legendEnd: ", per confrontarli.",
     seeMore: "Mostra altro",
+    seeLess: "Mostra meno",
     noPaints: "Nessuna vernice con questi filtri.",
     noBrands: "Scegli almeno una marca nei filtri.",
     loading: "Caricamento delle vernici…",

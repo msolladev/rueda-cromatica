@@ -1,5 +1,6 @@
 import { useEffect, useId, useRef, useState } from "react";
 import { THEMES, type Theme } from "../features/theme/theme.ts";
+import { useSlidingIndicator } from "./sliding-indicator.ts";
 import { LANGUAGE_NAMES, LOCALES, type Locale } from "../i18n/i18n.ts";
 import type { Messages } from "../i18n/messages.ts";
 import {
@@ -18,7 +19,11 @@ interface NavbarProps {
   readonly theme: Theme;
   readonly messages: Messages;
   readonly onLocale: (locale: Locale) => void;
-  readonly onTheme: (theme: Theme) => void;
+  /** With the center of the pressed option, where the new theme grows from. */
+  readonly onTheme: (
+    theme: Theme,
+    origin: { readonly x: number; readonly y: number },
+  ) => void;
 }
 
 /**
@@ -37,6 +42,8 @@ export function Navbar({
   const [open, setOpen] = useState(false);
   const menuId = useId();
   const button = useRef<HTMLButtonElement>(null);
+  const themeOptions = useRef<HTMLDivElement>(null);
+  useSlidingIndicator(themeOptions, "label:has(input:checked)", theme);
 
   useEffect(() => {
     if (!open) return;
@@ -74,22 +81,24 @@ export function Navbar({
         <div className="nav-menu" id={menuId} data-open={open ? "" : undefined}>
           <label className="nav-item">
             <span className="nav-label">{m.nav.language}</span>
-            <select
-              value={locale}
-              onChange={(event) => {
-                onLocale(event.target.value as Locale);
-              }}
-            >
-              {LOCALES.map((option) => (
-                <option key={option} value={option} lang={option}>
-                  {LANGUAGE_NAMES[option]}
-                </option>
-              ))}
-            </select>
+            <span className="select-box">
+              <select
+                value={locale}
+                onChange={(event) => {
+                  onLocale(event.target.value as Locale);
+                }}
+              >
+                {LOCALES.map((option) => (
+                  <option key={option} value={option} lang={option}>
+                    {LANGUAGE_NAMES[option]}
+                  </option>
+                ))}
+              </select>
+            </span>
           </label>
           <fieldset className="nav-item theme-switch">
             <legend className="nav-label">{m.nav.theme}</legend>
-            <div className="theme-options">
+            <div className="theme-options" ref={themeOptions}>
               {THEMES.map((option) => {
                 const ThemeIcon = THEME_ICONS[option];
                 return (
@@ -99,8 +108,15 @@ export function Navbar({
                       name="theme"
                       value={option}
                       checked={theme === option}
-                      onChange={() => {
-                        onTheme(option);
+                      onChange={(event) => {
+                        const box = (
+                          event.currentTarget.parentElement ??
+                          event.currentTarget
+                        ).getBoundingClientRect();
+                        onTheme(option, {
+                          x: box.left + box.width / 2,
+                          y: box.top + box.height / 2,
+                        });
                       }}
                     />
                     <ThemeIcon />

@@ -211,3 +211,53 @@ test.describe("saved preferences", () => {
     await expect(page.locator(".workspace")).toBeVisible({ timeout: 5000 });
   });
 });
+
+test("choosing the last color tab does not make the tabs scroll on a wide screen", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1280, height: 900 });
+  await page.goto("/es/");
+  await page.locator('[role="tab"]').last().click();
+  await page.waitForTimeout(400);
+  expect(
+    await page
+      .locator(".tabs")
+      .evaluate((tabs) => tabs.scrollWidth - tabs.clientWidth),
+  ).toBe(0);
+});
+
+test("moving between pages fades the content out and the new page in, without moving the bar", async ({
+  page,
+}) => {
+  await page.goto("/es/");
+  await page.addInitScript(() => {
+    const seen: string[] = [];
+    (window as unknown as { seen: string[] }).seen = seen;
+    const tick = () => {
+      const main = document.querySelector(".main");
+      const bar = document.querySelector(".navbar");
+      if (main !== null && bar !== null) {
+        seen.push(
+          `${getComputedStyle(main).opacity}/${getComputedStyle(bar).opacity}`,
+        );
+      }
+      if (seen.length < 40) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  });
+  await page.locator('footer a[href="/es/credits/"]').click();
+  await expect(page).toHaveURL(/\/es\/credits\/$/);
+  await page.waitForTimeout(600);
+  const seen = await page.evaluate(
+    () => (window as unknown as { seen: string[] }).seen,
+  );
+  const main = seen.map((frame) => Number(frame.split("/")[0]));
+  expect(main[0]).toBeLessThan(0.5);
+  expect(main.at(-1)).toBe(1);
+  expect(seen.every((frame) => frame.endsWith("/1"))).toBe(true);
+
+  // Back from the browser's cache, the page is not left faded out.
+  await page.goBack();
+  await expect(page).toHaveURL(/\/es\/$/);
+  await expect(page.locator(".main")).toHaveCSS("opacity", "1");
+});

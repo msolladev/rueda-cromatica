@@ -1,10 +1,12 @@
 import { resolveLocale } from "@chromatic-wheel/color-wheel";
 import { useEffect, useReducer } from "react";
+import { flushSync } from "react-dom";
 import { Credits } from "../features/credits/Credits.tsx";
 import { Home } from "../features/matches/Home.tsx";
 import { InstallBanner } from "../features/pwa/InstallBanner.tsx";
 import { useInstall } from "../features/pwa/install.ts";
 import { useServiceWorkerUpdate } from "../features/pwa/update.ts";
+import { revealTheme } from "../features/theme/reveal.ts";
 import { applyTheme } from "../features/theme/theme.ts";
 import { endRestoring } from "./restoring.ts";
 import {
@@ -15,6 +17,7 @@ import {
 } from "../i18n/i18n.ts";
 import { Footer } from "./Footer.tsx";
 import { Navbar } from "./Navbar.tsx";
+import { fadeLinks, goTo } from "./page-transition.ts";
 import type { PageData } from "./page-data.ts";
 import { pathOf, withLocale, type Page } from "./pages.ts";
 import { readPreferences, writePreferences } from "./persistence.ts";
@@ -46,6 +49,8 @@ function LocalizedApp({
   const swUpdate = useServiceWorkerUpdate();
   const { preferences, restored } = state;
 
+  useEffect(fadeLinks, []);
+
   // The saved preferences are read after taking over, never in the first
   // render, which must match the prerendered HTML (docs/07 §10).
   useEffect(() => {
@@ -69,7 +74,7 @@ function LocalizedApp({
   const onLocale = (next: Locale) => {
     // Saved before leaving: the effect would not run in time.
     writePreferences(localStorage, { ...preferences, locale: next });
-    location.assign(pathOf(withLocale(page, next)));
+    goTo(pathOf(withLocale(page, next)));
   };
 
   const shownInstall =
@@ -83,8 +88,14 @@ function LocalizedApp({
         theme={preferences.theme}
         messages={m}
         onLocale={onLocale}
-        onTheme={(theme) => {
-          dispatch({ type: "set-theme", theme });
+        onTheme={(theme, origin) => {
+          revealTheme(origin, () => {
+            // Inside the transition, so that its new view has the new theme.
+            applyTheme(theme);
+            flushSync(() => {
+              dispatch({ type: "set-theme", theme });
+            });
+          });
         }}
       />
       <main className="main">

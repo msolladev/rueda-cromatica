@@ -24,6 +24,20 @@
   --warn-text: #5c4300;
   --error-bg: #fde8e7;
   --error-text: #8c1d18;
+  /* Quality labels (docs/06 §3), from the closest to the farthest. */
+  --q-identical: #17633a;
+  --q-identical-bg: #dff3e6;
+  --q-very: #3d5f12;
+  --q-very-bg: #ebf4d8;
+  --q-similar: #6b4a00;
+  --q-similar-bg: #fbefcc;
+  --q-nearest: #4f545b;
+  --q-nearest-bg: #eceef1;
+
+  /* Motion: fast at first and gentle at the end. */
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  /* Lets `height: auto` animate, for the disclosures. */
+  interpolate-size: allow-keywords;
 
   --font: system-ui, -apple-system, "Segoe UI", sans-serif;
   --radius: 0.5rem;
@@ -57,6 +71,14 @@
     --warn-text: light-dark(#5c4300, #f0d68a);
     --error-bg: light-dark(#fde8e7, #3a1714);
     --error-text: light-dark(#8c1d18, #ffb4ab);
+    --q-identical: light-dark(#17633a, #8fe0a6);
+    --q-identical-bg: light-dark(#dff3e6, #15301e);
+    --q-very: light-dark(#3d5f12, #bfe08f);
+    --q-very-bg: light-dark(#ebf4d8, #22301a);
+    --q-similar: light-dark(#6b4a00, #f0d68a);
+    --q-similar-bg: light-dark(#fbefcc, #2e2610);
+    --q-nearest: light-dark(#4f545b, #b5bac1);
+    --q-nearest-bg: light-dark(#eceef1, #2a2e34);
   }
 }
 
@@ -132,6 +154,27 @@ a {
   cursor: pointer;
 }
 
+/* docs/07 §1: controls answer the press. */
+.button,
+.icon-button,
+.tabs [role="tab"] {
+  transition:
+    transform 0.12s var(--ease),
+    filter 0.15s;
+}
+
+.button:active,
+.icon-button:active,
+.tabs [role="tab"]:active {
+  transform: scale(0.96);
+}
+
+@media (hover: hover) {
+  .button:hover {
+    filter: brightness(1.08);
+  }
+}
+
 .button {
   border: 0;
   padding: 0 1.1rem;
@@ -167,10 +210,99 @@ select {
   min-height: var(--control);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 0 0.5rem;
+  padding: 0 0.75rem;
   background: var(--surface);
   color: var(--text);
   font: inherit;
+}
+
+/* The chevron: Lucide "chevron-down" (see the notice in icons.tsx), as a
+   mask painted in the theme's color. The browser's own sits against the
+   border and cannot be moved. */
+.select-box {
+  position: relative;
+  display: block;
+}
+
+.select-box::after {
+  content: "";
+  position: absolute;
+  inset-inline-end: 0.75rem;
+  top: 50%;
+  width: 1.1rem;
+  height: 1.1rem;
+  translate: 0 -50%;
+  background: var(--muted);
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+  pointer-events: none;
+}
+
+.select-box:has(select:disabled)::after {
+  opacity: 0.6;
+}
+
+select {
+  appearance: none;
+  padding-inline-end: 2.5rem;
+}
+
+/* In forced colors the mask keeps the system's text color. */
+@media (forced-colors: active) {
+  .select-box::after {
+    forced-color-adjust: none;
+    background: CanvasText;
+  }
+}
+
+/* Disclosures (docs/07 §1): Lucide "chevron-down" (see the notice in
+   icons.tsx), turned while closed, and the content opens by animating its
+   height where the browser can; elsewhere it opens at once. */
+summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::before {
+  content: "";
+  display: inline-block;
+  flex: none;
+  width: 1rem;
+  height: 1rem;
+  margin-inline-end: 0.35rem;
+  vertical-align: -0.15em;
+  background: currentColor;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+  rotate: -90deg;
+  transition: rotate 0.25s var(--ease);
+}
+
+details[open] > summary::before {
+  rotate: 0deg;
+}
+
+details::details-content {
+  block-size: 0;
+  overflow: clip;
+  transition:
+    block-size 0.3s var(--ease),
+    content-visibility 0.3s allow-discrete;
+}
+
+details[open]::details-content {
+  block-size: auto;
+}
+
+@media (forced-colors: active) {
+  summary::before {
+    forced-color-adjust: none;
+    background: CanvasText;
+  }
 }
 
 fieldset {
@@ -234,6 +366,57 @@ legend {
   background: var(--text);
   color: var(--surface);
   font-weight: 600;
+}
+
+/* Once measured (sliding-indicator.ts), the background of the checked
+   option is a single pill that slides to the new one, without the
+   separators. */
+.segmented-options,
+.theme-options {
+  position: relative;
+  isolation: isolate;
+}
+
+.segmented-options label,
+.theme-options label {
+  z-index: 1;
+  transition: color 0.2s;
+}
+
+:is(.segmented-options, .theme-options)[data-indicator] label {
+  border-inline-start-color: transparent;
+}
+
+:is(.segmented-options, .theme-options)[data-indicator]
+  label:has(input:checked) {
+  background: none;
+}
+
+:is(.segmented-options, .theme-options)[data-indicator]::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--indicator-w);
+  height: var(--indicator-h);
+  translate: var(--indicator-x) var(--indicator-y);
+  background: var(--text);
+  transition:
+    translate 0.28s var(--ease),
+    width 0.28s var(--ease);
+}
+
+@media (forced-colors: active) {
+  :is(.segmented-options, .theme-options)[data-indicator]::before {
+    forced-color-adjust: none;
+    background: Highlight;
+  }
+
+  :is(.segmented-options, .theme-options)[data-indicator]
+    label:has(input:checked) {
+    forced-color-adjust: none;
+    color: HighlightText;
+  }
 }
 
 .segmented-options label:has(input:focus-visible),
@@ -553,9 +736,41 @@ legend {
   cursor: pointer;
 }
 
+/* The selected tab: its frame is drawn over the border, so the tab keeps its
+   size (a thicker border made the list overflow on the last tab). */
 .tabs [role="tab"][aria-selected="true"] {
-  border: 2px solid var(--accent);
+  box-shadow: inset 0 0 0 2px var(--accent);
   font-weight: 700;
+}
+
+.tabs [role="tab"] .swatch {
+  transition: transform 0.3s var(--ease);
+}
+
+.tabs [role="tab"][aria-selected="true"] .swatch {
+  transform: scale(1.18);
+}
+
+/* Once measured (sliding-indicator.ts), the frame is one element that
+   travels from tab to tab. The tabs are positioned to stay above it. */
+.tabs[data-indicator] [role="tab"][aria-selected="true"] {
+  box-shadow: none;
+}
+
+.tabs[data-indicator]::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--indicator-w);
+  height: var(--indicator-h);
+  translate: var(--indicator-x) var(--indicator-y);
+  border: 2px solid var(--accent);
+  border-radius: var(--radius);
+  pointer-events: none;
+  transition:
+    translate 0.3s var(--ease),
+    width 0.3s var(--ease);
 }
 
 .swatch {
@@ -660,13 +875,54 @@ legend {
   padding: 0;
 }
 
+/* Each row reaches a little beyond the text on both sides, so that the hover
+   band and the separators have the same width and some air. */
 .paint {
   display: grid;
   grid-template-columns: 2.75rem minmax(0, 1fr) auto;
   gap: 0.15rem 0.75rem;
   align-items: center;
-  padding: 0.5rem 0;
+  margin-inline: -0.5rem;
+  padding: 0.5rem;
   border-top: 1px solid var(--line);
+  transition: background-color 0.15s;
+}
+
+@media (hover: hover) {
+  .paint:hover {
+    background: var(--bg);
+  }
+}
+
+@keyframes row-enter {
+  from {
+    opacity: 0;
+    translate: 0 6px;
+  }
+}
+
+.paint-enter {
+  animation: row-enter 0.32s var(--ease) both;
+  animation-delay: calc(var(--enter, 0) * 35ms);
+}
+
+/* «See less»: the added rows go the way they came, before being removed
+   (LEAVE_MS in entrance.ts). */
+@keyframes row-leave {
+  to {
+    opacity: 0;
+    translate: 0 6px;
+  }
+}
+
+.paint-leave {
+  animation: row-leave 0.24s ease-in both;
+}
+
+.more-less {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.25rem;
 }
 
 .paint:first-child {
@@ -708,9 +964,32 @@ legend {
 }
 
 .paint-quality {
-  font-size: 0.85rem;
+  justify-self: end;
+  padding: 0.1rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
   font-weight: 600;
-  text-align: end;
+  text-align: center;
+}
+
+.paint-quality[data-quality="near-identical"] {
+  background: var(--q-identical-bg);
+  color: var(--q-identical);
+}
+
+.paint-quality[data-quality="very-similar"] {
+  background: var(--q-very-bg);
+  color: var(--q-very);
+}
+
+.paint-quality[data-quality="similar"] {
+  background: var(--q-similar-bg);
+  color: var(--q-similar);
+}
+
+.paint-quality[data-quality="nearest-available"] {
+  background: var(--q-nearest-bg);
+  color: var(--q-nearest);
 }
 
 .paint-details {
@@ -742,10 +1021,65 @@ legend {
   overflow-wrap: anywhere;
 }
 
-.empty,
-.loading {
+.empty {
   margin: 0.5rem 0;
   color: var(--muted);
+}
+
+/* While the catalog arrives: rows with the shape of the results. */
+.skeleton {
+  display: grid;
+  gap: 0.75rem;
+  padding-block: 0.5rem;
+}
+
+.skeleton-row {
+  display: grid;
+  grid-template-columns: 2.75rem minmax(0, 1fr) 6rem;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.skeleton-lines {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.skeleton-block {
+  display: block;
+  height: 0.8rem;
+  border-radius: 0.25rem;
+  background: linear-gradient(
+      90deg,
+      var(--chip) 0 40%,
+      var(--line) 50%,
+      var(--chip) 60% 100%
+    )
+    0 0 / 300% 100%;
+  animation: shimmer 1.4s linear infinite;
+}
+
+.skeleton-swatch {
+  height: 2.75rem;
+}
+
+.skeleton-short {
+  width: 40%;
+}
+
+.skeleton-label {
+  height: 1.2rem;
+  border-radius: 999px;
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 100% 0;
+  }
+
+  to {
+    background-position: -50% 0;
+  }
 }
 
 .harmonies dl {
@@ -888,4 +1222,52 @@ legend {
 
 .languages a span {
   color: var(--muted);
+}
+
+/* docs/07 §11: the theme change only shows the new view growing over the
+   old one (reveal.ts); without the default cross-fade. */
+:root.theme-transition::view-transition-old(root) {
+  animation: none;
+}
+
+:root.theme-transition::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+/* docs/07 §12: between pages the content fades out and the new page fades
+   in (page-transition.ts); the navigation bar stays still. */
+@keyframes page-out {
+  to {
+    opacity: 0;
+    translate: 0 -6px;
+  }
+}
+
+@keyframes page-in {
+  from {
+    opacity: 0;
+    translate: 0 10px;
+  }
+}
+
+:root[data-leaving] :is(.main, .footer) {
+  animation: page-out 0.16s ease-in forwards;
+}
+
+:root[data-arriving] :is(.main, .footer) {
+  animation: page-in 0.32s var(--ease) both;
+}
+
+/* docs/07 §1: without motion when the system asks to reduce it. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after,
+  ::details-content {
+    transition-duration: 0s !important;
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+    animation-iteration-count: 1 !important;
+  }
 }
