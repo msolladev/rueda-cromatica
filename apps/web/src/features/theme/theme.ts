@@ -11,8 +11,17 @@ export function isTheme(value: unknown): value is Theme {
   return THEMES.includes(value as Theme);
 }
 
-/** Applies the theme to the document, as the inline script does on load. */
+/**
+ * Applies the theme to the document, as the inline script does on load: on
+ * `<html data-theme>` for the CSS, and on `<meta name="color-scheme">` for
+ * what the browser paints before the CSS loads.
+ */
 export function applyTheme(theme: Theme): void {
-  if (theme === "system") delete document.documentElement.dataset["theme"];
-  else document.documentElement.dataset["theme"] = theme;
+  const root = document.documentElement;
+  if (theme === "system") delete root.dataset["theme"];
+  else root.dataset["theme"] = theme;
+  const meta = document.querySelector<HTMLMetaElement>(
+    'meta[name="color-scheme"]',
+  );
+  if (meta !== null) meta.content = theme === "system" ? "light dark" : theme;
 }
