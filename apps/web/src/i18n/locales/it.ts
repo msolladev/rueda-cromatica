@@ -1,0 +1,176 @@
+import type { Messages } from "../messages.ts";
+
+export const it: Messages = {
+  meta: {
+    siteName: "Ruota cromatica",
+    homeTitle: "Ruota cromatica per dipingere miniature",
+    homeDescription:
+      "Scegli un colore su una ruota che funziona come una vera, con le sue armonie e uno schema per miniature, e trova i colori più simili di Warhammer, Vallejo, The Army Painter e AK. Funziona offline.",
+    creditsTitle: "Crediti e fonti",
+    creditsDescription:
+      "Da dove vengono i colori delle vernici della Ruota cromatica, con le loro licenze, e il codice di terzi che usa.",
+  },
+  nav: {
+    label: "Principale",
+    openMenu: "Apri il menu",
+    closeMenu: "Chiudi il menu",
+    language: "Lingua · Language",
+    theme: "Tema",
+    themes: {
+      system: "Sistema",
+      light: "Chiaro",
+      dark: "Scuro",
+    },
+  },
+  home: {
+    heading: "Ruota cromatica per dipingere miniature",
+    intro:
+      "Scegli un colore sulla ruota e un’armonia, o lo schema per miniature con la sua ombra e la sua luce. Per ogni colore, il sito cerca le vernici più simili di ogni marca.",
+    wheelHeading: "Ruota",
+    noscript:
+      "La ruota interattiva ha bisogno di JavaScript. Qui sotto trovi un esempio completo con le sue vernici.",
+    resultsHeading: "Vernici simili",
+    harmoniesHeading: "Le armonie",
+    harmonies: {
+      complementary:
+        "Il colore e il suo opposto sulla ruota: il contrasto più forte.",
+      "split-complementary":
+        "Il colore e i due vicini del suo opposto: contrasto, ma più morbido.",
+      analogous:
+        "Il colore e i suoi vicini sulla ruota: un insieme tranquillo.",
+      "accented-analogous":
+        "Colori analoghi con l’opposto come accento, per un punto d’interesse.",
+      triad: "Tre colori distribuiti alla stessa distanza sulla ruota.",
+      square: "Quattro colori distribuiti alla stessa distanza sulla ruota.",
+      rectangle: "Due coppie di opposti, più vicine tra loro che nel quadrato.",
+      monochromatic: "Una sola tinta, con più bianco, più grigio o più nero.",
+      "miniature-scheme":
+        "La base con la sua ombra e la sua luce, gli altri due colori della sua triade e il suo complementare.",
+    },
+  },
+  results: {
+    show: "Mostra",
+    byBrand: "Per marca",
+    overall: "Le più simili",
+    colors: "Colori",
+    colorTab: "{role} {hex}",
+    legendStart: "In ogni campione, ",
+    legendWheel: "in alto il colore della ruota",
+    legendMiddle: " e ",
+    legendPaint: "in basso quello della vernice",
+    legendEnd: ", per confrontarli.",
+    seeMore: "Mostra altro",
+    noPaints: "Nessuna vernice con questi filtri.",
+    noBrands: "Scegli almeno una marca nei filtri.",
+    loading: "Caricamento delle vernici…",
+    details: "Dettagli",
+    code: "Codice",
+    noCode: "Senza codice",
+    deltaE: "ΔE 2000",
+    hex: "Hex",
+    hexFrom: "{hex}, da {source} ({origin})",
+    color: "Colore",
+    exactColor: "Esatto",
+    metallic: "Metallica",
+    discontinued: "Fuori produzione",
+  },
+  filters: {
+    title: "Filtri",
+    brands: "Marche",
+    allBrands: "tutte le marche",
+    someBrands: "{count} marche su {total}",
+    addTypes: "Aggiungi tipi",
+    metallic: "Metalliche",
+    includeDiscontinued: "Includi fuori produzione",
+    opaqueOnly: "coprenti",
+    moreTypes: "coprenti e altri {count} tipi",
+    withoutDiscontinued: "senza fuori produzione",
+    withDiscontinued: "con fuori produzione",
+  },
+  paintTypes: {
+    base: "Base",
+    layer: "Strato",
+    standard: "Standard",
+    wash: "Lavatura",
+    ink: "Inchiostro",
+    glaze: "Velatura",
+    contrast: "Contrast",
+    technical: "Tecnica",
+    dry: "Pennello asciutto",
+  },
+  quality: {
+    "near-identical": "Quasi identica",
+    "very-similar": "Molto simile",
+    similar: "Simile",
+    "nearest-available": "La più vicina",
+  },
+  approximate: {
+    all: "I colori delle vernici sono approssimati: i loro hex vengono da fonti della comunità, non da misurazioni. Confrontali con la vernice reale prima di comprare.",
+    some: "Le vernici segnate con «≈ Approssimato» hanno il colore approssimato: l’hex non è misurato o la vernice non appare come un colore pieno. Confrontale con la vernice reale.",
+    chip: "≈ Approssimato",
+    sources: "Fonti",
+    reasons: {
+      metallic: "Approssimato: è metallica",
+      "paint-type": "Approssimato: non appare come un colore pieno",
+      "community-color": "Approssimato: hex della comunità",
+    },
+  },
+  origins: {
+    measured: "misurato",
+    manufacturer: "del produttore",
+    community: "della comunità",
+  },
+  errors: {
+    networkTitle: "Non è stato possibile scaricare le vernici.",
+    networkBody: "Controlla la connessione.",
+    retry: "Riprova",
+    versionTitle: "C’è una nuova versione dell’app.",
+    versionBody: "Aggiorna per vedere le vernici.",
+    update: "Aggiorna",
+    invalidTitle: "I dati delle vernici hanno un problema.",
+    invalidBody:
+      "La ruota funziona ancora, ma non si possono cercare vernici simili. Ricarica la pagina più tardi.",
+    technicalDetails: "Dettagli tecnici",
+  },
+  pwa: {
+    updateAvailable: "C’è una nuova versione.",
+    update: "Aggiorna",
+    installTitle: "Installala sul tuo dispositivo.",
+    installBody: "Si apre dalla sua icona e funziona offline.",
+    install: "Installa",
+    installApp: "Installa l’app",
+    iosSteps:
+      "In Safari, tocca «Condividi» e poi «Aggiungi alla schermata Home».",
+    close: "Chiudi",
+  },
+  credits: {
+    heading: "Crediti e fonti",
+    intro:
+      "La Ruota cromatica si basa su dati e codice di altre persone. Qui trovi da dove viene ogni cosa e con quale licenza.",
+    sourcesHeading: "Fonti dei dati",
+    sourcesIntro:
+      "I colori delle vernici sono gli hex pubblicati da queste fonti. Nessuno è misurato da questo sito.",
+    publisher: "Pubblicata da",
+    link: "Link",
+    archive: "Copia archiviata",
+    license: "Licenza",
+    unknownLicense: "Sconosciuta",
+    termsOfUse: "Condizioni d’uso del sito",
+    attribution: "Attribuzione",
+    retrieved: "Consultata il",
+    colorsOf: "Colori di",
+    paintCount: "{count} vernici",
+    replacements: "Sostituzioni",
+    equivalences: "Equivalenze ufficiali",
+    codeHeading: "Codice di terzi",
+    codeIntro:
+      "Questo sito include il codice di questi pacchetti. Le loro licenze richiedono di riprodurre l’avviso di copyright e il testo della licenza, mostrati nella lingua originale.",
+    version: "Versione",
+    repository: "Repository",
+    licenseText: "Testo della licenza",
+    backToWheel: "Torna alla ruota",
+  },
+  footer: {
+    credits: "Crediti e fonti",
+  },
+};

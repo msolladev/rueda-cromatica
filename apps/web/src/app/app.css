@@ -1,0 +1,869 @@
+/*
+ * Styles of the web (docs/07 §1, §11). Mobile first and a single markup:
+ * one column, and from 60rem the wheel fixed on the left and the results on
+ * the right. The theme comes from `<html data-theme>`: without it, the
+ * system's. Each color is written once with `light-dark()`, with the light
+ * ones as the base for browsers without it.
+ */
+
+:root {
+  --theme: light dark;
+  color-scheme: var(--theme);
+  /* The wheel follows the same theme (docs/05 §6.6). */
+  --cw-color-scheme: var(--theme);
+
+  --bg: #f6f7f9;
+  --surface: #ffffff;
+  --text: #1d1f22;
+  --muted: #5a5f66;
+  --line: #d5d8dd;
+  --accent: #1a5fd0;
+  --on-accent: #ffffff;
+  --chip: #eceef1;
+  --warn-bg: #fff6dc;
+  --warn-text: #5c4300;
+  --error-bg: #fde8e7;
+  --error-text: #8c1d18;
+
+  --font: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --radius: 0.5rem;
+  --gap: 1rem;
+  --control: 2.75rem;
+  --navbar-height: 3.75rem;
+}
+
+:root[data-theme="light"] {
+  --theme: light;
+}
+
+:root[data-theme="dark"] {
+  --theme: dark;
+}
+
+@supports (color: light-dark(#000, #fff)) {
+  :root {
+    --bg: light-dark(#f6f7f9, #121417);
+    --surface: light-dark(#ffffff, #1b1e22);
+    --text: light-dark(#1d1f22, #e9eaec);
+    --muted: light-dark(#5a5f66, #b5bac1);
+    --line: light-dark(#d5d8dd, #3a3f46);
+    --accent: light-dark(#1a5fd0, #8ab4ff);
+    --on-accent: light-dark(#ffffff, #10141a);
+    --chip: light-dark(#eceef1, #2a2e34);
+    --warn-bg: light-dark(#fff6dc, #2e2610);
+    --warn-text: light-dark(#5c4300, #f0d68a);
+    --error-bg: light-dark(#fde8e7, #3a1714);
+    --error-text: light-dark(#8c1d18, #ffb4ab);
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.25;
+  text-wrap: balance;
+  margin: 0;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+h2 {
+  font-size: 1.2rem;
+}
+
+a {
+  color: var(--accent);
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex: none;
+}
+
+.lead {
+  margin: 0;
+  color: var(--muted);
+  max-width: 65ch;
+}
+
+/* ---------- Controls ---------- */
+
+.button,
+.icon-button {
+  min-height: var(--control);
+  border-radius: var(--radius);
+  font: inherit;
+  cursor: pointer;
+}
+
+.button {
+  border: 0;
+  padding: 0 1.1rem;
+  background: var(--accent);
+  color: var(--on-accent);
+  font-weight: 600;
+}
+
+.icon-button {
+  min-width: var(--control);
+  display: inline-grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.link-button {
+  min-height: var(--control);
+  border: 0;
+  padding: 0;
+  background: none;
+  color: var(--accent);
+  font: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+  justify-self: start;
+}
+
+select {
+  min-height: var(--control);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 0 0.5rem;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}
+
+legend {
+  padding: 0;
+  margin-bottom: 0.25rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+/* Native radios that look like segments, as in the wheel (docs/05 §6.3). */
+.segmented-options,
+.theme-options {
+  display: inline-flex;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.segmented-options label,
+.theme-options label {
+  position: relative;
+  min-height: var(--control);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.85rem;
+  cursor: pointer;
+}
+
+.theme-options label {
+  min-width: var(--control);
+  padding: 0;
+}
+
+.segmented-options label + label,
+.theme-options label + label {
+  border-inline-start: 1px solid var(--line);
+}
+
+.segmented-options input,
+.theme-options input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+/* The same look as the wheel's segments. */
+.segmented-options label:has(input:checked),
+.theme-options label:has(input:checked) {
+  background: var(--text);
+  color: var(--surface);
+  font-weight: 600;
+}
+
+.segmented-options label:has(input:focus-visible),
+.theme-options label:has(input:focus-visible) {
+  outline: 3px solid var(--accent);
+  outline-offset: -3px;
+}
+
+/* ---------- Navigation bar (docs/07 §11) ---------- */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+}
+
+.navbar-inner {
+  position: relative;
+  max-width: 80rem;
+  margin-inline: auto;
+  min-height: var(--navbar-height);
+  padding: 0.5rem max(1rem, env(safe-area-inset-right)) 0.5rem
+    max(1rem, env(safe-area-inset-left));
+  display: flex;
+  align-items: center;
+  gap: var(--gap);
+}
+
+.brand {
+  margin-inline-end: auto;
+  color: var(--text);
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+
+.nav-menu {
+  display: none;
+}
+
+.nav-menu[data-open] {
+  position: absolute;
+  inset: 100% 0 auto;
+  display: grid;
+  gap: var(--gap);
+  padding: var(--gap);
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 0.75rem 1.5rem rgb(0 0 0 / 0.15);
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.nav-label {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.theme-switch {
+  display: flex;
+}
+
+.theme-switch legend {
+  float: inline-start;
+  align-self: center;
+}
+
+@media (min-width: 48rem) {
+  .burger {
+    display: none;
+  }
+
+  .nav-menu,
+  .nav-menu[data-open] {
+    position: static;
+    display: flex;
+    gap: 1.25rem;
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+    background: none;
+  }
+}
+
+/* ---------- Page ---------- */
+
+.main {
+  max-width: 80rem;
+  margin-inline: auto;
+  padding: var(--gap) max(1rem, env(safe-area-inset-right)) 2rem
+    max(1rem, env(safe-area-inset-left));
+  display: grid;
+  gap: var(--gap);
+}
+
+.install-banner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+  border-radius: var(--radius);
+  background: var(--chip);
+}
+
+.install-banner p {
+  margin: 0;
+}
+
+.install-actions {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.notice {
+  margin: 0;
+  padding: 0.6rem 0.9rem;
+  border-radius: var(--radius);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1rem;
+}
+
+.notice p {
+  margin: 0;
+}
+
+.notice-approx {
+  flex-wrap: nowrap;
+  align-items: baseline;
+  background: var(--warn-bg);
+  color: var(--warn-text);
+  border-inline-start: 3px solid var(--warn-text);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-size: 0.9rem;
+}
+
+.notice-approx a {
+  color: inherit;
+}
+
+.notice-error {
+  background: var(--error-bg);
+  color: var(--error-text);
+}
+
+.notice-error pre {
+  white-space: pre-wrap;
+  font-size: 0.8rem;
+}
+
+.notice-update {
+  background: var(--chip);
+}
+
+/* ---------- Wheel and results (docs/07 §1) ---------- */
+
+.workspace {
+  display: grid;
+  gap: var(--gap);
+}
+
+.wheel-column {
+  min-width: 0;
+}
+
+/* Keeps the wheel's space before it is created, so nothing jumps. */
+.wheel-host:empty {
+  aspect-ratio: 3 / 4;
+  max-width: 26rem;
+  margin-inline: auto;
+}
+
+.results-column {
+  display: grid;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+@media (min-width: 60rem) {
+  .workspace {
+    grid-template-columns: minmax(20rem, 26rem) minmax(0, 1fr);
+    align-items: start;
+  }
+
+  .wheel-column {
+    position: sticky;
+    top: calc(var(--navbar-height) + var(--gap));
+  }
+}
+
+.results {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 0.75rem 1rem;
+}
+
+.filters {
+  flex: 1 1 100%;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+@media (min-width: 60rem) {
+  .filters {
+    flex: 1 1 18rem;
+  }
+}
+
+.filters summary {
+  min-height: var(--control);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0 0.5rem;
+  padding: 0.4rem 0.75rem;
+  cursor: pointer;
+}
+
+.filters-title {
+  font-weight: 600;
+}
+
+.filters-summary {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.filters-body {
+  display: grid;
+  gap: 0.75rem;
+  padding: 0 0.75rem 0.75rem;
+}
+
+.checks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.25rem;
+}
+
+.checks label {
+  min-height: var(--control);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.checks input {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin: 0;
+}
+
+/* The color tabs stay under the navigation bar while scrolling. */
+.tabs {
+  position: sticky;
+  top: var(--navbar-height);
+  z-index: 5;
+  display: flex;
+  gap: 0.4rem;
+  overflow-x: auto;
+  padding: 0.4rem 0;
+  background: var(--bg);
+  scrollbar-width: thin;
+}
+
+.tabs [role="tab"] {
+  flex: 1 0 auto;
+  min-width: 4.5rem;
+  min-height: 3.5rem;
+  display: grid;
+  justify-items: center;
+  gap: 0.15rem;
+  padding: 0.35rem 0.5rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.tabs [role="tab"][aria-selected="true"] {
+  border: 2px solid var(--accent);
+  font-weight: 700;
+}
+
+.swatch {
+  display: inline-block;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 0.3rem;
+  box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.15);
+  vertical-align: middle;
+}
+
+.legend {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.legend strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.split {
+  width: 2.75rem;
+  height: 2.75rem;
+  flex: none;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  border-radius: 0.35rem;
+  overflow: hidden;
+  box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.15);
+}
+
+.split-mini {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.split-any {
+  background: repeating-linear-gradient(
+    45deg,
+    var(--muted) 0 2px,
+    transparent 2px 5px
+  );
+}
+
+.panel {
+  padding: 0.5rem 0.9rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.panel[data-inactive] {
+  display: none;
+}
+
+.panel-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.25rem 0;
+  font-size: 1.05rem;
+}
+
+.panel-heading code {
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.brand-groups {
+  display: grid;
+}
+
+@media (min-width: 75rem) {
+  .brand-groups {
+    grid-template-columns: 1fr 1fr;
+    gap: 0 1.5rem;
+  }
+}
+
+.brand-group {
+  display: grid;
+  align-content: start;
+}
+
+.brand-heading {
+  margin-top: 0.75rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.paints {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.paint {
+  display: grid;
+  grid-template-columns: 2.75rem minmax(0, 1fr) auto;
+  gap: 0.15rem 0.75rem;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.paint:first-child {
+  border-top: 0;
+}
+
+.paint-main {
+  display: grid;
+  min-width: 0;
+}
+
+.paint-name {
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.paint-range {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin-top: 0.15rem;
+}
+
+.chip {
+  font-size: 0.75rem;
+  padding: 0.05rem 0.5rem;
+  border-radius: 999px;
+  background: var(--chip);
+}
+
+.chip-approx {
+  background: var(--warn-bg);
+  color: var(--warn-text);
+}
+
+.paint-quality {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: end;
+}
+
+.paint-details {
+  grid-column: 2 / -1;
+  font-size: 0.85rem;
+}
+
+.paint-details summary {
+  min-height: 2rem;
+  display: inline-flex;
+  align-items: center;
+  color: var(--accent);
+  cursor: pointer;
+}
+
+.paint-details dl {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.15rem 0.75rem;
+  margin: 0.25rem 0 0;
+}
+
+.paint-details dt {
+  color: var(--muted);
+}
+
+.paint-details dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.empty,
+.loading {
+  margin: 0.5rem 0;
+  color: var(--muted);
+}
+
+.harmonies dl {
+  display: grid;
+  gap: 0.5rem;
+  margin: 0.5rem 0 0;
+}
+
+.harmonies dt {
+  font-weight: 600;
+}
+
+.harmonies dd {
+  margin: 0;
+  color: var(--muted);
+}
+
+@media (min-width: 48rem) {
+  .harmonies dl {
+    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+    gap: 1rem 1.5rem;
+  }
+}
+
+/* ---------- Credits (docs/07 §13) ---------- */
+
+.credits {
+  display: grid;
+  gap: 1.25rem;
+  max-width: 60rem;
+}
+
+.credits section {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.credits p {
+  margin: 0;
+}
+
+.cards,
+.licenses {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.card,
+.license {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  display: grid;
+  gap: 0.4rem;
+}
+
+.card h3,
+.license h3 {
+  font-size: 1rem;
+}
+
+.license-meta {
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.2rem 1rem;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.facts dt {
+  color: var(--muted);
+}
+
+.facts dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.license pre {
+  white-space: pre-wrap;
+  font-size: 0.8rem;
+  margin: 0.5rem 0 0;
+}
+
+/* ---------- Footer and the page for `/` ---------- */
+
+.footer {
+  border-top: 1px solid var(--line);
+}
+
+.footer-inner {
+  max-width: 80rem;
+  margin-inline: auto;
+  padding: 0.5rem max(1rem, env(safe-area-inset-right))
+    max(1rem, env(safe-area-inset-bottom)) max(1rem, env(safe-area-inset-left));
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0 1.5rem;
+}
+
+.footer-inner a {
+  min-height: var(--control);
+  display: inline-flex;
+  align-items: center;
+}
+
+.footer-note {
+  max-width: 80rem;
+  margin: 0 auto 1rem;
+  padding-inline: 1rem;
+  color: var(--muted);
+}
+
+.languages ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.languages a {
+  display: grid;
+  padding: 0.6rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  text-decoration: none;
+}
+
+.languages a span {
+  color: var(--muted);
+}

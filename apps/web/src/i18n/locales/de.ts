@@ -1,0 +1,179 @@
+import type { Messages } from "../messages.ts";
+
+export const de: Messages = {
+  meta: {
+    siteName: "Farbkreis",
+    homeTitle: "Farbkreis zum Bemalen von Miniaturen",
+    homeDescription:
+      "Wähle eine Farbe auf einem Farbkreis, der wie ein echter funktioniert, mit seinen Harmonien und einem Miniaturschema, und finde die ähnlichsten Farben von Warhammer, Vallejo, The Army Painter und AK. Funktioniert offline.",
+    creditsTitle: "Danksagungen und Quellen",
+    creditsDescription:
+      "Woher die Farbwerte der Farben im Farbkreis stammen, mit ihren Lizenzen, und der Code Dritter, den er verwendet.",
+  },
+  nav: {
+    label: "Hauptnavigation",
+    openMenu: "Menü öffnen",
+    closeMenu: "Menü schließen",
+    language: "Sprache · Language",
+    theme: "Design",
+    themes: {
+      system: "System",
+      light: "Hell",
+      dark: "Dunkel",
+    },
+  },
+  home: {
+    heading: "Farbkreis zum Bemalen von Miniaturen",
+    intro:
+      "Wähle eine Farbe auf dem Farbkreis und eine Harmonie oder das Miniaturschema mit Schatten und Licht. Für jede Farbe sucht die Seite die ähnlichsten Farben jeder Marke.",
+    wheelHeading: "Farbkreis",
+    noscript:
+      "Der interaktive Farbkreis braucht JavaScript. Darunter findest du ein vollständiges Beispiel mit seinen Farben.",
+    resultsHeading: "Ähnliche Farben",
+    harmoniesHeading: "Die Harmonien",
+    harmonies: {
+      complementary:
+        "Die Farbe und ihr Gegenüber im Farbkreis: der stärkste Kontrast.",
+      "split-complementary":
+        "Die Farbe und die beiden Nachbarn ihres Gegenübers: Kontrast, aber sanfter.",
+      analogous:
+        "Die Farbe und ihre Nachbarn im Farbkreis: eine ruhige Zusammenstellung.",
+      "accented-analogous":
+        "Analoge Farben mit dem Gegenüber als Akzent, für einen Blickfang.",
+      triad: "Drei Farben in gleichem Abstand auf dem Farbkreis.",
+      square: "Vier Farben in gleichem Abstand auf dem Farbkreis.",
+      rectangle:
+        "Zwei Paare von Gegenüberliegenden, näher beieinander als beim Quadrat.",
+      monochromatic:
+        "Ein einziger Farbton, mit mehr Weiß, mehr Grau oder mehr Schwarz.",
+      "miniature-scheme":
+        "Die Basis mit ihrem Schatten und ihrem Licht, die beiden anderen Farben ihrer Triade und ihre Komplementärfarbe.",
+    },
+  },
+  results: {
+    show: "Anzeigen",
+    byBrand: "Nach Marke",
+    overall: "Die ähnlichsten",
+    colors: "Farben",
+    colorTab: "{role} {hex}",
+    legendStart: "In jedem Farbfeld ist ",
+    legendWheel: "oben die Farbe des Farbkreises",
+    legendMiddle: " und ",
+    legendPaint: "unten die der Farbe",
+    legendEnd: ", zum Vergleichen.",
+    seeMore: "Mehr anzeigen",
+    noPaints: "Keine Farben mit diesen Filtern.",
+    noBrands: "Wähle in den Filtern mindestens eine Marke.",
+    loading: "Farben werden geladen…",
+    details: "Details",
+    code: "Code",
+    noCode: "Kein Code",
+    deltaE: "ΔE 2000",
+    hex: "Hex",
+    hexFrom: "{hex}, aus {source} ({origin})",
+    color: "Farbwert",
+    exactColor: "Genau",
+    metallic: "Metallic",
+    discontinued: "Eingestellt",
+  },
+  filters: {
+    title: "Filter",
+    brands: "Marken",
+    allBrands: "alle Marken",
+    someBrands: "{count} von {total} Marken",
+    addTypes: "Typen hinzufügen",
+    metallic: "Metallics",
+    includeDiscontinued: "Eingestellte einbeziehen",
+    opaqueOnly: "deckend",
+    moreTypes: "deckend und {count} weitere Typen",
+    withoutDiscontinued: "ohne eingestellte",
+    withDiscontinued: "mit eingestellten",
+  },
+  paintTypes: {
+    base: "Base",
+    layer: "Layer",
+    standard: "Standard",
+    wash: "Wash",
+    ink: "Tinte",
+    glaze: "Lasur",
+    contrast: "Contrast",
+    technical: "Technical",
+    dry: "Trockenbürsten",
+  },
+  quality: {
+    "near-identical": "Fast identisch",
+    "very-similar": "Sehr ähnlich",
+    similar: "Ähnlich",
+    "nearest-available": "Die nächstliegende",
+  },
+  approximate: {
+    all: "Die Farbwerte der Farben sind ungefähr: Ihre Hex-Werte stammen aus Community-Quellen, nicht aus Messungen. Vergleiche sie vor dem Kauf mit der echten Farbe.",
+    some: "Mit „≈ Ungefähr“ markierte Farben haben einen ungefähren Farbwert: Der Hex-Wert ist nicht gemessen oder die Farbe wirkt nicht wie eine flache Farbe. Vergleiche sie mit der echten Farbe.",
+    chip: "≈ Ungefähr",
+    sources: "Quellen",
+    reasons: {
+      metallic: "Ungefähr: Sie ist metallisch",
+      "paint-type": "Ungefähr: Sie wirkt nicht wie eine flache Farbe",
+      "community-color": "Ungefähr: Hex-Wert aus der Community",
+    },
+  },
+  origins: {
+    measured: "gemessen",
+    manufacturer: "vom Hersteller",
+    community: "Community",
+  },
+  errors: {
+    networkTitle: "Die Farben konnten nicht heruntergeladen werden.",
+    networkBody: "Prüfe die Verbindung.",
+    retry: "Erneut versuchen",
+    versionTitle: "Es gibt eine neue Version der App.",
+    versionBody: "Aktualisiere, um die Farben zu sehen.",
+    update: "Aktualisieren",
+    invalidTitle: "Die Farbdaten haben ein Problem.",
+    invalidBody:
+      "Der Farbkreis funktioniert weiter, aber ähnliche Farben können nicht gesucht werden. Lade die Seite später neu.",
+    technicalDetails: "Technische Details",
+  },
+  pwa: {
+    updateAvailable: "Es gibt eine neue Version.",
+    update: "Aktualisieren",
+    installTitle: "Installiere sie auf deinem Gerät.",
+    installBody:
+      "Sie öffnet sich über ihr eigenes Symbol und funktioniert offline.",
+    install: "Installieren",
+    installApp: "App installieren",
+    iosSteps:
+      "Tippe in Safari auf „Teilen“ und dann auf „Zum Home-Bildschirm“.",
+    close: "Schließen",
+  },
+  credits: {
+    heading: "Danksagungen und Quellen",
+    intro:
+      "Der Farbkreis baut auf Daten und Code anderer auf. Hier steht, woher alles stammt und unter welcher Lizenz.",
+    sourcesHeading: "Datenquellen",
+    sourcesIntro:
+      "Die Farbwerte der Farben sind die Hex-Werte, die diese Quellen veröffentlichen. Keiner wurde von dieser Seite gemessen.",
+    publisher: "Herausgegeben von",
+    link: "Link",
+    archive: "Archivierte Kopie",
+    license: "Lizenz",
+    unknownLicense: "Unbekannt",
+    termsOfUse: "Nutzungsbedingungen der Website",
+    attribution: "Namensnennung",
+    retrieved: "Abgerufen am",
+    colorsOf: "Farbwerte von",
+    paintCount: "{count} Farben",
+    replacements: "Ersatzfarben",
+    equivalences: "Offizielle Entsprechungen",
+    codeHeading: "Code von Dritten",
+    codeIntro:
+      "Diese Seite enthält den Code dieser Pakete. Ihre Lizenzen verlangen, den Urheberrechtshinweis und den Lizenztext wiederzugeben, die in ihrer Originalsprache angezeigt werden.",
+    version: "Version",
+    repository: "Repository",
+    licenseText: "Lizenztext",
+    backToWheel: "Zurück zum Farbkreis",
+  },
+  footer: {
+    credits: "Danksagungen und Quellen",
+  },
+};

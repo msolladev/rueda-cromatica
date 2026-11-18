@@ -1,0 +1,172 @@
+import type { Messages } from "../messages.ts";
+
+export const es: Messages = {
+  meta: {
+    siteName: "Rueda cromática",
+    homeTitle: "Rueda cromática para pintar miniaturas",
+    homeDescription:
+      "Elige un color en una rueda como la física, con sus armonías y un esquema de miniatura, y encuentra las pinturas más parecidas de Warhammer, Vallejo, The Army Painter y AK. Funciona sin conexión.",
+    creditsTitle: "Créditos y fuentes",
+    creditsDescription:
+      "De dónde salen los colores de las pinturas de la Rueda cromática, con sus licencias, y el código de terceros que usa.",
+  },
+  nav: {
+    label: "Principal",
+    openMenu: "Abrir el menú",
+    closeMenu: "Cerrar el menú",
+    language: "Idioma · Language",
+    theme: "Tema",
+    themes: { system: "Sistema", light: "Claro", dark: "Oscuro" },
+  },
+  home: {
+    heading: "Rueda cromática para pintar miniaturas",
+    intro:
+      "Elige un color en la rueda y una armonía, o el esquema de miniatura con su sombra y su luz. Para cada color, la web busca las pinturas más parecidas de cada marca.",
+    wheelHeading: "Rueda",
+    noscript:
+      "La rueda interactiva necesita JavaScript. Debajo tienes un ejemplo completo con sus pinturas.",
+    resultsHeading: "Pinturas parecidas",
+    harmoniesHeading: "Las armonías",
+    harmonies: {
+      complementary:
+        "El color y el opuesto en la rueda: el contraste más fuerte.",
+      "split-complementary":
+        "El color y los dos vecinos de su opuesto: contraste, pero más suave.",
+      analogous: "El color y sus vecinos en la rueda: un conjunto tranquilo.",
+      "accented-analogous":
+        "Análogos con el opuesto como acento, para un punto de interés.",
+      triad: "Tres colores repartidos a la misma distancia en la rueda.",
+      square: "Cuatro colores repartidos a la misma distancia.",
+      rectangle:
+        "Dos parejas de opuestos, más cerca entre sí que en el cuadrado.",
+      monochromatic: "Un solo tono, con más blanco, más gris o más negro.",
+      "miniature-scheme":
+        "La base con su sombra y su luz, los otros dos colores de su tríada y su complementario.",
+    },
+  },
+  results: {
+    show: "Mostrar",
+    byBrand: "Por marca",
+    overall: "Las más parecidas",
+    colors: "Colores",
+    colorTab: "{role} {hex}",
+    legendStart: "En cada muestra, ",
+    legendWheel: "arriba el color de la rueda",
+    legendMiddle: " y ",
+    legendPaint: "abajo el de la pintura",
+    legendEnd: ", para compararlos.",
+    seeMore: "Ver más",
+    noPaints: "Sin pinturas con estos filtros.",
+    noBrands: "Elige al menos una marca en los filtros.",
+    loading: "Cargando las pinturas…",
+    details: "Detalles",
+    code: "Código",
+    noCode: "Sin código",
+    deltaE: "ΔE 2000",
+    hex: "Hex",
+    hexFrom: "{hex}, de {source} ({origin})",
+    color: "Color",
+    exactColor: "Exacto",
+    metallic: "Metálica",
+    discontinued: "Descatalogada",
+  },
+  filters: {
+    title: "Filtros",
+    brands: "Marcas",
+    allBrands: "todas las marcas",
+    someBrands: "{count} de {total} marcas",
+    addTypes: "Añadir tipos",
+    metallic: "Metálicas",
+    includeDiscontinued: "Incluir descatalogadas",
+    opaqueOnly: "opacas",
+    moreTypes: "opacas y {count} tipos más",
+    withoutDiscontinued: "sin descatalogadas",
+    withDiscontinued: "con descatalogadas",
+  },
+  paintTypes: {
+    base: "Base",
+    layer: "Capa",
+    standard: "Estándar",
+    wash: "Lavado",
+    ink: "Tinta",
+    glaze: "Veladura",
+    contrast: "Contrast",
+    technical: "Técnica",
+    dry: "Pincel seco",
+  },
+  quality: {
+    "near-identical": "Casi idéntica",
+    "very-similar": "Muy parecida",
+    similar: "Parecida",
+    "nearest-available": "La más cercana",
+  },
+  approximate: {
+    all: "Los colores de las pinturas son aproximados: sus hex vienen de fuentes comunitarias, no de mediciones. Compáralos con la pintura real antes de comprar.",
+    some: "Las pinturas marcadas con «≈ Aproximado» tienen el color aproximado: el hex no está medido o la pintura no se ve como un color plano. Compáralas con la pintura real.",
+    chip: "≈ Aproximado",
+    sources: "Fuentes",
+    reasons: {
+      metallic: "Aproximado: es metálica",
+      "paint-type": "Aproximado: no se ve como un color plano",
+      "community-color": "Aproximado: hex comunitario",
+    },
+  },
+  origins: {
+    measured: "medido",
+    manufacturer: "del fabricante",
+    community: "comunitario",
+  },
+  errors: {
+    networkTitle: "No se han podido descargar las pinturas.",
+    networkBody: "Comprueba la conexión.",
+    retry: "Reintentar",
+    versionTitle: "Hay una versión nueva de la aplicación.",
+    versionBody: "Actualiza para ver las pinturas.",
+    update: "Actualizar",
+    invalidTitle: "Los datos de las pinturas tienen un problema.",
+    invalidBody:
+      "La rueda sigue funcionando, pero no se pueden buscar pinturas parecidas. Recarga la página más tarde.",
+    technicalDetails: "Detalles técnicos",
+  },
+  pwa: {
+    updateAvailable: "Hay una versión nueva.",
+    update: "Actualizar",
+    installTitle: "Instálala en tu dispositivo.",
+    installBody: "Se abre desde su propio icono y funciona sin conexión.",
+    install: "Instalar",
+    installApp: "Instalar la aplicación",
+    iosSteps:
+      "En Safari, pulsa «Compartir» y después «Añadir a pantalla de inicio».",
+    close: "Cerrar",
+  },
+  credits: {
+    heading: "Créditos y fuentes",
+    intro:
+      "La Rueda cromática se apoya en datos y código de otras personas. Aquí está de dónde sale cada cosa y con qué licencia.",
+    sourcesHeading: "Fuentes de los datos",
+    sourcesIntro:
+      "Los colores de las pinturas son los hex que publican estas fuentes. Ninguno está medido por esta web.",
+    publisher: "Publicada por",
+    link: "Enlace",
+    archive: "Copia archivada",
+    license: "Licencia",
+    unknownLicense: "Desconocida",
+    termsOfUse: "Condiciones de uso del sitio",
+    attribution: "Atribución",
+    retrieved: "Consultada el",
+    colorsOf: "Colores de",
+    paintCount: "{count} pinturas",
+    replacements: "Sustituciones",
+    equivalences: "Equivalencias oficiales",
+    codeHeading: "Código de terceros",
+    codeIntro:
+      "Esta web incluye el código de estos paquetes. Sus licencias exigen reproducir el aviso de copyright y el texto de la licencia, que se muestran en su idioma original.",
+    version: "Versión",
+    repository: "Repositorio",
+    licenseText: "Texto de la licencia",
+    backToWheel: "Volver a la rueda",
+  },
+  footer: {
+    credits: "Créditos y fuentes",
+  },
+};
