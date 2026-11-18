@@ -37,7 +37,19 @@ function baseLanguage(tag: string): string {
 /**
  * The default locale (docs/05 §6.5): the first of `preferred` that matches an
  * included one, first exactly and then by base language (`pt-PT` → `pt-BR`).
- * If none matches, English. The component passes `navigator.languages`.
+ * If none matches, English. The component uses it with `navigator.languages`
+ * when no `locale` is given; a page can use it to pick the same language for
+ * its own texts.
+ *
+ * @param preferred - Language tags in order of preference, such as
+ *   `navigator.languages`.
+ * @returns One of the {@link LOCALES}.
+ *
+ * @example
+ * ```ts
+ * resolveLocale(["pt-PT", "en"]); // "pt-BR"
+ * resolveLocale(["eu"]); // "en"
+ * ```
  */
 export function resolveLocale(preferred: readonly string[]): Locale {
   for (const tag of preferred) {

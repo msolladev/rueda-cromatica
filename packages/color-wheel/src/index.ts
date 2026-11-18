@@ -16,7 +16,7 @@ export type {
 } from "./ui/options.ts";
 export { CONTROLS, type Control } from "./ui/controls.ts";
 export type { Labels, PartialLabels } from "./ui/labels.ts";
-export { LOCALES, type Locale } from "./i18n/locales.ts";
+export { LOCALES, resolveLocale, type Locale } from "./i18n/locales.ts";
 
 export { compute, type ComputeInput } from "./calculation/compute.ts";
 export { fromWheelColor, toWheelColor } from "./color/convert.ts";
