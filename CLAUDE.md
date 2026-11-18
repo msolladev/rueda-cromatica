@@ -127,8 +127,13 @@ El alcance mínimo y lo aplazado están razonados en el [ADR-0019](docs/adr/0019
    - Una API REST con base de datos y una web de administración del catálogo, con el frontal y el backend separados.
    - Una instantánea pública del catálogo, pedida por versión de esquema, para que la PWA actualice su catálogo local sin volver a desplegarse. De la API, la PWA solo consume esa instantánea y los endpoints de usuario. La API de administración solo la usa `apps/admin`.
    - Cuentas, sesiones y roles (usuario y administrador), gestionados desde `apps/admin`, con los datos del usuario sincronizados entre dispositivos y offline primero.
+   - La referencia de la API, con Scalar como candidato, a partir de su especificación OpenAPI. Se decide al elegir el framework de `apps/api`, porque de él depende cómo se obtiene el OpenAPI.
 
-Pendiente fuera de la hoja de ruta: provisionar la preproducción en el homelab y decidir dónde va producción. Antes de cualquier despliegue público hay que revisar las fuentes con licencia `unknown` o `terms-of-use`.
+Pendiente fuera de la hoja de ruta:
+
+- Provisionar la preproducción en el homelab y decidir dónde va producción. Para el MVP, que es estático, statichost.eu es una opción recomendada, sin evaluar todavía.
+- Al pasar a producción, publicar con la CI la referencia de los paquetes que genera TypeDoc, que hasta entonces solo se genera en local.
+- Antes de cualquier despliegue público, revisar las fuentes con licencia `unknown` o `terms-of-use`.
 
 ## Documentación
 
@@ -136,6 +141,8 @@ Pendiente fuera de la hoja de ruta: provisionar la preproducción en el homelab 
 - **Este documento** recoge las decisiones vigentes. El proyecto de claude.ai lo carga desde GitHub junto con docs/01-04.
 - **Informes de investigación**: en `docs/investigacion/`, fechados e inmutables. Las normas están en su [README](docs/investigacion/README.md).
 - **Especificaciones y ADR**: las especificaciones describen lo vigente; los ADR, por qué se decidió. Un ADR aceptado no se reescribe: se sustituye por otro nuevo.
+- **Referencia de la API** de `color-wheel` y `domain`: la generan TypeDoc y los comentarios TSDoc del código, en inglés. `pnpm docs` la genera en local y la CI comprueba que se genera sin errores. Las especificaciones describen el comportamiento y enlazan a ella, sin repetir firmas ni tipos ([ADR-0023](docs/adr/0023-documentacion-tecnica.md)).
+- **READMEs**, en castellano. El de la raíz explica qué es el proyecto, cómo se instala y los comandos. El de cada paquete explica qué hace, con un ejemplo mínimo y los enlaces a su especificación y a la referencia.
 
 ## Interfaz
 
