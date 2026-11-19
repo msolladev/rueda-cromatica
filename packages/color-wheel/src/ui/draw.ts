@@ -26,6 +26,8 @@ export interface DrawInput {
    * template moves it can have more marks than colors (docs/05 §6.2).
    */
   readonly template: readonly number[];
+  /** The mark of the color highlighted by the page, if any. */
+  readonly highlight?: number | undefined;
   /** The part with visible keyboard focus, if any. */
   readonly focus: Zone | undefined;
   readonly focusColor: string;
@@ -52,7 +54,7 @@ export function drawWheel(
 
   drawRing(context, input.model);
   drawTriangle(context, input.model, input.position.hue);
-  drawTemplate(context, input.template, px);
+  drawTemplate(context, input.template, px, input.highlight);
   drawBase(context, input.position, px);
   if (input.focus === "ring") {
     circle(context, { x: 0, y: 0 }, 1 + 3 * px);
@@ -132,7 +134,18 @@ function drawTemplate(
   context: CanvasRenderingContext2D,
   template: readonly number[],
   px: number,
+  highlight: number | undefined,
 ): void {
+  // The highlighted mark, an outer ring around it.
+  const highlighted = highlight === undefined ? undefined : template[highlight];
+  if (highlighted !== undefined) {
+    circle(
+      context,
+      pointAt(highlighted, MARK_RADIUS),
+      (highlight === 0 ? 14 : 11) * px,
+    );
+    haloStroke(context, px, 2.5);
+  }
   // The base last, so that it stays on top.
   const ordered = template.map((hue, index) => ({ hue, isBase: index === 0 }));
   ordered.push(...ordered.splice(0, 1));

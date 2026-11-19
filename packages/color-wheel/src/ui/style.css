@@ -129,6 +129,72 @@
   outline: none;
 }
 
+/* The names of the marks (mark-labels.ts): only those of the color the page
+   highlights and of the marks under the mouse. Small pills just inside the
+   ring, white on a dark halo like the lines, readable on any color, with a
+   dot of their color: it tells overlapping marks apart. They fade and grow
+   in, and fade out in place. They hide while the template moves, and almost
+   vanish while dragging, so that they do not hide the triangle. */
+.cw-marks {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+
+.cw-marks[data-moving] {
+  opacity: 0;
+  transition-duration: 0s;
+}
+
+.cw-root.cw-is-dragging .cw-marks {
+  opacity: 0.25;
+}
+
+.cw-mark-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0 0.45rem 0 0.3rem;
+  border-radius: 999px;
+  background: rgb(0 0 0 / 0.75);
+  color: #ffffff;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  line-height: 1.45;
+  white-space: nowrap;
+  opacity: 0;
+  scale: 0.85;
+  transition:
+    opacity 0.18s ease-in,
+    scale 0.18s ease-in;
+}
+
+.cw-mark-label[data-shown] {
+  opacity: 1;
+  scale: 1;
+  transition:
+    opacity 0.22s cubic-bezier(0.2, 0.8, 0.2, 1),
+    scale 0.22s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.cw-mark-dot {
+  flex: none;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgb(255 255 255 / 0.85);
+}
+
+@media (forced-colors: active) {
+  .cw-mark-label {
+    border: 1px solid CanvasText;
+  }
+}
+
 /* Controls. */
 
 .cw-panel {
@@ -433,6 +499,25 @@
   }
 }
 
+/* The icon tilts its head, curious, with a small bounce. */
+.cw-help-button .cw-icon {
+  transition:
+    rotate 0.45s cubic-bezier(0.3, 1.8, 0.5, 1),
+    scale 0.45s cubic-bezier(0.3, 1.8, 0.5, 1);
+}
+
+.cw-help-button:enabled:focus-visible .cw-icon {
+  rotate: -15deg;
+  scale: 1.12;
+}
+
+@media (hover: hover) {
+  .cw-help-button:enabled:hover .cw-icon {
+    rotate: -15deg;
+    scale: 1.12;
+  }
+}
+
 .cw-help-button:disabled {
   cursor: not-allowed;
   text-decoration: none;
@@ -463,6 +548,34 @@
   font-size: var(--cw-font-size);
   line-height: 1.5;
   box-shadow: var(--cw-shadow);
+  /* It appears growing a little from its button and fades out on closing;
+     `display` and `overlay` wait for the fade. */
+  opacity: 0;
+  scale: 0.97;
+  translate: 0 -0.25rem;
+  transform-origin: top center;
+  transition:
+    opacity 0.18s ease-in,
+    scale 0.18s ease-in,
+    translate 0.18s ease-in,
+    display 0.18s allow-discrete,
+    overlay 0.18s allow-discrete;
+}
+
+.cw-help-popover:popover-open {
+  opacity: 1;
+  scale: 1;
+  translate: 0 0;
+  transition-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition-duration: 0.24s;
+}
+
+@starting-style {
+  .cw-help-popover:popover-open {
+    opacity: 0;
+    scale: 0.97;
+    translate: 0 -0.25rem;
+  }
 }
 
 @supports (anchor-name: --cw-anchor) {
@@ -538,4 +651,16 @@
   clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
+}
+
+/* Without motion when the system asks to reduce it. Last, so that it wins
+   over each transition above. */
+@media (prefers-reduced-motion: reduce) {
+  .cw-marks,
+  .cw-help-button .cw-icon,
+  .cw-mark-label,
+  .cw-mark-label[data-shown],
+  .cw-help-popover {
+    transition: none;
+  }
 }

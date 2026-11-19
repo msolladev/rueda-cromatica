@@ -52,6 +52,7 @@
     "pointerHelp": "Trascina sull’anello per cambiare la tonalità e dentro il triangolo per aggiungere bianco o nero.",
     "touchHelp": "Con il dito, il punto segue il movimento senza saltare sotto il dito, così resta visibile. Tocca per saltare a un punto.",
     "keyboardHelp": "Con la tastiera, raggiungi l’anello o il triangolo con Tab e usa le frecce.",
+    "modelHelp": "RYB (rosso, giallo e blu) è la ruota tradizionale della pittura, quella per mescolare i pigmenti: i suoi complementari sono rosso e verde, giallo e viola, blu e arancione. Digitale è la ruota dello schermo (RGB), con altri complementari, come blu e giallo.",
     "helpClose": "Chiudi",
     "hexInvalid": "Inserisci un colore hex, ad esempio #3daf44.",
     "resultsUpdated": "{count} colori: {harmony}."

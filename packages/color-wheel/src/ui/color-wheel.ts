@@ -18,10 +18,11 @@ import {
   setRadios,
   type Dom,
 } from "./dom.ts";
-import { drawWheel } from "./draw.ts";
-import type { Zone } from "./geometry.ts";
+import { drawWheel, WHEEL_SCALE } from "./draw.ts";
+import { MARK_RADIUS, pointAt, RING_INNER, type Zone } from "./geometry.ts";
 import { ringKey, triangleKey } from "./keyboard.ts";
 import {
+  colorNames,
   format,
   mergeLabels,
   type Labels,
@@ -39,6 +40,7 @@ import {
   type ColorWheelProperties,
   type ColorWheelState,
 } from "./options.ts";
+import { placeMarkLabels } from "./mark-labels.ts";
 import { attachPointer } from "./pointer.ts";
 import {
   easeOut,
@@ -159,6 +161,12 @@ export class ColorWheel extends EventTarget {
   readonly #dom: Dom;
   readonly #abort = new AbortController();
   readonly #observer: ResizeObserver;
+  /** The measured sizes of the names of the marks, until they change. */
+  #markSizes: { width: number; height: number }[] | undefined;
+  /** The color highlighted by the page, if any (`highlightColor`). */
+  #highlighted: number | null = null;
+  /** The marks under the mouse. */
+  #hovered: number[] = [];
 
   /**
    * Creates the wheel and appends it to `container`. It does not emit
@@ -534,6 +542,29 @@ export class ColorWheel extends EventTarget {
     return this.#labels();
   }
 
+  /**
+   * Highlights a color of the result: its mark grows and shows its name. A
+   * page that shows the colors its own way (for example in tabs, with the
+   * `results` control hidden) uses it to point at the one selected. It is not
+   * part of the state and emits nothing. An index beyond the current colors
+   * highlights nothing until there are enough.
+   *
+   * @param index - The position of the color in {@link ColorWheel.getResult},
+   *   or `null` to highlight none.
+   * @throws TypeError if `index` is not a whole number from 0, or `null`.
+   */
+  highlightColor(index: number | null): void {
+    this.#check();
+    if (index !== null && !(Number.isInteger(index) && index >= 0)) {
+      throw new TypeError(
+        `The index must be a whole number from 0, or null; received ${describeValue(index)}.`,
+      );
+    }
+    if (index === this.#highlighted) return;
+    this.#highlighted = index;
+    this.#draw();
+  }
+
   /** Removes the wheel and its listeners. Any later call is an error. */
   destroy(): void {
     this.#check();
@@ -803,6 +834,8 @@ export class ColorWheel extends EventTarget {
         position: () => this.#position,
         start: (zone) => {
           this.#dragSnapshot = this.#snapshot();
+          dom.root.classList.add("cw-is-dragging");
+          this.#hovered = [];
           (zone === "ring" ? dom.ring : dom.triangle).focus({
             preventScroll: true,
           });
@@ -812,6 +845,7 @@ export class ColorWheel extends EventTarget {
           this.#emit("input", "user");
         },
         end: () => {
+          dom.root.classList.remove("cw-is-dragging");
           const before = this.#dragSnapshot;
           this.#dragSnapshot = undefined;
           if (before !== undefined && before !== this.#snapshot()) {
@@ -844,6 +878,11 @@ export class ColorWheel extends EventTarget {
         this.#sourceHex = undefined;
       });
     };
+    const onHover = (event: PointerEvent) => {
+      this.#hoverMarks(event);
+    };
+    dom.canvas.addEventListener("pointermove", onHover, { signal });
+    dom.canvas.addEventListener("pointerleave", onHover, { signal });
     dom.ring.addEventListener("keydown", onKey("ring"), { signal });
     dom.triangle.addEventListener("keydown", onKey("triangle"), { signal });
     for (const slider of [dom.ring, dom.triangle]) {
@@ -1009,8 +1048,9 @@ export class ColorWheel extends EventTarget {
     );
 
     dom.resultsTitle.textContent = labels.control.results;
+    const names = colorNames(this.#colors, labels);
     dom.resultsList.replaceChildren(
-      ...this.#colors.map(({ role, hex }) => {
+      ...this.#colors.map(({ hex }, index) => {
         const item = document.createElement("li");
         item.className = "cw-item";
         const swatch = document.createElement("span");
@@ -1019,7 +1059,7 @@ export class ColorWheel extends EventTarget {
         swatch.style.backgroundColor = hex;
         const name = document.createElement("span");
         name.className = "cw-role";
-        name.textContent = labels.role[role];
+        name.textContent = names[index] ?? "";
         const value = document.createElement("span");
         value.className = "cw-hex";
         value.textContent = hex;
@@ -1028,12 +1068,15 @@ export class ColorWheel extends EventTarget {
       }),
     );
 
+    this.#nameMarks(names);
+
     dom.helpTitle.textContent = labels.control.help;
     dom.helpHeading.textContent = labels.control.help;
     dom.helpClose.setAttribute("aria-label", labels.wheel.helpClose);
     dom.helpPointer.textContent = labels.wheel.pointerHelp;
     dom.helpTouch.textContent = labels.wheel.touchHelp;
     dom.helpKeyboard.textContent = labels.wheel.keyboardHelp;
+    dom.helpModel.textContent = labels.wheel.modelHelp;
     dom.ringKeys.textContent = labels.wheel.ringKeys;
     dom.triangleKeys.textContent = labels.wheel.triangleKeys;
 
@@ -1074,6 +1117,7 @@ export class ColorWheel extends EventTarget {
     if (canvas.width !== size || canvas.height !== size) {
       canvas.width = size;
       canvas.height = size;
+      this.#markSizes = undefined;
     }
     this.#draw();
   }
@@ -1105,16 +1149,135 @@ export class ColorWheel extends EventTarget {
     // variable itself may be an unresolved `light-dark()`.
     const focusColor =
       getComputedStyle(dom.canvas).color.trim() || FALLBACK_FOCUS_COLOR;
+    const template = this.#template();
     drawWheel(context, {
       model: this.#config.model,
       position: this.#position,
-      template: this.#template(),
+      template,
+      highlight:
+        this.#motion === undefined &&
+        this.#highlighted !== null &&
+        this.#highlighted < template.length
+          ? this.#highlighted
+          : undefined,
       focus,
       focusColor,
       pixelRatio: devicePixelRatio,
     });
+    this.#placeMarks(template);
+  }
+
+  /** Writes the name of each mark, if they changed, and measures them. */
+  /**
+   * Writes the name of each mark, with a dot of its color, rebuilding them
+   * only if the names changed.
+   */
+  #nameMarks(names: readonly string[]): void {
+    const container = this.#dom.marks;
+    const current = [...container.children].map((child) => child.textContent);
+    if (JSON.stringify(current) !== JSON.stringify(names)) {
+      container.replaceChildren(
+        ...names.map((name) => {
+          const label = document.createElement("span");
+          label.className = "cw-mark-label";
+          const dot = document.createElement("span");
+          dot.className = "cw-mark-dot";
+          label.append(dot, name);
+          return label;
+        }),
+      );
+      this.#markSizes = undefined;
+    }
+    this.#colors.forEach((color, index) => {
+      const dot = container.children[index]?.firstElementChild;
+      if (dot instanceof HTMLElement) dot.style.backgroundColor = color.hex;
+    });
+  }
+
+  /** The indices of the names shown: the highlighted color and those hovered. */
+  #shownMarks(count: number): number[] {
+    const shown = new Set(this.#hovered);
+    if (this.#highlighted !== null) shown.add(this.#highlighted);
+    return [...shown].filter((index) => index < count).sort((a, b) => a - b);
+  }
+
+  /**
+   * Shows the names of the highlighted color and of the marks under the
+   * mouse, placed on their marks (mark-labels.ts); the CSS fades them in and
+   * out. While the template moves they are hidden, because a moving template
+   * can have more marks than names; they appear again where it stops.
+   */
+  #placeMarks(template: readonly number[]): void {
+    const container = this.#dom.marks;
+    const labels = [...container.children] as HTMLElement[];
+    const moving =
+      this.#motion !== undefined || template.length !== labels.length;
+    container.toggleAttribute("data-moving", moving);
+    if (moving) return;
+    const half = this.#dom.canvas.getBoundingClientRect().width / 2;
+    if (half === 0) return;
+    const sizes =
+      this.#markSizes ??
+      labels.map((label) => ({
+        width: label.offsetWidth,
+        height: label.offsetHeight,
+      }));
+    // Kept only once measured for real: a hidden wheel measures zero.
+    if (sizes.every((size) => size.width > 0)) this.#markSizes = sizes;
+    const shown = this.#shownMarks(labels.length);
+    const limit = half * WHEEL_SCALE * RING_INNER - 4;
+    const centers = placeMarkLabels(
+      shown.map((index) => ({
+        hue: template[index] ?? 0,
+        width: sizes[index]?.width ?? 0,
+        height: sizes[index]?.height ?? 0,
+      })),
+      limit,
+    );
+    labels.forEach((label, index) => {
+      const at = shown.indexOf(index);
+      label.toggleAttribute("data-shown", at !== -1);
+      const center = centers[at];
+      // A hidden name stays where it was, so that it fades out in place.
+      if (center === undefined) return;
+      label.style.translate = `calc(${String(center.x)}px - 50%) calc(${String(center.y)}px - 50%)`;
+    });
+  }
+
+  /**
+   * The marks under the mouse (not a finger: touch has no hover), within a
+   * few pixels of their center. Overlapping marks are all hovered at once.
+   */
+  #hoverMarks(event: PointerEvent): void {
+    let hovered: number[] = [];
+    if (
+      event.type === "pointermove" &&
+      event.pointerType !== "touch" &&
+      event.buttons === 0 &&
+      this.#motion === undefined
+    ) {
+      const rect = this.#dom.canvas.getBoundingClientRect();
+      const half = rect.width / 2;
+      const radius = half * WHEEL_SCALE;
+      const x = event.clientX - rect.left - half;
+      const y = event.clientY - rect.top - half;
+      hovered = this.#template()
+        .map((hue, index) => ({ mark: pointAt(hue, MARK_RADIUS), index }))
+        .filter(
+          ({ mark }) =>
+            Math.hypot(mark.x * radius - x, mark.y * radius - y) <=
+            MARK_HOVER_RADIUS,
+        )
+        .map(({ index }) => index);
+    }
+    if (JSON.stringify(hovered) === JSON.stringify(this.#hovered)) return;
+    this.#hovered = hovered;
+    this.#draw();
   }
 }
+
+/** How close to a mark's center the mouse shows its name, in CSS pixels. */
+const MARK_HOVER_RADIUS = 12;
 
 function assertConsistent(config: Config): void {
   if (!config.models.includes(config.model)) {

@@ -52,6 +52,7 @@
     "pointerHelp": "Auf dem Ring ziehen, um den Farbton zu ändern, und im Dreieck, um Weiß oder Schwarz hinzuzufügen.",
     "touchHelp": "Mit dem Finger folgt der Punkt der Bewegung, ohne unter den Finger zu springen, und bleibt so sichtbar. Tippen springt an die Stelle.",
     "keyboardHelp": "Mit der Tastatur per Tab zum Ring oder zum Dreieck wechseln und die Pfeiltasten verwenden.",
+    "modelHelp": "RYB (Rot, Gelb und Blau) ist der traditionelle Farbkreis der Malerei, der für das Mischen von Pigmenten: Seine Komplementärfarben sind Rot und Grün, Gelb und Violett sowie Blau und Orange. Digital ist der Farbkreis des Bildschirms (RGB), mit anderen Komplementärfarben, etwa Blau und Gelb.",
     "helpClose": "Schließen",
     "hexInvalid": "Eine Hex-Farbe eingeben, z. B. #3daf44.",
     "resultsUpdated": "{count} Farben: {harmony}."

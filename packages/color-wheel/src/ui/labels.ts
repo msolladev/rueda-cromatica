@@ -48,6 +48,8 @@ export interface Labels {
     readonly touchHelp: string;
     /** Help on using the wheel with the keyboard. */
     readonly keyboardHelp: string;
+    /** Help on the two models: what RYB is, and how it differs from digital. */
+    readonly modelHelp: string;
     /** Accessible name of the button that closes the help. */
     readonly helpClose: string;
     /** Error shown under the hex field when the typed hex is not valid. */
@@ -140,6 +142,39 @@ export function mergeLabels(locale: Locale, labels: PartialLabels): Labels {
 export function labelsFor(locale: Locale): Labels {
   assertLocale(locale);
   return mergeLabels(locale, {});
+}
+
+/**
+ * The name of each color of a result (docs/05 §6.2): its role, numbered when
+ * the role appears more than once, such as the two colors of a triad. The
+ * wheel uses them on its marks and in its list of results, and a page can
+ * use them to name the same colors in its own content.
+ *
+ * @param colors - The colors of a result, in its order.
+ * @param labels - The texts of a locale, such as those of {@link labelsFor}.
+ * @returns One name per color, in the same order.
+ *
+ * @example
+ * ```ts
+ * colorNames(
+ *   [{ role: "base" }, { role: "triad" }, { role: "triad" }],
+ *   labelsFor("es"),
+ * ); // ["Base", "Tríada 1", "Tríada 2"]
+ * ```
+ */
+export function colorNames(
+  colors: readonly { readonly role: Role }[],
+  labels: Labels,
+): string[] {
+  const seen = new Map<Role, number>();
+  return colors.map(({ role }) => {
+    const name = labels.role[role];
+    const total = colors.filter((color) => color.role === role).length;
+    if (total === 1) return name;
+    const index = (seen.get(role) ?? 0) + 1;
+    seen.set(role, index);
+    return `${name} ${String(index)}`;
+  });
 }
 
 /** Replaces each `{name}` of `template` with its value. */

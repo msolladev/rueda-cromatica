@@ -52,6 +52,7 @@
     "pointerHelp": "Arraste no anel para mudar o matiz e dentro do triângulo para adicionar branco ou preto.",
     "touchHelp": "Com o dedo, o ponto acompanha o movimento sem pular para baixo do dedo, então continua visível. Toque para pular para um ponto.",
     "keyboardHelp": "No teclado, vá até o anel ou o triângulo com Tab e use as setas.",
+    "modelHelp": "RYB (vermelho, amarelo e azul) é a roda tradicional da pintura, a de misturar pigmentos: seus complementares são vermelho e verde, amarelo e violeta, e azul e laranja. Digital é a roda da tela (RGB), com outros complementares, como azul e amarelo.",
     "helpClose": "Fechar",
     "hexInvalid": "Digite uma cor hex, como #3daf44.",
     "resultsUpdated": "{count} cores: {harmony}."
