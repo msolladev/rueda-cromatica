@@ -10,10 +10,10 @@ describe("headOf", () => {
       "<title>Créditos y fuentes · Rueda cromática</title>",
     );
     expect(head).toContain(
-      '<link rel="canonical" href="https://example.org/es/credits/" />',
+      '<link rel="canonical" href="https://example.org/es/creditos/" />',
     );
     expect(head).toContain(
-      '<meta property="og:url" content="https://example.org/es/credits/" />',
+      '<meta property="og:url" content="https://example.org/es/creditos/" />',
     );
   });
 
@@ -39,6 +39,27 @@ describe("headOf", () => {
     expect(langOf({ kind: "languages" })).toBe("en");
     expect(headOf({ kind: "languages" }, ORIGIN)).toContain(
       "<title>Color wheel for painting miniatures</title>",
+    );
+  });
+
+  it("keeps «Page not found» out of the search engines, without a canonical URL", () => {
+    const head = headOf({ kind: "not-found", locale: "es" }, ORIGIN);
+    expect(head).toContain(
+      "<title>Página no encontrada · Rueda cromática</title>",
+    );
+    expect(head).toContain('<meta name="robots" content="noindex" />');
+    expect(head).not.toContain("canonical");
+    expect(head).not.toContain("hreflang");
+  });
+
+  it("keeps `/` blank until it goes to a language, except without JavaScript", () => {
+    const head = headOf({ kind: "languages" }, ORIGIN);
+    expect(head).toContain("body{visibility:hidden");
+    expect(head).toContain(
+      "<noscript><style>body{visibility:visible}</style></noscript>",
+    );
+    expect(headOf({ kind: "home", locale: "es" }, ORIGIN)).not.toContain(
+      "visibility",
     );
   });
 });

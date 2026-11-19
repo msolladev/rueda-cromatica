@@ -14,6 +14,9 @@ export const de: Messages = {
     label: "Hauptnavigation",
     openMenu: "Menü öffnen",
     closeMenu: "Menü schließen",
+    skipToWheel: "Zum Farbkreis springen",
+    skipToPaints: "Zu den Farben springen",
+    skipToContent: "Zum Inhalt springen",
     language: "Sprache · Language",
     theme: "Design",
     themes: {
@@ -23,7 +26,7 @@ export const de: Messages = {
     },
   },
   home: {
-    heading: "Farbkreis zum Bemalen von Miniaturen",
+    heading: "Finde die Farbe für jeden Farbton deines Schemas",
     intro:
       "Wähle eine Farbe auf dem Farbkreis und eine Harmonie oder das Miniaturschema mit Schatten und Licht. Für jede Farbe sucht die Seite die ähnlichsten Farben jeder Marke.",
     wheelHeading: "Farbkreis",
@@ -61,7 +64,7 @@ export const de: Messages = {
     legendMiddle: " und ",
     legendPaint: "unten die der Farbe",
     legendEnd: ", zum Vergleichen.",
-    seeMore: "Mehr anzeigen",
+    seeMore: "Mehr Farben anzeigen",
     seeLess: "Weniger anzeigen",
     noPaints: "Keine Farben mit diesen Filtern.",
     noBrands: "Wähle in den Filtern mindestens eine Marke.",
@@ -69,7 +72,6 @@ export const de: Messages = {
     details: "Details",
     code: "Code",
     noCode: "Kein Code",
-    deltaE: "ΔE 2000",
     hex: "Hex",
     hexFrom: "{hex}, aus {source} ({origin})",
     color: "Farbwert",
@@ -108,6 +110,8 @@ export const de: Messages = {
     "nearest-available": "Die nächstliegende",
   },
   approximate: {
+    allTitle: "Die Farbwerte sind ungefähr",
+    someTitle: "Einige Farben haben einen ungefähren Farbwert",
     all: "Die Farbwerte der Farben sind ungefähr: Ihre Hex-Werte stammen aus Community-Quellen, nicht aus Messungen. Vergleiche sie vor dem Kauf mit der echten Farbe.",
     some: "Mit „≈ Ungefähr“ markierte Farben haben einen ungefähren Farbwert: Der Hex-Wert ist nicht gemessen oder die Farbe wirkt nicht wie eine flache Farbe. Vergleiche sie mit der echten Farbe.",
     chip: "≈ Ungefähr",
@@ -138,9 +142,11 @@ export const de: Messages = {
   pwa: {
     updateAvailable: "Es gibt eine neue Version.",
     update: "Aktualisieren",
-    installTitle: "Installiere sie auf deinem Gerät.",
+    installTitle: "Installiere den Farbkreis",
     installBody:
       "Sie öffnet sich über ihr eigenes Symbol und funktioniert offline.",
+    installHint:
+      "Dein Browser bietet es noch nicht an: Installiere sie über sein Menü mit der Option „Installieren“.",
     install: "Installieren",
     installApp: "App installieren",
     iosSteps:
@@ -157,6 +163,10 @@ export const de: Messages = {
     publisher: "Herausgegeben von",
     link: "Link",
     archive: "Archivierte Kopie",
+    openSource: "Quelle auf {host} ansehen",
+    openArchive: "Kopie auf {host} ansehen",
+    openRepository: "Repository auf {host} ansehen",
+    newTab: "(öffnet sich in einem neuen Tab)",
     license: "Lizenz",
     unknownLicense: "Unbekannt",
     termsOfUse: "Nutzungsbedingungen der Website",
@@ -170,9 +180,13 @@ export const de: Messages = {
     codeIntro:
       "Diese Seite enthält den Code dieser Pakete. Ihre Lizenzen verlangen, den Urheberrechtshinweis und den Lizenztext wiederzugeben, die in ihrer Originalsprache angezeigt werden.",
     version: "Version",
-    repository: "Repository",
     licenseText: "Lizenztext",
     backToWheel: "Zurück zum Farbkreis",
+  },
+  notFound: {
+    title: "Seite nicht gefunden",
+    body: "Diese Adresse gibt es im Farbkreis nicht. Vielleicht ist der Link falsch geschrieben, oder die Seite existiert nicht mehr.",
+    backHome: "Zum Farbkreis",
   },
   footer: {
     credits: "Danksagungen und Quellen",

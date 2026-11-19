@@ -44,6 +44,9 @@ export default defineConfig(({ command, isSsrBuild }) => {
   const app = isSsrBuild !== true && process.env["VITEST"] === undefined;
 
   return {
+    // Each page is its own HTML (docs/07 §12): no single-page fallback, so
+    // that an unknown address is a 404 and not the root page.
+    appType: "mpa",
     resolve: {
       conditions: fromSource
         ? [SOURCE, ...defaultClientConditions]

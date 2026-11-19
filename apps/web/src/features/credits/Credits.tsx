@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import { ExternalLinkIcon } from "../../app/icons.tsx";
 import { format } from "../../i18n/i18n.ts";
 import type { Messages } from "../../i18n/messages.ts";
 import type { CreditsData, LicenseEntry, SourceView } from "./data.ts";
@@ -53,6 +54,46 @@ export function Credits({ data, messages: m, locale }: CreditsProps) {
   );
 }
 
+/** The site of an address, without `www.`; the address itself if it has none. */
+function hostOf(href: string): string {
+  try {
+    return new URL(href).host.replace(/^www\./, "") || href;
+  } catch {
+    return href;
+  }
+}
+
+/**
+ * A link to another site (docs/07 §13): in a new tab, with `nofollow`, so
+ * that the web does not pass its standing to it in search engines, and with
+ * Lucide's "external-link" icon in front. Its text says what it opens and
+ * where, instead of the whole address.
+ */
+function ExternalLink({
+  href,
+  text,
+  messages: m,
+}: {
+  readonly href: string;
+  readonly text: string;
+  readonly messages: Messages;
+}) {
+  return (
+    <a
+      className="external-link"
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer nofollow"
+    >
+      <ExternalLinkIcon />
+      <span className="link-text">
+        {format(text, { host: hostOf(href) })}
+        <span className="visually-hidden"> {m.credits.newTab}</span>
+      </span>
+    </a>
+  );
+}
+
 function licenseName(license: string, m: Messages): string {
   if (license === "unknown") return m.credits.unknownLicense;
   if (license === "terms-of-use") return m.credits.termsOfUse;
@@ -82,9 +123,11 @@ function Source({
           <>
             <dt>{m.credits.link}</dt>
             <dd>
-              <a href={source.url} rel="noopener">
-                {source.url}
-              </a>
+              <ExternalLink
+                href={source.url}
+                text={m.credits.openSource}
+                messages={m}
+              />
             </dd>
           </>
         )}
@@ -92,9 +135,11 @@ function Source({
           <>
             <dt>{m.credits.archive}</dt>
             <dd>
-              <a href={source.archiveUrl} rel="noopener">
-                {source.archiveUrl}
-              </a>
+              <ExternalLink
+                href={source.archiveUrl}
+                text={m.credits.openArchive}
+                messages={m}
+              />
             </dd>
           </>
         )}
@@ -158,10 +203,11 @@ function License({
       </h3>
       {entry.kind === "package" && entry.repository !== null && (
         <p>
-          {m.credits.repository}:{" "}
-          <a href={entry.repository} rel="noopener">
-            {entry.repository}
-          </a>
+          <ExternalLink
+            href={entry.repository}
+            text={m.credits.openRepository}
+            messages={m}
+          />
         </p>
       )}
       <details>

@@ -26,12 +26,17 @@ export interface Messages {
     readonly label: string;
     readonly openMenu: string;
     readonly closeMenu: string;
+    /** The links that skip the navigation bar (docs/07 §11). */
+    readonly skipToWheel: string;
+    readonly skipToPaints: string;
+    readonly skipToContent: string;
     /** Bilingual label of the language selector: «Idioma · Language». */
     readonly language: string;
     readonly theme: string;
     readonly themes: Readonly<Record<Theme, string>>;
   };
   readonly home: {
+    /** The `<h1>`: what the page does, without repeating the site's name. */
     readonly heading: string;
     readonly intro: string;
     readonly wheelHeading: string;
@@ -61,7 +66,6 @@ export interface Messages {
     readonly details: string;
     readonly code: string;
     readonly noCode: string;
-    readonly deltaE: string;
     readonly hex: string;
     /** «{hex}, de {source} ({origin})». */
     readonly hexFrom: string;
@@ -88,6 +92,9 @@ export interface Messages {
   readonly paintTypes: Readonly<Record<PaintType, string>>;
   readonly quality: Readonly<Record<MatchQuality, string>>;
   readonly approximate: {
+    /** The one line of the notice; the rest opens below it. */
+    readonly allTitle: string;
+    readonly someTitle: string;
     readonly all: string;
     readonly some: string;
     readonly chip: string;
@@ -111,6 +118,8 @@ export interface Messages {
     readonly update: string;
     readonly installTitle: string;
     readonly installBody: string;
+    /** When «Install» is pressed before the browser offers it. */
+    readonly installHint: string;
     readonly install: string;
     readonly installApp: string;
     readonly iosSteps: string;
@@ -124,6 +133,12 @@ export interface Messages {
     readonly publisher: string;
     readonly link: string;
     readonly archive: string;
+    /** The text of the external links: «Ver la fuente en {host}»… */
+    readonly openSource: string;
+    readonly openArchive: string;
+    readonly openRepository: string;
+    /** Said to screen readers after an external link. */
+    readonly newTab: string;
     readonly license: string;
     readonly unknownLicense: string;
     readonly termsOfUse: string;
@@ -137,9 +152,14 @@ export interface Messages {
     readonly codeHeading: string;
     readonly codeIntro: string;
     readonly version: string;
-    readonly repository: string;
     readonly licenseText: string;
     readonly backToWheel: string;
+  };
+  /** «Page not found» (docs/07 §12). */
+  readonly notFound: {
+    readonly title: string;
+    readonly body: string;
+    readonly backHome: string;
   };
   readonly footer: {
     readonly credits: string;

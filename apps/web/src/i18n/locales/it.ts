@@ -14,6 +14,9 @@ export const it: Messages = {
     label: "Principale",
     openMenu: "Apri il menu",
     closeMenu: "Chiudi il menu",
+    skipToWheel: "Vai alla ruota",
+    skipToPaints: "Vai alle vernici",
+    skipToContent: "Vai al contenuto",
     language: "Lingua · Language",
     theme: "Tema",
     themes: {
@@ -23,7 +26,7 @@ export const it: Messages = {
     },
   },
   home: {
-    heading: "Ruota cromatica per dipingere miniature",
+    heading: "Trova la vernice per ogni colore del tuo schema",
     intro:
       "Scegli un colore sulla ruota e un’armonia, o lo schema per miniature con la sua ombra e la sua luce. Per ogni colore, il sito cerca le vernici più simili di ogni marca.",
     wheelHeading: "Ruota",
@@ -59,7 +62,7 @@ export const it: Messages = {
     legendMiddle: " e ",
     legendPaint: "in basso quello della vernice",
     legendEnd: ", per confrontarli.",
-    seeMore: "Mostra altro",
+    seeMore: "Mostra altre vernici",
     seeLess: "Mostra meno",
     noPaints: "Nessuna vernice con questi filtri.",
     noBrands: "Scegli almeno una marca nei filtri.",
@@ -67,7 +70,6 @@ export const it: Messages = {
     details: "Dettagli",
     code: "Codice",
     noCode: "Senza codice",
-    deltaE: "ΔE 2000",
     hex: "Hex",
     hexFrom: "{hex}, da {source} ({origin})",
     color: "Colore",
@@ -106,6 +108,8 @@ export const it: Messages = {
     "nearest-available": "La più vicina",
   },
   approximate: {
+    allTitle: "I colori sono approssimati",
+    someTitle: "Alcune vernici hanno il colore approssimato",
     all: "I colori delle vernici sono approssimati: i loro hex vengono da fonti della comunità, non da misurazioni. Confrontali con la vernice reale prima di comprare.",
     some: "Le vernici segnate con «≈ Approssimato» hanno il colore approssimato: l’hex non è misurato o la vernice non appare come un colore pieno. Confrontale con la vernice reale.",
     chip: "≈ Approssimato",
@@ -136,8 +140,10 @@ export const it: Messages = {
   pwa: {
     updateAvailable: "C’è una nuova versione.",
     update: "Aggiorna",
-    installTitle: "Installala sul tuo dispositivo.",
+    installTitle: "Installa la Ruota cromatica",
     installBody: "Si apre dalla sua icona e funziona offline.",
+    installHint:
+      "Il tuo browser non la offre ancora: installala dal suo menu, con l’opzione «Installa».",
     install: "Installa",
     installApp: "Installa l’app",
     iosSteps:
@@ -154,6 +160,10 @@ export const it: Messages = {
     publisher: "Pubblicata da",
     link: "Link",
     archive: "Copia archiviata",
+    openSource: "Vedi la fonte su {host}",
+    openArchive: "Vedi la copia su {host}",
+    openRepository: "Vedi il repository su {host}",
+    newTab: "(si apre in una nuova scheda)",
     license: "Licenza",
     unknownLicense: "Sconosciuta",
     termsOfUse: "Condizioni d’uso del sito",
@@ -167,9 +177,13 @@ export const it: Messages = {
     codeIntro:
       "Questo sito include il codice di questi pacchetti. Le loro licenze richiedono di riprodurre l’avviso di copyright e il testo della licenza, mostrati nella lingua originale.",
     version: "Versione",
-    repository: "Repository",
     licenseText: "Testo della licenza",
     backToWheel: "Torna alla ruota",
+  },
+  notFound: {
+    title: "Pagina non trovata",
+    body: "Questo indirizzo non esiste nella Ruota cromatica. Forse il link è scritto male, o la pagina non esiste più.",
+    backHome: "Vai alla ruota",
   },
   footer: {
     credits: "Crediti e fonti",

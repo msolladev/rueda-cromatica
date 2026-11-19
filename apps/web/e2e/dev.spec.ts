@@ -7,7 +7,7 @@ test("the development server shows each page with its styles before any script r
   await page.route(/\/src\/entry-client\.tsx|@vite\/client/, (route) =>
     route.abort(),
   );
-  for (const path of ["/es/", "/es/credits/"]) {
+  for (const path of ["/es/", "/es/creditos/"]) {
     await page.goto(path);
     expect(
       await page.evaluate(
@@ -28,4 +28,19 @@ test("the development server takes over each page without errors", async ({
   await page.goto("/es/");
   await expect(page.locator(".panel:not([hidden]) .paint")).toHaveCount(12);
   expect(errors).toEqual([]);
+});
+
+test("the development server serves the sitemap and answers 404 at unknown addresses", async ({
+  page,
+  request,
+}) => {
+  const sitemap = await request.get("/sitemap.xml");
+  expect(sitemap.headers()["content-type"]).toContain("xml");
+  expect(await sitemap.text()).toContain("/es/creditos/</loc>");
+  expect((await request.get("/robots.txt")).status()).toBe(200);
+  const response = await page.goto("/es/inventada/");
+  expect(response?.status()).toBe(404);
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText(
+    "Página no encontrada",
+  );
 });

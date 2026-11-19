@@ -15,12 +15,17 @@ import { captureInstallPrompt } from "./features/pwa/install.ts";
 captureInstallPrompt();
 
 const root = document.getElementById("root");
-const page = pageOf(location.pathname);
 const dataText = document.getElementById(PAGE_DATA_ID)?.textContent;
-if (root === null || page === undefined || dataText === undefined) {
+const data =
+  dataText === undefined ? undefined : (JSON.parse(dataText) as PageData);
+// «Page not found» answers at any address: its data says which page it is.
+const page =
+  data?.kind === "not-found"
+    ? ({ kind: "not-found", locale: data.locale } as const)
+    : pageOf(location.pathname);
+if (root === null || page === undefined || data === undefined) {
   throw new Error(`Not a page of the app: ${location.pathname}`);
 }
-const data = JSON.parse(dataText) as PageData;
 
 hydrateRoot(
   root,

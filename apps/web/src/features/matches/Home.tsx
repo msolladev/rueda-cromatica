@@ -7,6 +7,7 @@ import {
 import { useDeferredValue, useEffect, useMemo, useState } from "react";
 import { endRestoring } from "../../app/restoring.ts";
 import { useHydrated } from "../../app/hydrated.ts";
+import { pathOf } from "../../app/pages.ts";
 import type { HomeData } from "../../app/page-data.ts";
 import {
   limitOf,
@@ -49,6 +50,11 @@ export function Home({
   const { load, retry } = useCatalog();
   const wheelLabels = useMemo(() => labelsFor(locale), [locale]);
   const [result, setResult] = useState<Result | null>(null);
+  // While the wheel is dragged, the colors change at once: they only blend
+  // into the new one after a change (docs/07 §1).
+  const [dragging, setDragging] = useState(false);
+  // A tab under the mouse or the focus points at its mark meanwhile.
+  const [preview, setPreview] = useState<number | null>(null);
   // docs/07 §4: the results follow the drag with low priority, so that the
   // wheel is always drawn first.
   const deferred = useDeferredValue(result);
@@ -105,7 +111,12 @@ export function Home({
       <h1>{m.home.heading}</h1>
       <p className="lead">{m.home.intro}</p>
       <div className="workspace">
-        <section className="wheel-column" aria-labelledby="wheel-heading">
+        <section
+          className="wheel-column"
+          id="wheel"
+          data-skip-target=""
+          aria-labelledby="wheel-heading"
+        >
           <h2 id="wheel-heading" className="visually-hidden">
             {m.home.wheelHeading}
           </h2>
@@ -114,9 +125,11 @@ export function Home({
           </noscript>
           <WheelView
             locale={locale}
+            highlight={preview ?? tab}
             restore={restoreWheel}
-            onResult={(next) => {
+            onResult={(next, final) => {
               setResult(next);
+              setDragging(!final);
               dispatch({ type: "colors-changed", count: next.colors.length });
             }}
             onChange={(wheel) => {
@@ -124,7 +137,12 @@ export function Home({
             }}
           />
         </section>
-        <section className="results-column" aria-labelledby="results-heading">
+        <section
+          className="results-column"
+          id="paints"
+          data-skip-target=""
+          aria-labelledby="results-heading"
+        >
           <h2 id="results-heading">{m.home.resultsHeading}</h2>
           <Results
             colors={colors}
@@ -137,6 +155,9 @@ export function Home({
             messages={m}
             wheelLabels={wheelLabels}
             locale={locale}
+            creditsPath={pathOf({ kind: "credits", locale })}
+            onPreview={setPreview}
+            dragging={dragging}
             onRetry={retry}
             onUpdate={onUpdate}
           />

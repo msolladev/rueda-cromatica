@@ -14,6 +14,9 @@ export const fr: Messages = {
     label: "Principale",
     openMenu: "Ouvrir le menu",
     closeMenu: "Fermer le menu",
+    skipToWheel: "Aller à la roue",
+    skipToPaints: "Aller aux peintures",
+    skipToContent: "Aller au contenu",
     language: "Langue · Language",
     theme: "Thème",
     themes: {
@@ -23,7 +26,7 @@ export const fr: Messages = {
     },
   },
   home: {
-    heading: "Roue chromatique pour peindre des figurines",
+    heading: "Trouvez la peinture de chaque couleur de votre schéma",
     intro:
       "Choisissez une couleur sur la roue et une harmonie, ou le schéma de figurine avec son ombre et sa lumière. Pour chaque couleur, le site cherche les peintures les plus proches de chaque marque.",
     wheelHeading: "Roue",
@@ -60,7 +63,7 @@ export const fr: Messages = {
     legendMiddle: " et ",
     legendPaint: "en bas celle de la peinture",
     legendEnd: ", pour les comparer.",
-    seeMore: "Voir plus",
+    seeMore: "Voir plus de peintures",
     seeLess: "Voir moins",
     noPaints: "Aucune peinture avec ces filtres.",
     noBrands: "Choisissez au moins une marque dans les filtres.",
@@ -68,7 +71,6 @@ export const fr: Messages = {
     details: "Détails",
     code: "Code",
     noCode: "Sans code",
-    deltaE: "ΔE 2000",
     hex: "Hex",
     hexFrom: "{hex}, de {source} ({origin})",
     color: "Couleur",
@@ -107,6 +109,8 @@ export const fr: Messages = {
     "nearest-available": "La plus proche",
   },
   approximate: {
+    allTitle: "Les couleurs sont approximatives",
+    someTitle: "Certaines peintures ont une couleur approximative",
     all: "Les couleurs des peintures sont approximatives : leurs hex viennent de sources communautaires, pas de mesures. Comparez-les avec la vraie peinture avant d’acheter.",
     some: "Les peintures marquées « ≈ Approximative » ont une couleur approximative : le hex n’est pas mesuré ou la peinture ne se voit pas comme une couleur unie. Comparez-les avec la vraie peinture.",
     chip: "≈ Approximative",
@@ -138,9 +142,11 @@ export const fr: Messages = {
   pwa: {
     updateAvailable: "Une nouvelle version est disponible.",
     update: "Mettre à jour",
-    installTitle: "Installez-la sur votre appareil.",
+    installTitle: "Installez la Roue chromatique",
     installBody:
       "Elle s’ouvre depuis sa propre icône et fonctionne hors ligne.",
+    installHint:
+      "Votre navigateur ne la propose pas encore : installez-la depuis son menu, avec l’option « Installer ».",
     install: "Installer",
     installApp: "Installer l’application",
     iosSteps:
@@ -157,6 +163,10 @@ export const fr: Messages = {
     publisher: "Publiée par",
     link: "Lien",
     archive: "Copie archivée",
+    openSource: "Voir la source sur {host}",
+    openArchive: "Voir la copie sur {host}",
+    openRepository: "Voir le dépôt sur {host}",
+    newTab: "(s’ouvre dans un nouvel onglet)",
     license: "Licence",
     unknownLicense: "Inconnue",
     termsOfUse: "Conditions d’utilisation du site",
@@ -170,9 +180,13 @@ export const fr: Messages = {
     codeIntro:
       "Ce site inclut le code de ces paquets. Leurs licences exigent de reproduire l’avis de copyright et le texte de la licence, affichés dans leur langue d’origine.",
     version: "Version",
-    repository: "Dépôt",
     licenseText: "Texte de la licence",
     backToWheel: "Retour à la roue",
+  },
+  notFound: {
+    title: "Page introuvable",
+    body: "Cette adresse n’existe pas sur la Roue chromatique. Le lien est peut-être mal saisi, ou la page n’existe plus.",
+    backHome: "Aller à la roue",
   },
   footer: {
     credits: "Crédits et sources",

@@ -1,4 +1,5 @@
 import type { PaintType } from "@chromatic-wheel/domain";
+import { useEffect, useRef } from "react";
 import {
   EXTRA_PAINT_TYPES,
   type Action,
@@ -48,11 +49,29 @@ export function Filters({
   dispatch,
   messages: m,
 }: FiltersProps) {
+  const summary = summaryOf(brands, filters, m);
+  const summaryText = useRef<HTMLSpanElement>(null);
+  const shownSummary = useRef(summary);
+  // docs/07 §1: the summary gives a small jump when a filter changes it, to
+  // confirm it, also with the disclosure closed. Not on loading.
+  useEffect(() => {
+    if (shownSummary.current === summary) return;
+    shownSummary.current = summary;
+    const element = summaryText.current;
+    if (element === null) return;
+    // The CSS animation starts again on each change: removed, measured (which
+    // applies the removal) and added again.
+    element.classList.remove("changed");
+    element.getBoundingClientRect();
+    element.classList.add("changed");
+  }, [summary]);
   return (
     <details className="filters">
       <summary>
         <span className="filters-title">{m.filters.title}</span>{" "}
-        <span className="filters-summary">{summaryOf(brands, filters, m)}</span>
+        <span className="filters-summary" ref={summaryText}>
+          {summary}
+        </span>
       </summary>
       <div className="filters-body">
         <fieldset>

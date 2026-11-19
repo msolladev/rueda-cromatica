@@ -3,12 +3,23 @@
  *
  * - In the build, after the browser bundle is written and before the service
  *   worker is generated, it builds `src/entry-server.tsx` for Node, renders
- *   every page to `dist/<path>/index.html`, and writes `sitemap.xml` and
- *   `robots.txt`. The service worker then precaches every page.
+ *   every page to `dist/<path>/index.html`, «Page not found» to
+ *   `dist/404.html` and `dist/<locale>/404.html`, and writes `sitemap.xml`
+ *   and `robots.txt`. The service worker then precaches every page.
  * - In development, it renders each page on request with the same code, so
- *   the browser always takes over a prerendered page.
+ *   the browser always takes over a prerendered page; an unknown address
+ *   gets «Page not found» with the status 404, and the sitemap and
+ *   robots.txt are served as in the build.
+ * - In `vite preview`, an unknown address gets the built «Page not found»
+ *   with the status 404, as the static server will.
  */
-import { mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import {
+  existsSync,
+  mkdirSync,
+  readFileSync,
+  rmSync,
+  writeFileSync,
+} from "node:fs";
 import { join, resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 import {
@@ -88,6 +99,21 @@ function sitemap(entry: ServerEntry, origin: string): string {
   ].join("\n");
 }
 
+function robots(origin: string): string {
+  return `User-agent: *\nAllow: /\n\nSitemap: ${origin}/sitemap.xml\n`;
+}
+
+/**
+ * Whether an address asks for a page: it ends in `/` or its last segment has
+ * no extension. Vite's own addresses (`/@vite/client`, `/@fs/…`,
+ * `/node_modules/…`) and the files are not pages.
+ */
+function isPageAddress(pathname: string): boolean {
+  if (/^\/(@|__|node_modules\/)/.test(pathname)) return false;
+  const last = pathname.split("/").pop() ?? "";
+  return pathname.endsWith("/") || !last.includes(".");
+}
+
 /** The licenses of the service worker's code, built only to read its modules. */
 async function serviceWorkerLicenses(
   root: string,
@@ -119,21 +145,38 @@ export function prerender(options: PrerenderOptions): Plugin {
       server.middlewares.use((request, response, next) => {
         void (async () => {
           const url = new URL(request.url ?? "/", "http://localhost");
-          // Pages end in `/`; anything else is an asset.
-          if (!url.pathname.endsWith("/")) {
+          const { pathname } = url;
+          const isListing =
+            pathname === "/sitemap.xml" || pathname === "/robots.txt";
+          // Vite's own addresses and the files go on as always.
+          if (!isListing && !isPageAddress(pathname)) {
             next();
             return;
           }
           const entry = (await server.ssrLoadModule(
             `/${SERVER_ENTRY}`,
           )) as ServerEntry;
-          const page = entry
-            .allPages()
-            .find((p) => entry.pathOf(p) === url.pathname);
-          if (page === undefined) {
-            next();
+          // The same sitemap and robots.txt as the build.
+          if (isListing) {
+            response.setHeader(
+              "Content-Type",
+              pathname === "/sitemap.xml"
+                ? "application/xml; charset=utf-8"
+                : "text/plain; charset=utf-8",
+            );
+            response.end(
+              pathname === "/sitemap.xml"
+                ? sitemap(entry, options.origin)
+                : robots(options.origin),
+            );
             return;
           }
+          const known = entry
+            .allPages()
+            .find((p) => entry.pathOf(p) === pathname);
+          // Any other address: «Page not found», with its status.
+          const page = known ?? entry.notFoundAt(pathname);
+          if (known === undefined) response.statusCode = 404;
           const catalog: unknown = JSON.parse(
             readFileSync(join(config.publicDir, "catalog.json"), "utf8"),
           );
@@ -154,6 +197,31 @@ export function prerender(options: PrerenderOptions): Plugin {
           response.end(fillTemplate(template, render(page), { csp: false }));
         })().catch(next);
       });
+    },
+
+    // `vite preview` answers like the static server will (docs/07 §12): an
+    // unknown address gets «Page not found» in its language, with the status
+    // 404.
+    configurePreviewServer(server) {
+      return () => {
+        server.middlewares.use((request, response, next) => {
+          const url = new URL(request.url ?? "/", "http://localhost");
+          if (!isPageAddress(url.pathname)) {
+            next();
+            return;
+          }
+          const first = url.pathname.split("/").find((part) => part !== "");
+          const outDir = resolve(config.root, config.build.outDir);
+          const localized = join(outDir, first ?? "", "404.html");
+          const file =
+            first !== undefined && existsSync(localized)
+              ? localized
+              : join(outDir, "404.html");
+          response.statusCode = 404;
+          response.setHeader("Content-Type", "text/html; charset=utf-8");
+          response.end(readFileSync(file));
+        });
+      };
     },
 
     closeBundle: {
@@ -202,14 +270,17 @@ export function prerender(options: PrerenderOptions): Plugin {
             fillTemplate(template, render(page), { csp: true }),
           );
         }
+        for (const { file, page } of entry.notFoundFiles()) {
+          writeFileSync(
+            join(outDir, file),
+            fillTemplate(template, render(page), { csp: true }),
+          );
+        }
         writeFileSync(
           join(outDir, "sitemap.xml"),
           sitemap(entry, options.origin),
         );
-        writeFileSync(
-          join(outDir, "robots.txt"),
-          `User-agent: *\nAllow: /\n\nSitemap: ${options.origin}/sitemap.xml\n`,
-        );
+        writeFileSync(join(outDir, "robots.txt"), robots(options.origin));
         rmSync(serverDir, { recursive: true, force: true });
       },
     },

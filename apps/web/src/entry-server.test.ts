@@ -36,7 +36,9 @@ describe("the prerendering", () => {
 
   it("puts the example with its paints in the HTML of each home page", () => {
     const { html } = render({ kind: "home", locale: "es" });
-    expect(html).toContain("<h1>Rueda cromática para pintar miniaturas</h1>");
+    expect(html).toContain(
+      "<h1>Encuentra la pintura de cada color de tu esquema</h1>",
+    );
     // The six colors of the miniature scheme, each with its panel.
     expect(html.match(/role="tabpanel"/g)).toHaveLength(6);
     expect(html).toContain("Moot Green");

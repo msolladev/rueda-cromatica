@@ -15,6 +15,7 @@ import "./app.css";
 import { App } from "./App.tsx";
 import type { Page } from "./pages.ts";
 import { STORAGE_KEY } from "./before-paint.ts";
+import { captureInstallPrompt } from "../features/pwa/install.ts";
 
 let render: ReturnType<typeof createRenderer>;
 let container: HTMLElement;
@@ -95,6 +96,16 @@ async function chooseTheme(theme: string): Promise<void> {
     await userEvent.click(burger);
   await userEvent.click(
     query(`input[name="theme"][value="${theme}"]`, HTMLInputElement),
+  );
+  // The theme's reveal and the icon's entrance end before anything is
+  // measured, so that no color is read halfway.
+  await Promise.all(
+    document
+      .getAnimations()
+      .filter(
+        (animation) => animation.effect?.getTiming().iterations !== Infinity,
+      )
+      .map((animation) => animation.finished.catch(() => undefined)),
   );
 }
 
@@ -178,7 +189,7 @@ describe("the home page", () => {
       if (found === undefined) throw new Error(`Missing «${name}»`);
       return found;
     };
-    await userEvent.click(button("Ver más"));
+    await userEvent.click(button("Ver más pinturas"));
     await vi.waitFor(() => {
       expect(activePanel().querySelectorAll(".paint")).toHaveLength(15);
     });
@@ -261,6 +272,80 @@ describe("the home page", () => {
     expect(document.activeElement).toBe(burger);
   });
 
+  it("covers the page with the menu open, and closes it on a press outside", async () => {
+    mount(ES);
+    const burger = query(".burger", HTMLButtonElement);
+    await userEvent.click(burger);
+    expect(query(".main", HTMLElement).inert).toBe(true);
+    await userEvent.click(query(".nav-backdrop", HTMLElement), {
+      position: { x: 10, y: 300 },
+    });
+    expect(burger.getAttribute("aria-expanded")).toBe("false");
+    expect(query(".main", HTMLElement).inert).toBe(false);
+  });
+
+  it("skips the bar: the first stop goes to the wheel's ring", async () => {
+    mount(ES);
+    await vi.waitFor(() => {
+      expect(container.querySelector(".cw-ring")).not.toBeNull();
+    });
+    const [toWheel, toPaints] = [
+      ...container.querySelectorAll<HTMLAnchorElement>(".skip-link"),
+    ];
+    expect(toWheel?.textContent).toBe("Saltar a la rueda");
+    toWheel?.click();
+    expect(document.activeElement).toBe(query(".cw-ring", HTMLElement));
+    toPaints?.click();
+    expect(document.activeElement).toBe(
+      query('[role="tab"][aria-selected="true"]', HTMLElement),
+    );
+  });
+
+  it("points at the selected color on the wheel, and at a tab under the mouse", async () => {
+    mount(ES);
+    const shownName = () =>
+      [...container.querySelectorAll(".cw-mark-label[data-shown]")].map(
+        (label) => label.textContent,
+      );
+    await vi.waitFor(() => {
+      expect(shownName()).toEqual(["Base"]);
+    });
+    const tabs = [
+      ...container.querySelectorAll<HTMLButtonElement>('[role="tab"]'),
+    ];
+    await userEvent.click(tabs[3] ?? tabs[0] ?? container);
+    await vi.waitFor(() => {
+      expect(shownName()).toEqual(["Tríada 1"]);
+    });
+    await userEvent.hover(tabs[5] ?? container);
+    await vi.waitFor(() => {
+      expect(shownName()).toEqual(["Complementario"]);
+    });
+    // Away from the tabs: next to them there is another tab.
+    await userEvent.hover(query("h1", HTMLElement));
+    await vi.waitFor(() => {
+      expect(shownName()).toEqual(["Tríada 1"]);
+    });
+  });
+
+  it("numbers the colors whose role repeats", async () => {
+    mount(ES);
+    await vi.waitFor(() => {
+      expect(container.querySelectorAll('[role="tab"]')).toHaveLength(6);
+    });
+    const names = [...container.querySelectorAll('[role="tab"]')].map(
+      (tab) => tab.textContent,
+    );
+    expect(names).toEqual([
+      "Base",
+      "Sombra",
+      "Luz",
+      "Tríada 1",
+      "Tríada 2",
+      "Complementario",
+    ]);
+  });
+
   it("shows rows with the shape of the results while the catalog arrives", async () => {
     const { promise: pending, resolve: release } =
       Promise.withResolvers<null>();
@@ -330,6 +415,110 @@ describe("the home page", () => {
   });
 });
 
+describe("the install banner", () => {
+  beforeAll(() => {
+    captureInstallPrompt();
+  });
+
+  afterEach(() => {
+    // Forgets the prompt of the test, and what the inline script decided.
+    dispatchEvent(new Event("appinstalled"));
+    document.documentElement.removeAttribute("data-install");
+  });
+
+  /** What Chromium does when the app can be installed. */
+  function offerInstall() {
+    const prompt = vi.fn(() => Promise.resolve());
+    const event = Object.assign(
+      new Event("beforeinstallprompt", { cancelable: true }),
+      { prompt, userChoice: Promise.resolve({ outcome: "accepted" }) },
+    );
+    dispatchEvent(event);
+    return { event, prompt };
+  }
+
+  const banner = () => query(".install-banner", HTMLElement);
+  const shown = () => getComputedStyle(banner()).display !== "none";
+  const installButton = () => {
+    const found = [...container.querySelectorAll("button")].find(
+      (button) => button.textContent === "Instalar",
+    );
+    if (found === undefined) throw new Error("Missing «Instalar»");
+    return found;
+  };
+
+  it("is in the page from the first paint where the inline script offered it, and moves nothing", async () => {
+    document.documentElement.dataset["install"] = "prompt";
+    mount(ES);
+    // Before the app takes over: the prerendered HTML already shows it.
+    expect(shown()).toBe(true);
+    const heading = query("h1", HTMLElement).getBoundingClientRect().top;
+    await vi.waitFor(() => {
+      expect(container.querySelector("canvas")).not.toBeNull();
+    });
+    offerInstall();
+    await new Promise((resolve) => setTimeout(resolve, 100));
+    expect(query("h1", HTMLElement).getBoundingClientRect().top).toBe(heading);
+    await expectNoAxeViolations();
+  });
+
+  it("is hidden where the inline script did not offer it", () => {
+    mount(ES);
+    expect(shown()).toBe(false);
+  });
+
+  it("opens the browser's prompt, and goes away once installed", async () => {
+    document.documentElement.dataset["install"] = "prompt";
+    mount(ES);
+    const { event, prompt } = offerInstall();
+    // The browser's own mini bar is replaced by the banner.
+    expect(event.defaultPrevented).toBe(true);
+    // A plain click: «Instalar la aplicación», in the footer, has the same
+    // start, and the browser's locator would find both.
+    installButton().click();
+    expect(prompt).toHaveBeenCalledOnce();
+    await vi.waitFor(() => {
+      expect(shown()).toBe(false);
+    });
+  });
+
+  it("says how to install from the menu if the browser has not offered it yet", async () => {
+    document.documentElement.dataset["install"] = "prompt";
+    mount(ES);
+    await vi.waitFor(() => {
+      expect(container.querySelector("canvas")).not.toBeNull();
+    });
+    await userEvent.click(installButton());
+    await vi.waitFor(() => {
+      expect(banner().textContent).toContain("Tu navegador aún no la ofrece");
+    });
+  });
+
+  it("goes away for good when closed, and the footer still offers it", async () => {
+    document.documentElement.dataset["install"] = "prompt";
+    mount(ES);
+    await vi.waitFor(() => {
+      expect(container.querySelector("canvas")).not.toBeNull();
+    });
+    offerInstall();
+    await userEvent.click(
+      query('.install-banner [aria-label="Cerrar"]', HTMLButtonElement),
+    );
+    await vi.waitFor(() => {
+      expect(shown()).toBe(false);
+    });
+    const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? "{}") as {
+      installDismissed?: boolean;
+    };
+    expect(saved.installDismissed).toBe(true);
+    await vi.waitFor(() => {
+      expect(container.querySelector(".footer .link-button")?.textContent).toBe(
+        "Instalar la aplicación",
+      );
+    });
+  });
+});
+
 describe("the credits page", () => {
   it("takes over without differences and passes the WCAG 2.2 AA check", async () => {
     mount({ kind: "credits", locale: "ja" });
@@ -338,5 +527,23 @@ describe("the credits page", () => {
     });
     expect(recoverable).toEqual([]);
     await expectNoAxeViolations();
+  });
+
+  it("opens other sites in a new tab, without passing them standing", () => {
+    mount({ kind: "credits", locale: "es" });
+    const links = [
+      ...container.querySelectorAll<HTMLAnchorElement>(".external-link"),
+    ];
+    expect(links.length).toBeGreaterThan(0);
+    for (const link of links) {
+      expect(link.target).toBe("_blank");
+      expect(link.rel.split(" ")).toEqual(
+        expect.arrayContaining(["noopener", "nofollow"]),
+      );
+      expect(link.querySelector("svg")).not.toBeNull();
+      expect(link.textContent).toMatch(
+        /^Ver .+ en \S+ \(se abre en una pestaña nueva\)$/,
+      );
+    }
   });
 });

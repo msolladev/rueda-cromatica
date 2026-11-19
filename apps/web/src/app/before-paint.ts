@@ -20,3 +20,12 @@ export const RESTORING = "restoring";
  */
 export const ARRIVING_KEY = "rueda-cromatica.arriving";
 export const ARRIVING = "arriving";
+
+/**
+ * The `<html>` data attribute that shows the install banner from the first
+ * paint (docs/07 §8): `prompt` where the browser installs web apps
+ * (Chromium), `ios` in Safari on iOS. Without it, the banner is hidden. The
+ * inline script sets it if the app is not installed and the banner was not
+ * closed; the app removes it when either happens.
+ */
+export const INSTALL = "install";
