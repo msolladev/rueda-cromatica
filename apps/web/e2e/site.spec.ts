@@ -26,6 +26,29 @@ test("serves every page of the sitemap, in its language", async ({
   }
 });
 
+test("serves each page also without the final `/`, without redirecting", async ({
+  page,
+}) => {
+  for (const [path, title] of [
+    ["/es", "Encuentra la pintura de cada color de tu esquema"],
+    ["/en/credits", "Credits and sources"],
+  ] as const) {
+    const response = await page.goto(path);
+    expect(response?.status(), path).toBe(200);
+    expect(response?.request().redirectedFrom(), path).toBeNull();
+    await expect(page).toHaveURL(new RegExp(`${path}$`));
+    await expect(page.getByRole("heading", { level: 1 })).toHaveText(title);
+    // The canonical URL is still the one with the final `/`.
+    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
+      "href",
+      new RegExp(`${path}/$`),
+    );
+  }
+  // The links are absolute, so they work from either address.
+  await page.getByRole("link", { name: "Back to the wheel" }).click();
+  await expect(page).toHaveURL(/\/en\/$/);
+});
+
 test.describe("without JavaScript", () => {
   test.use({ javaScriptEnabled: false });
 

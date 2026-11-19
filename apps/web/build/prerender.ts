@@ -171,9 +171,11 @@ export function prerender(options: PrerenderOptions): Plugin {
             );
             return;
           }
+          // With or without the final `/`: `/es` is the page of `/es/`.
+          const withSlash = pathname.endsWith("/") ? pathname : `${pathname}/`;
           const known = entry
             .allPages()
-            .find((p) => entry.pathOf(p) === pathname);
+            .find((p) => entry.pathOf(p) === withSlash);
           // Any other address: «Page not found», with its status.
           const page = known ?? entry.notFoundAt(pathname);
           if (known === undefined) response.statusCode = 404;
@@ -199,9 +201,10 @@ export function prerender(options: PrerenderOptions): Plugin {
       });
     },
 
-    // `vite preview` answers like the static server will (docs/07 §12): an
-    // unknown address gets «Page not found» in its language, with the status
-    // 404.
+    // `vite preview` answers like the static server will (docs/07 §12): a
+    // page without the final `/` is served as is, without redirecting, and
+    // an unknown address gets «Page not found» in its language, with the
+    // status 404.
     configurePreviewServer(server) {
       return () => {
         server.middlewares.use((request, response, next) => {
@@ -210,8 +213,14 @@ export function prerender(options: PrerenderOptions): Plugin {
             next();
             return;
           }
-          const first = url.pathname.split("/").find((part) => part !== "");
           const outDir = resolve(config.root, config.build.outDir);
+          const index = join(outDir, url.pathname, "index.html");
+          if (!url.pathname.endsWith("/") && existsSync(index)) {
+            response.setHeader("Content-Type", "text/html; charset=utf-8");
+            response.end(readFileSync(index));
+            return;
+          }
+          const first = url.pathname.split("/").find((part) => part !== "");
           const localized = join(outDir, first ?? "", "404.html");
           const file =
             first !== undefined && existsSync(localized)

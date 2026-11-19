@@ -8,6 +8,8 @@ interface CreditsProps {
   readonly data: CreditsData;
   readonly messages: Messages;
   readonly locale: string;
+  /** The wheel of this language, absolute so it works with or without the final `/`. */
+  readonly homePath: string;
 }
 
 /**
@@ -15,7 +17,7 @@ interface CreditsProps {
  * and every third-party license of the distributed code. Everything comes
  * from `catalog.json` and from the build; nothing is written by hand.
  */
-export function Credits({ data, messages: m, locale }: CreditsProps) {
+export function Credits({ data, messages: m, locale, homePath }: CreditsProps) {
   return (
     <article className="credits">
       <h1>{m.credits.heading}</h1>
@@ -48,7 +50,7 @@ export function Credits({ data, messages: m, locale }: CreditsProps) {
         </ul>
       </section>
       <p>
-        <a href="../">{m.credits.backToWheel}</a>
+        <a href={homePath}>{m.credits.backToWheel}</a>
       </p>
     </article>
   );

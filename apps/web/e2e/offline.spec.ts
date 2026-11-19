@@ -40,6 +40,11 @@ test("works offline after the first visit, in any page and language", async ({
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(
     "クレジットと出典",
   );
+  // Also without the final `/` (docs/07 §12).
+  await page.goto("/ja/credits");
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText(
+    "クレジットと出典",
+  );
 });
 
 test("says there is a new version and updates when asked", async ({ page }) => {
