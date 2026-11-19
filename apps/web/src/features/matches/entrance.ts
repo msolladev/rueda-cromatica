@@ -1,4 +1,11 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+  type RefObject,
+} from "react";
 
 /**
  * Which rows move in or out with an animation (docs/07 §1): every row of the
@@ -80,4 +87,54 @@ export function isLeaving(
   return (
     entrance?.kind === "less" && entrance.key === key && index >= entrance.from
   );
+}
+
+/**
+ * The list of a brand grows and shrinks smoothly (docs/07 §1): with «See
+ * more», from where its new rows start to its new height, while they fade
+ * in; with «See less», down to where the leaving rows start, while they fade
+ * out, and then they are removed. Measured on the rows themselves, so that
+ * it is right whatever the width. Without motion when the system asks to
+ * reduce it.
+ */
+export function useListHeight(
+  list: RefObject<HTMLElement | null>,
+  entrance: Entrance | null,
+  key: string,
+  count: number,
+): void {
+  useLayoutEffect(() => {
+    const element = list.current;
+    if (element === null) return;
+    for (const animation of element.getAnimations()) animation.cancel();
+    if (
+      entrance === null ||
+      entrance.kind === "panel" ||
+      entrance.key !== key ||
+      matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      return;
+    }
+    const first = element.children[entrance.from];
+    if (!(first instanceof HTMLElement)) return;
+    const height = element.getBoundingClientRect().height;
+    const start =
+      first.getBoundingClientRect().top - element.getBoundingClientRect().top;
+    const [from, to, duration] =
+      entrance.kind === "more"
+        ? [start, height, 320]
+        : [height, start, LEAVE_MS];
+    element.animate(
+      [
+        { height: `${String(from)}px`, overflowY: "clip" },
+        { height: `${String(to)}px`, overflowY: "clip" },
+      ],
+      {
+        duration,
+        easing: "cubic-bezier(0.4, 0, 0.2, 1)",
+        // «See less» keeps the list short until the rows are removed.
+        fill: entrance.kind === "less" ? "forwards" : "none",
+      },
+    );
+  }, [list, entrance, key, count]);
 }

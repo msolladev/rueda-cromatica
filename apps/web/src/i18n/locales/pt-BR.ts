@@ -14,6 +14,9 @@ export const ptBR: Messages = {
     label: "Principal",
     openMenu: "Abrir o menu",
     closeMenu: "Fechar o menu",
+    skipToWheel: "Pular para a roda",
+    skipToPaints: "Pular para as tintas",
+    skipToContent: "Pular para o conteúdo",
     language: "Idioma · Language",
     theme: "Tema",
     themes: {
@@ -23,7 +26,7 @@ export const ptBR: Messages = {
     },
   },
   home: {
-    heading: "Roda cromática para pintar miniaturas",
+    heading: "Encontre a tinta de cada cor do seu esquema",
     intro:
       "Escolha uma cor na roda e uma harmonia, ou o esquema de miniatura com sua sombra e sua luz. Para cada cor, o site busca as tintas mais parecidas de cada marca.",
     wheelHeading: "Roda",
@@ -58,7 +61,7 @@ export const ptBR: Messages = {
     legendMiddle: " e ",
     legendPaint: "embaixo a da tinta",
     legendEnd: ", para compará-las.",
-    seeMore: "Ver mais",
+    seeMore: "Ver mais tintas",
     seeLess: "Ver menos",
     noPaints: "Nenhuma tinta com estes filtros.",
     noBrands: "Escolha pelo menos uma marca nos filtros.",
@@ -66,7 +69,6 @@ export const ptBR: Messages = {
     details: "Detalhes",
     code: "Código",
     noCode: "Sem código",
-    deltaE: "ΔE 2000",
     hex: "Hex",
     hexFrom: "{hex}, de {source} ({origin})",
     color: "Cor",
@@ -105,6 +107,8 @@ export const ptBR: Messages = {
     "nearest-available": "A mais próxima",
   },
   approximate: {
+    allTitle: "As cores são aproximadas",
+    someTitle: "Algumas tintas têm a cor aproximada",
     all: "As cores das tintas são aproximadas: seus hex vêm de fontes da comunidade, não de medições. Compare-as com a tinta real antes de comprar.",
     some: "As tintas marcadas com «≈ Aproximada» têm a cor aproximada: o hex não foi medido ou a tinta não aparece como uma cor chapada. Compare-as com a tinta real.",
     chip: "≈ Aproximada",
@@ -135,8 +139,10 @@ export const ptBR: Messages = {
   pwa: {
     updateAvailable: "Há uma versão nova.",
     update: "Atualizar",
-    installTitle: "Instale no seu dispositivo.",
+    installTitle: "Instale a Roda cromática",
     installBody: "Abre pelo próprio ícone e funciona offline.",
+    installHint:
+      "Seu navegador ainda não oferece: instale pelo menu dele, com a opção «Instalar».",
     install: "Instalar",
     installApp: "Instalar o aplicativo",
     iosSteps:
@@ -153,6 +159,10 @@ export const ptBR: Messages = {
     publisher: "Publicada por",
     link: "Link",
     archive: "Cópia arquivada",
+    openSource: "Ver a fonte em {host}",
+    openArchive: "Ver a cópia em {host}",
+    openRepository: "Ver o repositório em {host}",
+    newTab: "(abre em uma nova aba)",
     license: "Licença",
     unknownLicense: "Desconhecida",
     termsOfUse: "Termos de uso do site",
@@ -166,9 +176,13 @@ export const ptBR: Messages = {
     codeIntro:
       "Este site inclui o código destes pacotes. Suas licenças exigem reproduzir o aviso de copyright e o texto da licença, mostrados no idioma original.",
     version: "Versão",
-    repository: "Repositório",
     licenseText: "Texto da licença",
     backToWheel: "Voltar para a roda",
+  },
+  notFound: {
+    title: "Página não encontrada",
+    body: "Este endereço não existe na Roda cromática. Talvez o link esteja digitado errado, ou a página não exista mais.",
+    backHome: "Ir para a roda",
   },
   footer: {
     credits: "Créditos e fontes",

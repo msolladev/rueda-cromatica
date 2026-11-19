@@ -14,12 +14,15 @@ export const es: Messages = {
     label: "Principal",
     openMenu: "Abrir el menú",
     closeMenu: "Cerrar el menú",
+    skipToWheel: "Saltar a la rueda",
+    skipToPaints: "Saltar a las pinturas",
+    skipToContent: "Saltar al contenido",
     language: "Idioma · Language",
     theme: "Tema",
     themes: { system: "Sistema", light: "Claro", dark: "Oscuro" },
   },
   home: {
-    heading: "Rueda cromática para pintar miniaturas",
+    heading: "Encuentra la pintura de cada color de tu esquema",
     intro:
       "Elige un color en la rueda y una armonía, o el esquema de miniatura con su sombra y su luz. Para cada color, la web busca las pinturas más parecidas de cada marca.",
     wheelHeading: "Rueda",
@@ -55,7 +58,7 @@ export const es: Messages = {
     legendMiddle: " y ",
     legendPaint: "abajo el de la pintura",
     legendEnd: ", para compararlos.",
-    seeMore: "Ver más",
+    seeMore: "Ver más pinturas",
     seeLess: "Ver menos",
     noPaints: "Sin pinturas con estos filtros.",
     noBrands: "Elige al menos una marca en los filtros.",
@@ -63,7 +66,6 @@ export const es: Messages = {
     details: "Detalles",
     code: "Código",
     noCode: "Sin código",
-    deltaE: "ΔE 2000",
     hex: "Hex",
     hexFrom: "{hex}, de {source} ({origin})",
     color: "Color",
@@ -102,6 +104,8 @@ export const es: Messages = {
     "nearest-available": "La más cercana",
   },
   approximate: {
+    allTitle: "Los colores son aproximados",
+    someTitle: "Algunas pinturas tienen el color aproximado",
     all: "Los colores de las pinturas son aproximados: sus hex vienen de fuentes comunitarias, no de mediciones. Compáralos con la pintura real antes de comprar.",
     some: "Las pinturas marcadas con «≈ Aproximado» tienen el color aproximado: el hex no está medido o la pintura no se ve como un color plano. Compáralas con la pintura real.",
     chip: "≈ Aproximado",
@@ -132,8 +136,10 @@ export const es: Messages = {
   pwa: {
     updateAvailable: "Hay una versión nueva.",
     update: "Actualizar",
-    installTitle: "Instálala en tu dispositivo.",
+    installTitle: "Instala la Rueda cromática",
     installBody: "Se abre desde su propio icono y funciona sin conexión.",
+    installHint:
+      "Tu navegador aún no la ofrece: instálala desde su menú, con la opción «Instalar».",
     install: "Instalar",
     installApp: "Instalar la aplicación",
     iosSteps:
@@ -150,6 +156,10 @@ export const es: Messages = {
     publisher: "Publicada por",
     link: "Enlace",
     archive: "Copia archivada",
+    openSource: "Ver la fuente en {host}",
+    openArchive: "Ver la copia en {host}",
+    openRepository: "Ver el repositorio en {host}",
+    newTab: "(se abre en una pestaña nueva)",
     license: "Licencia",
     unknownLicense: "Desconocida",
     termsOfUse: "Condiciones de uso del sitio",
@@ -163,9 +173,13 @@ export const es: Messages = {
     codeIntro:
       "Esta web incluye el código de estos paquetes. Sus licencias exigen reproducir el aviso de copyright y el texto de la licencia, que se muestran en su idioma original.",
     version: "Versión",
-    repository: "Repositorio",
     licenseText: "Texto de la licencia",
     backToWheel: "Volver a la rueda",
+  },
+  notFound: {
+    title: "Página no encontrada",
+    body: "Esta dirección no existe en la Rueda cromática. Puede que el enlace esté mal escrito o que la página ya no exista.",
+    backHome: "Ir a la rueda",
   },
   footer: {
     credits: "Créditos y fuentes",

@@ -5,30 +5,37 @@ Este documento especifica `apps/web`: la PWA que integra la rueda de `color-whee
 ## 1. Maquetación
 
 - **Un único marcado**, _mobile first_, que se adapta con CSS:
-  - En el móvil, una columna: la barra de navegación, el banner de instalar (§8), el título, la rueda con sus controles y los resultados.
-  - Desde 60rem de ancho, la rueda a la izquierda, fija al desplazar, y los resultados a la derecha.
+  - En el móvil, una columna: la barra de navegación, el banner de instalar (§8), el título, que dice qué se hace en la página («Encuentra la pintura de cada color de tu esquema») y no repite el nombre de la barra, la rueda con sus controles y los resultados.
+  - Desde 60rem de ancho, la rueda a la izquierda, fija al desplazar, y los resultados a la derecha. Fija, la rueda cabe entera en la pantalla: el círculo encoge (entre 14 y 26rem) para dejar sitio a sus controles.
 - **La lista de colores de la rueda se oculta** (`hideControl("results")`): la web muestra los colores en sus pestañas, y así cada color aparece una vez.
 - **Resultados**, en este orden:
   1. El selector «Mostrar», siempre visible: «Por marca» o «Las más parecidas».
   2. Los filtros, en un desplegable (`<details>`) con un resumen de lo activo: «todas las marcas · opacas · sin descatalogadas». Dentro, las marcas, los tipos que se pueden añadir con las metálicas, y las descatalogadas. Por defecto, todas las marcas, solo las opacas no metálicas y sin descatalogadas (docs/06 §6.1).
   3. El aviso de color aproximado (§3).
-  4. Una pestaña por color de la armonía, con su muestra y su papel. En el móvil se quedan fijas bajo la barra de navegación al desplazar. Se recorren con las flechas, Inicio y Fin (patrón `tablist`).
+  4. Una pestaña por color de la armonía, con su muestra y su nombre: el papel, numerado si se repite («Tríada 1», «Tríada 2»), como en las marcas de la rueda (`colorNames` de `color-wheel`). La rueda señala el color de la pestaña elegida, con un anillo en su marca y su nombre (`highlightColor`); al pasar el ratón o el foco por otra pestaña, señala la de esa mientras tanto. En el móvil se quedan fijas bajo la barra de navegación al desplazar. Si no caben, se desplazan de lado, y en cada lado con pestañas ocultas aparece un degradado del fondo con una flecha (`chevron-left` y `chevron-right` de Lucide), que se desvanece al llegar a ese extremo; pulsada, desplaza la fila. Las flechas no están en el orden del teclado, que recorre las pestañas con las suyas. Se recorren con las flechas, Inicio y Fin (patrón `tablist`).
   5. La leyenda de la muestra partida (§2), una línea de texto sin recuadro.
   6. El panel del color elegido.
-- **Pinturas por marca**: 3, con un botón «Ver más» que añade 3 cada vez a esa marca, y «Ver menos», que vuelve a las 3 primeras. En «Las más parecidas», lo mismo con la lista conjunta. Lo pedido con «Ver más» se reinicia al cambiar de color, de vista o de filtros. Una marca sin candidatas dice «Sin pinturas con estos filtros», y sin ninguna marca elegida, el panel pide elegir una.
-- **Debajo**, las armonías explicadas, con el nombre que les da la rueda.
+- **Pinturas por marca**: 3, con un botón «Ver más pinturas» que añade 3 cada vez a esa marca, y «Ver menos», que vuelve a las 3 primeras. En «Las más parecidas», lo mismo con la lista conjunta. Lo pedido con «Ver más» se reinicia al cambiar de color, de vista o de filtros. Una marca sin candidatas dice «Sin pinturas con estos filtros», y sin ninguna marca elegida, el panel pide elegir una.
+- **Debajo**, las armonías explicadas, con el nombre que les da la rueda: en una columna o, desde 60rem de ancho, en tres de tres, para que ninguna quede sola en la última fila.
 - **Movimiento**, que responde a cada acción sin estorbar:
   - El marco de la pestaña elegida se desliza hasta la nueva, su muestra crece un poco y la pestaña se hunde al pulsarla. El marco es un único elemento que un poco de JavaScript coloca midiendo la pestaña, para que funcione en todos los navegadores; sin JavaScript, la pestaña se marca sola. El marco se dibuja encima del borde, así que la pestaña no cambia de tamaño.
-  - Los selectores segmentados («Mostrar», el tema, y «Modelo» y «Luz» de la rueda): el fondo de la opción elegida es una pastilla que se desliza hasta la nueva. Se coloca igual que el marco de las pestañas, midiendo la opción con JavaScript, para que funcione en todos los navegadores.
-  - Al elegir otra pestaña, sus filas entran con un fundido corto y escalonado; las que añade «Ver más» entran una tras otra, y las que quita «Ver menos» salen antes de desaparecer. Las filas que cambian mientras se arrastra la rueda no se animan.
+  - Los selectores segmentados («Mostrar», el tema, y «Modelo» y «Luz» de la rueda) son el mismo control, con el mismo aspecto: un marco con la opción elegida como una pastilla dentro, que se desliza hasta la nueva. Se coloca igual que el marco de las pestañas, midiendo la opción con JavaScript, para que funcione en todos los navegadores.
+  - Al elegir otra pestaña, sus filas entran con un fundido corto y escalonado; las que añade «Ver más pinturas» entran una tras otra mientras la lista crece con suavidad hasta su nueva altura, y las que quita «Ver menos» se desvanecen mientras la lista se recoge, antes de desaparecer. Las filas que cambian mientras se arrastra la rueda no se animan.
   - Los desplegables (filtros, «Detalles» y los de créditos y errores) se abren animando su altura donde el navegador lo admite, y su flecha (`chevron-down` de Lucide) gira.
+  - Las casillas de los filtros son propias: al marcarlas, la caja se rellena con un pequeño rebote y la marca (`check` de Lucide) se dibuja de izquierda a derecha, como a bolígrafo; al desmarcarlas se borra igual. Con colores forzados vuelven a ser las del sistema.
+  - Los colores de la rueda (las muestras de las pestañas, del panel y la mitad de arriba de las muestras partidas) se funden con el nuevo al cambiar, en 0,25 s; mientras se arrastra la rueda cambian al momento.
+  - Las pestañas, fijas bajo la barra, llevan una línea fina y una sombra (más intensa en tema oscuro) solo mientras están fijas, para despegarse de lo que pasa por debajo. Se comprueba al desplazar, como mucho una vez por fotograma.
+  - Al abrir «Detalles», sus datos entran uno tras otro, como las filas.
+  - Al cambiar un filtro, su resumen da un pequeño salto en el color del acento, también con el desplegable cerrado.
+  - Los enlaces llevan un subrayado fino y suave. Al pasar el ratón o llegar con el teclado, una franja de su color crece por debajo desde la izquierda, como un rotulador, y el texto se oscurece un poco; al salir, la franja se recoge hacia la derecha. En los enlaces externos, la flecha del icono `external-link` sale hacia arriba y a la derecha y vuelve con un pequeño rebote. «Ver más pinturas» y «Ver menos» llevan delante `plus` y `minus` de Lucide, que giran media vuelta despacio. Los enlaces con forma de caja se hunden al pulsarlos.
+  - Los botones de las acciones principales («Actualizar», «Reintentar», «Instalar», «Ir a la rueda») son todos iguales: rellenos del acento, con el radio de los demás controles y sin sombra. Se aclaran al pasar el ratón y, si llevan una flecha, esta se adelanta.
   - Los botones se hunden al pulsarlos, y las filas se resaltan al pasar el ratón con una banda del mismo ancho que sus separadores.
   - Sin movimiento si el sistema pide reducirlo (`prefers-reduced-motion`).
 
 ## 2. Cada pintura
 
-- **A primera vista**: la muestra partida, el nombre, la gama (con la marca delante en «Las más parecidas»), las fichas del tipo, «Metálica» y «Descatalogada» si lo es, y la etiqueta de calidad (docs/06 §3), como una pastilla con un color por nivel (verde, verde claro, ámbar y gris), con contraste de al menos 6:1 en los dos temas. El texto siempre dice el nivel, así que no depende solo del color.
-- **En «Detalles»** (`<details>`): el código del fabricante, el ΔE con un decimal, el hex con su fuente y su origen («#3daf44, de SimoGecko (comunitario)»), que es la fuente breve del color que pide el [ADR-0015](adr/0015-fuentes-trazabilidad-licencias.md), y la razón de que el color sea aproximado (`colorApproximationReasons`) o «Exacto».
+- **A primera vista**: la muestra partida, el nombre, la gama (con la marca delante en «Las más parecidas»), las fichas del tipo, «Metálica» y «Descatalogada» si lo es, y la etiqueta de calidad (docs/06 §3) con el ΔE de un decimal al lado («La más cercana | ΔE 7,6»), como una pastilla con un color por nivel (verde, verde claro, ámbar y gris), con contraste de al menos 6:1 en los dos temas. El texto siempre dice el nivel, así que no depende solo del color. Por debajo de la etiqueta, una barra de cercanía tan larga como cerca está la pintura: entera con ΔE 0, la mitad con ΔE 5 (el final de «Parecida») y cada vez más corta después, sin llegar a desaparecer (1 / (1 + ΔE / 5)). Crece al aparecer la fila y sigue los cambios. Es decorativa: el dato está en el texto. El nombre ocupa todo el ancho y la etiqueta va junto a las fichas, a la derecha, para que no lo estreche.
+- **En «Detalles»** (`<details>`): el código del fabricante, el hex con su fuente y su origen («#3daf44, de SimoGecko (comunitario)»), que es la fuente breve del color que pide el [ADR-0015](adr/0015-fuentes-trazabilidad-licencias.md), y la razón de que el color sea aproximado (`colorApproximationReasons`) o «Exacto».
 - **Muestra partida**: arriba el color de la rueda y abajo el de la pintura, para compararlos sin mover la vista. Es decorativa: su información está en el texto.
 
 ## 3. Aviso de color aproximado
@@ -39,7 +46,7 @@ Se decide con las pinturas que muestra el panel:
 - **Si se mezclan**: el aviso explica la ficha «≈ Aproximado», y solo la llevan las aproximadas.
 - **Si ninguna lo es**: sin aviso.
 
-El aviso enlaza a «Créditos y fuentes» y no nombra las fuentes. La razón concreta de cada pintura está en sus «Detalles».
+El aviso es una sola línea con el icono `info` de Lucide («Los colores son aproximados ≈»), que se despliega con la explicación. Enlaza a «Créditos y fuentes» y no nombra las fuentes. La razón concreta de cada pintura está en sus «Detalles».
 
 ## 4. Cuándo se actualizan los resultados
 
@@ -91,16 +98,20 @@ En la fase 6 las preferencias pasarán a la cuenta del usuario ([ADR-0017](adr/0
 ## 8. PWA
 
 - **Precaché**: todas las páginas de todos los idiomas, el código, los iconos y `catalog.json`. Después de la primera visita, todo funciona sin conexión.
-- **Versión nueva** (de la web o del catálogo, que llegan igual): un aviso no modal, «Hay una versión nueva», con «Actualizar». Si no se pulsa, se aplica la próxima vez que se abra la web. La primera versión controla la página en cuanto se instala.
+- **Versión nueva** (de la web o del catálogo, que llegan igual): un aviso no modal, «Hay una versión nueva», con «Actualizar», con el mismo diseño que el banner de instalar (marco, icono `refresh-cw` de Lucide, que gira al pasar el ratón por el botón, y apertura animada). Sale también en una pestaña normal del navegador, no solo en la aplicación instalada: el service worker guarda la web en los dos casos. Si no se pulsa, se aplica la próxima vez que se abra la web. La primera versión controla la página en cuanto se instala.
 - **Instalar**:
-  - Un banner, el primer elemento bajo la barra, en el flujo de la página y no modal. Solo aparece si se puede instalar (el navegador emitió `beforeinstallprompt`, o es Safari en iOS, detectado por `navigator.standalone`) y no está instalada. Desaparece al instalarla o al cerrarlo, para siempre.
+  - Un banner, el primer elemento bajo la barra, en el flujo de la página y no modal, que **llega con la página**: está siempre en el HTML prerenderizado, y el script en línea del `<head>` lo muestra antes del primer pintado (`<html data-install>`) si el navegador instala aplicaciones web (Chromium, que tiene `onbeforeinstallprompt`, o Safari en iOS, que tiene `navigator.standalone`), no está instalada y no se cerró antes. Así nunca aparece tarde ni desplaza la página. En Firefox de escritorio, que no instala aplicaciones web, no sale.
+  - Lleva el icono de la web, qué se instala («Instala la Rueda cromática») y por qué, el botón «Instalar» y, en la esquina, un cierre discreto de su misma altura; en pantallas estrechas el botón va bajo el texto. En Safari en iOS, en vez del botón, los pasos para añadirla a la pantalla de inicio.
+  - «Instalar» abre el diálogo del navegador (`beforeinstallprompt`). Chromium no lo ofrece hasta que la persona ha usado un poco la página; si se pulsa antes, el banner explica cómo instalarla desde el menú del navegador.
+  - Al cerrarlo se pliega y no vuelve; al instalarla, desaparece. El pie sigue ofreciendo «Instalar la aplicación» mientras el navegador permita instalarla.
+  - El servidor de desarrollo no tiene manifiesto ni service worker: ahí el banner sale, pero el navegador no llega a ofrecer la instalación.
   - Un botón discreto «Instalar la aplicación» en el pie, para quien cambie de opinión. En iOS, muestra las instrucciones («Compartir» y «Añadir a pantalla de inicio»).
 - **Iconos**: provisionales (una rueda de 12 tonos con el triángulo), en `public/icons/`, en SVG y en PNG de 192 y 512 px, y en versión _maskable_.
 
 ## 9. Idiomas
 
 - **Los mismos 10 que la rueda**, con la misma detección (`resolveLocale` de `color-wheel`). La rueda y la web van siempre en el mismo idioma.
-- **Los textos de la web** están en un diccionario tipado: si falta un texto en un idioma, no compila. Un test comprueba además que ninguno está vacío y que todos conservan los marcadores (`{count}`…). Los nombres de las armonías y los papeles salen de la rueda (`labelsFor`). Los nombres de las pinturas no se traducen.
+- **Los textos de la web** están en un diccionario tipado: si falta un texto en un idioma, no compila. Un test comprueba además que ninguno está vacío y que todos conservan los marcadores (`{count}`…). Los nombres de las armonías y los papeles salen de la rueda (`labelsFor` y `colorNames`). Los nombres de las pinturas no se traducen.
 - **El selector de idioma** muestra cada idioma en su propio idioma, con el rótulo bilingüe «Idioma · Language». Al cambiarlo, carga la misma página en el otro idioma y lo recuerda.
 - **Riesgo conocido**: los textos de 8 idiomas los escribió Claude y nadie los ha revisado. Solo el castellano y el inglés están revisados.
 
@@ -117,34 +128,42 @@ En la fase 6 las preferencias pasarán a la cuenta del usuario ([ADR-0017](adr/0
 
 ## 11. Barra de navegación y tema
 
-- **Barra fija arriba**: el nombre a la izquierda, que lleva a la principal; a la derecha, el idioma y el tema. En pantallas estrechas, el idioma y el tema se recogen en un menú hamburguesa que se despliega bajo la barra, no modal, con `aria-expanded`, y se cierra con Esc. Admite más enlaces en el futuro.
-- **Tema**: un selector segmentado con tres iconos (sistema, claro y oscuro), con su nombre accesible y su texto al pasar el ratón. Lo aplica el atributo `data-theme` de `<html>`, y el CSS lo convierte en `color-scheme` para la web y en `--cw-color-scheme` para la rueda (docs/05 §6.6). Sin elección, el del sistema.
+- **Barra translúcida**: donde el navegador lo admite (`backdrop-filter`), el fondo de la barra es ligeramente transparente y desenfoca lo que pasa por debajo; en el resto, opaco. El cristal es una capa detrás de su contenido que asoma 2 px por encima, para cubrir el redondeo de las pantallas escaladas.
+- **Barra fija arriba**: el icono de la web (el del favicon) y el nombre a la izquierda, que llevan a la principal; a la derecha, el idioma y el tema, sin etiqueta visible (la tienen para los lectores de pantalla). En pantallas estrechas, el idioma y el tema se recogen, con sus etiquetas, en un menú hamburguesa que baja de la barra sobre un velo oscuro que tapa la página, como un diálogo: la página de detrás queda inerte, y el menú se cierra con Esc, con el botón o tocando el velo. Admite más enlaces en el futuro.
+- **Saltar la barra**: el primer Tab muestra «Saltar a la rueda» y el segundo «Saltar a las pinturas» (en créditos, «Saltar al contenido»). Llevan el foco al primer control de su destino: el anillo de la rueda o el color elegido. Es el patrón estándar: cambiar el orden del foco para saltarse la barra rompería WCAG 2.4.3.
+- **Tema**: el mismo selector segmentado que los de la rueda, con tres iconos (sistema, claro y oscuro), con su nombre accesible y su nombre en una etiqueta flotante al pasar el ratón o al llegar con el teclado. Lo aplica el atributo `data-theme` de `<html>`, y el CSS lo convierte en `color-scheme` para la web y en `--cw-color-scheme` para la rueda (docs/05 §6.6). Sin elección, el del sistema.
+- **Iconos del tema animados**: cada icono hace su propio gesto. Al pasar el ratón por una opción no elegida, o al llegar con el teclado, el sol gira 45°, la luna se balancea y el monitor sube un poco, como si se encendiera; la opción elegida se queda quieta. Al elegirlo, los rayos del sol salen uno tras otro desde el centro, la luna da una vuelta entera y crece un poco antes de asentarse y el monitor se enciende: su pantalla se abre desde una línea, como una tele de tubo; al cargar la página no se anima ninguno. Al pulsar, el icono se hunde. Sin movimiento si el sistema pide reducirlo.
 - **Cambio de tema**: el tema nuevo crece en un círculo desde la opción pulsada y, dentro del círculo, se funde con el anterior (View Transitions). Sin soporte o con movimiento reducido, cambia al momento.
 - **Sin parpadeo**: cada página declara `<meta name="color-scheme" content="light dark">` antes de la hoja de estilos, para que el navegador no pinte en blanco mientras la carga, también al pasar de una página a otra. El script en línea (§6) aplica el tema guardado, en `data-theme` y en esa etiqueta, antes de pintar nada.
-- **Iconos**: `sun`, `moon`, `monitor`, `menu` y `x` de Lucide, copiados como en `color-wheel`, con su aviso de licencia, y `chevron-down` en los desplegables, dibujado en el CSS como en la rueda (docs/05 §6.6).
+- **Color de acento**: magenta (`#be185d` en claro y `#f9a8d4` en oscuro, AA en los dos temas y con el texto de los botones). Es un primario de la mezcla sustractiva de pigmentos y queda lejos en la rueda del azul del foco, así que nunca se confunden.
+- **Foco del teclado**: tiene su propio color (`--focus`), separado del acento (`--accent`) que usan los enlaces, la pestaña elegida, las casillas y el botón principal. Así el foco se distingue junto a lo pintado con el acento, y el acento puede cambiar sin tocarlo. Es el azul convencional del foco, con contraste AA en los dos temas, y la rueda lo toma también (`--cw-focus`), así que se define una sola vez.
+- **Iconos**: `sun`, `moon`, `monitor`, `menu`, `x`, `info`, `external-link`, `plus`, `minus`, `arrow-left`, `refresh-cw`, `chevron-left` y `chevron-right` de Lucide, copiados como en `color-wheel`, con su aviso de licencia, y `chevron-down` en los desplegables y `check` en las casillas, dibujados en el CSS como en la rueda (docs/05 §6.6).
 
 ## 12. Páginas y rutas
 
-| Página             | Ruta               |
-| ------------------ | ------------------ |
-| Elegir idioma      | `/`                |
-| Rueda y pinturas   | `/es/`, `/pt-br/`… |
-| Créditos y fuentes | `/es/credits/`…    |
+| Página             | Ruta                                  |
+| ------------------ | ------------------------------------- |
+| Elegir idioma      | `/`                                   |
+| Rueda y pinturas   | `/es/`, `/pt-br/`…                    |
+| Créditos y fuentes | `/es/creditos/`, `/de/danksagungen/`… |
 
-- **El idioma va delante**, en minúsculas (`pt-BR` → `/pt-br/`). El nombre de la ruta de créditos es fijo, en inglés.
-- **`/`** lleva al idioma guardado o al detectado. Sin JavaScript, enlaza a los 10 idiomas.
+- **El idioma va delante**, en minúsculas (`pt-BR` → `/pt-br/`). El nombre de la página de créditos va en el idioma de la página (`CREDITS_SLUGS` de `pages.ts`), por el SEO: `creditos`, `credits`, `danksagungen`, `crediti`… Ruso, chino, japonés y coreano usan `credits`, en inglés, para no mezclar dos alfabetos en la ruta.
+- **`/`** lleva al idioma guardado o al detectado sin pintar nada antes: la página queda en blanco hasta que redirige (y se muestra igualmente a los 3 segundos si la aplicación no llega a ejecutarse). Sin JavaScript, enlaza a los 10 idiomas.
+- **Página no encontrada**: cualquier otra dirección responde con el estado HTTP 404 y la página «Página no encontrada», en el idioma de la dirección si empieza por uno (`/es/lo-que-sea/`) y en inglés si no, con un botón a la rueda de ese idioma. Su ilustración es una rueda de 12 tonos a la que le falta uno, con el 404 en el centro: al entrar, los tonos aparecen uno tras otro y una aguja, como la plantilla de la rueda, barre el anillo hasta el hueco y se queda buscando en él. Lleva `noindex` y no tiene URL canónica ni alternativas. El build la escribe en `dist/404.html` y `dist/<idioma>/404.html`; el servidor de desarrollo y `vite preview` responden igual, y el servidor estático de cada entorno tiene que configurarse para servir esos ficheros con el estado 404.
+- **`sitemap.xml` y `robots.txt`**: los escribe el build, con las 21 páginas y sus alternativas de idioma, y el servidor de desarrollo sirve los mismos.
 - **Enlaces normales**, sin router en el cliente: cada página es un HTML completo y, sin conexión, sale del precaché.
 - **Fundido entre páginas**, en todos los navegadores: al pulsar un enlace a otra página de la web, o al cambiar de idioma, el contenido se funde hacia fuera y entonces se navega. La página nueva entra con un fundido, que el script en línea del `<head>` marca antes de pintar, solo si se llega desde un enlace de la web: al abrirla o al volver atrás aparece sin más. La barra de navegación no se anima. Los enlaces con una tecla modificadora, a otro sitio o con destino propio funcionan como siempre. Sin movimiento si el sistema pide reducirlo.
 
 ## 13. Créditos y fuentes
 
-- **Fuentes del catálogo**: cada una con su título, quién la publica, su enlace, su copia archivada, su licencia, su atribución y la fecha de consulta, y lo que aporta: los colores de qué marcas y gamas, y cuántas sustituciones y equivalencias oficiales (`sourceContributions`). Todo sale de `catalog.json`.
+- **Fuentes del catálogo**: cada una con su título, quién la publica, su enlace, su copia archivada, su licencia, su atribución y la fecha de consulta, y lo que aporta: los colores de qué marcas y gamas, y cuántas sustituciones y equivalencias oficiales (`sourceContributions`). Todo sale de `catalog.json`. En pantallas estrechas cada dato va bajo su nombre.
+- **Enlaces a otros sitios** (las fuentes, sus copias archivadas y los repositorios): se abren en una pestaña nueva, con `rel="noopener noreferrer nofollow"` para no pasarles autoridad en los buscadores, y llevan delante el icono `external-link` de Lucide. Su texto dice qué abren y dónde («Ver la fuente en github.com»), no la dirección entera, y los lectores de pantalla oyen además que se abren en una pestaña nueva.
 - **Código de terceros**: cada paquete que acaba en el código distribuido (la web y el service worker), con su versión, su licencia, su repositorio y el texto de su licencia, plegado y en el idioma original. Además, los avisos `@license` del código propio (los iconos de Lucide). Un plugin de Vite los saca del bundle en cada build, así que la lista siempre coincide con lo que se distribuye.
 
 ## 14. Tests
 
 - **Node**: el reductor, las preferencias, las rutas, la cabecera, la carga del catálogo, la búsqueda, los textos de los 10 idiomas, la plantilla HTML con la CSP, el plugin de licencias y el prerenderizado de las 21 páginas.
-- **Navegador** (modo navegador de Vitest con Playwright): que el navegador toma el HTML prerenderizado sin diferencias, las pestañas con teclado, los filtros, «Ver más», la vista, el tema, el menú, las preferencias guardadas y el error de red, con axe-core (WCAG 2.2 A y AA) en varios estados.
+- **Navegador** (modo navegador de Vitest con Playwright): que el navegador toma el HTML prerenderizado sin diferencias, las pestañas con teclado y sus nombres numerados, los filtros, «Ver más», la vista, el tema, el menú con su velo, los enlaces para saltar la barra, las preferencias guardadas y el error de red, con axe-core (WCAG 2.2 A y AA) en varios estados.
 - **De extremo a extremo** (`@playwright/test`), en Chromium completo, no en la versión recortada para tests, que no pinta como un navegador real:
   - sobre la web compilada (en Chromium, y lo que no depende del service worker también en Firefox): que se sirven todas las rutas en su idioma, el fundido entre páginas, el contenido sin JavaScript, que `/` va al idioma detectado, el selector de idioma, que el tema guardado se aplica antes de pintar y que la página declara `color-scheme` antes de la hoja de estilos, que nunca se ven los valores por defecto con preferencias guardadas (fotograma a fotograma), el funcionamiento sin conexión y el aviso de versión nueva;
   - sobre el servidor de desarrollo: que cada página sale con sus estilos antes de que arranque el JavaScript, y que el navegador la toma sin errores.

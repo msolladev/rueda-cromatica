@@ -19,6 +19,15 @@ interface PaintRowProps {
   readonly leaving?: boolean;
 }
 
+/**
+ * How close a paint is, from 1 (ΔE 0) down towards 0, for the bar of its
+ * label (docs/07 §2): half at ΔE 5, the end of «Similar», and shorter and
+ * shorter beyond, without ever disappearing.
+ */
+function closeness(deltaE: number): number {
+  return Math.round((1 / (1 + deltaE / 5)) * 1000) / 1000;
+}
+
 /** One paint (docs/07 §2): what decides the choice in sight, the rest in «Details». */
 export function PaintRow({
   paint,
@@ -53,34 +62,36 @@ export function PaintRow({
         <span style={{ background: target }} />
         <span style={{ background: paint.hex }} />
       </span>
-      <div className="paint-main">
-        <span className="paint-name">{paint.name}</span>
-        <span className="paint-range">
-          {showBrand
-            ? `${paint.brandName} · ${paint.rangeName}`
-            : paint.rangeName}
-        </span>
-        <span className="chips">
-          <span className="chip">{m.paintTypes[paint.type]}</span>
-          {paint.metallic && <span className="chip">{m.results.metallic}</span>}
-          {paint.discontinued && (
-            <span className="chip">{m.results.discontinued}</span>
-          )}
-          {markApproximate && paint.reasons.length > 0 && (
-            <span className="chip chip-approx">{m.approximate.chip}</span>
-          )}
-        </span>
-      </div>
-      <span className="paint-quality" data-quality={paint.quality}>
+      <span className="paint-name">{paint.name}</span>
+      <span className="paint-range">
+        {showBrand
+          ? `${paint.brandName} · ${paint.rangeName}`
+          : paint.rangeName}
+      </span>
+      <span className="chips">
+        <span className="chip">{m.paintTypes[paint.type]}</span>
+        {paint.metallic && <span className="chip">{m.results.metallic}</span>}
+        {paint.discontinued && (
+          <span className="chip">{m.results.discontinued}</span>
+        )}
+        {markApproximate && paint.reasons.length > 0 && (
+          <span className="chip chip-approx">{m.approximate.chip}</span>
+        )}
+      </span>
+      {/* docs/07 §2: the label and, beside it, how far it is. */}
+      <span
+        className="paint-quality"
+        data-quality={paint.quality}
+        style={{ "--closeness": closeness(paint.deltaE) } as CSSProperties}
+      >
         {m.quality[paint.quality]}
+        <span className="paint-delta">ΔE {deltaE}</span>
       </span>
       <details className="paint-details">
         <summary>{m.results.details}</summary>
         <dl>
           <dt>{m.results.code}</dt>
           <dd>{paint.code ?? m.results.noCode}</dd>
-          <dt>{m.results.deltaE}</dt>
-          <dd>{deltaE}</dd>
           <dt>{m.results.hex}</dt>
           <dd>
             {format(m.results.hexFrom, {

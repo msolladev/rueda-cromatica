@@ -1,9 +1,9 @@
 /**
  * @license
- * Icons "sun", "moon", "monitor", "menu" and "x" copied from Lucide v1.71.0
- * (https://lucide.dev), and "chevron-down", copied in app.css; "moon",
- * "monitor", "x" and "chevron-down" are derived from Feather
- * (https://feathericons.com).
+ * Icons "sun", "moon", "monitor", "menu", "x", "info", "external-link", "plus", "minus", "arrow-left", "refresh-cw", "chevron-left" and "chevron-right" copied from Lucide v1.71.0
+ * (https://lucide.dev), and "chevron-down" and "check" (with a thicker
+ * line), copied in app.css; "moon", "monitor", "x", "info", "chevron-down"
+ * and "check" are derived from Feather (https://feathericons.com).
  *
  * ISC License. Copyright (c) 2026 Lucide Icons and Contributors.
  * Permission to use, copy, modify, and/or distribute this software for any
@@ -36,15 +36,22 @@
  */
 
 // The web's icons (docs/07 §11), copied like those of color-wheel instead of
-// depending on a library for five icons. Decorative: the controls that use
+// depending on a library for a few icons. Decorative: the controls that use
 // them have their own accessible name.
 
-import type { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 
-function Icon({ children }: { readonly children: ReactNode }) {
+function Icon({
+  children,
+  name,
+}: {
+  readonly children: ReactNode;
+  /** Adds `icon-{name}`, for the CSS that animates its parts. */
+  readonly name?: string;
+}) {
   return (
     <svg
-      className="icon"
+      className={name === undefined ? "icon" : `icon icon-${name}`}
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
@@ -62,29 +69,35 @@ function Icon({ children }: { readonly children: ReactNode }) {
   );
 }
 
+/** Each ray knows its place, so that they can come out one after another. */
+const ray = (index: number) => ({ "--ray": index }) as CSSProperties;
+
 export const SunIcon = () => (
-  <Icon>
+  <Icon name="sun">
     <circle cx="12" cy="12" r="4" />
-    <path d="M12 2v2" />
-    <path d="M12 20v2" />
-    <path d="m4.93 4.93 1.41 1.41" />
-    <path d="m17.66 17.66 1.41 1.41" />
-    <path d="M2 12h2" />
-    <path d="M20 12h2" />
-    <path d="m6.34 17.66-1.41 1.41" />
-    <path d="m19.07 4.93-1.41 1.41" />
+    <path className="ray" style={ray(0)} d="M12 2v2" />
+    <path className="ray" style={ray(4)} d="M12 20v2" />
+    <path className="ray" style={ray(7)} d="m4.93 4.93 1.41 1.41" />
+    <path className="ray" style={ray(3)} d="m17.66 17.66 1.41 1.41" />
+    <path className="ray" style={ray(6)} d="M2 12h2" />
+    <path className="ray" style={ray(2)} d="M20 12h2" />
+    <path className="ray" style={ray(5)} d="m6.34 17.66-1.41 1.41" />
+    <path className="ray" style={ray(1)} d="m19.07 4.93-1.41 1.41" />
   </Icon>
 );
 
 export const MoonIcon = () => (
-  <Icon>
-    <path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401" />
+  <Icon name="moon">
+    <path
+      className="moon-body"
+      d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"
+    />
   </Icon>
 );
 
 export const MonitorIcon = () => (
-  <Icon>
-    <rect width="20" height="14" x="2" y="3" rx="2" />
+  <Icon name="monitor">
+    <rect className="screen" width="20" height="14" x="2" y="3" rx="2" />
     <line x1="8" x2="16" y1="21" y2="21" />
     <line x1="12" x2="12" y1="17" y2="21" />
   </Icon>
@@ -102,5 +115,65 @@ export const CloseIcon = () => (
   <Icon>
     <path d="M18 6 6 18" />
     <path d="m6 6 12 12" />
+  </Icon>
+);
+
+export const InfoIcon = () => (
+  <Icon>
+    <circle cx="12" cy="12" r="10" />
+    <path d="M12 16v-4" />
+    <path d="M12 8h.01" />
+  </Icon>
+);
+
+/** Its arrow is a group of its own, so that the CSS can move it. */
+export const ExternalLinkIcon = () => (
+  <Icon>
+    <g className="icon-arrow">
+      <path d="M15 3h6v6" />
+      <path d="M10 14 21 3" />
+    </g>
+    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+  </Icon>
+);
+
+export const PlusIcon = () => (
+  <Icon>
+    <path d="M5 12h14" />
+    <path d="M12 5v14" />
+  </Icon>
+);
+
+export const MinusIcon = () => (
+  <Icon>
+    <path d="M5 12h14" />
+  </Icon>
+);
+
+export const ArrowLeftIcon = () => (
+  <Icon name="arrow-left">
+    <path d="m12 19-7-7 7-7" />
+    <path d="M19 12H5" />
+  </Icon>
+);
+
+export const RefreshIcon = () => (
+  <Icon name="refresh">
+    <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8" />
+    <path d="M21 3v5h-5" />
+    <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16" />
+    <path d="M8 16H3v5" />
+  </Icon>
+);
+
+export const ChevronLeftIcon = () => (
+  <Icon>
+    <path d="m15 18-6-6 6-6" />
+  </Icon>
+);
+
+export const ChevronRightIcon = () => (
+  <Icon>
+    <path d="m9 18 6-6-6-6" />
   </Icon>
 );

@@ -14,6 +14,9 @@ export const ja: Messages = {
     label: "メイン",
     openMenu: "メニューを開く",
     closeMenu: "メニューを閉じる",
+    skipToWheel: "ホイールへ移動",
+    skipToPaints: "塗料へ移動",
+    skipToContent: "本文へ移動",
     language: "言語 · Language",
     theme: "テーマ",
     themes: {
@@ -23,7 +26,7 @@ export const ja: Messages = {
     },
   },
   home: {
-    heading: "ミニチュア塗装のためのカラーホイール",
+    heading: "配色の各色に合う塗料を見つけよう",
     intro:
       "ホイールで色と配色を選ぶか、影と光を含むミニチュア用の配色を選びます。それぞれの色について、各ブランドの最も近い塗料を探します。",
     wheelHeading: "ホイール",
@@ -57,7 +60,7 @@ export const ja: Messages = {
     legendMiddle: "、",
     legendPaint: "下が塗料の色",
     legendEnd: "で、比較できます。",
-    seeMore: "もっと見る",
+    seeMore: "塗料をもっと見る",
     seeLess: "表示を減らす",
     noPaints: "このフィルターに合う塗料はありません。",
     noBrands: "フィルターでブランドを少なくとも 1 つ選んでください。",
@@ -65,7 +68,6 @@ export const ja: Messages = {
     details: "詳細",
     code: "品番",
     noCode: "品番なし",
-    deltaE: "ΔE 2000",
     hex: "Hex",
     hexFrom: "{hex}（出典：{source}、{origin}）",
     color: "色",
@@ -104,6 +106,8 @@ export const ja: Messages = {
     "nearest-available": "最も近いもの",
   },
   approximate: {
+    allTitle: "色はおおよそのものです",
+    someTitle: "一部の塗料の色はおおよそのものです",
     all: "塗料の色はおおよそのものです。hex は測定ではなくコミュニティの情報によるものです。購入前に実物と比べてください。",
     some: "「≈ おおよそ」と表示された塗料の色はおおよそのものです。hex が測定されていないか、塗料が単色に見えません。実物と比べてください。",
     chip: "≈ おおよそ",
@@ -134,8 +138,10 @@ export const ja: Messages = {
   pwa: {
     updateAvailable: "新しいバージョンがあります。",
     update: "更新",
-    installTitle: "デバイスにインストールしましょう。",
+    installTitle: "カラーホイールをインストール",
     installBody: "専用のアイコンから開け、オフラインでも使えます。",
+    installHint:
+      "ブラウザがまだインストールを提案していません。ブラウザのメニューの「インストール」から追加してください。",
     install: "インストール",
     installApp: "アプリをインストール",
     iosSteps:
@@ -152,6 +158,10 @@ export const ja: Messages = {
     publisher: "公開者",
     link: "リンク",
     archive: "アーカイブ",
+    openSource: "{host} で出典を見る",
+    openArchive: "{host} で保存版を見る",
+    openRepository: "{host} でリポジトリを見る",
+    newTab: "（新しいタブで開きます）",
     license: "ライセンス",
     unknownLicense: "不明",
     termsOfUse: "サイトの利用規約",
@@ -165,9 +175,13 @@ export const ja: Messages = {
     codeIntro:
       "このサイトには以下のパッケージのコードが含まれています。ライセンスにより、著作権表示とライセンス本文を原文のまま掲載します。",
     version: "バージョン",
-    repository: "リポジトリ",
     licenseText: "ライセンス本文",
     backToWheel: "ホイールに戻る",
+  },
+  notFound: {
+    title: "ページが見つかりません",
+    body: "このアドレスはカラーホイールにありません。リンクの入力ミスか、ページがもう存在しない可能性があります。",
+    backHome: "ホイールへ",
   },
   footer: {
     credits: "クレジットと出典",

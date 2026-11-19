@@ -20,7 +20,9 @@ export function Footer({
   return (
     <footer className="footer">
       <div className="footer-inner">
-        <a href={creditsPath}>{m.footer.credits}</a>
+        <a href={creditsPath}>
+          <span className="link-text">{m.footer.credits}</span>
+        </a>
         {installMode !== "none" && (
           <button
             type="button"
@@ -31,7 +33,7 @@ export function Footer({
               else setSteps(!steps);
             }}
           >
-            {m.pwa.installApp}
+            <span className="link-text">{m.pwa.installApp}</span>
           </button>
         )}
       </div>

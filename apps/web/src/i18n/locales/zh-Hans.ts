@@ -14,6 +14,9 @@ export const zhHans: Messages = {
     label: "主导航",
     openMenu: "打开菜单",
     closeMenu: "关闭菜单",
+    skipToWheel: "跳到色轮",
+    skipToPaints: "跳到颜料",
+    skipToContent: "跳到内容",
     language: "语言 · Language",
     theme: "主题",
     themes: {
@@ -23,7 +26,7 @@ export const zhHans: Messages = {
     },
   },
   home: {
-    heading: "用于涂装模型的色轮",
+    heading: "为配色方案中的每种颜色找到颜料",
     intro:
       "在色轮上选择一种颜色和一种配色方案，或带有阴影和高光的模型涂装方案。对于每种颜色，本站会找出各品牌中最接近的颜料。",
     wheelHeading: "色轮",
@@ -54,7 +57,7 @@ export const zhHans: Messages = {
     legendMiddle: "，",
     legendPaint: "下方是颜料的颜色",
     legendEnd: "，便于比较。",
-    seeMore: "查看更多",
+    seeMore: "查看更多颜料",
     seeLess: "收起",
     noPaints: "没有符合这些筛选条件的颜料。",
     noBrands: "请在筛选中至少选择一个品牌。",
@@ -62,7 +65,6 @@ export const zhHans: Messages = {
     details: "详情",
     code: "编号",
     noCode: "无编号",
-    deltaE: "ΔE 2000",
     hex: "Hex",
     hexFrom: "{hex}，来自 {source}（{origin}）",
     color: "颜色",
@@ -101,6 +103,8 @@ export const zhHans: Messages = {
     "nearest-available": "最接近的",
   },
   approximate: {
+    allTitle: "颜色为近似值",
+    someTitle: "部分颜料的颜色为近似值",
     all: "颜料的颜色是近似值：其 hex 来自社区来源，而非测量。购买前请与实际颜料比较。",
     some: "标有“≈ 近似”的颜料颜色为近似值：hex 未经测量，或颜料看起来不是纯色。请与实际颜料比较。",
     chip: "≈ 近似",
@@ -130,8 +134,9 @@ export const zhHans: Messages = {
   pwa: {
     updateAvailable: "有新版本。",
     update: "更新",
-    installTitle: "安装到你的设备上。",
+    installTitle: "安装色轮",
     installBody: "可从自己的图标打开，并可离线使用。",
+    installHint: "你的浏览器还没有提供安装：请在浏览器菜单中选择“安装”。",
     install: "安装",
     installApp: "安装应用",
     iosSteps: "在 Safari 中，轻点“共享”，然后轻点“添加到主屏幕”。",
@@ -145,6 +150,10 @@ export const zhHans: Messages = {
     publisher: "发布者",
     link: "链接",
     archive: "存档副本",
+    openSource: "在 {host} 查看来源",
+    openArchive: "在 {host} 查看存档",
+    openRepository: "在 {host} 查看代码仓库",
+    newTab: "（在新标签页中打开）",
     license: "许可",
     unknownLicense: "未知",
     termsOfUse: "网站使用条款",
@@ -158,9 +167,13 @@ export const zhHans: Messages = {
     codeIntro:
       "本站包含这些软件包的代码。其许可要求转载版权声明和许可文本，以下以原文显示。",
     version: "版本",
-    repository: "代码仓库",
     licenseText: "许可文本",
     backToWheel: "返回色轮",
+  },
+  notFound: {
+    title: "找不到页面",
+    body: "色轮中没有这个地址。链接可能拼写有误，或页面已不存在。",
+    backHome: "前往色轮",
   },
   footer: {
     credits: "致谢与来源",

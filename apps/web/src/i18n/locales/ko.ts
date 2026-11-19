@@ -14,6 +14,9 @@ export const ko: Messages = {
     label: "주 메뉴",
     openMenu: "메뉴 열기",
     closeMenu: "메뉴 닫기",
+    skipToWheel: "색상환으로 건너뛰기",
+    skipToPaints: "물감으로 건너뛰기",
+    skipToContent: "본문으로 건너뛰기",
     language: "언어 · Language",
     theme: "테마",
     themes: {
@@ -23,7 +26,7 @@ export const ko: Messages = {
     },
   },
   home: {
-    heading: "미니어처 도색을 위한 색상환",
+    heading: "배색의 각 색에 맞는 물감을 찾아보세요",
     intro:
       "색상환에서 색과 배색을 고르거나, 그림자와 빛이 있는 미니어처 배색을 고르세요. 각 색마다 브랜드별로 가장 비슷한 물감을 찾아 줍니다.",
     wheelHeading: "색상환",
@@ -56,7 +59,7 @@ export const ko: Messages = {
     legendMiddle: ", ",
     legendPaint: "아래는 물감의 색",
     legendEnd: "이며 비교할 수 있습니다.",
-    seeMore: "더 보기",
+    seeMore: "물감 더 보기",
     seeLess: "간략히 보기",
     noPaints: "이 필터에 맞는 물감이 없습니다.",
     noBrands: "필터에서 브랜드를 하나 이상 고르세요.",
@@ -64,7 +67,6 @@ export const ko: Messages = {
     details: "자세히",
     code: "품번",
     noCode: "품번 없음",
-    deltaE: "ΔE 2000",
     hex: "Hex",
     hexFrom: "{hex}, 출처 {source} ({origin})",
     color: "색",
@@ -103,6 +105,8 @@ export const ko: Messages = {
     "nearest-available": "가장 가까움",
   },
   approximate: {
+    allTitle: "색은 근삿값입니다",
+    someTitle: "일부 물감의 색은 근삿값입니다",
     all: "물감 색은 근삿값입니다. hex는 측정값이 아니라 커뮤니티 자료에서 왔습니다. 구매 전에 실제 물감과 비교하세요.",
     some: "‘≈ 근삿값’으로 표시된 물감은 색이 근삿값입니다. hex가 측정되지 않았거나 물감이 단색으로 보이지 않습니다. 실제 물감과 비교하세요.",
     chip: "≈ 근삿값",
@@ -133,8 +137,10 @@ export const ko: Messages = {
   pwa: {
     updateAvailable: "새 버전이 있습니다.",
     update: "업데이트",
-    installTitle: "기기에 설치하세요.",
+    installTitle: "색상환 설치하기",
     installBody: "전용 아이콘으로 열리고 오프라인에서도 작동합니다.",
+    installHint:
+      "브라우저가 아직 설치를 제안하지 않았습니다. 브라우저 메뉴의 ‘설치’ 항목으로 설치하세요.",
     install: "설치",
     installApp: "앱 설치",
     iosSteps: "Safari에서 ‘공유’를 누른 다음 ‘홈 화면에 추가’를 누르세요.",
@@ -150,6 +156,10 @@ export const ko: Messages = {
     publisher: "게시자",
     link: "링크",
     archive: "보관된 사본",
+    openSource: "{host}에서 출처 보기",
+    openArchive: "{host}에서 사본 보기",
+    openRepository: "{host}에서 저장소 보기",
+    newTab: "(새 탭에서 열림)",
     license: "라이선스",
     unknownLicense: "알 수 없음",
     termsOfUse: "사이트 이용 약관",
@@ -163,9 +173,13 @@ export const ko: Messages = {
     codeIntro:
       "이 사이트에는 다음 패키지의 코드가 들어 있습니다. 라이선스에 따라 저작권 고지와 라이선스 전문을 원문 그대로 보여 줍니다.",
     version: "버전",
-    repository: "저장소",
     licenseText: "라이선스 전문",
     backToWheel: "색상환으로 돌아가기",
+  },
+  notFound: {
+    title: "페이지를 찾을 수 없습니다",
+    body: "색상환에 이 주소가 없습니다. 링크가 잘못 입력되었거나 페이지가 더 이상 없을 수 있습니다.",
+    backHome: "색상환으로 가기",
   },
   footer: {
     credits: "출처와 크레딧",

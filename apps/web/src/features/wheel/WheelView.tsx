@@ -18,6 +18,8 @@ export interface WheelViewProps {
   readonly locale: Locale;
   /** Applied once, when the saved preferences are read. */
   readonly restore: WheelPreferences | null;
+  /** The color whose mark the wheel points at: the tab selected or hovered. */
+  readonly highlight: number;
   /** Every result: while dragging (`final` false) and after each change. */
   readonly onResult: (result: Result, final: boolean) => void;
   /** After each change (not while dragging), with what to save. */
@@ -26,6 +28,7 @@ export interface WheelViewProps {
 
 export function WheelView({
   locale,
+  highlight,
   restore,
   onResult,
   onChange,
@@ -72,6 +75,11 @@ export function WheelView({
   useEffect(() => {
     if (restore !== null) wheel.current?.update(restore);
   }, [restore]);
+
+  // Also after the wheel is created again (another locale).
+  useEffect(() => {
+    wheel.current?.highlightColor(highlight);
+  }, [highlight, locale]);
 
   return <div className="wheel-host" ref={host} />;
 }

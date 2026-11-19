@@ -14,13 +14,19 @@ import { renderToString } from "react-dom/server";
 import { App } from "./app/App.tsx";
 import { headOf, langOf } from "./app/head.ts";
 import type { PageData } from "./app/page-data.ts";
-import { allPages, pathOf, type Page } from "./app/pages.ts";
+import {
+  allPages,
+  notFoundAt,
+  notFoundFiles,
+  pathOf,
+  type Page,
+} from "./app/pages.ts";
 import { DEFAULT_PREFERENCES } from "./app/state.ts";
 import { sourceViews, type LicenseEntry } from "./features/credits/data.ts";
 import { searchColor } from "./features/matches/search.ts";
 import { DEFAULT_COLOR, DEFAULT_HARMONY } from "./features/wheel/defaults.ts";
 
-export { allPages, pathOf, type Page };
+export { allPages, notFoundAt, notFoundFiles, pathOf, type Page };
 export type { LicenseEntry };
 
 export interface PrerenderInput {
@@ -76,7 +82,9 @@ export function createRenderer(
         ? { kind: "home", home }
         : page.kind === "credits"
           ? { kind: "credits", credits }
-          : { kind: "languages" };
+          : page.kind === "not-found"
+            ? { kind: "not-found", locale: page.locale }
+            : { kind: "languages" };
     const html = renderToString(
       <StrictMode>
         <App page={page} data={data} />

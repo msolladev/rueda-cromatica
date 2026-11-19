@@ -17,8 +17,19 @@
   --text: #1d1f22;
   --muted: #5a5f66;
   --line: #d5d8dd;
-  --accent: #1a5fd0;
+  /* Frames of the controls, and their background: the same as the wheel's. */
+  --control-border: #767b82;
+  --field: #ffffff;
+  /* The accent: magenta, a primary of the subtractive mix of pigments, far
+     from the blue of the focus so that the two never mix up. */
+  --accent: #be185d;
   --on-accent: #ffffff;
+  /* The keyboard focus: its own color, apart from the accent, so that it
+     stands out next to the elements painted with the accent and the accent
+     can change without touching it. The wheel takes it too. */
+  --focus: #1a5fd0;
+  /* The shadow of the tabs while they stay fixed. */
+  --stuck-shadow: rgb(0 0 0 / 0.35);
   --chip: #eceef1;
   --warn-bg: #fff6dc;
   --warn-text: #5c4300;
@@ -64,8 +75,12 @@
     --text: light-dark(#1d1f22, #e9eaec);
     --muted: light-dark(#5a5f66, #b5bac1);
     --line: light-dark(#d5d8dd, #3a3f46);
-    --accent: light-dark(#1a5fd0, #8ab4ff);
+    --control-border: light-dark(#767b82, #8a9099);
+    --field: light-dark(#ffffff, #202328);
+    --accent: light-dark(#be185d, #f9a8d4);
     --on-accent: light-dark(#ffffff, #10141a);
+    --focus: light-dark(#1a5fd0, #8ab4ff);
+    --stuck-shadow: light-dark(rgb(0 0 0 / 0.35), rgb(0 0 0 / 0.95));
     --chip: light-dark(#eceef1, #2a2e34);
     --warn-bg: light-dark(#fff6dc, #2e2610);
     --warn-text: light-dark(#5c4300, #f0d68a);
@@ -114,12 +129,127 @@ h2 {
   font-size: 1.2rem;
 }
 
+/* Links (docs/07 §1), except the name of the bar, the skip links and the
+   links that look like buttons: a thin, soft underline at rest. On hover or focus a
+   bar of the link's color grows under the text from the left, as with a
+   marker, and the text deepens; on leaving, the bar is gathered to the
+   right. A link laid out as a box (with an icon, or a button that looks like
+   a link) draws it under its `.link-text` only. */
 a {
   color: var(--accent);
+  transition: color 0.2s;
+}
+
+a:not(.button, .brand, .skip-link),
+.link-text {
+  --soft-line: color-mix(in srgb, currentColor 40%, transparent);
+  text-decoration: none;
+  background:
+    linear-gradient(currentColor, currentColor) 100% 100% / 0 2px no-repeat,
+    linear-gradient(var(--soft-line), var(--soft-line)) 0 100% / 100% 1px
+      no-repeat;
+  padding-bottom: 0.1em;
+  transition:
+    background-size 0.3s var(--ease),
+    color 0.2s;
+}
+
+a:has(> .link-text),
+.languages a {
+  background: none;
+  padding-bottom: 0;
+}
+
+:is(
+  a:not(.button, .brand, .skip-link):focus-visible,
+  :focus-visible > .link-text
+) {
+  background-position:
+    0 100%,
+    0 100%;
+  background-size:
+    100% 2px,
+    100% 1px;
+}
+
+a:not(.button, .brand, .skip-link):focus-visible,
+.link-button:focus-visible {
+  color: color-mix(in srgb, var(--accent) 75%, var(--text));
+}
+
+@media (hover: hover) {
+  a:not(.button, .brand, .skip-link):hover,
+  :hover > .link-text {
+    background-position:
+      0 100%,
+      0 100%;
+    background-size:
+      100% 2px,
+      100% 1px;
+  }
+
+  a:not(.button, .brand, .skip-link):hover,
+  .link-button:hover {
+    color: color-mix(in srgb, var(--accent) 75%, var(--text));
+  }
+}
+
+/* The links laid out as boxes sink a little when pressed, as the buttons. */
+:is(.external-link, .footer-inner a, .link-button) {
+  transition:
+    color 0.2s,
+    scale 0.12s var(--ease);
+}
+
+:is(.external-link, .footer-inner a, .link-button):active {
+  scale: 0.96;
+}
+
+/* «See more» and «See less»: their sign spins half a turn on hover. */
+.link-button .icon {
+  width: 1em;
+  height: 1em;
+  transition: rotate 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (hover: hover) {
+  .link-button:hover .icon {
+    rotate: 180deg;
+  }
+}
+
+/* The arrow of an external link pulls up and to the right, and comes back
+   with a small bounce; the box of the icon stays. */
+.icon-arrow {
+  transition: translate 0.35s cubic-bezier(0.3, 1.8, 0.5, 1);
+}
+
+/* The arrow leaves the icon's box: it must not be cut. */
+.external-link .icon {
+  overflow: visible;
+}
+
+.external-link:focus-visible .icon-arrow {
+  translate: 3px -3px;
+}
+
+@media (hover: hover) {
+  .external-link:hover .icon-arrow {
+    translate: 3px -3px;
+  }
+}
+
+/* In forced colors, the system's own underline. */
+@media (forced-colors: active) {
+  a,
+  .link-text {
+    background: none;
+    text-decoration: underline;
+  }
 }
 
 :focus-visible {
-  outline: 3px solid var(--accent);
+  outline: 3px solid var(--focus);
   outline-offset: 2px;
 }
 
@@ -175,6 +305,38 @@ a {
   }
 }
 
+/* The main actions (docs/07 §1): filled with the accent, with the radius of
+   every control. They brighten on hover and sink when pressed; an arrow in
+   them leans the way it points. */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.button .icon {
+  transition: translate 0.3s cubic-bezier(0.3, 1.8, 0.5, 1);
+}
+
+.button:focus-visible .icon-arrow-left {
+  translate: -4px 0;
+}
+
+@media (hover: hover) {
+  .button:hover .icon-arrow-left {
+    translate: -4px 0;
+  }
+}
+
+/* A link that looks like a button, without the link's underline. */
+a.button {
+  display: inline-flex;
+  align-items: center;
+  color: var(--on-accent);
+  text-decoration: none;
+}
+
 .button {
   border: 0;
   padding: 0 1.1rem;
@@ -196,22 +358,24 @@ a {
 
 .link-button {
   min-height: var(--control);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
   border: 0;
   padding: 0;
   background: none;
   color: var(--accent);
   font: inherit;
-  text-decoration: underline;
   cursor: pointer;
   justify-self: start;
 }
 
 select {
   min-height: var(--control);
-  border: 1px solid var(--line);
+  border: 1px solid var(--control-border);
   border-radius: var(--radius);
   padding: 0 0.75rem;
-  background: var(--surface);
+  background: var(--field);
   color: var(--text);
   font: inherit;
 }
@@ -320,39 +484,36 @@ legend {
   color: var(--muted);
 }
 
-/* Native radios that look like segments, as in the wheel (docs/05 §6.3). */
-.segmented-options,
-.theme-options {
-  display: inline-flex;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  overflow: hidden;
-  background: var(--surface);
-}
-
-.segmented-options label,
-.theme-options label {
+/* Native radios that look like segments: the same control as the wheel's
+   (docs/05 §6.3), so that «Show», the theme and the wheel's model and light
+   look and move alike. The selected option is a pill inside the frame. */
+.segmented-options {
   position: relative;
+  isolation: isolate;
+  display: inline-grid;
+  grid-auto-columns: minmax(max-content, 1fr);
+  grid-auto-flow: column;
+  gap: 3px;
   min-height: var(--control);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 0.85rem;
+  padding: 3px;
+  border: 1px solid var(--control-border);
+  border-radius: var(--radius);
+  background: var(--field);
+}
+
+.segmented-options label {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  padding: 0 0.75rem;
+  border-radius: calc(var(--radius) - 3px);
   cursor: pointer;
+  text-align: center;
+  transition: color 0.2s;
 }
 
-.theme-options label {
-  min-width: var(--control);
-  padding: 0;
-}
-
-.segmented-options label + label,
-.theme-options label + label {
-  border-inline-start: 1px solid var(--line);
-}
-
-.segmented-options input,
-.theme-options input {
+.segmented-options input {
   position: absolute;
   inset: 0;
   opacity: 0;
@@ -360,39 +521,19 @@ legend {
   cursor: pointer;
 }
 
-/* The same look as the wheel's segments. */
-.segmented-options label:has(input:checked),
-.theme-options label:has(input:checked) {
+.segmented-options label:has(input:checked) {
   background: var(--text);
-  color: var(--surface);
+  color: var(--field);
   font-weight: 600;
 }
 
-/* Once measured (sliding-indicator.ts), the background of the checked
-   option is a single pill that slides to the new one, without the
-   separators. */
-.segmented-options,
-.theme-options {
-  position: relative;
-  isolation: isolate;
-}
-
-.segmented-options label,
-.theme-options label {
-  z-index: 1;
-  transition: color 0.2s;
-}
-
-:is(.segmented-options, .theme-options)[data-indicator] label {
-  border-inline-start-color: transparent;
-}
-
-:is(.segmented-options, .theme-options)[data-indicator]
-  label:has(input:checked) {
+/* Once measured (sliding-indicator.ts), the pill is a single element that
+   slides to the new option. */
+.segmented-options[data-indicator] label:has(input:checked) {
   background: none;
 }
 
-:is(.segmented-options, .theme-options)[data-indicator]::before {
+.segmented-options[data-indicator]::before {
   content: "";
   position: absolute;
   top: 0;
@@ -400,6 +541,7 @@ legend {
   width: var(--indicator-w);
   height: var(--indicator-h);
   translate: var(--indicator-x) var(--indicator-y);
+  border-radius: calc(var(--radius) - 3px);
   background: var(--text);
   transition:
     translate 0.28s var(--ease),
@@ -407,22 +549,189 @@ legend {
 }
 
 @media (forced-colors: active) {
-  :is(.segmented-options, .theme-options)[data-indicator]::before {
+  .segmented-options[data-indicator]::before {
     forced-color-adjust: none;
     background: Highlight;
   }
 
-  :is(.segmented-options, .theme-options)[data-indicator]
-    label:has(input:checked) {
+  .segmented-options[data-indicator] label:has(input:checked) {
     forced-color-adjust: none;
     color: HighlightText;
   }
 }
 
-.segmented-options label:has(input:focus-visible),
-.theme-options label:has(input:focus-visible) {
-  outline: 3px solid var(--accent);
-  outline-offset: -3px;
+.segmented-options label:has(input:focus-visible) {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+/* The theme: icons only, square, with their name in a tooltip under them
+   when hovered or focused (the name is also in the label, hidden). */
+.theme-options {
+  grid-auto-columns: calc(var(--control) - 8px);
+}
+
+.theme-options label {
+  padding: 0;
+}
+
+/* docs/07 §11: each icon makes its own gesture. On hover or focus, the sun
+   turns, the moon rocks and the monitor rises as if it switched on. When
+   picked, the rays of the sun come out one after another, the moon swings in
+   and the monitor bounces. Pressed, it sinks, as the buttons. */
+/* The icon turns on its own center; its parts, on the center of the
+   drawing. */
+.theme-options .icon {
+  transform-box: border-box;
+  transform-origin: 50% 50%;
+}
+
+.theme-options .icon * {
+  transform-box: view-box;
+  transform-origin: 12px 12px;
+}
+
+/* Moving, the icon would stack above the radio button: the clicks go
+   through it to the radio. */
+.theme-options .icon {
+  pointer-events: none;
+  transition:
+    rotate 0.6s var(--ease),
+    translate 0.3s var(--ease),
+    scale 0.12s var(--ease);
+}
+
+.theme-options label:active .icon {
+  scale: 0.85;
+}
+
+.theme-options label:has(input:focus-visible) .icon-sun {
+  rotate: 45deg;
+}
+
+.theme-options label:has(input:focus-visible) .icon-moon .moon-body {
+  animation: moon-rock 0.7s var(--ease);
+}
+
+.theme-options label:has(input:focus-visible) .icon-monitor {
+  translate: 0 -2px;
+}
+
+/* Only the options not picked yet invite with their gesture: the picked one
+   stays still, also when the theme's transition ends under the mouse (it
+   hides the hover while it lasts, and the hover would start again). */
+@media (hover: hover) {
+  .theme-options label:not(:has(input:checked)):hover .icon-sun {
+    rotate: 45deg;
+  }
+
+  .theme-options label:not(:has(input:checked)):hover .icon-moon .moon-body {
+    animation: moon-rock 0.7s var(--ease);
+  }
+
+  .theme-options label:not(:has(input:checked)):hover .icon-monitor {
+    translate: 0 -2px;
+  }
+}
+
+@keyframes moon-rock {
+  30% {
+    rotate: -22deg;
+  }
+
+  60% {
+    rotate: 10deg;
+  }
+
+  80% {
+    rotate: -4deg;
+  }
+}
+
+.theme-options [data-picked] .ray {
+  animation: ray-out 0.3s var(--ease) both;
+  /* A moment first, while the new theme starts to show around it. */
+  animation-delay: calc(80ms + var(--ray) * 30ms);
+}
+
+@keyframes ray-out {
+  from {
+    opacity: 0;
+    scale: 0.3;
+  }
+}
+
+.theme-options [data-picked] .icon-moon {
+  animation: moon-in 0.6s 80ms var(--ease) both;
+}
+
+/* A whole turn with a pop: unlike the small rocking of the hover. */
+@keyframes moon-in {
+  from {
+    rotate: -360deg;
+    scale: 0.5;
+  }
+
+  60% {
+    scale: 1.2;
+  }
+}
+
+/* The monitor switches on: its screen grows from a point and settles, as
+   an old tube screen; the stand stays. */
+.theme-options [data-picked] .icon-monitor .screen {
+  transform-origin: 12px 10px;
+  animation: monitor-on 0.5s 80ms var(--ease) both;
+}
+
+@keyframes monitor-on {
+  from {
+    opacity: 0;
+    scale: 0.2 0.05;
+  }
+
+  45% {
+    opacity: 1;
+    scale: 1.15 0.15;
+  }
+
+  75% {
+    scale: 1.05 1.1;
+  }
+}
+
+.theme-options label::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: calc(100% + 0.6rem);
+  left: 50%;
+  z-index: 2;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.3rem;
+  background: var(--text);
+  color: var(--bg);
+  font-size: 0.75rem;
+  font-weight: 400;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  translate: -50% -0.25rem;
+  transition:
+    opacity 0.15s,
+    translate 0.15s var(--ease);
+}
+
+@media (hover: hover) {
+  .theme-options label:hover::after {
+    opacity: 1;
+    translate: -50% 0;
+    transition-delay: 0.3s;
+  }
+}
+
+.theme-options label:has(input:focus-visible)::after {
+  opacity: 1;
+  translate: -50% 0;
 }
 
 /* ---------- Navigation bar (docs/07 §11) ---------- */
@@ -433,6 +742,31 @@ legend {
   z-index: 10;
   background: var(--surface);
   border-bottom: 1px solid var(--line);
+}
+
+/* docs/07 §11: where the browser can, the bar is slightly see-through and
+   blurs what scrolls under it. The glass is a layer behind its content, not
+   the bar itself: a filter on the bar would trap the veil of the menu (fixed)
+   inside it. It reaches 2px above the bar: with a scaled screen the browser
+   can place the bar a fraction of a pixel below the top. */
+.navbar::before {
+  content: "";
+  position: absolute;
+  inset: -2px 0 0;
+  z-index: -1;
+  background: var(--surface);
+}
+
+@supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
+  .navbar {
+    background: none;
+  }
+
+  .navbar::before {
+    background: color-mix(in srgb, var(--surface) 78%, transparent);
+    -webkit-backdrop-filter: blur(14px) saturate(1.4);
+    backdrop-filter: blur(14px) saturate(1.4);
+  }
 }
 
 .navbar-inner {
@@ -448,6 +782,9 @@ legend {
 }
 
 .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
   margin-inline-end: auto;
   color: var(--text);
   font-weight: 700;
@@ -455,19 +792,70 @@ legend {
   text-decoration: none;
 }
 
-.nav-menu {
-  display: none;
+/* The name changes color on hover or focus, as the links, but without
+   their underline. */
+.brand:focus-visible {
+  color: color-mix(in srgb, var(--accent) 75%, var(--text));
 }
 
-.nav-menu[data-open] {
+@media (hover: hover) {
+  .brand:hover {
+    color: color-mix(in srgb, var(--accent) 75%, var(--text));
+  }
+}
+
+.brand-icon {
+  flex: none;
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+/* Narrow screens: the menu drops from the bar over a dark veil that covers
+   the page, as a dialog does; a press on the veil closes it. */
+.nav-backdrop {
+  position: fixed;
+  inset: var(--navbar-height) 0 0;
+  background: rgb(0 0 0 / 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.25s var(--ease),
+    visibility 0s 0.25s;
+}
+
+.nav-backdrop[data-open] {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.25s var(--ease);
+}
+
+.nav-menu {
   position: absolute;
   inset: 100% 0 auto;
   display: grid;
   gap: var(--gap);
-  padding: var(--gap);
+  padding: var(--gap) max(1rem, env(safe-area-inset-right)) 1.25rem
+    max(1rem, env(safe-area-inset-left));
   background: var(--surface);
   border-bottom: 1px solid var(--line);
-  box-shadow: 0 0.75rem 1.5rem rgb(0 0 0 / 0.15);
+  border-radius: 0 0 var(--radius) var(--radius);
+  box-shadow: 0 0.75rem 1.5rem rgb(0 0 0 / 0.2);
+  opacity: 0;
+  translate: 0 -0.5rem;
+  visibility: hidden;
+  transition:
+    opacity 0.2s ease-in,
+    translate 0.2s ease-in,
+    visibility 0s 0.2s;
+}
+
+.nav-menu[data-open] {
+  opacity: 1;
+  translate: 0 0;
+  visibility: visible;
+  transition:
+    opacity 0.25s var(--ease),
+    translate 0.25s var(--ease);
 }
 
 .nav-item {
@@ -493,7 +881,8 @@ legend {
 }
 
 @media (min-width: 48rem) {
-  .burger {
+  .burger,
+  .nav-backdrop {
     display: none;
   }
 
@@ -501,12 +890,71 @@ legend {
   .nav-menu[data-open] {
     position: static;
     display: flex;
-    gap: 1.25rem;
+    gap: 0.75rem;
     padding: 0;
     border: 0;
+    border-radius: 0;
     box-shadow: none;
     background: none;
+    opacity: 1;
+    translate: none;
+    visibility: visible;
+    transition: none;
   }
+
+  /* In the bar, the controls without their visible names (they keep them
+     for screen readers). */
+  .nav-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+}
+
+/* The links that skip the bar (docs/07 §11): the first stop of the
+   keyboard, seen only when focused. */
+.skip-links {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 20;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.skip-link {
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius);
+  background: var(--accent);
+  color: var(--on-accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* Over the links' own colors on focus and hover. */
+.skip-link:is(:focus-visible, :hover) {
+  color: var(--on-accent);
+}
+
+.skip-link:not(:focus) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.main:focus {
+  outline: none;
+}
+
+/* Where a skip link lands, under the bar. */
+[data-skip-target] {
+  scroll-margin-top: calc(var(--navbar-height) + var(--gap));
 }
 
 /* ---------- Page ---------- */
@@ -520,24 +968,180 @@ legend {
   gap: var(--gap);
 }
 
-.install-banner {
-  display: flex;
-  flex-wrap: wrap;
+/* The install banner (docs/07 §8): the app's icon, what is installed and
+   why, the action, and the close in the top corner. On narrow screens the
+   action goes under the text. It opens growing from nothing, so that the
+   page below moves smoothly. */
+/* The banners above the page (the install one and the new version one):
+   the same frame, the same padding, an icon on the left and the action on
+   the right. */
+.page-banner {
+  display: grid;
   align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem 1rem;
-  padding: 0.5rem 0.5rem 0.5rem 1rem;
+  gap: 0.5rem 0.75rem;
+  padding: 0.75rem;
+  border: 1px solid var(--line);
   border-radius: var(--radius);
-  background: var(--chip);
+  background: var(--surface);
+  overflow: clip;
+  transition:
+    height 0.35s var(--ease),
+    padding-block 0.35s var(--ease),
+    opacity 0.3s var(--ease);
 }
 
-.install-banner p {
+/* The new version arrives after the page: it opens growing from nothing. */
+@starting-style {
+  .update-banner {
+    height: 0;
+    padding-block: 0;
+    opacity: 0;
+  }
+}
+
+.page-banner p {
   margin: 0;
 }
 
-.install-actions {
-  display: flex;
-  gap: 0.25rem;
+/* docs/07 §8: always in the HTML, and shown from the first paint where the
+   inline script marked `data-install`, so that it never moves the page. */
+.install-banner {
+  display: none;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-areas:
+    "icon text close"
+    ". action action";
+}
+
+:root[data-install] .install-banner {
+  display: grid;
+}
+
+:root[data-install="ios"] .install-prompt-only,
+:root:not([data-install="ios"]) .install-ios-only {
+  display: none;
+}
+
+/* A new version: laid out as the install banner, without its close; its
+   icon turns when the action is hovered. */
+.update-banner {
+  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-areas:
+    "icon text"
+    ". action";
+}
+
+.update-banner > .icon {
+  grid-area: icon;
+}
+
+.update-banner > p {
+  grid-area: text;
+}
+
+.update-banner > .button {
+  grid-area: action;
+  justify-self: start;
+}
+
+@media (min-width: 40rem) {
+  .update-banner {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-areas: "icon text action";
+  }
+}
+
+.update-banner > .icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  /* As wide as the install banner's icon, so that the texts line up. */
+  margin-inline: 0.625rem;
+  color: var(--accent);
+  transition: rotate 0.6s var(--ease);
+}
+
+@media (hover: hover) {
+  .update-banner:has(.button:hover) > .icon {
+    rotate: 180deg;
+  }
+}
+
+.update-banner p {
+  font-weight: 700;
+}
+
+@media (min-width: 40rem) {
+  .install-banner {
+    grid-template-columns: auto minmax(0, 1fr) auto auto;
+    grid-template-areas: "icon text action close";
+  }
+}
+
+/* Safari on iOS: only instructions, without the action's row. */
+:root[data-install="ios"] .install-banner {
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-areas: "icon text close";
+}
+
+.install-icon {
+  grid-area: icon;
+  width: 2.75rem;
+  height: 2.75rem;
+  align-self: start;
+}
+
+.install-text {
+  grid-area: text;
+  display: grid;
+  gap: 0.1rem;
+}
+
+.install-text p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.install-text .install-title {
+  color: var(--text);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.install-action {
+  grid-area: action;
+  justify-self: start;
+}
+
+@media (min-width: 40rem) {
+  .install-action {
+    justify-self: end;
+  }
+}
+
+/* The close: only the icon, of the height of the action, in the corner. */
+.install-close {
+  grid-area: close;
+  align-self: start;
+  width: var(--control);
+  margin: -0.25rem -0.25rem 0 0;
+  border: 0;
+  background: none;
+  color: var(--muted);
+}
+
+@media (min-width: 40rem) {
+  .install-close {
+    align-self: center;
+    margin: 0;
+  }
+}
+
+@media (hover: hover) {
+  .install-close:hover {
+    background: var(--chip);
+    color: var(--text);
+  }
 }
 
 .notice {
@@ -554,14 +1158,33 @@ legend {
   margin: 0;
 }
 
+/* One line; the explanation opens below it. */
 .notice-approx {
-  flex-wrap: nowrap;
-  align-items: baseline;
+  display: block;
+  padding-block: 0;
   background: var(--warn-bg);
   color: var(--warn-text);
   border-inline-start: 3px solid var(--warn-text);
   border-radius: 0 var(--radius) var(--radius) 0;
   font-size: 0.9rem;
+}
+
+/* The information icon first, and the arrow of the disclosure at the end. */
+.notice-approx summary {
+  min-height: 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+}
+
+.notice-approx summary::before {
+  order: 1;
+  margin-inline: auto 0;
+}
+
+.notice-approx p {
+  padding-bottom: 0.6rem;
 }
 
 .notice-approx a {
@@ -576,10 +1199,6 @@ legend {
 .notice-error pre {
   white-space: pre-wrap;
   font-size: 0.8rem;
-}
-
-.notice-update {
-  background: var(--chip);
 }
 
 /* ---------- Wheel and results (docs/07 §1) ---------- */
@@ -607,6 +1226,11 @@ legend {
   min-width: 0;
 }
 
+/* The wheel draws its focus with the page's (docs/05 §6.6). */
+.wheel-host .cw-root {
+  --cw-focus: var(--focus);
+}
+
 /* Keeps the wheel's space before it is created, so nothing jumps. */
 .wheel-host:empty {
   aspect-ratio: 3 / 4;
@@ -629,6 +1253,16 @@ legend {
   .wheel-column {
     position: sticky;
     top: calc(var(--navbar-height) + var(--gap));
+  }
+
+  /* Fixed, the whole wheel fits on the screen: the circle gives up what
+     the controls under it need (about 20rem). */
+  .wheel-column .cw-root {
+    --cw-wheel-max-size: clamp(
+      14rem,
+      calc(100dvh - var(--navbar-height) - 2 * var(--gap) - 20rem),
+      26rem
+    );
   }
 }
 
@@ -676,8 +1310,25 @@ legend {
 }
 
 .filters-summary {
+  display: inline-block;
   font-size: 0.85rem;
   color: var(--muted);
+}
+
+/* A filter changed it: a small jump in the accent. */
+.filters-summary.changed {
+  animation: summary-pop 0.5s var(--ease);
+}
+
+@keyframes summary-pop {
+  0% {
+    color: var(--accent);
+  }
+
+  30% {
+    translate: 0 -3px;
+    color: var(--accent);
+  }
 }
 
 .filters-body {
@@ -700,23 +1351,157 @@ legend {
   cursor: pointer;
 }
 
+/* docs/07 §1: own checkboxes. Checked, the box fills and then the tick
+   (Lucide "check", see the notice in icons.tsx) is drawn from left to
+   right, as with a pen. Unchecked, the tick is erased the other way first,
+   and then the box empties. Both with a small bounce on pressing. */
 .checks input {
+  appearance: none;
+  position: relative;
+  flex: none;
+  display: grid;
+  place-items: center;
   width: 1.25rem;
   height: 1.25rem;
   margin: 0;
+  border: 2px solid var(--control-border);
+  border-radius: 0.3rem;
+  background: var(--field);
+  cursor: pointer;
+  transition:
+    background-color 0.2s 0.16s var(--ease),
+    border-color 0.2s 0.16s var(--ease),
+    scale 0.4s cubic-bezier(0.3, 2.6, 0.5, 1);
 }
 
-/* The color tabs stay under the navigation bar while scrolling. */
-.tabs {
+.checks input::before {
+  content: "";
+  width: 0.85rem;
+  height: 0.85rem;
+  background: var(--on-accent);
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 0.16s ease-in;
+}
+
+.checks input:checked {
+  border-color: var(--accent);
+  background: var(--accent);
+  transition:
+    background-color 0.15s var(--ease),
+    border-color 0.15s var(--ease),
+    scale 0.4s cubic-bezier(0.3, 2.6, 0.5, 1);
+}
+
+.checks input:checked::before {
+  clip-path: inset(0 0 0 0);
+  transition: clip-path 0.28s 0.1s var(--ease);
+}
+
+/* The bounce: the box sinks while pressed (mouse, finger or Space) and
+   springs back past its size when released. */
+.checks label:active input {
+  scale: 0.8;
+  transition-property: background-color, border-color, scale;
+  transition-duration: 0.2s, 0.2s, 0.1s;
+}
+
+@media (hover: hover) {
+  .checks label:hover input:not(:checked) {
+    border-color: var(--accent);
+  }
+}
+
+@media (forced-colors: active) {
+  .checks input {
+    appearance: auto;
+  }
+
+  .checks input::before {
+    display: none;
+  }
+}
+
+/* The color tabs stay under the navigation bar while scrolling, with the
+   fades that say there are more on a side. */
+.tabs-bar {
   position: sticky;
   top: var(--navbar-height);
   z-index: 5;
+  /* No wider than its column: the tabs scroll inside it. */
+  min-width: 0;
+  background: var(--bg);
+  /* Fixed under the bar, they lift from what scrolls under them. */
+  transition: box-shadow 0.25s var(--ease);
+}
+
+.tabs {
+  position: relative;
   display: flex;
   gap: 0.4rem;
   overflow-x: auto;
   padding: 0.4rem 0;
-  background: var(--bg);
   scrollbar-width: thin;
+}
+
+/* A thin line under them, seen in both themes, and a shadow, deeper in the
+   dark theme, where a soft one does not show. */
+.tabs-bar[data-stuck] {
+  box-shadow:
+    0 1px 0 var(--line),
+    0 0.9rem 1.4rem -0.5rem var(--stuck-shadow);
+}
+
+/* Tabs hidden on a side: a fade of the background with an arrow, which
+   appears while there are, and scrolls when pressed. */
+.tabs-more {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  width: 3rem;
+  display: grid;
+  align-items: center;
+  padding: 0;
+  border: 0;
+  color: var(--text);
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s var(--ease);
+}
+
+.tabs-more-start {
+  left: 0;
+  justify-items: start;
+  background: linear-gradient(to right, var(--bg) 35%, transparent);
+}
+
+.tabs-more-end {
+  right: 0;
+  justify-items: end;
+  background: linear-gradient(to left, var(--bg) 35%, transparent);
+}
+
+.tabs-bar[data-more-start] .tabs-more-start,
+.tabs-bar[data-more-end] .tabs-more-end {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.tabs-more .icon {
+  transition: translate 0.3s cubic-bezier(0.3, 1.8, 0.5, 1);
+}
+
+@media (hover: hover) {
+  .tabs-more-start:hover .icon {
+    translate: -3px 0;
+  }
+
+  .tabs-more-end:hover .icon {
+    translate: 3px 0;
+  }
 }
 
 .tabs [role="tab"] {
@@ -744,7 +1529,9 @@ legend {
 }
 
 .tabs [role="tab"] .swatch {
-  transition: transform 0.3s var(--ease);
+  transition:
+    transform 0.3s var(--ease),
+    background-color 0.25s var(--ease);
 }
 
 .tabs [role="tab"][aria-selected="true"] .swatch {
@@ -771,6 +1558,18 @@ legend {
   transition:
     translate 0.3s var(--ease),
     width 0.3s var(--ease);
+}
+
+/* docs/07 §1: the colors of the wheel blend into the new ones after a
+   change, instead of jumping; while the wheel is dragged they follow it at
+   once. */
+.swatch,
+.split > span:first-child {
+  transition: background-color 0.25s var(--ease);
+}
+
+.results[data-dragging] :is(.swatch, .split > span:first-child) {
+  transition: none;
 }
 
 .swatch {
@@ -877,10 +1676,18 @@ legend {
 
 /* Each row reaches a little beyond the text on both sides, so that the hover
    band and the separators have the same width and some air. */
+/* The name takes the whole width, and the label goes beside the chips: in
+a column of its own it squeezed the name, even on wide screens with two
+brands per row. */
 .paint {
   display: grid;
   grid-template-columns: 2.75rem minmax(0, 1fr) auto;
-  gap: 0.15rem 0.75rem;
+  grid-template-areas:
+    "split name name"
+    "split range range"
+    "split chips quality"
+    ". details details";
+  gap: 0 0.75rem;
   align-items: center;
   margin-inline: -0.5rem;
   padding: 0.5rem;
@@ -929,22 +1736,28 @@ legend {
   border-top: 0;
 }
 
-.paint-main {
-  display: grid;
-  min-width: 0;
+.paint > .split {
+  grid-area: split;
+  align-self: start;
 }
 
 .paint-name {
+  grid-area: name;
+  min-width: 0;
   font-weight: 600;
   overflow-wrap: anywhere;
 }
 
 .paint-range {
+  grid-area: range;
+  min-width: 0;
   font-size: 0.8rem;
   color: var(--muted);
 }
 
 .chips {
+  grid-area: chips;
+  min-width: 0;
   display: flex;
   flex-wrap: wrap;
   gap: 0.25rem;
@@ -964,12 +1777,50 @@ legend {
 }
 
 .paint-quality {
+  grid-area: quality;
   justify-self: end;
+  align-self: end;
   padding: 0.1rem 0.6rem;
   border-radius: 999px;
   font-size: 0.8rem;
   font-weight: 600;
   text-align: center;
+  white-space: nowrap;
+}
+
+/* The bar of closeness (docs/07 §2): along the bottom of the label, as long
+   as the paint is close; it grows when the row appears and follows a change. */
+.paint-quality {
+  position: relative;
+  overflow: hidden;
+}
+
+.paint-quality::after {
+  content: "";
+  position: absolute;
+  inset-inline-start: 0;
+  bottom: 0;
+  width: calc(var(--closeness, 0) * 100%);
+  height: 3px;
+  background: currentColor;
+  opacity: 0.45;
+  animation: closeness-grow 0.6s 0.1s var(--ease) both;
+  transition: width 0.5s var(--ease);
+}
+
+@keyframes closeness-grow {
+  from {
+    width: 0;
+  }
+}
+
+/* How far, beside the label: thinner, with digits of the same width. */
+.paint-delta {
+  margin-inline-start: 0.45em;
+  padding-inline-start: 0.45em;
+  border-inline-start: 1px solid currentColor;
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
 }
 
 .paint-quality[data-quality="near-identical"] {
@@ -993,7 +1844,7 @@ legend {
 }
 
 .paint-details {
-  grid-column: 2 / -1;
+  grid-area: details;
   font-size: 0.85rem;
 }
 
@@ -1014,6 +1865,23 @@ legend {
 
 .paint-details dt {
   color: var(--muted);
+}
+
+/* Opened, its facts come in one after another, as the rows. */
+.paint-details[open] :is(dt, dd) {
+  animation: row-enter 0.3s var(--ease) both;
+}
+
+.paint-details[open] :is(dt, dd):nth-of-type(2) {
+  animation-delay: 40ms;
+}
+
+.paint-details[open] :is(dt, dd):nth-of-type(3) {
+  animation-delay: 80ms;
+}
+
+.paint-details[open] :is(dt, dd):nth-of-type(4) {
+  animation-delay: 120ms;
 }
 
 .paint-details dd {
@@ -1097,10 +1965,161 @@ legend {
   color: var(--muted);
 }
 
-@media (min-width: 48rem) {
+/* Nine harmonies: one column, or three of three, so that none is left alone
+   in the last row (two or four columns would leave one). */
+@media (min-width: 60rem) {
   .harmonies dl {
-    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1rem 1.5rem;
+  }
+}
+
+/* ---------- Page not found (docs/07 §12) ---------- */
+
+/* A color wheel with one hue missing, beside the text; one above the other
+   on narrow screens. On entering, the hues pop in one after another, and a
+   needle sweeps the ring until it stops at the gap, where it keeps looking. */
+.not-found {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  gap: 1.5rem 3rem;
+  padding-block: 2rem 3rem;
+  text-align: center;
+}
+
+@media (min-width: 48rem) {
+  .not-found {
+    grid-template-columns: auto minmax(0, 32rem);
+    justify-content: center;
+    justify-items: start;
+    text-align: start;
+    padding-block: 4rem;
+  }
+}
+
+.nf-text {
+  display: grid;
+  gap: 1rem;
+  justify-items: inherit;
+}
+
+.nf-text p {
+  margin: 0;
+}
+
+.nf-text h1 {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+}
+
+.nf-wheel {
+  position: relative;
+  width: min(16rem, 70vw);
+  aspect-ratio: 1;
+}
+
+.nf-wheel svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.nf-segment,
+.nf-missing,
+.nf-needle {
+  transform-box: view-box;
+  transform-origin: 50px 50px;
+}
+
+.nf-segment {
+  animation: nf-pop 0.45s var(--ease) both;
+  animation-delay: calc(var(--i) * 45ms);
+}
+
+@keyframes nf-pop {
+  from {
+    opacity: 0;
+    scale: 0.6;
+  }
+}
+
+/* The missing hue: only its outline, dashed, and breathing. */
+.nf-missing {
+  fill: none;
+  stroke: var(--muted);
+  stroke-width: 0.8;
+  stroke-dasharray: 2 1.6;
+  animation:
+    nf-pop 0.45s var(--ease) both,
+    nf-breathe 2.4s 1.6s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 45ms), 2.4s;
+}
+
+@keyframes nf-breathe {
+  50% {
+    opacity: 0.35;
+  }
+}
+
+/* The needle, in the color of the text so that it shows in both themes. It
+   sweeps from the top to the gap (135°), overshoots a little, and then keeps
+   looking around it. */
+.nf-needle {
+  stroke: var(--text);
+  stroke-width: 2;
+  stroke-linecap: round;
+  fill: var(--bg);
+  rotate: 135deg;
+  animation:
+    nf-search 1.8s 0.5s var(--ease) both,
+    nf-look 3s 2.3s ease-in-out infinite;
+}
+
+@keyframes nf-search {
+  from {
+    rotate: -90deg;
+  }
+
+  70% {
+    rotate: 150deg;
+  }
+
+  85% {
+    rotate: 128deg;
+  }
+}
+
+@keyframes nf-look {
+  25% {
+    rotate: 129deg;
+  }
+
+  75% {
+    rotate: 141deg;
+  }
+}
+
+.nf-code {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: clamp(2.25rem, 9vw, 3.25rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+  animation: nf-pop 0.5s 0.3s var(--ease) both;
+}
+
+@media (forced-colors: active) {
+  .nf-segment {
+    fill: CanvasText;
+  }
+
+  .nf-missing {
+    stroke: CanvasText;
   }
 }
 
@@ -1109,7 +2128,6 @@ legend {
 .credits {
   display: grid;
   gap: 1.25rem;
-  max-width: 60rem;
 }
 
 .credits section {
@@ -1150,21 +2168,59 @@ legend {
   color: var(--muted);
 }
 
+/* A narrow card: each fact under its name; a wide one: in two columns. */
+.card {
+  container-type: inline-size;
+}
+
 .facts {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: 0.2rem 1rem;
+  grid-template-columns: minmax(0, 1fr);
   margin: 0;
   font-size: 0.9rem;
 }
 
 .facts dt {
   color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.facts dt:not(:first-child) {
+  margin-top: 0.4rem;
 }
 
 .facts dd {
   margin: 0;
+  min-width: 0;
   overflow-wrap: anywhere;
+}
+
+@container (min-width: 30rem) {
+  .facts {
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 0.2rem 1rem;
+  }
+
+  .facts dt {
+    font-size: inherit;
+  }
+
+  .facts dt:not(:first-child) {
+    margin-top: 0;
+  }
+}
+
+/* A link to another site, with its icon in front. */
+.external-link {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35rem;
+}
+
+.external-link .icon {
+  width: 1em;
+  height: 1em;
+  align-self: center;
 }
 
 .license pre {

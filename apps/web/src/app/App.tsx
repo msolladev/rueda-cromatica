@@ -4,7 +4,7 @@ import { flushSync } from "react-dom";
 import { Credits } from "../features/credits/Credits.tsx";
 import { Home } from "../features/matches/Home.tsx";
 import { InstallBanner } from "../features/pwa/InstallBanner.tsx";
-import { useInstall } from "../features/pwa/install.ts";
+import { useInstall, withdrawInstall } from "../features/pwa/install.ts";
 import { useServiceWorkerUpdate } from "../features/pwa/update.ts";
 import { revealTheme } from "../features/theme/reveal.ts";
 import { applyTheme } from "../features/theme/theme.ts";
@@ -16,7 +16,10 @@ import {
   type Locale,
 } from "../i18n/i18n.ts";
 import { Footer } from "./Footer.tsx";
+import { RefreshIcon } from "./icons.tsx";
 import { Navbar } from "./Navbar.tsx";
+import { NotFound } from "./NotFound.tsx";
+import { SkipLinks } from "./SkipLinks.tsx";
 import { fadeLinks, goTo } from "./page-transition.ts";
 import type { PageData } from "./page-data.ts";
 import { pathOf, withLocale, type Page } from "./pages.ts";
@@ -77,11 +80,12 @@ function LocalizedApp({
     goTo(pathOf(withLocale(page, next)));
   };
 
-  const shownInstall =
-    restored && !preferences.installDismissed ? installMode : "none";
-
   return (
     <>
+      <SkipLinks
+        kind={data.kind === "home" ? "home" : "content"}
+        messages={m}
+      />
       <Navbar
         locale={locale}
         homePath={pathOf({ kind: "home", locale })}
@@ -98,23 +102,25 @@ function LocalizedApp({
           });
         }}
       />
-      <main className="main">
+      <main className="main" id="content" data-skip-target="" tabIndex={-1}>
         <InstallBanner
-          mode={shownInstall}
           messages={m}
-          onInstall={() => void install()}
+          onInstall={install}
           onClose={() => {
+            withdrawInstall();
             dispatch({ type: "dismiss-install" });
           }}
         />
         {swUpdate.available && (
-          <div className="notice notice-update" role="status">
+          <div className="page-banner update-banner" role="status">
+            <RefreshIcon />
             <p>{m.pwa.updateAvailable}</p>
             <button type="button" className="button" onClick={swUpdate.update}>
               {m.pwa.update}
             </button>
           </div>
         )}
+
         {data.kind === "home" && (
           <Home
             locale={locale}
@@ -128,6 +134,9 @@ function LocalizedApp({
         )}
         {data.kind === "credits" && (
           <Credits data={data.credits} messages={m} locale={locale} />
+        )}
+        {data.kind === "not-found" && (
+          <NotFound homePath={pathOf({ kind: "home", locale })} messages={m} />
         )}
       </main>
       <Footer

@@ -32,6 +32,11 @@ function titleOf(page: Page): {
         title: `${m.meta.creditsTitle} · ${m.meta.siteName}`,
         description: m.meta.creditsDescription,
       };
+    case "not-found":
+      return {
+        title: `${m.notFound.title} · ${m.meta.siteName}`,
+        description: m.notFound.body,
+      };
   }
 }
 
@@ -42,6 +47,15 @@ function titleOf(page: Page): {
  */
 export function headOf(page: Page, origin: string): string {
   const { title, description } = titleOf(page);
+  // «Page not found» answers at any unknown address: no canonical URL, no
+  // alternates, and out of the search engines.
+  if (page.kind === "not-found") {
+    return [
+      `<title>${escapeHtml(title)}</title>`,
+      `<meta name="description" content="${escapeHtml(description)}" />`,
+      `<meta name="robots" content="noindex" />`,
+    ].join("\n    ");
+  }
   const url = (target: Page) => `${origin}${pathOf(target)}`;
   const lang = langOf(page);
   const siteName = messagesOf(lang).meta.siteName;
@@ -50,6 +64,17 @@ export function headOf(page: Page, origin: string): string {
       ? LOCALES.map((locale) => ({ kind: "home" as const, locale }))
       : LOCALES.map((locale) => ({ ...page, locale }));
   const image = `${origin}/icons/icon-512.png`;
+  // `/` sends the browser to its language before anything is painted
+  // (docs/07 §12): the page stays blank until then. Without JavaScript its
+  // links to the languages are seen.
+  const hidden =
+    page.kind === "languages"
+      ? [
+          // Shown anyway after 3 s, in case the app never runs.
+          `<style>body{visibility:hidden;animation:shown 0s 3s forwards}@keyframes shown{to{visibility:visible}}</style>`,
+          `<noscript><style>body{visibility:visible}</style></noscript>`,
+        ]
+      : [];
 
   const tags = [
     `<title>${escapeHtml(title)}</title>`,
@@ -67,8 +92,9 @@ export function headOf(page: Page, origin: string): string {
     `<meta property="og:url" content="${url(page)}" />`,
     `<meta property="og:image" content="${image}" />`,
     `<meta name="twitter:card" content="summary" />`,
+    ...hidden,
   ];
-  if (page.kind !== "credits") {
+  if (page.kind === "home" || page.kind === "languages") {
     const data = {
       "@context": "https://schema.org",
       "@type": "WebApplication",

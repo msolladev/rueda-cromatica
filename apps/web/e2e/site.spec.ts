@@ -32,7 +32,7 @@ test.describe("without JavaScript", () => {
   test("the home page shows the example with its paints", async ({ page }) => {
     await page.goto("/es/");
     await expect(page.getByRole("heading", { level: 1 })).toHaveText(
-      "Rueda cromática para pintar miniaturas",
+      "Encuentra la pintura de cada color de tu esquema",
     );
     // The six colors, one after the other, each with its paints.
     await expect(page.locator(".panel")).toHaveCount(6);
@@ -65,12 +65,56 @@ test("`/` goes to the detected language", async ({ browser }) => {
   await context.close();
 });
 
+test("`/` shows nothing before going to the language", async ({ page }) => {
+  // On every frame at `/`, whether the list of languages could be seen.
+  await page.addInitScript(() => {
+    if (location.pathname !== "/") return;
+    const check = () => {
+      const visible = getComputedStyle(document.body).visibility === "visible";
+      if (visible) sessionStorage.setItem("seen-root", "1");
+      requestAnimationFrame(check);
+    };
+    requestAnimationFrame(check);
+  });
+  await page.goto("/");
+  await expect(page).toHaveURL(/\/en\/$|\/[a-z-]+\/$/);
+  expect(await page.evaluate(() => sessionStorage.getItem("seen-root"))).toBe(
+    null,
+  );
+});
+
+test.describe("an unknown address", () => {
+  test("answers 404 with «Page not found» in the language of the address", async ({
+    page,
+  }) => {
+    for (const [path, title] of [
+      ["/es/inventada/", "Página no encontrada"],
+      ["/de/danksagungen/mehr", "Seite nicht gefunden"],
+      ["/no-existe", "Page not found"],
+    ] as const) {
+      const response = await page.goto(path);
+      expect(response?.status(), path).toBe(404);
+      await expect(page.getByRole("heading", { level: 1 })).toHaveText(title);
+      await expect(page.locator('meta[name="robots"]')).toHaveAttribute(
+        "content",
+        "noindex",
+      );
+    }
+  });
+
+  test("leads to the wheel in its language", async ({ page }) => {
+    await page.goto("/es/inventada/");
+    await page.getByRole("link", { name: "Ir a la rueda" }).click();
+    await expect(page).toHaveURL(/\/es\/$/);
+  });
+});
+
 test("the language selector goes to the same page in another language", async ({
   page,
 }) => {
-  await page.goto("/es/credits/");
+  await page.goto("/es/creditos/");
   await page.getByLabel("Idioma · Language").selectOption("de");
-  await expect(page).toHaveURL(/\/de\/credits\/$/);
+  await expect(page).toHaveURL(/\/de\/danksagungen\/$/);
   await expect(page.locator("html")).toHaveAttribute("lang", "de");
   // And `/` remembers it.
   await page.goto("/");
@@ -107,7 +151,7 @@ test.describe("the theme from the first paint", () => {
     });
     // Read before any script of the app runs: only the inline one has.
     await page.route("**/assets/*.js", (route) => route.abort());
-    await page.goto("/es/credits/");
+    await page.goto("/es/creditos/");
     await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
     await expect(page.locator('meta[name="color-scheme"]')).toHaveAttribute(
       "content",
@@ -145,7 +189,7 @@ test.describe("saved preferences", () => {
   test("the defaults of the prerendered page are never seen", async ({
     page,
   }) => {
-    await page.goto("/es/credits/");
+    await page.goto("/es/creditos/");
     // Once the page has saved its own (default) preferences, so that it does
     // not overwrite these.
     await page.waitForFunction(
@@ -182,17 +226,21 @@ test.describe("saved preferences", () => {
     await expect(
       page.locator(".panel:not([hidden]) .brand-heading"),
     ).toHaveCount(3);
-    const seen = await page.evaluate(
-      () => (window as unknown as { seen: string[] }).seen,
-    );
-    expect(seen.length).toBeGreaterThan(0);
+    const seenFrames = () =>
+      page.evaluate(() => (window as unknown as { seen: string[] }).seen);
+    // Firefox slows down the frames of a window in the background (several
+    // tests run at once): wait for one painted frame before looking.
+    await expect
+      .poll(async () => (await seenFrames()).length)
+      .toBeGreaterThan(0);
+    const seen = await seenFrames();
     expect(seen.filter((frame) => frame !== "2 tabs")).toEqual([]);
   });
 
   test("without the app, the wheel and the results are hidden for 3 s at most", async ({
     page,
   }) => {
-    await page.goto("/es/credits/");
+    await page.goto("/es/creditos/");
     // Once the page has saved its own (default) preferences, so that it does
     // not overwrite these.
     await page.waitForFunction(
@@ -245,8 +293,8 @@ test("moving between pages fades the content out and the new page in, without mo
     };
     requestAnimationFrame(tick);
   });
-  await page.locator('footer a[href="/es/credits/"]').click();
-  await expect(page).toHaveURL(/\/es\/credits\/$/);
+  await page.locator('footer a[href="/es/creditos/"]').click();
+  await expect(page).toHaveURL(/\/es\/creditos\/$/);
   await page.waitForTimeout(600);
   const seen = await page.evaluate(
     () => (window as unknown as { seen: string[] }).seen,
@@ -260,4 +308,70 @@ test("moving between pages fades the content out and the new page in, without mo
   await page.goBack();
   await expect(page).toHaveURL(/\/es\/$/);
   await expect(page.locator(".main")).toHaveCSS("opacity", "1");
+});
+
+test("the install banner arrives with the page where the browser installs apps, and moves nothing", async ({
+  page,
+  browserName,
+}) => {
+  // Where the heading was on the first paint, before the app runs.
+  await page.addInitScript(() => {
+    addEventListener("DOMContentLoaded", () => {
+      const heading = document.querySelector("h1");
+      (window as unknown as { firstTop?: number | undefined }).firstTop =
+        heading?.getBoundingClientRect().top;
+    });
+  });
+  await page.goto("/es/");
+  await expect(page.locator(".panel:not([hidden]) .paint")).toHaveCount(12);
+  const banner = page.locator(".install-banner");
+  // Chromium installs web apps; Firefox on the desktop does not.
+  if (browserName === "chromium") await expect(banner).toBeVisible();
+  else await expect(banner).toBeHidden();
+  const firstTop = await page.evaluate(
+    () => (window as unknown as { firstTop?: number }).firstTop,
+  );
+  const top = await page
+    .locator("h1")
+    .evaluate((heading) => heading.getBoundingClientRect().top);
+  expect(top).toBe(firstTop);
+});
+
+test("no page is wider than a phone's screen", async ({ page }) => {
+  await page.setViewportSize({ width: 360, height: 740 });
+  for (const path of ["/es/", "/es/creditos/", "/es/no-existe/"]) {
+    await page.goto(path);
+    await page.waitForLoadState("networkidle");
+    expect(
+      await page.evaluate(() => document.documentElement.scrollWidth),
+      path,
+    ).toBe(360);
+  }
+});
+
+test("the tabs say on which side there are more, and go there when the arrow is pressed", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 360, height: 740 });
+  await page.goto("/es/");
+  await expect(page.locator(".panel:not([hidden]) .paint")).toHaveCount(12);
+  const bar = page.locator(".tabs-bar");
+  const start = page.locator(".tabs-more-start");
+  const end = page.locator(".tabs-more-end");
+  await expect(bar).not.toHaveAttribute("data-more-start");
+  await expect(bar).toHaveAttribute("data-more-end");
+  await end.click();
+  await expect(bar).toHaveAttribute("data-more-start");
+  await page.locator(".tabs").evaluate((tabs) => {
+    tabs.scrollLeft = tabs.scrollWidth;
+  });
+  await expect(bar).not.toHaveAttribute("data-more-end");
+  await start.click();
+  await page.locator(".tabs").evaluate((tabs) => {
+    tabs.scrollLeft = 0;
+  });
+  await expect(bar).not.toHaveAttribute("data-more-start");
+  // On a wide screen every tab fits: no fade.
+  await page.setViewportSize({ width: 1280, height: 800 });
+  await expect(bar).not.toHaveAttribute("data-more-end");
 });
