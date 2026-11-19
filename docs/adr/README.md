@@ -4,32 +4,33 @@ Cada fichero recoge una decisión relevante: su contexto, la decisión tomada, l
 
 ## Índice
 
-| ADR                                            | Decisión                                                             | Estado                                    |
-| ---------------------------------------------- | -------------------------------------------------------------------- | ----------------------------------------- |
-| [0001](0001-identificadores-slug-congelado.md) | Identificadores de pintura legibles y congelados                     | aceptada; aplazada en parte por ADR-0019  |
-| [0002](0002-validacion-catalogo-zod.md)        | Validación del catálogo con Zod en `domain`                          | aceptada                                  |
-| [0003](0003-fiabilidad-color.md)               | Fiabilidad del color, con el origen guardado y "aproximado" derivado | sustituida por ADR-0014                   |
-| [0004](0004-equivalencias-dirigidas.md)        | Equivalencias oficiales como relaciones dirigidas                    | aceptada                                  |
-| [0005](0005-sustitucion-en-estado.md)          | Sustitución como parte del estado de la pintura                      | aceptada                                  |
-| [0006](0006-formato-catalogo.md)               | Formato del catálogo normalizado, plano y determinista               | aceptada                                  |
-| [0007](0007-versionado-distribucion.md)        | Versionado y distribución del catálogo                               | aceptada                                  |
-| [0008](0008-clasificacion-pinturas.md)         | Clasificación por gama comercial, tipo funcional y acabado metálico  | sustituida por ADR-0013                   |
-| [0009](0009-toolchain-pnpm-node.md)            | Toolchain con pnpm y versiones fijadas de forma exacta               | aceptada                                  |
-| [0010](0010-lint-formato.md)                   | Lint con ESLint y formato con Prettier                               | aceptada                                  |
-| [0011](0011-ci-cd.md)                          | CI/CD con GitHub Actions                                             | aceptada                                  |
-| [0012](0012-entornos.md)                       | Entornos de desarrollo, preproducción y producción                   | aceptada                                  |
-| [0013](0013-clasificacion-pinturas.md)         | Clasificación de pinturas: gamas, tipos y acabado                    | aceptada                                  |
-| [0014](0014-origen-seleccion-color.md)         | Origen y selección del color                                         | aceptada; aplazada en parte por ADR-0019  |
-| [0015](0015-fuentes-trazabilidad-licencias.md) | Fuentes: trazabilidad, licencias y desactivación                     | aceptada; aplazada en parte por ADR-0019  |
-| [0016](0016-datos-curados-json.md)             | Datos curados en JSON de dos capas                                   | sustituida por ADR-0019                   |
-| [0017](0017-arquitectura-objetivo-backend.md)  | Arquitectura objetivo con backend                                    | aceptada                                  |
-| [0018](0018-organizacion-codigo-patrones.md)   | Organización del código y patrones                                   | aceptada; corregida en parte por ADR-0024 |
-| [0019](0019-alcance-minimo-mvp.md)             | Alcance mínimo del MVP                                               | aceptada                                  |
-| [0020](0020-rueda-paquete-independiente.md)    | La rueda de color como paquete independiente                         | aceptada; corregida en parte por ADR-0021 |
-| [0021](0021-cambio-modelo-conserva-color.md)   | El cambio de modelo conserva el color base                           | aceptada                                  |
-| [0022](0022-busqueda-pinturas-parecidas.md)    | Búsqueda de las pinturas parecidas                                   | aceptada                                  |
-| [0023](0023-documentacion-tecnica.md)          | Documentación técnica                                                | aceptada                                  |
-| [0024](0024-web.md)                            | La web: integración, estado, prerenderizado y PWA                    | aceptada                                  |
+| ADR                                                  | Decisión                                                             | Estado                                    |
+| ---------------------------------------------------- | -------------------------------------------------------------------- | ----------------------------------------- |
+| [0001](0001-identificadores-slug-congelado.md)       | Identificadores de pintura legibles y congelados                     | aceptada; aplazada en parte por ADR-0019  |
+| [0002](0002-validacion-catalogo-zod.md)              | Validación del catálogo con Zod en `domain`                          | aceptada                                  |
+| [0003](0003-fiabilidad-color.md)                     | Fiabilidad del color, con el origen guardado y "aproximado" derivado | sustituida por ADR-0014                   |
+| [0004](0004-equivalencias-dirigidas.md)              | Equivalencias oficiales como relaciones dirigidas                    | aceptada                                  |
+| [0005](0005-sustitucion-en-estado.md)                | Sustitución como parte del estado de la pintura                      | aceptada                                  |
+| [0006](0006-formato-catalogo.md)                     | Formato del catálogo normalizado, plano y determinista               | aceptada                                  |
+| [0007](0007-versionado-distribucion.md)              | Versionado y distribución del catálogo                               | aceptada                                  |
+| [0008](0008-clasificacion-pinturas.md)               | Clasificación por gama comercial, tipo funcional y acabado metálico  | sustituida por ADR-0013                   |
+| [0009](0009-toolchain-pnpm-node.md)                  | Toolchain con pnpm y versiones fijadas de forma exacta               | aceptada                                  |
+| [0010](0010-lint-formato.md)                         | Lint con ESLint y formato con Prettier                               | aceptada                                  |
+| [0011](0011-ci-cd.md)                                | CI/CD con GitHub Actions                                             | aceptada                                  |
+| [0012](0012-entornos.md)                             | Entornos de desarrollo, preproducción y producción                   | aceptada                                  |
+| [0013](0013-clasificacion-pinturas.md)               | Clasificación de pinturas: gamas, tipos y acabado                    | aceptada                                  |
+| [0014](0014-origen-seleccion-color.md)               | Origen y selección del color                                         | aceptada; aplazada en parte por ADR-0019  |
+| [0015](0015-fuentes-trazabilidad-licencias.md)       | Fuentes: trazabilidad, licencias y desactivación                     | aceptada; aplazada en parte por ADR-0019  |
+| [0016](0016-datos-curados-json.md)                   | Datos curados en JSON de dos capas                                   | sustituida por ADR-0019                   |
+| [0017](0017-arquitectura-objetivo-backend.md)        | Arquitectura objetivo con backend                                    | aceptada                                  |
+| [0018](0018-organizacion-codigo-patrones.md)         | Organización del código y patrones                                   | aceptada; corregida en parte por ADR-0024 |
+| [0019](0019-alcance-minimo-mvp.md)                   | Alcance mínimo del MVP                                               | aceptada                                  |
+| [0020](0020-rueda-paquete-independiente.md)          | La rueda de color como paquete independiente                         | aceptada; corregida en parte por ADR-0021 |
+| [0021](0021-cambio-modelo-conserva-color.md)         | El cambio de modelo conserva el color base                           | aceptada                                  |
+| [0022](0022-busqueda-pinturas-parecidas.md)          | Búsqueda de las pinturas parecidas                                   | aceptada                                  |
+| [0023](0023-documentacion-tecnica.md)                | Documentación técnica                                                | aceptada                                  |
+| [0024](0024-web.md)                                  | La web: integración, estado, prerenderizado y PWA                    | aceptada                                  |
+| [0025](0025-estabilidad-ids-etiqueta-publicacion.md) | Estabilidad de IDs frente a la etiqueta de publicación               | aceptada                                  |
 
 ## Normas
 

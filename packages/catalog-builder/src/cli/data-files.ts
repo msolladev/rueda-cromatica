@@ -7,10 +7,11 @@ import { basename, join, relative, resolve } from "node:path";
 import type { RawFile } from "../curated/files.ts";
 
 const PACKAGE_DIR = resolve(import.meta.dirname, "../..");
-const REPO_DIR = resolve(PACKAGE_DIR, "../..");
+export const REPO_DIR = resolve(PACKAGE_DIR, "../..");
 const DATA_DIR = join(PACKAGE_DIR, "data");
 export const SOURCES_FILE = join(DATA_DIR, "sources.json");
 export const BRANDS_DIR = join(DATA_DIR, "brands");
+export const TOMBSTONES_FILE = join(DATA_DIR, "tombstones.json");
 export const OUTPUT_FILE = join(REPO_DIR, "apps/web/public/catalog.json");
 
 export const fromRepo = (path: string): string => relative(REPO_DIR, path);

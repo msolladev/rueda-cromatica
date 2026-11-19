@@ -44,7 +44,7 @@ Desde la raíz:
 - `pnpm --filter @chromatic-wheel/web dev`: servidor de desarrollo de la web, que renderiza cada página como el build.
 - `pnpm --filter @chromatic-wheel/web preview`: sirve la web compilada en `http://localhost:4173/`.
 - `pnpm --filter @chromatic-wheel/color-wheel dev`: página de pruebas de la rueda, con el código fuente ([docs/05](docs/05-rueda-de-color.md) §8.4). Con `--host`, para abrirla desde el móvil.
-- `pnpm --filter @chromatic-wheel/catalog-builder build-catalog`: regenera `apps/web/public/catalog.json` a partir de los datos. Con `--check` no escribe nada y falla si el versionado está desactualizado.
+- `pnpm --filter @chromatic-wheel/catalog-builder build-catalog`: regenera `apps/web/public/catalog.json` a partir de los datos, y falla sin escribir nada si un ID publicado desaparece sin lápida o si reaparece uno retirado ([docs/03](docs/03-identificadores.md) §6-7). Con `--check` no escribe nada y falla si el versionado está desactualizado.
 - `pnpm --filter @chromatic-wheel/catalog-builder import-simogecko`: importa Citadel de la tabla de SimoGecko a `data/brands/citadel.json`. Se ejecuta a demanda; después, `pnpm format` y `build-catalog`.
 - `pnpm --filter @chromatic-wheel/catalog-builder import-donnervs <brand-id>`: igual, para una marca desde los datos de DonnervS.
 - `pnpm --filter <paquete> <script>`: ejecuta un script de un paquete concreto.

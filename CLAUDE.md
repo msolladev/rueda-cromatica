@@ -37,6 +37,7 @@ El monorepo está montado. `domain` ya tiene el contrato del catálogo (esquema,
 - `catalog.json` lo genera el builder, se versiona en el repositorio y es determinista (sin marcas de tiempo).
 - Va en el precaché de Workbox: el service worker solo lo vuelve a descargar cuando cambia su revisión.
 - Se carga con `fetch` y se valida al cargarlo. No se importa en el bundle.
+- `build-catalog` comprueba la estabilidad de IDs frente al `catalog.json` de la última etiqueta `release/AAAA-MM-DD` y las lápidas de `data/tombstones.json` ([docs/03](docs/03-identificadores.md) §6-7, [ADR-0025](docs/adr/0025-estabilidad-ids-etiqueta-publicacion.md)).
 - El detalle está en [docs/02-esquema-catalog-json.md](docs/02-esquema-catalog-json.md).
 
 ## Reglas de dominio
@@ -102,8 +103,6 @@ El alcance mínimo y lo aplazado están razonados en el [ADR-0019](docs/adr/0019
    - Varios candidatos de color por pintura, con prioridad `measured` > `manufacturer` > `community` y elección manual.
    - Desactivación de fuentes con su resumen de cambios, y el script `archive-sources` (Wayback Machine y SHA-256).
 
-   Las lápidas y el test de estabilidad de IDs no esperan a esta fase: se implementan antes de la primera publicación.
-
 6. **Backend, administración del catálogo y sesiones de usuario**, la última fase ([ADR-0017](docs/adr/0017-arquitectura-objetivo-backend.md)). Incluye:
    - Una API REST con base de datos y una web de administración del catálogo, con el frontal y el backend separados.
    - Una instantánea pública del catálogo, pedida por versión de esquema, para que la PWA actualice su catálogo local sin volver a desplegarse. De la API, la PWA solo consume esa instantánea y los endpoints de usuario. La API de administración solo la usa `apps/admin`.
@@ -112,7 +111,7 @@ El alcance mínimo y lo aplazado están razonados en el [ADR-0019](docs/adr/0019
 
 Pendiente fuera de la hoja de ruta:
 
-- Provisionar la preproducción en el homelab y decidir dónde va producción. Para el MVP, que es estático, statichost.eu es una opción recomendada, sin evaluar todavía. Cada entorno define `SITE_ORIGIN` al compilar la web y configura su servidor para responder a las direcciones desconocidas con `404.html` (el del idioma de la dirección, si lo hay) y el estado 404 ([docs/07](docs/07-web.md) §12).
+- Provisionar la preproducción en el homelab y decidir dónde va producción. Cada publicación en producción crea la etiqueta `release/AAAA-MM-DD`, que protege sus IDs ([ADR-0025](docs/adr/0025-estabilidad-ids-etiqueta-publicacion.md)). Para el MVP, que es estático, statichost.eu es una opción recomendada, sin evaluar todavía. Cada entorno define `SITE_ORIGIN` al compilar la web y configura su servidor para responder a las direcciones desconocidas con `404.html` (el del idioma de la dirección, si lo hay) y el estado 404 ([docs/07](docs/07-web.md) §12).
 - Al pasar a producción, publicar con la CI la referencia de los paquetes que genera TypeDoc, que hasta entonces solo se genera en local.
 - Antes de cualquier despliegue público, revisar las fuentes con licencia `unknown` o `terms-of-use`.
 - Antes de cualquier despliegue público, revisar los textos de la web en francés, alemán, italiano, portugués, ruso, chino, japonés y coreano, que nadie ha revisado, y sustituir el icono provisional de la web.
