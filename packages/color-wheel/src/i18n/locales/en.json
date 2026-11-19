@@ -52,6 +52,7 @@
     "pointerHelp": "Drag on the ring to change the hue, and inside the triangle to add white or black.",
     "touchHelp": "With a finger, the point follows your movement without jumping under it, so it stays visible. Tap to jump to a spot.",
     "keyboardHelp": "With the keyboard, move to the ring or the triangle with Tab and use the arrows.",
+    "modelHelp": "RYB (red, yellow and blue) is the traditional wheel of paint, the one for mixing pigments: its complements are red and green, yellow and violet, and blue and orange. Digital is the wheel of screens (RGB), with other complements, such as blue and yellow.",
     "helpClose": "Close",
     "hexInvalid": "Enter a hex color such as #3daf44.",
     "resultsUpdated": "{count} colors: {harmony}."

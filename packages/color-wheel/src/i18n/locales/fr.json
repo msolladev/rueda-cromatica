@@ -52,6 +52,7 @@
     "pointerHelp": "Faites glisser sur l’anneau pour changer la teinte, et dans le triangle pour ajouter du blanc ou du noir.",
     "touchHelp": "Au doigt, le point suit votre mouvement sans sauter sous le doigt, il reste donc visible. Touchez pour sauter à un endroit.",
     "keyboardHelp": "Au clavier, allez sur l’anneau ou le triangle avec Tab et utilisez les flèches.",
+    "modelHelp": "RYB (rouge, jaune et bleu) est la roue traditionnelle de la peinture, celle du mélange des pigments : ses complémentaires sont rouge et vert, jaune et violet, bleu et orange. Numérique est la roue des écrans (RVB), avec d’autres complémentaires, comme bleu et jaune.",
     "helpClose": "Fermer",
     "hexInvalid": "Saisissez une couleur hex, par exemple #3daf44.",
     "resultsUpdated": "{count} couleurs : {harmony}."

@@ -52,6 +52,7 @@
     "pointerHelp": "Arrastra en el anillo para cambiar el tono, y dentro del triángulo para añadir blanco o negro.",
     "touchHelp": "Con el dedo, el punto sigue tu movimiento sin saltar bajo el dedo, así que siempre se ve. Toca para saltar a un sitio.",
     "keyboardHelp": "Con el teclado, ve al anillo o al triángulo con el tabulador y usa las flechas.",
+    "modelHelp": "RYB (rojo, amarillo y azul) es la rueda tradicional de la pintura, la de mezclar pigmentos: sus complementarios son rojo y verde, amarillo y violeta, y azul y naranja. Digital es la rueda de la pantalla (RGB), con otros complementarios, como azul y amarillo.",
     "helpClose": "Cerrar",
     "hexInvalid": "Escribe un color hex, como #3daf44.",
     "resultsUpdated": "{count} colores: {harmony}."

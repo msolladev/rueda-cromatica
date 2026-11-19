@@ -797,3 +797,85 @@ describe("accessibility", () => {
     await expectNoAxeViolations(container);
   });
 });
+
+describe("names of the marks", () => {
+  const labels = () => [
+    ...container.querySelectorAll<HTMLElement>(".cw-mark-label"),
+  ];
+  const shown = () =>
+    labels()
+      .filter((label) => label.hasAttribute("data-shown"))
+      .map((label) => label.textContent);
+
+  /** Moves a mouse over the mark of `hue`, as the canvas sees it. */
+  function hover(hue: number): void {
+    const canvas = query(".cw-canvas", HTMLCanvasElement);
+    const rect = canvas.getBoundingClientRect();
+    const half = rect.width / 2;
+    const radius = half * 0.94 * 0.9;
+    const angle = (hue * Math.PI) / 180;
+    canvas.dispatchEvent(
+      new PointerEvent("pointermove", {
+        pointerType: "mouse",
+        clientX: rect.left + half + Math.sin(angle) * radius,
+        clientY: rect.top + half - Math.cos(angle) * radius,
+      }),
+    );
+  }
+
+  it("names each mark, numbered when its role repeats, but shows none by itself", () => {
+    create({ harmony: "miniature-scheme", locale: "es" });
+    expect(labels().map((label) => label.textContent)).toEqual([
+      "Base",
+      "Sombra",
+      "Luz",
+      "Tríada 1",
+      "Tríada 2",
+      "Complementario",
+    ]);
+    expect(shown()).toEqual([]);
+    expect(
+      container.querySelector(".cw-marks")?.getAttribute("aria-hidden"),
+    ).toBe("true");
+  });
+
+  it("shows the name of the highlighted color, and hides it again", () => {
+    const created = create({ harmony: "miniature-scheme", locale: "es" });
+    created.highlightColor(3);
+    expect(shown()).toEqual(["Tríada 1"]);
+    created.highlightColor(null);
+    expect(shown()).toEqual([]);
+    // Beyond the colors: nothing, until there are enough.
+    created.highlightColor(9);
+    expect(shown()).toEqual([]);
+  });
+
+  it("shows the names of the marks under the mouse, all of those that overlap", () => {
+    create({ harmony: "monochromatic", locale: "es" });
+    expect(labels().length).toBeGreaterThan(1);
+    // Every mark of a monochromatic harmony is on the hue of the base.
+    hover(Number(query(".cw-ring", HTMLElement).getAttribute("aria-valuenow")));
+    expect(shown()).toHaveLength(labels().length);
+    query(".cw-canvas", HTMLCanvasElement).dispatchEvent(
+      new PointerEvent("pointerleave", { pointerType: "mouse" }),
+    );
+    expect(shown()).toEqual([]);
+  });
+
+  it("rejects an index that is not a whole number from 0", () => {
+    const created = create();
+    expect(() => {
+      created.highlightColor(-1);
+    }).toThrow(TypeError);
+    expect(() => {
+      created.highlightColor(1.5);
+    }).toThrow(TypeError);
+  });
+
+  it("uses the same names in the list of results", () => {
+    create({ harmony: "triad", locale: "es" });
+    expect(
+      [...container.querySelectorAll(".cw-role")].map((r) => r.textContent),
+    ).toEqual(labels().map((label) => label.textContent));
+  });
+});

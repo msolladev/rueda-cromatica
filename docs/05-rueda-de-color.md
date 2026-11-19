@@ -140,6 +140,10 @@ wheel.addEventListener("change", (e) => {
 - **Canvas**, con nitidez ajustada a la densidad de la pantalla. La rueda ocupa el ancho de su contenedor, hasta `--cw-wheel-max-size`.
   - El anillo es un degradado cónico por las seis esquinas del modelo, y el triángulo, el negro más dos degradados lineales que se suman (el puro y el blanco, cada uno desde su vértice hasta el lado opuesto). Las dos cosas son exactas: los colores puros de los dos modelos varían de forma lineal entre esquinas (§3), y en un triángulo equilátero cada degradado es el peso de su vértice (§2).
   - Las marcas y el punto de la base son blancos con un halo oscuro, para que se vean sobre cualquier color.
+  - **Nombre de cada marca**: el de su color, que es su papel, numerado si se repite («Tríada 1», «Tríada 2»; `colorNames`, que la lista de resultados también usa). No se ven todos a la vez, solo:
+    - el del color que resalta la página (`highlightColor`), cuya marca lleva además un anillo alrededor. Una web que muestra los colores a su manera, como en pestañas, lo usa para señalar el elegido;
+    - los de las marcas bajo el ratón (no con el dedo, que no tiene «pasar por encima»). Si varias marcas se superponen, salen los nombres de todas, apilados.
+  - Cada nombre es una pastilla pequeña, blanca sobre fondo oscuro, justo dentro del anillo y en la línea de su marca, con un punto de su color, que distingue las marcas superpuestas. Los que se tocarían se apilan juntos en su tono medio. Aparecen con un fundido y creciendo un poco, y se desvanecen donde estaban. Son solo visuales (el mismo nombre está en los resultados o en la página): se ocultan mientras la plantilla se mueve y casi desaparecen mientras se arrastra.
 - **Ratón, teclado y pantalla táctil**, todo con la misma precisión:
   - **Ratón y lápiz**, con Pointer Events: el punto va a donde está el puntero.
   - **Táctil**, con Pointer Events: el punto no salta bajo el dedo. Se mueve lo mismo que el dedo, esté donde esté el dedo, así que sigue a la vista. En el anillo, el tono gira lo mismo que gira el dedo alrededor del centro. Un toque sin desplazamiento (menos de 6 px) sí coloca el punto donde cae, para los saltos grandes.
@@ -151,22 +155,23 @@ wheel.addEventListener("change", (e) => {
 - **Adaptable**: un único marcado, con consultas de contenedor, no de pantalla.
   - Con el contenedor estrecho, todo va en una columna. Desde 40rem de ancho del contenedor, la rueda a la izquierda y el panel a la derecha, centrados y cada uno con su ancho máximo (`--cw-wheel-max-size` y `--cw-panel-max-size`). El componente entero mide como mucho `--cw-max-size` y se centra.
   - Controles: Hex y Modelo en la primera fila, y Armonía y Luz, cada una a todo el ancho, porque los nombres de las armonías son los más largos en todos los idiomas. Ningún texto se corta ni se parte.
-  - Resultados: una lista de filas, con la muestra, el papel y el hex. Una columna, salvo con el contenedor estrecho pero de 28rem o más, donde van en dos.
+  - Resultados: una lista de filas, con la muestra, el nombre del color y el hex. Una columna, salvo con el contenedor estrecho pero de 28rem o más, donde van en dos.
 
 ### 6.3. Controles
 
-| Control   | Qué hace                                                                            |
-| --------- | ----------------------------------------------------------------------------------- |
-| `hex`     | Campo para leer o escribir el color base en hex                                     |
-| `model`   | Selector segmentado de modelo: RYB o digital                                        |
-| `harmony` | Selector de armonía, con las de `harmonies`                                         |
-| `light`   | Selector segmentado de luz cálida o fría. Solo con el esquema de miniatura          |
-| `results` | Lista de los colores resultantes, con su papel                                      |
-| `help`    | Botón «Cómo se usa», que abre la explicación del manejo con puntero, dedo y teclado |
+| Control   | Qué hace                                                                                                  |
+| --------- | --------------------------------------------------------------------------------------------------------- |
+| `hex`     | Campo para leer o escribir el color base en hex                                                           |
+| `model`   | Selector segmentado de modelo: RYB o digital                                                              |
+| `harmony` | Selector de armonía, con las de `harmonies`                                                               |
+| `light`   | Selector segmentado de luz cálida o fría. Solo con el esquema de miniatura                                |
+| `results` | Lista de los colores resultantes, con su papel                                                            |
+| `help`    | Botón «Cómo se usa», que abre la explicación del manejo con puntero, dedo y teclado, y de los dos modelos |
 
 El anillo y el triángulo no se pueden ocultar: son la rueda.
 
-- **Ayuda** (`help`): un botón con aspecto de enlace (icono y texto subrayado) que abre la explicación en un _popover_ nativo (atributo `popover`), anclado con CSS _anchor positioning_ al bloque de la ayuda, que mide lo mismo que los controles: flota sobre la página sin desplazar nada, tiene el ancho de los controles y se abre debajo o encima, en el lado con más espacio. Mide como mucho la mitad de la pantalla visible (`50dvh`), para que la rueda siga a la vista mientras se lee; si no cabe, el texto se desplaza dentro. Sin _anchor positioning_, el navegador lo centra en la pantalla.
+- **Ayuda** (`help`): un botón con aspecto de enlace (icono y texto subrayado) que abre la explicación en un _popover_ nativo (atributo `popover`), anclado con CSS _anchor positioning_ al bloque de la ayuda, que mide lo mismo que los controles: flota sobre la página sin desplazar nada, tiene el ancho de los controles y se abre debajo o encima, en el lado con más espacio. Mide como mucho la mitad de la pantalla visible (`50dvh`), para que la rueda siga a la vista mientras se lee; si no cabe, el texto se desplaza dentro. Sin _anchor positioning_, el navegador lo centra en la pantalla. Al pasar el ratón o llegar con el teclado, el icono del botón ladea la cabeza con un pequeño rebote. La explicación aparece creciendo un poco desde su botón y se desvanece al cerrarse; sin movimiento si el sistema pide reducirlo.
+  - Explica también los modelos: RYB (rojo, amarillo y azul) es la rueda tradicional de la pintura, con sus complementarios (rojo y verde, amarillo y violeta, azul y naranja), y digital, la de la pantalla (RGB), con otros, como azul y amarillo.
   - Es un diálogo no modal (`role="dialog"`, con su título como nombre), así que se puede leer y probar la rueda a la vez: no se cierra al tocar fuera, sino con su botón, con Esc o con la «×» de dentro, que hace falta en el móvil.
   - Si una web quiere mostrar la ayuda de otra forma, oculta el control (`hideControl("help")`) y usa los textos de `getEffectiveLabels()`.
 - **Selectores segmentados** para los controles de pocas opciones (`model` y `light`): botones de opción nativos (`<input type="radio">` en un `<fieldset>` con `<legend>`), que se ven todos a la vez, se cambian de un toque y se recorren con las flechas. El fondo de la opción elegida es una pastilla que se desliza hasta la nueva: se mide la opción con el DOM y una transición de CSS la mueve, en todos los navegadores. En los colores forzados usa los de selección del sistema, y no se mueve si el sistema pide reducir el movimiento. La armonía, con nueve opciones, es un `<select>`.
@@ -192,7 +197,7 @@ Las opciones, las propiedades, los métodos, los eventos y el resultado, con sus
 
 - **Idiomas incluidos**: `en`, `es`, `fr`, `de`, `it`, `pt-BR`, `ru`, `zh-Hans`, `ja` y `ko`. Cada uno es un fichero JSON del paquete.
 - **El tipo `Labels` es la referencia**: sus claves salen de las listas del código (armonías, papeles, modelos, luces y controles), así que un texto que falte en un JSON es un error de compilación. Los tests comprueban además que todos los idiomas tienen las mismas claves que el inglés. El tipo se entrega en las declaraciones, sin depender de los JSON.
-- **Idioma por defecto**: el primero de `navigator.languages` que coincida con uno incluido, primero exacto y después por idioma base (`pt-PT` → `pt-BR`). Si no hay ninguno, inglés. El paquete exporta esa misma regla (`resolveLocale`), para que una web elija el idioma de sus textos igual que la rueda. También exporta los textos de cada idioma (`labelsFor`), para que una web nombre las armonías y los papeles igual que la rueda sin crearla, por ejemplo al renderizar en el servidor.
+- **Idioma por defecto**: el primero de `navigator.languages` que coincida con uno incluido, primero exacto y después por idioma base (`pt-PT` → `pt-BR`). Si no hay ninguno, inglés. El paquete exporta esa misma regla (`resolveLocale`), para que una web elija el idioma de sus textos igual que la rueda. También exporta los textos de cada idioma (`labelsFor`), para que una web nombre las armonías y los papeles igual que la rueda sin crearla, por ejemplo al renderizar en el servidor. Y el nombre de cada color de un resultado (`colorNames`): su papel, numerado si se repite.
 - **Claves anidadas**, un bloque por grupo de textos (`harmony`, `role`, `model`, `light`, `control` y `wheel`, con los nombres accesibles, los valores anunciados, la ayuda y los avisos). Algunos textos de `wheel` llevan marcadores, como `{hue}` o `{count}`, que se sustituyen por su valor:
 
   ```json

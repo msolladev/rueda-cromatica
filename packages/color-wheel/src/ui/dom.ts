@@ -10,6 +10,8 @@ export interface Dom {
   readonly canvas: HTMLCanvasElement;
   readonly ring: HTMLDivElement;
   readonly triangle: HTMLDivElement;
+  /** The names of the marks, over the canvas. */
+  readonly marks: HTMLDivElement;
   readonly hexField: HTMLDivElement;
   readonly hexLabel: HTMLLabelElement;
   readonly hexInput: HTMLInputElement;
@@ -35,6 +37,7 @@ export interface Dom {
   readonly helpPointer: HTMLParagraphElement;
   readonly helpTouch: HTMLParagraphElement;
   readonly helpKeyboard: HTMLParagraphElement;
+  readonly helpModel: HTMLParagraphElement;
   readonly ringKeys: HTMLLIElement;
   readonly triangleKeys: HTMLLIElement;
   readonly status: HTMLDivElement;
@@ -106,6 +109,10 @@ export function createDom(): Dom {
   ring.setAttribute("aria-valuemax", "359");
   triangle.setAttribute("aria-valuemin", "0");
   triangle.setAttribute("aria-valuemax", "100");
+  // The names of the marks are only visual: the same colors are named in the
+  // results (or in the page that hides them) and in the announcements.
+  const marks = element("div", "cw-marks", wheel);
+  marks.setAttribute("aria-hidden", "true");
 
   const panel = element("div", "cw-panel", layout);
   const controls = element("div", "cw-controls", panel);
@@ -172,6 +179,7 @@ export function createDom(): Dom {
   ringKeys.id = id("ring-keys");
   const triangleKeys = element("li", "", keys);
   triangleKeys.id = id("triangle-keys");
+  const helpModel = element("p", "cw-help-text", helpBody);
   ring.setAttribute("aria-describedby", ringKeys.id);
   triangle.setAttribute("aria-describedby", triangleKeys.id);
 
@@ -183,6 +191,7 @@ export function createDom(): Dom {
     canvas,
     ring,
     triangle,
+    marks,
     hexField: hex.field,
     hexLabel: hex.label,
     hexInput,
@@ -208,6 +217,7 @@ export function createDom(): Dom {
     helpPointer,
     helpTouch,
     helpKeyboard,
+    helpModel,
     ringKeys,
     triangleKeys,
     status,
