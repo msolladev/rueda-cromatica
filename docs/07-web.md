@@ -106,7 +106,7 @@ En la fase 6 las preferencias pasarán a la cuenta del usuario ([ADR-0017](adr/0
   - Al cerrarlo se pliega y no vuelve; al instalarla, desaparece. El pie sigue ofreciendo «Instalar la aplicación» mientras el navegador permita instalarla.
   - El servidor de desarrollo no tiene manifiesto ni service worker: ahí el banner sale, pero el navegador no llega a ofrecer la instalación.
   - Un botón discreto «Instalar la aplicación» en el pie, para quien cambie de opinión. En iOS, muestra las instrucciones («Compartir» y «Añadir a pantalla de inicio»).
-- **Iconos**: provisionales (una rueda de 12 tonos con el triángulo), en `public/icons/`, en SVG y en PNG de 192 y 512 px, y en versión _maskable_.
+- **Iconos**: la rueda de 12 tonos con el magenta arriba y el triángulo, con un degradado del acento de la web en la punta a un gris en la base. No lleva el blanco y el negro de la rueda porque la esquina negra se perdería en el fondo oscuro. Están en `public/icons/`, en SVG y en PNG de 192 y 512 px, y en versión _maskable_; los PNG se generan a partir del SVG. El icono no puede leer el CSS de la página, así que lleva el acento escrito en hex, y un test comprueba que coincide con el `--accent` de `app.css`.
 
 ## 9. Idiomas
 
