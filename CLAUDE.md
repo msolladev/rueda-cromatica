@@ -111,7 +111,7 @@ El alcance mínimo y lo aplazado están razonados en el [ADR-0019](docs/adr/0019
 
 Pendiente fuera de la hoja de ruta:
 
-- Provisionar la preproducción en el homelab y decidir dónde va producción. Cada publicación en producción crea la etiqueta `release/AAAA-MM-DD`, que protege sus IDs ([ADR-0025](docs/adr/0025-estabilidad-ids-etiqueta-publicacion.md)). Para el MVP, que es estático, statichost.eu es una opción recomendada, sin evaluar todavía. Cada entorno define `SITE_ORIGIN` al compilar la web y configura su servidor para responder a las direcciones desconocidas con `404.html` (el del idioma de la dirección, si lo hay) y el estado 404 ([docs/07](docs/07-web.md) §12).
+- Provisionar la preproducción en el homelab y decidir dónde va producción. Cada publicación en producción crea la etiqueta `release/AAAA-MM-DD`, que protege sus IDs ([ADR-0025](docs/adr/0025-estabilidad-ids-etiqueta-publicacion.md)). Para el MVP, que es estático, statichost.eu es una opción recomendada, sin evaluar todavía. Cada entorno define `SITE_ORIGIN` al compilar la web y configura su servidor para servir cada página también sin la `/` final, sin redirigir, y para responder a las direcciones desconocidas con `404.html` (el del idioma de la dirección, si lo hay) y el estado 404 ([docs/07](docs/07-web.md) §12).
 - Al pasar a producción, publicar con la CI la referencia de los paquetes que genera TypeDoc, que hasta entonces solo se genera en local.
 - Antes de cualquier despliegue público, revisar las fuentes con licencia `unknown` o `terms-of-use`.
 - Antes de cualquier despliegue público, revisar los textos de la web en francés, alemán, italiano, portugués, ruso, chino, japonés y coreano, que nadie ha revisado, y sustituir el icono provisional de la web.

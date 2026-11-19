@@ -38,6 +38,8 @@ test("the development server serves the sitemap and answers 404 at unknown addre
   expect(sitemap.headers()["content-type"]).toContain("xml");
   expect(await sitemap.text()).toContain("/es/creditos/</loc>");
   expect((await request.get("/robots.txt")).status()).toBe(200);
+  expect((await request.get("/es")).status()).toBe(200);
+  expect((await request.get("/es/creditos")).status()).toBe(200);
   const response = await page.goto("/es/inventada/");
   expect(response?.status()).toBe(404);
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(

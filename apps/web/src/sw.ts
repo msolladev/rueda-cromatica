@@ -11,8 +11,14 @@ declare const self: ServiceWorkerGlobalScope & {
   readonly __WB_MANIFEST: (string | { url: string; revision: string | null })[];
 };
 
-// `/es/` is served from the precached `/es/index.html`.
-precacheAndRoute(self.__WB_MANIFEST);
+// `/es/` is served from the precached `/es/index.html`, and so is `/es`,
+// without redirecting (docs/07 §12).
+precacheAndRoute(self.__WB_MANIFEST, {
+  urlManipulation: ({ url }) =>
+    url.pathname.endsWith("/")
+      ? []
+      : [new URL(`${url.pathname}/index.html`, url)],
+});
 cleanupOutdatedCaches();
 // The first version controls the open page at once, so it works offline
 // without reloading. Later versions wait for SKIP_WAITING.

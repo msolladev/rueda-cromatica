@@ -133,7 +133,12 @@ function LocalizedApp({
           />
         )}
         {data.kind === "credits" && (
-          <Credits data={data.credits} messages={m} locale={locale} />
+          <Credits
+            data={data.credits}
+            messages={m}
+            locale={locale}
+            homePath={pathOf({ kind: "home", locale })}
+          />
         )}
         {data.kind === "not-found" && (
           <NotFound homePath={pathOf({ kind: "home", locale })} messages={m} />
