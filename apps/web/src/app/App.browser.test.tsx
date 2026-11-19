@@ -231,6 +231,50 @@ describe("the home page", () => {
     expect(saved.theme).toBe("dark");
   });
 
+  it("marks the icon of the picked theme once the page has it, only on a press", async () => {
+    localStorage.setItem(
+      STORAGE_KEY,
+      JSON.stringify({
+        filters: {
+          excludedBrands: [],
+          extraTypes: [],
+          includeMetallic: false,
+          includeDiscontinued: false,
+        },
+        view: "by-brand",
+        theme: "light",
+        locale: null,
+        installDismissed: false,
+        wheel: null,
+      }),
+    );
+    mount(ES);
+    const picked = () =>
+      [...container.querySelectorAll(".theme-options [data-picked] input")].map(
+        (input) => (input as HTMLInputElement).value,
+      );
+    await vi.waitFor(() => {
+      expect(document.documentElement.dataset["theme"]).toBe("light");
+    });
+    // Restoring the saved theme marks nothing.
+    expect(picked()).toEqual([]);
+    // The theme the page had when the icon was marked: its entrance must
+    // start inside the transition, with the new theme.
+    let themeWhenMarked: string | undefined;
+    const observer = new MutationObserver(() => {
+      if (picked().length > 0 && themeWhenMarked === undefined)
+        themeWhenMarked = document.documentElement.dataset["theme"];
+    });
+    observer.observe(container, { attributes: true, subtree: true });
+    await chooseTheme("dark");
+    // The transition changes the theme a moment after the press.
+    await vi.waitFor(() => {
+      expect(picked()).toEqual(["dark"]);
+    });
+    observer.disconnect();
+    expect(themeWhenMarked).toBe("dark");
+  });
+
   it("restores the saved filters and wheel after taking over", async () => {
     localStorage.setItem(
       STORAGE_KEY,
