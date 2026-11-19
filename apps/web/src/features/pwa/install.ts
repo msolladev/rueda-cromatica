@@ -5,7 +5,7 @@
  * paint by the inline script (`data-install`), so that the banner arrives
  * with the page.
  */
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 import { INSTALL } from "../../app/before-paint.ts";
 
 /** The event of Chromium that lets a page show the install prompt. */
@@ -57,6 +57,22 @@ export function withdrawInstall(): void {
   document.documentElement.removeAttribute(`data-${INSTALL}`);
 }
 
+const subscribe = (listener: () => void) => {
+  listeners.add(listener);
+  return () => {
+    listeners.delete(listener);
+  };
+};
+
+const currentMode = (): InstallMode =>
+  isInstalled()
+    ? "none"
+    : deferred !== null
+      ? "prompt"
+      : isIosSafari()
+        ? "ios"
+        : "none";
+
 /**
  * How the app can be installed now, for the footer (docs/07 §8); `"none"`
  * until hydrated. The banner does not use it: the inline script shows it
@@ -69,25 +85,13 @@ export function useInstall(): {
   readonly mode: InstallMode;
   readonly install: () => Promise<boolean>;
 } {
-  const [mode, setMode] = useState<InstallMode>("none");
-  useEffect(() => {
-    const update = () => {
-      setMode(
-        isInstalled()
-          ? "none"
-          : deferred !== null
-            ? "prompt"
-            : isIosSafari()
-              ? "ios"
-              : "none",
-      );
-    };
-    update();
-    listeners.add(update);
-    return () => {
-      listeners.delete(update);
-    };
-  }, []);
+  // `deferred` lives outside React; the prerendering and the hydration see
+  // "none", like the HTML.
+  const mode = useSyncExternalStore<InstallMode>(
+    subscribe,
+    currentMode,
+    () => "none",
+  );
   const install = async () => {
     const event = deferred;
     if (event === null) return false;
