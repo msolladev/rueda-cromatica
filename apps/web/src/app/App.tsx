@@ -92,13 +92,14 @@ function LocalizedApp({
         theme={preferences.theme}
         messages={m}
         onLocale={onLocale}
-        onTheme={(theme, origin) => {
+        onTheme={(theme, origin, applied) => {
           revealTheme(origin, () => {
             // Inside the transition, so that its new view has the new theme.
             applyTheme(theme);
             flushSync(() => {
               dispatch({ type: "set-theme", theme });
             });
+            applied();
           });
         }}
       />

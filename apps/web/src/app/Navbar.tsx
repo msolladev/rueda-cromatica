@@ -19,10 +19,15 @@ interface NavbarProps {
   readonly theme: Theme;
   readonly messages: Messages;
   readonly onLocale: (locale: Locale) => void;
-  /** With the center of the pressed option, where the new theme grows from. */
+  /**
+   * With the center of the pressed option, where the new theme grows from,
+   * and `applied`, to call once the page has the new theme, inside its
+   * transition.
+   */
   readonly onTheme: (
     theme: Theme,
     origin: { readonly x: number; readonly y: number },
+    applied: () => void,
   ) => void;
 }
 
@@ -40,25 +45,22 @@ export function Navbar({
   onTheme,
 }: NavbarProps) {
   const [open, setOpen] = useState(false);
-  // The option the person picked. Its icon makes its entrance once the page
-  // has the new theme: inside the theme's transition, so that it is seen
-  // (an animation started before it would be frozen in the old picture).
-  // Never on loading the page or restoring the saved theme.
-  const wanted = useRef<Theme | null>(null);
-  useEffect(() => {
-    if (wanted.current !== theme) return;
-    wanted.current = null;
+  const menuId = useId();
+  const button = useRef<HTMLButtonElement>(null);
+  const themeOptions = useRef<HTMLDivElement>(null);
+  // The icon of the option the person picked makes its entrance once the
+  // page has the new theme: inside the theme's transition, so that it is
+  // seen (an animation started before it would be frozen in the old
+  // picture). Only on a press: never on loading or restoring the theme.
+  const markPicked = (picked: Theme) => {
     const labels = themeOptions.current?.querySelectorAll("label") ?? [];
     for (const label of labels) {
       label.toggleAttribute(
         "data-picked",
-        label.querySelector("input")?.value === theme,
+        label.querySelector("input")?.value === picked,
       );
     }
-  }, [theme]);
-  const menuId = useId();
-  const button = useRef<HTMLButtonElement>(null);
-  const themeOptions = useRef<HTMLDivElement>(null);
+  };
   useSlidingIndicator(themeOptions, "label:has(input:checked)", theme);
 
   // docs/07 §11: open, the menu covers the page like a dialog. The page
@@ -159,11 +161,16 @@ export function Navbar({
                           event.currentTarget.parentElement ??
                           event.currentTarget
                         ).getBoundingClientRect();
-                        wanted.current = option;
-                        onTheme(option, {
-                          x: box.left + box.width / 2,
-                          y: box.top + box.height / 2,
-                        });
+                        onTheme(
+                          option,
+                          {
+                            x: box.left + box.width / 2,
+                            y: box.top + box.height / 2,
+                          },
+                          () => {
+                            markPicked(option);
+                          },
+                        );
                       }}
                     />
                     <ThemeIcon />
