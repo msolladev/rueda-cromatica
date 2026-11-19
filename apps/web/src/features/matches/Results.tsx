@@ -238,7 +238,7 @@ function ColorTabs({
   const bar = useRef<HTMLDivElement>(null);
   const names = colorNames(colors, wheelLabels);
   useStuck(bar);
-  useOverflowEdges(bar, list);
+  useOverflowEdges(bar, list, colors.length);
   // An arrow scrolls the tabs by most of what is seen.
   const scrollTabs = (direction: 1 | -1) => {
     const element = list.current;
@@ -563,10 +563,14 @@ function useStuck(tabs: RefObject<HTMLElement | null>): void {
  * Marks the bar of the tabs with `data-more-start` and `data-more-end` while
  * there are tabs hidden on that side (docs/07 §1), so that the CSS shows its
  * fade and arrow; each goes away once the tabs are scrolled to that end.
+ * It watches the size of the list and of each tab, so it only starts again
+ * when the number of tabs changes: they are keyed by their position, so
+ * the same number keeps the same elements.
  */
 function useOverflowEdges(
   bar: RefObject<HTMLElement | null>,
   list: RefObject<HTMLElement | null>,
+  count: number,
 ): void {
   useEffect(() => {
     const element = list.current;
@@ -587,5 +591,5 @@ function useOverflowEdges(
       element.removeEventListener("scroll", check);
       observer.disconnect();
     };
-  });
+  }, [bar, list, count]);
 }

@@ -260,6 +260,25 @@ test.describe("saved preferences", () => {
     expect(seen.filter((frame) => frame !== "2 tabs")).toEqual([]);
   });
 
+  test("the tabs stop saying there are more once the saved harmony has fewer", async ({
+    page,
+  }) => {
+    // The prerendered page has the six colors of the scheme, which do not
+    // fit on a phone; the saved harmony has two, which do.
+    await page.setViewportSize({ width: 360, height: 740 });
+    await page.addInitScript((value) => {
+      localStorage.setItem(
+        "rueda-cromatica.preferences.v1",
+        JSON.stringify(value),
+      );
+    }, saved);
+    await page.goto("/es/");
+    await expect(page.locator('[role="tab"]')).toHaveCount(2);
+    const bar = page.locator(".tabs-bar");
+    await expect(bar).not.toHaveAttribute("data-more-start");
+    await expect(bar).not.toHaveAttribute("data-more-end");
+  });
+
   test("without the app, the wheel and the results are hidden for 3 s at most", async ({
     page,
   }) => {
