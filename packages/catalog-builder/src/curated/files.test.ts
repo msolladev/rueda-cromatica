@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { acmeFile, patchPaint, sourcesFile } from "../fixtures.ts";
-import { readBrandFile, readSourcesFile } from "./files.ts";
+import { readBrandFile, readSourcesFile, readTombstonesFile } from "./files.ts";
 
 const paths = (result: ReturnType<typeof readBrandFile>) =>
   result.ok ? [] : result.error.map((issue) => `${issue.file} ${issue.path}`);
@@ -51,5 +51,57 @@ describe("readBrandFile (docs/04 §2)", () => {
     const file = acmeFile();
     patchPaint(file, 0, { rangeId: "globex/standard" });
     expect(paths(readBrandFile(file))).toEqual(["acme.json paints[0].rangeId"]);
+  });
+});
+
+describe("readTombstonesFile (docs/03 §6)", () => {
+  const file = (content: unknown) => ({ name: "tombstones.json", content });
+  const empty = { sources: [], brands: [], ranges: [], paints: [] };
+  const issuePaths = (content: unknown) => {
+    const result = readTombstonesFile(file(content));
+    return result.ok ? [] : result.error.map((issue) => issue.path);
+  };
+
+  it("accepts an ID and its reason per entry, by collection", () => {
+    const result = readTombstonesFile(
+      file({
+        ...empty,
+        paints: [{ id: "acme/core/purple", reason: "Registered twice." }],
+      }),
+    );
+    expect(result.ok ? [...result.value.paints] : null).toEqual([
+      "acme/core/purple",
+    ]);
+  });
+
+  it("requires a reason", () => {
+    expect(
+      issuePaths({ ...empty, brands: [{ id: "initech", reason: " " }] }),
+    ).toEqual(["brands[0].reason"]);
+  });
+
+  it("validates each ID with the format of its collection", () => {
+    expect(
+      issuePaths({
+        ...empty,
+        brands: [{ id: "acme/core", reason: "A range, not a brand." }],
+      }),
+    ).toEqual(["brands[0].id"]);
+  });
+
+  it("requires the four collections and nothing else", () => {
+    expect(issuePaths({ paints: [], extra: [] })).toEqual([
+      "sources",
+      "brands",
+      "ranges",
+      "",
+    ]);
+  });
+
+  it("rejects an ID tombstoned twice", () => {
+    const entry = { id: "initech", reason: "Not a paint brand." };
+    expect(issuePaths({ ...empty, brands: [entry, entry] })).toEqual([
+      "brands[1].id",
+    ]);
   });
 });

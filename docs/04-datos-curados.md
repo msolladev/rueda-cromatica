@@ -14,10 +14,12 @@ Este documento especifica los datos que mantiene el proyecto y cómo el builder 
 ```
 packages/catalog-builder/data/
   sources.json
+  tombstones.json
   brands/<brand-id>.json
 ```
 
 - `sources.json` es un array de fuentes.
+- `tombstones.json` tiene los IDs retirados por errores de alta, con su motivo ([docs/03](03-identificadores.md) §6).
 - `brands/<brand-id>.json` es un objeto con tres claves: `brand` (la marca), `ranges` (sus gamas) y `paints` (sus pinturas).
 - Cada fichero de marca solo contiene lo suyo:
   - el nombre del fichero coincide con `brand.id`;
@@ -27,13 +29,14 @@ packages/catalog-builder/data/
 
 ## 3. Proceso del builder
 
-Se ejecuta a demanda, cada vez que cambian los datos. `catalog.json` se versiona en el repositorio, y la CI lo vuelve a generar y falla si no coincide con el versionado (paso 4 del [ADR-0011](adr/0011-ci-cd.md)).
+Se ejecuta a demanda, cada vez que cambian los datos. `catalog.json` se versiona en el repositorio, y la CI lo vuelve a generar y falla si no coincide con el versionado o si rompe la estabilidad de IDs (paso 4 del [ADR-0011](adr/0011-ci-cd.md)).
 
 1. **Carga y validación** de los ficheros con los esquemas de `domain` y las reglas de §2.
 2. **Ensamblado**: junta las fuentes, marcas, gamas y pinturas, y las ordena como exige docs/02 §1. Las equivalencias van vacías en el MVP.
 3. **`meta`**: `schemaVersion` es `SUPPORTED_SCHEMA_VERSION`, y `dataVersion` se calcula según docs/02 §4.
 4. **Validación final** con `parseCatalog`.
-5. **Escritura** determinista de `apps/web/public/catalog.json` (docs/02 §1). El fichero está excluido de Prettier, porque su formato lo fija el builder.
+5. **Estabilidad de IDs** frente a la última publicación y a las lápidas ([docs/03](03-identificadores.md) §7).
+6. **Escritura** determinista de `apps/web/public/catalog.json` (docs/02 §1). El fichero está excluido de Prettier, porque su formato lo fija el builder.
 
 ## 4. Importadores
 

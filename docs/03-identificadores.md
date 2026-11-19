@@ -65,19 +65,39 @@ El cambio de nombre de una marca sigue la misma regla: el ID no cambia, y el nom
 
 ## 6. Bajas y lápidas
 
-> Las lápidas y el test de estabilidad (§7) se implementan antes de la primera publicación ([ADR-0019](adr/0019-alcance-minimo-mvp.md)). Hasta entonces ningún usuario guarda IDs, así que se pueden corregir libremente.
-
 - Un ID publicado no se borra nunca: la pintura se marca como descatalogada.
-- La única excepción son los errores de alta. Esos IDs se retiran mediante una lista explícita de IDs retirados (lápidas) en el builder, y un ID retirado no se reutiliza jamás.
+- La única excepción son los errores de alta. Esos IDs se retiran con una lápida en `packages/catalog-builder/data/tombstones.json`, y un ID retirado no se reutiliza jamás.
+- El fichero tiene las cuatro colecciones del catálogo (`sources`, `brands`, `ranges` y `paints`), porque una marca y una fuente pueden compartir slug. Cada lápida lleva el ID y el motivo; la fecha y el commit están en git:
+
+```json
+{
+  "sources": [],
+  "brands": [],
+  "ranges": [],
+  "paints": [
+    {
+      "id": "citadel/base/administratum-grey",
+      "reason": "Duplicate of citadel/layer/administratum-grey; it only exists in Layer."
+    }
+  ]
+}
+```
+
+El ejemplo es hipotético: ese ID nunca ha existido.
 
 ## 7. Test de estabilidad (`catalog-builder`)
 
-Compara el catálogo generado con el `catalog.json` versionado en el repositorio, es decir, el último publicado:
+Compara el catálogo generado con el de la última publicación: el `catalog.json` de la etiqueta de git `release/AAAA-MM-DD` más reciente ([ADR-0025](adr/0025-estabilidad-ids-etiqueta-publicacion.md)).
 
-1. Todo ID anterior sigue existiendo o figura en las lápidas.
+1. Todo ID publicado sigue existiendo o figura en las lápidas.
 2. Ningún ID de las lápidas aparece en el catálogo nuevo.
 
 Se aplica a pinturas, gamas, marcas y fuentes.
+
+- Lo ejecuta `build-catalog`, también con `--check`, y si falla no escribe nada. El mensaje dice cómo arreglar cada caso y, para un ID que desaparece, da la lápida lista para pegar.
+- Mientras no haya ninguna etiqueta, solo se comprueba la regla 2: ningún usuario guarda IDs todavía, así que se pueden corregir libremente.
+- Cada publicación en producción crea su etiqueta, como mucho una por día. Las etiquetas de `release/` con otro formato hacen fallar el builder.
+- Necesita el historial completo de git y las etiquetas. En un clon superficial, el builder falla.
 
 ## 8. Uso
 

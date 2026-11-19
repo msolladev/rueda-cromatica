@@ -3,12 +3,16 @@
  * the `domain` schemas: the files hold them in their `catalog.json` form.
  */
 import {
+  brandIdSchema,
   brandSchema,
   err,
   formatPath,
   ok,
+  paintIdSchema,
   paintSchema,
+  rangeIdSchema,
   rangeSchema,
+  sourceIdSchema,
   sourceSchema,
   type Brand,
   type Paint,
@@ -40,6 +44,31 @@ export const brandFileSchema = z
     paints: z.array(paintSchema).readonly(),
   })
   .readonly();
+
+/** The four collections whose IDs are kept stable (docs/03 §7). */
+export const ID_COLLECTIONS = [
+  "sources",
+  "brands",
+  "ranges",
+  "paints",
+] as const;
+export type IdCollection = (typeof ID_COLLECTIONS)[number];
+
+const tombstone = <T extends z.ZodType>(id: T) =>
+  z.strictObject({ id, reason: z.string().trim().min(1) }).readonly();
+
+/** `tombstones.json`: the IDs retired because of registration errors (docs/03 §6). */
+export const tombstonesFileSchema = z
+  .strictObject({
+    sources: z.array(tombstone(sourceIdSchema)).readonly(),
+    brands: z.array(tombstone(brandIdSchema)).readonly(),
+    ranges: z.array(tombstone(rangeIdSchema)).readonly(),
+    paints: z.array(tombstone(paintIdSchema)).readonly(),
+  })
+  .readonly();
+
+/** The retired IDs of each collection. */
+export type Tombstones = Readonly<Record<IdCollection, ReadonlySet<string>>>;
 
 export interface BrandFile {
   readonly name: string;
@@ -94,6 +123,35 @@ export function readBrandFile(file: RawFile): FileResult<BrandFile> {
   return issues.length > 0
     ? err(issues)
     : ok({ name: file.name, brand, ranges, paints });
+}
+
+/** Validates `tombstones.json`; an ID may appear only once per collection. */
+export function readTombstonesFile(file: RawFile): FileResult<Tombstones> {
+  const parsed = tombstonesFileSchema.safeParse(file.content);
+  if (!parsed.success) return err(zodIssues(file.name, parsed.error));
+
+  const issues: DataIssue[] = [];
+  const ids = (collection: IdCollection): ReadonlySet<string> => {
+    const seen = new Set<string>();
+    parsed.data[collection].forEach(({ id }, i) => {
+      if (seen.has(id)) {
+        issues.push({
+          file: file.name,
+          path: `${collection}[${String(i)}].id`,
+          message: `${id} is already tombstoned`,
+        });
+      }
+      seen.add(id);
+    });
+    return seen;
+  };
+  const sets = {
+    sources: ids("sources"),
+    brands: ids("brands"),
+    ranges: ids("ranges"),
+    paints: ids("paints"),
+  };
+  return issues.length > 0 ? err(issues) : ok(sets);
 }
 
 function zodIssues(file: string, error: z.ZodError): DataIssue[] {
