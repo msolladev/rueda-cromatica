@@ -1,5 +1,5 @@
 import type { PaintType } from "@chromatic-wheel/domain";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import {
   EXTRA_PAINT_TYPES,
   type Action,
@@ -51,12 +51,10 @@ export function Filters({
 }: FiltersProps) {
   const summary = summaryOf(brands, filters, m);
   const summaryText = useRef<HTMLSpanElement>(null);
-  const shownSummary = useRef(summary);
-  // docs/07 §1: the summary gives a small jump when a filter changes it, to
-  // confirm it, also with the disclosure closed. Not on loading.
-  useEffect(() => {
-    if (shownSummary.current === summary) return;
-    shownSummary.current = summary;
+  // docs/07 §1: each change of a filter changes the summary, which gives a
+  // small jump to confirm it, also with the disclosure closed.
+  const change = (action: Action) => {
+    dispatch(action);
     const element = summaryText.current;
     if (element === null) return;
     // The CSS animation starts again on each change: removed, measured (which
@@ -64,7 +62,7 @@ export function Filters({
     element.classList.remove("changed");
     element.getBoundingClientRect();
     element.classList.add("changed");
-  }, [summary]);
+  };
   return (
     <details className="filters">
       <summary>
@@ -83,7 +81,7 @@ export function Filters({
                   type="checkbox"
                   checked={!filters.excludedBrands.includes(brand.id)}
                   onChange={() => {
-                    dispatch({ type: "toggle-brand", brandId: brand.id });
+                    change({ type: "toggle-brand", brandId: brand.id });
                   }}
                 />
                 {brand.name}
@@ -100,7 +98,7 @@ export function Filters({
                   type="checkbox"
                   checked={filters.extraTypes.includes(type)}
                   onChange={() => {
-                    dispatch({ type: "toggle-type", paintType: type });
+                    change({ type: "toggle-type", paintType: type });
                   }}
                 />
                 {m.paintTypes[type]}
@@ -111,7 +109,7 @@ export function Filters({
                 type="checkbox"
                 checked={filters.includeMetallic}
                 onChange={(event) => {
-                  dispatch({
+                  change({
                     type: "set-metallic",
                     value: event.target.checked,
                   });
@@ -127,7 +125,7 @@ export function Filters({
               type="checkbox"
               checked={filters.includeDiscontinued}
               onChange={(event) => {
-                dispatch({
+                change({
                   type: "set-discontinued",
                   value: event.target.checked,
                 });

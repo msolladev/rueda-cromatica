@@ -145,6 +145,8 @@ describe("the home page", () => {
     await vi.waitFor(() => {
       expect(brandHeadings()).toHaveLength(4);
     });
+    const summary = query(".filters-summary", HTMLElement);
+    expect(summary.classList.contains("changed")).toBe(false);
     await userEvent.click(query(".filters summary", HTMLElement));
     const citadel = [
       ...container.querySelectorAll<HTMLLabelElement>(".filters label"),
@@ -159,9 +161,9 @@ describe("the home page", () => {
         "Vallejo",
       ]);
     });
-    expect(query(".filters-summary", HTMLElement).textContent).toContain(
-      "3 de 4 marcas",
-    );
+    expect(summary.textContent).toContain("3 de 4 marcas");
+    // A small jump confirms the change (docs/07 §1).
+    expect(summary.classList.contains("changed")).toBe(true);
   });
 
   it("shows three more paints of a brand with «See more»", async () => {
@@ -260,6 +262,10 @@ describe("the home page", () => {
         "The Army Painter",
       ]);
     });
+    // The summary changed, but nobody changed a filter: no jump.
+    expect(
+      query(".filters-summary", HTMLElement).classList.contains("changed"),
+    ).toBe(false);
   });
 
   it("opens and closes the menu on narrow screens, with Escape", async () => {
