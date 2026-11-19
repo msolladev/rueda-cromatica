@@ -507,10 +507,14 @@ describe("the install banner", () => {
     await vi.waitFor(() => {
       expect(shown()).toBe(false);
     });
-    const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? "{}") as {
-      installDismissed?: boolean;
-    };
-    expect(saved.installDismissed).toBe(true);
+    // The preference is saved in an effect, which may run after the banner
+    // is hidden.
+    await vi.waitFor(() => {
+      const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? "{}") as {
+        installDismissed?: boolean;
+      };
+      expect(saved.installDismissed).toBe(true);
+    });
     await vi.waitFor(() => {
       expect(container.querySelector(".footer .link-button")?.textContent).toBe(
         "Instalar la aplicación",
