@@ -83,7 +83,7 @@ El alcance mínimo y lo aplazado están razonados en el [ADR-0019](docs/adr/0019
 1. **Arquitectura y modelo de datos**: cerrada. Ver docs/01-03 y los ADR 0001-0008.
 2. **Montar el monorepo y la toolchain**, según los ADR 0009-0011: hecho.
 3. **Investigación de fuentes de datos**: cerrada. Ver el [informe](docs/investigacion/2026-11-fuentes-datos.md), docs/04 y los ADR 0013-0016.
-4. **Builder, importadores y prototipo de la rueda**: en curso, con el alcance del [ADR-0019](docs/adr/0019-alcance-minimo-mvp.md). Etapas:
+4. **Builder, importadores y prototipo de la rueda**: cerrada, con el alcance del [ADR-0019](docs/adr/0019-alcance-minimo-mvp.md). Etapas:
    1. Contrato del catálogo en `domain`: hecho.
    2. Builder mínimo según docs/04, con el paso 4 de la CI: hecho.
    3. Datos: hecho, una marca por iteración, cada una desde una sola fuente. Citadel: desde la tabla de SimoGecko con hex `community`, porque citadelcolour.com (hoy paint.warhammer.com) no publica los hex. The Army Painter: desde DonnervS con hex `community`; Warpaints Fanatic es una sola gama (lavados, metálicos y efectos se distinguen por el tipo y el atributo metálico). AK Interactive: desde DonnervS con hex `community`; 3Gen Acrylics es una sola gama con todas las etiquetas de AK (STANDARD, AFV, FIGURES…) salvo AIR, que es de aerógrafo; Quick Gen tiene 79 colores, comprobado en la web de AK. Vallejo: desde DonnervS con hex `community`, contrastado con las cartas oficiales CC329 (Model Color) y CC266 (Game Color y Xpress Color); Model Color y Game Color son una gama cada una, con sus subgrupos (lavados, tintas, metálicos, fluorescentes y Special FX) distinguidos por el tipo, y Xpress Color, con Intense, es una gama propia.
