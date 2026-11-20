@@ -12,197 +12,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex" />
     <title>Chromatic Wheel</title>
-    <!-- Without JavaScript, a plain reload now and then. -->
-    <noscript><meta http-equiv="refresh" content="15" /></noscript>
-    <style>
-      :root {
-        color-scheme: light dark;
-        --bg: #f6f7f9;
-        --surface: #ffffff;
-        --text: #1d1f22;
-        --muted: #5a5f66;
-        --line: #d5d8dd;
-        --accent: #be185d;
-        --font: system-ui, -apple-system, "Segoe UI", sans-serif;
-      }
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --bg: #121417;
-          --surface: #1b1e22;
-          --text: #e9eaec;
-          --muted: #b5bac1;
-          --line: #3a3f46;
-          --accent: #f9a8d4;
-        }
-      }
-      * {
-        box-sizing: border-box;
-      }
-      body {
-        margin: 0;
-        min-height: 100dvh;
-        display: grid;
-        place-items: center;
-        padding: 1rem;
-        background: var(--bg);
-        color: var(--text);
-        font-family: var(--font);
-        line-height: 1.5;
-      }
-      main {
-        width: 100%;
-        max-width: 26rem;
-        padding: 2.5rem 1.5rem;
-        border: 1px solid var(--line);
-        border-radius: 1rem;
-        background: var(--surface);
-        text-align: center;
-      }
-      .icon {
-        display: block;
-        width: 7.5rem;
-        height: 7.5rem;
-        margin: 0 auto 1.5rem;
-      }
-      /* The hues light up one after the other, around the wheel. */
-      .icon .hue {
-        animation: hue 2.4s ease-in-out infinite;
-        animation-delay: calc(var(--i) * 0.2s - 2.4s);
-      }
-      @keyframes hue {
-        0%,
-        60%,
-        100% {
-          opacity: 0.35;
-        }
-        20% {
-          opacity: 1;
-        }
-      }
-      @media (prefers-reduced-motion: reduce) {
-        .icon .hue {
-          animation: none;
-        }
-      }
-      .site {
-        margin: 0 0 0.25rem;
-        color: var(--accent);
-        font-size: 0.875rem;
-        font-weight: 600;
-        letter-spacing: 0.02em;
-      }
-      h1,
-      p {
-        text-wrap: balance;
-      }
-      h1 {
-        margin: 0 0 0.75rem;
-        font-size: 1.5rem;
-        line-height: 1.25;
-      }
-      p {
-        margin: 0;
-        color: var(--muted);
-      }
-    </style>
-  </head>
-  <body>
-    <main>
-      <svg class="icon" viewBox="0 0 512 512" aria-hidden="true">
-        <defs>
-          <linearGradient id="t" x1="0.5" y1="0" x2="0.5" y2="1">
-            <stop offset="0" stop-color="#be185d" />
-            <stop offset="1" stop-color="#7a7d80" />
-          </linearGradient>
-        </defs>
-        <rect width="512" height="512" rx="112.6" fill="#1b1e22" />
-        <g transform="rotate(30 256 256)">
-          <path
-            class="hue"
-            style="--i: 0"
-            d="M200.34 48.29A215.04 215.04 0 0 1 311.66 48.29L296.07 106.45A154.8288 154.8288 0 0 0 215.93 106.45Z"
-            fill="#e8291c"
-          />
-          <path
-            class="hue"
-            style="--i: 1"
-            d="M311.66 48.29A215.04 215.04 0 0 1 408.06 103.94L365.48 146.52A154.8288 154.8288 0 0 0 296.07 106.45Z"
-            fill="#ef5b1b"
-          />
-          <path
-            class="hue"
-            style="--i: 2"
-            d="M408.06 103.94A215.04 215.04 0 0 1 463.71 200.34L405.55 215.93A154.8288 154.8288 0 0 0 365.48 146.52Z"
-            fill="#f7941d"
-          />
-          <path
-            class="hue"
-            style="--i: 3"
-            d="M463.71 200.34A215.04 215.04 0 0 1 463.71 311.66L405.55 296.07A154.8288 154.8288 0 0 0 405.55 215.93Z"
-            fill="#fbb917"
-          />
-          <path
-            class="hue"
-            style="--i: 4"
-            d="M463.71 311.66A215.04 215.04 0 0 1 408.06 408.06L365.48 365.48A154.8288 154.8288 0 0 0 405.55 296.07Z"
-            fill="#ffe500"
-          />
-          <path
-            class="hue"
-            style="--i: 5"
-            d="M408.06 408.06A215.04 215.04 0 0 1 311.66 463.71L296.07 405.55A154.8288 154.8288 0 0 0 365.48 365.48Z"
-            fill="#a6ce39"
-          />
-          <path
-            class="hue"
-            style="--i: 6"
-            d="M311.66 463.71A215.04 215.04 0 0 1 200.34 463.71L215.93 405.55A154.8288 154.8288 0 0 0 296.07 405.55Z"
-            fill="#2fb34a"
-          />
-          <path
-            class="hue"
-            style="--i: 7"
-            d="M200.34 463.71A215.04 215.04 0 0 1 103.94 408.06L146.52 365.48A154.8288 154.8288 0 0 0 215.93 405.55Z"
-            fill="#1aa39a"
-          />
-          <path
-            class="hue"
-            style="--i: 8"
-            d="M103.94 408.06A215.04 215.04 0 0 1 48.29 311.66L106.45 296.07A154.8288 154.8288 0 0 0 146.52 365.48Z"
-            fill="#2b6cb0"
-          />
-          <path
-            class="hue"
-            style="--i: 9"
-            d="M48.29 311.66A215.04 215.04 0 0 1 48.29 200.34L106.45 215.93A154.8288 154.8288 0 0 0 106.45 296.07Z"
-            fill="#5b3fa0"
-          />
-          <path
-            class="hue"
-            style="--i: 10"
-            d="M48.29 200.34A215.04 215.04 0 0 1 103.94 103.94L146.52 146.52A154.8288 154.8288 0 0 0 106.45 215.93Z"
-            fill="#8e3092"
-          />
-          <path
-            class="hue"
-            style="--i: 11"
-            d="M103.94 103.94A215.04 215.04 0 0 1 200.34 48.29L215.93 106.45A154.8288 154.8288 0 0 0 146.52 146.52Z"
-            fill="#be185d"
-          />
-        </g>
-        <polygon
-          points="256.00,122.85 371.31,322.58 140.69,322.58"
-          fill="url(#t)"
-        />
-      </svg>
-      <p class="site" id="site">Chromatic Wheel</p>
-      <h1 id="title">We're updating the wheel</h1>
-      <p id="text" role="status">
-        It'll be back in a few seconds. This page will reload by itself as soon
-        as it's ready.
-      </p>
-    </main>
     <script>
+      // Before anything is drawn: the browser must not take the page for
+      // English and offer to translate it.
       // [site name (that of the web), title, text] in each language of the web.
       const texts = {
         en: [
@@ -284,6 +96,264 @@
       const [site, title, text] = texts[locale];
       document.documentElement.lang = locale;
       document.title = site;
+    </script>
+    <!-- Without JavaScript, a plain reload now and then. -->
+    <noscript><meta http-equiv="refresh" content="15" /></noscript>
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg: #f6f7f9;
+        --surface: #ffffff;
+        --text: #1d1f22;
+        --muted: #5a5f66;
+        --line: #d5d8dd;
+        --accent: #be185d;
+        --font: system-ui, -apple-system, "Segoe UI", sans-serif;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #121417;
+          --surface: #1b1e22;
+          --text: #e9eaec;
+          --muted: #b5bac1;
+          --line: #3a3f46;
+          --accent: #f9a8d4;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        min-height: 100dvh;
+        display: grid;
+        place-items: center;
+        padding: 1rem;
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--font);
+        line-height: 1.5;
+        overflow: hidden;
+      }
+      main {
+        position: relative;
+        width: 100%;
+        max-width: 28rem;
+        padding: 3rem 1.5rem 2.5rem;
+        border: 1px solid var(--line);
+        border-radius: 1.25rem;
+        background: var(--surface);
+        text-align: center;
+        box-shadow: 0 1.5rem 3rem -1.5rem rgb(0 0 0 / 0.25);
+      }
+      /* The icon, over a soft halo of the wheel's own hues. */
+      .mark {
+        position: relative;
+        width: 8rem;
+        height: 8rem;
+        margin: 0 auto 1.75rem;
+      }
+      .mark::before {
+        content: "";
+        position: absolute;
+        inset: -1.5rem;
+        border-radius: 50%;
+        background: conic-gradient(
+          from 30deg,
+          #e8291c,
+          #f7941d,
+          #ffe500,
+          #2fb34a,
+          #2b6cb0,
+          #8e3092,
+          #be185d,
+          #e8291c
+        );
+        filter: blur(2rem);
+        opacity: 0.35;
+        animation: turn 12s linear infinite;
+      }
+      .icon {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+      /* The hues light up one after the other, around the wheel. */
+      .icon .hue {
+        animation: hue 2.4s ease-in-out infinite;
+        animation-delay: calc(var(--i) * 0.2s - 2.4s);
+      }
+      @keyframes hue {
+        0%,
+        60%,
+        100% {
+          opacity: 0.35;
+        }
+        20% {
+          opacity: 1;
+        }
+      }
+      @keyframes turn {
+        to {
+          rotate: 1turn;
+        }
+      }
+      h1 {
+        margin: 0 0 1.25rem;
+        font-size: clamp(1.75rem, 7vw, 2.25rem);
+        line-height: 1.15;
+        letter-spacing: -0.01em;
+      }
+      .status {
+        margin: 0 0 0.5rem;
+        color: var(--accent);
+        font-size: 1.125rem;
+        font-weight: 600;
+      }
+      h1,
+      p {
+        text-wrap: balance;
+      }
+      p {
+        margin: 0;
+        color: var(--muted);
+      }
+      /* Waiting, with no end: a band that crosses the bar again and again. */
+      .progress {
+        height: 0.25rem;
+        margin: 1.75rem auto 0;
+        max-width: 12rem;
+        border-radius: 1rem;
+        background: var(--line);
+        overflow: hidden;
+      }
+      .progress::before {
+        content: "";
+        display: block;
+        width: 40%;
+        height: 100%;
+        border-radius: inherit;
+        background: var(--accent);
+        animation: cross 1.6s ease-in-out infinite;
+      }
+      @keyframes cross {
+        from {
+          translate: -100%;
+        }
+        to {
+          translate: 250%;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .mark::before,
+        .icon .hue,
+        .progress::before {
+          animation: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="mark">
+        <svg class="icon" viewBox="0 0 512 512" aria-hidden="true">
+          <defs>
+            <linearGradient id="t" x1="0.5" y1="0" x2="0.5" y2="1">
+              <stop offset="0" stop-color="#be185d" />
+              <stop offset="1" stop-color="#7a7d80" />
+            </linearGradient>
+          </defs>
+          <rect width="512" height="512" rx="112.6" fill="#1b1e22" />
+          <g transform="rotate(30 256 256)">
+            <path
+              class="hue"
+              style="--i: 0"
+              d="M200.34 48.29A215.04 215.04 0 0 1 311.66 48.29L296.07 106.45A154.8288 154.8288 0 0 0 215.93 106.45Z"
+              fill="#e8291c"
+            />
+            <path
+              class="hue"
+              style="--i: 1"
+              d="M311.66 48.29A215.04 215.04 0 0 1 408.06 103.94L365.48 146.52A154.8288 154.8288 0 0 0 296.07 106.45Z"
+              fill="#ef5b1b"
+            />
+            <path
+              class="hue"
+              style="--i: 2"
+              d="M408.06 103.94A215.04 215.04 0 0 1 463.71 200.34L405.55 215.93A154.8288 154.8288 0 0 0 365.48 146.52Z"
+              fill="#f7941d"
+            />
+            <path
+              class="hue"
+              style="--i: 3"
+              d="M463.71 200.34A215.04 215.04 0 0 1 463.71 311.66L405.55 296.07A154.8288 154.8288 0 0 0 405.55 215.93Z"
+              fill="#fbb917"
+            />
+            <path
+              class="hue"
+              style="--i: 4"
+              d="M463.71 311.66A215.04 215.04 0 0 1 408.06 408.06L365.48 365.48A154.8288 154.8288 0 0 0 405.55 296.07Z"
+              fill="#ffe500"
+            />
+            <path
+              class="hue"
+              style="--i: 5"
+              d="M408.06 408.06A215.04 215.04 0 0 1 311.66 463.71L296.07 405.55A154.8288 154.8288 0 0 0 365.48 365.48Z"
+              fill="#a6ce39"
+            />
+            <path
+              class="hue"
+              style="--i: 6"
+              d="M311.66 463.71A215.04 215.04 0 0 1 200.34 463.71L215.93 405.55A154.8288 154.8288 0 0 0 296.07 405.55Z"
+              fill="#2fb34a"
+            />
+            <path
+              class="hue"
+              style="--i: 7"
+              d="M200.34 463.71A215.04 215.04 0 0 1 103.94 408.06L146.52 365.48A154.8288 154.8288 0 0 0 215.93 405.55Z"
+              fill="#1aa39a"
+            />
+            <path
+              class="hue"
+              style="--i: 8"
+              d="M103.94 408.06A215.04 215.04 0 0 1 48.29 311.66L106.45 296.07A154.8288 154.8288 0 0 0 146.52 365.48Z"
+              fill="#2b6cb0"
+            />
+            <path
+              class="hue"
+              style="--i: 9"
+              d="M48.29 311.66A215.04 215.04 0 0 1 48.29 200.34L106.45 215.93A154.8288 154.8288 0 0 0 106.45 296.07Z"
+              fill="#5b3fa0"
+            />
+            <path
+              class="hue"
+              style="--i: 10"
+              d="M48.29 200.34A215.04 215.04 0 0 1 103.94 103.94L146.52 146.52A154.8288 154.8288 0 0 0 106.45 215.93Z"
+              fill="#8e3092"
+            />
+            <path
+              class="hue"
+              style="--i: 11"
+              d="M103.94 103.94A215.04 215.04 0 0 1 200.34 48.29L215.93 106.45A154.8288 154.8288 0 0 0 146.52 146.52Z"
+              fill="#be185d"
+            />
+          </g>
+          <polygon
+            points="256.00,122.85 371.31,322.58 140.69,322.58"
+            fill="url(#t)"
+          />
+        </svg>
+      </div>
+      <h1 id="site">Chromatic Wheel</h1>
+      <p class="status" id="title">We're updating the wheel</p>
+      <p id="text" role="status">
+        It'll be back in a few seconds. This page will reload by itself as soon
+        as it's ready.
+      </p>
+      <div class="progress" aria-hidden="true"></div>
+    </main>
+    <script>
       document.getElementById("site").textContent = site;
       document.getElementById("title").textContent = title;
       document.getElementById("text").textContent = text;
