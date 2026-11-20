@@ -5,7 +5,7 @@
 
 ## Contexto
 
-El [ADR-0001](0001-identificadores-slug-congelado.md) congela los IDs y confía su estabilidad a un test del builder y a una lista de lápidas. El [ADR-0019](0019-alcance-minimo-mvp.md) pide implementarlos antes de la primera publicación. docs/03 §7 decía que la referencia era «el `catalog.json` versionado, es decir, el último publicado», pero `build-catalog` sobrescribe ese fichero, y `main` se despliega en preproducción sin que nadie guarde sus IDs ([ADR-0011](0011-ci-cd.md)). El fichero versionado no es lo publicado.
+El [ADR-0001](0001-identificadores-slug-congelado.md) congela los IDs y confía su estabilidad a un test del builder y a una lista de lápidas. El [ADR-0019](0019-alcance-minimo-mvp.md) pide implementarlos antes de la primera publicación. docs/03 §7 decía que la referencia era «el `catalog.json` versionado, es decir, el último publicado», pero `build-catalog` sobrescribe ese fichero, y `preprod` se despliega en preproducción sin que nadie guarde sus IDs ([ADR-0011](0011-ci-cd.md)). El fichero versionado no es lo publicado.
 
 ## Decisión
 
@@ -16,7 +16,7 @@ El [ADR-0001](0001-identificadores-slug-congelado.md) congela los IDs y confía 
 
 ## Alternativas descartadas
 
-- **El `catalog.json` de `main`**: protegería los IDs de preproducción, que aún se pueden corregir, y necesitaría un interruptor de «ya publicado» fácil de olvidar.
+- **El `catalog.json` de `main`**: cambia con cada merge, así que no es lo publicado, y necesitaría un interruptor de «ya publicado» fácil de olvidar.
 - **Una instantánea versionada de los IDs publicados**: duplica datos que ya están en la versión publicada, y si se olvida actualizarla, la protección se queda desfasada sin aviso.
 - **Un test de Vitest o un paso de CI propio**: el builder seguiría escribiendo un catálogo inestable sin quejarse, y el fallo llegaría más tarde.
 - **Solo el ID en cada lápida**: el motivo es lo único que no está en otro sitio, y es lo que busca quien se encuentra el fallo.
