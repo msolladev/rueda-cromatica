@@ -44,9 +44,9 @@ La imagen está en `apps/web/deploy/preprod/`: Nginx sin `root`, fijado por vers
 
 ## 4. La página de mantenimiento
 
-Mientras la web no responde (los segundos del cambio de contenedor, o un reinicio de la VM), Nginx Proxy Manager sirve `apps/web/deploy/preprod/maintenance.html` con el estado 503 y `Retry-After`, para que los buscadores no la tomen por la web. No usa ficheros externos, sale en el idioma de la dirección o del navegador y se recarga sola cada 10 segundos. Quien ya tiene la web en el precaché no la ve.
+Mientras la web no responde (los segundos del cambio de contenedor, o un reinicio de la VM), Nginx Proxy Manager sirve `apps/web/deploy/preprod/maintenance.html` con el estado 503 y `Retry-After`, para que los buscadores no la tomen por la web. No usa ficheros externos: lleva dentro el icono de la web, del que saca también el favicon, y el nombre de la web en cada idioma, y un test los mantiene iguales a los de la web. Sale en el idioma de la dirección o del navegador, con el mismo criterio que la web, y pregunta cada 5 segundos, sin recargar, si la web ha vuelto: en cuanto vuelve, se recarga. Quien ya tiene la web en el precaché no la ve.
 
-Se activa sola, sin tocar nada: la entrada de Nginx Proxy Manager la entrega siempre que la web no contesta. El fichero se copia a mano a Nginx Proxy Manager, así que si cambia, hay que volver a copiarlo (§7).
+Se activa sola, sin tocar nada: la entrada de Nginx Proxy Manager la entrega siempre que no consigue conectar con la web en 3 segundos. Sin ese límite esperaría un minuto, y con la VM apagada nadie le contestaría antes. El fichero se copia a mano a Nginx Proxy Manager, así que si cambia, hay que volver a copiarlo (§7).
 
 ## 5. Configuración de GitHub
 

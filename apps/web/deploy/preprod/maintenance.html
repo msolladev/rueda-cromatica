@@ -2,23 +2,38 @@
 <!--
   Maintenance page of the preproduction (docs/08). Nginx Proxy Manager serves
   it, with the status 503, while the web does not answer: during a deploy or
-  while the machine restarts. It has no external files, because nothing
-  behind the proxy answers, and it reloads itself until the web is back.
+  while the machine restarts. Nothing behind the proxy answers, so it has no
+  external files: the icon of the web is inline, and a test keeps it, and
+  the name of the web in each language, equal to those of the web.
 -->
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex" />
-    <meta http-equiv="refresh" content="10" />
-    <title>Rueda cromática</title>
+    <title>Chromatic Wheel</title>
+    <!-- Without JavaScript, a plain reload now and then. -->
+    <noscript><meta http-equiv="refresh" content="15" /></noscript>
     <style>
       :root {
         color-scheme: light dark;
-        --bg: light-dark(#f6f7f9, #121417);
-        --text: light-dark(#1d1f22, #e9eaec);
-        --muted: light-dark(#5a5f66, #b5bac1);
+        --bg: #f6f7f9;
+        --surface: #ffffff;
+        --text: #1d1f22;
+        --muted: #5a5f66;
+        --line: #d5d8dd;
+        --accent: #be185d;
         --font: system-ui, -apple-system, "Segoe UI", sans-serif;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #121417;
+          --surface: #1b1e22;
+          --text: #e9eaec;
+          --muted: #b5bac1;
+          --line: #3a3f46;
+          --accent: #f9a8d4;
+        }
       }
       * {
         box-sizing: border-box;
@@ -32,118 +47,274 @@
         background: var(--bg);
         color: var(--text);
         font-family: var(--font);
-        text-align: center;
+        line-height: 1.5;
       }
       main {
-        max-width: 28rem;
+        width: 100%;
+        max-width: 26rem;
+        padding: 2.5rem 1.5rem;
+        border: 1px solid var(--line);
+        border-radius: 1rem;
+        background: var(--surface);
+        text-align: center;
       }
-      .wheel {
-        width: 6rem;
-        aspect-ratio: 1;
+      .icon {
+        display: block;
+        width: 7.5rem;
+        height: 7.5rem;
         margin: 0 auto 1.5rem;
-        border-radius: 50%;
-        background: conic-gradient(
-          #e8291c,
-          #f7941d,
-          #ffe500,
-          #a6ce39,
-          #00a99d,
-          #2e3192,
-          #92278f,
-          #e8291c
-        );
-        mask: radial-gradient(circle, transparent 58%, #000 60%);
-        animation: turn 4s linear infinite;
       }
-      @keyframes turn {
-        to {
-          rotate: 1turn;
+      /* The hues light up one after the other, around the wheel. */
+      .icon .hue {
+        animation: hue 2.4s ease-in-out infinite;
+        animation-delay: calc(var(--i) * 0.2s - 2.4s);
+      }
+      @keyframes hue {
+        0%,
+        60%,
+        100% {
+          opacity: 0.35;
+        }
+        20% {
+          opacity: 1;
         }
       }
       @media (prefers-reduced-motion: reduce) {
-        .wheel {
+        .icon .hue {
           animation: none;
         }
       }
+      .site {
+        margin: 0 0 0.25rem;
+        color: var(--accent);
+        font-size: 0.875rem;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+      }
+      h1,
+      p {
+        text-wrap: balance;
+      }
       h1 {
-        margin: 0 0 0.5rem;
+        margin: 0 0 0.75rem;
         font-size: 1.5rem;
+        line-height: 1.25;
       }
       p {
         margin: 0;
         color: var(--muted);
-        line-height: 1.5;
       }
     </style>
   </head>
   <body>
     <main>
-      <div class="wheel" aria-hidden="true"></div>
-      <h1 id="title">Updating the color wheel</h1>
-      <p id="text">
-        It will be back in a few seconds. This page reloads itself.
+      <svg class="icon" viewBox="0 0 512 512" aria-hidden="true">
+        <defs>
+          <linearGradient id="t" x1="0.5" y1="0" x2="0.5" y2="1">
+            <stop offset="0" stop-color="#be185d" />
+            <stop offset="1" stop-color="#7a7d80" />
+          </linearGradient>
+        </defs>
+        <rect width="512" height="512" rx="112.6" fill="#1b1e22" />
+        <g transform="rotate(30 256 256)">
+          <path
+            class="hue"
+            style="--i: 0"
+            d="M200.34 48.29A215.04 215.04 0 0 1 311.66 48.29L296.07 106.45A154.8288 154.8288 0 0 0 215.93 106.45Z"
+            fill="#e8291c"
+          />
+          <path
+            class="hue"
+            style="--i: 1"
+            d="M311.66 48.29A215.04 215.04 0 0 1 408.06 103.94L365.48 146.52A154.8288 154.8288 0 0 0 296.07 106.45Z"
+            fill="#ef5b1b"
+          />
+          <path
+            class="hue"
+            style="--i: 2"
+            d="M408.06 103.94A215.04 215.04 0 0 1 463.71 200.34L405.55 215.93A154.8288 154.8288 0 0 0 365.48 146.52Z"
+            fill="#f7941d"
+          />
+          <path
+            class="hue"
+            style="--i: 3"
+            d="M463.71 200.34A215.04 215.04 0 0 1 463.71 311.66L405.55 296.07A154.8288 154.8288 0 0 0 405.55 215.93Z"
+            fill="#fbb917"
+          />
+          <path
+            class="hue"
+            style="--i: 4"
+            d="M463.71 311.66A215.04 215.04 0 0 1 408.06 408.06L365.48 365.48A154.8288 154.8288 0 0 0 405.55 296.07Z"
+            fill="#ffe500"
+          />
+          <path
+            class="hue"
+            style="--i: 5"
+            d="M408.06 408.06A215.04 215.04 0 0 1 311.66 463.71L296.07 405.55A154.8288 154.8288 0 0 0 365.48 365.48Z"
+            fill="#a6ce39"
+          />
+          <path
+            class="hue"
+            style="--i: 6"
+            d="M311.66 463.71A215.04 215.04 0 0 1 200.34 463.71L215.93 405.55A154.8288 154.8288 0 0 0 296.07 405.55Z"
+            fill="#2fb34a"
+          />
+          <path
+            class="hue"
+            style="--i: 7"
+            d="M200.34 463.71A215.04 215.04 0 0 1 103.94 408.06L146.52 365.48A154.8288 154.8288 0 0 0 215.93 405.55Z"
+            fill="#1aa39a"
+          />
+          <path
+            class="hue"
+            style="--i: 8"
+            d="M103.94 408.06A215.04 215.04 0 0 1 48.29 311.66L106.45 296.07A154.8288 154.8288 0 0 0 146.52 365.48Z"
+            fill="#2b6cb0"
+          />
+          <path
+            class="hue"
+            style="--i: 9"
+            d="M48.29 311.66A215.04 215.04 0 0 1 48.29 200.34L106.45 215.93A154.8288 154.8288 0 0 0 106.45 296.07Z"
+            fill="#5b3fa0"
+          />
+          <path
+            class="hue"
+            style="--i: 10"
+            d="M48.29 200.34A215.04 215.04 0 0 1 103.94 103.94L146.52 146.52A154.8288 154.8288 0 0 0 106.45 215.93Z"
+            fill="#8e3092"
+          />
+          <path
+            class="hue"
+            style="--i: 11"
+            d="M103.94 103.94A215.04 215.04 0 0 1 200.34 48.29L215.93 106.45A154.8288 154.8288 0 0 0 146.52 146.52Z"
+            fill="#be185d"
+          />
+        </g>
+        <polygon
+          points="256.00,122.85 371.31,322.58 140.69,322.58"
+          fill="url(#t)"
+        />
+      </svg>
+      <p class="site" id="site">Chromatic Wheel</p>
+      <h1 id="title">We're updating the wheel</h1>
+      <p id="text" role="status">
+        It'll be back in a few seconds. This page will reload by itself as soon
+        as it's ready.
       </p>
     </main>
     <script>
-      // The language of the address (/es/…), or the browser's, as the web does.
+      // [site name (that of the web), title, text] in each language of the web.
       const texts = {
         en: [
-          "Updating the color wheel",
-          "It will be back in a few seconds. This page reloads itself.",
+          "Chromatic Wheel",
+          "We're updating the wheel",
+          "It'll be back in a few seconds. This page will reload by itself as soon as it's ready.",
         ],
         es: [
-          "Actualizando la rueda de color",
-          "Vuelve en unos segundos. Esta página se recarga sola.",
+          "Rueda cromática",
+          "Estamos actualizando la rueda",
+          "Vuelve en unos segundos. Esta página se recargará sola en cuanto esté lista.",
         ],
         fr: [
-          "Mise à jour de la roue chromatique",
-          "Elle revient dans quelques secondes. Cette page se recharge toute seule.",
+          "Roue chromatique",
+          "Nous mettons à jour la roue",
+          "Elle revient dans quelques secondes. Cette page se rechargera d'elle-même dès qu'elle sera prête.",
         ],
         de: [
-          "Der Farbkreis wird aktualisiert",
-          "In wenigen Sekunden ist er wieder da. Diese Seite lädt sich selbst neu.",
+          "Farbkreis",
+          "Wir aktualisieren den Farbkreis",
+          "In wenigen Sekunden ist er zurück. Diese Seite lädt automatisch neu, sobald er bereit ist.",
         ],
         it: [
-          "Aggiornamento della ruota dei colori",
-          "Torna tra pochi secondi. Questa pagina si ricarica da sola.",
+          "Ruota cromatica",
+          "Stiamo aggiornando la ruota",
+          "Torna tra pochi secondi. Questa pagina si ricaricherà da sola appena sarà pronta.",
         ],
-        "pt-br": [
-          "Atualizando a roda de cores",
-          "Volta em alguns segundos. Esta página recarrega sozinha.",
+        "pt-BR": [
+          "Roda cromática",
+          "Estamos atualizando a roda",
+          "Ela volta em alguns segundos. Esta página vai recarregar sozinha assim que estiver pronta.",
         ],
         ru: [
-          "Цветовой круг обновляется",
-          "Он вернётся через несколько секунд. Страница перезагрузится сама.",
+          "Цветовой круг",
+          "Мы обновляем цветовой круг",
+          "Он вернётся через несколько секунд. Страница перезагрузится сама, как только всё будет готово.",
         ],
-        "zh-hans": ["色轮正在更新", "几秒钟后即可恢复。此页面会自动刷新。"],
+        "zh-Hans": [
+          "色轮",
+          "我们正在更新色轮",
+          "几秒钟后即可恢复。准备就绪后，此页面会自动刷新。",
+        ],
         ja: [
+          "カラーホイール",
           "カラーホイールを更新しています",
-          "数秒で戻ります。このページは自動で再読み込みされます。",
+          "数秒で戻ります。準備ができ次第、このページは自動で再読み込みされます。",
         ],
         ko: [
-          "색상환을 업데이트하는 중입니다",
-          "몇 초 후에 돌아옵니다. 이 페이지는 자동으로 새로 고침됩니다.",
+          "색상환",
+          "색상환을 업데이트하고 있습니다",
+          "몇 초 후에 돌아옵니다. 준비되면 이 페이지가 자동으로 새로 고침됩니다.",
         ],
       };
-      const fromBrowser = (tag) => {
-        const lower = tag.toLowerCase();
-        if (lower.startsWith("pt")) return "pt-br";
-        if (lower.startsWith("zh")) return "zh-hans";
-        return lower.split("-")[0];
+
+      // The language of the address (/es/…, /pt-br/…) and then the browser's,
+      // first exactly and then by base language, as resolveLocale does in
+      // the web. English if none matches.
+      const locales = Object.keys(texts);
+      const base = (tag) => tag.split("-")[0].toLowerCase();
+      const resolve = (preferred) => {
+        for (const tag of preferred) {
+          const exact = locales.find(
+            (locale) => locale.toLowerCase() === tag.toLowerCase(),
+          );
+          if (exact) return exact;
+          const byBase = locales.find((locale) => base(locale) === base(tag));
+          if (byBase) return byBase;
+        }
+        return "en";
       };
-      const candidates = [
-        location.pathname.split("/")[1] ?? "",
-        ...navigator.languages.map(fromBrowser),
-      ];
-      const language = candidates.find((code) => code in texts) ?? "en";
-      document.documentElement.lang =
-        language === "pt-br"
-          ? "pt-BR"
-          : language === "zh-hans"
-            ? "zh-Hans"
-            : language;
-      document.getElementById("title").textContent = texts[language][0];
-      document.getElementById("text").textContent = texts[language][1];
+      const segment = location.pathname.split("/")[1] ?? "";
+      const fromAddress = locales.find(
+        (locale) => locale.toLowerCase() === segment,
+      );
+      const locale = resolve([
+        ...(fromAddress ? [fromAddress] : []),
+        ...navigator.languages,
+      ]);
+      const [site, title, text] = texts[locale];
+      document.documentElement.lang = locale;
+      document.title = site;
+      document.getElementById("site").textContent = site;
+      document.getElementById("title").textContent = title;
+      document.getElementById("text").textContent = text;
+
+      // The favicon, drawn from the icon of the page, so as not to repeat it.
+      const favicon = document.createElement("link");
+      favicon.rel = "icon";
+      favicon.href = `data:image/svg+xml,${encodeURIComponent(
+        new XMLSerializer().serializeToString(document.querySelector(".icon")),
+      )}`;
+      document.head.append(favicon);
+
+      // Asks every few seconds, without reloading, and reloads only when the
+      // web answers again (a page, or its 404): while it is down, the proxy
+      // answers 503, or Cloudflare a 5xx of its own.
+      const check = async () => {
+        try {
+          const response = await fetch(location.href, {
+            method: "HEAD",
+            cache: "no-store",
+          });
+          if (response.status < 500) {
+            location.reload();
+            return;
+          }
+        } catch {
+          // Offline or the proxy itself is down: try again later.
+        }
+        setTimeout(check, 5000);
+      };
+      setTimeout(check, 5000);
     </script>
   </body>
 </html>
