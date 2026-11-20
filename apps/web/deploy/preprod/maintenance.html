@@ -1,0 +1,149 @@
+<!doctype html>
+<!--
+  Maintenance page of the preproduction (docs/08). Nginx Proxy Manager serves
+  it, with the status 503, while the web does not answer: during a deploy or
+  while the machine restarts. It has no external files, because nothing
+  behind the proxy answers, and it reloads itself until the web is back.
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <meta http-equiv="refresh" content="10" />
+    <title>Rueda cromática</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg: light-dark(#f6f7f9, #121417);
+        --text: light-dark(#1d1f22, #e9eaec);
+        --muted: light-dark(#5a5f66, #b5bac1);
+        --font: system-ui, -apple-system, "Segoe UI", sans-serif;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        min-height: 100dvh;
+        display: grid;
+        place-items: center;
+        padding: 1rem;
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--font);
+        text-align: center;
+      }
+      main {
+        max-width: 28rem;
+      }
+      .wheel {
+        width: 6rem;
+        aspect-ratio: 1;
+        margin: 0 auto 1.5rem;
+        border-radius: 50%;
+        background: conic-gradient(
+          #e8291c,
+          #f7941d,
+          #ffe500,
+          #a6ce39,
+          #00a99d,
+          #2e3192,
+          #92278f,
+          #e8291c
+        );
+        mask: radial-gradient(circle, transparent 58%, #000 60%);
+        animation: turn 4s linear infinite;
+      }
+      @keyframes turn {
+        to {
+          rotate: 1turn;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .wheel {
+          animation: none;
+        }
+      }
+      h1 {
+        margin: 0 0 0.5rem;
+        font-size: 1.5rem;
+      }
+      p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.5;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="wheel" aria-hidden="true"></div>
+      <h1 id="title">Updating the color wheel</h1>
+      <p id="text">
+        It will be back in a few seconds. This page reloads itself.
+      </p>
+    </main>
+    <script>
+      // The language of the address (/es/…), or the browser's, as the web does.
+      const texts = {
+        en: [
+          "Updating the color wheel",
+          "It will be back in a few seconds. This page reloads itself.",
+        ],
+        es: [
+          "Actualizando la rueda de color",
+          "Vuelve en unos segundos. Esta página se recarga sola.",
+        ],
+        fr: [
+          "Mise à jour de la roue chromatique",
+          "Elle revient dans quelques secondes. Cette page se recharge toute seule.",
+        ],
+        de: [
+          "Der Farbkreis wird aktualisiert",
+          "In wenigen Sekunden ist er wieder da. Diese Seite lädt sich selbst neu.",
+        ],
+        it: [
+          "Aggiornamento della ruota dei colori",
+          "Torna tra pochi secondi. Questa pagina si ricarica da sola.",
+        ],
+        "pt-br": [
+          "Atualizando a roda de cores",
+          "Volta em alguns segundos. Esta página recarrega sozinha.",
+        ],
+        ru: [
+          "Цветовой круг обновляется",
+          "Он вернётся через несколько секунд. Страница перезагрузится сама.",
+        ],
+        "zh-hans": ["色轮正在更新", "几秒钟后即可恢复。此页面会自动刷新。"],
+        ja: [
+          "カラーホイールを更新しています",
+          "数秒で戻ります。このページは自動で再読み込みされます。",
+        ],
+        ko: [
+          "색상환을 업데이트하는 중입니다",
+          "몇 초 후에 돌아옵니다. 이 페이지는 자동으로 새로 고침됩니다.",
+        ],
+      };
+      const fromBrowser = (tag) => {
+        const lower = tag.toLowerCase();
+        if (lower.startsWith("pt")) return "pt-br";
+        if (lower.startsWith("zh")) return "zh-hans";
+        return lower.split("-")[0];
+      };
+      const candidates = [
+        location.pathname.split("/")[1] ?? "",
+        ...navigator.languages.map(fromBrowser),
+      ];
+      const language = candidates.find((code) => code in texts) ?? "en";
+      document.documentElement.lang =
+        language === "pt-br"
+          ? "pt-BR"
+          : language === "zh-hans"
+            ? "zh-Hans"
+            : language;
+      document.getElementById("title").textContent = texts[language][0];
+      document.getElementById("text").textContent = texts[language][1];
+    </script>
+  </body>
+</html>

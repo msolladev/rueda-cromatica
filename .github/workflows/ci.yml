@@ -3,17 +3,21 @@ name: CI
 on:
   pull_request:
     branches: [main, preprod]
+  # Each push to preprod is verified with its origin and, if it passes,
+  # deployed to the preproduction (docs/08).
+  push:
+    branches: [preprod]
 
 permissions:
   contents: read
 
-concurrency:
-  group: ci-${{ github.ref }}
-  cancel-in-progress: true
-
 jobs:
   ci:
+    if: github.event_name == 'pull_request'
     runs-on: ubuntu-26.04
+    concurrency:
+      group: ci-${{ github.ref }}
+      cancel-in-progress: true
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -21,42 +25,56 @@ jobs:
           # Full history and tags: build-catalog compares the IDs with the
           # catalog of the latest release/YYYY-MM-DD tag (docs/03 §7).
           fetch-depth: 0
+      - uses: ./.github/actions/verify
 
-      # pnpm version from `packageManager`; pnpm downloads Node per `devEngines.runtime`.
-      - uses: pnpm/action-setup@ea17c68df8912ef543352723c149a84f56e3d413 # v6.1.0
+  # The same verification, built with the preproduction's origin. Its `dist`
+  # is what the deploy serves, without building it again (ADR-0011).
+  ci-preprod:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/preprod'
+    runs-on: ubuntu-26.04
+    # The environment's variables, without recording a deployment.
+    environment:
+      name: preprod
+      deployment: false
+    concurrency:
+      group: ci-preprod
+      cancel-in-progress: true
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          cache: true
-
-      - run: pnpm install --frozen-lockfile
-      - run: pnpm format:check
-      - run: pnpm lint
-      - run: pnpm typecheck
-      # API reference (ADR-0023): fails on any TypeDoc warning. Nothing is published.
-      - run: pnpm docs:api
-
-      # Chromium for the Vitest browser projects of color-wheel (ADR-0020) and
-      # web (the headless shell), and the full Chromium for the end-to-end
-      # tests of web (ADR-0024), which paints like a real browser, and Firefox
-      # for those of the site. Cached per
-      # Playwright version (the same in every package). The system libraries it needs are not cached and
-      # are always installed.
-      - id: playwright
-        run: echo "version=$(pnpm --filter @chromatic-wheel/color-wheel exec playwright --version | cut -d' ' -f2)" >> "$GITHUB_OUTPUT"
-      - id: playwright-cache
-        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: ./.github/actions/verify
         with:
-          path: ~/.cache/ms-playwright
-          key: playwright-${{ runner.os }}-${{ steps.playwright.outputs.version }}
-      - if: steps.playwright-cache.outputs.cache-hit != 'true'
-        run: pnpm --filter @chromatic-wheel/color-wheel exec playwright install --with-deps chromium firefox
-      - if: steps.playwright-cache.outputs.cache-hit == 'true'
-        run: pnpm --filter @chromatic-wheel/color-wheel exec playwright install-deps chromium firefox
+          site-origin: ${{ vars.SITE_ORIGIN }}
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: web-dist
+          path: apps/web/dist/
+          if-no-files-found: error
+          retention-days: 7
 
-      - run: pnpm test
-      # Step 4 (ADR-0011): regenerates catalog.json and fails if it differs from the
-      # committed one or breaks the ID stability (docs/03 §7).
-      - run: pnpm --filter @chromatic-wheel/catalog-builder build-catalog --check
-      - run: pnpm build
-      # End-to-end tests of the built web (ADR-0024): routes, content without
-      # JavaScript, offline and the new-version notice.
-      - run: pnpm --filter @chromatic-wheel/web test:e2e
+  # Runs on the self-hosted runner of the preproduction's machine, which only
+  # makes outbound connections (ADR-0011, docs/08).
+  deploy-preprod:
+    needs: ci-preprod
+    runs-on: [self-hosted, colorwheel-preprod]
+    environment:
+      name: preprod
+      url: ${{ vars.SITE_ORIGIN }}
+    # A deploy is never cancelled halfway; the next one waits.
+    concurrency:
+      group: deploy-preprod
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          sparse-checkout: apps/web/deploy/preprod
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: web-dist
+          path: apps/web/dist/
+      - run: apps/web/deploy/preprod/deploy.sh apps/web/dist "$GITHUB_SHA" "$SITE_ORIGIN"
+        env:
+          SITE_ORIGIN: ${{ vars.SITE_ORIGIN }}
