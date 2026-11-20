@@ -409,6 +409,22 @@ select {
 select {
   appearance: none;
   padding-inline-end: 2.5rem;
+  transition: border-color 0.15s;
+}
+
+.select-box::after {
+  transition: background-color 0.15s;
+}
+
+/* Hovered, a field darkens its border, and a select its chevron too. */
+@media (hover: hover) {
+  select:enabled:hover {
+    border-color: var(--text);
+  }
+
+  .select-box:has(select:enabled:hover)::after {
+    background: var(--text);
+  }
 }
 
 /* In forced colors the mask keeps the system's text color. */
@@ -462,6 +478,19 @@ details[open]::details-content {
   block-size: auto;
 }
 
+/* Hovered, the line of a disclosure is underlined, as a link. */
+summary {
+  text-decoration: underline 1px transparent;
+  text-underline-offset: 0.25em;
+  transition: text-decoration-color 0.15s;
+}
+
+@media (hover: hover) {
+  summary:hover {
+    text-decoration-color: currentColor;
+  }
+}
+
 @media (forced-colors: active) {
   summary::before {
     forced-color-adjust: none;
@@ -510,7 +539,16 @@ legend {
   border-radius: calc(var(--radius) - 3px);
   cursor: pointer;
   text-align: center;
-  transition: color 0.2s;
+  transition:
+    color 0.2s,
+    background-color 0.15s;
+}
+
+/* Hovered, an option that is not chosen gets a faint pill. */
+@media (hover: hover) {
+  .segmented-options label:not(:has(input:checked)):hover {
+    background: color-mix(in srgb, var(--text) 8%, transparent);
+  }
 }
 
 .segmented-options input {
@@ -1165,7 +1203,6 @@ legend {
   background: var(--warn-bg);
   color: var(--warn-text);
   border-inline-start: 3px solid var(--warn-text);
-  border-radius: 0 var(--radius) var(--radius) 0;
   font-size: 0.9rem;
 }
 
@@ -1302,7 +1339,33 @@ legend {
   align-items: center;
   gap: 0 0.5rem;
   padding: 0.4rem 0.75rem;
+  border-radius: calc(var(--radius) - 1px);
   cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.filters[open] summary {
+  border-end-start-radius: 0;
+  border-end-end-radius: 0;
+}
+
+.filters summary::before {
+  transition:
+    rotate 0.25s var(--ease),
+    background-color 0.15s;
+}
+
+/* Hovered, the bar of the filters is highlighted as the rows, and its arrow
+   takes the accent; it is a box, so it is not underlined. */
+@media (hover: hover) {
+  .filters summary:hover {
+    background: var(--bg);
+    text-decoration-color: transparent;
+  }
+
+  .filters summary:hover::before {
+    background: var(--accent);
+  }
 }
 
 .filters-title {
@@ -1519,6 +1582,19 @@ legend {
   font: inherit;
   font-size: 0.8rem;
   cursor: pointer;
+  transition: border-color 0.15s;
+}
+
+/* Hovered, a tab that is not selected darkens its border and its swatch
+   grows a little, a hint of what selecting it does. */
+@media (hover: hover) {
+  .tabs [role="tab"][aria-selected="false"]:hover {
+    border-color: var(--control-border);
+  }
+
+  .tabs [role="tab"][aria-selected="false"]:hover .swatch {
+    transform: scale(1.08);
+  }
 }
 
 /* The selected tab: its frame is drawn over the border, so the tab keeps its
@@ -1854,6 +1930,16 @@ brands per row. */
   align-items: center;
   color: var(--accent);
   cursor: pointer;
+  transition:
+    color 0.2s,
+    text-decoration-color 0.15s;
+}
+
+/* Hovered, its text darkens a little, as the links. */
+@media (hover: hover) {
+  .paint-details summary:hover {
+    color: color-mix(in srgb, var(--accent) 75%, var(--text));
+  }
 }
 
 .paint-details dl {

@@ -280,7 +280,18 @@
 }
 
 .cw-segment {
-  transition: color 0.2s;
+  transition:
+    color 0.2s,
+    background-color 0.15s;
+}
+
+/* Hovered, an option that is not chosen gets a faint pill. Only under a
+   mouse, as the help button. */
+@media (hover: hover) {
+  .cw-segmented-field:not(:disabled)
+    .cw-segment:not(:has(.cw-segment-input:checked)):hover {
+    background: color-mix(in srgb, var(--cw-text) 8%, transparent);
+  }
 }
 
 .cw-segmented[data-indicator]::before {
@@ -386,6 +397,28 @@
 
 .cw-input {
   font-variant-numeric: tabular-nums;
+}
+
+.cw-input,
+.cw-select {
+  transition: border-color 0.15s;
+}
+
+.cw-select-box::after {
+  transition: background-color 0.15s;
+}
+
+/* Hovered, a field darkens its border, and a select its chevron too. An
+   invalid hex keeps the color of the error. */
+@media (hover: hover) {
+  .cw-input:enabled:not([aria-invalid="true"]):hover,
+  .cw-select:enabled:hover {
+    border-color: var(--cw-text);
+  }
+
+  .cw-select-box:has(.cw-select:enabled:hover)::after {
+    background: var(--cw-text);
+  }
 }
 
 .cw-input[aria-invalid="true"] {
