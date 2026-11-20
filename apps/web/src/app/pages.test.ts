@@ -10,7 +10,7 @@ import {
 
 describe("pages", () => {
   it("has the language page and, per language, home and credits", () => {
-    expect(allPages()).toHaveLength(21);
+    expect(allPages()).toHaveLength(27);
     expect(allPages().map(pathOf)).toContain("/pt-br/creditos/");
     // The credits page is named in the language of the page.
     expect(allPages().map(pathOf)).toContain("/de/danksagungen/");
@@ -62,7 +62,7 @@ describe("pages", () => {
     const files = notFoundFiles().map(({ file }) => file);
     expect(files).toContain("/404.html");
     expect(files).toContain("/es/404.html");
-    expect(files).toHaveLength(11);
+    expect(files).toHaveLength(14);
     // Not a page of the sitemap.
     expect(allPages().some((page) => page.kind === "not-found")).toBe(false);
   });

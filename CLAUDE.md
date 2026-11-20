@@ -69,7 +69,7 @@ El alcance mínimo y lo aplazado están razonados en el [ADR-0019](docs/adr/0019
 - **MVP**: la rueda y, para cada uno de sus colores, las pinturas más parecidas de cada marca, con funcionamiento offline.
   - **Armonías**: complementario, complementario dividido, análogos, análogos con acento, tríada, tétrada rectangular, cuadrado y monocromático, además del esquema de miniatura.
   - **Equivalencias**: solo las calculadas. Las oficiales están aplazadas a la fase 5.
-  - **Web**: en los 10 idiomas de la rueda, con selector de idioma y de tema (sistema, claro u oscuro), y con las preferencias (marcas, filtros, vista, tema, idioma y rueda) guardadas en el navegador. En la fase 6 pasan a la cuenta del usuario.
+  - **Web**: en los 13 idiomas de la rueda, con el catalán, el euskera y el gallego ([ADR-0027](docs/adr/0027-lenguas-cooficiales-espana.md)), con selector de idioma y de tema (sistema, claro u oscuro), y con las preferencias (marcas, filtros, vista, tema, idioma y rueda) guardadas en el navegador. En la fase 6 pasan a la cuenta del usuario.
 - **Marcas y líneas del MVP**, solo las vigentes:
   - Warhammer Colour, antes Citadel: Base, Layer, Shade, Contrast, Technical y Dry.
   - Vallejo: Model Color y Game Color, con sus subfamilias e incluido Xpress Color.
@@ -90,7 +90,7 @@ El alcance mínimo y lo aplazado están razonados en el [ADR-0019](docs/adr/0019
    2. Builder mínimo según docs/04, con el paso 4 de la CI: hecho.
    3. Datos: hecho, una marca por iteración, cada una desde una sola fuente. Citadel: desde la tabla de SimoGecko con hex `community`, porque citadelcolour.com (hoy paint.warhammer.com) no publica los hex. The Army Painter: desde DonnervS con hex `community`; Warpaints Fanatic es una sola gama (lavados, metálicos y efectos se distinguen por el tipo y el atributo metálico). AK Interactive: desde DonnervS con hex `community`; 3Gen Acrylics es una sola gama con todas las etiquetas de AK (STANDARD, AFV, FIGURES…) salvo AIR, que es de aerógrafo; Quick Gen tiene 79 colores, comprobado en la web de AK. Vallejo: desde DonnervS con hex `community`, contrastado con las cartas oficiales CC329 (Model Color) y CC266 (Game Color y Xpress Color); Model Color y Game Color son una gama cada una, con sus subgrupos (lavados, tintas, metálicos, fluorescentes y Special FX) distinguidos por el tipo, y Xpress Color, con Intense, es una gama propia.
    4. Color: el paquete `color-wheel` con los dos modelos de rueda, las armonías, el esquema de miniatura, y el componente completo con su dibujo, su plantilla giratoria y sus controles (hecho), y en `domain` la búsqueda de la pintura más parecida con el ΔE, según docs/06 (hecho).
-   5. Web ([docs/07](docs/07-web.md), [ADR-0024](docs/adr/0024-web.md)): hecho. La rueda integrada, las pinturas más parecidas a cada color en pestañas, con los filtros, la vista por marca o sin distinguir marca y el aviso de color aproximado; la carga del catálogo; 10 idiomas, tema y preferencias; créditos y fuentes con las licencias de terceros; prerenderizado con SEO, y PWA instalable y sin conexión.
+   5. Web ([docs/07](docs/07-web.md), [ADR-0024](docs/adr/0024-web.md)): hecho. La rueda integrada, las pinturas más parecidas a cada color en pestañas, con los filtros, la vista por marca o sin distinguir marca y el aviso de color aproximado; la carga del catálogo; 13 idiomas, tema y preferencias; créditos y fuentes con las licencias de terceros; prerenderizado con SEO, y PWA instalable y sin conexión.
 
    Al curar los datos hay que verificar:
    - La retirada de 25 Contrast en 2026. Mientras GW no la confirme, no se marcan como `discontinued`.
@@ -115,7 +115,7 @@ Pendiente fuera de la hoja de ruta:
 - Decidir dónde va producción. Cada publicación en producción crea la etiqueta `release/AAAA-MM-DD`, que protege sus IDs ([ADR-0025](docs/adr/0025-estabilidad-ids-etiqueta-publicacion.md)). Para el MVP, que es estático, statichost.eu es una opción recomendada, sin evaluar todavía. Cada entorno define `SITE_ORIGIN` al compilar la web y configura su servidor para servir cada página también sin la `/` final, sin redirigir, para redirigir con un 301 `/<ruta>/index.html` a `/<ruta>/` y para responder a las direcciones desconocidas con `404.html` (el del idioma de la dirección, si lo hay) y el estado 404 ([docs/07](docs/07-web.md) §12). La configuración de preproducción, en `apps/web/deploy/preprod/`, sirve de referencia ([docs/08](docs/08-despliegue.md)).
 - Al pasar a producción, publicar con la CI la referencia de los paquetes que genera TypeDoc, que hasta entonces solo se genera en local.
 - Antes de cualquier despliegue público, revisar las fuentes con licencia `unknown` o `terms-of-use`.
-- Antes de cualquier despliegue público, revisar los textos de la web en francés, alemán, italiano, portugués, ruso, chino, japonés y coreano, que nadie ha revisado.
+- Antes de cualquier despliegue público, revisar los textos de la web en catalán, euskera, gallego, francés, alemán, italiano, portugués, ruso, chino, japonés y coreano, que nadie ha revisado.
 
 ## Documentación
 

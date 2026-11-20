@@ -1,0 +1,60 @@
+{
+  "harmony": {
+    "complementary": "Complementari",
+    "split-complementary": "Complementari dividit",
+    "analogous": "Anàlegs",
+    "accented-analogous": "Anàlegs amb accent",
+    "triad": "Tríada",
+    "square": "Quadrat",
+    "rectangle": "Tètrada rectangular",
+    "monochromatic": "Monocromàtic",
+    "miniature-scheme": "Esquema de miniatura"
+  },
+  "role": {
+    "base": "Base",
+    "complement": "Complementari",
+    "split": "Complementari dividit",
+    "analogous": "Anàleg",
+    "accent": "Accent",
+    "triad": "Tríada",
+    "square": "Quadrat",
+    "tetrad": "Tètrada",
+    "tint": "Amb blanc",
+    "tone": "Amb gris",
+    "shade": "Amb negre",
+    "shadow": "Ombra",
+    "light": "Llum"
+  },
+  "model": {
+    "ryb": "RYB",
+    "digital": "Digital"
+  },
+  "light": {
+    "warm": "Càlida",
+    "cold": "Freda"
+  },
+  "control": {
+    "hex": "Hex",
+    "model": "Model",
+    "harmony": "Harmonia",
+    "light": "Llum",
+    "results": "Colors",
+    "help": "Com s'utilitza"
+  },
+  "wheel": {
+    "label": "Roda de color",
+    "ring": "To",
+    "ringValue": "{hue}°",
+    "triangle": "Pur, blanc i negre",
+    "triangleValue": "{pure} % pur, {white} % blanc, {black} % negre",
+    "ringKeys": "Fletxes: 1°. Majúscules + fletxes: 10°. Re Pàg i Av Pàg: 30°, el to següent.",
+    "triangleKeys": "Dreta i esquerra: més o menys pur. Amunt i avall: més clar o més fosc. Un 1 % per pas; un 10 % amb Majúscules.",
+    "pointerHelp": "Arrossega a l'anell per canviar el to, i dins del triangle per afegir-hi blanc o negre.",
+    "touchHelp": "Amb el dit, el punt segueix el teu moviment sense saltar sota el dit, així que sempre es veu. Toca per saltar a un lloc.",
+    "keyboardHelp": "Amb el teclat, ves a l'anell o al triangle amb el tabulador i fes servir les fletxes.",
+    "modelHelp": "RYB (vermell, groc i blau) és la roda tradicional de la pintura, la de barrejar pigments: els seus complementaris són vermell i verd, groc i violeta, i blau i taronja. Digital és la roda de la pantalla (RGB), amb altres complementaris, com blau i groc.",
+    "helpClose": "Tanca",
+    "hexInvalid": "Escriu un color hex, com ara #3daf44.",
+    "resultsUpdated": "{count} colors: {harmony}."
+  }
+}

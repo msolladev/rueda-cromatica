@@ -3,10 +3,13 @@
  * texts, the name it gives itself and the slug of its URLs.
  */
 import { LOCALES, type Locale } from "@chromatic-wheel/color-wheel";
+import { ca } from "./locales/ca.ts";
 import { de } from "./locales/de.ts";
 import { en } from "./locales/en.ts";
 import { es } from "./locales/es.ts";
+import { eu } from "./locales/eu.ts";
 import { fr } from "./locales/fr.ts";
+import { gl } from "./locales/gl.ts";
 import { it } from "./locales/it.ts";
 import { ja } from "./locales/ja.ts";
 import { ko } from "./locales/ko.ts";
@@ -20,6 +23,9 @@ export { LOCALES, type Locale };
 const MESSAGES: Readonly<Record<Locale, Messages>> = {
   en,
   es,
+  ca,
+  eu,
+  gl,
   fr,
   de,
   it,
@@ -34,6 +40,9 @@ const MESSAGES: Readonly<Record<Locale, Messages>> = {
 export const LANGUAGE_NAMES: Readonly<Record<Locale, string>> = {
   en: "English",
   es: "Español",
+  ca: "Català",
+  eu: "Euskara",
+  gl: "Galego",
   fr: "Français",
   de: "Deutsch",
   it: "Italiano",

@@ -1,6 +1,6 @@
 # ADR-0020: La rueda de color como paquete independiente
 
-- **Estado:** aceptada; corregida en parte por ADR-0021
+- **Estado:** aceptada; corregida en parte por ADR-0021 y ADR-0027
 - **Fecha:** 2026-11-16
 
 ## Contexto
