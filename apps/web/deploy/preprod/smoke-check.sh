@@ -92,6 +92,14 @@ expect_cache /sw.js no-cache
 expect_cache /catalog.json no-cache
 expect_cache /es/ no-cache
 
+# The manifest, with its type: some browsers only accept it so.
+fetch /es/manifest.webmanifest
+if [[ "$status" != "200" || "$(header Content-Type)" != "application/manifest+json" ]]; then
+  fail /es/manifest.webmanifest "status $status with Content-Type \"$(header Content-Type)\", expected 200 with \"application/manifest+json\""
+else
+  pass "/es/manifest.webmanifest → application/manifest+json"
+fi
+
 # Hashed assets, cached for a year.
 fetch /es/
 asset="$(grep -o '/assets/[^"]*\.js' "$work/body" 2>/dev/null | head -n 1 || true)"

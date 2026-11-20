@@ -1,9 +1,11 @@
 /**
  * The `<head>` of each page (docs/07 §10): title, description, language
  * alternates, canonical URL, sharing metadata and structured data. It is
- * written by the prerendering, so it is there without JavaScript.
+ * written by the prerendering, so it is there without JavaScript. Every page
+ * links the manifest of its language (docs/07 §8).
  */
 import { LOCALES, messagesOf, type Locale } from "../i18n/i18n.ts";
+import { manifestPathOf } from "./manifest.ts";
 import { pathOf, type Page } from "./pages.ts";
 
 const escapeHtml = (text: string): string =>
@@ -54,6 +56,7 @@ export function headOf(page: Page, origin: string): string {
       `<title>${escapeHtml(title)}</title>`,
       `<meta name="description" content="${escapeHtml(description)}" />`,
       `<meta name="robots" content="noindex" />`,
+      `<link rel="manifest" href="${manifestPathOf(page.locale)}" />`,
     ].join("\n    ");
   }
   const url = (target: Page) => `${origin}${pathOf(target)}`;
@@ -80,6 +83,7 @@ export function headOf(page: Page, origin: string): string {
     `<title>${escapeHtml(title)}</title>`,
     `<meta name="description" content="${escapeHtml(description)}" />`,
     `<link rel="canonical" href="${url(page)}" />`,
+    `<link rel="manifest" href="${manifestPathOf(lang)}" />`,
     ...alternates.map(
       (alternate) =>
         `<link rel="alternate" hreflang="${alternate.locale}" href="${url(alternate)}" />`,

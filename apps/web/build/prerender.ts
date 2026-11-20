@@ -4,12 +4,13 @@
  * - In the build, after the browser bundle is written and before the service
  *   worker is generated, it builds `src/entry-server.tsx` for Node, renders
  *   every page to `dist/<path>/index.html`, «Page not found» to
- *   `dist/404.html` and `dist/<locale>/404.html`, and writes `sitemap.xml`
- *   and `robots.txt`. The service worker then precaches every page.
+ *   `dist/404.html` and `dist/<locale>/404.html`, and writes `sitemap.xml`,
+ *   `robots.txt` and each language's manifest. The service worker then
+ *   precaches every page.
  * - In development, it renders each page on request with the same code, so
  *   the browser always takes over a prerendered page; an unknown address
- *   gets «Page not found» with the status 404, and the sitemap and
- *   robots.txt are served as in the build.
+ *   gets «Page not found» with the status 404, and the sitemap, robots.txt
+ *   and the manifests are served as in the build.
  * - In `vite preview`, an unknown address gets the built «Page not found»
  *   with the status 404, as the static server will.
  */
@@ -148,14 +149,31 @@ export function prerender(options: PrerenderOptions): Plugin {
           const { pathname } = url;
           const isListing =
             pathname === "/sitemap.xml" || pathname === "/robots.txt";
+          const isManifest = pathname.endsWith("/manifest.webmanifest");
           // Vite's own addresses and the files go on as always.
-          if (!isListing && !isPageAddress(pathname)) {
+          if (!isListing && !isManifest && !isPageAddress(pathname)) {
             next();
             return;
           }
           const entry = (await server.ssrLoadModule(
             `/${SERVER_ENTRY}`,
           )) as ServerEntry;
+          // The same manifests as the build.
+          if (isManifest) {
+            const manifest = entry
+              .allManifests()
+              .find((candidate) => candidate.path === pathname);
+            if (manifest === undefined) {
+              next();
+              return;
+            }
+            response.setHeader(
+              "Content-Type",
+              "application/manifest+json; charset=utf-8",
+            );
+            response.end(manifest.json);
+            return;
+          }
           // The same sitemap and robots.txt as the build.
           if (isListing) {
             response.setHeader(
@@ -290,6 +308,9 @@ export function prerender(options: PrerenderOptions): Plugin {
           sitemap(entry, options.origin),
         );
         writeFileSync(join(outDir, "robots.txt"), robots(options.origin));
+        for (const { path, json } of entry.allManifests()) {
+          writeFileSync(join(outDir, path), json);
+        }
         rmSync(serverDir, { recursive: true, force: true });
       },
     },

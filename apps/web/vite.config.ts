@@ -94,35 +94,9 @@ export default defineConfig(({ command, isSsrBuild }) => {
                   }),
                 ],
               },
-              manifest: {
-                name: "Rueda cromática",
-                short_name: "Rueda",
-                description:
-                  "Color wheel for painting miniatures, with the closest paints of each brand.",
-                start_url: "/",
-                scope: "/",
-                display: "standalone",
-                background_color: "#f6f7f9",
-                theme_color: "#f6f7f9",
-                icons: [
-                  {
-                    src: "/icons/icon-192.png",
-                    sizes: "192x192",
-                    type: "image/png",
-                  },
-                  {
-                    src: "/icons/icon-512.png",
-                    sizes: "512x512",
-                    type: "image/png",
-                  },
-                  {
-                    src: "/icons/icon-maskable-512.png",
-                    sizes: "512x512",
-                    type: "image/png",
-                    purpose: "maskable",
-                  },
-                ],
-              },
+              // One manifest per language, written by the prerendering
+              // (src/app/manifest.ts, docs/07 §8).
+              manifest: false,
             }),
           ]),
     ],
