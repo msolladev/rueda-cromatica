@@ -12,7 +12,7 @@ const paths = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(
 test("serves every page of the sitemap, in its language", async ({
   request,
 }) => {
-  expect(paths).toHaveLength(21);
+  expect(paths).toHaveLength(27);
   for (const path of paths) {
     const response = await request.get(path);
     expect(response.status(), path).toBe(200);

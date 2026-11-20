@@ -46,6 +46,9 @@ describe("resolveLocale", () => {
     [["es-ES"], "es"],
     [["pt-PT"], "pt-BR"],
     [["zh-CN"], "zh-Hans"],
+    [["ca-ES"], "ca"],
+    [["eu-ES"], "eu"],
+    [["gl-ES"], "gl"],
     // The first match, even by base language.
     [["pt-PT", "en"], "pt-BR"],
     [["nl", "de-AT", "fr"], "de"],

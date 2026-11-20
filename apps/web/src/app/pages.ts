@@ -28,6 +28,9 @@ export type Page =
 export const CREDITS_SLUGS: Readonly<Record<Locale, string>> = {
   en: "credits",
   es: "creditos",
+  ca: "credits",
+  eu: "kredituak",
+  gl: "creditos",
   fr: "credits",
   de: "danksagungen",
   it: "crediti",

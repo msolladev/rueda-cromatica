@@ -110,10 +110,10 @@ En la fase 6 las preferencias pasarán a la cuenta del usuario ([ADR-0017](adr/0
 
 ## 9. Idiomas
 
-- **Los mismos 10 que la rueda**, con la misma detección (`resolveLocale` de `color-wheel`). La rueda y la web van siempre en el mismo idioma.
+- **Los mismos 13 que la rueda** ([ADR-0027](adr/0027-lenguas-cooficiales-espana.md)), con la misma detección (`resolveLocale` de `color-wheel`). La rueda y la web van siempre en el mismo idioma.
 - **Los textos de la web** están en un diccionario tipado: si falta un texto en un idioma, no compila. Un test comprueba además que ninguno está vacío y que todos conservan los marcadores (`{count}`…). Los nombres de las armonías y los papeles salen de la rueda (`labelsFor` y `colorNames`). Los nombres de las pinturas no se traducen.
 - **El selector de idioma** muestra cada idioma en su propio idioma, con el rótulo bilingüe «Idioma · Language». Al cambiarlo, carga la misma página en el otro idioma y lo recuerda.
-- **Riesgo conocido**: los textos de 8 idiomas los escribió Claude y nadie los ha revisado. Solo el castellano y el inglés están revisados.
+- **Riesgo conocido**: los textos de 11 idiomas los escribió Claude y nadie los ha revisado. Solo el castellano y el inglés están revisados.
 
 ## 10. Prerenderizado y SEO
 
@@ -147,12 +147,12 @@ En la fase 6 las preferencias pasarán a la cuenta del usuario ([ADR-0017](adr/0
 | Rueda y pinturas   | `/es/`, `/pt-br/`…                    |
 | Créditos y fuentes | `/es/creditos/`, `/de/danksagungen/`… |
 
-- **El idioma va delante**, en minúsculas (`pt-BR` → `/pt-br/`). El nombre de la página de créditos va en el idioma de la página (`CREDITS_SLUGS` de `pages.ts`), por el SEO: `creditos`, `credits`, `danksagungen`, `crediti`… Ruso, chino, japonés y coreano usan `credits`, en inglés, para no mezclar dos alfabetos en la ruta.
+- **El idioma va delante**, en minúsculas (`pt-BR` → `/pt-br/`). El nombre de la página de créditos va en el idioma de la página (`CREDITS_SLUGS` de `pages.ts`), por el SEO: `creditos`, `credits`, `kredituak`, `danksagungen`, `crediti`… Ruso, chino, japonés y coreano usan `credits`, en inglés, para no mezclar dos alfabetos en la ruta.
 - **Sin la `/` final**, cada página se sirve igual y con el estado 200, sin redirigir: `/es` muestra la página de `/es/`, también sin conexión. La URL canónica sigue siendo la de la `/` final, así que los buscadores no la cuentan dos veces, y los enlaces de la web son absolutos para que funcionen desde cualquiera de las dos. El servidor de desarrollo y `vite preview` responden igual, y el servidor estático de cada entorno tiene que configurarse para servir `<ruta>/index.html` sin redirigir.
 - **El nombre del fichero no es una dirección**: `/es/index.html` redirige con un 301 a `/es/`, como hacen los alojamientos estáticos con las URL limpias, para que los buscadores unifiquen las dos. `/es/404.html` responde «Página no encontrada» con el estado 404. Lo hace el servidor estático de cada entorno; el servidor de desarrollo y `vite preview` no lo necesitan.
-- **`/`** lleva al idioma guardado o al detectado sin pintar nada antes: la página queda en blanco hasta que redirige (y se muestra igualmente a los 3 segundos si la aplicación no llega a ejecutarse). Sin JavaScript, enlaza a los 10 idiomas.
+- **`/`** lleva al idioma guardado o al detectado sin pintar nada antes: la página queda en blanco hasta que redirige (y se muestra igualmente a los 3 segundos si la aplicación no llega a ejecutarse). Sin JavaScript, enlaza a los 13 idiomas.
 - **Página no encontrada**: cualquier otra dirección responde con el estado HTTP 404 y la página «Página no encontrada», en el idioma de la dirección si empieza por uno (`/es/lo-que-sea/`) y en inglés si no, con un botón a la rueda de ese idioma. Su ilustración es una rueda de 12 tonos a la que le falta uno, con el 404 en el centro: al entrar, los tonos aparecen uno tras otro y una aguja, como la plantilla de la rueda, barre el anillo hasta el hueco y se queda buscando en él. Lleva `noindex` y no tiene URL canónica ni alternativas. El build la escribe en `dist/404.html` y `dist/<idioma>/404.html`; el servidor de desarrollo y `vite preview` responden igual, y el servidor estático de cada entorno tiene que configurarse para servir esos ficheros con el estado 404.
-- **`sitemap.xml` y `robots.txt`**: los escribe el build, con las 21 páginas y sus alternativas de idioma, y el servidor de desarrollo sirve los mismos.
+- **`sitemap.xml` y `robots.txt`**: los escribe el build, con las 27 páginas y sus alternativas de idioma, y el servidor de desarrollo sirve los mismos.
 - **Enlaces normales**, sin router en el cliente: cada página es un HTML completo y, sin conexión, sale del precaché.
 - **Fundido entre páginas**, en todos los navegadores: al pulsar un enlace a otra página de la web, o al cambiar de idioma, el contenido se funde hacia fuera y entonces se navega. La página nueva entra con un fundido, que el script en línea del `<head>` marca antes de pintar, solo si se llega desde un enlace de la web: al abrirla o al volver atrás aparece sin más. La barra de navegación no se anima. Los enlaces con una tecla modificadora, a otro sitio o con destino propio funcionan como siempre. Sin movimiento si el sistema pide reducirlo.
 
@@ -164,7 +164,7 @@ En la fase 6 las preferencias pasarán a la cuenta del usuario ([ADR-0017](adr/0
 
 ## 14. Tests
 
-- **Node**: el reductor, las preferencias, las rutas, la cabecera, la carga del catálogo, la búsqueda, los textos de los 10 idiomas, la plantilla HTML con la CSP, el plugin de licencias y el prerenderizado de las 21 páginas.
+- **Node**: el reductor, las preferencias, las rutas, la cabecera, la carga del catálogo, la búsqueda, los textos de los 13 idiomas, la plantilla HTML con la CSP, el plugin de licencias y el prerenderizado de las 27 páginas.
 - **Navegador** (modo navegador de Vitest con Playwright): que el navegador toma el HTML prerenderizado sin diferencias, las pestañas con teclado y sus nombres numerados, los filtros, «Ver más», la vista, el tema, el menú con su velo, los enlaces para saltar la barra, las preferencias guardadas y el error de red, con axe-core (WCAG 2.2 A y AA) en varios estados.
 - **De extremo a extremo** (`@playwright/test`), en Chromium completo, no en la versión recortada para tests, que no pinta como un navegador real:
   - sobre la web compilada (en Chromium, y lo que no depende del service worker también en Firefox): que se sirven todas las rutas en su idioma, el fundido entre páginas, el contenido sin JavaScript, que `/` va al idioma detectado, el selector de idioma, que el tema guardado se aplica antes de pintar y que la página declara `color-scheme` antes de la hoja de estilos, que nunca se ven los valores por defecto con preferencias guardadas (fotograma a fotograma), el funcionamiento sin conexión y el aviso de versión nueva;
