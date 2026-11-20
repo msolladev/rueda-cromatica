@@ -40,7 +40,7 @@ La imagen está en `apps/web/deploy/preprod/`: Nginx sin `root`, fijado por vers
 - **Caché**: los nombres con hash de `/assets/`, un año e `immutable`. Todo lo demás (las páginas, `sw.js`, `catalog.json`, el `manifest`), `no-cache`, para que el navegador siempre compruebe si hay versión nueva.
 - **Buscadores**: todas las respuestas llevan `X-Robots-Tag: noindex`. El `robots.txt` es el del build: si prohibiera rastrear, los buscadores no verían la cabecera.
 
-`smoke-check.sh` comprueba todo esto contra cualquier servidor (`smoke-check.sh <url-base>`): la CI lo ejecuta con cada build y el despliegue, antes y después de cambiar la versión.
+`smoke-check.sh` comprueba todo esto contra cualquier servidor (`smoke-check.sh <url-base>`), y también que cada dirección que precachea el service worker responde con el estado 200 y no es el nombre de un fichero: si una falla, el service worker no se instala y la web no funciona sin conexión. La CI lo ejecuta con cada build y el despliegue, antes y después de cambiar la versión.
 
 ## 4. La página de mantenimiento
 

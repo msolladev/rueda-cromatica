@@ -101,6 +101,33 @@ else
   expect_cache "$asset" "public, max-age=31536000, immutable"
 fi
 
+# Every address the service worker precaches answers 200, and none is a file
+# name: if one fails, the service worker does not install and the web does
+# not work offline.
+fetch /sw.js
+mapfile -t precached < <(grep -oE '"url":"[^"]*"' "$work/body" | cut -d '"' -f 4 | sort -u)
+if [[ "${#precached[@]}" -eq 0 ]]; then
+  fail /sw.js "no precached addresses found"
+else
+  broken=0
+  for url in "${precached[@]}"; do
+    path="/${url#./}"
+    if [[ "$path" == *.html ]]; then
+      fail "$path" "precached by its file name"
+      broken=$((broken + 1))
+      continue
+    fi
+    fetch "$path"
+    if [[ "$status" != "200" ]]; then
+      fail "$path" "precached, but status $status"
+      broken=$((broken + 1))
+    fi
+  done
+  if [[ "$broken" -eq 0 ]]; then
+    pass "/sw.js → ${#precached[@]} precached addresses, all 200"
+  fi
+fi
+
 if [[ "$failures" -gt 0 ]]; then
   printf '%d check(s) failed\n' "$failures"
   exit 1
