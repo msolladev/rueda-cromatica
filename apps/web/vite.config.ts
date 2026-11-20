@@ -78,6 +78,21 @@ export default defineConfig(({ command, isSsrBuild }) => {
               integration: { closeBundleOrder: "post" },
               injectManifest: {
                 globPatterns: ["**/*.{js,css,html,json,svg,png,webmanifest}"],
+                // «Page not found» has no address of its own, and the service
+                // worker never serves it.
+                globIgnores: ["**/404.html"],
+                // Each page is precached by its address (`es/`), not by its
+                // file (`es/index.html`), which is not an address (docs/07
+                // §12).
+                manifestTransforms: [
+                  (entries) => ({
+                    manifest: entries.map((entry) => ({
+                      ...entry,
+                      url:
+                        entry.url.replace(/(^|\/)index\.html$/, "$1") || "./",
+                    })),
+                  }),
+                ],
               },
               manifest: {
                 name: "Rueda cromática",
