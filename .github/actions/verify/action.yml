@@ -1,0 +1,83 @@
+# The CI steps (ADR-0011), shared by the pull requests and the pushes to
+# preprod, which build with their environment's origin (docs/08). It runs
+# after a checkout with the full history and the tags.
+name: Verify
+description: Installs, checks, tests and builds the monorepo, and checks the preproduction's server with the built web.
+
+inputs:
+  site-origin:
+    description: Origin of the site's absolute URLs (SITE_ORIGIN). Empty, that of `vite preview`.
+    required: false
+    default: ""
+
+runs:
+  using: composite
+  steps:
+    # pnpm version from `packageManager`; pnpm downloads Node per `devEngines.runtime`.
+    - uses: pnpm/action-setup@ea17c68df8912ef543352723c149a84f56e3d413 # v6.1.0
+      with:
+        cache: true
+
+    - run: pnpm install --frozen-lockfile
+      shell: bash
+    - run: pnpm format:check
+      shell: bash
+    - run: pnpm lint
+      shell: bash
+    - run: pnpm typecheck
+      shell: bash
+    # API reference (ADR-0023): fails on any TypeDoc warning. Nothing is published.
+    - run: pnpm docs:api
+      shell: bash
+
+    # Chromium for the Vitest browser projects of color-wheel (ADR-0020) and
+    # web (the headless shell), and the full Chromium for the end-to-end
+    # tests of web (ADR-0024), which paints like a real browser, and Firefox
+    # for those of the site. Cached per
+    # Playwright version (the same in every package). The system libraries it needs are not cached and
+    # are always installed.
+    - id: playwright
+      run: echo "version=$(pnpm --filter @chromatic-wheel/color-wheel exec playwright --version | cut -d' ' -f2)" >> "$GITHUB_OUTPUT"
+      shell: bash
+    - id: playwright-cache
+      uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+      with:
+        path: ~/.cache/ms-playwright
+        key: playwright-${{ runner.os }}-${{ steps.playwright.outputs.version }}
+    - if: steps.playwright-cache.outputs.cache-hit != 'true'
+      run: pnpm --filter @chromatic-wheel/color-wheel exec playwright install --with-deps chromium firefox
+      shell: bash
+    - if: steps.playwright-cache.outputs.cache-hit == 'true'
+      run: pnpm --filter @chromatic-wheel/color-wheel exec playwright install-deps chromium firefox
+      shell: bash
+
+    - run: pnpm test
+      shell: bash
+    # Step 4 (ADR-0011): regenerates catalog.json and fails if it differs from the
+    # committed one or breaks the ID stability (docs/03 §7).
+    - run: pnpm --filter @chromatic-wheel/catalog-builder build-catalog --check
+      shell: bash
+    - run: |
+        if [[ -n "$ORIGIN" ]]; then export SITE_ORIGIN="$ORIGIN"; fi
+        pnpm build
+      shell: bash
+      env:
+        ORIGIN: ${{ inputs.site-origin }}
+    # End-to-end tests of the built web (ADR-0024): routes, content without
+    # JavaScript, offline and the new-version notice.
+    - run: pnpm --filter @chromatic-wheel/web test:e2e
+      shell: bash
+
+    # The preproduction's server (docs/08) with this same build: routes,
+    # «Page not found», redirects and cache headers.
+    - run: |
+        docker build --tag colorwheel-web:ci \
+          --build-context site=apps/web/dist apps/web/deploy/preprod
+        docker run --detach --name colorwheel-web --publish 127.0.0.1:8080:8080 \
+          --read-only --tmpfs /tmp colorwheel-web:ci
+        for _ in $(seq 30); do
+          curl --silent --output /dev/null http://127.0.0.1:8080/ && break
+          sleep 0.5
+        done
+        apps/web/deploy/preprod/smoke-check.sh http://127.0.0.1:8080
+      shell: bash

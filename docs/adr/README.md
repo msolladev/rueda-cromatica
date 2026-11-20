@@ -16,7 +16,7 @@ Cada fichero recoge una decisión relevante: su contexto, la decisión tomada, l
 | [0008](0008-clasificacion-pinturas.md)               | Clasificación por gama comercial, tipo funcional y acabado metálico  | sustituida por ADR-0013                   |
 | [0009](0009-toolchain-pnpm-node.md)                  | Toolchain con pnpm y versiones fijadas de forma exacta               | aceptada                                  |
 | [0010](0010-lint-formato.md)                         | Lint con ESLint y formato con Prettier                               | aceptada                                  |
-| [0011](0011-ci-cd.md)                                | CI/CD con GitHub Actions                                             | aceptada                                  |
+| [0011](0011-ci-cd.md)                                | CI/CD con GitHub Actions                                             | aceptada; corregida en parte por ADR-0026 |
 | [0012](0012-entornos.md)                             | Entornos de desarrollo, preproducción y producción                   | aceptada                                  |
 | [0013](0013-clasificacion-pinturas.md)               | Clasificación de pinturas: gamas, tipos y acabado                    | aceptada                                  |
 | [0014](0014-origen-seleccion-color.md)               | Origen y selección del color                                         | aceptada; aplazada en parte por ADR-0019  |
@@ -31,6 +31,7 @@ Cada fichero recoge una decisión relevante: su contexto, la decisión tomada, l
 | [0023](0023-documentacion-tecnica.md)                | Documentación técnica                                                | aceptada                                  |
 | [0024](0024-web.md)                                  | La web: integración, estado, prerenderizado y PWA                    | aceptada                                  |
 | [0025](0025-estabilidad-ids-etiqueta-publicacion.md) | Estabilidad de IDs frente a la etiqueta de publicación               | aceptada                                  |
+| [0026](0026-preproduccion-homelab.md)                | Preproducción en el homelab                                          | aceptada                                  |
 
 ## Normas
 
