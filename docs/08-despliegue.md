@@ -1,6 +1,6 @@
 # Despliegue
 
-Cómo se despliega la web y cómo se vuelve atrás. Por ahora solo existe la preproducción, en el homelab. Producción está por decidir. Las decisiones están en el [ADR-0026](adr/0026-preproduccion-homelab.md), que completa el [ADR-0011](adr/0011-ci-cd.md) y el [ADR-0012](adr/0012-entornos.md).
+Cómo se despliega la web y cómo se vuelve atrás. Por ahora solo existe la preproducción, en el homelab. Producción irá también en el homelab, pendiente de configurar ([informe](investigacion/2026-11-alojamiento-produccion.md)). Las decisiones están en el [ADR-0026](adr/0026-preproduccion-homelab.md), que completa el [ADR-0011](adr/0011-ci-cd.md) y el [ADR-0012](adr/0012-entornos.md).
 
 Este documento no recoge IPs, nombres de máquinas ni la configuración del homelab, porque el repositorio es público. Esos datos solo existen en el homelab.
 

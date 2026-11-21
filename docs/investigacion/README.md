@@ -7,10 +7,11 @@ Cada informe recoge el estado de unas fuentes o de un tema en una fecha concreta
 
 ## Índice
 
-| Informe                                          | Fecha      | Tema                                  | ADR derivados                                                                           |
-| ------------------------------------------------ | ---------- | ------------------------------------- | --------------------------------------------------------------------------------------- |
-| [2026-11](2026-11-fuentes-datos.md)              | 2026-11-07 | Fuentes de datos de pinturas (fase 3) | [0013](../adr/0013-clasificacion-pinturas.md)-[0016](../adr/0016-datos-curados-json.md) |
-| [2026-11 Contrast](2026-11-retirada-contrast.md) | 2026-11-21 | Retirada de Contrast en 2026          | —                                                                                       |
+| Informe                                                  | Fecha      | Tema                                  | ADR derivados                                                                           |
+| -------------------------------------------------------- | ---------- | ------------------------------------- | --------------------------------------------------------------------------------------- |
+| [2026-11](2026-11-fuentes-datos.md)                      | 2026-11-07 | Fuentes de datos de pinturas (fase 3) | [0013](../adr/0013-clasificacion-pinturas.md)-[0016](../adr/0016-datos-curados-json.md) |
+| [2026-11 Contrast](2026-11-retirada-contrast.md)         | 2026-11-21 | Retirada de Contrast en 2026          | —                                                                                       |
+| [2026-11 Alojamiento](2026-11-alojamiento-produccion.md) | 2026-11-21 | Alojamiento de producción             | —                                                                                       |
 
 ## Normas
 
