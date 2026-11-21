@@ -1,12 +1,24 @@
 #!/usr/bin/env bash
 # Checks that a server of the built web answers as docs/07 §12 and docs/08
-# require. It prints only paths and results, never internal addresses.
+# require in an environment (preprod or production). It prints only paths
+# and results, never internal addresses.
 #
-# Usage: smoke-check.sh <base-url>
+# Usage: smoke-check.sh <base-url> <environment>
 set -euo pipefail
 
-base="${1:?usage: smoke-check.sh <base-url>}"
+usage="usage: smoke-check.sh <base-url> <environment>"
+base="${1:?$usage}"
 base="${base%/}"
+environment="${2:?$usage}"
+# The X-Robots-Tag of the web's responses: the preproduction is not indexed.
+case "$environment" in
+  preprod) robots="noindex" ;;
+  production) robots="" ;;
+  *)
+    echo "unknown environment \"$environment\"; $usage" >&2
+    exit 2
+    ;;
+esac
 work="$(mktemp -d)"
 trap 'rm -rf "$work"' EXIT
 failures=0
@@ -41,8 +53,8 @@ expect() {
     fail "$1" "not the page in \"$3\""
     return
   fi
-  if [[ "$(header X-Robots-Tag)" != "noindex" ]]; then
-    fail "$1" "without X-Robots-Tag: noindex"
+  if [[ "$(header X-Robots-Tag)" != "$robots" ]]; then
+    fail "$1" "X-Robots-Tag \"$(header X-Robots-Tag)\", expected \"$robots\""
     return
   fi
   pass "$1 → $2${3:+ ($3)}"
@@ -86,6 +98,17 @@ expect /es/does-not-exist/ 404 es
 expect /does-not-exist 404 en
 expect /es/404.html 404 es
 expect /assets/ 404 en
+
+# The API reference, never indexed. Its pages link to each other with
+# relative addresses, so its home needs the final `/`.
+fetch /reference/
+if [[ "$status" != "200" || "$(header X-Robots-Tag)" != "noindex" ]] ||
+  ! grep -q "<html" "$work/body"; then
+  fail /reference/ "status $status with X-Robots-Tag \"$(header X-Robots-Tag)\", expected 200 with \"noindex\""
+else
+  pass "/reference/ → 200 (noindex)"
+fi
+expect_redirect /reference /reference/
 
 # Revalidated always, so that each new version reaches the browser.
 expect_cache /sw.js no-cache

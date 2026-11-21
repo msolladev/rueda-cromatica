@@ -3,8 +3,8 @@ name: CI
 on:
   pull_request:
     branches: [main, preprod]
-  # Each push to preprod is verified with its origin and, if it passes,
-  # deployed to the preproduction (docs/08).
+  # Each push to a deployed branch is verified with its environment's origin
+  # and, if it passes, deployed to that environment (deploy.yml).
   push:
     branches: [preprod]
 
@@ -27,54 +27,10 @@ jobs:
           fetch-depth: 0
       - uses: ./.github/actions/verify
 
-  # The same verification, built with the preproduction's origin. Its `dist`
-  # is what the deploy serves, without building it again (ADR-0011).
-  ci-preprod:
+  # Each deployed branch, verified with its environment's origin and
+  # deployed if it passes (docs/08).
+  preprod:
     if: github.event_name == 'push' && github.ref == 'refs/heads/preprod'
-    runs-on: ubuntu-26.04
-    # The environment's variables, without recording a deployment.
-    environment:
-      name: preprod
-      deployment: false
-    concurrency:
-      group: ci-preprod
-      cancel-in-progress: true
-    steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          persist-credentials: false
-          fetch-depth: 0
-      - uses: ./.github/actions/verify
-        with:
-          site-origin: ${{ vars.SITE_ORIGIN }}
-      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
-        with:
-          name: web-dist
-          path: apps/web/dist/
-          if-no-files-found: error
-          retention-days: 7
-
-  # Runs on the self-hosted runner of the preproduction's machine, which only
-  # makes outbound connections (ADR-0011, docs/08).
-  deploy-preprod:
-    needs: ci-preprod
-    runs-on: [self-hosted, colorwheel-preprod]
-    environment:
-      name: preprod
-      url: ${{ vars.SITE_ORIGIN }}
-    # A deploy is never cancelled halfway; the next one waits.
-    concurrency:
-      group: deploy-preprod
-      cancel-in-progress: false
-    steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          persist-credentials: false
-          sparse-checkout: apps/web/deploy/preprod
-      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
-        with:
-          name: web-dist
-          path: apps/web/dist/
-      - run: apps/web/deploy/preprod/deploy.sh apps/web/dist "$GITHUB_SHA" "$SITE_ORIGIN"
-        env:
-          SITE_ORIGIN: ${{ vars.SITE_ORIGIN }}
+    uses: ./.github/workflows/deploy.yml
+    with:
+      environment: preprod

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Deploys a built web to the preproduction (docs/08), on its own machine:
+# Deploys a built web to an environment (docs/08), on its own machine:
 #   1. builds the image of this version;
 #   2. runs it next to the live one and checks it, without traffic;
 #   3. replaces the live one and checks it again through the public domain;
@@ -7,12 +7,15 @@
 #   5. keeps only the last images.
 # It prints nothing about the machine or the network.
 #
-# Usage: deploy.sh <dist-dir> <version> <public-url>
+# Usage: deploy.sh <environment> <site-dir> <reference-dir> <version> <public-url>
 set -euo pipefail
 
-dist="${1:?usage: deploy.sh <dist-dir> <version> <public-url>}"
-version="${2:?usage: deploy.sh <dist-dir> <version> <public-url>}"
-public_url="${3:?usage: deploy.sh <dist-dir> <version> <public-url>}"
+usage="usage: deploy.sh <environment> <site-dir> <reference-dir> <version> <public-url>"
+environment="${1:?$usage}"
+site="${2:?$usage}"
+reference="${3:?$usage}"
+version="${4:?$usage}"
+public_url="${5:?$usage}"
 
 here="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 image="colorwheel-web"
@@ -45,14 +48,15 @@ ready() {
 echo "::group::Build $image:$version"
 docker build --tag "$image:$version" \
   --label "org.opencontainers.image.revision=$version" \
-  --build-context site="$dist" "$here"
+  --build-arg ENVIRONMENT="$environment" \
+  --build-context site="$site" --build-context reference="$reference" "$here"
 echo "::endgroup::"
 
 echo "::group::Check the new version, without traffic"
 docker rm --force "$candidate" >/dev/null 2>&1 || true
 run "$candidate" "127.0.0.1:$candidate_port:8080" "$image:$version"
 if ! ready "http://127.0.0.1:$candidate_port/" ||
-  ! "$here/smoke-check.sh" "http://127.0.0.1:$candidate_port"; then
+  ! "$here/smoke-check.sh" "http://127.0.0.1:$candidate_port" "$environment"; then
   docker rm --force "$candidate" >/dev/null
   echo "::error::The new version failed its checks. The live one is untouched."
   exit 1
@@ -67,7 +71,7 @@ run "$live" "$live_port:8080" "$image:$version" --restart unless-stopped
 echo "::endgroup::"
 
 echo "::group::Check it through the public domain"
-if ! ready "http://127.0.0.1:$live_port/" || ! "$here/smoke-check.sh" "$public_url"; then
+if ! ready "http://127.0.0.1:$live_port/" || ! "$here/smoke-check.sh" "$public_url" "$environment"; then
   docker rm --force "$live" >/dev/null 2>&1 || true
   if [[ -n "$previous" ]]; then
     run "$live" "$live_port:8080" "$previous" --restart unless-stopped

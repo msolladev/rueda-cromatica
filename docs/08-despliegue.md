@@ -20,10 +20,10 @@ feat/x ──PR (squash)──▶ preprod ──PR (merge)──▶ main
 
 ## 2. Qué pasa en cada push a `preprod`
 
-Lo hace el workflow `ci.yml`:
+El workflow `ci.yml` llama a `deploy.yml` con el entorno de la rama (`preprod`). `deploy.yml` es el mismo para todos los entornos:
 
-1. **`ci-preprod`**, en un runner de GitHub: la misma verificación que los PR (la acción `.github/actions/verify`), con el build compilado con el `SITE_ORIGIN` del entorno `preprod`. Incluye los tests de extremo a extremo y las comprobaciones del servidor de preproducción sobre ese mismo `dist`, que después sube como artefacto de la ejecución.
-2. **`deploy-preprod`**, en el runner propio de la VM de preproducción, solo si el anterior ha pasado. Descarga ese `dist`, sin compilar nada, y ejecuta `apps/web/deploy/preprod/deploy.sh`:
+1. **`verify`**, en un runner de GitHub: la misma verificación que los PR (la acción `.github/actions/verify`), con el build compilado con el `SITE_ORIGIN` del entorno. Incluye los tests de extremo a extremo y las comprobaciones del servidor sobre ese mismo `dist`. Después sube como artefacto de la ejecución el `dist` y la referencia de la API (`dist/reference/`).
+2. **`deploy`**, en el runner propio de la VM del entorno, solo si el anterior ha pasado. Descarga ese artefacto, sin compilar nada, y ejecuta `apps/web/deploy/deploy.sh` con el entorno:
    1. monta la imagen de esa versión, con el commit en su nombre (`colorwheel-web:<commit>`);
    2. la arranca junto a la que sirve, solo accesible desde la propia VM, y le pasa las comprobaciones (`smoke-check.sh`);
    3. si pasan, sustituye a la que sirve y repite las comprobaciones por el dominio público, a través del túnel y de Nginx Proxy Manager;
@@ -34,17 +34,18 @@ Si algo falla, la ejecución sale en rojo y GitHub avisa por correo. Un desplieg
 
 ## 3. El servidor
 
-La imagen está en `apps/web/deploy/preprod/`: Nginx sin `root`, fijado por versión y digest (Dependabot propone las nuevas), con la configuración de `nginx.conf`. El contenedor es de solo lectura, sin capacidades y con los registros rotados.
+La imagen está en `apps/web/deploy/` y es la misma para todos los entornos: Nginx sin `root`, fijado por versión y digest (Dependabot propone las nuevas), con la configuración de `nginx.conf`, la web y la referencia de la API. Lo único que cambia por entorno está en `environments/<entorno>.conf`, que el `Dockerfile` elige con el argumento `ENVIRONMENT`. El contenedor es de solo lectura, sin capacidades y con los registros rotados.
 
 - **Rutas**: las de docs/07 §12. Cada página también sin la `/` final, sin redirigir; `/<ruta>/index.html` redirige con un 301 a `/<ruta>/`; las direcciones desconocidas y `/<idioma>/404.html` responden con el `404.html` de su idioma y el estado 404.
 - **Caché**: los nombres con hash de `/assets/`, un año e `immutable`. Todo lo demás (las páginas, `sw.js`, `catalog.json`, el `manifest`), `no-cache`, para que el navegador siempre compruebe si hay versión nueva.
-- **Buscadores**: todas las respuestas llevan `X-Robots-Tag: noindex`. El `robots.txt` es el del build: si prohibiera rastrear, los buscadores no verían la cabecera.
+- **Buscadores**: en preproducción, todas las respuestas llevan `X-Robots-Tag: noindex`. El `robots.txt` es el del build: si prohibiera rastrear, los buscadores no verían la cabecera.
+- **Referencia de la API**: la que genera `pnpm docs:api`, en `/reference/`, sin indexar en ningún entorno. `/reference` redirige con un 301 a `/reference/`, porque sus páginas se enlazan con direcciones relativas.
 
-`smoke-check.sh` comprueba todo esto contra cualquier servidor (`smoke-check.sh <url-base>`), y también que cada dirección que precachea el service worker responde con el estado 200 y no es el nombre de un fichero: si una falla, el service worker no se instala y la web no funciona sin conexión. La CI lo ejecuta con cada build y el despliegue, antes y después de cambiar la versión.
+`smoke-check.sh` comprueba todo esto contra cualquier servidor (`smoke-check.sh <url-base> <entorno>`), y también que cada dirección que precachea el service worker responde con el estado 200 y no es el nombre de un fichero: si una falla, el service worker no se instala y la web no funciona sin conexión. La CI lo ejecuta con cada build, con la imagen de cada entorno, y el despliegue, antes y después de cambiar la versión.
 
 ## 4. La página de mantenimiento
 
-Mientras la web no responde (los segundos del cambio de contenedor, o un reinicio de la VM), Nginx Proxy Manager sirve `apps/web/deploy/preprod/maintenance.html` con el estado 503 y `Retry-After`, para que los buscadores no la tomen por la web. No usa ficheros externos: lleva dentro el icono de la web, del que saca la rueda y el favicon, y el nombre de la web en cada idioma, y un test los mantiene iguales a los de la web. Muestra la rueda con su plantilla girando sobre los tonos, en un marco de cristal sobre un fondo de pintura que se mueve muy despacio, y sin movimiento si el sistema lo pide. Sale en el idioma de la dirección o del navegador, con el mismo criterio que la web. Cada 2 segundos pregunta, sin recargar, si la web ha vuelto, y en cuanto vuelve se funde y recarga. Quien ya tiene la web en el precaché no la ve.
+Mientras la web no responde (los segundos del cambio de contenedor, o un reinicio de la VM), Nginx Proxy Manager sirve `apps/web/deploy/maintenance.html` con el estado 503 y `Retry-After`, para que los buscadores no la tomen por la web. No usa ficheros externos: lleva dentro el icono de la web, del que saca la rueda y el favicon, y el nombre de la web en cada idioma, y un test los mantiene iguales a los de la web. Muestra la rueda con su plantilla girando sobre los tonos, en un marco de cristal sobre un fondo de pintura que se mueve muy despacio, y sin movimiento si el sistema lo pide. Sale en el idioma de la dirección o del navegador, con el mismo criterio que la web. Cada 2 segundos pregunta, sin recargar, si la web ha vuelto, y en cuanto vuelve se funde y recarga. Quien ya tiene la web en el precaché no la ve.
 
 Se activa sola, sin tocar nada: la entrada de Nginx Proxy Manager la entrega siempre que no consigue conectar con la web en medio segundo. Sin ese límite esperaría un minuto: con la VM apagada nadie le contesta, y el cortafuegos de Proxmox descarta el «rechazado» de la VM cuando no hay nada escuchando. El fichero se copia a mano a Nginx Proxy Manager, así que si cambia, hay que volver a copiarlo (§7).
 
@@ -53,7 +54,7 @@ Se activa sola, sin tocar nada: la entrada de Nginx Proxy Manager la entrega sie
 - **Entorno `preprod`**: solo puede desplegar la rama `preprod`. Su variable `SITE_ORIGIN` es el origen de la preproducción (`https://` y el dominio, sin `/` final). No hay secretos.
 - **Pull requests**: solo de colaboradores, y los workflows de cualquier persona de fuera necesitan aprobación. Es lo que impide que alguien ajeno ejecute código en el runner del homelab.
 - **Reglas de las ramas** `preprod` y `main`: las de §1.
-- **Runner**: registrado en el repositorio con la etiqueta `colorwheel-preprod`, que es la que pide `deploy-preprod`.
+- **Runner**: registrado en el repositorio con la etiqueta `colorwheel-<entorno>` (`colorwheel-preprod`), que es la que pide `deploy`.
 
 ## 6. Volver atrás
 
@@ -106,7 +107,7 @@ Los pasos están comprobados en Proxmox VE 8.4. `<vmid>`, `<nombre>`, `<bridge>`
 
 **Nginx Proxy Manager**:
 
-1. La página de mantenimiento, en su consola: `mkdir -p /data/maintenance && curl -fsSL https://raw.githubusercontent.com/msolladev/rueda-cromatica/<commit>/apps/web/deploy/preprod/maintenance.html -o /data/maintenance/colorwheel-preprod.html`.
+1. La página de mantenimiento, en su consola: `mkdir -p /data/maintenance && curl -fsSL https://raw.githubusercontent.com/msolladev/rueda-cromatica/<commit>/apps/web/deploy/maintenance.html -o /data/maintenance/colorwheel-preprod.html`.
 2. La entrada: el dominio, `http` a `<ip-vm>:8080`, «Cache Assets» apagado (si no, guardaría el service worker), «Block Common Exploits» encendido, su certificado con HTTP/2 y sin «Force SSL». En «Advanced»:
    ```nginx
    proxy_connect_timeout 500ms;

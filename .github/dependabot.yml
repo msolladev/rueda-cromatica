@@ -20,9 +20,9 @@ updates:
     cooldown:
       default-days: 7
 
-  # The preproduction's Nginx image, pinned by version and digest.
+  # The web's Nginx image, pinned by version and digest.
   - package-ecosystem: docker
-    directory: /apps/web/deploy/preprod
+    directory: /apps/web/deploy
     target-branch: preprod
     schedule:
       interval: weekly
