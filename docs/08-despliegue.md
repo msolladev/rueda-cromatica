@@ -126,6 +126,8 @@ Los pasos están comprobados en Proxmox VE 8.4. `<entorno>` es `preprod` o `prod
    }
    ```
 
+**Cloudflare**: la zona tiene el «Browser Cache TTL» por defecto, de 4 horas, que sustituye la cabecera `Cache-Control` de los ficheros que guarda, como `sw.js` y los iconos. Así, una versión nueva tardaría horas en llegar, y las comprobaciones del despliegue fallan. Por eso el dominio de cada entorno está en una regla de caché («Caching → Cache Rules») que respeta la cabecera del origen: el campo «Hostname» igual al dominio, «Eligible for cache», «Edge TTL» con «Use cache-control header if present, bypass cache if not» y «Browser TTL» con «Respect origin TTL». Es una sola regla para los dos dominios, unidos con `or`. No toca el túnel.
+
 Por último, volver a lanzar el último despliegue de la rama del entorno (`preprod` o `main`) desde la pestaña «Actions» de GitHub. En producción, la versión conserva su etiqueta: `tag-release` no crea otra para un commit que ya la tiene.
 
 ## 8. Mantenimiento
