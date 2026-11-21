@@ -1,6 +1,6 @@
 # ADR-0026: Preproducción en el homelab
 
-- **Estado:** aceptada
+- **Estado:** aceptada; corregida en parte por [ADR-0028](0028-produccion-homelab.md)
 - **Fecha:** 2026-11-20
 
 ## Contexto

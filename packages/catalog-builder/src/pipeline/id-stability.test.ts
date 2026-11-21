@@ -11,6 +11,7 @@ import {
   checkIdStability,
   formatStabilityIssues,
   latestRelease,
+  nextRelease,
   type CatalogIds,
 } from "./id-stability.ts";
 
@@ -188,16 +189,36 @@ describe("latestRelease", () => {
     ).toEqual({ ok: true, value: "release/2027-01-15" });
   });
 
-  it("rejects release tags without a valid date", () => {
+  it("orders the releases of a day by their sequence, not alphabetically", () => {
+    expect(
+      latestRelease([
+        "release/2026-12-01.10",
+        "release/2026-12-01",
+        "release/2026-12-01.2",
+        "release/2026-11-30.3",
+      ]),
+    ).toEqual({ ok: true, value: "release/2026-12-01.10" });
+  });
+
+  it("rejects release tags without a valid date or sequence", () => {
     const result = latestRelease([
       "release/2026-12-01",
       "release/latest",
       "release/2026-02-30",
+      "release/2026-12-01.1",
+      "release/2026-12-01.02",
     ]);
-    expect(result.ok ? [] : result.error).toEqual([
-      "Tag release/latest does not follow release/YYYY-MM-DD; rename or delete it.",
-      "Tag release/2026-02-30 does not follow release/YYYY-MM-DD; rename or delete it.",
-    ]);
+    const format = "release/YYYY-MM-DD or release/YYYY-MM-DD.N (N ≥ 2)";
+    expect(result.ok ? [] : result.error).toEqual(
+      [
+        "release/latest",
+        "release/2026-02-30",
+        "release/2026-12-01.1",
+        "release/2026-12-01.02",
+      ].map(
+        (tag) => `Tag ${tag} does not follow ${format}; rename or delete it.`,
+      ),
+    );
   });
 });
 
@@ -223,5 +244,41 @@ describe("catalogIds", () => {
 
   it("rejects a document without the four collections", () => {
     expect(catalogIds({ brands: [] }).ok).toBe(false);
+  });
+});
+
+describe("nextRelease", () => {
+  it("is the day's date for the first release, and before any", () => {
+    expect(nextRelease([], "2026-12-01")).toEqual({
+      ok: true,
+      value: "release/2026-12-01",
+    });
+    expect(nextRelease(["release/2026-11-30.2"], "2026-12-01")).toEqual({
+      ok: true,
+      value: "release/2026-12-01",
+    });
+  });
+
+  it("numbers the next releases of the same day", () => {
+    expect(nextRelease(["release/2026-12-01"], "2026-12-01")).toEqual({
+      ok: true,
+      value: "release/2026-12-01.2",
+    });
+    expect(
+      nextRelease(
+        ["release/2026-12-01", "release/2026-12-01.9", "release/2026-12-01.2"],
+        "2026-12-01",
+      ),
+    ).toEqual({ ok: true, value: "release/2026-12-01.10" });
+  });
+
+  it("fails on invalid tags and on a release later than today", () => {
+    expect(nextRelease(["release/latest"], "2026-12-01").ok).toBe(false);
+    expect(nextRelease(["release/2026-12-02"], "2026-12-01")).toEqual({
+      ok: false,
+      error: [
+        "The latest release, release/2026-12-02, is later than 2026-12-01.",
+      ],
+    });
   });
 });
