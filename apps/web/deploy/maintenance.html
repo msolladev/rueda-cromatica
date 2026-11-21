@@ -1,0 +1,510 @@
+<!doctype html>
+<!--
+  Maintenance page of the web (docs/08), in every environment. Nginx Proxy
+  Manager serves it, with the status 503, while the web does not answer:
+  during a deploy or while the machine restarts. Nothing behind the proxy answers, so it has no
+  external files: it carries the icon of the web, from which it draws the
+  wheel and the favicon, and the name of the web in each language. A test
+  keeps both equal to those of the web.
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Chromatic Wheel</title>
+    <script>
+      // Before anything is drawn: the browser must not take the page for
+      // English and offer to translate it.
+      // [site name (that of the web), title, text] in each language of the web.
+      const texts = {
+        en: [
+          "Chromatic Wheel",
+          "We're updating the wheel",
+          "It'll be back in a few seconds. This page will reload by itself as soon as it's ready.",
+        ],
+        es: [
+          "Rueda cromática",
+          "Estamos actualizando la rueda",
+          "Vuelve en unos segundos. Esta página se recargará sola en cuanto esté lista.",
+        ],
+        ca: [
+          "Roda cromàtica",
+          "Estem actualitzant la roda",
+          "Torna d'aquí a uns segons. Aquesta pàgina es tornarà a carregar sola tan bon punt estigui a punt.",
+        ],
+        eu: [
+          "Kolore-gurpila",
+          "Gurpila eguneratzen ari gara",
+          "Segundo gutxi barru itzuliko da. Orri hau bere kabuz kargatuko da berriro prest dagoenean.",
+        ],
+        gl: [
+          "Roda cromática",
+          "Estamos actualizando a roda",
+          "Volve nuns segundos. Esta páxina recargarase soa en canto estea lista.",
+        ],
+        fr: [
+          "Roue chromatique",
+          "Nous mettons à jour la roue",
+          "Elle revient dans quelques secondes. Cette page se rechargera d'elle-même dès qu'elle sera prête.",
+        ],
+        de: [
+          "Farbkreis",
+          "Wir aktualisieren den Farbkreis",
+          "In wenigen Sekunden ist er zurück. Diese Seite lädt automatisch neu, sobald er bereit ist.",
+        ],
+        it: [
+          "Ruota cromatica",
+          "Stiamo aggiornando la ruota",
+          "Torna tra pochi secondi. Questa pagina si ricaricherà da sola appena sarà pronta.",
+        ],
+        "pt-BR": [
+          "Roda cromática",
+          "Estamos atualizando a roda",
+          "Ela volta em alguns segundos. Esta página vai recarregar sozinha assim que estiver pronta.",
+        ],
+        ru: [
+          "Цветовой круг",
+          "Мы обновляем цветовой круг",
+          "Он вернётся через несколько секунд. Страница перезагрузится сама, как только всё будет готово.",
+        ],
+        "zh-Hans": [
+          "色轮",
+          "我们正在更新色轮",
+          "几秒钟后即可恢复。准备就绪后，此页面会自动刷新。",
+        ],
+        ja: [
+          "カラーホイール",
+          "カラーホイールを更新しています",
+          "数秒で戻ります。準備ができ次第、このページは自動で再読み込みされます。",
+        ],
+        ko: [
+          "색상환",
+          "색상환을 업데이트하고 있습니다",
+          "몇 초 후에 돌아옵니다. 준비되면 이 페이지가 자동으로 새로 고침됩니다.",
+        ],
+      };
+
+      // The language of the address (/es/…, /pt-br/…) and then the browser's,
+      // first exactly and then by base language, as resolveLocale does in
+      // the web. English if none matches.
+      const locales = Object.keys(texts);
+      const base = (tag) => tag.split("-")[0].toLowerCase();
+      const resolve = (preferred) => {
+        for (const tag of preferred) {
+          const exact = locales.find(
+            (locale) => locale.toLowerCase() === tag.toLowerCase(),
+          );
+          if (exact) return exact;
+          const byBase = locales.find((locale) => base(locale) === base(tag));
+          if (byBase) return byBase;
+        }
+        return "en";
+      };
+      const segment = location.pathname.split("/")[1] ?? "";
+      const fromAddress = locales.find(
+        (locale) => locale.toLowerCase() === segment,
+      );
+      const locale = resolve([
+        ...(fromAddress ? [fromAddress] : []),
+        ...navigator.languages,
+      ]);
+      const [site, title, text] = texts[locale];
+      document.documentElement.lang = locale;
+      document.title = site;
+    </script>
+    <!-- Without JavaScript, a plain reload now and then. -->
+    <noscript><meta http-equiv="refresh" content="15" /></noscript>
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg: #f6f7f9;
+        --surface: #ffffff;
+        --text: #1d1f22;
+        --muted: #5a5f66;
+        --line: #d5d8dd;
+        --accent: #be185d;
+        --paint-opacity: 0.55;
+        --font: system-ui, -apple-system, "Segoe UI", sans-serif;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #121417;
+          --surface: #1b1e22;
+          --text: #e9eaec;
+          --muted: #b5bac1;
+          --line: #3a3f46;
+          --accent: #f9a8d4;
+          --paint-opacity: 0.45;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        display: grid;
+        place-items: center;
+        padding: 1rem;
+        overflow: hidden;
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--font);
+        line-height: 1.5;
+        transition: opacity 0.4s ease;
+      }
+      /* The icon of the web, only the source of the wheel and the favicon. */
+      #icon {
+        display: none;
+      }
+      /* Leaving: the web is back and the page fades out before reloading. */
+      body.leaving {
+        opacity: 0;
+      }
+
+      /* The wheel's hues, blurred like wet paint, drifting very slowly. */
+      .paint {
+        position: fixed;
+        inset: 0;
+        overflow: hidden;
+      }
+      .paint i {
+        position: absolute;
+        width: 46vmax;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        filter: blur(70px);
+        opacity: var(--paint-opacity);
+        animation: drift 90s ease-in-out infinite alternate;
+      }
+      .paint i:nth-child(1) {
+        background: #e8291c;
+        left: -10%;
+        top: -15%;
+      }
+      .paint i:nth-child(2) {
+        background: #ffe500;
+        right: -15%;
+        top: -10%;
+        animation-duration: 120s;
+        animation-delay: -20s;
+      }
+      .paint i:nth-child(3) {
+        background: #2b6cb0;
+        left: 10%;
+        bottom: -25%;
+        animation-delay: -40s;
+      }
+      .paint i:nth-child(4) {
+        background: #be185d;
+        right: -5%;
+        bottom: -20%;
+        animation-duration: 120s;
+        animation-delay: -60s;
+      }
+      .paint i:nth-child(5) {
+        background: #2fb34a;
+        left: 35%;
+        top: 30%;
+        width: 30vmax;
+        animation-delay: -30s;
+      }
+      @keyframes drift {
+        0% {
+          transform: translate(0, 0) scale(1);
+        }
+        50% {
+          transform: translate(8vmax, 6vmax) scale(1.15);
+        }
+        100% {
+          transform: translate(-6vmax, 4vmax) scale(0.9);
+        }
+      }
+
+      /* A frosted card over the paint. */
+      main {
+        position: relative;
+        display: grid;
+        justify-items: center;
+        gap: 0.75rem;
+        width: 100%;
+        max-width: 30rem;
+        padding: 2.5rem 1.75rem 2.25rem;
+        border: 1px solid color-mix(in srgb, var(--text) 12%, transparent);
+        border-radius: 1.75rem;
+        background: color-mix(in srgb, var(--surface) 62%, transparent);
+        backdrop-filter: blur(24px) saturate(1.3);
+        -webkit-backdrop-filter: blur(24px) saturate(1.3);
+        box-shadow: 0 2rem 4rem -2rem rgb(0 0 0 / 0.35);
+        text-align: center;
+      }
+
+      /* The wheel of the icon, dimmed, and its template turning over it: a
+         window that lights each hue as it passes, step by step. */
+      .wheel {
+        width: min(14rem, 60vw);
+        aspect-ratio: 1;
+        max-width: 100%;
+        margin-bottom: 1rem;
+      }
+      .wheel .dim {
+        opacity: 0.22;
+      }
+      .wheel .rim {
+        fill: none;
+        stroke: var(--line);
+        stroke-width: 3;
+      }
+      .wheel .knob {
+        fill: var(--accent);
+      }
+      .wheel .window {
+        transform-origin: 256px 256px;
+        transition: transform 0.45s cubic-bezier(0.3, 1.4, 0.5, 1);
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(2.25rem, 8vw, 3.25rem);
+        line-height: 1.05;
+        letter-spacing: -0.02em;
+      }
+      p {
+        margin: 0;
+      }
+      h1,
+      p {
+        text-wrap: balance;
+      }
+      .status {
+        color: var(--accent);
+        font-size: 1.125rem;
+        font-weight: 600;
+      }
+      .text {
+        color: var(--muted);
+      }
+
+      /* Waiting, with no end: a band that crosses the bar again and again. */
+      .progress {
+        width: 100%;
+        max-width: 12rem;
+        height: 0.25rem;
+        margin-top: 1rem;
+        border-radius: 1rem;
+        background: color-mix(in srgb, var(--text) 15%, transparent);
+        overflow: hidden;
+      }
+      .progress::before {
+        content: "";
+        display: block;
+        width: 40%;
+        height: 100%;
+        border-radius: inherit;
+        background: var(--accent);
+        animation: cross 1.6s ease-in-out infinite;
+      }
+      @keyframes cross {
+        from {
+          translate: -100%;
+        }
+        to {
+          translate: 250%;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .paint i,
+        .progress::before {
+          animation: none;
+        }
+        .progress::before {
+          translate: 75%;
+        }
+        .wheel .window {
+          transition: none;
+        }
+        body {
+          transition: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <svg id="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+      <defs>
+        <linearGradient id="t" x1="0.5" y1="0" x2="0.5" y2="1">
+          <stop offset="0" stop-color="#be185d" />
+          <stop offset="1" stop-color="#7a7d80" />
+        </linearGradient>
+      </defs>
+      <rect width="512" height="512" rx="112.6" fill="#1b1e22" />
+      <g transform="rotate(30 256 256)">
+        <path
+          d="M200.34 48.29A215.04 215.04 0 0 1 311.66 48.29L296.07 106.45A154.8288 154.8288 0 0 0 215.93 106.45Z"
+          fill="#e8291c"
+        />
+        <path
+          d="M311.66 48.29A215.04 215.04 0 0 1 408.06 103.94L365.48 146.52A154.8288 154.8288 0 0 0 296.07 106.45Z"
+          fill="#ef5b1b"
+        />
+        <path
+          d="M408.06 103.94A215.04 215.04 0 0 1 463.71 200.34L405.55 215.93A154.8288 154.8288 0 0 0 365.48 146.52Z"
+          fill="#f7941d"
+        />
+        <path
+          d="M463.71 200.34A215.04 215.04 0 0 1 463.71 311.66L405.55 296.07A154.8288 154.8288 0 0 0 405.55 215.93Z"
+          fill="#fbb917"
+        />
+        <path
+          d="M463.71 311.66A215.04 215.04 0 0 1 408.06 408.06L365.48 365.48A154.8288 154.8288 0 0 0 405.55 296.07Z"
+          fill="#ffe500"
+        />
+        <path
+          d="M408.06 408.06A215.04 215.04 0 0 1 311.66 463.71L296.07 405.55A154.8288 154.8288 0 0 0 365.48 365.48Z"
+          fill="#a6ce39"
+        />
+        <path
+          d="M311.66 463.71A215.04 215.04 0 0 1 200.34 463.71L215.93 405.55A154.8288 154.8288 0 0 0 296.07 405.55Z"
+          fill="#2fb34a"
+        />
+        <path
+          d="M200.34 463.71A215.04 215.04 0 0 1 103.94 408.06L146.52 365.48A154.8288 154.8288 0 0 0 215.93 405.55Z"
+          fill="#1aa39a"
+        />
+        <path
+          d="M103.94 408.06A215.04 215.04 0 0 1 48.29 311.66L106.45 296.07A154.8288 154.8288 0 0 0 146.52 365.48Z"
+          fill="#2b6cb0"
+        />
+        <path
+          d="M48.29 311.66A215.04 215.04 0 0 1 48.29 200.34L106.45 215.93A154.8288 154.8288 0 0 0 106.45 296.07Z"
+          fill="#5b3fa0"
+        />
+        <path
+          d="M48.29 200.34A215.04 215.04 0 0 1 103.94 103.94L146.52 146.52A154.8288 154.8288 0 0 0 106.45 215.93Z"
+          fill="#8e3092"
+        />
+        <path
+          d="M103.94 103.94A215.04 215.04 0 0 1 200.34 48.29L215.93 106.45A154.8288 154.8288 0 0 0 146.52 146.52Z"
+          fill="#be185d"
+        />
+      </g>
+      <polygon
+        points="256.00,122.85 371.31,322.58 140.69,322.58"
+        fill="url(#t)"
+      />
+    </svg>
+    <div class="paint" aria-hidden="true">
+      <i></i><i></i><i></i><i></i><i></i>
+    </div>
+    <main>
+      <svg class="wheel" viewBox="0 0 512 512" aria-hidden="true">
+        <defs>
+          <mask
+            id="window"
+            maskUnits="userSpaceOnUse"
+            x="0"
+            y="0"
+            width="512"
+            height="512"
+          >
+            <g class="window">
+              <path
+                d="M256 256 L189.5 8 A256 256 0 0 1 322.5 8 Z"
+                fill="#fff"
+              />
+            </g>
+          </mask>
+        </defs>
+        <circle class="rim" cx="256" cy="256" r="246" />
+        <g transform="rotate(30 256 256)">
+          <g class="dim" id="dim"></g>
+          <g mask="url(#window)" id="lit"></g>
+        </g>
+        <g class="window">
+          <circle
+            class="knob"
+            cx="256"
+            cy="10"
+            r="9"
+            transform="rotate(30 256 256)"
+          />
+        </g>
+        <g id="triangle"></g>
+      </svg>
+      <h1 id="site">Chromatic Wheel</h1>
+      <p class="status" id="title">We're updating the wheel</p>
+      <p class="text" id="text" role="status">
+        It'll be back in a few seconds. This page will reload by itself as soon
+        as it's ready.
+      </p>
+      <div class="progress" aria-hidden="true"></div>
+    </main>
+    <script>
+      document.getElementById("site").textContent = site;
+      document.getElementById("title").textContent = title;
+      document.getElementById("text").textContent = text;
+
+      // The wheel and the favicon, drawn from the icon of the web.
+      const icon = document.getElementById("icon");
+      const wheel = document.querySelector(".wheel");
+      const hues = icon.querySelectorAll("g path");
+      for (const id of ["dim", "lit"]) {
+        const group = document.getElementById(id);
+        for (const hue of hues) group.append(hue.cloneNode());
+      }
+      const gradient = icon.querySelector("linearGradient").cloneNode(true);
+      gradient.id = "wheel-triangle";
+      wheel.querySelector("defs").append(gradient);
+      const triangle = icon.querySelector("polygon").cloneNode();
+      triangle.setAttribute("fill", "url(#wheel-triangle)");
+      document.getElementById("triangle").append(triangle);
+
+      const standalone = icon.cloneNode(true);
+      const favicon = document.createElement("link");
+      favicon.rel = "icon";
+      favicon.href = `data:image/svg+xml,${encodeURIComponent(
+        new XMLSerializer().serializeToString(standalone),
+      )}`;
+      document.head.append(favicon);
+
+      // The template turns one hue at a time, unless less motion is asked.
+      if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        let step = 0;
+        const windows = wheel.querySelectorAll(".window");
+        setInterval(() => {
+          step += 1;
+          for (const layer of windows) {
+            layer.style.transform = `rotate(${step * 30}deg)`;
+          }
+        }, 700);
+      }
+
+      // Asks every 2 seconds, without reloading, whether the web answers
+      // again (a page, or its 404). While it is down, the proxy answers 503,
+      // or Cloudflare a 5xx of its own. When it is back, the page fades out
+      // and reloads.
+      const check = async () => {
+        try {
+          const response = await fetch(location.href, {
+            method: "HEAD",
+            cache: "no-store",
+          });
+          if (response.status < 500) {
+            document.body.classList.add("leaving");
+            setTimeout(() => location.reload(), 400);
+            return;
+          }
+        } catch {
+          // Offline or the proxy itself is down: try again later.
+        }
+        setTimeout(check, 2000);
+      };
+      setTimeout(check, 2000);
+    </script>
+  </body>
+</html>

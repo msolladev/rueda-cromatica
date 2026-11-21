@@ -16,7 +16,8 @@ Es un proyecto de aprendizaje del ecosistema Node/TS: prioriza las buenas práct
 - **Madurez de dependencias**: `minimumReleaseAge` de 7 días en `pnpm-workspace.yaml`, y `cooldown` equivalente en Dependabot. Las versiones compartidas entre paquetes van en el `catalog:` de pnpm.
 - **Tests**: Vitest, obligatorios en `domain`, `catalog-builder`, `color-wheel` y `apps/web`. El componente de la rueda y la web se prueban en un navegador real (modo navegador de Vitest con Playwright), con axe-core para la accesibilidad; la rueda, además, con entrada real de ratón y táctil. La web compilada tiene tests de extremo a extremo con `@playwright/test`: rutas, contenido sin JavaScript y funcionamiento sin conexión ([ADR-0024](docs/adr/0024-web.md)).
 - **CI/CD**: GitHub Actions ([ADR-0011](docs/adr/0011-ci-cd.md)).
-- **Entornos**: desarrollo en WSL 2, preproducción en el homelab y producción por decidir ([ADR-0012](docs/adr/0012-entornos.md)).
+- **Entornos**: desarrollo en WSL 2, preproducción y producción en el homelab, cada una en su VM y con la misma configuración del servidor, en `apps/web/deploy/` ([ADR-0012](docs/adr/0012-entornos.md), [ADR-0026](docs/adr/0026-preproduccion-homelab.md), [ADR-0028](docs/adr/0028-produccion-homelab.md)). Cómo se despliega y cómo se vuelve atrás, en [docs/08](docs/08-despliegue.md).
+- **Ramas**: el trabajo entra en `preprod` con un PR (_squash_), y cada push a `preprod` despliega en preproducción si pasa la CI. `preprod` llega a `main` con un PR fusionado con un commit de merge; cada push a `main` despliega en producción si pasa la CI y crea la etiqueta `release/` de la publicación. Las dos ramas están protegidas. El repositorio es público, con los PR limitados a los colaboradores.
 
 ## Estructura objetivo
 
@@ -37,7 +38,7 @@ El monorepo está montado. `domain` ya tiene el contrato del catálogo (esquema,
 - `catalog.json` lo genera el builder, se versiona en el repositorio y es determinista (sin marcas de tiempo).
 - Va en el precaché de Workbox: el service worker solo lo vuelve a descargar cuando cambia su revisión.
 - Se carga con `fetch` y se valida al cargarlo. No se importa en el bundle.
-- `build-catalog` comprueba la estabilidad de IDs frente al `catalog.json` de la última etiqueta `release/AAAA-MM-DD` y las lápidas de `data/tombstones.json` ([docs/03](docs/03-identificadores.md) §6-7, [ADR-0025](docs/adr/0025-estabilidad-ids-etiqueta-publicacion.md)).
+- `build-catalog` comprueba la estabilidad de IDs frente al `catalog.json` de la última etiqueta `release/` y las lápidas de `data/tombstones.json` ([docs/03](docs/03-identificadores.md) §6-7, [ADR-0025](docs/adr/0025-estabilidad-ids-etiqueta-publicacion.md), [ADR-0028](docs/adr/0028-produccion-homelab.md)).
 - El detalle está en [docs/02-esquema-catalog-json.md](docs/02-esquema-catalog-json.md).
 
 ## Reglas de dominio
@@ -68,7 +69,7 @@ El alcance mínimo y lo aplazado están razonados en el [ADR-0019](docs/adr/0019
 - **MVP**: la rueda y, para cada uno de sus colores, las pinturas más parecidas de cada marca, con funcionamiento offline.
   - **Armonías**: complementario, complementario dividido, análogos, análogos con acento, tríada, tétrada rectangular, cuadrado y monocromático, además del esquema de miniatura.
   - **Equivalencias**: solo las calculadas. Las oficiales están aplazadas a la fase 5.
-  - **Web**: en los 10 idiomas de la rueda, con selector de idioma y de tema (sistema, claro u oscuro), y con las preferencias (marcas, filtros, vista, tema, idioma y rueda) guardadas en el navegador. En la fase 6 pasan a la cuenta del usuario.
+  - **Web**: en los 13 idiomas de la rueda, con el catalán, el euskera y el gallego ([ADR-0027](docs/adr/0027-lenguas-cooficiales-espana.md)), con selector de idioma y de tema (sistema, claro u oscuro), y con las preferencias (marcas, filtros, vista, tema, idioma y rueda) guardadas en el navegador. En la fase 6 pasan a la cuenta del usuario.
 - **Marcas y líneas del MVP**, solo las vigentes:
   - Warhammer Colour, antes Citadel: Base, Layer, Shade, Contrast, Technical y Dry.
   - Vallejo: Model Color y Game Color, con sus subfamilias e incluido Xpress Color.
@@ -89,10 +90,10 @@ El alcance mínimo y lo aplazado están razonados en el [ADR-0019](docs/adr/0019
    2. Builder mínimo según docs/04, con el paso 4 de la CI: hecho.
    3. Datos: hecho, una marca por iteración, cada una desde una sola fuente. Citadel: desde la tabla de SimoGecko con hex `community`, porque citadelcolour.com (hoy paint.warhammer.com) no publica los hex. The Army Painter: desde DonnervS con hex `community`; Warpaints Fanatic es una sola gama (lavados, metálicos y efectos se distinguen por el tipo y el atributo metálico). AK Interactive: desde DonnervS con hex `community`; 3Gen Acrylics es una sola gama con todas las etiquetas de AK (STANDARD, AFV, FIGURES…) salvo AIR, que es de aerógrafo; Quick Gen tiene 79 colores, comprobado en la web de AK. Vallejo: desde DonnervS con hex `community`, contrastado con las cartas oficiales CC329 (Model Color) y CC266 (Game Color y Xpress Color); Model Color y Game Color son una gama cada una, con sus subgrupos (lavados, tintas, metálicos, fluorescentes y Special FX) distinguidos por el tipo, y Xpress Color, con Intense, es una gama propia.
    4. Color: el paquete `color-wheel` con los dos modelos de rueda, las armonías, el esquema de miniatura, y el componente completo con su dibujo, su plantilla giratoria y sus controles (hecho), y en `domain` la búsqueda de la pintura más parecida con el ΔE, según docs/06 (hecho).
-   5. Web ([docs/07](docs/07-web.md), [ADR-0024](docs/adr/0024-web.md)): hecho. La rueda integrada, las pinturas más parecidas a cada color en pestañas, con los filtros, la vista por marca o sin distinguir marca y el aviso de color aproximado; la carga del catálogo; 10 idiomas, tema y preferencias; créditos y fuentes con las licencias de terceros; prerenderizado con SEO, y PWA instalable y sin conexión.
+   5. Web ([docs/07](docs/07-web.md), [ADR-0024](docs/adr/0024-web.md)): hecho. La rueda integrada, las pinturas más parecidas a cada color en pestañas, con los filtros, la vista por marca o sin distinguir marca y el aviso de color aproximado; la carga del catálogo; 13 idiomas, tema y preferencias; créditos y fuentes con las licencias de terceros; prerenderizado con SEO, y PWA instalable y sin conexión.
 
    Al curar los datos hay que verificar:
-   - La retirada de 25 Contrast en 2026. Mientras GW no la confirme, no se marcan como `discontinued`.
+   - La retirada de Contrast en 2026: GW no la confirma ([informe](docs/investigacion/2026-11-retirada-contrast.md), con las 24 pinturas). Solo se marcan como `discontinued` con un documento del fabricante.
 
    Los importadores se escriben como funciones puras (fuente → filas), sin acceso a disco dentro de la lógica, para poder reutilizarlos en la fase 6.
 
@@ -111,10 +112,8 @@ El alcance mínimo y lo aplazado están razonados en el [ADR-0019](docs/adr/0019
 
 Pendiente fuera de la hoja de ruta:
 
-- Provisionar la preproducción en el homelab y decidir dónde va producción. Cada publicación en producción crea la etiqueta `release/AAAA-MM-DD`, que protege sus IDs ([ADR-0025](docs/adr/0025-estabilidad-ids-etiqueta-publicacion.md)). Para el MVP, que es estático, statichost.eu es una opción recomendada, sin evaluar todavía. Cada entorno define `SITE_ORIGIN` al compilar la web y configura su servidor para servir cada página también sin la `/` final, sin redirigir, y para responder a las direcciones desconocidas con `404.html` (el del idioma de la dirección, si lo hay) y el estado 404 ([docs/07](docs/07-web.md) §12).
-- Al pasar a producción, publicar con la CI la referencia de los paquetes que genera TypeDoc, que hasta entonces solo se genera en local.
 - Antes de cualquier despliegue público, revisar las fuentes con licencia `unknown` o `terms-of-use`.
-- Antes de cualquier despliegue público, revisar los textos de la web en francés, alemán, italiano, portugués, ruso, chino, japonés y coreano, que nadie ha revisado.
+- Antes de cualquier despliegue público, revisar los textos de la web en catalán, euskera, gallego, francés, alemán, italiano, portugués, ruso, chino, japonés y coreano, que nadie ha revisado.
 
 ## Documentación
 
@@ -122,7 +121,7 @@ Pendiente fuera de la hoja de ruta:
 - **Este documento** recoge las decisiones vigentes. El proyecto de claude.ai lo carga desde GitHub junto con docs/01-04.
 - **Informes de investigación**: en `docs/investigacion/`, fechados e inmutables. Las normas están en su [README](docs/investigacion/README.md).
 - **Especificaciones y ADR**: las especificaciones describen lo vigente; los ADR, por qué se decidió. Un ADR aceptado no se reescribe: se sustituye por otro nuevo.
-- **Referencia de la API** de `color-wheel` y `domain`: la generan TypeDoc y los comentarios TSDoc del código, en inglés. `pnpm docs:api` la genera en local y la CI comprueba que se genera sin errores. Las especificaciones describen el comportamiento y enlazan a ella, sin repetir firmas ni tipos ([ADR-0023](docs/adr/0023-documentacion-tecnica.md)).
+- **Referencia de la API** de `color-wheel` y `domain`: la generan TypeDoc y los comentarios TSDoc del código, en inglés. `pnpm docs:api` la genera en local, la CI comprueba que se genera sin errores y la web la sirve en `/reference/`, sin indexar ([ADR-0028](docs/adr/0028-produccion-homelab.md)). Las especificaciones describen el comportamiento y enlazan a ella, sin repetir firmas ni tipos ([ADR-0023](docs/adr/0023-documentacion-tecnica.md)).
 - **READMEs**, en castellano. El de la raíz explica qué es el proyecto, cómo se instala y los comandos. El de cada paquete explica qué hace, con un ejemplo mínimo y los enlaces a su especificación y a la referencia.
 
 ## Interfaz

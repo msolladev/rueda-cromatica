@@ -1,0 +1,60 @@
+{
+  "harmony": {
+    "complementary": "Osagarria",
+    "split-complementary": "Osagarri zatitua",
+    "analogous": "Analogoak",
+    "accented-analogous": "Analogoak azentuarekin",
+    "triad": "Hirukotea",
+    "square": "Karratua",
+    "rectangle": "Tetrada angeluzuzena",
+    "monochromatic": "Monokromatikoa",
+    "miniature-scheme": "Miniaturaren eskema"
+  },
+  "role": {
+    "base": "Oinarria",
+    "complement": "Osagarria",
+    "split": "Osagarri zatitua",
+    "analogous": "Analogoa",
+    "accent": "Azentua",
+    "triad": "Hirukotea",
+    "square": "Karratua",
+    "tetrad": "Tetrada",
+    "tint": "Zuriarekin",
+    "tone": "Grisarekin",
+    "shade": "Beltzarekin",
+    "shadow": "Itzala",
+    "light": "Argia"
+  },
+  "model": {
+    "ryb": "RYB",
+    "digital": "Digitala"
+  },
+  "light": {
+    "warm": "Beroa",
+    "cold": "Hotza"
+  },
+  "control": {
+    "hex": "Hex",
+    "model": "Eredua",
+    "harmony": "Harmonia",
+    "light": "Argia",
+    "results": "Koloreak",
+    "help": "Nola erabili"
+  },
+  "wheel": {
+    "label": "Kolore-gurpila",
+    "ring": "Tonua",
+    "ringValue": "{hue}°",
+    "triangle": "Purua, zuria eta beltza",
+    "triangleValue": "% {pure} purua, % {white} zuria, % {black} beltza",
+    "ringKeys": "Geziak: 1°. Maiuskulak + geziak: 10°. Orria gora eta Orria behera: 30°, hurrengo tonua.",
+    "triangleKeys": "Eskuina eta ezkerra: puruagoa edo ez hain purua. Gora eta behera: argiagoa edo ilunagoa. % 1 urrats bakoitzeko; % 10 Maiuskulekin.",
+    "pointerHelp": "Arrastatu eraztunean tonua aldatzeko, eta triangeluaren barruan zuria edo beltza gehitzeko.",
+    "touchHelp": "Hatzarekin, puntuak zure mugimendua jarraitzen du hatzaren azpira jauzi egin gabe, beraz beti ikusten da. Ukitu leku batera jauzi egiteko.",
+    "keyboardHelp": "Teklatuarekin, joan eraztunera edo triangelura tabuladorearekin eta erabili geziak.",
+    "modelHelp": "RYB (gorria, horia eta urdina) pinturaren gurpil tradizionala da, pigmentuak nahasteko erabiltzen dena: haren osagarriak gorria eta berdea, horia eta morea, eta urdina eta laranja dira. Digitala pantailaren gurpila da (RGB), beste osagarri batzuekin, hala nola urdina eta horia.",
+    "helpClose": "Itxi",
+    "hexInvalid": "Idatzi kolore hex bat, adibidez #3daf44.",
+    "resultsUpdated": "{count} kolore: {harmony}."
+  }
+}

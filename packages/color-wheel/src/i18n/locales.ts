@@ -6,6 +6,9 @@ import { describeValue, oneOf } from "../errors.ts";
 export const LOCALES = [
   "en",
   "es",
+  "ca",
+  "eu",
+  "gl",
   "fr",
   "de",
   "it",
@@ -48,7 +51,7 @@ function baseLanguage(tag: string): string {
  * @example
  * ```ts
  * resolveLocale(["pt-PT", "en"]); // "pt-BR"
- * resolveLocale(["eu"]); // "en"
+ * resolveLocale(["nl"]); // "en"
  * ```
  */
 export function resolveLocale(preferred: readonly string[]): Locale {

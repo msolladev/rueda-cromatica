@@ -25,6 +25,18 @@ test("works offline after the first visit, in any page and language", async ({
 }) => {
   await page.goto("/es/");
   await waitForServiceWorker(page);
+  // Each page by its address, never by its file name (docs/07 §8 and §12).
+  const precached = await page.evaluate(async () => {
+    const paths = [];
+    for (const name of await caches.keys()) {
+      for (const request of await (await caches.open(name)).keys()) {
+        paths.push(new URL(request.url).pathname);
+      }
+    }
+    return paths;
+  });
+  expect(precached).toContain("/es/");
+  expect(precached.filter((path) => path.endsWith(".html"))).toEqual([]);
 
   await context.setOffline(true);
   await page.reload();

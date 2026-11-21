@@ -34,31 +34,83 @@ export type StabilityIssue =
       readonly id: string;
     };
 
-const RELEASE_TAG = /^release\/(\d{4}-\d{2}-\d{2})$/;
 export const RELEASE_TAG_PREFIX = "release/";
+// The date, and the sequence from the second release of a day on (2-9, 10…).
+const RELEASE_TAG = /^release\/(\d{4}-\d{2}-\d{2})(?:\.([2-9]|[1-9]\d+))?$/;
+const FORMAT = `${RELEASE_TAG_PREFIX}YYYY-MM-DD or ${RELEASE_TAG_PREFIX}YYYY-MM-DD.N (N ≥ 2)`;
+
+/** A release tag: its date and its position among the releases of that day. */
+interface Release {
+  readonly tag: string;
+  readonly date: string;
+  readonly sequence: number;
+}
+
+/**
+ * The date and sequence of a release tag, or `null` if it does not follow
+ * the format: the first release of a day has no sequence, and the next ones
+ * have `.2`, `.3`… A real date is required.
+ */
+function parseRelease(tag: string): Release | null {
+  const [, date, sequence] = RELEASE_TAG.exec(tag) ?? [];
+  if (date === undefined || !isoDateSchema.safeParse(date).success) return null;
+  return { tag, date, sequence: sequence === undefined ? 1 : Number(sequence) };
+}
+
+/** Newest last: by date and, within a day, by sequence, not alphabetically. */
+function byAge(a: Release, b: Release): number {
+  if (a.date !== b.date) return a.date < b.date ? -1 : 1;
+  return a.sequence - b.sequence;
+}
+
+/** All the `release/*` tags, oldest first, or one message per invalid tag. */
+function releasesOf(
+  tags: readonly string[],
+): Result<readonly Release[], readonly string[]> {
+  const candidates = tags.filter((tag) => tag.startsWith(RELEASE_TAG_PREFIX));
+  const releases = candidates.map(parseRelease);
+  const invalid = candidates.filter((_, i) => releases[i] === null);
+  if (invalid.length > 0) {
+    return err(
+      invalid.map(
+        (tag) => `Tag ${tag} does not follow ${FORMAT}; rename or delete it.`,
+      ),
+    );
+  }
+  return ok(releases.filter((r) => r !== null).sort(byAge));
+}
 
 /**
  * The latest release among the `release/*` tags, or `null` before the first
- * one. Every tag of that namespace must be `release/YYYY-MM-DD` with a real
- * date, so the alphabetical order is the chronological one.
+ * one. Every tag of that namespace must be `release/YYYY-MM-DD`, or
+ * `release/YYYY-MM-DD.N` for the N-th release of a day, with a real date.
  */
 export function latestRelease(
   tags: readonly string[],
 ): Result<string | null, readonly string[]> {
-  const releases = tags.filter((tag) => tag.startsWith(RELEASE_TAG_PREFIX));
-  const invalid = releases.filter((tag) => {
-    const date = RELEASE_TAG.exec(tag)?.[1];
-    return date === undefined || !isoDateSchema.safeParse(date).success;
-  });
-  if (invalid.length > 0) {
-    return err(
-      invalid.map(
-        (tag) =>
-          `Tag ${tag} does not follow ${RELEASE_TAG_PREFIX}YYYY-MM-DD; rename or delete it.`,
-      ),
-    );
+  const releases = releasesOf(tags);
+  if (!releases.ok) return releases;
+  return ok(releases.value.at(-1)?.tag ?? null);
+}
+
+/**
+ * The tag of a new release on `today` (`YYYY-MM-DD`): `release/<today>` if it
+ * is the first one of the day, and `release/<today>.N` for the N-th.
+ */
+export function nextRelease(
+  tags: readonly string[],
+  today: string,
+): Result<string, readonly string[]> {
+  const releases = releasesOf(tags);
+  if (!releases.ok) return releases;
+  const latest = releases.value.at(-1);
+  if (latest !== undefined && latest.date > today) {
+    return err([`The latest release, ${latest.tag}, is later than ${today}.`]);
   }
-  return ok(releases.sort().at(-1) ?? null);
+  const sequence = latest?.date === today ? latest.sequence + 1 : 1;
+  return ok(
+    `${RELEASE_TAG_PREFIX}${today}${sequence === 1 ? "" : `.${String(sequence)}`}`,
+  );
 }
 
 const withIds = z.array(z.looseObject({ id: z.string() }));

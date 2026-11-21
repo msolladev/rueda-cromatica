@@ -13,6 +13,7 @@ import { StrictMode } from "react";
 import { renderToString } from "react-dom/server";
 import { App } from "./app/App.tsx";
 import { headOf, langOf } from "./app/head.ts";
+import { allManifests } from "./app/manifest.ts";
 import type { PageData } from "./app/page-data.ts";
 import {
   allPages,
@@ -26,7 +27,7 @@ import { sourceViews, type LicenseEntry } from "./features/credits/data.ts";
 import { searchColor } from "./features/matches/search.ts";
 import { DEFAULT_COLOR, DEFAULT_HARMONY } from "./features/wheel/defaults.ts";
 
-export { allPages, notFoundAt, notFoundFiles, pathOf, type Page };
+export { allManifests, allPages, notFoundAt, notFoundFiles, pathOf, type Page };
 export type { LicenseEntry };
 
 export interface PrerenderInput {

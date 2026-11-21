@@ -11,13 +11,11 @@ declare const self: ServiceWorkerGlobalScope & {
   readonly __WB_MANIFEST: (string | { url: string; revision: string | null })[];
 };
 
-// `/es/` is served from the precached `/es/index.html`, and so is `/es`,
-// without redirecting (docs/07 §12).
+// Each page is precached by its address (`/es/`, see vite.config.ts), and
+// `/es` is served from it too, without redirecting (docs/07 §12).
 precacheAndRoute(self.__WB_MANIFEST, {
   urlManipulation: ({ url }) =>
-    url.pathname.endsWith("/")
-      ? []
-      : [new URL(`${url.pathname}/index.html`, url)],
+    url.pathname.endsWith("/") ? [] : [new URL(`${url.pathname}/`, url)],
 });
 cleanupOutdatedCaches();
 // The first version controls the open page at once, so it works offline

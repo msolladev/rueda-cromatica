@@ -2,7 +2,7 @@
 
 La PWA: una web instalable que funciona sin conexión, hecha con React, Vite y vite-plugin-pwa. Integra la rueda de `@chromatic-wheel/color-wheel` y, para cada color, busca con `@chromatic-wheel/domain` las pinturas más parecidas de cada marca en `public/catalog.json`, que genera `catalog-builder`. Solo presenta: la lógica vive en esos dos paquetes.
 
-Está en 10 idiomas (`/es/`, `/en/`…), y cada página se prerenderiza en el build, así que su contenido y sus metadatos llegan sin JavaScript.
+Está en 13 idiomas (`/es/`, `/en/`…), y cada página se prerenderiza en el build, así que su contenido y sus metadatos llegan sin JavaScript.
 
 ## Desarrollo
 

@@ -19,7 +19,7 @@ describe("headOf", () => {
 
   it("links every language of the same page, and `/` as x-default", () => {
     const head = headOf({ kind: "home", locale: "de" }, ORIGIN);
-    expect(head.match(/hreflang=/g)).toHaveLength(11);
+    expect(head.match(/hreflang=/g)).toHaveLength(14);
     expect(head).toContain(
       'hreflang="pt-BR" href="https://example.org/pt-br/"',
     );

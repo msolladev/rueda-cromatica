@@ -1,7 +1,9 @@
 version: 2
+# Every update goes through the preproduction before reaching main (docs/08).
 updates:
   - package-ecosystem: npm
     directory: /
+    target-branch: preprod
     schedule:
       interval: weekly
     cooldown:
@@ -11,7 +13,17 @@ updates:
         update-types: [minor, patch]
 
   - package-ecosystem: github-actions
-    directory: /
+    directories: [/, /.github/actions/verify]
+    target-branch: preprod
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 7
+
+  # The web's Nginx image, pinned by version and digest.
+  - package-ecosystem: docker
+    directory: /apps/web/deploy
+    target-branch: preprod
     schedule:
       interval: weekly
     cooldown:

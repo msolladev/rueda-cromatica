@@ -1,0 +1,60 @@
+{
+  "harmony": {
+    "complementary": "Complementario",
+    "split-complementary": "Complementario dividido",
+    "analogous": "Análogos",
+    "accented-analogous": "Análogos con acento",
+    "triad": "Tríade",
+    "square": "Cadrado",
+    "rectangle": "Tétrade rectangular",
+    "monochromatic": "Monocromático",
+    "miniature-scheme": "Esquema de miniatura"
+  },
+  "role": {
+    "base": "Base",
+    "complement": "Complementario",
+    "split": "Complementario dividido",
+    "analogous": "Análogo",
+    "accent": "Acento",
+    "triad": "Tríade",
+    "square": "Cadrado",
+    "tetrad": "Tétrade",
+    "tint": "Con branco",
+    "tone": "Con gris",
+    "shade": "Con negro",
+    "shadow": "Sombra",
+    "light": "Luz"
+  },
+  "model": {
+    "ryb": "RYB",
+    "digital": "Dixital"
+  },
+  "light": {
+    "warm": "Cálida",
+    "cold": "Fría"
+  },
+  "control": {
+    "hex": "Hex",
+    "model": "Modelo",
+    "harmony": "Harmonía",
+    "light": "Luz",
+    "results": "Cores",
+    "help": "Como se usa"
+  },
+  "wheel": {
+    "label": "Roda de cor",
+    "ring": "Ton",
+    "ringValue": "{hue}°",
+    "triangle": "Puro, branco e negro",
+    "triangleValue": "{pure} % puro, {white} % branco, {black} % negro",
+    "ringKeys": "Frechas: 1°. Maiúsculas + frechas: 10°. Re Páx e Av Páx: 30°, o ton seguinte.",
+    "triangleKeys": "Dereita e esquerda: máis ou menos puro. Arriba e abaixo: máis claro ou máis escuro. Un 1 % por paso; un 10 % con Maiúsculas.",
+    "pointerHelp": "Arrastra no anel para cambiar o ton, e dentro do triángulo para engadir branco ou negro.",
+    "touchHelp": "Co dedo, o punto segue o teu movemento sen saltar baixo o dedo, así que sempre se ve. Toca para saltar a un sitio.",
+    "keyboardHelp": "Co teclado, vai ao anel ou ao triángulo co tabulador e usa as frechas.",
+    "modelHelp": "RYB (vermello, amarelo e azul) é a roda tradicional da pintura, a de mesturar pigmentos: os seus complementarios son vermello e verde, amarelo e violeta, e azul e laranxa. Dixital é a roda da pantalla (RGB), con outros complementarios, como azul e amarelo.",
+    "helpClose": "Pechar",
+    "hexInvalid": "Escribe unha cor hex, como #3daf44.",
+    "resultsUpdated": "{count} cores: {harmony}."
+  }
+}

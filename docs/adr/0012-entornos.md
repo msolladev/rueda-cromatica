@@ -1,6 +1,6 @@
 # ADR-0012: Entornos de desarrollo, preproducción y producción
 
-- **Estado:** aceptada
+- **Estado:** aceptada; corregida en parte por [ADR-0028](0028-produccion-homelab.md)
 - **Fecha:** 2026-11-07
 
 ## Contexto
@@ -10,7 +10,7 @@ El proyecto debe poder desplegarse de forma gratuita y evolucionar más adelante
 ## Decisión
 
 - **Desarrollo**: WSL 2, con el repositorio dentro del sistema de ficheros de la distro, no en `/mnt/c`.
-- **Preproducción**: una máquina nueva en el homelab. La PWA se sirve con Docker y se publica con la infraestructura que ya existe (Cloudflare Tunnel y Nginx Proxy Manager), sin abrir puertos. Recibe los despliegues automáticos de `main` ([ADR-0011](0011-ci-cd.md)).
+- **Preproducción**: una máquina nueva en el homelab. La PWA se sirve con Docker y se publica con la infraestructura que ya existe (Cloudflare Tunnel y Nginx Proxy Manager), sin abrir puertos. Recibe los despliegues automáticos de `preprod` ([ADR-0011](0011-ci-cd.md)).
 - **HTTPS obligatorio** en cualquier entorno publicado, porque el service worker solo funciona en contextos seguros. Cloudflare Tunnel lo proporciona.
 - **Producción**: por decidir. Al ser una PWA estática, el MVP puede ir en cualquier hosting estático, así que la decisión se puede tomar más adelante sin quedar atado a un proveedor.
 

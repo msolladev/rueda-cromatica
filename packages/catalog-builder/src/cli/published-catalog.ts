@@ -1,6 +1,6 @@
 /**
  * Reads the catalog of the latest release from git (docs/03 §7): the
- * `catalog.json` at the newest `release/YYYY-MM-DD` tag.
+ * `catalog.json` at the newest release tag.
  */
 import { execFile } from "node:child_process";
 import { relative } from "node:path";
@@ -25,12 +25,12 @@ async function git(...args: string[]): Promise<string> {
 }
 
 /**
- * The published catalog, `null` before the first release, or the messages to
- * show. A shallow clone fails instead of passing: it may lack the tags, and
- * then the check would compare nothing without anyone noticing.
+ * The `release/*` tags of the repository, or the messages to show. A shallow
+ * clone fails instead of passing: it may lack the tags, and then the check
+ * would compare nothing without anyone noticing.
  */
-export async function readPublishedCatalog(): Promise<
-  Result<PublishedCatalog | null, readonly string[]>
+export async function releaseTags(): Promise<
+  Result<readonly string[], readonly string[]>
 > {
   try {
     if ((await git("rev-parse", "--is-shallow-repository")).trim() === "true") {
@@ -40,7 +40,22 @@ export async function readPublishedCatalog(): Promise<
       ]);
     }
     const tags = await git("tag", "--list", `${RELEASE_TAG_PREFIX}*`);
-    const release = latestRelease(tags.split("\n").filter(Boolean));
+    return ok(tags.split("\n").filter(Boolean));
+  } catch (error) {
+    return err([
+      `Could not read the release tags from git: ${error instanceof Error ? error.message : String(error)}`,
+    ]);
+  }
+}
+
+/** The published catalog, `null` before the first release, or the messages to show. */
+export async function readPublishedCatalog(): Promise<
+  Result<PublishedCatalog | null, readonly string[]>
+> {
+  const tags = await releaseTags();
+  if (!tags.ok) return tags;
+  try {
+    const release = latestRelease(tags.value);
     if (!release.ok) return release;
     if (release.value === null) return ok(null);
 
