@@ -93,7 +93,7 @@ El alcance mínimo y lo aplazado están razonados en el [ADR-0019](docs/adr/0019
    5. Web ([docs/07](docs/07-web.md), [ADR-0024](docs/adr/0024-web.md)): hecho. La rueda integrada, las pinturas más parecidas a cada color en pestañas, con los filtros, la vista por marca o sin distinguir marca y el aviso de color aproximado; la carga del catálogo; 13 idiomas, tema y preferencias; créditos y fuentes con las licencias de terceros; prerenderizado con SEO, y PWA instalable y sin conexión.
 
    Al curar los datos hay que verificar:
-   - La retirada de 25 Contrast en 2026. Mientras GW no la confirme, no se marcan como `discontinued`.
+   - La retirada de Contrast en 2026: GW no la confirma ([informe](docs/investigacion/2026-11-retirada-contrast.md), con las 24 pinturas). Solo se marcan como `discontinued` con un documento del fabricante.
 
    Los importadores se escriben como funciones puras (fuente → filas), sin acceso a disco dentro de la lógica, para poder reutilizarlos en la fase 6.
 
