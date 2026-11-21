@@ -45,6 +45,7 @@ import {
 import { Filters, type BrandOption } from "./Filters.tsx";
 import { PaintRow } from "./PaintRow.tsx";
 import type { ColorResults, PaintView } from "./search.ts";
+import { prefersReducedMotion } from "../../app/motion.ts";
 
 /** What a color's panel shows. */
 export type PanelContent =
@@ -66,8 +67,11 @@ export interface ResultsProps {
   readonly messages: Messages;
   readonly wheelLabels: Labels;
   readonly locale: string;
-  /** Whether the wheel is being dragged: the colors change without blending. */
-  readonly dragging: boolean;
+  /**
+   * Whether the colors follow a drag of the wheel: they change at once,
+   * without blending (`showColors` in Home.tsx).
+   */
+  readonly following: boolean;
   /** A tab under the mouse or the focus, or `null` when it leaves. */
   readonly onPreview: (index: number | null) => void;
   /** The rows that enter or leave, shared with the page (entrance.ts). */
@@ -131,7 +135,7 @@ export function Results(props: ResultsProps) {
   const names = colorNames(colors, props.wheelLabels);
 
   return (
-    <div className="results" data-dragging={props.dragging ? "" : undefined}>
+    <div className="results" data-following={props.following ? "" : undefined}>
       <div className="toolbar">
         <fieldset className="segmented">
           <legend>{m.results.show}</legend>
@@ -166,7 +170,7 @@ export function Results(props: ResultsProps) {
       </div>
       {approximate > 0 && (
         // One line; the explanation opens below it.
-        <details className="notice notice-approx">
+        <details className="notice notice-warn notice-approx">
           <summary>
             <InfoIcon />
             <span>
@@ -252,11 +256,7 @@ function ColorTabs({
       setLeaving([]);
     } else if (colors.length < previous.length) {
       setEnterFrom(null);
-      setLeaving(
-        matchMedia("(prefers-reduced-motion: reduce)").matches
-          ? []
-          : previous.slice(colors.length),
-      );
+      setLeaving(prefersReducedMotion() ? [] : previous.slice(colors.length));
     }
   }
   const leavingNames = colorNames([...colors, ...leaving], wheelLabels).slice(
@@ -270,9 +270,7 @@ function ColorTabs({
     if (element === null) return;
     element.scrollBy({
       left: direction * element.clientWidth * 0.8,
-      behavior: matchMedia("(prefers-reduced-motion: reduce)").matches
-        ? "auto"
-        : "smooth",
+      behavior: prefersReducedMotion() ? "auto" : "smooth",
     });
   };
   useSlidingIndicator(

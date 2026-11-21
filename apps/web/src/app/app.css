@@ -56,6 +56,9 @@
 
   --font: system-ui, -apple-system, "Segoe UI", sans-serif;
   --radius: 0.5rem;
+  /* The small boxes: swatches and the label of each paint's closeness
+     (and its placeholder while the catalog arrives). */
+  --radius-small: 0.3rem;
   --gap: 1rem;
   --control: 2.75rem;
   --navbar-height: 3.75rem;
@@ -166,7 +169,8 @@ a:has(> .link-text),
 
 :is(
   a:not(.button, .brand, .skip-link):focus-visible,
-  :focus-visible > .link-text
+  :focus-visible > .link-text,
+  [data-active] > .link-button > .link-text
 ) {
   background-position:
     0 100%,
@@ -176,8 +180,11 @@ a:has(> .link-text),
     100% 1px;
 }
 
+/* `data-active`: a link inside an option of a list with the keyboard focus
+   on it (the paint search's «See more», docs/07 §15) looks hovered. */
 a:not(.button, .brand, .skip-link):focus-visible,
-.link-button:focus-visible {
+.link-button:focus-visible,
+[data-active] > .link-button {
   color: color-mix(in srgb, var(--accent) 75%, var(--text));
 }
 
@@ -214,6 +221,10 @@ a:not(.button, .brand, .skip-link):focus-visible,
   width: 1em;
   height: 1em;
   transition: rotate 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-active] > .link-button .icon {
+  rotate: 180deg;
 }
 
 @media (hover: hover) {
@@ -749,7 +760,7 @@ legend {
   left: 50%;
   z-index: 2;
   padding: 0.2rem 0.5rem;
-  border-radius: 0.3rem;
+  border-radius: var(--radius-small);
   background: var(--text);
   color: var(--bg);
   font-size: 0.75rem;
@@ -1200,14 +1211,19 @@ legend {
   margin: 0;
 }
 
-/* One line; the explanation opens below it. */
-.notice-approx {
-  display: block;
-  padding-block: 0;
+/* A warning: the approximate colors (docs/07 §3) and the RYB wheel that
+   does not reach a paint (docs/07 §15). */
+.notice-warn {
   background: var(--warn-bg);
   color: var(--warn-text);
   border-inline-start: 3px solid var(--warn-text);
   font-size: 0.9rem;
+}
+
+/* One line; the explanation opens below it. */
+.notice-approx {
+  display: block;
+  padding-block: 0;
 }
 
 /* The information icon first, and the arrow of the disclosure at the end. */
@@ -1286,8 +1302,10 @@ legend {
   font-weight: 600;
 }
 
+/* The small print: the hint, and the brand, range and code of a paint. */
 .paint-search-hint,
-.paint-search-chosen {
+.paint-search-chosen,
+.paint-search-meta {
   margin: 0;
   color: var(--muted);
   font-size: 0.8125rem;
@@ -1435,8 +1453,6 @@ legend {
 
 .paint-search-meta {
   display: block;
-  color: var(--muted);
-  font-size: 0.8125rem;
 }
 
 .paint-search-option strong {
@@ -1460,23 +1476,6 @@ legend {
 
 .paint-search-more .link-button {
   min-height: 0;
-}
-
-.paint-search-more[data-active] .link-button {
-  color: color-mix(in srgb, var(--accent) 75%, var(--text));
-}
-
-.paint-search-more[data-active] .link-text {
-  background-position:
-    0 100%,
-    0 100%;
-  background-size:
-    100% 2px,
-    100% 1px;
-}
-
-.paint-search-more[data-active] .icon {
-  rotate: 180deg;
 }
 
 .paint-search-chosen,
@@ -1503,10 +1502,6 @@ legend {
   align-items: flex-start;
   gap: 0.5rem;
   padding: 0.55rem 0.8rem;
-  background: var(--warn-bg);
-  color: var(--warn-text);
-  border-inline-start: 3px solid var(--warn-text);
-  font-size: 0.9rem;
 }
 
 .paint-search-ryb > .icon {
@@ -1687,7 +1682,7 @@ legend {
   height: 1.25rem;
   margin: 0;
   border: 2px solid var(--control-border);
-  border-radius: 0.3rem;
+  border-radius: var(--radius-small);
   background: var(--field);
   cursor: pointer;
   transition:
@@ -1929,7 +1924,7 @@ legend {
   transition: background-color var(--wheel-duration) var(--wheel-ease);
 }
 
-.results[data-dragging] :is(.swatch, .split > span:first-child) {
+.results[data-following] :is(.swatch, .split > span:first-child) {
   transition: none;
 }
 
@@ -1937,7 +1932,7 @@ legend {
   display: inline-block;
   width: 1.6rem;
   height: 1.6rem;
-  border-radius: 0.3rem;
+  border-radius: var(--radius-small);
   box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.15);
   vertical-align: middle;
 }
@@ -2152,11 +2147,13 @@ brands per row. */
 }
 
 .paint-quality {
+  position: relative;
+  overflow: hidden;
   grid-area: quality;
   justify-self: end;
   align-self: end;
   padding: 0.1rem 0.6rem;
-  border-radius: 999px;
+  border-radius: var(--radius-small);
   font-size: 0.8rem;
   font-weight: 600;
   text-align: center;
@@ -2165,10 +2162,6 @@ brands per row. */
 
 /* The bar of closeness (docs/07 §2): along the bottom of the label, as long
    as the paint is close; it grows when the row appears and follows a change. */
-.paint-quality {
-  position: relative;
-  overflow: hidden;
-}
 
 .paint-quality::after {
   content: "";
@@ -2322,7 +2315,7 @@ brands per row. */
 
 .skeleton-label {
   height: 1.2rem;
-  border-radius: 999px;
+  border-radius: var(--radius-small);
 }
 
 @keyframes shimmer {

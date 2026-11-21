@@ -4,7 +4,13 @@
 // base travels to its new place and the template turns with it. Pure
 // functions; the component runs the frames.
 
+import { normalizeHue } from "../color/rgb.ts";
 import type { WheelColor } from "../color/wheel-color.ts";
+
+/** The shortest signed turn from `from` to `to`, in degrees, in [-180, 180). */
+function shortestTurn(from: number, to: number): number {
+  return normalizeHue(to - from + 180) - 180;
+}
 
 /** How long the wheel takes to reach its new place, in milliseconds. */
 export const TEMPLATE_DURATION = 450;
@@ -31,8 +37,7 @@ export function interpolateTemplate(
   return Array.from({ length: count }, (_, index) => {
     const start = from[index] ?? fromBase;
     const end = to[index] ?? toBase;
-    const delta = ((((end - start) % 360) + 540) % 360) - 180;
-    return (((start + delta * t) % 360) + 360) % 360;
+    return normalizeHue(start + shortestTurn(start, end) * t);
   });
 }
 
@@ -47,11 +52,6 @@ export function sameTemplate(
   );
 }
 
-/** The shortest signed turn from `from` to `to`, in degrees, in [-180, 180). */
-function shortestTurn(from: number, to: number): number {
-  return ((((to - from) % 360) + 540) % 360) - 180;
-}
-
 /**
  * The base at `t` (0 to 1) on its way from `from` to `to`: the hue along the
  * shortest arc and the proportions in a straight line, so that they keep
@@ -62,8 +62,7 @@ export function interpolatePosition(
   to: WheelColor,
   t: number,
 ): WheelColor {
-  const hue =
-    (((from.hue + shortestTurn(from.hue, to.hue) * t) % 360) + 360) % 360;
+  const hue = normalizeHue(from.hue + shortestTurn(from.hue, to.hue) * t);
   // Weighted this way, both ends are exact.
   const mix = (a: number, b: number) => a * (1 - t) + b * t;
   return {
@@ -88,9 +87,9 @@ export function turnTemplate(
 ): number[] {
   const relative = (template: readonly number[]) => {
     const base = template[0] ?? 0;
-    return template.map((hue) => (((hue - base) % 360) + 360) % 360);
+    return template.map((hue) => normalizeHue(hue - base));
   };
-  return interpolateTemplate(relative(from), relative(to), t).map(
-    (offset) => (((offset + baseHue) % 360) + 360) % 360,
+  return interpolateTemplate(relative(from), relative(to), t).map((offset) =>
+    normalizeHue(offset + baseHue),
   );
 }

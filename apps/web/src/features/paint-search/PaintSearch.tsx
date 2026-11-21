@@ -11,20 +11,26 @@ import {
   searchPaints,
   type Brand,
   type Paint,
-  type PaintSearchHit,
+  type PaintSearchHighlights,
   type PaintSearchIndex,
   type Range,
   type TextRange,
 } from "@chromatic-wheel/domain";
 import { useCombobox } from "downshift";
-import { useMemo, useState, type CSSProperties, type ReactNode } from "react";
+import {
+  useMemo,
+  useState,
+  type CSSProperties,
+  type ReactNode,
+  type SyntheticEvent,
+} from "react";
 import {
   CloseIcon,
   InfoIcon,
   PlusIcon,
   RotateCcwIcon,
 } from "../../app/icons.tsx";
-import { format } from "../../i18n/i18n.ts";
+import { format, formatDeltaE, SEPARATOR } from "../../i18n/i18n.ts";
 import type { Messages } from "../../i18n/messages.ts";
 
 /** How many suggestions are shown at first, and added by «See more». */
@@ -33,13 +39,16 @@ export const PAGE = 8;
 /** Above this ΔE the RYB wheel visibly does not reach the paint (docs/06 §3). */
 export const RYB_NOTICE_LIMIT = 1;
 
+/** The field's ID, to give it the focus back after emptying it. */
+const INPUT_ID = "paint-search-input";
+
 /** A paint as the search shows it: from a search, or the chosen one. */
 export interface PaintChoice {
   readonly paint: Paint;
   readonly brand: Brand;
   readonly range: Range;
   /** Where what was written appears, only in a suggestion. */
-  readonly highlights?: PaintSearchHit["highlights"];
+  readonly highlights?: PaintSearchHighlights;
 }
 
 /** The last suggestion, which shows more instead of choosing. */
@@ -63,25 +72,16 @@ export interface PaintSearchProps {
   readonly onUseDigital: () => void;
 }
 
-/** The text with what was written in bold. */
-function marked(text: string, ranges: readonly TextRange[] = []): ReactNode {
-  if (ranges.length === 0) return text;
-  const parts: ReactNode[] = [];
-  let at = 0;
-  for (const { start, end } of ranges) {
-    if (start > at) parts.push(text.slice(at, start));
-    parts.push(<strong key={start}>{text.slice(start, end)}</strong>);
-    at = end;
-  }
-  if (at < text.length) parts.push(text.slice(at));
-  return parts;
-}
-
 const itemToString = (item: Item | null): string =>
   item === null || item === MORE ? "" : item.paint.name;
 
-/** The field's ID, to give it the focus back after emptying it. */
-const INPUT_ID = "paint-search-input";
+/** Tells Downshift not to do its own work for this event (for «See more»). */
+function skipDownshift(event: SyntheticEvent): void {
+  event.preventDefault();
+  (
+    event.nativeEvent as Event & { preventDownshiftDefault?: boolean }
+  ).preventDownshiftDefault = true;
+}
 
 export function PaintSearch({
   index,
@@ -102,8 +102,8 @@ export function PaintSearch({
     [index, query],
   );
   const visible = hits.slice(0, shown);
-  const hasMore = hits.length > shown;
-  const items: Item[] = hasMore ? [...visible, MORE] : [...visible];
+  const moreIndex = hits.length > shown ? visible.length : null;
+  const items: Item[] = moreIndex === null ? [...visible] : [...visible, MORE];
 
   const {
     isOpen,
@@ -129,66 +129,43 @@ export function PaintSearch({
       else if (selectedItem !== MORE) onChoose(selectedItem);
     },
     stateReducer: (state, { type, changes }) => {
-      switch (type) {
-        // Leaving the field chooses nothing: the choice is explicit.
-        case useCombobox.stateChangeTypes.InputBlur:
-          return {
-            ...changes,
-            selectedItem: state.selectedItem,
-            inputValue: state.inputValue,
-          };
-        default:
-          // With fewer letters there is nothing to show.
-          return changes.isOpen === true &&
-            !isSearchable(changes.inputValue ?? state.inputValue)
-            ? { ...changes, isOpen: false }
-            : changes;
+      // Leaving the field chooses nothing: the choice is explicit.
+      if (type === useCombobox.stateChangeTypes.InputBlur) {
+        return {
+          ...changes,
+          selectedItem: state.selectedItem,
+          inputValue: state.inputValue,
+        };
       }
+      // With fewer letters there is nothing to show.
+      const text = changes.inputValue ?? state.inputValue;
+      return changes.isOpen === true && !isSearchable(text)
+        ? { ...changes, isOpen: false }
+        : changes;
     },
   });
 
   const open = isOpen && isSearchable(inputValue);
-  const moreIndex = hasMore ? visible.length : -1;
-  const showMore = () => {
+  const showMore = (event: SyntheticEvent) => {
+    skipDownshift(event);
     setShown(shown + PAGE);
     // The focus goes on to the first new suggestion.
     setHighlightedIndex(visible.length);
   };
-  const entering = (at: number) => shown > PAGE && at >= shown - PAGE;
-  const isChosenShown = chosen !== null && inputValue === chosen.paint.name;
-  const status = open
-    ? hits.length === 0
-      ? m.search.noMatches
-      : format(m.search.count, {
-          shown: String(visible.length),
-          total: String(hits.length),
-        })
-    : isChosenShown
-      ? format(m.search.chosen, {
-          name: chosen.paint.name,
-          brand: chosen.brand.name,
-          range: chosen.range.name,
-        })
-      : "";
-  const metaOf = (choice: PaintChoice): ReactNode[] => {
-    const parts = [
-      marked(choice.brand.name, choice.highlights?.brand),
-      marked(choice.range.name, choice.highlights?.range),
-    ];
-    if (choice.paint.manufacturerCode !== null) {
-      parts.push(
-        marked(choice.paint.manufacturerCode, choice.highlights?.code),
-      );
-    }
-    return parts.flatMap((part, at) => (at === 0 ? [part] : [" · ", part]));
-  };
-  const typeOf = (paint: Paint): string => {
-    const type = m.paintTypes[paint.type];
-    return paint.metallic ? format(m.search.typeMetallic, { type }) : type;
+  // The suggestions «See more» added, which enter one after another.
+  const enteringFrom = shown > PAGE ? shown - PAGE : null;
+  const chosenShown =
+    chosen !== null && inputValue === chosen.paint.name ? chosen : null;
+  const counted = {
+    shown: String(visible.length),
+    total: String(hits.length),
   };
 
   return (
-    <div className="paint-search" data-chosen={isChosenShown ? "" : undefined}>
+    <search
+      className="paint-search"
+      data-chosen={chosenShown === null ? undefined : ""}
+    >
       <label className="paint-search-label" {...getLabelProps()}>
         {m.search.label}
       </label>
@@ -197,7 +174,7 @@ export function PaintSearch({
       </p>
       <div className="paint-search-field">
         <span
-          className="swatch paint-search-swatch"
+          className="swatch"
           style={{ background: chosen?.paint.color?.hex }}
           aria-hidden="true"
         />
@@ -209,23 +186,17 @@ export function PaintSearch({
             autoCapitalize: "off",
             spellCheck: false,
             enterKeyHint: "search",
-            "aria-describedby": isChosenShown
-              ? "paint-search-hint paint-search-meta"
-              : "paint-search-hint",
+            "aria-describedby":
+              chosenShown === null
+                ? "paint-search-hint"
+                : "paint-search-hint paint-search-meta",
             onKeyDown: (event) => {
               if (
                 event.key === "Enter" &&
                 open &&
-                highlightedIndex === moreIndex &&
-                moreIndex !== -1
+                highlightedIndex === moreIndex
               ) {
-                event.preventDefault();
-                (
-                  event.nativeEvent as KeyboardEvent & {
-                    preventDownshiftDefault?: boolean;
-                  }
-                ).preventDownshiftDefault = true;
-                showMore();
+                showMore(event);
               }
             },
           })}
@@ -255,72 +226,48 @@ export function PaintSearch({
             </li>
           )}
           {open &&
-            items.map((item, at) =>
-              item === MORE ? (
-                <li
-                  key={MORE}
-                  className="paint-search-more"
-                  data-active={highlightedIndex === at ? "" : undefined}
-                  {...getItemProps({
-                    item,
-                    index: at,
-                    onClick: (event) => {
-                      (
-                        event.nativeEvent as MouseEvent & {
-                          preventDownshiftDefault?: boolean;
-                        }
-                      ).preventDownshiftDefault = true;
-                      showMore();
-                    },
-                  })}
-                >
-                  <span className="link-button">
-                    <PlusIcon />
-                    <span className="link-text">
-                      {format(m.search.seeMore, {
-                        shown: String(visible.length),
-                        total: String(hits.length),
-                      })}
+            items.map((item, at) => {
+              const active = highlightedIndex === at ? "" : undefined;
+              if (item === MORE) {
+                return (
+                  <li
+                    key={MORE}
+                    className="paint-search-more"
+                    data-active={active}
+                    {...getItemProps({ item, index: at, onClick: showMore })}
+                  >
+                    <span className="link-button">
+                      <PlusIcon />
+                      <span className="link-text">
+                        {format(m.search.seeMore, counted)}
+                      </span>
                     </span>
-                  </span>
-                </li>
-              ) : (
+                  </li>
+                );
+              }
+              const entering = enteringFrom !== null && at >= enteringFrom;
+              return (
                 <li
                   key={item.paint.id}
                   className="paint-search-option"
-                  data-active={highlightedIndex === at ? "" : undefined}
-                  // The ones «See more» added enter one after another.
-                  data-enter={entering(at) ? "" : undefined}
+                  data-active={active}
+                  data-enter={entering ? "" : undefined}
                   style={
-                    entering(at)
-                      ? ({ "--enter": at - (shown - PAGE) } as CSSProperties)
+                    entering
+                      ? ({ "--enter": at - enteringFrom } as CSSProperties)
                       : undefined
                   }
                   {...getItemProps({ item, index: at })}
                 >
-                  <span
-                    className="swatch"
-                    style={{ background: item.paint.color?.hex }}
-                    aria-hidden="true"
-                  />
-                  <span className="paint-search-text">
-                    <span className="paint-search-name">
-                      {marked(item.paint.name, item.highlights?.name)}
-                    </span>
-                    <span className="paint-search-type">
-                      {" · "}
-                      <i>{typeOf(item.paint)}</i>
-                    </span>
-                    <span className="paint-search-meta">{metaOf(item)}</span>
-                  </span>
+                  <Suggestion choice={item} messages={m} />
                 </li>
-              ),
-            )}
+              );
+            })}
         </ul>
       </div>
-      {isChosenShown ? (
+      {chosenShown !== null ? (
         <p className="paint-search-chosen" id="paint-search-meta">
-          {metaOf(chosen)}
+          <PaintDetails choice={chosenShown} />
         </p>
       ) : (
         previous !== null &&
@@ -335,29 +282,111 @@ export function PaintSearch({
           </p>
         )
       )}
-      {isChosenShown && rybDeltaE !== null && rybDeltaE > RYB_NOTICE_LIMIT && (
-        <div className="notice paint-search-ryb">
-          <InfoIcon />
-          <p>
-            {format(m.search.rybNotice, {
-              deltaE: rybDeltaE.toLocaleString(locale, {
-                minimumFractionDigits: 1,
-                maximumFractionDigits: 1,
-              }),
-            })}{" "}
-            <button
-              type="button"
-              className="link-button"
-              onClick={onUseDigital}
-            >
-              <span className="link-text">{m.search.useDigital}</span>
-            </button>
-          </p>
-        </div>
-      )}
+      {chosenShown !== null &&
+        rybDeltaE !== null &&
+        rybDeltaE > RYB_NOTICE_LIMIT && (
+          <div className="notice notice-warn paint-search-ryb">
+            <InfoIcon />
+            <p>
+              {format(m.search.rybNotice, {
+                deltaE: formatDeltaE(rybDeltaE, locale),
+              })}{" "}
+              <button
+                type="button"
+                className="link-button"
+                onClick={onUseDigital}
+              >
+                <span className="link-text">{m.search.useDigital}</span>
+              </button>
+            </p>
+          </div>
+        )}
       <p className="visually-hidden" role="status">
-        {status}
+        {open
+          ? hits.length === 0
+            ? m.search.noMatches
+            : format(m.search.count, counted)
+          : chosenShown !== null
+            ? format(m.search.chosen, {
+                name: chosenShown.paint.name,
+                brand: chosenShown.brand.name,
+                range: chosenShown.range.name,
+              })
+            : ""}
       </p>
-    </div>
+    </search>
   );
+}
+
+/** One suggestion: its swatch, its name and type, and its details. */
+function Suggestion({
+  choice,
+  messages: m,
+}: {
+  readonly choice: PaintChoice;
+  readonly messages: Messages;
+}) {
+  const { paint, highlights } = choice;
+  const type = m.paintTypes[paint.type];
+  return (
+    <>
+      <span
+        className="swatch"
+        style={{ background: paint.color?.hex }}
+        aria-hidden="true"
+      />
+      <span className="paint-search-text">
+        <span className="paint-search-name">
+          <Highlighted text={paint.name} ranges={highlights?.name} />
+        </span>
+        <span className="paint-search-type">
+          {SEPARATOR}
+          <i>
+            {paint.metallic ? format(m.search.typeMetallic, { type }) : type}
+          </i>
+        </span>
+        <span className="paint-search-meta">
+          <PaintDetails choice={choice} />
+        </span>
+      </span>
+    </>
+  );
+}
+
+/** The brand, the range and the code, in the order of the bottle. */
+function PaintDetails({ choice }: { readonly choice: PaintChoice }) {
+  const { brand, range, paint, highlights } = choice;
+  const parts = [
+    <Highlighted key="brand" text={brand.name} ranges={highlights?.brand} />,
+    <Highlighted key="range" text={range.name} ranges={highlights?.range} />,
+  ];
+  if (paint.manufacturerCode !== null) {
+    parts.push(
+      <Highlighted
+        key="code"
+        text={paint.manufacturerCode}
+        ranges={highlights?.code}
+      />,
+    );
+  }
+  return parts.flatMap((part, at) => (at === 0 ? [part] : [SEPARATOR, part]));
+}
+
+/** The text with what was written in bold (docs/06 §9.1). */
+function Highlighted({
+  text,
+  ranges = [],
+}: {
+  readonly text: string;
+  readonly ranges?: readonly TextRange[] | undefined;
+}): ReactNode {
+  const parts: ReactNode[] = [];
+  let at = 0;
+  for (const { start, end } of ranges) {
+    if (start > at) parts.push(text.slice(at, start));
+    parts.push(<strong key={start}>{text.slice(start, end)}</strong>);
+    at = end;
+  }
+  if (at < text.length) parts.push(text.slice(at));
+  return parts;
 }

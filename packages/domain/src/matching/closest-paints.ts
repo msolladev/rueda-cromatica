@@ -4,12 +4,14 @@
  */
 import { differenceCiede2000 } from "culori/fn";
 import { isColorApproximate } from "../catalog/rules.ts";
-import type {
-  Brand,
-  BrandId,
-  Paint,
-  PaintId,
-  PaintType,
+import { compareSortKeys } from "../catalog/integrity.ts";
+import {
+  toHexColor,
+  type Brand,
+  type BrandId,
+  type Paint,
+  type PaintId,
+  type PaintType,
 } from "../catalog/schema.ts";
 import { err, ok, type Result } from "../result.ts";
 import { labOf, type IndexedPaint, type PaintIndex } from "./paint-index.ts";
@@ -130,8 +132,6 @@ export type MatchingError =
       readonly limit: number;
     };
 
-const HEX = /^#[0-9a-f]{6}$/i;
-
 const deltaE2000 = differenceCiede2000();
 
 /**
@@ -170,12 +170,13 @@ export function findClosestPaints(
     pinnedPaintId,
   }: MatchOptions,
 ): Result<ClosestPaints, MatchingError> {
-  if (!HEX.test(hex)) return err({ kind: "invalid-color", color: hex });
+  const color = toHexColor(hex);
+  if (color === null) return err({ kind: "invalid-color", color: hex });
   if (!Number.isInteger(limit) || limit < 1) {
     return err({ kind: "invalid-limit", limit });
   }
 
-  const target = labOf(hex.toLowerCase());
+  const target = labOf(color);
   const types = new Set(paintTypes);
   const isCandidate = ({ paint }: IndexedPaint): boolean =>
     types.has(paint.type) &&
@@ -269,17 +270,13 @@ const scored = (entry: IndexedPaint, deltaE: number): Scored => ({
 const compareScored = (a: Scored, b: Scored): number =>
   compareBy(a.rounded, a.entry.paint.id, b.rounded, b.entry.paint.id);
 
-// IDs by code unit, as docs/02 sorts them (`compareSortKeys` with one key).
-function compareBy(
+// IDs by code unit, as docs/02 sorts them.
+const compareBy = (
   deltaA: number,
   idA: string,
   deltaB: number,
   idB: string,
-): number {
-  if (deltaA !== deltaB) return deltaA - deltaB;
-  if (idA === idB) return 0;
-  return idA < idB ? -1 : 1;
-}
+): number => deltaA - deltaB || compareSortKeys([idA], [idB]);
 
 function toMatch(
   { entry: { paint, brand }, deltaE }: Scored,
@@ -311,8 +308,9 @@ export function colorDifference(
   a: string,
   b: string,
 ): Result<number, MatchingError> {
-  for (const color of [a, b]) {
-    if (!HEX.test(color)) return err({ kind: "invalid-color", color });
-  }
-  return ok(deltaE2000(labOf(a.toLowerCase()), labOf(b.toLowerCase())));
+  const first = toHexColor(a);
+  if (first === null) return err({ kind: "invalid-color", color: a });
+  const second = toHexColor(b);
+  if (second === null) return err({ kind: "invalid-color", color: b });
+  return ok(deltaE2000(labOf(first), labOf(second)));
 }

@@ -7,8 +7,8 @@
 import {
   ColorWheel,
   type ColorWheelEventDetail,
+  type ColorWheelProperties,
   type Locale,
-  type Model,
   type Result,
 } from "@chromatic-wheel/color-wheel";
 import {
@@ -26,8 +26,8 @@ import { DEFAULT_COLOR, DEFAULT_HARMONY } from "./defaults.ts";
  * its `change` event, as if the user had done it, and travels there.
  */
 export interface WheelHandle {
-  setColor: (hex: string) => void;
-  setModel: (model: Model) => void;
+  /** The wheel's own `update`. */
+  update: (properties: Partial<ColorWheelProperties>) => void;
 }
 
 export interface WheelViewProps {
@@ -102,11 +102,8 @@ export function WheelView({
   useImperativeHandle(
     ref,
     () => ({
-      setColor: (hex) => {
-        wheel.current?.update({ color: hex });
-      },
-      setModel: (model) => {
-        wheel.current?.update({ model });
+      update: (properties) => {
+        wheel.current?.update(properties);
       },
     }),
     [],

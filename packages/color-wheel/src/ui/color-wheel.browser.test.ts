@@ -560,8 +560,8 @@ describe("drawing", () => {
   it("follows the width of its container", async () => {
     create();
     container.style.width = "240px";
-    await new Promise((resolve) => requestAnimationFrame(resolve));
-    await new Promise((resolve) => requestAnimationFrame(resolve));
+    await frame();
+    await frame();
     const canvas = query("canvas", HTMLCanvasElement);
     expect(canvas.width).toBe(
       Math.round(canvas.getBoundingClientRect().width * devicePixelRatio),
@@ -628,26 +628,30 @@ describe("segmented pill", () => {
   });
 });
 
+/** What a wheel's canvas shows, to compare drawings. */
+const pixels = (wheel: Element) =>
+  wheel.querySelector("canvas")?.toDataURL() ?? "";
+
+const frame = () => new Promise((resolve) => requestAnimationFrame(resolve));
+
+/** What a new wheel with `options`, at rest, draws at 400px. */
+async function drawnAs(options: Partial<ColorWheelOptions>) {
+  const other = document.createElement("div");
+  other.style.width = "400px";
+  document.body.append(other);
+  const reference = new ColorWheel(other, { color: "#3daf44", ...options });
+  await frame();
+  const url = pixels(other);
+  reference.destroy();
+  other.remove();
+  return url;
+}
+
 describe("template motion", () => {
-  const pixels = (wheel: Element) =>
-    wheel.querySelector("canvas")?.toDataURL() ?? "";
-
-  async function drawnAs(options: Partial<ColorWheelOptions>) {
-    const other = document.createElement("div");
-    other.style.width = "400px";
-    document.body.append(other);
-    const reference = new ColorWheel(other, { color: "#3daf44", ...options });
-    await new Promise((resolve) => requestAnimationFrame(resolve));
-    const url = pixels(other);
-    reference.destroy();
-    other.remove();
-    return url;
-  }
-
   it("moves the marks to a new harmony and ends exactly on it", async () => {
     container.style.width = "400px";
     const created = create({ color: "#3daf44", harmony: "triad" });
-    await new Promise((resolve) => requestAnimationFrame(resolve));
+    await frame();
     created.harmony = "complementary";
     await new Promise((resolve) => setTimeout(resolve, 100));
     const final = await drawnAs({ harmony: "complementary" });
@@ -664,7 +668,7 @@ describe("template motion", () => {
     try {
       container.style.width = "400px";
       const created = create({ color: "#3daf44", harmony: "triad" });
-      await new Promise((resolve) => requestAnimationFrame(resolve));
+      await frame();
       created.harmony = "complementary";
       expect(pixels(container)).toBe(
         await drawnAs({ harmony: "complementary" }),
@@ -676,22 +680,6 @@ describe("template motion", () => {
 });
 
 describe("base motion", () => {
-  const pixels = (wheel: Element) =>
-    wheel.querySelector("canvas")?.toDataURL() ?? "";
-  const frame = () => new Promise((resolve) => requestAnimationFrame(resolve));
-
-  async function drawnAs(options: ColorWheelOptions) {
-    const other = document.createElement("div");
-    other.style.width = "400px";
-    document.body.append(other);
-    const reference = new ColorWheel(other, options);
-    await frame();
-    const url = pixels(other);
-    reference.destroy();
-    other.remove();
-    return url;
-  }
-
   it("travels to a new color and ends exactly on it", async () => {
     container.style.width = "400px";
     const created = create({ color: "#3daf44" });

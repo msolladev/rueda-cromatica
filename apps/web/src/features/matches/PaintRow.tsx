@@ -1,5 +1,5 @@
 import type { CSSProperties } from "react";
-import { format } from "../../i18n/i18n.ts";
+import { format, formatDeltaE, SEPARATOR } from "../../i18n/i18n.ts";
 import type { Messages } from "../../i18n/messages.ts";
 import type { PaintView } from "./search.ts";
 
@@ -39,10 +39,7 @@ export function PaintRow({
   enter,
   leaving = false,
 }: PaintRowProps) {
-  const deltaE = new Intl.NumberFormat(locale, {
-    minimumFractionDigits: 1,
-    maximumFractionDigits: 1,
-  }).format(paint.deltaE);
+  const deltaE = formatDeltaE(paint.deltaE, locale);
   return (
     <li
       className={
@@ -65,7 +62,7 @@ export function PaintRow({
       <span className="paint-name">{paint.name}</span>
       <span className="paint-range">
         {showBrand
-          ? `${paint.brandName} · ${paint.rangeName}`
+          ? [paint.brandName, paint.rangeName].join(SEPARATOR)
           : paint.rangeName}
       </span>
       <span className="chips">

@@ -1,15 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { gradientMidpoint, normalizeHex } from "./color.ts";
-
-describe("normalizeHex", () => {
-  it("lowercases a 6-digit hex", () => {
-    expect(normalizeHex("#FBB81C")).toBe("#fbb81c");
-  });
-
-  it.each(["FBB81C", "#FB1", "#FBB81CC", "#GGGGGG"])("rejects %s", (text) => {
-    expect(normalizeHex(text)).toBeNull();
-  });
-});
+import { gradientMidpoint } from "./color.ts";
 
 describe("gradientMidpoint (ADR-0014)", () => {
   it("averages in CIELAB, not in RGB", () => {

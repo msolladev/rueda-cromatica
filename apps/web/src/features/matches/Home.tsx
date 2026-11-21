@@ -66,9 +66,11 @@ export function Home({
   const { load, retry } = useCatalog();
   const wheelLabels = useMemo(() => labelsFor(locale), [locale]);
   const [result, setResult] = useState<Result | null>(null);
-  // While the wheel is dragged, the colors change at once: they only blend
-  // into the new one after a change (docs/07 §1).
-  const [dragging, setDragging] = useState(false);
+  // docs/07 §1: whether the colors are following a drag of the wheel, at
+  // once, instead of blending into the new ones. Only `showColors` sets it.
+  const [following, setFollowing] = useState(false);
+  // Whether a drag already started: its first step is a jump.
+  const inGesture = useRef(false);
   // A tab under the mouse or the focus points at its mark meanwhile.
   const [preview, setPreview] = useState<number | null>(null);
   // docs/07 §4: the results follow the drag with low priority, so that the
@@ -78,9 +80,29 @@ export function Home({
   const tab = Math.min(state.tab, colors.length - 1);
   const { filters, view, paint: saved } = state.preferences;
   const wheel = useRef<WheelHandle>(null);
-  // docs/07 §1: when the colors change at once (not dragging), the rows of
-  // the panel enter as when another tab is picked.
   const entrance = useEntrance();
+
+  /**
+   * The only way new colors reach the tabs and the results (docs/07 §1),
+   * whatever changed them: dragging, a click or a tap on the wheel, its keys,
+   * its controls, the paint search or «Back to…». A jump (anything but the
+   * steps of a drag after the first) blends the swatches and makes the rows
+   * enter, while the wheel travels; the steps of a drag follow it at once.
+   */
+  const showColors = (next: Result, final: boolean) => {
+    const follows = !final && inGesture.current;
+    inGesture.current = !final;
+    if (
+      !follows &&
+      result !== null &&
+      !sameColors(result.colors, next.colors)
+    ) {
+      entrance.start({ kind: "panel" });
+    }
+    setFollowing(follows);
+    setResult(next);
+    dispatch({ type: "colors-changed", count: next.colors.length });
+  };
 
   // docs/07 §15: the paint the base comes from, and the one it came from.
   const ready = load.status === "ready" ? load : null;
@@ -106,7 +128,7 @@ export function Home({
   }, [saved, result?.model, base]);
   const choose = (paint: ChosenPaint) => {
     dispatch({ type: "choose-paint", paint });
-    wheel.current?.setColor(paint.hex);
+    wheel.current?.update({ color: paint.hex });
   };
 
   const { more } = state;
@@ -164,18 +186,9 @@ export function Home({
       <h1>{m.home.heading}</h1>
       <p className="lead">{m.home.intro}</p>
       <div className="workspace">
-        <section
-          className="wheel-column"
-          id="wheel"
-          data-skip-target=""
-          aria-labelledby="wheel-heading"
-        >
-          <h2 id="wheel-heading" className="visually-hidden">
-            {m.home.wheelHeading}
-          </h2>
-          <noscript>
-            <p className="notice">{m.home.noscript}</p>
-          </noscript>
+        {/* The search is its own landmark, before the wheel's section:
+            «Skip to the wheel» goes to the ring (docs/07 §11). */}
+        <div className="wheel-column">
           <PaintSearch
             index={hydrated && ready !== null ? ready.searchIndex : null}
             chosen={chosen}
@@ -194,32 +207,32 @@ export function Home({
               if (state.previousPaint !== null) choose(state.previousPaint);
             }}
             onUseDigital={() => {
-              wheel.current?.setModel("digital");
+              wheel.current?.update({ model: "digital" });
             }}
           />
-          <WheelView
-            ref={wheel}
-            locale={locale}
-            highlight={preview ?? tab}
-            restore={restoreWheel}
-            onResult={(next, final) => {
-              if (
-                final &&
-                !dragging &&
-                result !== null &&
-                !sameColors(result.colors, next.colors)
-              ) {
-                entrance.start({ kind: "panel" });
-              }
-              setResult(next);
-              setDragging(!final);
-              dispatch({ type: "colors-changed", count: next.colors.length });
-            }}
-            onChange={(wheel) => {
-              dispatch({ type: "wheel-changed", wheel });
-            }}
-          />
-        </section>
+          <section
+            id="wheel"
+            data-skip-target=""
+            aria-labelledby="wheel-heading"
+          >
+            <h2 id="wheel-heading" className="visually-hidden">
+              {m.home.wheelHeading}
+            </h2>
+            <noscript>
+              <p className="notice">{m.home.noscript}</p>
+            </noscript>
+            <WheelView
+              ref={wheel}
+              locale={locale}
+              highlight={preview ?? tab}
+              restore={restoreWheel}
+              onResult={showColors}
+              onChange={(wheel) => {
+                dispatch({ type: "wheel-changed", wheel });
+              }}
+            />
+          </section>
+        </div>
         <section
           className="results-column"
           id="paints"
@@ -241,7 +254,7 @@ export function Home({
             creditsPath={pathOf({ kind: "credits", locale })}
             onPreview={setPreview}
             rows={entrance}
-            dragging={dragging}
+            following={following}
             onRetry={retry}
             onUpdate={onUpdate}
           />

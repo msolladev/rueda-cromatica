@@ -13,7 +13,11 @@ import {
   type Locale,
   type Model,
 } from "@chromatic-wheel/color-wheel";
-import { paintTypeSchema, type PaintType } from "@chromatic-wheel/domain";
+import {
+  paintTypeSchema,
+  toHexColor,
+  type PaintType,
+} from "@chromatic-wheel/domain";
 import { isTheme } from "../features/theme/theme.ts";
 import { STORAGE_KEY } from "./before-paint.ts";
 import {
@@ -81,8 +85,6 @@ function parseWheel(value: unknown): WheelPreferences | null | undefined {
   return { color, model, harmony, light };
 }
 
-const HEX6 = /^#[0-9a-f]{6}$/i;
-
 /**
  * The chosen paint; missing (saved before it existed) or not valid, none:
  * the base stays, only no longer as a paint.
@@ -90,9 +92,8 @@ const HEX6 = /^#[0-9a-f]{6}$/i;
 function parsePaint(value: unknown): ChosenPaint | null {
   if (!isRecord(value)) return null;
   const { id, hex } = value;
-  return typeof id === "string" && typeof hex === "string" && HEX6.test(hex)
-    ? { id, hex }
-    : null;
+  const color = typeof hex === "string" ? toHexColor(hex) : null;
+  return typeof id === "string" && color !== null ? { id, hex: color } : null;
 }
 
 /** The preferences in `value`, or `null` if anything is not valid. */

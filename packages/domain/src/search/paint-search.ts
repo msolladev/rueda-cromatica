@@ -4,6 +4,7 @@
  * capitals, accents or apostrophes, and by fragments.
  */
 import type { Catalog } from "../catalog/catalog.ts";
+import { compareSortKeys } from "../catalog/integrity.ts";
 import type { Brand, Paint, Range } from "../catalog/schema.ts";
 
 /**
@@ -156,12 +157,19 @@ export function buildPaintSearchIndex(catalog: Catalog): PaintSearchIndex {
  */
 type Tier = 1 | 2 | 3 | 4 | 5;
 
-function startsAWord(text: string, word: string): boolean {
+/** Where `word` appears in `text`, overlapping ones included. */
+function* occurrences(text: string, word: string): Generator<number> {
   for (
     let at = text.indexOf(word);
     at !== -1;
     at = text.indexOf(word, at + 1)
   ) {
+    yield at;
+  }
+}
+
+function startsAWord(text: string, word: string): boolean {
+  for (const at of occurrences(text, word)) {
     if (at === 0 || !/[\p{L}\p{N}]/u.test(text.charAt(at - 1))) return true;
   }
   return false;
@@ -207,11 +215,7 @@ function highlight(text: Folded, words: readonly string[]): TextRange[] {
   const found: TextRange[] = [];
   for (const word of words) {
     if (word === "") continue;
-    for (
-      let at = text.text.indexOf(word);
-      at !== -1;
-      at = text.text.indexOf(word, at + 1)
-    ) {
+    for (const at of occurrences(text.text, word)) {
       const start = text.origin[at];
       const last = text.origin[at + word.length - 1];
       if (start !== undefined && last !== undefined) {
@@ -235,9 +239,14 @@ function highlight(text: Folded, words: readonly string[]): TextRange[] {
   return merged;
 }
 
-// By code unit and without locale, as docs/02 sorts.
-const compareText = (a: string, b: string): number =>
-  a === b ? 0 : a < b ? -1 : 1;
+// Within a tier: by name, brand, range and ID, by code unit and without
+// locale, as docs/02 sorts.
+const sortKey = ({ name, brandName, rangeName, paint }: SearchEntry) => [
+  name.text,
+  brandName.text,
+  rangeName.text,
+  paint.id,
+];
 
 /**
  * Searches the paints whose name, alias, code, brand or range contain every
@@ -287,11 +296,7 @@ export function searchPaints(
   });
   found.sort(
     (a, b) =>
-      a.tier - b.tier ||
-      compareText(a.entry.name.text, b.entry.name.text) ||
-      compareText(a.entry.brandName.text, b.entry.brandName.text) ||
-      compareText(a.entry.rangeName.text, b.entry.rangeName.text) ||
-      compareText(a.entry.paint.id, b.entry.paint.id),
+      a.tier - b.tier || compareSortKeys(sortKey(a.entry), sortKey(b.entry)),
   );
   return Object.freeze(
     found.map(({ entry }) =>
