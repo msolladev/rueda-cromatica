@@ -29,8 +29,11 @@ export function manifestOf(locale: Locale): string {
       start_url: `/${localeSlug(locale)}/`,
       scope: "/",
       display: "standalone",
-      background_color: "#f6f7f9",
-      theme_color: "#f6f7f9",
+      // The splash screen of the installed app: one color, with no dark
+      // version, so that of the dark theme, which does not flash in the dark
+      // (docs/07 §8). The page sets the theme's own once it loads.
+      background_color: "#121417",
+      theme_color: "#121417",
       icons: [
         { src: "/icons/icon-192.png", sizes: "192x192", type: "image/png" },
         { src: "/icons/icon-512.png", sizes: "512x512", type: "image/png" },
