@@ -15,6 +15,7 @@
   "dependencies": {
     "@chromatic-wheel/color-wheel": "workspace:*",
     "@chromatic-wheel/domain": "workspace:*",
+    "downshift": "9.5.0",
     "react": "19.3.1",
     "react-dom": "19.3.1",
     "workbox-window": "7.4.1"

@@ -7,14 +7,31 @@
 import {
   ColorWheel,
   type ColorWheelEventDetail,
+  type ColorWheelProperties,
   type Locale,
   type Result,
 } from "@chromatic-wheel/color-wheel";
-import { useEffect, useEffectEvent, useRef } from "react";
+import {
+  useEffect,
+  useEffectEvent,
+  useImperativeHandle,
+  useRef,
+  type Ref,
+} from "react";
 import type { WheelPreferences } from "../../app/state.ts";
 import { DEFAULT_COLOR, DEFAULT_HARMONY } from "./defaults.ts";
 
+/**
+ * What the page can ask of the wheel (docs/07 §15): the wheel answers with
+ * its `change` event, as if the user had done it, and travels there.
+ */
+export interface WheelHandle {
+  /** The wheel's own `update`. */
+  update: (properties: Partial<ColorWheelProperties>) => void;
+}
+
 export interface WheelViewProps {
+  readonly ref?: Ref<WheelHandle>;
   readonly locale: Locale;
   /** Applied once, when the saved preferences are read. */
   readonly restore: WheelPreferences | null;
@@ -27,6 +44,7 @@ export interface WheelViewProps {
 }
 
 export function WheelView({
+  ref,
   locale,
   highlight,
   restore,
@@ -80,6 +98,16 @@ export function WheelView({
   useEffect(() => {
     wheel.current?.highlightColor(highlight);
   }, [highlight, locale]);
+
+  useImperativeHandle(
+    ref,
+    () => ({
+      update: (properties) => {
+        wheel.current?.update(properties);
+      },
+    }),
+    [],
+  );
 
   return <div className="wheel-host" ref={host} />;
 }

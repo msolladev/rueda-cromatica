@@ -14,6 +14,7 @@ Este documento especifica el módulo `matching` de `@chromatic-wheel/domain`: la
 - **Fórmula**: ΔE CIEDE2000, de culori (`differenceCiede2000`), con los factores paramétricos kL = kC = kH = 1.
 - **Espacio**: CIELAB con el blanco D65 (`lab65` de culori). El color de cada pintura se convierte una vez, al construir el índice (§5).
 - **El color de la rueda es exacto**: lo genera la propia rueda, así que un resultado es aproximado solo si lo es el color de la pintura (`isColorApproximate`, docs/01 §4).
+- **Entre dos hex**: `colorDifference` da el mismo ΔE entre dos colores cualesquiera. La web lo usa para saber si la rueda RYB alcanza el color de una pintura (docs/07 §15).
 
 ## 3. Etiquetas de calidad
 
@@ -89,6 +90,18 @@ Devuelve como mucho tantos resultados como el límite de la búsqueda. Más all�
 
 Ejemplo con datos reales: con `#3daf44`, todas las marcas y el filtro por defecto, da Moot Green (Citadel, 0), Ferocious Green (Army Painter, 7,44) y Clear Green (AK, 7,55).
 
+### 6.3. Pintura fijada
+
+La pintura de la que sale el color, cuando se eligió en el buscador (docs/07 §15, [ADR-0029](adr/0029-buscador-pinturas-mvp.md)):
+
+- **Va la primera de su marca**, sea cual sea su ΔE, y no se repite más abajo. Ocupa uno de los huecos del límite, no uno más.
+- **Aunque los filtros la excluyan**: por su tipo, por metálica, por descatalogada, o porque su marca no está entre las elegidas. En ese caso su marca aparece en el resultado, en su sitio del orden del catálogo.
+- **También la primera de todas las marcas juntas** (§6.2).
+- **Lleva una marca** en el resultado, para que la interfaz la distinga.
+- Un ID que no está en el catálogo, o una pintura sin color, se ignora.
+
+Ejemplo con datos reales: Hammered Copper (Vallejo, `#dccfc7`) es metálica, así que el filtro por defecto la excluye. Fijada, sale la primera de Vallejo con ΔE 0, seguida de Silver Grey (2,0) y Cream White (2,9).
+
 ## 7. Rendimiento
 
 Medido el 2026-11-18 en un Intel i5-12600 de escritorio con Node 26 y culori 4.0.2, con 6 colores contra el catálogo de 1393 pinturas, como la web en cada cambio de la rueda. Son 200 repeticiones, después de 20 de calentamiento:
@@ -103,4 +116,34 @@ Comparando los hex sin el índice, las 6 búsquedas tardaban 6,7 ms. No hay medi
 
 ## 8. Uso en la web
 
-La web construye el índice al cargar el catálogo y busca con el resultado de la rueda. Cómo se eligen las marcas, los tipos y las descatalogadas, la vista «Por marca» o «Las más parecidas», qué muestra cada pintura y el aviso de color aproximado están en [docs/07](07-web.md) §1-3.
+La web construye el índice al cargar el catálogo y busca con el resultado de la rueda. Cómo se eligen las marcas, los tipos y las descatalogadas, la vista «Por marca» o «Las más parecidas», qué muestra cada pintura y el aviso de color aproximado están en [docs/07](07-web.md) §1-3. El buscador de pinturas, en §15.
+
+## 9. Búsqueda por nombre
+
+Encuentra pinturas por lo que se escribe, para empezar la rueda desde una pintura que se tiene ([ADR-0029](adr/0029-buscador-pinturas-mvp.md)). Tiene su propio índice, que la web construye al cargar el catálogo, con todas las pinturas con color, también las descatalogadas: quien tiene una puede empezar por ella.
+
+### 9.1. Qué encuentra
+
+- **Dónde busca**: en el nombre de la pintura, sus alias, su código del fabricante, el nombre de su marca y sus alias, y el nombre de su gama.
+- **Cada palabra escrita** tiene que estar en alguno de ellos, en cualquier orden y por fragmentos: `tigers skin` encuentra «Tiger's Eye Skin», y `vallejo black`, las Black de Vallejo.
+- **Sin distinguir** mayúsculas, acentos ni apóstrofos. En el código tampoco cuentan los puntos, los guiones, las barras ni los espacios: `70950` encuentra `70.950`.
+- **Desde 3 caracteres**, contados como los cuenta una persona (`isSearchable`) y sin los espacios de alrededor. Con menos, no busca: con «re» coinciden 492 pinturas.
+- **Sobre todo el catálogo**: no aplica los filtros de los resultados (§6.1), que deciden qué pinturas se proponen como parecidas, no cuáles existen.
+- **Dónde coincide**: cada resultado dice en qué tramos del nombre, la marca, la gama y el código está lo escrito, para resaltarlo. Lo que coincide en un alias no se resalta, porque el alias no se muestra.
+- La tolerancia a las faltas de ortografía (`boney` encuentra «Bony») queda para después.
+
+### 9.2. Orden
+
+1. El nombre, un alias o el código es exactamente lo escrito: «Red» al escribir `red`, o `70.950` al escribir `70950`.
+2. El nombre, un alias o el código empieza por lo escrito: «Red Leather».
+3. Cada palabra escrita empieza una palabra del nombre o de un alias: «Mephiston Red».
+4. Cada palabra escrita está dentro del nombre o de un alias: «Bloodred».
+5. Alguna palabra solo está en la marca, la gama o el código.
+
+Dentro de cada grupo, por nombre, marca y gama, sin acentos ni mayúsculas, y al final por ID, comparados por unidad de código y sin _locale_, como §4.
+
+Cuando la búsqueda tolere faltas de ortografía, este orden pasará a ser por pesos según el dato que coincide. Está en una función aparte para poder sustituirla sin tocar la web.
+
+### 9.3. Rendimiento
+
+Busca en el índice en memoria, de forma síncrona. Medido el 2026-11-21 en el mismo equipo que §7, con 7 búsquedas distintas («red», «lothern», «vallejo black», «70950»…) repetidas 300 veces después de 50 de calentamiento, sobre las 1393 pinturas: mediana de 0,16 ms y percentil 95 de 0,33 ms. Está muy por debajo de un fotograma (16 ms), así que la web no necesita retardo ni descartar búsquedas antiguas. No hay medidas en un móvil.

@@ -13,11 +13,16 @@ import {
   type Locale,
   type Model,
 } from "@chromatic-wheel/color-wheel";
-import { paintTypeSchema, type PaintType } from "@chromatic-wheel/domain";
+import {
+  paintTypeSchema,
+  toHexColor,
+  type PaintType,
+} from "@chromatic-wheel/domain";
 import { isTheme } from "../features/theme/theme.ts";
 import { STORAGE_KEY } from "./before-paint.ts";
 import {
   EXTRA_PAINT_TYPES,
+  type ChosenPaint,
   type Filters,
   type Preferences,
   type View,
@@ -80,6 +85,17 @@ function parseWheel(value: unknown): WheelPreferences | null | undefined {
   return { color, model, harmony, light };
 }
 
+/**
+ * The chosen paint; missing (saved before it existed) or not valid, none:
+ * the base stays, only no longer as a paint.
+ */
+function parsePaint(value: unknown): ChosenPaint | null {
+  if (!isRecord(value)) return null;
+  const { id, hex } = value;
+  const color = typeof hex === "string" ? toHexColor(hex) : null;
+  return typeof id === "string" && color !== null ? { id, hex: color } : null;
+}
+
 /** The preferences in `value`, or `null` if anything is not valid. */
 export function parsePreferences(value: unknown): Preferences | null {
   if (!isRecord(value)) return null;
@@ -96,7 +112,8 @@ export function parsePreferences(value: unknown): Preferences | null {
   ) {
     return null;
   }
-  return { filters, view, theme, locale, installDismissed, wheel };
+  const paint = parsePaint(value["paint"]);
+  return { filters, view, theme, locale, installDismissed, wheel, paint };
 }
 
 /** Reads the saved preferences; `null` if there are none or they are not valid. */

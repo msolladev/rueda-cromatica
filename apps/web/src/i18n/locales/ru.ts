@@ -77,6 +77,7 @@ export const ru: Messages = {
     exactColor: "Точный",
     metallic: "Металлик",
     discontinued: "Снята с производства",
+    chosen: "Выбрана",
   },
   filters: {
     title: "Фильтры",
@@ -90,6 +91,21 @@ export const ru: Messages = {
     moreTypes: "кроющие и ещё типов: {count}",
     withoutDiscontinued: "без снятых с производства",
     withDiscontinued: "со снятыми с производства",
+  },
+  search: {
+    label: "Начните с краски, которая у вас есть",
+    hint: "Не менее {min} символов названия, кода или марки.",
+    paints: "Краски",
+    noMatches: "Нет красок, подходящих под запрос.",
+    seeMore: "Показать ещё краски ({shown} из {total})",
+    count: "Краски: {shown} из {total}.",
+    clear: "Очистить краску",
+    back: "Вернуться к {name}",
+    chosen: "Основной: {name}, {brand} {range}.",
+    typeMetallic: "{type}, металлик",
+    rybNotice:
+      "Круг RYB не достигает этого цвета: используется ближайший (ΔE {deltaE}).",
+    useDigital: "Использовать цифровой круг",
   },
   paintTypes: {
     base: "Base",

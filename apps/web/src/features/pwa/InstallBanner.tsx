@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import { CloseIcon } from "../../app/icons.tsx";
 import type { Messages } from "../../i18n/messages.ts";
+import { prefersReducedMotion } from "../../app/motion.ts";
 
 interface InstallBannerProps {
   readonly messages: Messages;
@@ -26,10 +27,7 @@ export function InstallBanner({
   const [hint, setHint] = useState(false);
   const close = () => {
     const element = banner.current;
-    if (
-      element === null ||
-      matchMedia("(prefers-reduced-motion: reduce)").matches
-    ) {
+    if (element === null || prefersReducedMotion()) {
       onClose();
       return;
     }

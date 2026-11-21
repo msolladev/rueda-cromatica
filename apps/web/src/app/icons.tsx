@@ -1,6 +1,6 @@
 /**
  * @license
- * Icons "sun", "moon", "monitor", "menu", "x", "info", "external-link", "plus", "minus", "arrow-left", "refresh-cw", "chevron-left" and "chevron-right" copied from Lucide v1.71.0
+ * Icons "sun", "moon", "monitor", "menu", "x", "info", "external-link", "plus", "minus", "arrow-left", "refresh-cw", "rotate-ccw", "chevron-left" and "chevron-right" copied from Lucide v1.71.0
  * (https://lucide.dev), and "chevron-down" and "check" (with a thicker
  * line), copied in app.css; "moon", "monitor", "x", "info", "chevron-down"
  * and "check" are derived from Feather (https://feathericons.com).
@@ -163,6 +163,13 @@ export const RefreshIcon = () => (
     <path d="M21 3v5h-5" />
     <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16" />
     <path d="M8 16H3v5" />
+  </Icon>
+);
+
+export const RotateCcwIcon = () => (
+  <Icon>
+    <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+    <path d="M3 3v5h5" />
   </Icon>
 );
 

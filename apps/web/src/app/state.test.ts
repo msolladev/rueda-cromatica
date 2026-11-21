@@ -127,4 +127,43 @@ describe("reduce", () => {
       installDismissed: true,
     });
   });
+
+  describe("the chosen paint", () => {
+    const lothern = { id: "citadel/layer/lothern-blue", hex: "#2c9bcc" };
+    const wheel = (color: string) => ({
+      color,
+      model: "ryb" as const,
+      harmony: "triad" as const,
+      light: "warm" as const,
+    });
+
+    it("goes to the base tab and stays while the wheel keeps its hex", () => {
+      const state = run(
+        { type: "select-tab", index: 2 },
+        { type: "choose-paint", paint: lothern },
+        { type: "wheel-changed", wheel: wheel("#2C9BCC") },
+      );
+      expect(state.tab).toBe(0);
+      expect(state.preferences.paint).toBe(lothern);
+      expect(state.previousPaint).toBeNull();
+    });
+
+    it("is remembered for «Back to…» once the base moves away", () => {
+      const state = run(
+        { type: "choose-paint", paint: lothern },
+        { type: "wheel-changed", wheel: wheel("#ff0000") },
+      );
+      expect(state.preferences.paint).toBeNull();
+      expect(state.previousPaint).toBe(lothern);
+    });
+
+    it("is forgotten, with «Back to…», when the search is emptied", () => {
+      const state = run(
+        { type: "choose-paint", paint: lothern },
+        { type: "clear-paint" },
+      );
+      expect(state.preferences.paint).toBeNull();
+      expect(state.previousPaint).toBeNull();
+    });
+  });
 });

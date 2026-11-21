@@ -5,8 +5,8 @@ Este documento especifica `apps/web`: la PWA que integra la rueda de `color-whee
 ## 1. Maquetación
 
 - **Un único marcado**, _mobile first_, que se adapta con CSS:
-  - En el móvil, una columna: la barra de navegación, el banner de instalar (§8), el título, que dice qué se hace en la página («Encuentra la pintura de cada color de tu esquema») y no repite el nombre de la barra, la rueda con sus controles y los resultados.
-  - Desde 60rem de ancho, la rueda a la izquierda, fija al desplazar, y los resultados a la derecha. Fija, la rueda cabe entera en la pantalla: el círculo encoge (entre 14 y 26rem) para dejar sitio a sus controles.
+  - En el móvil, una columna: la barra de navegación, el banner de instalar (§8), el título, que dice qué se hace en la página («Encuentra la pintura de cada color de tu esquema») y no repite el nombre de la barra, el buscador de pinturas (§15), la rueda con sus controles y los resultados.
+  - Desde 60rem de ancho, el buscador y la rueda a la izquierda, fijos al desplazar, y los resultados a la derecha. Fija, la rueda cabe entera en la pantalla: el círculo encoge (entre 14 y 26rem) para dejar sitio al buscador y a sus controles.
 - **La lista de colores de la rueda se oculta** (`hideControl("results")`): la web muestra los colores en sus pestañas, y así cada color aparece una vez.
 - **Resultados**, en este orden:
   1. El selector «Mostrar», siempre visible: «Por marca» o «Las más parecidas».
@@ -20,10 +20,11 @@ Este documento especifica `apps/web`: la PWA que integra la rueda de `color-whee
 - **Movimiento**, que responde a cada acción sin estorbar:
   - El marco de la pestaña elegida se desliza hasta la nueva, su muestra crece un poco y la pestaña se hunde al pulsarla. El marco es un único elemento que un poco de JavaScript coloca midiendo la pestaña, para que funcione en todos los navegadores; sin JavaScript, la pestaña se marca sola. El marco se dibuja encima del borde, así que la pestaña no cambia de tamaño.
   - Los selectores segmentados («Mostrar», el tema, y «Modelo» y «Luz» de la rueda) son el mismo control, con el mismo aspecto: un marco con la opción elegida como una pastilla dentro, que se desliza hasta la nueva. Se coloca igual que el marco de las pestañas, midiendo la opción con JavaScript, para que funcione en todos los navegadores.
-  - Al elegir otra pestaña, sus filas entran con un fundido corto y escalonado; las que añade «Ver más pinturas» entran una tras otra mientras la lista crece con suavidad hasta su nueva altura, y las que quita «Ver menos» se desvanecen mientras la lista se recoge, antes de desaparecer. Las filas que cambian mientras se arrastra la rueda no se animan.
+  - Al elegir otra pestaña, sus filas entran con un fundido corto y escalonado; las que añade «Ver más pinturas» entran una tras otra mientras la lista crece con suavidad hasta su nueva altura, y las que quita «Ver menos» se desvanecen mientras la lista se recoge, antes de desaparecer. Cuando los colores cambian de golpe (el campo Hex, el buscador, «Volver a…», el modelo o la armonía), las filas entran igual que al cambiar de pestaña. Las filas que cambian mientras se arrastra la rueda no se animan.
   - Los desplegables (filtros, «Detalles» y los de créditos y errores) se abren animando su altura donde el navegador lo admite, y su flecha (`chevron-down` de Lucide) gira.
   - Las casillas de los filtros son propias: al marcarlas, la caja se rellena con un pequeño rebote y la marca (`check` de Lucide) se dibuja de izquierda a derecha, como a bolígrafo; al desmarcarlas se borra igual. Con colores forzados vuelven a ser las del sistema.
-  - Los colores de la rueda (las muestras de las pestañas, del panel y la mitad de arriba de las muestras partidas) se funden con el nuevo al cambiar, en 0,25 s; mientras se arrastra la rueda cambian al momento.
+  - Los colores de la rueda (las muestras de las pestañas, del panel y la mitad de arriba de las muestras partidas) se funden con el nuevo al cambiar en el mismo tiempo y con la misma curva con que la rueda viaja a su nuevo sitio (450 ms, docs/05 §6.2), para que lleguen a la vez; mientras se arrastra la rueda cambian al momento. Todo cambio de colores, venga de donde venga (arrastrar, un clic o un toque en la rueda, sus teclas, sus controles, el buscador o «Volver a…»), pasa por una sola función de la página, que decide cómo llega: el primer paso de un gesto, que es un salto (un clic, o donde empieza un arrastre), y cualquier otro cambio se funden; los siguientes pasos de un arrastre siguen a la rueda al momento.
+  - Cuando una armonía trae más colores, las pestañas nuevas entran creciendo un poco; cuando trae menos, las que sobran se desvanecen donde estaban antes de irse.
   - Las pestañas, fijas bajo la barra, llevan una línea fina y una sombra (más intensa en tema oscuro) solo mientras están fijas, para despegarse de lo que pasa por debajo. Se comprueba al desplazar, como mucho una vez por fotograma.
   - Al abrir «Detalles», sus datos entran uno tras otro, como las filas.
   - Al cambiar un filtro, su resumen da un pequeño salto en el color del acento, también con el desplegable cerrado.
@@ -35,7 +36,7 @@ Este documento especifica `apps/web`: la PWA que integra la rueda de `color-whee
 
 ## 2. Cada pintura
 
-- **A primera vista**: la muestra partida, el nombre, la gama (con la marca delante en «Las más parecidas»), las fichas del tipo, «Metálica» y «Descatalogada» si lo es, y la etiqueta de calidad (docs/06 §3) con el ΔE de un decimal al lado («La más cercana | ΔE 7,6»), como una pastilla con un color por nivel (verde, verde claro, ámbar y gris), con contraste de al menos 6:1 en los dos temas. El texto siempre dice el nivel, así que no depende solo del color. Por debajo de la etiqueta, una barra de cercanía tan larga como cerca está la pintura: entera con ΔE 0, la mitad con ΔE 5 (el final de «Parecida») y cada vez más corta después, sin llegar a desaparecer (1 / (1 + ΔE / 5)). Crece al aparecer la fila y sigue los cambios. Es decorativa: el dato está en el texto. El nombre ocupa todo el ancho y la etiqueta va junto a las fichas, a la derecha, para que no lo estreche.
+- **A primera vista**: la muestra partida, el nombre, la gama (con la marca delante en «Las más parecidas»), las fichas del tipo, «Metálica» y «Descatalogada» si lo es, «Elegida» si es la pintura del buscador (§15), con el color del acento y un pequeño rebote al aparecer, y la etiqueta de calidad (docs/06 §3) con el ΔE de un decimal al lado («La más cercana | ΔE 7,6»), como una etiqueta rectangular con las esquinas redondeadas, como las muestras, y un color por nivel (verde, verde claro, ámbar y gris), con contraste de al menos 6:1 en los dos temas. El texto siempre dice el nivel, así que no depende solo del color. Por debajo de la etiqueta, una barra de cercanía tan larga como cerca está la pintura: entera con ΔE 0, la mitad con ΔE 5 (el final de «Parecida») y cada vez más corta después, sin llegar a desaparecer (1 / (1 + ΔE / 5)). Crece al aparecer la fila y sigue los cambios. Es decorativa: el dato está en el texto. El nombre ocupa todo el ancho y la etiqueta va junto a las fichas, a la derecha, para que no lo estreche.
 - **En «Detalles»** (`<details>`): el código del fabricante, el hex con su fuente y su origen («#3daf44, de SimoGecko (comunitario)»), que es la fuente breve del color que pide el [ADR-0015](adr/0015-fuentes-trazabilidad-licencias.md), y la razón de que el color sea aproximado (`colorApproximationReasons`) o «Exacto».
 - **Muestra partida**: arriba el color de la rueda y abajo el de la pintura, para compararlos sin mover la vista. Es decorativa: su información está en el texto.
 
@@ -77,7 +78,8 @@ Se guardan en `localStorage`, en una clave con la versión del formato:
 - los tipos añadidos, las metálicas y las descatalogadas;
 - la vista, el tema y el idioma elegido;
 - si se cerró el banner de instalar;
-- el color, el modelo, la armonía y la luz de la rueda, al cambiar (no mientras se arrastra).
+- el color, el modelo, la armonía y la luz de la rueda, al cambiar (no mientras se arrastra);
+- la pintura elegida en el buscador, con su hex, mientras sea la base (§15). «Volver a…» no se guarda.
 
 No se guardan la pestaña, lo pedido con «Ver más» ni si el desplegable está abierto. Lo leído se valida: si no es válido, se descarta entero. Un `localStorage` bloqueado o lleno se ignora.
 
@@ -167,12 +169,33 @@ En la fase 6 las preferencias pasarán a la cuenta del usuario ([ADR-0017](adr/0
 ## 14. Tests
 
 - **Node**: el reductor, las preferencias, las rutas, la cabecera, la carga del catálogo, la búsqueda, los textos de los 13 idiomas, la plantilla HTML con la CSP, el plugin de licencias y el prerenderizado de las 27 páginas.
-- **Navegador** (modo navegador de Vitest con Playwright): que el navegador toma el HTML prerenderizado sin diferencias, las pestañas con teclado y sus nombres numerados, los filtros, «Ver más», la vista, el tema, el menú con su velo, los enlaces para saltar la barra, las preferencias guardadas y el error de red, con axe-core (WCAG 2.2 A y AA) en varios estados.
+- **Navegador** (modo navegador de Vitest con Playwright): que el navegador toma el HTML prerenderizado sin diferencias, las pestañas con teclado y sus nombres numerados, los filtros, «Ver más», la vista, el tema, el menú con su velo, los enlaces para saltar la barra, las preferencias guardadas, el buscador de pinturas (las sugerencias desde 3 letras, «Ver más» con el teclado, la pintura elegida la primera de su marca aunque sea metálica, el aviso de RYB, «Volver a…» y la pintura guardada) y el error de red, con axe-core (WCAG 2.2 A y AA) en varios estados.
 - **De extremo a extremo** (`@playwright/test`), en Chromium completo, no en la versión recortada para tests, que no pinta como un navegador real:
   - sobre la web compilada (en Chromium, y lo que no depende del service worker también en Firefox): que se sirven todas las rutas en su idioma, el fundido entre páginas, el contenido sin JavaScript, que `/` va al idioma detectado, el selector de idioma, que el tema guardado se aplica antes de pintar y que la página declara `color-scheme` antes de la hoja de estilos, que nunca se ven los valores por defecto con preferencias guardadas (fotograma a fotograma), el funcionamiento sin conexión y el aviso de versión nueva;
   - sobre el servidor de desarrollo: que cada página sale con sus estilos antes de que arranque el JavaScript, y que el navegador la toma sin errores.
 
-## 15. Prototipos
+## 15. Buscador de pinturas
+
+Para empezar desde una pintura que se tiene: se busca y su color pasa a ser la base de la rueda ([ADR-0029](adr/0029-buscador-pinturas-mvp.md)). Qué encuentra y en qué orden está en docs/06 §9.
+
+- **Encima de la rueda**, con el ancho máximo de la rueda, en su propio elemento `<search>`, fuera de la sección de la rueda, para que «Saltar a la rueda» siga llevando al anillo (§11): la etiqueta («Empieza por una pintura que tengas»), una línea de ayuda siempre visible («Al menos 3 letras del nombre, el código o la marca.») y el campo. Sin texto de ejemplo dentro del campo: no cabe en el móvil y desaparece al escribir.
+- **Patrón _combobox_ con lista de sugerencias** de la APG, con `useCombobox` de [Downshift](https://github.com/downshift-js/downshift): Downshift da el estado, el teclado (las flechas, Intro y Esc) y el ARIA (`aria-expanded`, `aria-activedescendant`…), y la web, el marcado y el estilo. La web no controla el texto del campo, porque con el texto controlado Downshift rompe la escritura con IME (#1452). Salir del campo no elige nada.
+- **Desde 3 caracteres**: con menos, la lista no se abre. El campo está desactivado hasta que el catálogo se carga.
+- **Cada sugerencia**, de dos líneas:
+  - la muestra (la de la web, cuadrada con las esquinas redondeadas); el nombre y, tras un «·», el tipo en cursiva y atenuado, con «metálica» si lo es («Hammered Copper · _Estándar, metálica_»);
+  - debajo, en pequeño y atenuado, la marca, la gama y el código («Vallejo · Game Color · 72.059»), en el orden del bote.
+  - Lo escrito va en negrita, en el nombre, la marca, la gama y el código (docs/06 §9.1).
+- **8 sugerencias**, y una última, «Ver más pinturas (8 de 83)», con el aspecto de «Ver más pinturas» de los resultados, que añade 8 más; el foco pasa a la primera nueva, y las nuevas entran una tras otra. La lista flota sobre la página y solo se desplaza por dentro si se piden más de las que caben. Sin coincidencias, dice «Ninguna pintura coincide con lo escrito.».
+- **Lector de pantalla**: una región `role="status"` dice cuántas hay («Pinturas: 8 de 83.») o que no hay ninguna, y al elegir, cuál es la base.
+- **Al elegir una pintura**:
+  - su hex pasa a la rueda, que viaja hasta él (docs/05 §6.2), y la web pasa a la pestaña Base;
+  - el campo muestra el nombre, con la muestra de la pintura dentro, que aparece con un pequeño rebote, y debajo, la marca, la gama y el código, que el campo da como descripción;
+  - en la pestaña Base, la pintura va la primera de su marca, y en «Las más parecidas», la primera de todas, aunque los filtros la excluyan, sin repetirse y con la ficha «Elegida» (docs/06 §6.3). La pastilla de la marca de la rueda sigue diciendo «Base»: con el nombre y la marca no cabría en el móvil.
+- **Mientras la base sea la pintura**: cambiar de armonía, de luz o de modelo no la cambia. Arrastrar la rueda, usar sus teclas o el campo Hex sí: el campo se vacía y, donde estaban la marca y la gama, aparece «Volver a Lothern Blue», que la vuelve a elegir. La «×» del campo lo vacía y olvida la pintura, sin mover la rueda.
+- **Si la rueda RYB no alcanza la pintura** (ΔE mayor que 1 entre su hex y la base, `colorDifference` de docs/06 §2), bajo el campo, con el aspecto del aviso de color aproximado: «La rueda RYB no llega a este color: usa el más parecido (ΔE 8,6). Usar la rueda digital». El enlace cambia el modelo y la base vuelve a ser la pintura exacta ([ADR-0021](adr/0021-cambio-modelo-conserva-color.md)). Con el catálogo actual pasa con 124 pinturas, sobre todo cianes y azules intensos.
+- **Sin JavaScript** el campo sale desactivado, con su etiqueta y su ayuda.
+
+## 16. Prototipos
 
 Artifacts privados de claude.ai, hechos al decidir la maquetación. Solo los abre su propietario.
 
@@ -181,3 +204,4 @@ Artifacts privados de claude.ai, hechos al decidir la maquetación. Solo los abr
 - [Fila de pintura](https://claude.ai/artifact/ELpjDrkX8fRJpNfrLpWJ4G): la leyenda de la muestra partida.
 - [Aviso de color aproximado](https://claude.ai/artifact/UftcxvvbGsMVGCFEekniTg): general, por pintura o según el caso.
 - [Barra de navegación](https://claude.ai/artifact/PU2TyarkuDLXY6HySxdiR2): fija o no, con el menú hamburguesa.
+- [Buscador de pinturas](https://claude.ai/artifact/8sMCKuUSoYVxbvsADQmdJy): con el HTML, el CSS y la rueda de la web compilada.

@@ -6,16 +6,14 @@
  */
 import { ARRIVING_KEY } from "./before-paint.ts";
 import { pageOf } from "./pages.ts";
+import { prefersReducedMotion } from "./motion.ts";
 
 /** How long the content takes to fade out before leaving. */
 const LEAVE_MS = 160;
 
-const reduceMotion = () =>
-  matchMedia("(prefers-reduced-motion: reduce)").matches;
-
 /** Goes to `href`, an address of the app, with the fade. */
 export function goTo(href: string): void {
-  if (reduceMotion()) {
+  if (prefersReducedMotion()) {
     location.assign(href);
     return;
   }

@@ -14,6 +14,7 @@ import {
   type Catalog,
   type ColorOrigin,
   type MatchQuality,
+  type PaintId,
   type PaintIndex,
   type PaintType,
 } from "@chromatic-wheel/domain";
@@ -38,6 +39,8 @@ export interface PaintView {
   readonly origin: ColorOrigin;
   /** Who publishes the hex: the source's publisher. */
   readonly sourceName: string;
+  /** The paint chosen in the search, first whatever its ΔE (docs/07 §15). */
+  readonly chosen: boolean;
 }
 
 export interface BrandResults {
@@ -82,6 +85,7 @@ function paintView(catalog: Catalog, match: CalculatedMatch): PaintView {
     reasons: colorApproximationReasons(paint),
     origin: color.origin,
     sourceName: catalog.source(color.sourceId)?.publisher ?? "",
+    chosen: match.pinned,
   };
 }
 
@@ -95,6 +99,8 @@ export function searchColor(
   color: { readonly role: Role; readonly hex: string },
   filters: Filters,
   limits: Limits,
+  /** The paint chosen in the search, shown first among the base's paints. */
+  chosenPaintId?: PaintId,
 ): ColorResults {
   const brands = catalog
     .brands()
@@ -107,6 +113,7 @@ export function searchColor(
     includeMetallic: filters.includeMetallic,
     includeDiscontinued: filters.includeDiscontinued,
     limit,
+    pinnedPaintId: chosenPaintId,
   });
   // The wheel only gives `#rrggbb` and the limits are positive integers.
   if (!found.ok) throw new Error(`Search failed: ${found.error.kind}`);

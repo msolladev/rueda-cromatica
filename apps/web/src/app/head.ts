@@ -4,7 +4,7 @@
  * written by the prerendering, so it is there without JavaScript. Every page
  * links the manifest of its language (docs/07 §8).
  */
-import { LOCALES, messagesOf, type Locale } from "../i18n/i18n.ts";
+import { LOCALES, messagesOf, SEPARATOR, type Locale } from "../i18n/i18n.ts";
 import { manifestPathOf } from "./manifest.ts";
 import { pathOf, type Page } from "./pages.ts";
 
@@ -31,12 +31,12 @@ function titleOf(page: Page): {
       return { title: m.meta.homeTitle, description: m.meta.homeDescription };
     case "credits":
       return {
-        title: `${m.meta.creditsTitle} · ${m.meta.siteName}`,
+        title: [m.meta.creditsTitle, m.meta.siteName].join(SEPARATOR),
         description: m.meta.creditsDescription,
       };
     case "not-found":
       return {
-        title: `${m.notFound.title} · ${m.meta.siteName}`,
+        title: [m.notFound.title, m.meta.siteName].join(SEPARATOR),
         description: m.notFound.body,
       };
   }

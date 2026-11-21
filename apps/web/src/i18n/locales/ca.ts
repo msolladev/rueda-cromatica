@@ -71,6 +71,7 @@ export const ca: Messages = {
     exactColor: "Exacte",
     metallic: "Metàl·lica",
     discontinued: "Descatalogada",
+    chosen: "Triada",
   },
   filters: {
     title: "Filtres",
@@ -84,6 +85,21 @@ export const ca: Messages = {
     moreTypes: "opaques i {count} tipus més",
     withoutDiscontinued: "sense descatalogades",
     withDiscontinued: "amb descatalogades",
+  },
+  search: {
+    label: "Comença per una pintura que tinguis",
+    hint: "Almenys {min} lletres del nom, el codi o la marca.",
+    paints: "Pintures",
+    noMatches: "Cap pintura no coincideix amb el que has escrit.",
+    seeMore: "Mostra més pintures ({shown} de {total})",
+    count: "Pintures: {shown} de {total}.",
+    clear: "Esborra la pintura",
+    back: "Torna a {name}",
+    chosen: "Base: {name}, {brand} {range}.",
+    typeMetallic: "{type}, metàl·lica",
+    rybNotice:
+      "La roda RYB no arriba a aquest color: fa servir el més semblant (ΔE {deltaE}).",
+    useDigital: "Fes servir la roda digital",
   },
   paintTypes: {
     base: "Base",

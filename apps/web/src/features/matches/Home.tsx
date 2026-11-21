@@ -4,7 +4,13 @@ import {
   type Locale,
   type Result,
 } from "@chromatic-wheel/color-wheel";
-import { useDeferredValue, useEffect, useMemo, useState } from "react";
+import {
+  colorDifference,
+  paintIdSchema,
+  type Catalog,
+  type Paint,
+} from "@chromatic-wheel/domain";
+import { useDeferredValue, useEffect, useMemo, useRef, useState } from "react";
 import { endRestoring } from "../../app/restoring.ts";
 import { useHydrated } from "../../app/hydrated.ts";
 import { pathOf } from "../../app/pages.ts";
@@ -12,12 +18,15 @@ import type { HomeData } from "../../app/page-data.ts";
 import {
   limitOf,
   type Action,
+  type ChosenPaint,
   type ScreenState,
   type WheelPreferences,
 } from "../../app/state.ts";
 import { useCatalog } from "../../catalog/useCatalog.ts";
 import type { Messages } from "../../i18n/messages.ts";
-import { WheelView } from "../wheel/WheelView.tsx";
+import { PaintSearch, type PaintChoice } from "../paint-search/PaintSearch.tsx";
+import { WheelView, type WheelHandle } from "../wheel/WheelView.tsx";
+import { useEntrance } from "./entrance.ts";
 import { Results, type PanelContent } from "./Results.tsx";
 import { searchColor, type ColorResults } from "./search.ts";
 
@@ -29,6 +38,13 @@ interface HomeProps {
   readonly messages: Messages;
   readonly restoreWheel: WheelPreferences | null;
   readonly onUpdate: () => void;
+}
+
+/** The paint of a saved choice, if the catalog still has it. */
+function paintOf(catalog: Catalog, saved: ChosenPaint | null): Paint | null {
+  if (saved === null) return null;
+  const id = paintIdSchema.safeParse(saved.id);
+  return id.success ? (catalog.paint(id.data) ?? null) : null;
 }
 
 const sameColors = (
@@ -50,9 +66,11 @@ export function Home({
   const { load, retry } = useCatalog();
   const wheelLabels = useMemo(() => labelsFor(locale), [locale]);
   const [result, setResult] = useState<Result | null>(null);
-  // While the wheel is dragged, the colors change at once: they only blend
-  // into the new one after a change (docs/07 §1).
-  const [dragging, setDragging] = useState(false);
+  // docs/07 §1: whether the colors are following a drag of the wheel, at
+  // once, instead of blending into the new ones. Only `showColors` sets it.
+  const [following, setFollowing] = useState(false);
+  // Whether a drag already started: its first step is a jump.
+  const inGesture = useRef(false);
   // A tab under the mouse or the focus points at its mark meanwhile.
   const [preview, setPreview] = useState<number | null>(null);
   // docs/07 §4: the results follow the drag with low priority, so that the
@@ -60,7 +78,58 @@ export function Home({
   const deferred = useDeferredValue(result);
   const colors = deferred?.colors ?? data.example;
   const tab = Math.min(state.tab, colors.length - 1);
-  const { filters, view } = state.preferences;
+  const { filters, view, paint: saved } = state.preferences;
+  const wheel = useRef<WheelHandle>(null);
+  const entrance = useEntrance();
+
+  /**
+   * The only way new colors reach the tabs and the results (docs/07 §1),
+   * whatever changed them: dragging, a click or a tap on the wheel, its keys,
+   * its controls, the paint search or «Back to…». A jump (anything but the
+   * steps of a drag after the first) blends the swatches and makes the rows
+   * enter, while the wheel travels; the steps of a drag follow it at once.
+   */
+  const showColors = (next: Result, final: boolean) => {
+    const follows = !final && inGesture.current;
+    inGesture.current = !final;
+    if (
+      !follows &&
+      result !== null &&
+      !sameColors(result.colors, next.colors)
+    ) {
+      entrance.start({ kind: "panel" });
+    }
+    setFollowing(follows);
+    setResult(next);
+    dispatch({ type: "colors-changed", count: next.colors.length });
+  };
+
+  // docs/07 §15: the paint the base comes from, and the one it came from.
+  const ready = load.status === "ready" ? load : null;
+  const chosen = useMemo((): PaintChoice | null => {
+    if (ready === null) return null;
+    const paint = paintOf(ready.catalog, saved);
+    const range =
+      paint === null ? undefined : ready.catalog.range(paint.rangeId);
+    if (paint === null || range === undefined) return null;
+    return { paint, brand: ready.catalog.brandOf(paint), range };
+  }, [ready, saved]);
+  const previous = useMemo(
+    () => (ready === null ? null : paintOf(ready.catalog, state.previousPaint)),
+    [ready, state.previousPaint],
+  );
+  const base = result?.colors[0]?.hex;
+  const rybDeltaE = useMemo(() => {
+    if (saved === null || result?.model !== "ryb" || base === undefined) {
+      return null;
+    }
+    const difference = colorDifference(saved.hex, base);
+    return difference.ok ? difference.value : null;
+  }, [saved, result?.model, base]);
+  const choose = (paint: ChosenPaint) => {
+    dispatch({ type: "choose-paint", paint });
+    wheel.current?.update({ color: paint.hex });
+  };
 
   const { more } = state;
   // What the prerendering computed is still right while nothing changed.
@@ -70,16 +139,22 @@ export function Home({
     filters.extraTypes.length === 0 &&
     !filters.includeMetallic &&
     !filters.includeDiscontinued &&
+    saved === null &&
     Object.keys(more).length === 0;
 
   const live = useMemo((): ColorResults | null => {
     const color = colors[tab];
     if (!hydrated || load.status !== "ready" || color === undefined)
       return null;
-    return searchColor(load.catalog, load.index, color, filters, (key) =>
-      limitOf({ more }, key),
+    return searchColor(
+      load.catalog,
+      load.index,
+      color,
+      filters,
+      (key) => limitOf({ more }, key),
+      tab === 0 ? chosen?.paint.id : undefined,
     );
-  }, [hydrated, load, colors, tab, filters, more]);
+  }, [hydrated, load, colors, tab, filters, more, chosen]);
 
   // docs/07 §6: what the inline script hid is shown once the wheel has the
   // saved state and the results are searched with the saved filters (or the
@@ -111,32 +186,53 @@ export function Home({
       <h1>{m.home.heading}</h1>
       <p className="lead">{m.home.intro}</p>
       <div className="workspace">
-        <section
-          className="wheel-column"
-          id="wheel"
-          data-skip-target=""
-          aria-labelledby="wheel-heading"
-        >
-          <h2 id="wheel-heading" className="visually-hidden">
-            {m.home.wheelHeading}
-          </h2>
-          <noscript>
-            <p className="notice">{m.home.noscript}</p>
-          </noscript>
-          <WheelView
+        {/* The search is its own landmark, before the wheel's section:
+            «Skip to the wheel» goes to the ring (docs/07 §11). */}
+        <div className="wheel-column">
+          <PaintSearch
+            index={hydrated && ready !== null ? ready.searchIndex : null}
+            chosen={chosen}
+            previous={previous}
+            rybDeltaE={rybDeltaE}
+            messages={m}
             locale={locale}
-            highlight={preview ?? tab}
-            restore={restoreWheel}
-            onResult={(next, final) => {
-              setResult(next);
-              setDragging(!final);
-              dispatch({ type: "colors-changed", count: next.colors.length });
+            onChoose={(choice) => {
+              const hex = choice.paint.color?.hex;
+              if (hex !== undefined) choose({ id: choice.paint.id, hex });
             }}
-            onChange={(wheel) => {
-              dispatch({ type: "wheel-changed", wheel });
+            onClear={() => {
+              dispatch({ type: "clear-paint" });
+            }}
+            onBack={() => {
+              if (state.previousPaint !== null) choose(state.previousPaint);
+            }}
+            onUseDigital={() => {
+              wheel.current?.update({ model: "digital" });
             }}
           />
-        </section>
+          <section
+            id="wheel"
+            data-skip-target=""
+            aria-labelledby="wheel-heading"
+          >
+            <h2 id="wheel-heading" className="visually-hidden">
+              {m.home.wheelHeading}
+            </h2>
+            <noscript>
+              <p className="notice">{m.home.noscript}</p>
+            </noscript>
+            <WheelView
+              ref={wheel}
+              locale={locale}
+              highlight={preview ?? tab}
+              restore={restoreWheel}
+              onResult={showColors}
+              onChange={(wheel) => {
+                dispatch({ type: "wheel-changed", wheel });
+              }}
+            />
+          </section>
+        </div>
         <section
           className="results-column"
           id="paints"
@@ -157,7 +253,8 @@ export function Home({
             locale={locale}
             creditsPath={pathOf({ kind: "credits", locale })}
             onPreview={setPreview}
-            dragging={dragging}
+            rows={entrance}
+            following={following}
             onRetry={retry}
             onUpdate={onUpdate}
           />

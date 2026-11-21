@@ -5,7 +5,7 @@ import {
   type Action,
   type Filters as FilterState,
 } from "../../app/state.ts";
-import { format } from "../../i18n/i18n.ts";
+import { format, SEPARATOR } from "../../i18n/i18n.ts";
 import type { Messages } from "../../i18n/messages.ts";
 
 export interface BrandOption {
@@ -39,7 +39,7 @@ function summaryOf(
     filters.includeDiscontinued
       ? m.filters.withDiscontinued
       : m.filters.withoutDiscontinued,
-  ].join(" · ");
+  ].join(SEPARATOR);
 }
 
 /** The filters, in a disclosure with a summary of what is on (docs/07 §1). */

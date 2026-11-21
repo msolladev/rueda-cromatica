@@ -3,8 +3,14 @@
  * swatch colours of citadelcolour.com, collected by a third party, so their
  * origin is `community` (ADR-0014). Pure: receives the Markdown already read.
  */
-import { err, ok, type PaintType, type Result } from "@chromatic-wheel/domain";
-import { gradientMidpoint, normalizeHex } from "./color.ts";
+import {
+  err,
+  ok,
+  toHexColor,
+  type PaintType,
+  type Result,
+} from "@chromatic-wheel/domain";
+import { gradientMidpoint } from "./color.ts";
 import type { ImportedPaint } from "./merge.ts";
 
 /** MVP lines (ADR-0019) by the table's `Type`; `null` lines are left out. */
@@ -91,6 +97,6 @@ function colorOf(cell: string): string | null {
   if (match === null) return null;
   const [, first = "", second] = match;
   return second === undefined
-    ? normalizeHex(first)
+    ? toHexColor(first)
     : gradientMidpoint(first, second);
 }

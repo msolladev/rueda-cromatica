@@ -47,11 +47,18 @@
 
   /* Motion: fast at first and gentle at the end. */
   --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  /* The wheel's travel (TEMPLATE_DURATION and easeOut in color-wheel): the
+     colors that follow it arrive with it (docs/07 §1). */
+  --wheel-duration: 0.45s;
+  --wheel-ease: cubic-bezier(0.33, 1, 0.68, 1);
   /* Lets `height: auto` animate, for the disclosures. */
   interpolate-size: allow-keywords;
 
   --font: system-ui, -apple-system, "Segoe UI", sans-serif;
   --radius: 0.5rem;
+  /* The small boxes: swatches, the chips of each paint and the label of
+     its closeness (and its placeholder while the catalog arrives). */
+  --radius-small: 0.3rem;
   --gap: 1rem;
   --control: 2.75rem;
   --navbar-height: 3.75rem;
@@ -162,7 +169,8 @@ a:has(> .link-text),
 
 :is(
   a:not(.button, .brand, .skip-link):focus-visible,
-  :focus-visible > .link-text
+  :focus-visible > .link-text,
+  [data-active] > .link-button > .link-text
 ) {
   background-position:
     0 100%,
@@ -172,8 +180,11 @@ a:has(> .link-text),
     100% 1px;
 }
 
+/* `data-active`: a link inside an option of a list with the keyboard focus
+   on it (the paint search's «See more», docs/07 §15) looks hovered. */
 a:not(.button, .brand, .skip-link):focus-visible,
-.link-button:focus-visible {
+.link-button:focus-visible,
+[data-active] > .link-button {
   color: color-mix(in srgb, var(--accent) 75%, var(--text));
 }
 
@@ -210,6 +221,10 @@ a:not(.button, .brand, .skip-link):focus-visible,
   width: 1em;
   height: 1em;
   transition: rotate 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-active] > .link-button .icon {
+  rotate: 180deg;
 }
 
 @media (hover: hover) {
@@ -745,7 +760,7 @@ legend {
   left: 50%;
   z-index: 2;
   padding: 0.2rem 0.5rem;
-  border-radius: 0.3rem;
+  border-radius: var(--radius-small);
   background: var(--text);
   color: var(--bg);
   font-size: 0.75rem;
@@ -1196,14 +1211,19 @@ legend {
   margin: 0;
 }
 
-/* One line; the explanation opens below it. */
-.notice-approx {
-  display: block;
-  padding-block: 0;
+/* A warning: the approximate colors (docs/07 §3) and the RYB wheel that
+   does not reach a paint (docs/07 §15). */
+.notice-warn {
   background: var(--warn-bg);
   color: var(--warn-text);
   border-inline-start: 3px solid var(--warn-text);
   font-size: 0.9rem;
+}
+
+/* One line; the explanation opens below it. */
+.notice-approx {
+  display: block;
+  padding-block: 0;
 }
 
 /* The information icon first, and the arrow of the disclosure at the end. */
@@ -1261,6 +1281,240 @@ legend {
 
 .wheel-column {
   min-width: 0;
+  display: grid;
+  gap: 0.75rem;
+  align-content: start;
+}
+
+/* ---------- Paint search (docs/07 §15) ---------- */
+
+.paint-search {
+  position: relative;
+  display: grid;
+  gap: 0.35rem;
+  width: 100%;
+  max-width: 26rem;
+  margin-inline: auto;
+}
+
+.paint-search-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+/* The small print: the hint, and the brand, range and code of a paint. */
+.paint-search-hint,
+.paint-search-chosen,
+.paint-search-meta {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.8125rem;
+}
+
+.paint-search-hint {
+  margin-top: -0.2rem;
+}
+
+.paint-search-field {
+  position: relative;
+}
+
+.paint-search-input {
+  width: 100%;
+  min-height: var(--control);
+  padding: 0 2.9rem 0 0.75rem;
+  border: 1px solid var(--control-border);
+  border-radius: var(--radius);
+  background: var(--field);
+  color: var(--text);
+  font: inherit;
+  transition:
+    border-color 0.15s,
+    padding 0.2s var(--ease);
+}
+
+.paint-search-input:disabled {
+  opacity: 0.6;
+}
+
+@media (hover: hover) {
+  .paint-search-input:enabled:hover {
+    border-color: var(--text);
+  }
+}
+
+.paint-search[data-chosen] .paint-search-input {
+  padding-inline-start: 2.6rem;
+}
+
+/* The chosen paint's swatch, inside the field, pops in when chosen. */
+.paint-search-field > .swatch {
+  position: absolute;
+  inset-inline-start: 0.75rem;
+  top: 50%;
+  width: 1.25rem;
+  height: 1.25rem;
+  translate: 0 -50%;
+  opacity: 0;
+  scale: 0.6;
+  pointer-events: none;
+  transition:
+    opacity 0.2s,
+    scale 0.3s cubic-bezier(0.3, 1.8, 0.5, 1),
+    background-color var(--wheel-duration) var(--wheel-ease);
+}
+
+.paint-search[data-chosen] .paint-search-field > .swatch {
+  opacity: 1;
+  scale: 1;
+}
+
+.paint-search-clear {
+  position: absolute;
+  inset-inline-end: 0.2rem;
+  top: 50%;
+  translate: 0 -50%;
+  min-width: 2.35rem;
+  min-height: 2.35rem;
+  border: 0;
+  background: none;
+  color: var(--muted);
+}
+
+.paint-search-clear .icon {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+@media (hover: hover) {
+  .paint-search-clear:hover {
+    color: var(--text);
+  }
+}
+
+/* The suggestions float over the page, up to the space below. */
+.paint-search-list {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + 0.25rem);
+  inset-inline: 0;
+  max-height: min(28rem, 60dvh);
+  margin: 0;
+  padding: 0.25rem;
+  list-style: none;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: 0 10px 30px -8px var(--stuck-shadow);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  animation: paint-search-open 0.16s var(--ease);
+}
+
+@keyframes paint-search-open {
+  from {
+    opacity: 0;
+    translate: 0 -0.25rem;
+  }
+}
+
+.paint-search-option {
+  display: grid;
+  grid-template-columns: 1.5rem minmax(0, 1fr);
+  align-items: center;
+  gap: 0 0.65rem;
+  min-height: 3rem;
+  padding: 0.35rem 0.6rem;
+  border-radius: calc(var(--radius) - 0.15rem);
+  cursor: pointer;
+}
+
+.paint-search-option[data-active] {
+  background: var(--chip);
+}
+
+.paint-search-option[data-enter] {
+  animation: row-enter 0.32s var(--ease) both;
+  animation-delay: calc(var(--enter, 0) * 30ms);
+}
+
+.paint-search-option .swatch {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.paint-search-text {
+  overflow-wrap: anywhere;
+}
+
+.paint-search-type {
+  color: var(--muted);
+}
+
+.paint-search-meta {
+  display: block;
+}
+
+.paint-search-option strong {
+  font-weight: 700;
+  color: var(--text);
+}
+
+.paint-search-empty {
+  padding: 0.75rem 0.6rem;
+  color: var(--muted);
+}
+
+/* «See more»: as «See more paints» under the results. */
+.paint-search-more {
+  display: flex;
+  min-height: var(--control);
+  padding: 0 0.6rem;
+  border-radius: calc(var(--radius) - 0.15rem);
+  cursor: pointer;
+}
+
+.paint-search-more .link-button {
+  min-height: 0;
+}
+
+.paint-search-chosen,
+.paint-search-back,
+.paint-search-ryb {
+  animation: row-enter 0.3s var(--ease) both;
+}
+
+.paint-search-chosen {
+  padding-inline-start: 0.75rem;
+}
+
+.paint-search-back {
+  margin: 0;
+  justify-self: start;
+}
+
+.paint-search-back .link-button {
+  min-height: 2.25rem;
+}
+
+.paint-search-ryb {
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 0.55rem 0.8rem;
+}
+
+.paint-search-ryb > .icon {
+  flex: none;
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-top: 0.1rem;
+}
+
+.paint-search-ryb .link-button {
+  min-height: 2rem;
+  color: inherit;
+  font-weight: 600;
 }
 
 /* The wheel draws its focus with the page's (docs/05 §6.6). */
@@ -1293,11 +1547,11 @@ legend {
   }
 
   /* Fixed, the whole wheel fits on the screen: the circle gives up what
-     the controls under it need (about 20rem). */
+     the paint search above it and the controls under it need (about 26rem). */
   .wheel-column .cw-root {
     --cw-wheel-max-size: clamp(
       14rem,
-      calc(100dvh - var(--navbar-height) - 2 * var(--gap) - 20rem),
+      calc(100dvh - var(--navbar-height) - 2 * var(--gap) - 26rem),
       26rem
     );
   }
@@ -1428,7 +1682,7 @@ legend {
   height: 1.25rem;
   margin: 0;
   border: 2px solid var(--control-border);
-  border-radius: 0.3rem;
+  border-radius: var(--radius-small);
   background: var(--field);
   cursor: pointer;
   transition:
@@ -1567,7 +1821,7 @@ legend {
   }
 }
 
-.tabs [role="tab"] {
+.tabs :is([role="tab"], .tab-leaving) {
   flex: 1 0 auto;
   min-width: 4.5rem;
   min-height: 3.5rem;
@@ -1607,7 +1861,33 @@ legend {
 .tabs [role="tab"] .swatch {
   transition:
     transform 0.3s var(--ease),
-    background-color 0.25s var(--ease);
+    background-color var(--wheel-duration) var(--wheel-ease);
+}
+
+/* docs/07 §1: the tabs a new harmony adds grow in; the ones it leaves over
+   fade out where they were, and then go. */
+.tabs [role="tab"][data-enter] {
+  animation: tab-enter 0.35s var(--ease) both;
+}
+
+@keyframes tab-enter {
+  from {
+    opacity: 0;
+    scale: 0.85;
+  }
+}
+
+.tabs .tab-leaving {
+  cursor: default;
+  pointer-events: none;
+  animation: tab-leave 0.25s var(--ease) forwards;
+}
+
+@keyframes tab-leave {
+  to {
+    opacity: 0;
+    scale: 0.85;
+  }
 }
 
 .tabs [role="tab"][aria-selected="true"] .swatch {
@@ -1637,14 +1917,14 @@ legend {
 }
 
 /* docs/07 §1: the colors of the wheel blend into the new ones after a
-   change, instead of jumping; while the wheel is dragged they follow it at
-   once. */
+   change, instead of jumping, while the wheel travels to them; while the
+   wheel is dragged they follow it at once. */
 .swatch,
 .split > span:first-child {
-  transition: background-color 0.25s var(--ease);
+  transition: background-color var(--wheel-duration) var(--wheel-ease);
 }
 
-.results[data-dragging] :is(.swatch, .split > span:first-child) {
+.results[data-following] :is(.swatch, .split > span:first-child) {
   transition: none;
 }
 
@@ -1652,7 +1932,7 @@ legend {
   display: inline-block;
   width: 1.6rem;
   height: 1.6rem;
-  border-radius: 0.3rem;
+  border-radius: var(--radius-small);
   box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.15);
   vertical-align: middle;
 }
@@ -1843,8 +2123,22 @@ brands per row. */
 .chip {
   font-size: 0.75rem;
   padding: 0.05rem 0.5rem;
-  border-radius: 999px;
+  border-radius: var(--radius-small);
   background: var(--chip);
+}
+
+.chip-chosen {
+  background: var(--accent);
+  color: var(--on-accent);
+  font-weight: 600;
+  animation: summary-pop-scale 0.45s cubic-bezier(0.3, 1.8, 0.5, 1);
+}
+
+@keyframes summary-pop-scale {
+  from {
+    scale: 0.6;
+    opacity: 0;
+  }
 }
 
 .chip-approx {
@@ -1853,11 +2147,13 @@ brands per row. */
 }
 
 .paint-quality {
+  position: relative;
+  overflow: hidden;
   grid-area: quality;
   justify-self: end;
   align-self: end;
   padding: 0.1rem 0.6rem;
-  border-radius: 999px;
+  border-radius: var(--radius-small);
   font-size: 0.8rem;
   font-weight: 600;
   text-align: center;
@@ -1866,10 +2162,6 @@ brands per row. */
 
 /* The bar of closeness (docs/07 §2): along the bottom of the label, as long
    as the paint is close; it grows when the row appears and follows a change. */
-.paint-quality {
-  position: relative;
-  overflow: hidden;
-}
 
 .paint-quality::after {
   content: "";
@@ -2023,7 +2315,7 @@ brands per row. */
 
 .skeleton-label {
   height: 1.2rem;
-  border-radius: 999px;
+  border-radius: var(--radius-small);
 }
 
 @keyframes shimmer {

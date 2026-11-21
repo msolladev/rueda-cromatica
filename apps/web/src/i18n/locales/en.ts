@@ -72,6 +72,7 @@ export const en: Messages = {
     exactColor: "Exact",
     metallic: "Metallic",
     discontinued: "Discontinued",
+    chosen: "Chosen",
   },
   filters: {
     title: "Filters",
@@ -85,6 +86,21 @@ export const en: Messages = {
     moreTypes: "opaque and {count} more types",
     withoutDiscontinued: "no discontinued",
     withDiscontinued: "with discontinued",
+  },
+  search: {
+    label: "Start from a paint you own",
+    hint: "At least {min} letters of the name, code or brand.",
+    paints: "Paints",
+    noMatches: "No paint matches what you typed.",
+    seeMore: "See more paints ({shown} of {total})",
+    count: "Paints: {shown} of {total}.",
+    clear: "Clear the paint",
+    back: "Back to {name}",
+    chosen: "Base: {name}, {brand} {range}.",
+    typeMetallic: "{type}, metallic",
+    rybNotice:
+      "The RYB wheel can't reach this color: it uses the closest one (ΔE {deltaE}).",
+    useDigital: "Use the digital wheel",
   },
   paintTypes: {
     base: "Base",

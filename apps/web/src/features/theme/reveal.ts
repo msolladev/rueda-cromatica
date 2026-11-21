@@ -1,3 +1,5 @@
+import { prefersReducedMotion } from "../../app/motion.ts";
+
 /**
  * Changes the theme with a circular reveal (docs/07 §11): the new theme grows
  * in a circle from the control that was pressed and, inside the circle, fades
@@ -10,7 +12,7 @@ export function revealTheme(
 ): void {
   if (
     typeof document.startViewTransition !== "function" ||
-    matchMedia("(prefers-reduced-motion: reduce)").matches
+    prefersReducedMotion()
   ) {
     change();
     return;

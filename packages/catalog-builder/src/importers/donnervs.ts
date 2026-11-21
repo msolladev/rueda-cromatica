@@ -6,9 +6,14 @@
  * Paints are told apart by manufacturer code, since a range can repeat a
  * name (AK). Every classification below follows the manufacturer's site.
  */
-import { err, ok, type PaintType, type Result } from "@chromatic-wheel/domain";
+import {
+  err,
+  ok,
+  toHexColor,
+  type PaintType,
+  type Result,
+} from "@chromatic-wheel/domain";
 import { z } from "zod";
-import { normalizeHex } from "./color.ts";
 import type { ImportedPaint } from "./merge.ts";
 
 /** Where the paints of one DonnervS `set` go; `null` leaves the set out. */
@@ -351,7 +356,7 @@ export function importDonnervS(
       issues.push(`${at}: has a measured colour, not handled yet`);
       continue;
     }
-    const hex = row.hex === null ? null : normalizeHex(row.hex);
+    const hex = row.hex === null ? null : toHexColor(row.hex);
     if (hex === null) {
       issues.push(`${at}: invalid hex ${String(row.hex)}`);
       continue;

@@ -71,6 +71,7 @@ export const zhHans: Messages = {
     exactColor: "准确",
     metallic: "金属色",
     discontinued: "已停产",
+    chosen: "已选",
   },
   filters: {
     title: "筛选",
@@ -84,6 +85,20 @@ export const zhHans: Messages = {
     moreTypes: "不透明及另外 {count} 种类型",
     withoutDiscontinued: "不含已停产",
     withDiscontinued: "含已停产",
+  },
+  search: {
+    label: "从你已有的颜料开始",
+    hint: "至少输入名称、编号或品牌中的 {min} 个字符。",
+    paints: "颜料",
+    noMatches: "没有与输入内容匹配的颜料。",
+    seeMore: "查看更多颜料（{shown} / {total}）",
+    count: "颜料：{shown} / {total}。",
+    clear: "清除颜料",
+    back: "返回 {name}",
+    chosen: "基础色：{name}，{brand} {range}。",
+    typeMetallic: "{type}，金属色",
+    rybNotice: "RYB 色轮无法达到此颜色：使用最接近的颜色（ΔE {deltaE}）。",
+    useDigital: "使用数字色轮",
   },
   paintTypes: {
     base: "底漆色",
