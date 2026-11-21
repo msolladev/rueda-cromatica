@@ -56,8 +56,8 @@
 
   --font: system-ui, -apple-system, "Segoe UI", sans-serif;
   --radius: 0.5rem;
-  /* The small boxes: swatches and the label of each paint's closeness
-     (and its placeholder while the catalog arrives). */
+  /* The small boxes: swatches, the chips of each paint and the label of
+     its closeness (and its placeholder while the catalog arrives). */
   --radius-small: 0.3rem;
   --gap: 1rem;
   --control: 2.75rem;
@@ -2123,7 +2123,7 @@ brands per row. */
 .chip {
   font-size: 0.75rem;
   padding: 0.05rem 0.5rem;
-  border-radius: 999px;
+  border-radius: var(--radius-small);
   background: var(--chip);
 }
 
