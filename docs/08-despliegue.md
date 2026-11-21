@@ -29,7 +29,8 @@ El workflow `ci.yml` llama a `deploy.yml` con el entorno de la rama: `preprod` c
    3. si pasan, sustituye a la que sirve y repite las comprobaciones por el dominio público, a través del túnel y de Nginx Proxy Manager;
    4. si esa segunda comprobación falla, vuelve a arrancar la imagen anterior;
    5. borra las imágenes salvo las cinco últimas, y la caché de montaje.
-3. **`tag-release`**, solo en producción, en un runner de GitHub, cuando la versión nueva ya se sirve y ha pasado las comprobaciones: crea la etiqueta de la publicación en ese commit (`release/AAAA-MM-DD`, o `.2`, `.3`… si no es la primera del día; [docs/03](03-identificadores.md) §7), que protege sus IDs. Es el único job con permiso de escritura en el repositorio. Si falla, la web ya está publicada sin etiqueta: hay que volver a lanzar el job.
+
+En producción, `ci.yml` añade después **`tag-release`**, en un runner de GitHub, cuando la versión nueva ya se sirve y ha pasado las comprobaciones: crea la etiqueta de la publicación en ese commit (`release/AAAA-MM-DD`, o `.2`, `.3`… si no es la primera del día; [docs/03](03-identificadores.md) §7), que protege sus IDs. Es el único job con permiso de escritura en el repositorio, y está fuera de `deploy.yml` para que las llamadas a ese workflow no necesiten ese permiso. Si falla, la web ya está publicada sin etiqueta: hay que volver a lanzar el job.
 
 Si algo falla, la ejecución sale en rojo y GitHub avisa por correo. Un despliegue nunca se cancela a medias: si llega otro push, espera.
 
