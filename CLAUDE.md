@@ -16,8 +16,8 @@ Es un proyecto de aprendizaje del ecosistema Node/TS: prioriza las buenas práct
 - **Madurez de dependencias**: `minimumReleaseAge` de 7 días en `pnpm-workspace.yaml`, y `cooldown` equivalente en Dependabot. Las versiones compartidas entre paquetes van en el `catalog:` de pnpm.
 - **Tests**: Vitest, obligatorios en `domain`, `catalog-builder`, `color-wheel` y `apps/web`. El componente de la rueda y la web se prueban en un navegador real (modo navegador de Vitest con Playwright), con axe-core para la accesibilidad; la rueda, además, con entrada real de ratón y táctil. La web compilada tiene tests de extremo a extremo con `@playwright/test`: rutas, contenido sin JavaScript y funcionamiento sin conexión ([ADR-0024](docs/adr/0024-web.md)).
 - **CI/CD**: GitHub Actions ([ADR-0011](docs/adr/0011-ci-cd.md)).
-- **Entornos**: desarrollo en WSL 2, preproducción en el homelab y producción también en el homelab, pendiente de configurar ([informe](docs/investigacion/2026-11-alojamiento-produccion.md), [ADR-0012](docs/adr/0012-entornos.md), [ADR-0026](docs/adr/0026-preproduccion-homelab.md)). Cómo se despliega y cómo se vuelve atrás, en [docs/08](docs/08-despliegue.md).
-- **Ramas**: el trabajo entra en `preprod` con un PR (_squash_), y cada push a `preprod` despliega en preproducción si pasa la CI. `preprod` llega a `main` con un PR fusionado con un commit de merge; `main` desplegará en producción. Las dos ramas están protegidas. El repositorio es público, con los PR limitados a los colaboradores.
+- **Entornos**: desarrollo en WSL 2, preproducción y producción en el homelab, cada una en su VM y con la misma configuración del servidor, en `apps/web/deploy/` ([ADR-0012](docs/adr/0012-entornos.md), [ADR-0026](docs/adr/0026-preproduccion-homelab.md), [ADR-0028](docs/adr/0028-produccion-homelab.md)). Cómo se despliega y cómo se vuelve atrás, en [docs/08](docs/08-despliegue.md).
+- **Ramas**: el trabajo entra en `preprod` con un PR (_squash_), y cada push a `preprod` despliega en preproducción si pasa la CI. `preprod` llega a `main` con un PR fusionado con un commit de merge; cada push a `main` despliega en producción si pasa la CI y crea la etiqueta `release/` de la publicación. Las dos ramas están protegidas. El repositorio es público, con los PR limitados a los colaboradores.
 
 ## Estructura objetivo
 
@@ -112,7 +112,6 @@ El alcance mínimo y lo aplazado están razonados en el [ADR-0019](docs/adr/0019
 
 Pendiente fuera de la hoja de ruta:
 
-- Configurar producción en el homelab, con la misma forma que la preproducción, y escribir su ADR ([informe](docs/investigacion/2026-11-alojamiento-produccion.md)). Cada publicación en producción crea su etiqueta `release/`, que protege sus IDs ([docs/03](docs/03-identificadores.md) §7). Cada entorno define `SITE_ORIGIN` al compilar la web y configura su servidor para servir cada página también sin la `/` final, sin redirigir, para redirigir con un 301 `/<ruta>/index.html` a `/<ruta>/` y para responder a las direcciones desconocidas con `404.html` (el del idioma de la dirección, si lo hay) y el estado 404 ([docs/07](docs/07-web.md) §12). La configuración del servidor, en `apps/web/deploy/`, es común a los entornos ([docs/08](docs/08-despliegue.md)).
 - Antes de cualquier despliegue público, revisar las fuentes con licencia `unknown` o `terms-of-use`.
 - Antes de cualquier despliegue público, revisar los textos de la web en catalán, euskera, gallego, francés, alemán, italiano, portugués, ruso, chino, japonés y coreano, que nadie ha revisado.
 
