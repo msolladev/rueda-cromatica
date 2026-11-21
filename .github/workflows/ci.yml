@@ -6,7 +6,7 @@ on:
   # Each push to a deployed branch is verified with its environment's origin
   # and, if it passes, deployed to that environment (deploy.yml).
   push:
-    branches: [preprod]
+    branches: [preprod, main]
 
 permissions:
   contents: read
@@ -23,7 +23,7 @@ jobs:
         with:
           persist-credentials: false
           # Full history and tags: build-catalog compares the IDs with the
-          # catalog of the latest release/YYYY-MM-DD tag (docs/03 §7).
+          # catalog of the latest release tag (docs/03 §7).
           fetch-depth: 0
       - uses: ./.github/actions/verify
 
@@ -34,3 +34,13 @@ jobs:
     uses: ./.github/workflows/deploy.yml
     with:
       environment: preprod
+
+  production:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    uses: ./.github/workflows/deploy.yml
+    # Only its tag-release job uses it, to push the release tag.
+    permissions:
+      contents: write
+    with:
+      environment: production
+      tag-release: true
