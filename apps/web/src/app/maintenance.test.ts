@@ -2,13 +2,13 @@ import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { LOCALES, messagesOf } from "../i18n/i18n.ts";
 
-// The maintenance page of the preproduction (docs/08) cannot load anything
-// from the web, which is down while it shows, so it carries its own copy of
-// the icon and of the name of the web in each language. These tests keep
+// The maintenance page (docs/08) cannot load anything from the web, which is
+// down while it shows, so it carries its own copy of the icon and of the
+// name of the web in each language. These tests keep
 // both equal to those of the web.
 const read = (path: string) =>
   readFileSync(new URL(path, import.meta.url), "utf8").replace(/\s+/g, " ");
-const page = read("../../deploy/preprod/maintenance.html");
+const page = read("../../deploy/maintenance.html");
 const icon = read("../../public/icons/icon.svg");
 
 describe("the maintenance page", () => {

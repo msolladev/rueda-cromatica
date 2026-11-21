@@ -1,8 +1,8 @@
 # The CI steps (ADR-0011), shared by the pull requests and the pushes to
-# preprod, which build with their environment's origin (docs/08). It runs
+# the deployed branches, which build with their environment's origin (docs/08). It runs
 # after a checkout with the full history and the tags.
 name: Verify
-description: Installs, checks, tests and builds the monorepo, and checks the preproduction's server with the built web.
+description: Installs, checks, tests and builds the monorepo, and checks the web's server of every environment with the built web.
 
 inputs:
   site-origin:
@@ -26,7 +26,8 @@ runs:
       shell: bash
     - run: pnpm typecheck
       shell: bash
-    # API reference (ADR-0023): fails on any TypeDoc warning. Nothing is published.
+    # API reference (ADR-0023): fails on any TypeDoc warning. The web's server
+    # serves it in /reference/.
     - run: pnpm docs:api
       shell: bash
 
@@ -68,16 +69,24 @@ runs:
     - run: pnpm --filter @chromatic-wheel/web test:e2e
       shell: bash
 
-    # The preproduction's server (docs/08) with this same build: routes,
-    # «Page not found», redirects and cache headers.
+    # The web's server (docs/08) with this same build and reference, in every
+    # environment: routes, «Page not found», redirects, cache and indexing.
     - run: |
-        docker build --tag colorwheel-web:ci \
-          --build-context site=apps/web/dist apps/web/deploy/preprod
-        docker run --detach --name colorwheel-web --publish 127.0.0.1:8080:8080 \
-          --read-only --tmpfs /tmp colorwheel-web:ci
-        for _ in $(seq 30); do
-          curl --silent --output /dev/null http://127.0.0.1:8080/ && break
-          sleep 0.5
+        for file in apps/web/deploy/environments/*.conf; do
+          environment="$(basename "$file" .conf)"
+          echo "::group::Server of $environment"
+          docker build --tag "colorwheel-web:ci-$environment" \
+            --build-arg ENVIRONMENT="$environment" \
+            --build-context site=apps/web/dist --build-context reference=dist/reference \
+            apps/web/deploy
+          docker run --detach --name colorwheel-web --publish 127.0.0.1:8080:8080 \
+            --read-only --tmpfs /tmp "colorwheel-web:ci-$environment"
+          for _ in $(seq 30); do
+            curl --silent --output /dev/null http://127.0.0.1:8080/ && break
+            sleep 0.5
+          done
+          apps/web/deploy/smoke-check.sh http://127.0.0.1:8080 "$environment"
+          docker rm --force colorwheel-web >/dev/null
+          echo "::endgroup::"
         done
-        apps/web/deploy/preprod/smoke-check.sh http://127.0.0.1:8080
       shell: bash
