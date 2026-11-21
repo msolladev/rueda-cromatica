@@ -1,6 +1,6 @@
 # ADR-0023: Documentación técnica
 
-- **Estado:** aceptada
+- **Estado:** aceptada; corregida en parte por [ADR-0028](0028-produccion-homelab.md)
 - **Fecha:** 2026-11-18
 
 ## Contexto

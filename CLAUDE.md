@@ -38,7 +38,7 @@ El monorepo está montado. `domain` ya tiene el contrato del catálogo (esquema,
 - `catalog.json` lo genera el builder, se versiona en el repositorio y es determinista (sin marcas de tiempo).
 - Va en el precaché de Workbox: el service worker solo lo vuelve a descargar cuando cambia su revisión.
 - Se carga con `fetch` y se valida al cargarlo. No se importa en el bundle.
-- `build-catalog` comprueba la estabilidad de IDs frente al `catalog.json` de la última etiqueta `release/AAAA-MM-DD` y las lápidas de `data/tombstones.json` ([docs/03](docs/03-identificadores.md) §6-7, [ADR-0025](docs/adr/0025-estabilidad-ids-etiqueta-publicacion.md)).
+- `build-catalog` comprueba la estabilidad de IDs frente al `catalog.json` de la última etiqueta `release/` y las lápidas de `data/tombstones.json` ([docs/03](docs/03-identificadores.md) §6-7, [ADR-0025](docs/adr/0025-estabilidad-ids-etiqueta-publicacion.md), [ADR-0028](docs/adr/0028-produccion-homelab.md)).
 - El detalle está en [docs/02-esquema-catalog-json.md](docs/02-esquema-catalog-json.md).
 
 ## Reglas de dominio
@@ -112,8 +112,7 @@ El alcance mínimo y lo aplazado están razonados en el [ADR-0019](docs/adr/0019
 
 Pendiente fuera de la hoja de ruta:
 
-- Configurar producción en el homelab, con la misma forma que la preproducción, y escribir su ADR ([informe](docs/investigacion/2026-11-alojamiento-produccion.md)). Cada publicación en producción crea la etiqueta `release/AAAA-MM-DD`, que protege sus IDs ([ADR-0025](docs/adr/0025-estabilidad-ids-etiqueta-publicacion.md)). Cada entorno define `SITE_ORIGIN` al compilar la web y configura su servidor para servir cada página también sin la `/` final, sin redirigir, para redirigir con un 301 `/<ruta>/index.html` a `/<ruta>/` y para responder a las direcciones desconocidas con `404.html` (el del idioma de la dirección, si lo hay) y el estado 404 ([docs/07](docs/07-web.md) §12). La configuración del servidor, en `apps/web/deploy/`, es común a los entornos ([docs/08](docs/08-despliegue.md)).
-- Al pasar a producción, publicar con la CI la referencia de los paquetes que genera TypeDoc, que hasta entonces solo se genera en local.
+- Configurar producción en el homelab, con la misma forma que la preproducción, y escribir su ADR ([informe](docs/investigacion/2026-11-alojamiento-produccion.md)). Cada publicación en producción crea su etiqueta `release/`, que protege sus IDs ([docs/03](docs/03-identificadores.md) §7). Cada entorno define `SITE_ORIGIN` al compilar la web y configura su servidor para servir cada página también sin la `/` final, sin redirigir, para redirigir con un 301 `/<ruta>/index.html` a `/<ruta>/` y para responder a las direcciones desconocidas con `404.html` (el del idioma de la dirección, si lo hay) y el estado 404 ([docs/07](docs/07-web.md) §12). La configuración del servidor, en `apps/web/deploy/`, es común a los entornos ([docs/08](docs/08-despliegue.md)).
 - Antes de cualquier despliegue público, revisar las fuentes con licencia `unknown` o `terms-of-use`.
 - Antes de cualquier despliegue público, revisar los textos de la web en catalán, euskera, gallego, francés, alemán, italiano, portugués, ruso, chino, japonés y coreano, que nadie ha revisado.
 
@@ -123,7 +122,7 @@ Pendiente fuera de la hoja de ruta:
 - **Este documento** recoge las decisiones vigentes. El proyecto de claude.ai lo carga desde GitHub junto con docs/01-04.
 - **Informes de investigación**: en `docs/investigacion/`, fechados e inmutables. Las normas están en su [README](docs/investigacion/README.md).
 - **Especificaciones y ADR**: las especificaciones describen lo vigente; los ADR, por qué se decidió. Un ADR aceptado no se reescribe: se sustituye por otro nuevo.
-- **Referencia de la API** de `color-wheel` y `domain`: la generan TypeDoc y los comentarios TSDoc del código, en inglés. `pnpm docs:api` la genera en local y la CI comprueba que se genera sin errores. Las especificaciones describen el comportamiento y enlazan a ella, sin repetir firmas ni tipos ([ADR-0023](docs/adr/0023-documentacion-tecnica.md)).
+- **Referencia de la API** de `color-wheel` y `domain`: la generan TypeDoc y los comentarios TSDoc del código, en inglés. `pnpm docs:api` la genera en local, la CI comprueba que se genera sin errores y la web la sirve en `/reference/`, sin indexar ([ADR-0028](docs/adr/0028-produccion-homelab.md)). Las especificaciones describen el comportamiento y enlazan a ella, sin repetir firmas ni tipos ([ADR-0023](docs/adr/0023-documentacion-tecnica.md)).
 - **READMEs**, en castellano. El de la raíz explica qué es el proyecto, cómo se instala y los comandos. El de cada paquete explica qué hace, con un ejemplo mínimo y los enlaces a su especificación y a la referencia.
 
 ## Interfaz

@@ -87,7 +87,7 @@ El ejemplo es hipotético: ese ID nunca ha existido.
 
 ## 7. Test de estabilidad (`catalog-builder`)
 
-Compara el catálogo generado con el de la última publicación: el `catalog.json` de la etiqueta de git `release/AAAA-MM-DD` más reciente ([ADR-0025](adr/0025-estabilidad-ids-etiqueta-publicacion.md)).
+Compara el catálogo generado con el de la última publicación: el `catalog.json` de la etiqueta de git `release/` más reciente ([ADR-0025](adr/0025-estabilidad-ids-etiqueta-publicacion.md), [ADR-0028](adr/0028-produccion-homelab.md)).
 
 1. Todo ID publicado sigue existiendo o figura en las lápidas.
 2. Ningún ID de las lápidas aparece en el catálogo nuevo.
@@ -96,7 +96,7 @@ Se aplica a pinturas, gamas, marcas y fuentes.
 
 - Lo ejecuta `build-catalog`, también con `--check`, y si falla no escribe nada. El mensaje dice cómo arreglar cada caso y, para un ID que desaparece, da la lápida lista para pegar.
 - Mientras no haya ninguna etiqueta, solo se comprueba la regla 2: ningún usuario guarda IDs todavía, así que se pueden corregir libremente.
-- Cada publicación en producción crea su etiqueta, como mucho una por día. Las etiquetas de `release/` con otro formato hacen fallar el builder.
+- Cada publicación en producción crea su etiqueta: `release/AAAA-MM-DD` la primera del día, con la fecha en UTC, y `release/AAAA-MM-DD.2`, `.3`… las siguientes del mismo día. La más reciente es la de fecha y número mayores. Las etiquetas de `release/` con otro formato hacen fallar el builder, y `next-release-tag` da la de una publicación nueva.
 - Necesita el historial completo de git y las etiquetas. En un clon superficial, el builder falla.
 
 ## 8. Uso

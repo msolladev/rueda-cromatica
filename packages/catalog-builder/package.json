@@ -7,6 +7,7 @@
     "build-catalog": "node src/cli/build-catalog.ts",
     "import-donnervs": "node src/cli/import-donnervs.ts",
     "import-simogecko": "node src/cli/import-simogecko.ts",
+    "next-release-tag": "node src/cli/next-release-tag.ts",
     "typecheck": "tsc",
     "test": "vitest run"
   },
