@@ -1,7 +1,8 @@
 import { describe, expect, it } from "vitest";
-import { brandId, find } from "../catalog/fixtures.ts";
+import { brandId, find, paintId } from "../catalog/fixtures.ts";
 import type { PaintType } from "../catalog/schema.ts";
 import {
+  colorDifference,
   compareMatches,
   DEFAULT_LIMIT,
   findClosestPaints,
@@ -318,5 +319,70 @@ describe("rankOverall", () => {
       paintTypes: ["glaze"],
     });
     expect(rankOverall(closest)).toEqual([]);
+  });
+});
+
+describe("the pinned paint", () => {
+  // Hammered Copper (Vallejo) is metallic, so the default filters leave it
+  // out; its hex is #dccfc7.
+  const COPPER = paintId("vallejo/game-color/hammered-copper");
+
+  it("is the first of its brand, whatever the filters, and only once", () => {
+    const closest = search("#dccfc7", {
+      brandIds: "all",
+      pinnedPaintId: COPPER,
+    });
+    const vallejo = idsOf(closest, "vallejo");
+    expect(vallejo[0]).toBe(COPPER);
+    expect(vallejo).toHaveLength(DEFAULT_LIMIT);
+    expect(vallejo.filter((id) => id === COPPER)).toHaveLength(1);
+    const pinned = closest.byBrand
+      .flatMap(({ matches }) => matches)
+      .filter((match) => match.pinned);
+    expect(pinned.map((match) => match.paint.id)).toEqual([COPPER]);
+  });
+
+  it("is first even if another paint is closer", () => {
+    const closest = search(MOOT_GREEN, {
+      brandIds: "all",
+      pinnedPaintId: COPPER,
+    });
+    expect(idsOf(closest, "vallejo")[0]).toBe(COPPER);
+    expect(rankOverall(closest)[0]?.paint.id).toBe(COPPER);
+  });
+
+  it("brings its brand even if it was left out", () => {
+    const closest = search("#dccfc7", {
+      brandIds: [brandId("citadel")],
+      pinnedPaintId: COPPER,
+    });
+    expect(closest.byBrand.map(({ brand }) => brand.id)).toEqual([
+      "citadel",
+      "vallejo",
+    ]);
+  });
+
+  it("is ignored if it is not in the catalog", () => {
+    const closest = search(MOOT_GREEN, {
+      brandIds: "all",
+      pinnedPaintId: paintId("vallejo/game-color/nothing"),
+    });
+    expect(closest).toEqual(search(MOOT_GREEN, { brandIds: "all" }));
+  });
+});
+
+describe("colorDifference", () => {
+  it("gives the ΔE CIEDE2000 between two colours", () => {
+    const same = colorDifference("#2c9bcc", "#2C9BCC");
+    expect(same).toEqual({ ok: true, value: 0 });
+    const apart = colorDifference("#2c9bcc", "#5088a1");
+    expect(apart.ok && apart.value).toBeCloseTo(8.6, 1);
+  });
+
+  it("rejects a colour that is not #rrggbb", () => {
+    expect(colorDifference("#2c9bcc", "blue")).toEqual({
+      ok: false,
+      error: { kind: "invalid-color", color: "blue" },
+    });
   });
 });

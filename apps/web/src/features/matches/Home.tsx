@@ -4,7 +4,13 @@ import {
   type Locale,
   type Result,
 } from "@chromatic-wheel/color-wheel";
-import { useDeferredValue, useEffect, useMemo, useState } from "react";
+import {
+  colorDifference,
+  paintIdSchema,
+  type Catalog,
+  type Paint,
+} from "@chromatic-wheel/domain";
+import { useDeferredValue, useEffect, useMemo, useRef, useState } from "react";
 import { endRestoring } from "../../app/restoring.ts";
 import { useHydrated } from "../../app/hydrated.ts";
 import { pathOf } from "../../app/pages.ts";
@@ -12,12 +18,15 @@ import type { HomeData } from "../../app/page-data.ts";
 import {
   limitOf,
   type Action,
+  type ChosenPaint,
   type ScreenState,
   type WheelPreferences,
 } from "../../app/state.ts";
 import { useCatalog } from "../../catalog/useCatalog.ts";
 import type { Messages } from "../../i18n/messages.ts";
-import { WheelView } from "../wheel/WheelView.tsx";
+import { PaintSearch, type PaintChoice } from "../paint-search/PaintSearch.tsx";
+import { WheelView, type WheelHandle } from "../wheel/WheelView.tsx";
+import { useEntrance } from "./entrance.ts";
 import { Results, type PanelContent } from "./Results.tsx";
 import { searchColor, type ColorResults } from "./search.ts";
 
@@ -29,6 +38,13 @@ interface HomeProps {
   readonly messages: Messages;
   readonly restoreWheel: WheelPreferences | null;
   readonly onUpdate: () => void;
+}
+
+/** The paint of a saved choice, if the catalog still has it. */
+function paintOf(catalog: Catalog, saved: ChosenPaint | null): Paint | null {
+  if (saved === null) return null;
+  const id = paintIdSchema.safeParse(saved.id);
+  return id.success ? (catalog.paint(id.data) ?? null) : null;
 }
 
 const sameColors = (
@@ -60,7 +76,38 @@ export function Home({
   const deferred = useDeferredValue(result);
   const colors = deferred?.colors ?? data.example;
   const tab = Math.min(state.tab, colors.length - 1);
-  const { filters, view } = state.preferences;
+  const { filters, view, paint: saved } = state.preferences;
+  const wheel = useRef<WheelHandle>(null);
+  // docs/07 §1: when the colors change at once (not dragging), the rows of
+  // the panel enter as when another tab is picked.
+  const entrance = useEntrance();
+
+  // docs/07 §15: the paint the base comes from, and the one it came from.
+  const ready = load.status === "ready" ? load : null;
+  const chosen = useMemo((): PaintChoice | null => {
+    if (ready === null) return null;
+    const paint = paintOf(ready.catalog, saved);
+    const range =
+      paint === null ? undefined : ready.catalog.range(paint.rangeId);
+    if (paint === null || range === undefined) return null;
+    return { paint, brand: ready.catalog.brandOf(paint), range };
+  }, [ready, saved]);
+  const previous = useMemo(
+    () => (ready === null ? null : paintOf(ready.catalog, state.previousPaint)),
+    [ready, state.previousPaint],
+  );
+  const base = result?.colors[0]?.hex;
+  const rybDeltaE = useMemo(() => {
+    if (saved === null || result?.model !== "ryb" || base === undefined) {
+      return null;
+    }
+    const difference = colorDifference(saved.hex, base);
+    return difference.ok ? difference.value : null;
+  }, [saved, result?.model, base]);
+  const choose = (paint: ChosenPaint) => {
+    dispatch({ type: "choose-paint", paint });
+    wheel.current?.setColor(paint.hex);
+  };
 
   const { more } = state;
   // What the prerendering computed is still right while nothing changed.
@@ -70,16 +117,22 @@ export function Home({
     filters.extraTypes.length === 0 &&
     !filters.includeMetallic &&
     !filters.includeDiscontinued &&
+    saved === null &&
     Object.keys(more).length === 0;
 
   const live = useMemo((): ColorResults | null => {
     const color = colors[tab];
     if (!hydrated || load.status !== "ready" || color === undefined)
       return null;
-    return searchColor(load.catalog, load.index, color, filters, (key) =>
-      limitOf({ more }, key),
+    return searchColor(
+      load.catalog,
+      load.index,
+      color,
+      filters,
+      (key) => limitOf({ more }, key),
+      tab === 0 ? chosen?.paint.id : undefined,
     );
-  }, [hydrated, load, colors, tab, filters, more]);
+  }, [hydrated, load, colors, tab, filters, more, chosen]);
 
   // docs/07 §6: what the inline script hid is shown once the wheel has the
   // saved state and the results are searched with the saved filters (or the
@@ -123,11 +176,41 @@ export function Home({
           <noscript>
             <p className="notice">{m.home.noscript}</p>
           </noscript>
+          <PaintSearch
+            index={hydrated && ready !== null ? ready.searchIndex : null}
+            chosen={chosen}
+            previous={previous}
+            rybDeltaE={rybDeltaE}
+            messages={m}
+            locale={locale}
+            onChoose={(choice) => {
+              const hex = choice.paint.color?.hex;
+              if (hex !== undefined) choose({ id: choice.paint.id, hex });
+            }}
+            onClear={() => {
+              dispatch({ type: "clear-paint" });
+            }}
+            onBack={() => {
+              if (state.previousPaint !== null) choose(state.previousPaint);
+            }}
+            onUseDigital={() => {
+              wheel.current?.setModel("digital");
+            }}
+          />
           <WheelView
+            ref={wheel}
             locale={locale}
             highlight={preview ?? tab}
             restore={restoreWheel}
             onResult={(next, final) => {
+              if (
+                final &&
+                !dragging &&
+                result !== null &&
+                !sameColors(result.colors, next.colors)
+              ) {
+                entrance.start({ kind: "panel" });
+              }
               setResult(next);
               setDragging(!final);
               dispatch({ type: "colors-changed", count: next.colors.length });
@@ -157,6 +240,7 @@ export function Home({
             locale={locale}
             creditsPath={pathOf({ kind: "credits", locale })}
             onPreview={setPreview}
+            rows={entrance}
             dragging={dragging}
             onRetry={retry}
             onUpdate={onUpdate}

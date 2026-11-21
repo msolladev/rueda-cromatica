@@ -4,7 +4,13 @@
  */
 import { differenceCiede2000 } from "culori/fn";
 import { isColorApproximate } from "../catalog/rules.ts";
-import type { Brand, BrandId, Paint, PaintType } from "../catalog/schema.ts";
+import type {
+  Brand,
+  BrandId,
+  Paint,
+  PaintId,
+  PaintType,
+} from "../catalog/schema.ts";
 import { err, ok, type Result } from "../result.ts";
 import { labOf, type IndexedPaint, type PaintIndex } from "./paint-index.ts";
 import { matchQuality, roundDeltaE, type MatchQuality } from "./quality.ts";
@@ -57,6 +63,14 @@ export interface MatchOptions {
    * @defaultValue {@link DEFAULT_LIMIT}
    */
   readonly limit?: number;
+  /**
+   * A paint that is always the first of its brand, whatever its ΔE and the
+   * filters, and is not repeated further down: the paint the colour was
+   * chosen from (docs/06 §6.3). Its brand is searched even if `brandIds`
+   * leaves it out. An ID that is not in the catalog, or a paint without
+   * colour, is ignored.
+   */
+  readonly pinnedPaintId?: PaintId | undefined;
 }
 
 /** A paint close to the searched colour: a calculated equivalence, never stored. */
@@ -78,6 +92,8 @@ export interface CalculatedMatch {
    * change the order; the interface warns about it.
    */
   readonly approximate: boolean;
+  /** Whether it is the paint of `pinnedPaintId`, first whatever its ΔE. */
+  readonly pinned: boolean;
 }
 
 /** The results of one brand. */
@@ -151,6 +167,7 @@ export function findClosestPaints(
     includeMetallic = false,
     includeDiscontinued = false,
     limit = DEFAULT_LIMIT,
+    pinnedPaintId,
   }: MatchOptions,
 ): Result<ClosestPaints, MatchingError> {
   if (!HEX.test(hex)) return err({ kind: "invalid-color", color: hex });
@@ -165,22 +182,34 @@ export function findClosestPaints(
     (includeMetallic || !paint.metallic) &&
     (includeDiscontinued || paint.status.kind === "active");
   const wanted = brandIds === "all" ? null : new Set(brandIds);
+  const pinned =
+    pinnedPaintId === undefined
+      ? undefined
+      : index.brands
+          .flatMap(({ paints }) => paints)
+          .find(({ paint }) => paint.id === pinnedPaintId);
 
   const byBrand = index.brands
-    .filter(({ brand }) => wanted === null || wanted.has(brand.id))
-    .map(({ brand, paints }): BrandMatches =>
-      Object.freeze({
+    .filter(
+      ({ brand }) =>
+        wanted === null || wanted.has(brand.id) || pinned?.brand === brand,
+    )
+    .map(({ brand, paints }): BrandMatches => {
+      const first =
+        pinned?.brand === brand
+          ? [toMatch(scored(pinned, deltaE2000(target, pinned.lab)), true)]
+          : [];
+      const others = paints
+        .filter((entry) => entry !== pinned && isCandidate(entry))
+        .map((entry) => scored(entry, deltaE2000(target, entry.lab)))
+        .sort(compareScored)
+        .slice(0, limit - first.length)
+        .map((entry) => toMatch(entry, false));
+      return Object.freeze({
         brand,
-        matches: Object.freeze(
-          paints
-            .filter(isCandidate)
-            .map((entry) => scored(entry, deltaE2000(target, entry.lab)))
-            .sort(compareScored)
-            .slice(0, limit)
-            .map(toMatch),
-        ),
-      }),
-    );
+        matches: Object.freeze([...first, ...others]),
+      });
+    });
 
   return ok(Object.freeze({ limit, byBrand: Object.freeze(byBrand) }));
 }
@@ -198,10 +227,13 @@ export function findClosestPaints(
 export function rankOverall(
   closest: ClosestPaints,
 ): readonly CalculatedMatch[] {
+  // The pinned paint goes first here too.
   return Object.freeze(
     closest.byBrand
       .flatMap(({ matches }) => matches)
-      .sort(compareMatches)
+      .sort(
+        (a, b) => Number(b.pinned) - Number(a.pinned) || compareMatches(a, b),
+      )
       .slice(0, closest.limit),
   );
 }
@@ -249,12 +281,38 @@ function compareBy(
   return idA < idB ? -1 : 1;
 }
 
-function toMatch({ entry: { paint, brand }, deltaE }: Scored): CalculatedMatch {
+function toMatch(
+  { entry: { paint, brand }, deltaE }: Scored,
+  pinned: boolean,
+): CalculatedMatch {
   return Object.freeze({
     paint,
     brand,
     deltaE2000: deltaE,
     quality: matchQuality(deltaE),
     approximate: isColorApproximate(paint),
+    pinned,
   });
+}
+
+/**
+ * The ΔE CIEDE2000 between two colours, unrounded: how far apart they look.
+ * The web uses it to tell whether the RYB wheel reaches a paint's colour
+ * (docs/07 §15).
+ *
+ * @returns The ΔE, or a {@link MatchingError} if a colour is not `#rrggbb`.
+ *
+ * @example
+ * ```ts
+ * colorDifference("#2c9bcc", "#5088a1"); // { ok: true, value: 8.6… }
+ * ```
+ */
+export function colorDifference(
+  a: string,
+  b: string,
+): Result<number, MatchingError> {
+  for (const color of [a, b]) {
+    if (!HEX.test(color)) return err({ kind: "invalid-color", color });
+  }
+  return ok(deltaE2000(labOf(a.toLowerCase()), labOf(b.toLowerCase())));
 }

@@ -12,6 +12,7 @@ import { DEFAULT_LIMIT } from "@chromatic-wheel/domain";
 import {
   useEffect,
   useRef,
+  useState,
   type KeyboardEvent,
   type ReactNode,
   type RefObject,
@@ -37,9 +38,9 @@ import type { Messages } from "../../i18n/messages.ts";
 import {
   entranceIndex,
   isLeaving,
-  useEntrance,
   useListHeight,
   type Entrance,
+  type EntranceControl,
 } from "./entrance.ts";
 import { Filters, type BrandOption } from "./Filters.tsx";
 import { PaintRow } from "./PaintRow.tsx";
@@ -69,6 +70,8 @@ export interface ResultsProps {
   readonly dragging: boolean;
   /** A tab under the mouse or the focus, or `null` when it leaves. */
   readonly onPreview: (index: number | null) => void;
+  /** The rows that enter or leave, shared with the page (entrance.ts). */
+  readonly rows: EntranceControl;
   /** Where the notice's «Sources» link goes. */
   readonly creditsPath: string;
   readonly onRetry: () => void;
@@ -97,7 +100,7 @@ export function Results(props: ResultsProps) {
   const active = panels[tab];
   const shown =
     active?.kind === "results" ? shownPaints(active.results, view) : [];
-  const { entrance, start, leave } = useEntrance();
+  const { entrance, start, leave } = props.rows;
   const viewOptions = useRef<HTMLDivElement>(null);
   useSlidingIndicator(viewOptions, "label:has(input:checked)", view);
   // Picking a tab or «See more» makes rows enter; the rest goes as is.
@@ -237,6 +240,28 @@ function ColorTabs({
   const list = useRef<HTMLDivElement>(null);
   const bar = useRef<HTMLDivElement>(null);
   const names = colorNames(colors, wheelLabels);
+  // docs/07 §1: when the harmony brings more colors, the new tabs grow in;
+  // when it brings fewer, the ones left over fade out before they go.
+  const [previous, setPrevious] = useState(colors);
+  const [enterFrom, setEnterFrom] = useState<number | null>(null);
+  const [leaving, setLeaving] = useState<typeof colors>([]);
+  if (previous !== colors) {
+    setPrevious(colors);
+    if (colors.length > previous.length) {
+      setEnterFrom(previous.length);
+      setLeaving([]);
+    } else if (colors.length < previous.length) {
+      setEnterFrom(null);
+      setLeaving(
+        matchMedia("(prefers-reduced-motion: reduce)").matches
+          ? []
+          : previous.slice(colors.length),
+      );
+    }
+  }
+  const leavingNames = colorNames([...colors, ...leaving], wheelLabels).slice(
+    colors.length,
+  );
   useStuck(bar);
   useOverflowEdges(bar, list, colors.length);
   // An arrow scrolls the tabs by most of what is seen.
@@ -304,6 +329,17 @@ function ColorTabs({
               tabIndex={index === tab ? 0 : -1}
               // «Skip to the paints» lands here (SkipLinks.tsx).
               data-skip-focus={index === tab ? "" : undefined}
+              data-enter={
+                enterFrom !== null && index >= enterFrom ? "" : undefined
+              }
+              onAnimationEnd={(event) => {
+                if (
+                  event.target === event.currentTarget &&
+                  index === colors.length - 1
+                ) {
+                  setEnterFrom(null);
+                }
+              }}
               onClick={() => {
                 select(index);
               }}
@@ -332,6 +368,19 @@ function ColorTabs({
             </button>
           );
         })}
+        {leaving.map((color, index) => (
+          <span
+            key={`leaving-${String(index)}`}
+            className="tab-leaving"
+            aria-hidden="true"
+            onAnimationEnd={() => {
+              if (index === leaving.length - 1) setLeaving([]);
+            }}
+          >
+            <span className="swatch" style={{ background: color.hex }} />
+            <span>{leavingNames[index]}</span>
+          </span>
+        ))}
       </div>
       {/* docs/07 §1: where tabs are hidden on a side, a fade with an arrow
           says so; pressed, it scrolls. Not for the keyboard, which moves

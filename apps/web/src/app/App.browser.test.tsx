@@ -465,6 +465,160 @@ describe("the home page", () => {
   });
 });
 
+describe("the paint search", () => {
+  const field = () => query(".paint-search-input", HTMLInputElement);
+  const options = () => [
+    ...container.querySelectorAll<HTMLElement>(
+      '.paint-search-list [role="option"]',
+    ),
+  ];
+  const firstOf = (brand: string) =>
+    [...activePanel().querySelectorAll(".brand-group")]
+      .find(
+        (group) => group.querySelector(".brand-heading")?.textContent === brand,
+      )
+      ?.querySelector(".paint");
+
+  /** Waits for the list to finish entering, so that axe reads its colors. */
+  const settled = () =>
+    Promise.all(
+      document
+        .getAnimations()
+        .filter(
+          (animation) => animation.effect?.getTiming().iterations !== Infinity,
+        )
+        .map((animation) => animation.finished.catch(() => undefined)),
+    );
+
+  async function ready(): Promise<void> {
+    mount(ES);
+    await vi.waitFor(() => {
+      expect(field().disabled).toBe(false);
+    });
+  }
+
+  async function choose(text: string): Promise<void> {
+    await userEvent.click(field());
+    await userEvent.keyboard(text);
+    await vi.waitFor(() => {
+      expect(options().length).toBeGreaterThan(0);
+    });
+    await userEvent.keyboard("{ArrowDown}{Enter}");
+  }
+
+  it("suggests from 3 letters, and the paint becomes the base, first of its brand", async () => {
+    await ready();
+    await userEvent.click(field());
+    await userEvent.keyboard("lo");
+    expect(field().getAttribute("aria-expanded")).toBe("false");
+    expect(options()).toHaveLength(0);
+    await userEvent.keyboard("thern");
+    await vi.waitFor(() => {
+      expect(options().map((option) => option.textContent)).toEqual([
+        "Lothern Blue · CapaWarhammer Colour · Layer",
+      ]);
+    });
+    await settled();
+    await expectNoAxeViolations();
+    await userEvent.keyboard("{ArrowDown}{Enter}");
+    expect(field().value).toBe("Lothern Blue");
+    await vi.waitFor(() => {
+      expect(query(".paint-search-chosen", HTMLElement).textContent).toBe(
+        "Warhammer Colour · Layer",
+      );
+      expect(query('[role="tab"][aria-selected="true"]', HTMLElement).id).toBe(
+        "tab-0",
+      );
+      expect(firstOf("Warhammer Colour")?.textContent).toContain("Elegida");
+    });
+    await settled();
+    await expectNoAxeViolations();
+  });
+
+  it("offers the digital wheel when RYB does not reach the paint, and reaches it there", async () => {
+    await ready();
+    await choose("lothern");
+    const notice = await vi.waitFor(() =>
+      query(".paint-search-ryb", HTMLElement),
+    );
+    expect(notice.textContent).toContain("ΔE 8,6");
+    await userEvent.click(query(".paint-search-ryb button", HTMLButtonElement));
+    await vi.waitFor(() => {
+      expect(container.querySelector(".paint-search-ryb")).toBeNull();
+      expect(
+        activePanel().querySelector(".panel-heading code")?.textContent,
+      ).toBe("#2c9bcc");
+    });
+  });
+
+  it("shows the chosen paint whatever the filters: a metallic one too", async () => {
+    await ready();
+    await choose("hammered");
+    await vi.waitFor(() => {
+      const row = firstOf("Vallejo");
+      expect(row?.querySelector(".paint-name")?.textContent).toBe(
+        "Hammered Copper",
+      );
+      expect(row?.textContent).toContain("Metálica");
+      expect(row?.querySelector(".chip-chosen")).not.toBeNull();
+    });
+  });
+
+  it("shows 8 suggestions and 8 more with «See more», from the keyboard", async () => {
+    await ready();
+    await userEvent.click(field());
+    await userEvent.keyboard("red");
+    await vi.waitFor(() => {
+      expect(options()).toHaveLength(9);
+    });
+    expect(options().at(-1)?.textContent).toBe("Ver más pinturas (8 de 83)");
+    await userEvent.keyboard("{ArrowUp}{Enter}");
+    await vi.waitFor(() => {
+      expect(options()).toHaveLength(17);
+    });
+    expect(field().getAttribute("aria-activedescendant")).toBe(
+      options()[8]?.id,
+    );
+    expect(field().value).toBe("red");
+  });
+
+  it("forgets the paint when the base changes, and goes back to it", async () => {
+    await ready();
+    await choose("moot green");
+    await vi.waitFor(() => {
+      expect(field().value).toBe("Moot Green");
+    });
+    const hex = query("input.cw-input", HTMLInputElement);
+    await userEvent.clear(hex);
+    await userEvent.type(hex, "#ff0000{Enter}");
+    await vi.waitFor(() => {
+      expect(field().value).toBe("");
+    });
+    const back = query(".paint-search-back button", HTMLButtonElement);
+    expect(back.textContent).toBe("Volver a Moot Green");
+    await userEvent.click(back);
+    await vi.waitFor(() => {
+      expect(field().value).toBe("Moot Green");
+    });
+  });
+
+  it("keeps the chosen paint for the next visit", async () => {
+    await ready();
+    await choose("lothern");
+    await vi.waitFor(() => {
+      expect(localStorage.getItem(STORAGE_KEY)).toContain(
+        "citadel/layer/lothern-blue",
+      );
+    });
+    root?.unmount();
+    container.remove();
+    await ready();
+    await vi.waitFor(() => {
+      expect(field().value).toBe("Lothern Blue");
+    });
+  });
+});
+
 describe("the install banner", () => {
   beforeAll(() => {
     captureInstallPrompt();

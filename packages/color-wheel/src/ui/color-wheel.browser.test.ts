@@ -675,6 +675,77 @@ describe("template motion", () => {
   });
 });
 
+describe("base motion", () => {
+  const pixels = (wheel: Element) =>
+    wheel.querySelector("canvas")?.toDataURL() ?? "";
+  const frame = () => new Promise((resolve) => requestAnimationFrame(resolve));
+
+  async function drawnAs(options: ColorWheelOptions) {
+    const other = document.createElement("div");
+    other.style.width = "400px";
+    document.body.append(other);
+    const reference = new ColorWheel(other, options);
+    await frame();
+    const url = pixels(other);
+    reference.destroy();
+    other.remove();
+    return url;
+  }
+
+  it("travels to a new color and ends exactly on it", async () => {
+    container.style.width = "400px";
+    const created = create({ color: "#3daf44" });
+    await frame();
+    created.color = "#2c9bcc";
+    // The result is the new one at once; only the drawing travels.
+    expect(created.getResult().colors[0]?.hex).toBe(created.color);
+    await new Promise((resolve) => setTimeout(resolve, 100));
+    const final = await drawnAs({ color: "#2c9bcc" });
+    expect(pixels(container)).not.toBe(final);
+    await new Promise((resolve) => setTimeout(resolve, 500));
+    expect(pixels(container)).toBe(final);
+  });
+
+  it("travels to the other model and ends exactly on it", async () => {
+    container.style.width = "400px";
+    const created = create({ color: "#2c9bcc", model: "ryb" });
+    await frame();
+    created.model = "digital";
+    await new Promise((resolve) => setTimeout(resolve, 100));
+    const final = await drawnAs({ color: "#2c9bcc", model: "digital" });
+    expect(pixels(container)).not.toBe(final);
+    await new Promise((resolve) => setTimeout(resolve, 500));
+    expect(pixels(container)).toBe(final);
+  });
+
+  it("answers the keys of the ring at once", async () => {
+    container.style.width = "400px";
+    create({ color: "#3daf44" });
+    await frame();
+    const ring = query(".cw-ring", HTMLElement);
+    ring.focus();
+    await userEvent.keyboard("{PageUp}");
+    const now = pixels(container);
+    await new Promise((resolve) => setTimeout(resolve, 100));
+    expect(pixels(container)).toBe(now);
+  });
+
+  it("jumps at once when the system asks to reduce motion", async () => {
+    await cdp().send("Emulation.setEmulatedMedia", {
+      features: [{ name: "prefers-reduced-motion", value: "reduce" }],
+    });
+    try {
+      container.style.width = "400px";
+      const created = create({ color: "#3daf44" });
+      await frame();
+      created.color = "#2c9bcc";
+      expect(pixels(container)).toBe(await drawnAs({ color: "#2c9bcc" }));
+    } finally {
+      await cdp().send("Emulation.setEmulatedMedia", { features: [] });
+    }
+  });
+});
+
 describe("destroy", () => {
   it("removes the wheel and makes any later call an error", () => {
     const created = create();

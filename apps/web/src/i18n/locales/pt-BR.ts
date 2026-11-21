@@ -75,6 +75,7 @@ export const ptBR: Messages = {
     exactColor: "Exata",
     metallic: "Metálica",
     discontinued: "Descontinuada",
+    chosen: "Escolhida",
   },
   filters: {
     title: "Filtros",
@@ -88,6 +89,21 @@ export const ptBR: Messages = {
     moreTypes: "opacas e mais {count} tipos",
     withoutDiscontinued: "sem descontinuadas",
     withDiscontinued: "com descontinuadas",
+  },
+  search: {
+    label: "Comece por uma tinta que você tem",
+    hint: "Pelo menos {min} letras do nome, do código ou da marca.",
+    paints: "Tintas",
+    noMatches: "Nenhuma tinta corresponde ao que você digitou.",
+    seeMore: "Ver mais tintas ({shown} de {total})",
+    count: "Tintas: {shown} de {total}.",
+    clear: "Apagar a tinta",
+    back: "Voltar para {name}",
+    chosen: "Base: {name}, {brand} {range}.",
+    typeMetallic: "{type}, metálica",
+    rybNotice:
+      "A roda RYB não alcança esta cor: usa a mais parecida (ΔE {deltaE}).",
+    useDigital: "Usar a roda digital",
   },
   paintTypes: {
     base: "Base",

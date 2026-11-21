@@ -70,6 +70,7 @@ export const gl: Messages = {
     exactColor: "Exacta",
     metallic: "Metálica",
     discontinued: "Descatalogada",
+    chosen: "Escollida",
   },
   filters: {
     title: "Filtros",
@@ -83,6 +84,21 @@ export const gl: Messages = {
     moreTypes: "opacas e {count} tipos máis",
     withoutDiscontinued: "sen descatalogadas",
     withDiscontinued: "con descatalogadas",
+  },
+  search: {
+    label: "Comeza por unha pintura que teñas",
+    hint: "Polo menos {min} letras do nome, o código ou a marca.",
+    paints: "Pinturas",
+    noMatches: "Ningunha pintura coincide co escrito.",
+    seeMore: "Ver máis pinturas ({shown} de {total})",
+    count: "Pinturas: {shown} de {total}.",
+    clear: "Borrar a pintura",
+    back: "Volver a {name}",
+    chosen: "Base: {name}, {brand} {range}.",
+    typeMetallic: "{type}, metálica",
+    rybNotice:
+      "A roda RYB non chega a esta cor: usa a máis parecida (ΔE {deltaE}).",
+    useDigital: "Usar a roda dixital",
   },
   paintTypes: {
     base: "Base",

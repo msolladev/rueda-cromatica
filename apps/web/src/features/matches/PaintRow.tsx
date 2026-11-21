@@ -71,6 +71,9 @@ export function PaintRow({
       <span className="chips">
         <span className="chip">{m.paintTypes[paint.type]}</span>
         {paint.metallic && <span className="chip">{m.results.metallic}</span>}
+        {paint.chosen && (
+          <span className="chip chip-chosen">{m.results.chosen}</span>
+        )}
         {paint.discontinued && (
           <span className="chip">{m.results.discontinued}</span>
         )}

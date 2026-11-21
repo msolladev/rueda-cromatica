@@ -5,9 +5,11 @@
  */
 import {
   buildPaintIndex,
+  buildPaintSearchIndex,
   parseCatalog,
   type Catalog,
   type PaintIndex,
+  type PaintSearchIndex,
 } from "@chromatic-wheel/domain";
 
 /** Reads the text of `catalog.json`; rejects on a network or HTTP error. */
@@ -31,6 +33,8 @@ export type CatalogLoad =
       readonly status: "ready";
       readonly catalog: Catalog;
       readonly index: PaintIndex;
+      /** For the paint search (docs/07 §15). */
+      readonly searchIndex: PaintSearchIndex;
     }
   | { readonly status: "error"; readonly error: CatalogLoadError };
 
@@ -75,6 +79,7 @@ export async function loadCatalog(read: ReadCatalog): Promise<CatalogLoad> {
     status: "ready",
     catalog: parsed.value,
     index: buildPaintIndex(parsed.value),
+    searchIndex: buildPaintSearchIndex(parsed.value),
   };
 }
 

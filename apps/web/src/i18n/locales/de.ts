@@ -78,6 +78,7 @@ export const de: Messages = {
     exactColor: "Genau",
     metallic: "Metallic",
     discontinued: "Eingestellt",
+    chosen: "Gewählt",
   },
   filters: {
     title: "Filter",
@@ -91,6 +92,21 @@ export const de: Messages = {
     moreTypes: "deckend und {count} weitere Typen",
     withoutDiscontinued: "ohne eingestellte",
     withDiscontinued: "mit eingestellten",
+  },
+  search: {
+    label: "Starte mit einer Farbe, die du hast",
+    hint: "Mindestens {min} Zeichen aus Name, Code oder Marke.",
+    paints: "Farben",
+    noMatches: "Keine Farbe passt zu deiner Eingabe.",
+    seeMore: "Mehr Farben anzeigen ({shown} von {total})",
+    count: "Farben: {shown} von {total}.",
+    clear: "Farbe löschen",
+    back: "Zurück zu {name}",
+    chosen: "Basis: {name}, {brand} {range}.",
+    typeMetallic: "{type}, metallisch",
+    rybNotice:
+      "Der RYB-Farbkreis erreicht diesen Farbton nicht: Er nimmt den nächstgelegenen (ΔE {deltaE}).",
+    useDigital: "Digitalen Farbkreis verwenden",
   },
   paintTypes: {
     base: "Base",

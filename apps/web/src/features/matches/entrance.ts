@@ -25,12 +25,15 @@ const ENTRANCE_MS = 700;
 export const LEAVE_MS = 260;
 
 /** The current entrance, if any, and how to start one. */
-export function useEntrance(): {
+export interface EntranceControl {
   readonly entrance: Entrance | null;
   readonly start: (entrance: Entrance) => void;
   /** Makes rows leave, then calls `then`, which removes them. */
   readonly leave: (key: string, from: number, then: () => void) => void;
-} {
+}
+
+/** The current entrance, if any, and how to start one. */
+export function useEntrance(): EntranceControl {
   const [entrance, setEntrance] = useState<Entrance | null>(null);
   const timer = useRef<ReturnType<typeof setTimeout>>(undefined);
   useEffect(

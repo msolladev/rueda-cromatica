@@ -72,6 +72,7 @@ export const eu: Messages = {
     exactColor: "Zehatza",
     metallic: "Metalikoa",
     discontinued: "Katalogotik kanpo",
+    chosen: "Aukeratua",
   },
   filters: {
     title: "Iragazkiak",
@@ -85,6 +86,21 @@ export const eu: Messages = {
     moreTypes: "opakuak eta beste {count} mota",
     withoutDiscontinued: "katalogotik kanpokorik gabe",
     withDiscontinued: "katalogotik kanpokoekin",
+  },
+  search: {
+    label: "Hasi duzun pintura batetik",
+    hint: "Izenaren, kodearen edo markaren {min} letra gutxienez.",
+    paints: "Pinturak",
+    noMatches: "Ez dago idatzitakoarekin bat datorren pinturarik.",
+    seeMore: "Ikusi pintura gehiago ({shown}/{total})",
+    count: "Pinturak: {shown}/{total}.",
+    clear: "Ezabatu pintura",
+    back: "Itzuli honetara: {name}",
+    chosen: "Oinarria: {name}, {brand} {range}.",
+    typeMetallic: "{type}, metalikoa",
+    rybNotice:
+      "RYB gurpilak ez du kolore hau lortzen: antzekoena erabiltzen du (ΔE {deltaE}).",
+    useDigital: "Erabili gurpil digitala",
   },
   paintTypes: {
     base: "Oinarria",

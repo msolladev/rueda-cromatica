@@ -76,6 +76,7 @@ export const it: Messages = {
     exactColor: "Esatto",
     metallic: "Metallica",
     discontinued: "Fuori produzione",
+    chosen: "Scelta",
   },
   filters: {
     title: "Filtri",
@@ -89,6 +90,21 @@ export const it: Messages = {
     moreTypes: "coprenti e altri {count} tipi",
     withoutDiscontinued: "senza fuori produzione",
     withDiscontinued: "con fuori produzione",
+  },
+  search: {
+    label: "Parti da una vernice che hai",
+    hint: "Almeno {min} lettere del nome, del codice o del marchio.",
+    paints: "Vernici",
+    noMatches: "Nessuna vernice corrisponde a ciò che hai scritto.",
+    seeMore: "Mostra altre vernici ({shown} di {total})",
+    count: "Vernici: {shown} di {total}.",
+    clear: "Cancella la vernice",
+    back: "Torna a {name}",
+    chosen: "Base: {name}, {brand} {range}.",
+    typeMetallic: "{type}, metallica",
+    rybNotice:
+      "La ruota RYB non arriva a questo colore: usa il più simile (ΔE {deltaE}).",
+    useDigital: "Usa la ruota digitale",
   },
   paintTypes: {
     base: "Base",

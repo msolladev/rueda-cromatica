@@ -26,6 +26,7 @@ export {
 } from "./catalog/contributions.ts";
 
 export {
+  colorDifference,
   compareMatches,
   DEFAULT_LIMIT,
   DEFAULT_PAINT_TYPES,
@@ -43,3 +44,13 @@ export {
   matchQuality,
   type MatchQuality,
 } from "./matching/quality.ts";
+export {
+  buildPaintSearchIndex,
+  isSearchable,
+  MIN_QUERY_LENGTH,
+  searchPaints,
+  type PaintSearchHighlights,
+  type PaintSearchHit,
+  type PaintSearchIndex,
+  type TextRange,
+} from "./search/paint-search.ts";

@@ -44,9 +44,10 @@ import { placeMarkLabels } from "./mark-labels.ts";
 import { attachPointer } from "./pointer.ts";
 import {
   easeOut,
-  interpolateTemplate,
+  interpolatePosition,
   sameTemplate,
   TEMPLATE_DURATION,
+  turnTemplate,
 } from "./template-motion.ts";
 
 /**
@@ -105,6 +106,25 @@ interface Config {
 
 const FALLBACK_FOCUS_COLOR = "#1a5fd0";
 
+interface Motion {
+  readonly from: readonly number[];
+  readonly to: readonly number[];
+  /** Where the base was, if it travels; otherwise it stays where it is. */
+  readonly fromPosition: WheelColor | undefined;
+  /** The model whose ring fades out, if the model changed. */
+  readonly fromModel: Model | undefined;
+  readonly start: number;
+}
+
+/** The wheel as drawn at one moment. */
+interface Frame {
+  readonly template: readonly number[];
+  readonly position: WheelColor;
+  /** The previous model's ring, fading out, while the model changes. */
+  readonly previous:
+    { readonly model: Model; readonly opacity: number } | undefined;
+}
+
 /**
  * The color wheel component. It is created on a container, draws the wheel
  * and its controls inside it, and emits `input` and `change`
@@ -155,8 +175,12 @@ export class ColorWheel extends EventTarget {
   #destroyed = false;
   #dragSnapshot: string | undefined;
   #announceToggle = false;
-  /** The template on its way to the new marks (docs/05 §6.2). */
-  #motion: { from: number[]; to: number[]; start: number } | undefined;
+  /**
+   * The wheel on its way to its new place (docs/05 §6.2): the template and,
+   * if the base moved from outside the wheel, the base and the previous
+   * model's ring.
+   */
+  #motion: Motion | undefined;
   #motionFrame = 0;
   readonly #dom: Dom;
   readonly #abort = new AbortController();
@@ -747,14 +771,19 @@ export class ColorWheel extends EventTarget {
     });
   }
 
-  /** Mutates, renders, and emits `change` if the state or result changed. */
-  #change(source: ChangeSource, mutate: () => void): boolean {
+  /**
+   * Mutates, renders, and emits `change` if the state or result changed. The
+   * wheel travels to its new place unless the change is `instant`: the keys
+   * of the wheel, which answer at once, like dragging.
+   */
+  #change(source: ChangeSource, mutate: () => void, instant = false): boolean {
     const before = this.#snapshot();
-    const template = this.#template();
-    const base = this.#position;
+    const frame = this.#frame();
+    const model = this.#config.model;
     mutate();
     this.#colors = this.#harmonize();
-    this.#moveTemplate(template, base);
+    if (instant) this.#stopMotion();
+    else this.#startMotion(frame, model);
     this.#render();
     if (this.#snapshot() === before) return false;
     this.#emit("change", source);
@@ -771,39 +800,73 @@ export class ColorWheel extends EventTarget {
   }
 
   /** The hues of the marks as drawn now, the base first. */
-  #template(now = performance.now()): number[] {
+  #template(now = performance.now()): readonly number[] {
+    return this.#frame(now).template;
+  }
+
+  /** The template, the base and the previous ring as drawn now. */
+  #frame(now = performance.now()): Frame {
     const motion = this.#motion;
-    const hues = this.#colors.map((color) => color.position.hue);
-    if (motion === undefined) return hues;
+    const settled: Frame = {
+      template: this.#colors.map((color) => color.position.hue),
+      position: this.#position,
+      previous: undefined,
+    };
+    if (motion === undefined) return settled;
     const t = Math.min((now - motion.start) / TEMPLATE_DURATION, 1);
     if (t >= 1) {
       this.#motion = undefined;
-      return hues;
+      return settled;
     }
-    return interpolateTemplate(motion.from, motion.to, easeOut(t));
+    const eased = easeOut(t);
+    const position =
+      motion.fromPosition === undefined
+        ? this.#position
+        : interpolatePosition(motion.fromPosition, this.#position, eased);
+    return {
+      template: turnTemplate(motion.from, motion.to, position.hue, eased),
+      position,
+      previous:
+        motion.fromModel === undefined
+          ? undefined
+          : { model: motion.fromModel, opacity: 1 - eased },
+    };
+  }
+
+  #stopMotion(): void {
+    this.#motion = undefined;
+    cancelAnimationFrame(this.#motionFrame);
   }
 
   /**
-   * Starts moving the template from `from` to the current marks if the base
-   * stayed where it was: a new harmony or light. When the base moves (drag,
-   * keys, color, model) the triangle turns with it, and the marks follow at
-   * once. Without motion if the system asks to reduce it.
+   * Starts moving the wheel from `from`, the frame drawn before the change, to
+   * its new place: the marks to their new hues and, if the base moved (its
+   * color, the hex field or the model), the base along with them, with the
+   * triangle turning, and the previous model's ring fading out. Without
+   * motion if nothing moved or the system asks to reduce it.
    */
-  #moveTemplate(from: number[], base: WheelColor): void {
+  #startMotion(from: Frame, fromModel: Model): void {
     const to = this.#colors.map((color) => color.position.hue);
-    const baseStayed =
-      base.hue === this.#position.hue &&
-      base.pure === this.#position.pure &&
-      base.white === this.#position.white;
+    const base = this.#position;
+    const baseMoved =
+      from.position.hue !== base.hue ||
+      from.position.pure !== base.pure ||
+      from.position.white !== base.white;
+    const modelChanged = fromModel !== this.#config.model;
     if (
-      !baseStayed ||
-      sameTemplate(from, to) ||
+      (!baseMoved && !modelChanged && sameTemplate(from.template, to)) ||
       matchMedia("(prefers-reduced-motion: reduce)").matches
     ) {
-      this.#motion = undefined;
+      this.#stopMotion();
       return;
     }
-    this.#motion = { from, to, start: performance.now() };
+    this.#motion = {
+      from: from.template,
+      to,
+      fromPosition: baseMoved ? from.position : undefined,
+      fromModel: modelChanged ? fromModel : undefined,
+      start: performance.now(),
+    };
     cancelAnimationFrame(this.#motionFrame);
     const frame = () => {
       this.#draw();
@@ -816,7 +879,7 @@ export class ColorWheel extends EventTarget {
 
   /** Moves the base from the wheel itself: the position rules from now on. */
   #movePosition(position: WheelColor): void {
-    this.#motion = undefined;
+    this.#stopMotion();
     this.#position = position;
     this.#sourceHex = undefined;
     this.#colors = this.#harmonize();
@@ -873,10 +936,14 @@ export class ColorWheel extends EventTarget {
       if (next === undefined) return;
       event.preventDefault();
       const moved = next;
-      this.#change("user", () => {
-        this.#position = moved;
-        this.#sourceHex = undefined;
-      });
+      this.#change(
+        "user",
+        () => {
+          this.#position = moved;
+          this.#sourceHex = undefined;
+        },
+        true,
+      );
     };
     const onHover = (event: PointerEvent) => {
       this.#hoverMarks(event);
@@ -1149,10 +1216,11 @@ export class ColorWheel extends EventTarget {
     // variable itself may be an unresolved `light-dark()`.
     const focusColor =
       getComputedStyle(dom.canvas).color.trim() || FALLBACK_FOCUS_COLOR;
-    const template = this.#template();
+    const { template, position, previous } = this.#frame();
     drawWheel(context, {
       model: this.#config.model,
-      position: this.#position,
+      previous,
+      position,
       template,
       highlight:
         this.#motion === undefined &&

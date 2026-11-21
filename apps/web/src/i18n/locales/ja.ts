@@ -74,6 +74,7 @@ export const ja: Messages = {
     exactColor: "正確",
     metallic: "メタリック",
     discontinued: "廃番",
+    chosen: "選択中",
   },
   filters: {
     title: "フィルター",
@@ -87,6 +88,21 @@ export const ja: Messages = {
     moreTypes: "不透明とほか {count} 種類",
     withoutDiscontinued: "廃番なし",
     withDiscontinued: "廃番あり",
+  },
+  search: {
+    label: "手持ちの塗料から始める",
+    hint: "名前・品番・ブランドを {min} 文字以上入力してください。",
+    paints: "塗料",
+    noMatches: "入力に一致する塗料はありません。",
+    seeMore: "塗料をもっと見る（{total} 件中 {shown} 件）",
+    count: "塗料：{total} 件中 {shown} 件。",
+    clear: "塗料を消去",
+    back: "{name} に戻る",
+    chosen: "ベース：{name}、{brand} {range}。",
+    typeMetallic: "{type}、メタリック",
+    rybNotice:
+      "RYB ホイールではこの色に届きません。最も近い色を使います（ΔE {deltaE}）。",
+    useDigital: "デジタルホイールを使う",
   },
   paintTypes: {
     base: "ベース",
