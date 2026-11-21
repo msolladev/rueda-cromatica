@@ -135,7 +135,11 @@ wheel.addEventListener("change", (e) => {
 
 - **Anillo de tono** continuo y **triángulo** interior con vértices en el color puro del tono de la base, el blanco y el negro. El triángulo gira con el tono.
 - **Plantilla**: líneas desde el centro hasta las marcas de cada color de la armonía en el anillo, y un punto en el triángulo que marca la base.
-  - **Movimiento**: al cambiar de armonía o de luz, cuando la base no se mueve, cada marca viaja por el arco más corto hasta su nuevo tono en 450 ms; las que sobran vuelven a la base y las nuevas salen de ella. Cuando la base se mueve (al arrastrar, con el teclado, al cambiar el color o el modelo), las marcas la siguen al momento, porque el triángulo gira con ella. Sin movimiento si el sistema pide reducirlo (`prefers-reduced-motion`).
+  - **Movimiento**, en 450 ms, rápido al principio y suave al final ([ADR-0029](adr/0029-buscador-pinturas-mvp.md)). Sin movimiento si el sistema pide reducirlo (`prefers-reduced-motion`).
+    - Al cambiar de armonía o de luz, cuando la base no se mueve, cada marca viaja por el arco más corto hasta su nuevo tono; las que sobran vuelven a la base y las nuevas salen de ella.
+    - Cuando la base cambia desde fuera de la rueda (la propiedad `color`, el campo hex, `update`, `setState` o el modelo), la base viaja hasta su nuevo sitio: el tono por el arco más corto y las proporciones en línea recta. El triángulo gira con ella y las marcas la siguen sin cambiar su sitio respecto a la base, salvo que también cambie la armonía. Al cambiar de modelo, el anillo anterior se funde con el nuevo.
+    - Al arrastrar y con el teclado, la base va al momento a donde se lleva.
+    - Solo se mueve el dibujo: el resultado, el estado y el evento `change` llevan el valor final desde el principio. Mientras la rueda se mueve no se ven los nombres de las marcas ni el anillo del color resaltado.
 - **Interacción**: arrastrar en el anillo cambia el tono, y arrastrar en el triángulo cambia las proporciones.
 - **Canvas**, con nitidez ajustada a la densidad de la pantalla. La rueda ocupa el ancho de su contenedor, hasta `--cw-wheel-max-size`.
   - El anillo es un degradado cónico por las seis esquinas del modelo, y el triángulo, el negro más dos degradados lineales que se suman (el puro y el blanco, cada uno desde su vértice hasta el lado opuesto). Las dos cosas son exactas: los colores puros de los dos modelos varían de forma lineal entre esquinas (§3), y en un triángulo equilátero cada degradado es el peso de su vértice (§2).

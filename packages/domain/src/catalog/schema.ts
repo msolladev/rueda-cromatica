@@ -36,6 +36,21 @@ export const hexColorSchema = z
   .string()
   .regex(/^#[0-9a-f]{6}$/)
   .brand<"HexColor">();
+/**
+ * The colour as a {@link HexColor}: `#rrggbb` in any case, in lowercase, or
+ * `null` if it is not a 6-digit hex. The one check of that format for the
+ * search, the builder's importers and the web.
+ *
+ * @example
+ * ```ts
+ * toHexColor("#3DAF44"); // "#3daf44"
+ * toHexColor("green"); // null
+ * ```
+ */
+export function toHexColor(text: string): HexColor | null {
+  const parsed = hexColorSchema.safeParse(text.toLowerCase());
+  return parsed.success ? parsed.data : null;
+}
 /** Validates an {@link IsoDate}. */
 export const isoDateSchema = z.iso.date().brand<"IsoDate">();
 

@@ -9,7 +9,9 @@ import axe from "axe-core";
 import { StrictMode } from "react";
 import { hydrateRoot, type Root } from "react-dom/client";
 import { afterEach, beforeAll, describe, expect, it, vi } from "vitest";
-import { userEvent } from "vitest/browser";
+// Types of the Playwright provider: `cdp()` with the DevTools protocol.
+import type {} from "@vitest/browser-playwright";
+import { cdp, userEvent } from "vitest/browser";
 import { createRenderer } from "../entry-server.tsx";
 import "./app.css";
 import { App } from "./App.tsx";
@@ -31,7 +33,14 @@ beforeAll(async () => {
   });
 });
 
-afterEach(() => {
+afterEach(async () => {
+  // A theme change's view transition takes every pointer event while it
+  // lasts: the next test starts once it is over.
+  await vi.waitFor(() => {
+    expect(
+      document.documentElement.classList.contains("theme-transition"),
+    ).toBe(false);
+  });
   root?.unmount();
   root = undefined;
   container.remove();
@@ -89,6 +98,18 @@ async function expectNoAxeViolations(): Promise<void> {
 
 const ES: Page = { kind: "home", locale: "es" };
 
+/** Waits for the animations that end, so that nothing is read halfway. */
+async function animationsFinished(): Promise<void> {
+  await Promise.all(
+    document
+      .getAnimations()
+      .filter(
+        (animation) => animation.effect?.getTiming().iterations !== Infinity,
+      )
+      .map((animation) => animation.finished.catch(() => undefined)),
+  );
+}
+
 /** Chooses a theme as a person would: on a narrow screen, from the menu. */
 async function chooseTheme(theme: string): Promise<void> {
   const burger = query(".burger", HTMLButtonElement);
@@ -99,14 +120,7 @@ async function chooseTheme(theme: string): Promise<void> {
   );
   // The theme's reveal and the icon's entrance end before anything is
   // measured, so that no color is read halfway.
-  await Promise.all(
-    document
-      .getAnimations()
-      .filter(
-        (animation) => animation.effect?.getTiming().iterations !== Infinity,
-      )
-      .map((animation) => animation.finished.catch(() => undefined)),
-  );
+  await animationsFinished();
 }
 
 describe("the home page", () => {
@@ -462,6 +476,246 @@ describe("the home page", () => {
     });
     await act();
     await expectNoAxeViolations();
+  });
+});
+
+describe("how the colors arrive", () => {
+  // docs/07 §1: every change of colors goes through one function, which
+  // blends them on a jump and follows a drag at once.
+  const results = () => query(".results", HTMLElement);
+  const baseSwatch = () => query("#tab-0 .swatch", HTMLElement);
+  const blending = () =>
+    baseSwatch()
+      .getAnimations()
+      .some(
+        (animation) =>
+          animation instanceof CSSTransition &&
+          animation.transitionProperty === "background-color",
+      );
+
+  async function ready(): Promise<HTMLCanvasElement> {
+    mount(ES);
+    const canvas = await vi.waitFor(() => query("canvas", HTMLCanvasElement));
+    await vi.waitFor(() => {
+      expect(activePanel().querySelector(".paint")).not.toBeNull();
+    });
+    return canvas;
+  }
+
+  /** Real mouse input, in fractions of the canvas, with the button held as a person does. */
+  function mouseOn(canvas: HTMLCanvasElement) {
+    // On screen, or the input lands outside it (an earlier test may scroll).
+    canvas.scrollIntoView({ block: "center" });
+    const rect = canvas.getBoundingClientRect();
+    const frame = window.frameElement as HTMLElement | null;
+    const box = frame?.getBoundingClientRect();
+    const scale =
+      frame === null || box === undefined ? 1 : box.width / frame.offsetWidth;
+    const send = (
+      type: "mouseMoved" | "mousePressed" | "mouseReleased",
+      x: number,
+      y: number,
+      buttons: number,
+    ) =>
+      cdp().send("Input.dispatchMouseEvent", {
+        type,
+        x: (box?.left ?? 0) + (rect.left + rect.width * x) * scale,
+        y: (box?.top ?? 0) + (rect.top + rect.height * y) * scale,
+        button: "left",
+        buttons,
+        clickCount: 1,
+      });
+    return {
+      press: async (x: number, y: number) => {
+        await send("mouseMoved", x, y, 0);
+        await send("mousePressed", x, y, 1);
+      },
+      move: (x: number, y: number) => send("mouseMoved", x, y, 1),
+      release: (x: number, y: number) => send("mouseReleased", x, y, 0),
+    };
+  }
+
+  it("blends the tabs into the new colors after a click on the wheel", async () => {
+    const canvas = await ready();
+    const before = baseSwatch().style.background;
+    const mouse = mouseOn(canvas);
+    // The top of the ring, red in RYB, pressed for as long as a person does.
+    await mouse.press(0.5, 0.06);
+    await new Promise((resolve) => setTimeout(resolve, 150));
+    await mouse.release(0.5, 0.06);
+    await vi.waitFor(() => {
+      expect(baseSwatch().style.background).not.toBe(before);
+    });
+    expect(results().hasAttribute("data-following")).toBe(false);
+    expect(blending()).toBe(true);
+  });
+
+  it("blends them after the hex field too", async () => {
+    await ready();
+    const hex = query("input.cw-input", HTMLInputElement);
+    await userEvent.clear(hex);
+    await userEvent.type(hex, "#ff0000{Enter}");
+    await vi.waitFor(() => {
+      expect(blending()).toBe(true);
+    });
+    expect(results().hasAttribute("data-following")).toBe(false);
+  });
+
+  it("follows a drag at once, and blends again once it ends", async () => {
+    const canvas = await ready();
+    const mouse = mouseOn(canvas);
+    await mouse.press(0.5, 0.06);
+    for (const x of [0.55, 0.6, 0.65, 0.7]) await mouse.move(x, 0.08);
+    await vi.waitFor(() => {
+      expect(results().hasAttribute("data-following")).toBe(true);
+    });
+    await mouse.release(0.7, 0.08);
+    await vi.waitFor(() => {
+      expect(results().hasAttribute("data-following")).toBe(false);
+    });
+  });
+});
+
+describe("the paint search", () => {
+  const field = () => query(".paint-search-input", HTMLInputElement);
+  const options = () => [
+    ...container.querySelectorAll<HTMLElement>(
+      '.paint-search-list [role="option"]',
+    ),
+  ];
+  const firstOf = (brand: string) =>
+    [...activePanel().querySelectorAll(".brand-group")]
+      .find(
+        (group) => group.querySelector(".brand-heading")?.textContent === brand,
+      )
+      ?.querySelector(".paint");
+
+  async function ready(): Promise<void> {
+    mount(ES);
+    await vi.waitFor(() => {
+      expect(field().disabled).toBe(false);
+    });
+  }
+
+  async function choose(text: string): Promise<void> {
+    await userEvent.click(field());
+    await userEvent.keyboard(text);
+    await vi.waitFor(() => {
+      expect(options().length).toBeGreaterThan(0);
+    });
+    await userEvent.keyboard("{ArrowDown}{Enter}");
+  }
+
+  it("suggests from 3 letters, and the paint becomes the base, first of its brand", async () => {
+    await ready();
+    await userEvent.click(field());
+    await userEvent.keyboard("lo");
+    expect(field().getAttribute("aria-expanded")).toBe("false");
+    expect(options()).toHaveLength(0);
+    await userEvent.keyboard("thern");
+    await vi.waitFor(() => {
+      expect(options().map((option) => option.textContent)).toEqual([
+        "Lothern Blue · CapaWarhammer Colour · Layer",
+      ]);
+    });
+    await animationsFinished();
+    await expectNoAxeViolations();
+    await userEvent.keyboard("{ArrowDown}{Enter}");
+    expect(field().value).toBe("Lothern Blue");
+    await vi.waitFor(() => {
+      expect(query(".paint-search-chosen", HTMLElement).textContent).toBe(
+        "Warhammer Colour · Layer",
+      );
+      expect(query('[role="tab"][aria-selected="true"]', HTMLElement).id).toBe(
+        "tab-0",
+      );
+      expect(firstOf("Warhammer Colour")?.textContent).toContain("Elegida");
+    });
+    await animationsFinished();
+    await expectNoAxeViolations();
+  });
+
+  it("offers the digital wheel when RYB does not reach the paint, and reaches it there", async () => {
+    await ready();
+    await choose("lothern");
+    const notice = await vi.waitFor(() =>
+      query(".paint-search-ryb", HTMLElement),
+    );
+    expect(notice.textContent).toContain("ΔE 8,6");
+    await userEvent.click(query(".paint-search-ryb button", HTMLButtonElement));
+    await vi.waitFor(() => {
+      expect(container.querySelector(".paint-search-ryb")).toBeNull();
+      expect(
+        activePanel().querySelector(".panel-heading code")?.textContent,
+      ).toBe("#2c9bcc");
+    });
+  });
+
+  it("shows the chosen paint whatever the filters: a metallic one too", async () => {
+    await ready();
+    await choose("hammered");
+    await vi.waitFor(() => {
+      const row = firstOf("Vallejo");
+      expect(row?.querySelector(".paint-name")?.textContent).toBe(
+        "Hammered Copper",
+      );
+      expect(row?.textContent).toContain("Metálica");
+      expect(row?.querySelector(".chip-chosen")).not.toBeNull();
+    });
+  });
+
+  it("shows 8 suggestions and 8 more with «See more», from the keyboard", async () => {
+    await ready();
+    await userEvent.click(field());
+    await userEvent.keyboard("red");
+    await vi.waitFor(() => {
+      expect(options()).toHaveLength(9);
+    });
+    expect(options().at(-1)?.textContent).toBe("Ver más pinturas (8 de 83)");
+    await userEvent.keyboard("{ArrowUp}{Enter}");
+    await vi.waitFor(() => {
+      expect(options()).toHaveLength(17);
+    });
+    expect(field().getAttribute("aria-activedescendant")).toBe(
+      options()[8]?.id,
+    );
+    expect(field().value).toBe("red");
+  });
+
+  it("forgets the paint when the base changes, and goes back to it", async () => {
+    await ready();
+    await choose("moot green");
+    await vi.waitFor(() => {
+      expect(field().value).toBe("Moot Green");
+    });
+    const hex = query("input.cw-input", HTMLInputElement);
+    await userEvent.clear(hex);
+    await userEvent.type(hex, "#ff0000{Enter}");
+    await vi.waitFor(() => {
+      expect(field().value).toBe("");
+    });
+    const back = query(".paint-search-back button", HTMLButtonElement);
+    expect(back.textContent).toBe("Volver a Moot Green");
+    await userEvent.click(back);
+    await vi.waitFor(() => {
+      expect(field().value).toBe("Moot Green");
+    });
+  });
+
+  it("keeps the chosen paint for the next visit", async () => {
+    await ready();
+    await choose("lothern");
+    await vi.waitFor(() => {
+      expect(localStorage.getItem(STORAGE_KEY)).toContain(
+        "citadel/layer/lothern-blue",
+      );
+    });
+    root?.unmount();
+    container.remove();
+    await ready();
+    await vi.waitFor(() => {
+      expect(field().value).toBe("Lothern Blue");
+    });
   });
 });
 

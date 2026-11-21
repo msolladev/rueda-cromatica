@@ -1,5 +1,9 @@
 import { readFileSync } from "node:fs";
-import { buildPaintIndex, parseCatalog } from "@chromatic-wheel/domain";
+import {
+  buildPaintIndex,
+  paintIdSchema,
+  parseCatalog,
+} from "@chromatic-wheel/domain";
 import { describe, expect, it } from "vitest";
 import { DEFAULT_PREFERENCES, OVERALL } from "../../app/state.ts";
 import { searchColor } from "./search.ts";
@@ -108,5 +112,23 @@ describe("searchColor", () => {
       "Tesseract Glow",
       "Hexwraith Flame",
     ]);
+  });
+
+  it("puts the chosen paint first in its brand and marks it", () => {
+    const results = searchColor(
+      catalog,
+      index,
+      base,
+      DEFAULT_PREFERENCES.filters,
+      three,
+      paintIdSchema.parse("vallejo/game-color/hammered-copper"),
+    );
+    const vallejo = results.byBrand.find(
+      (brand) => brand.brandId === "vallejo",
+    );
+    expect(vallejo?.paints[0]?.name).toBe("Hammered Copper");
+    expect(vallejo?.paints[0]?.chosen).toBe(true);
+    expect(results.overall[0]?.name).toBe("Hammered Copper");
+    expect(vallejo?.paints.slice(1).some((paint) => paint.chosen)).toBe(false);
   });
 });

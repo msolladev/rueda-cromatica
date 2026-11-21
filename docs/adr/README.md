@@ -34,6 +34,7 @@ Cada fichero recoge una decisión relevante: su contexto, la decisión tomada, l
 | [0026](0026-preproduccion-homelab.md)                | Preproducción en el homelab                                          | aceptada; corregida en parte por ADR-0028            |
 | [0027](0027-lenguas-cooficiales-espana.md)           | Las lenguas cooficiales de España                                    | aceptada                                             |
 | [0028](0028-produccion-homelab.md)                   | Producción en el homelab                                             | aceptada                                             |
+| [0029](0029-buscador-pinturas-mvp.md)                | Buscador de pinturas en el MVP                                       | aceptada                                             |
 
 ## Normas
 

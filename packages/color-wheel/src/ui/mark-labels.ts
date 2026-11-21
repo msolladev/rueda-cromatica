@@ -4,6 +4,7 @@
 // or every color of a monochromatic harmony) never overlap. Pure functions;
 // the component measures the names and moves their elements.
 
+import { normalizeHue } from "../color/rgb.ts";
 import { pointAt, type Point } from "./geometry.ts";
 
 /** A name to place: the hue of its mark and the size of its box, in pixels. */
@@ -34,7 +35,7 @@ function meanHue(hues: readonly number[]): number {
     y += Math.cos(angle);
   }
   const mean = (Math.atan2(x, y) * 180) / Math.PI;
-  return (mean + 360) % 360;
+  return normalizeHue(mean);
 }
 
 function group(

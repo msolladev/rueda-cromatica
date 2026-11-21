@@ -20,6 +20,12 @@ export const WHEEL_SCALE = 0.94;
 
 export interface DrawInput {
   readonly model: Model;
+  /**
+   * The ring of the previous model, drawn over the new one with this
+   * opacity while the model changes (docs/05 §6.2).
+   */
+  readonly previous?:
+    { readonly model: Model; readonly opacity: number } | undefined;
   readonly position: WheelColor;
   /**
    * The hue of each mark of the template, the base first. While the
@@ -53,6 +59,11 @@ export function drawWheel(
   const px = input.pixelRatio / radius;
 
   drawRing(context, input.model);
+  if (input.previous !== undefined && input.previous.opacity > 0) {
+    context.globalAlpha = input.previous.opacity;
+    drawRing(context, input.previous.model);
+    context.globalAlpha = 1;
+  }
   drawTriangle(context, input.model, input.position.hue);
   drawTemplate(context, input.template, px, input.highlight);
   drawBase(context, input.position, px);

@@ -47,6 +47,15 @@ export interface WheelPreferences {
   readonly light: Light;
 }
 
+/**
+ * The paint the base was chosen from in the search (docs/07 §15), with its
+ * hex: the base is that paint while the wheel's color is that hex.
+ */
+export interface ChosenPaint {
+  readonly id: string;
+  readonly hex: string;
+}
+
 /** What is kept between visits (docs/07 §6). */
 export interface Preferences {
   readonly filters: Filters;
@@ -57,6 +66,8 @@ export interface Preferences {
   readonly installDismissed: boolean;
   /** `null` until the wheel changes for the first time. */
   readonly wheel: WheelPreferences | null;
+  /** The paint the base comes from, while it is the base. */
+  readonly paint: ChosenPaint | null;
 }
 
 export interface ScreenState {
@@ -72,6 +83,11 @@ export interface ScreenState {
   readonly tab: number;
   /** Results asked for with «See more», by brand ID or {@link OVERALL}. */
   readonly more: Readonly<Record<string, number>>;
+  /**
+   * The paint the base came from until the wheel moved, for «Back to…»
+   * (docs/07 §15). Only for this visit.
+   */
+  readonly previousPaint: ChosenPaint | null;
 }
 
 export type Action =
@@ -88,6 +104,10 @@ export type Action =
   | { readonly type: "show-less"; readonly key: string }
   | { readonly type: "colors-changed"; readonly count: number }
   | { readonly type: "wheel-changed"; readonly wheel: WheelPreferences }
+  /** A paint of the search becomes the base; the wheel is told apart. */
+  | { readonly type: "choose-paint"; readonly paint: ChosenPaint }
+  /** The search is emptied: the base stays, but no longer as a paint. */
+  | { readonly type: "clear-paint" }
   | { readonly type: "set-theme"; readonly theme: Theme }
   | { readonly type: "set-locale"; readonly locale: Locale }
   | { readonly type: "dismiss-install" };
@@ -104,6 +124,7 @@ export const DEFAULT_PREFERENCES: Preferences = Object.freeze({
   locale: null,
   installDismissed: false,
   wheel: null,
+  paint: null,
 });
 
 export const INITIAL_STATE: ScreenState = Object.freeze({
@@ -112,6 +133,7 @@ export const INITIAL_STATE: ScreenState = Object.freeze({
   restoredWheel: null,
   tab: 0,
   more: Object.freeze({}),
+  previousPaint: null,
 });
 
 /** How many results to show for a key of «See more». */
@@ -202,8 +224,37 @@ export function reduce(state: ScreenState, action: Action): ScreenState {
         ? state
         : { ...state, tab, more: NO_MORE };
     }
-    case "wheel-changed":
-      return { ...state, preferences: { ...preferences, wheel: action.wheel } };
+    case "wheel-changed": {
+      // The base moved away from the chosen paint: «Back to…» remembers it.
+      const { paint } = preferences;
+      const moved =
+        paint !== null &&
+        action.wheel.color.toLowerCase() !== paint.hex.toLowerCase();
+      return {
+        ...state,
+        preferences: {
+          ...preferences,
+          wheel: action.wheel,
+          paint: moved ? null : paint,
+        },
+        previousPaint: moved ? paint : state.previousPaint,
+      };
+    }
+    case "choose-paint":
+      // docs/07 §15: the base tab, where the paint is the first of its brand.
+      return {
+        ...state,
+        preferences: { ...preferences, paint: action.paint },
+        previousPaint: null,
+        tab: 0,
+        more: NO_MORE,
+      };
+    case "clear-paint":
+      return {
+        ...state,
+        preferences: { ...preferences, paint: null },
+        previousPaint: null,
+      };
     case "set-theme":
       return { ...state, preferences: { ...preferences, theme: action.theme } };
     case "set-locale":

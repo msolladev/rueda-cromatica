@@ -6,6 +6,7 @@ import {
   useState,
   type RefObject,
 } from "react";
+import { prefersReducedMotion } from "../../app/motion.ts";
 
 /**
  * Which rows move in or out with an animation (docs/07 §1): every row of the
@@ -25,12 +26,15 @@ const ENTRANCE_MS = 700;
 export const LEAVE_MS = 260;
 
 /** The current entrance, if any, and how to start one. */
-export function useEntrance(): {
+export interface EntranceControl {
   readonly entrance: Entrance | null;
   readonly start: (entrance: Entrance) => void;
   /** Makes rows leave, then calls `then`, which removes them. */
   readonly leave: (key: string, from: number, then: () => void) => void;
-} {
+}
+
+/** The current entrance, if any, and how to start one. */
+export function useEntrance(): EntranceControl {
   const [entrance, setEntrance] = useState<Entrance | null>(null);
   const timer = useRef<ReturnType<typeof setTimeout>>(undefined);
   useEffect(
@@ -48,7 +52,7 @@ export function useEntrance(): {
   }, []);
   const leave = useCallback((key: string, from: number, then: () => void) => {
     clearTimeout(timer.current);
-    if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    if (prefersReducedMotion()) {
       setEntrance(null);
       then();
       return;
@@ -111,7 +115,7 @@ export function useListHeight(
       entrance === null ||
       entrance.kind === "panel" ||
       entrance.key !== key ||
-      matchMedia("(prefers-reduced-motion: reduce)").matches
+      prefersReducedMotion()
     ) {
       return;
     }

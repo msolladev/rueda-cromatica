@@ -77,6 +77,7 @@ export const fr: Messages = {
     exactColor: "Exacte",
     metallic: "Métallique",
     discontinued: "Abandonnée",
+    chosen: "Choisie",
   },
   filters: {
     title: "Filtres",
@@ -90,6 +91,21 @@ export const fr: Messages = {
     moreTypes: "opaques et {count} types de plus",
     withoutDiscontinued: "sans les abandonnées",
     withDiscontinued: "avec les abandonnées",
+  },
+  search: {
+    label: "Partez d'une peinture que vous avez",
+    hint: "Au moins {min} lettres du nom, du code ou de la marque.",
+    paints: "Peintures",
+    noMatches: "Aucune peinture ne correspond à votre saisie.",
+    seeMore: "Voir plus de peintures ({shown} sur {total})",
+    count: "Peintures : {shown} sur {total}.",
+    clear: "Effacer la peinture",
+    back: "Revenir à {name}",
+    chosen: "Base : {name}, {brand} {range}.",
+    typeMetallic: "{type}, métallique",
+    rybNotice:
+      "La roue RYB n'atteint pas cette couleur : elle utilise la plus proche (ΔE {deltaE}).",
+    useDigital: "Utiliser la roue numérique",
   },
   paintTypes: {
     base: "Base",

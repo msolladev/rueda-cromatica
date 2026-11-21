@@ -68,6 +68,20 @@ export function localeOfSlug(slug: string): Locale | undefined {
 }
 
 /** Replaces each `{name}` of `template` with its value. */
+/** What separates the parts of a line: «Vallejo · Game Color · 72.059». */
+export const SEPARATOR = " · ";
+
+/**
+ * A ΔE as the web writes it everywhere: with one decimal, in the page's
+ * language («7,6» in Spanish, «7.6» in English).
+ */
+export function formatDeltaE(deltaE: number, locale: string): string {
+  return new Intl.NumberFormat(locale, {
+    minimumFractionDigits: 1,
+    maximumFractionDigits: 1,
+  }).format(deltaE);
+}
+
 export function format(
   template: string,
   values: Readonly<Record<string, string | number>>,

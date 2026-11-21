@@ -73,6 +73,8 @@ export interface Messages {
     readonly exactColor: string;
     readonly metallic: string;
     readonly discontinued: string;
+    /** The chip of the paint chosen in the search (docs/07 §15). */
+    readonly chosen: string;
   };
   readonly filters: {
     readonly title: string;
@@ -88,6 +90,30 @@ export interface Messages {
     readonly moreTypes: string;
     readonly withoutDiscontinued: string;
     readonly withDiscontinued: string;
+  };
+  /** The paint search above the wheel (docs/07 §15). */
+  readonly search: {
+    readonly label: string;
+    /** Always visible under the label: what can be written, with `{min}`. */
+    readonly hint: string;
+    /** Accessible name of the list of suggestions. */
+    readonly paints: string;
+    readonly noMatches: string;
+    /** The last suggestion, which shows more: `{shown}` and `{total}`. */
+    readonly seeMore: string;
+    /** Announced after each search: `{shown}` and `{total}`. */
+    readonly count: string;
+    /** Accessible name of the button that empties the field. */
+    readonly clear: string;
+    /** «Back to {name}», after the wheel moved away from the paint. */
+    readonly back: string;
+    /** Announced when a paint becomes the base. */
+    readonly chosen: string;
+    /** The type of a metallic paint in a suggestion: «{type}, metallic». */
+    readonly typeMetallic: string;
+    /** The RYB wheel does not reach the paint: `{deltaE}`. */
+    readonly rybNotice: string;
+    readonly useDigital: string;
   };
   readonly paintTypes: Readonly<Record<PaintType, string>>;
   readonly quality: Readonly<Record<MatchQuality, string>>;

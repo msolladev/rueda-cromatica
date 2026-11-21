@@ -3,15 +3,8 @@
  */
 import { converter, formatHex } from "culori";
 
-const HEX = /^#[0-9a-f]{6}$/i;
-
 const toLab = converter("lab65");
 const toRgb = converter("rgb");
-
-/** Lowercase `#rrggbb`, or `null` if the text is not a 6-digit hex. */
-export function normalizeHex(text: string): string | null {
-  return HEX.test(text) ? text.toLowerCase() : null;
-}
 
 /**
  * Midpoint of a two-colour gradient in CIELAB (D65 white). If it falls outside

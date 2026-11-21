@@ -73,6 +73,19 @@ describe("parsePreferences", () => {
     expect(parsePreferences(value)).toBeNull();
   });
 
+  it("keeps the chosen paint, and forgets one that is missing or not valid", () => {
+    const paint = { id: "citadel/layer/lothern-blue", hex: "#2c9bcc" };
+    expect(parsePreferences({ ...valid, paint })?.paint).toEqual(paint);
+    // Saved before the search existed.
+    const before = Object.fromEntries(
+      Object.entries(valid).filter(([key]) => key !== "paint"),
+    );
+    expect(parsePreferences(before)?.paint).toBeNull();
+    expect(
+      parsePreferences({ ...valid, paint: { id: "x", hex: "blue" } })?.paint,
+    ).toBeNull();
+  });
+
   it("drops an added type that is a default candidate", () => {
     const parsed = parsePreferences({
       ...valid,

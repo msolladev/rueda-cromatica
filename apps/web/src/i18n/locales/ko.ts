@@ -73,6 +73,7 @@ export const ko: Messages = {
     exactColor: "정확함",
     metallic: "메탈릭",
     discontinued: "단종",
+    chosen: "선택됨",
   },
   filters: {
     title: "필터",
@@ -86,6 +87,21 @@ export const ko: Messages = {
     moreTypes: "불투명과 종류 {count}개 더",
     withoutDiscontinued: "단종 제외",
     withDiscontinued: "단종 포함",
+  },
+  search: {
+    label: "가지고 있는 물감에서 시작하기",
+    hint: "이름, 품번 또는 브랜드를 {min}글자 이상 입력하세요.",
+    paints: "물감",
+    noMatches: "입력과 일치하는 물감이 없습니다.",
+    seeMore: "물감 더 보기 ({total}개 중 {shown}개)",
+    count: "물감: {total}개 중 {shown}개.",
+    clear: "물감 지우기",
+    back: "{name}(으)로 돌아가기",
+    chosen: "기본색: {name}, {brand} {range}.",
+    typeMetallic: "{type}, 메탈릭",
+    rybNotice:
+      "RYB 색상환으로는 이 색에 닿을 수 없어 가장 가까운 색을 사용합니다(ΔE {deltaE}).",
+    useDigital: "디지털 색상환 사용",
   },
   paintTypes: {
     base: "베이스",
