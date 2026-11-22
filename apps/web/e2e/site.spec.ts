@@ -412,6 +412,7 @@ test("on a phone, the official equivalences of a paint lead to another and back"
   await expect(official.locator(".paint-name")).toHaveText([
     "Light Green",
     "Leafy Green",
+    "Snake Scales",
     "Scorpy Green",
   ]);
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBe(
@@ -423,6 +424,40 @@ test("on a phone, the official equivalences of a paint lead to another and back"
   await expect(field).toHaveValue("Scorpy Green");
   await page.getByRole("button", { name: "Volver a Moot Green" }).tap();
   await expect(field).toHaveValue("Moot Green");
+  await context.close();
+});
+
+test("on a phone, a discontinued paint says so, and whether it has a replacement", async ({
+  browser,
+}) => {
+  const context = await browser.newContext({
+    viewport: { width: 360, height: 740 },
+    hasTouch: true,
+    isMobile: true,
+  });
+  const page = await context.newPage();
+  await page.goto("/es/");
+  const field = page.getByRole("combobox", {
+    name: "Empieza por una pintura que tengas",
+  });
+  await expect(field).toBeEnabled();
+  await field.fill("necromancer cloak");
+  const option = page.getByRole("option", { name: /Necromancer Cloak/ });
+  await expect(option).toContainText("Descatalogada");
+  await option.tap();
+  await expect(field).toHaveValue("Necromancer Cloak");
+  const official = page.getByRole("region", {
+    name: "Equivalencias oficiales",
+  });
+  await expect(official.locator("h5").first()).toHaveText(
+    "Necromancer Cloak se sustituye por",
+  );
+  await expect(official).toContainText(
+    "Ningún documento del fabricante nombra una sustituta de Necromancer Cloak.",
+  );
+  expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBe(
+    360,
+  );
   await context.close();
 });
 

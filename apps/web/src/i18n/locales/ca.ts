@@ -82,6 +82,13 @@ export const ca: Messages = {
     incoming: "{name} es proposa per a",
     noneOutgoing: "Cap document proposa una altra pintura per a {name}.",
     noneIncoming: "Cap document proposa {name} per a una altra pintura.",
+    replacement: "{name} se substitueix per",
+    noReplacement:
+      "Cap document del fabricant anomena una substituta de {name}.",
+    noColorUse:
+      "{name} no té color al catàleg. Fes servir una de les seves equivalències com a base de la roda.",
+    noColorNone:
+      "{name} no té color al catàleg ni equivalències publicades, així que la roda no es mou.",
     none: "Cap fabricant publica una equivalència per a {name} ({label}).",
     noneInDetails: "Cap fabricant la relaciona amb una altra pintura.",
     by: "Segons {publisher}, a {title}.",
@@ -113,6 +120,11 @@ export const ca: Messages = {
     back: "Torna a {name}",
     chosen: "Base: {name}, {brand} {range}.",
     typeMetallic: "{type}, metàl·lica",
+    noColor: "sense color",
+    standInReplacement:
+      "Es mostra {name}, la seva substituta segons {publisher}.",
+    standInEquivalence:
+      "Es mostra {name}, la seva equivalent segons {publisher}.",
     rybNotice:
       "La roda RYB no arriba a aquest color: fa servir el més semblant (ΔE {deltaE}).",
     useDigital: "Fes servir la roda digital",

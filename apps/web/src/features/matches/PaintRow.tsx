@@ -15,15 +15,16 @@ import {
 } from "./search.ts";
 
 /** Makes a paint the base of the wheel, as the paint search does. */
-export type UsePaint = (paint: {
-  readonly id: string;
-  readonly hex: string;
-}) => void;
+export type UsePaint = (paintId: string) => void;
 
 interface PaintRowProps {
   readonly paint: PaintView;
-  /** The color of the wheel, for the top half of the swatch. */
-  readonly target: string;
+  /**
+   * The color of the wheel, for the top half of the swatch; `null` when the
+   * paint is not measured against it, as the equivalences of a chosen paint
+   * without colour: then the swatch is whole (docs/07 §16).
+   */
+  readonly target: string | null;
   /** In «Closest overall» and in the official block, each paint says its brand. */
   readonly showBrand: boolean;
   /** Whether approximate paints carry the chip (docs/07 §3). */
@@ -84,8 +85,11 @@ export function PaintRow({
           : ({ "--enter": enter } as CSSProperties)
       }
     >
-      <span className="split" aria-hidden="true">
-        <span style={{ background: target }} />
+      <span
+        className={target === null ? "split split-whole" : "split"}
+        aria-hidden="true"
+      >
+        {target !== null && <span style={{ background: target }} />}
         {paint.hex === null ? (
           <span className="split-any" />
         ) : (
@@ -98,7 +102,6 @@ export function PaintRow({
           <UseAsBase
             id={paint.id}
             name={paint.name}
-            hex={paint.hex}
             onUse={onUse}
             messages={m}
           />
@@ -121,7 +124,7 @@ export function PaintRow({
           <span className="chip chip-chosen">{m.results.chosen}</span>
         )}
         {paint.discontinued && (
-          <span className="chip">{m.results.discontinued}</span>
+          <span className="chip chip-chosen">{m.results.discontinued}</span>
         )}
         {markApproximate && paint.reasons.length > 0 && (
           <span className="chip chip-approx">{m.approximate.chip}</span>
@@ -180,23 +183,21 @@ export function PaintRow({
 
 /**
  * The button that makes a paint the base (docs/07 §16): the wheel's icon,
- * its name in a tooltip, and the whole action in its accessible name. Not
- * for a paint without colour, which cannot be the base.
+ * its name in a tooltip, and the whole action in its accessible name. A
+ * paint without colour lends the wheel another's, as in the search (§15).
  */
 function UseAsBase({
   id,
   name,
-  hex,
   onUse,
   messages: m,
 }: {
   readonly id: string;
   readonly name: string;
-  readonly hex: string | null;
   readonly onUse: UsePaint | undefined;
   readonly messages: Messages;
 }): ReactNode {
-  if (hex === null || onUse === undefined) return null;
+  if (onUse === undefined) return null;
   return (
     <button
       type="button"
@@ -204,7 +205,7 @@ function UseAsBase({
       aria-label={format(m.official.use, { name })}
       data-tooltip={m.official.useShort}
       onClick={() => {
-        onUse({ id, hex });
+        onUse(id);
       }}
     >
       <WheelIcon />
@@ -264,7 +265,6 @@ function OfficialLinks({
                 <UseAsBase
                   id={link.id}
                   name={link.name}
-                  hex={link.hex}
                   onUse={onUse}
                   messages={m}
                 />
@@ -285,6 +285,10 @@ function OfficialLinks({
   };
   return (
     <>
+      {group(
+        "replacement",
+        format(m.official.replacement, { name: paint.name }),
+      )}
       {group("outgoing", format(m.official.outgoing, { name: paint.name }))}
       {group("incoming", format(m.official.incoming, { name: paint.name }))}
     </>

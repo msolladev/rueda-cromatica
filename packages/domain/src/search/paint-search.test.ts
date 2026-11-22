@@ -37,8 +37,22 @@ describe("searchPaints", () => {
   });
 
   it("ignores apostrophes and finds every word written, wherever it is", () => {
-    expect(names("tigers skin")).toEqual(["Tiger's Eye Skin"]);
-    expect(names("skin tiger's")).toEqual(["Tiger's Eye Skin"]);
+    expect(names("tigers skin")).toEqual([
+      "Tiger's Eye Skin",
+      "Tiger's Eye Skin",
+    ]);
+    expect(names("skin tiger's")).toEqual([
+      "Tiger's Eye Skin",
+      "Tiger's Eye Skin",
+    ]);
+  });
+
+  it("puts the active paints before the discontinued ones of their group", () => {
+    // Warpaints Fanatic is active; the original Warpaints, discontinued.
+    expect(ids("tigers skin")).toEqual([
+      "the-army-painter/warpaints-fanatic/tigers-eye-skin",
+      "the-army-painter/warpaints/tigers-eye-skin",
+    ]);
   });
 
   it("finds by the manufacturer code, without its separators", () => {
@@ -98,11 +112,13 @@ describe("searchPaints", () => {
     expect(vallejo?.highlights.brand).toEqual([{ start: 0, end: 7 }]);
   });
 
-  it("leaves out paints without colour", () => {
+  it("finds paints without colour too, because whoever has one can start from it", () => {
     const draft = realDraft();
     const paint = find(draft.paints, "citadel/layer/lothern-blue");
     paint.color = null;
     const without = buildPaintSearchIndex(catalogOf(draft));
-    expect(searchPaints(without, "lothern")).toEqual([]);
+    expect(
+      searchPaints(without, "lothern").map((hit) => hit.paint.color),
+    ).toEqual([null]);
   });
 });

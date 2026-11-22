@@ -83,6 +83,13 @@ export const es: Messages = {
     incoming: "{name} se propone para",
     noneOutgoing: "Ningún documento propone otra pintura para {name}.",
     noneIncoming: "Ningún documento propone {name} para otra pintura.",
+    replacement: "{name} se sustituye por",
+    noReplacement:
+      "Ningún documento del fabricante nombra una sustituta de {name}.",
+    noColorUse:
+      "{name} no tiene color en el catálogo. Usa una de sus equivalencias como base de la rueda.",
+    noColorNone:
+      "{name} no tiene color en el catálogo ni equivalencias publicadas, así que la rueda no se mueve.",
     none: "Ningún fabricante publica una equivalencia para {name} ({label}).",
     noneInDetails: "Ningún fabricante la relaciona con otra pintura.",
     by: "Según {publisher}, en {title}.",
@@ -114,6 +121,9 @@ export const es: Messages = {
     back: "Volver a {name}",
     chosen: "Base: {name}, {brand} {range}.",
     typeMetallic: "{type}, metálica",
+    noColor: "sin color",
+    standInReplacement: "Mostrando {name}, su sustituta según {publisher}.",
+    standInEquivalence: "Mostrando {name}, su equivalente según {publisher}.",
     rybNotice:
       "La rueda RYB no llega a este color: usa el más parecido (ΔE {deltaE}).",
     useDigital: "Usar la rueda digital",

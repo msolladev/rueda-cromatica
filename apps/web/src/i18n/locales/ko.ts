@@ -84,6 +84,12 @@ export const ko: Messages = {
     incoming: "{name}이(가) 제안된 페인트",
     noneOutgoing: "{name}에 대해 다른 페인트를 제안한 문서가 없습니다.",
     noneIncoming: "{name}을(를) 다른 페인트에 대해 제안한 문서가 없습니다.",
+    replacement: "{name}의 대체품",
+    noReplacement: "{name}의 대체품을 밝힌 제조사 문서가 없습니다.",
+    noColorUse:
+      "{name}은(는) 카탈로그에 색이 없습니다. 대응 페인트 중 하나를 휠의 기준으로 사용하세요.",
+    noColorNone:
+      "{name}은(는) 카탈로그에 색도, 공개된 대응 페인트도 없어 휠이 움직이지 않습니다.",
     none: "{name}({label})의 대응을 공개한 제조사가 없습니다.",
     noneInDetails: "다른 페인트와 대응시킨 제조사가 없습니다.",
     by: "{publisher}에 따르면, {title}.",
@@ -115,6 +121,11 @@ export const ko: Messages = {
     back: "{name}(으)로 돌아가기",
     chosen: "기본색: {name}, {brand} {range}.",
     typeMetallic: "{type}, 메탈릭",
+    noColor: "색 없음",
+    standInReplacement:
+      "{name}을(를) 표시합니다. {publisher}에 따르면 대체품입니다.",
+    standInEquivalence:
+      "{name}을(를) 표시합니다. {publisher}에 따르면 대응 페인트입니다.",
     rybNotice:
       "RYB 색상환으로는 이 색에 닿을 수 없어 가장 가까운 색을 사용합니다(ΔE {deltaE}).",
     useDigital: "디지털 색상환 사용",

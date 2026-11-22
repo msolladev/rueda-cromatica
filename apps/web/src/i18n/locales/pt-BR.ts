@@ -86,6 +86,13 @@ export const ptBR: Messages = {
     incoming: "{name} é proposta para",
     noneOutgoing: "Nenhum documento propõe outra tinta para {name}.",
     noneIncoming: "Nenhum documento propõe {name} para outra tinta.",
+    replacement: "{name} é substituída por",
+    noReplacement:
+      "Nenhum documento do fabricante indica uma substituta para {name}.",
+    noColorUse:
+      "{name} não tem cor no catálogo. Use uma de suas equivalências como base da roda.",
+    noColorNone:
+      "{name} não tem cor no catálogo nem equivalências publicadas, então a roda não se move.",
     none: "Nenhum fabricante publica uma equivalência para {name} ({label}).",
     noneInDetails: "Nenhum fabricante a relaciona com outra tinta.",
     by: "Segundo {publisher}, em {title}.",
@@ -117,6 +124,10 @@ export const ptBR: Messages = {
     back: "Voltar para {name}",
     chosen: "Base: {name}, {brand} {range}.",
     typeMetallic: "{type}, metálica",
+    noColor: "sem cor",
+    standInReplacement: "Mostrando {name}, sua substituta segundo {publisher}.",
+    standInEquivalence:
+      "Mostrando {name}, sua equivalente segundo {publisher}.",
     rybNotice:
       "A roda RYB não alcança esta cor: usa a mais parecida (ΔE {deltaE}).",
     useDigital: "Usar a roda digital",

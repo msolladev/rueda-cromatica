@@ -6,6 +6,7 @@ import {
 } from "@chromatic-wheel/color-wheel";
 import {
   colorDifference,
+  colorStandIn,
   paintIdSchema,
   type Catalog,
   type Paint,
@@ -28,7 +29,7 @@ import { PaintSearch, type PaintChoice } from "../paint-search/PaintSearch.tsx";
 import { WheelView, type WheelHandle } from "../wheel/WheelView.tsx";
 import { useEntrance } from "./entrance.ts";
 import { Results, type PanelContent } from "./Results.tsx";
-import { searchColor, type ColorResults } from "./search.ts";
+import { searchColor, standInView, type ColorResults } from "./search.ts";
 
 interface HomeProps {
   readonly locale: Locale;
@@ -114,6 +115,14 @@ export function Home({
     if (paint === null || range === undefined) return null;
     return { paint, brand: ready.catalog.brandOf(paint), range };
   }, [ready, saved]);
+  // docs/07 §15: a paint without colour lends the wheel another's.
+  const standIn = useMemo(
+    () =>
+      ready === null || chosen === null
+        ? null
+        : standInView(ready.catalog, chosen.paint.id),
+    [ready, chosen],
+  );
   const previous = useMemo(
     () => (ready === null ? null : paintOf(ready.catalog, state.previousPaint)),
     [ready, state.previousPaint],
@@ -131,9 +140,25 @@ export function Home({
    * or from an official equivalence (docs/07 §15-16), which remembers the
    * paint it leaves.
    */
-  const choose = (paint: ChosenPaint, remember = false) => {
+  const chooseSaved = (paint: ChosenPaint, remember = false) => {
     dispatch({ type: "choose-paint", paint, remember });
     wheel.current?.update({ color: paint.hex });
+  };
+  /**
+   * A paint by its ID, with the colour the wheel takes: its own; without one,
+   * that of its replacement or of its only equivalent; and otherwise the
+   * wheel's, which does not move (docs/07 §15).
+   */
+  const choose = (paintId: string, remember = false) => {
+    const id = paintIdSchema.safeParse(paintId);
+    const paint =
+      ready !== null && id.success ? ready.catalog.paint(id.data) : undefined;
+    if (ready === null || paint === undefined) return;
+    const hex =
+      paint.color?.hex ??
+      colorStandIn(ready.catalog, paint.id)?.paint.color?.hex ??
+      base;
+    if (hex !== undefined) chooseSaved({ id: paint.id, hex }, remember);
   };
 
   const { more } = state;
@@ -197,19 +222,20 @@ export function Home({
           <PaintSearch
             index={hydrated && ready !== null ? ready.searchIndex : null}
             chosen={chosen}
+            standIn={standIn}
             previous={previous}
             rybDeltaE={rybDeltaE}
             messages={m}
             locale={locale}
             onChoose={(choice) => {
-              const hex = choice.paint.color?.hex;
-              if (hex !== undefined) choose({ id: choice.paint.id, hex });
+              choose(choice.paint.id);
             }}
             onClear={() => {
               dispatch({ type: "clear-paint" });
             }}
             onBack={() => {
-              if (state.previousPaint !== null) choose(state.previousPaint);
+              if (state.previousPaint !== null)
+                chooseSaved(state.previousPaint);
             }}
             onUseDigital={() => {
               wheel.current?.update({ model: "digital" });
@@ -257,8 +283,8 @@ export function Home({
             wheelLabels={wheelLabels}
             locale={locale}
             creditsPath={pathOf({ kind: "credits", locale })}
-            onUse={(paint) => {
-              choose(paint, true);
+            onUse={(paintId) => {
+              choose(paintId, true);
             }}
             onPreview={setPreview}
             rows={entrance}

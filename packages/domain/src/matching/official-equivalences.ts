@@ -1,12 +1,13 @@
 /**
  * Official equivalences seen from one paint (docs/06 §10, ADR-0033): what its
  * manufacturer says it is in other brands, and what other manufacturers say
- * is it. Each one with how far it is from a colour, as the closest paints, so
- * that the interface shows both with the same row without mixing them.
+ * is it, with the replacement of a discontinued paint (ADR-0005). Each one
+ * with how far it is from a colour, as the closest paints, so that the
+ * interface shows both with the same row without mixing them.
  */
 import { differenceCiede2000 } from "culori/fn";
 import type { Catalog } from "../catalog/catalog.ts";
-import { isColorApproximate } from "../catalog/rules.ts";
+import { isColorApproximate, resolveReplacement } from "../catalog/rules.ts";
 import {
   toHexColor,
   type Brand,
@@ -35,10 +36,10 @@ export interface OfficialMatch {
   readonly sources: readonly Source[];
   /**
    * ΔE CIEDE2000 between the colour and the paint, unrounded; `null` if the
-   * paint has no colour.
+   * paint or the colour is missing.
    */
   readonly deltaE2000: number | null;
-  /** The label of `deltaE2000`, or `null` if the paint has no colour. */
+  /** The label of `deltaE2000`, or `null` if it is `null`. */
   readonly quality: MatchQuality | null;
   /** Whether the paint's hex is approximate ({@link isColorApproximate}). */
   readonly approximate: boolean;
@@ -46,6 +47,11 @@ export interface OfficialMatch {
 
 /** The result of {@link findOfficialEquivalences}. */
 export interface OfficialEquivalences {
+  /**
+   * The paint that replaces a discontinued paint, according to its
+   * manufacturer (ADR-0005), with that document; `null` if it has none.
+   */
+  readonly replacement: OfficialMatch | null;
   /**
    * What the paint's manufacturer says it is in other ranges: the edges whose
    * origin is the paint, by destination in catalog order.
@@ -66,9 +72,11 @@ export interface OfficialEquivalences {
  * @param catalog - The catalog.
  * @param paintId - The paint, such as the one chosen in the paint search.
  * @param hex - The colour to measure each paint against, as `#rrggbb` in any
- *   case: the wheel's colour, the top half of each swatch.
- * @returns Both lists, empty if the paint has no official equivalences, or a
- *   {@link MatchingError} if `hex` is not `#rrggbb`.
+ *   case: the wheel's colour, the top half of each swatch. `null` when there
+ *   is none to measure against, such as a chosen paint without colour: then
+ *   no paint has a ΔE.
+ * @returns The replacement and both lists, empty if the paint has no official
+ *   equivalences, or a {@link MatchingError} if `hex` is not `#rrggbb`.
  * @throws Error if the paint is not in the catalog: a programming error.
  *
  * @example
@@ -84,14 +92,32 @@ export interface OfficialEquivalences {
 export function findOfficialEquivalences(
   catalog: Catalog,
   paintId: PaintId,
-  hex: string,
+  hex: string | null,
 ): Result<OfficialEquivalences, MatchingError> {
-  if (catalog.paint(paintId) === undefined) {
+  const chosen = catalog.paint(paintId);
+  if (chosen === undefined) {
     throw new Error(`Paint ${paintId} is not in the catalog`);
   }
-  const color = toHexColor(hex);
-  if (color === null) return err({ kind: "invalid-color", color: hex });
-  const target = labOf(color);
+  const color = hex === null ? null : toHexColor(hex);
+  if (hex !== null && color === null) {
+    return err({ kind: "invalid-color", color: hex });
+  }
+  const target = color === null ? null : labOf(color);
+
+  const match = (paint: Paint, sources: readonly Source[]): OfficialMatch => {
+    const deltaE =
+      paint.color === null || target === null
+        ? null
+        : deltaE2000(target, labOf(paint.color.hex));
+    return Object.freeze({
+      paint,
+      brand: catalog.brandOf(paint),
+      sources: Object.freeze(sources),
+      deltaE2000: deltaE,
+      quality: deltaE === null ? null : matchQuality(deltaE),
+      approximate: isColorApproximate(paint),
+    });
+  };
 
   const matches = (
     edges: readonly OfficialEquivalence[],
@@ -111,26 +137,80 @@ export function findOfficialEquivalences(
       [...grouped].map(([id, sources]) => {
         const paint = catalog.paint(id);
         if (paint === undefined) throw new Error(`No paint ${id}`);
-        const deltaE =
-          paint.color === null
-            ? null
-            : deltaE2000(target, labOf(paint.color.hex));
-        return Object.freeze({
-          paint,
-          brand: catalog.brandOf(paint),
-          sources: Object.freeze(sources),
-          deltaE2000: deltaE,
-          quality: deltaE === null ? null : matchQuality(deltaE),
-          approximate: isColorApproximate(paint),
-        });
+        return match(paint, sources);
       }),
     );
   };
 
+  const { status } = chosen;
+  let replacement: OfficialMatch | null = null;
+  if (status.kind === "discontinued" && status.replacement !== null) {
+    const paint = catalog.paint(status.replacement.paintId);
+    const source = catalog.source(status.replacement.sourceId);
+    if (paint === undefined || source === undefined) {
+      throw new Error(`Broken replacement of ${paintId}`);
+    }
+    replacement = match(paint, [source]);
+  }
+
   return ok(
     Object.freeze({
+      replacement,
       outgoing: matches(catalog.officialEquivalencesFrom(paintId), (e) => e.to),
       incoming: matches(catalog.officialEquivalencesTo(paintId), (e) => e.from),
     }),
   );
+}
+
+/**
+ * The paint whose colour stands in for a paint without colour, when there is
+ * nothing to choose (docs/07 §15): the end of its replacement chain, or else
+ * its only officially equivalent paint, in either direction. `null` if it has
+ * a colour, or if there is none or more than one candidate, and also if the
+ * candidate has no colour either.
+ *
+ * @param catalog - The catalog.
+ * @param paintId - The paint chosen in the paint search.
+ * @returns The stand-in and why it was taken, or `null`.
+ * @throws Error if the paint is not in the catalog: a programming error.
+ *
+ * @example
+ * ```ts
+ * const standIn = colorStandIn(catalog, paint.id);
+ * if (standIn !== null) wheel.setBase(standIn.paint.color.hex);
+ * ```
+ */
+export function colorStandIn(
+  catalog: Catalog,
+  paintId: PaintId,
+): ColorStandIn | null {
+  const paint = catalog.paint(paintId);
+  if (paint === undefined) {
+    throw new Error(`Paint ${paintId} is not in the catalog`);
+  }
+  if (paint.color !== null) return null;
+  const replacement = resolveReplacement(catalog, paintId);
+  if (replacement !== null) {
+    return replacement.color === null
+      ? null
+      : Object.freeze({ paint: replacement, via: "replacement" });
+  }
+  const others = new Set<PaintId>([
+    ...catalog.officialEquivalencesFrom(paintId).map((e) => e.to),
+    ...catalog.officialEquivalencesTo(paintId).map((e) => e.from),
+  ]);
+  const [only] = others;
+  if (only === undefined || others.size > 1) return null;
+  const equivalent = catalog.paint(only);
+  return equivalent?.color == null
+    ? null
+    : Object.freeze({ paint: equivalent, via: "equivalence" });
+}
+
+/** The result of {@link colorStandIn}. */
+export interface ColorStandIn {
+  /** The paint whose colour is used. It always has a colour. */
+  readonly paint: Paint;
+  /** Whether it is the replacement or the only official equivalence. */
+  readonly via: "replacement" | "equivalence";
 }

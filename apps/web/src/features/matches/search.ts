@@ -1,12 +1,14 @@
 /**
  * What each color of the wheel shows (docs/07 §2): the search of `domain`
- * with the filters of the screen, and the official equivalences of the paint
- * chosen in the search (docs/07 §16), turned into plain data that the
- * components draw and the prerendering can embed in the page.
+ * with the filters of the screen, and the official equivalences and the
+ * replacement of the paint chosen in the search (docs/07 §16), turned into
+ * plain data that the components draw and the prerendering can embed in the
+ * page.
  */
 import type { Role } from "@chromatic-wheel/color-wheel";
 import {
   colorApproximationReasons,
+  colorStandIn,
   DEFAULT_PAINT_TYPES,
   findClosestPaints,
   findOfficialEquivalences,
@@ -32,14 +34,17 @@ export interface SourceView {
   readonly title: string;
 }
 
-/** An official equivalence of a paint, as its «Details» list it. */
+/** An official equivalence or the replacement of a paint, as its «Details» list it. */
 export interface EquivalenceLink {
-  /** `outgoing`: the paint's manufacturer states it; `incoming`: another. */
-  readonly direction: "outgoing" | "incoming";
+  /**
+   * `replacement`: the paint that replaces it (ADR-0005); `outgoing`: the
+   * paint's manufacturer states it; `incoming`: another.
+   */
+  readonly direction: "replacement" | "outgoing" | "incoming";
   /** The other paint. */
   readonly id: string;
   readonly name: string;
-  /** `null` if it has no colour, so it cannot be the base. */
+  /** `null` if it has no colour. */
   readonly hex: string | null;
   readonly brandName: string;
   readonly rangeName: string;
@@ -71,7 +76,7 @@ export interface PaintView {
   readonly sourceName: string | null;
   /** The paint chosen in the search, first whatever its ΔE (docs/07 §15). */
   readonly chosen: boolean;
-  /** Its official equivalences, outgoing first (docs/07 §2). */
+  /** Its replacement and its official equivalences, in that order (docs/07 §2). */
   readonly official: readonly EquivalenceLink[];
 }
 
@@ -81,12 +86,32 @@ export interface OfficialRow {
   readonly sources: readonly SourceView[];
 }
 
-/** The official equivalences of the chosen paint (docs/07 §16). */
+/**
+ * The paint whose colour the wheel takes for a chosen paint without colour
+ * (docs/07 §15), with the document that relates them.
+ */
+export interface StandInView {
+  readonly name: string;
+  readonly via: "replacement" | "equivalence";
+  readonly publisher: string;
+}
+
+/** The official equivalences and the replacement of the chosen paint (docs/07 §16). */
 export interface OfficialResults {
   readonly name: string;
   readonly brandName: string;
   /** «Brand · Range · code», as the search shows a paint. */
   readonly label: string;
+  /** Whether it is discontinued: then the block has the replacement group. */
+  readonly discontinued: boolean;
+  /**
+   * Whether it has no colour: its rows are not measured against the wheel,
+   * whose colour is not the paint's.
+   */
+  readonly colorless: boolean;
+  /** For a paint without colour, the one whose colour the wheel takes. */
+  readonly standIn: StandInView | null;
+  readonly replacement: OfficialRow | null;
   readonly outgoing: readonly OfficialRow[];
   readonly incoming: readonly OfficialRow[];
 }
@@ -144,12 +169,8 @@ function paintView(
   chosen = false,
 ): PaintView {
   const color = paint.color;
-  // The colour of a paint is its own; its links only need the other paints.
-  const found = findOfficialEquivalences(
-    catalog,
-    paint.id,
-    color?.hex ?? "#000000",
-  );
+  // Its links only need the other paints, not how far they are.
+  const found = findOfficialEquivalences(catalog, paint.id, null);
   if (!found.ok) throw new Error(`Search failed: ${found.error.kind}`);
   const link =
     (direction: EquivalenceLink["direction"]) =>
@@ -181,13 +202,46 @@ function paintView(
       color === null ? null : (catalog.source(color.sourceId)?.publisher ?? ""),
     chosen,
     official: [
+      ...(found.value.replacement === null
+        ? []
+        : [link("replacement")(found.value.replacement)]),
       ...found.value.outgoing.map(link("outgoing")),
       ...found.value.incoming.map(link("incoming")),
     ],
   };
 }
 
-/** The official equivalences of a paint, measured against the wheel's color. */
+/**
+ * The paint whose colour the wheel takes for a paint without colour, with the
+ * document that relates them: the first link of the replacement chain, or the
+ * equivalence (docs/07 §15). `null` if there is nothing to take.
+ */
+export function standInView(
+  catalog: Catalog,
+  paintId: PaintId,
+): StandInView | null {
+  const standIn = colorStandIn(catalog, paintId);
+  if (standIn === null) return null;
+  const found = findOfficialEquivalences(catalog, paintId, null);
+  if (!found.ok) throw new Error(`Search failed: ${found.error.kind}`);
+  const { replacement, outgoing, incoming } = found.value;
+  const related =
+    standIn.via === "replacement"
+      ? replacement
+      : [...outgoing, ...incoming].find(
+          (match) => match.paint.id === standIn.paint.id,
+        );
+  return {
+    name: standIn.paint.name,
+    via: standIn.via,
+    publisher: related?.sources[0]?.publisher ?? "",
+  };
+}
+
+/**
+ * The official equivalences and the replacement of a paint, measured against
+ * the wheel's color if the paint has a colour of its own.
+ */
 function officialResults(
   catalog: Catalog,
   paintId: PaintId,
@@ -195,13 +249,19 @@ function officialResults(
 ): OfficialResults | null {
   const paint = catalog.paint(paintId);
   if (paint === undefined) return null;
-  const found = findOfficialEquivalences(catalog, paintId, hex);
+  const colorless = paint.color === null;
+  const found = findOfficialEquivalences(
+    catalog,
+    paintId,
+    colorless ? null : hex,
+  );
   if (!found.ok) throw new Error(`Search failed: ${found.error.kind}`);
   const row = (match: OfficialMatch): OfficialRow => ({
     paint: paintView(catalog, match),
     sources: match.sources.map(sourceView),
   });
   const brandName = catalog.brandOf(paint).name;
+  const { replacement, outgoing, incoming } = found.value;
   return {
     name: paint.name,
     brandName,
@@ -210,8 +270,12 @@ function officialResults(
       rangeName: catalog.range(paint.rangeId)?.name ?? "",
       code: paint.manufacturerCode,
     }),
-    outgoing: found.value.outgoing.map(row),
-    incoming: found.value.incoming.map(row),
+    discontinued: paint.status.kind === "discontinued",
+    colorless,
+    standIn: standInView(catalog, paintId),
+    replacement: replacement === null ? null : row(replacement),
+    outgoing: outgoing.map(row),
+    incoming: incoming.map(row),
   };
 }
 
@@ -239,7 +303,12 @@ export function searchColor(
     includeMetallic: filters.includeMetallic,
     includeDiscontinued: filters.includeDiscontinued,
     limit,
-    pinnedPaintId: chosenPaintId,
+    // A paint without colour cannot be among the closest.
+    pinnedPaintId:
+      chosenPaintId === undefined ||
+      (catalog.paint(chosenPaintId)?.color ?? null) === null
+        ? undefined
+        : chosenPaintId,
   });
   // The wheel only gives `#rrggbb` and the limits are positive integers.
   if (!found.ok) throw new Error(`Search failed: ${found.error.kind}`);

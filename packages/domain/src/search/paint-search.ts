@@ -48,7 +48,7 @@ export interface PaintSearchHighlights {
 
 /** A paint found by {@link searchPaints}. */
 export interface PaintSearchHit {
-  /** The paint. It always has a colour. */
+  /** The paint, with or without colour. */
   readonly paint: Paint;
   /** Its brand. */
   readonly brand: Brand;
@@ -115,8 +115,9 @@ function fold(text: string, code = false): Folded {
 const foldText = (text: string): string => fold(text).text;
 
 /**
- * Builds the search index of a catalog: every paint with a colour, the
- * discontinued ones included, because whoever has one can start from it.
+ * Builds the search index of a catalog: every paint, the discontinued ones
+ * and those without colour included, because whoever has one can start from
+ * it (docs/06 §9).
  * Build it once per catalog and reuse it in every search.
  */
 export function buildPaintSearchIndex(catalog: Catalog): PaintSearchIndex {
@@ -124,7 +125,7 @@ export function buildPaintSearchIndex(catalog: Catalog): PaintSearchIndex {
     .paints({ brandIds: "all", includeDiscontinued: true })
     .flatMap((paint): SearchEntry[] => {
       const range = catalog.range(paint.rangeId);
-      if (paint.color === null || range === undefined) return [];
+      if (range === undefined) return [];
       const brand = catalog.brandOf(paint);
       return [
         {
@@ -239,9 +240,10 @@ function highlight(text: Folded, words: readonly string[]): TextRange[] {
   return merged;
 }
 
-// Within a tier: by name, brand, range and ID, by code unit and without
-// locale, as docs/02 sorts.
+// Within a tier: the active paints first, then by name, brand, range and ID,
+// by code unit and without locale, as docs/02 sorts.
 const sortKey = ({ name, brandName, rangeName, paint }: SearchEntry) => [
+  paint.status.kind === "active" ? "0" : "1",
   name.text,
   brandName.text,
   rangeName.text,
@@ -257,8 +259,9 @@ const sortKey = ({ name, brandName, rangeName, paint }: SearchEntry) => [
  * The order (docs/06 §9.2): first the paints whose name or code is what was
  * written, then those that start with it, those where every word starts a
  * word of the name, those where every word is inside the name, and last those
- * found only by brand, range or code. Within each group, by name, brand,
- * range and ID. The result is frozen.
+ * found only by brand, range or code. Within each group, the active paints
+ * before the discontinued ones, then by name, brand, range and ID. The
+ * result is frozen.
  *
  * @param index - The index of the catalog, from {@link buildPaintSearchIndex}.
  * @param query - What was written.

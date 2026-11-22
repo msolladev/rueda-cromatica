@@ -88,6 +88,15 @@ export interface Messages {
     readonly incoming: string;
     readonly noneOutgoing: string;
     readonly noneIncoming: string;
+    /** «{name} se sustituye por»: the replacement of a discontinued paint. */
+    readonly replacement: string;
+    readonly noReplacement: string;
+    /**
+     * Instead of the closest paints, for a chosen paint without colour that
+     * has equivalences to use as the base, or none.
+     */
+    readonly noColorUse: string;
+    readonly noColorNone: string;
     /** «… para {name} ({label})», when the chosen paint has none. */
     readonly none: string;
     /** In «Details», when the paint has none. */
@@ -136,6 +145,14 @@ export interface Messages {
     readonly chosen: string;
     /** The type of a metallic paint in a suggestion: «{type}, metallic». */
     readonly typeMetallic: string;
+    /** For the screen reader, beside a paint without colour. */
+    readonly noColor: string;
+    /**
+     * Under a chosen paint without colour: whose colour the wheel shows,
+     * `{name}`, and who relates them, `{publisher}`.
+     */
+    readonly standInReplacement: string;
+    readonly standInEquivalence: string;
     /** The RYB wheel does not reach the paint: `{deltaE}`. */
     readonly rybNotice: string;
     readonly useDigital: string;

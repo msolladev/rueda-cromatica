@@ -8,7 +8,10 @@ import {
   validDraft,
 } from "../catalog/fixtures.ts";
 import { realCatalog } from "./fixtures.ts";
-import { findOfficialEquivalences } from "./official-equivalences.ts";
+import {
+  colorStandIn,
+  findOfficialEquivalences,
+} from "./official-equivalences.ts";
 
 function found(...args: Parameters<typeof findOfficialEquivalences>) {
   const result = findOfficialEquivalences(...args);
@@ -42,7 +45,14 @@ describe("findOfficialEquivalences (docs/06 §10)", () => {
         3.9,
         "similar",
       ],
+      [
+        "the-army-painter/warpaints/matt-black",
+        ["the-army-painter-warpaints-conversion-chart"],
+        0,
+        "near-identical",
+      ],
     ]);
+    expect(black.replacement).toBeNull();
     expect(black.outgoing[0]?.brand.id).toBe("citadel");
     expect(black.outgoing[0]?.approximate).toBe(true);
   });
@@ -58,6 +68,7 @@ describe("findOfficialEquivalences (docs/06 §10)", () => {
     expect(abaddon.incoming.map((m) => m.paint.id)).toEqual([
       "ak-interactive/3gen-acrylics/black",
       "the-army-painter/warpaints-fanatic/matt-black",
+      "the-army-painter/warpaints/matt-black",
       "vallejo/game-color/black",
     ]);
     // Matt Black → Abaddon Black and Abaddon Black ← 72.051 say nothing of
@@ -69,6 +80,7 @@ describe("findOfficialEquivalences (docs/06 §10)", () => {
     );
     expect(matt.outgoing.map((m) => m.paint.id)).toEqual([
       "citadel/base/abaddon-black",
+      "the-army-painter/warpaints/matt-black",
     ]);
     expect(matt.incoming).toEqual([]);
   });
@@ -120,5 +132,65 @@ describe("findOfficialEquivalences (docs/06 §10)", () => {
     expect(() =>
       findOfficialEquivalences(catalog, paintId("acme/core/nope"), "#000000"),
     ).toThrow("Paint acme/core/nope is not in the catalog");
+  });
+
+  it("gives the replacement of a discontinued paint, without a colour to measure", () => {
+    // Old Red has no colour; Deep Red replaces it.
+    const oldRed = found(
+      catalogOf(validDraft()),
+      paintId("acme/classic/old-red"),
+      null,
+    );
+    expect(oldRed.replacement).toMatchObject({
+      paint: { id: "acme/core/deep-red" },
+      sources: [{ id: "acme-conversion-chart" }],
+      deltaE2000: null,
+      quality: null,
+    });
+  });
+});
+
+describe("colorStandIn (docs/07 §15)", () => {
+  const oldRed = paintId("acme/classic/old-red");
+
+  it("takes the replacement of a paint without colour", () => {
+    expect(colorStandIn(catalogOf(validDraft()), oldRed)).toMatchObject({
+      paint: { id: "acme/core/deep-red" },
+      via: "replacement",
+    });
+  });
+
+  it("takes its only equivalent paint when it has no replacement", () => {
+    const draft = validDraft();
+    const paint = find(draft.paints, "acme/classic/old-red");
+    paint.status = { kind: "discontinued", replacement: null };
+    insertEdges(draft.equivalences, {
+      from: "globex/standard/crimson",
+      to: "acme/classic/old-red",
+      sourceId: "acme-conversion-chart",
+    });
+    expect(colorStandIn(catalogOf(draft), oldRed)).toMatchObject({
+      paint: { id: "globex/standard/crimson" },
+      via: "equivalence",
+    });
+    // With a second equivalent paint there is nothing to take.
+    insertEdges(draft.equivalences, {
+      from: "acme/classic/old-red",
+      to: "acme/core/deep-red",
+      sourceId: "acme-conversion-chart",
+    });
+    expect(colorStandIn(catalogOf(draft), oldRed)).toBeNull();
+  });
+
+  it("takes nothing for a paint with colour, or without any candidate", () => {
+    const draft = validDraft();
+    expect(
+      colorStandIn(catalogOf(draft), paintId("acme/core/deep-red")),
+    ).toBeNull();
+    find(draft.paints, "acme/classic/old-red").status = {
+      kind: "discontinued",
+      replacement: null,
+    };
+    expect(colorStandIn(catalogOf(draft), oldRed)).toBeNull();
   });
 });
