@@ -7,8 +7,10 @@
 import {
   brandIdSchema,
   brandSchema,
+  colorOriginSchema,
   err,
   formatPath,
+  hexColorSchema,
   ok,
   paintIdSchema,
   paintSchema,
@@ -124,14 +126,39 @@ export const paintKeySchema = z
   .readonly();
 
 /**
+ * One colour candidate of a paint, with the hex it gave when it was reviewed
+ * (ADR-0031). The source and the origin identify it: a row gives at most one
+ * hex per origin. The hex is the published form, `#rrggbb` in lowercase.
+ */
+const candidateShape = {
+  sourceId: sourceIdSchema,
+  origin: colorOriginSchema,
+  hex: hexColorSchema,
+};
+
+/** The candidate published instead of the one the priority picks. */
+export const colorChoiceSchema = z
+  .strictObject({ ...candidateShape, note: text })
+  .readonly();
+
+/** A candidate left out, so the priority picks among the rest. */
+export const rejectedColorSchema = z
+  .strictObject({ ...candidateShape, reasonId: slug, note })
+  .readonly();
+
+/**
  * A curated paint: the `catalog.json` paint without its colour, which the
- * builder takes from the sources, plus its keys and a curation note.
+ * builder takes from the sources, plus its keys, its colour corrections and a
+ * curation note.
  */
 export const curatedPaintSchema = z
   .strictObject({
     ...paintSchema.unwrap().omit({ color: true }).shape,
     /** At least one, so every paint comes from some source (ADR-0019, 6). */
     keys: z.array(paintKeySchema).min(1).readonly(),
+    /** A manual choice, always with its note (ADR-0014). */
+    colorChoice: colorChoiceSchema.nullable(),
+    rejectedColors: z.array(rejectedColorSchema).readonly(),
     note,
   })
   .readonly();
@@ -145,6 +172,8 @@ export const brandFileSchema = z
   .readonly();
 
 export type PaintKey = z.infer<typeof paintKeySchema>;
+export type ColorChoice = z.infer<typeof colorChoiceSchema>;
+export type RejectedColor = z.infer<typeof rejectedColorSchema>;
 export type CuratedPaint = z.infer<typeof curatedPaintSchema>;
 export type BrandFileContent = z.infer<typeof brandFileSchema>;
 export interface BrandFile extends BrandFileContent {

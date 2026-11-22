@@ -1,5 +1,9 @@
 import { describe, expect, it } from "vitest";
-import { transcribeSimoGecko } from "./simogecko.ts";
+import {
+  SAMPLED_GROUP,
+  transcribeSimoGecko,
+  transcribeSimoGeckoSampled,
+} from "./simogecko.ts";
 
 // Fictitious rows in the layout of the table.
 const table = (...rows: string[]): string =>
@@ -72,5 +76,47 @@ describe("transcribeSimoGecko", () => {
     expect(result.ok ? [] : result.error).toEqual([
       'line 4: unreadable row "| Acme Red | base |  | `#FF00` | <div class="colorbox" style="background: #000000;" /> |"',
     ]);
+  });
+});
+
+describe("transcribeSimoGeckoSampled", () => {
+  // Fictitious rows in the layout of the sampled table.
+  const sampled = (...rows: string[]): string =>
+    [
+      "# Citadel Colours Sampled Values",
+      "| Name | Color | HEX | RGB | HSL | CMYK |",
+      "| ---- | ----- | --- | --- | --- | ---- |",
+      ...rows,
+    ].join("\n");
+
+  it("copies a row literally, keyed by its name, in the table's only group", () => {
+    const result = transcribeSimoGeckoSampled(
+      sampled(
+        `| Acme Yelow | ${box} | \`#F3A014\` | \`rgb(243, 160, 20)\` | \`hsl(38, 90%, 52%)\` | \`cmyk(0%, 34%, 92%, 5%)\` |`,
+      ),
+    );
+    expect(result).toEqual({
+      ok: true,
+      value: [
+        {
+          key: "Acme Yelow",
+          group: SAMPLED_GROUP,
+          name: "Acme Yelow",
+          code: null,
+          hex: "#F3A014",
+          gradient: null,
+          measuredHex: null,
+          finish: null,
+          colourless: false,
+        },
+      ],
+    });
+  });
+
+  it("fails on a row it cannot read", () => {
+    const result = transcribeSimoGeckoSampled(
+      sampled(`| Acme Grey | ${box} | \`#12345\` | | | |`),
+    );
+    expect(result.ok).toBe(false);
   });
 });

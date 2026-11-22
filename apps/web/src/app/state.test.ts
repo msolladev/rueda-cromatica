@@ -129,7 +129,7 @@ describe("reduce", () => {
   });
 
   describe("the chosen paint", () => {
-    const lothern = { id: "citadel/layer/lothern-blue", hex: "#2c9bcc" };
+    const lothern = { id: "citadel/layer/lothern-blue", hex: "#3394c3" };
     const wheel = (color: string) => ({
       color,
       model: "ryb" as const,
@@ -141,7 +141,7 @@ describe("reduce", () => {
       const state = run(
         { type: "select-tab", index: 2 },
         { type: "choose-paint", paint: lothern },
-        { type: "wheel-changed", wheel: wheel("#2C9BCC") },
+        { type: "wheel-changed", wheel: wheel("#3394C3") },
       );
       expect(state.tab).toBe(0);
       expect(state.preferences.paint).toBe(lothern);

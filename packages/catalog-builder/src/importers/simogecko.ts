@@ -1,7 +1,8 @@
 /**
- * Importer for the SimoGecko/CitadelColours official colours table: the
- * swatch colours of citadelcolour.com, collected by a third party (docs/04
- * §7). Pure: receives the Markdown already read.
+ * Importers for the two tables of SimoGecko/CitadelColours (docs/04 §7): the
+ * official one, with the swatch colours of citadelcolour.com, and the sampled
+ * one, with colours averaged from photos of painted swatches. Pure: they
+ * receive the Markdown already read.
  */
 import { err, ok, type Result } from "@chromatic-wheel/domain";
 import type { SourceRow } from "../curated/files.ts";
@@ -68,6 +69,49 @@ export const SIMOGECKO_RULES: ProposalRules = {
   },
   metallic: (row) => row.finish === "metal",
 };
+
+/** The only group of the sampled table, which has no type column: its title. */
+export const SAMPLED_GROUP = "Citadel Colours Sampled Values";
+
+/**
+ * Transcribes every row of the sampled table, literally. It only lists Base
+ * and Layer paints, without their type, and no name repeats, so the key is the
+ * name. It proposes no paints (its rows are keys of existing ones), so its
+ * importer has no rules.
+ */
+export function transcribeSimoGeckoSampled(
+  markdown: string,
+): Result<readonly SourceRow[], readonly string[]> {
+  const rows: SourceRow[] = [];
+  const issues: string[] = [];
+
+  markdown.split("\n").forEach((line, i) => {
+    const cells = tableCells(line);
+    // Data rows are the ones whose HEX cell is code-formatted.
+    if (cells?.[2]?.startsWith("`") !== true) return;
+    const [name = "", , hexCell = ""] = cells;
+    const hex = HEX_CELL.exec(hexCell)?.[1];
+    if (hex === undefined || name === "") {
+      issues.push(`line ${String(i + 1)}: unreadable row "${line.trim()}"`);
+      return;
+    }
+    rows.push({
+      key: name,
+      group: SAMPLED_GROUP,
+      name,
+      code: null,
+      hex,
+      gradient: null,
+      measuredHex: null,
+      finish: null,
+      colourless: false,
+    });
+  });
+
+  return issues.length > 0 ? err(issues) : ok(rows);
+}
+
+const HEX_CELL = /^`(#[0-9a-f]{6})`$/i;
 
 function tableCells(line: string): string[] | null {
   const trimmed = line.trim();

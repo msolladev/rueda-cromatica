@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 1,
-    "dataVersion": "sha256:e46236cbf3f8c7c4cc21956ee1fcdab936eabe9027118a5344f73307c9e2cf9f"
+    "dataVersion": "sha256:cb992beb58f4288056a38584134b27c5a5977cb9a65a00687e45f07f4392528b"
   },
   "sources": [
     {
@@ -25,6 +25,17 @@
       "retrievedAt": "2026-11-12",
       "license": "unknown",
       "attribution": "SimoGecko/CitadelColours"
+    },
+    {
+      "id": "simogecko-citadel-colours-sampled",
+      "kind": "third-party",
+      "title": "Citadel Colours Sampled Values",
+      "publisher": "SimoGecko",
+      "url": "https://github.com/SimoGecko/CitadelColours/blob/0ea153b7c6e747cf15691dd16b8e8cc6a4551244/tables/citadel_colors_sampled.md",
+      "archiveUrl": null,
+      "retrievedAt": "2026-11-22",
+      "license": "unknown",
+      "attribution": "SimoGecko/CitadelColours, from the painted swatches of Tale of Painters"
     }
   ],
   "brands": [
@@ -7469,9 +7480,9 @@
       "type": "base",
       "metallic": false,
       "color": {
-        "hex": "#000000",
+        "hex": "#141314",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -7486,9 +7497,9 @@
       "type": "base",
       "metallic": false,
       "color": {
-        "hex": "#fbb81c",
+        "hex": "#c58336",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -7520,9 +7531,9 @@
       "type": "base",
       "metallic": false,
       "color": {
-        "hex": "#451636",
+        "hex": "#361f29",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -7537,9 +7548,9 @@
       "type": "base",
       "metallic": false,
       "color": {
-        "hex": "#804c43",
+        "hex": "#855751",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -7554,9 +7565,9 @@
       "type": "base",
       "metallic": false,
       "color": {
-        "hex": "#366699",
+        "hex": "#0a4c94",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -7571,9 +7582,9 @@
       "type": "base",
       "metallic": false,
       "color": {
-        "hex": "#003d15",
+        "hex": "#182e28",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -7588,9 +7599,9 @@
       "type": "base",
       "metallic": false,
       "color": {
-        "hex": "#264715",
+        "hex": "#313324",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -7605,9 +7616,9 @@
       "type": "base",
       "metallic": false,
       "color": {
-        "hex": "#442b25",
+        "hex": "#382621",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -7622,9 +7633,9 @@
       "type": "base",
       "metallic": false,
       "color": {
-        "hex": "#8ba3a3",
+        "hex": "#92a0a2",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -7656,9 +7667,9 @@
       "type": "base",
       "metallic": false,
       "color": {
-        "hex": "#171314",
+        "hex": "#191c20",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -7673,9 +7684,9 @@
       "type": "base",
       "metallic": false,
       "color": {
-        "hex": "#655f81",
+        "hex": "#4b435c",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -7690,9 +7701,9 @@
       "type": "base",
       "metallic": false,
       "color": {
-        "hex": "#6d774d",
+        "hex": "#646447",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -7707,9 +7718,9 @@
       "type": "base",
       "metallic": false,
       "color": {
-        "hex": "#3d4539",
+        "hex": "#292924",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -7724,9 +7735,9 @@
       "type": "base",
       "metallic": false,
       "color": {
-        "hex": "#556229",
+        "hex": "#4d492e",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -7741,9 +7752,9 @@
       "type": "base",
       "metallic": false,
       "color": {
-        "hex": "#2b2a24",
+        "hex": "#332827",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -7758,9 +7769,9 @@
       "type": "base",
       "metallic": false,
       "color": {
-        "hex": "#4b213c",
+        "hex": "#441c22",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -7792,9 +7803,9 @@
       "type": "base",
       "metallic": false,
       "color": {
-        "hex": "#a2a5a7",
+        "hex": "#9ca0a1",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -7809,9 +7820,9 @@
       "type": "base",
       "metallic": false,
       "color": {
-        "hex": "#a1812a",
+        "hex": "#977848",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -7826,9 +7837,9 @@
       "type": "base",
       "metallic": false,
       "color": {
-        "hex": "#082e32",
+        "hex": "#13252b",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -7843,9 +7854,9 @@
       "type": "base",
       "metallic": false,
       "color": {
-        "hex": "#97a384",
+        "hex": "#9f9d82",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -7894,9 +7905,9 @@
       "type": "base",
       "metallic": false,
       "color": {
-        "hex": "#ed3814",
+        "hex": "#ba613f",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -7911,9 +7922,9 @@
       "type": "base",
       "metallic": false,
       "color": {
-        "hex": "#02134e",
+        "hex": "#142134",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -7928,9 +7939,9 @@
       "type": "base",
       "metallic": false,
       "color": {
-        "hex": "#650001",
+        "hex": "#602025",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -7962,9 +7973,9 @@
       "type": "base",
       "metallic": false,
       "color": {
-        "hex": "#002c2b",
+        "hex": "#132f32",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -7979,9 +7990,9 @@
       "type": "base",
       "metallic": false,
       "color": {
-        "hex": "#0f3d7c",
+        "hex": "#1c3167",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -7996,9 +8007,9 @@
       "type": "base",
       "metallic": false,
       "color": {
-        "hex": "#39484a",
+        "hex": "#404951",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -8013,9 +8024,9 @@
       "type": "base",
       "metallic": false,
       "color": {
-        "hex": "#960c09",
+        "hex": "#912724",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -8030,9 +8041,9 @@
       "type": "base",
       "metallic": false,
       "color": {
-        "hex": "#c0a973",
+        "hex": "#ba9f81",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -8047,9 +8058,9 @@
       "type": "base",
       "metallic": false,
       "color": {
-        "hex": "#490f06",
+        "hex": "#523322",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -8064,9 +8075,9 @@
       "type": "base",
       "metallic": false,
       "color": {
-        "hex": "#3b2b50",
+        "hex": "#221c34",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -8081,9 +8092,9 @@
       "type": "base",
       "metallic": false,
       "color": {
-        "hex": "#002b5c",
+        "hex": "#111a28",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -8098,9 +8109,9 @@
       "type": "base",
       "metallic": false,
       "color": {
-        "hex": "#162a29",
+        "hex": "#1c2121",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -8115,9 +8126,9 @@
       "type": "base",
       "metallic": false,
       "color": {
-        "hex": "#8cc276",
+        "hex": "#7b874e",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -8132,9 +8143,9 @@
       "type": "base",
       "metallic": false,
       "color": {
-        "hex": "#440052",
+        "hex": "#302546",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -8149,9 +8160,9 @@
       "type": "base",
       "metallic": false,
       "color": {
-        "hex": "#9c998d",
+        "hex": "#917f76",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -8166,9 +8177,9 @@
       "type": "base",
       "metallic": false,
       "color": {
-        "hex": "#a86648",
+        "hex": "#af5c3c",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -8200,9 +8211,9 @@
       "type": "base",
       "metallic": false,
       "color": {
-        "hex": "#462f30",
+        "hex": "#211413",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -8234,9 +8245,9 @@
       "type": "base",
       "metallic": false,
       "color": {
-        "hex": "#7a0e44",
+        "hex": "#5c1e33",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -8268,9 +8279,9 @@
       "type": "base",
       "metallic": false,
       "color": {
-        "hex": "#584e2d",
+        "hex": "#675241",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -8285,9 +8296,9 @@
       "type": "base",
       "metallic": false,
       "color": {
-        "hex": "#06455d",
+        "hex": "#192d38",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -8302,9 +8313,9 @@
       "type": "base",
       "metallic": false,
       "color": {
-        "hex": "#405b71",
+        "hex": "#303d57",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -8319,9 +8330,9 @@
       "type": "base",
       "metallic": false,
       "color": {
-        "hex": "#54302a",
+        "hex": "#31241f",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -8336,9 +8347,9 @@
       "type": "base",
       "metallic": false,
       "color": {
-        "hex": "#00506f",
+        "hex": "#014c72",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -8353,9 +8364,9 @@
       "type": "base",
       "metallic": false,
       "color": {
-        "hex": "#0b3b36",
+        "hex": "#31473a",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -8387,9 +8398,9 @@
       "type": "base",
       "metallic": false,
       "color": {
-        "hex": "#dbd1b2",
+        "hex": "#c9beae",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -8404,9 +8415,9 @@
       "type": "base",
       "metallic": false,
       "color": {
-        "hex": "#6c4811",
+        "hex": "#745438",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -8421,9 +8432,9 @@
       "type": "base",
       "metallic": false,
       "color": {
-        "hex": "#988e56",
+        "hex": "#9a7d60",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -9883,9 +9894,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#989c94",
+        "hex": "#888c8f",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -9900,9 +9911,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#00708a",
+        "hex": "#00647c",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -9917,9 +9928,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#2f4f85",
+        "hex": "#17466f",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -9934,9 +9945,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#2d4696",
+        "hex": "#233d7d",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -9968,9 +9979,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#54bdca",
+        "hex": "#33b4cf",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -9985,9 +9996,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#875408",
+        "hex": "#966326",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -10002,9 +10013,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#8f7c68",
+        "hex": "#736153",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -10019,9 +10030,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#d08951",
+        "hex": "#d4793f",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -10036,9 +10047,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#6a4848",
+        "hex": "#4f2f2b",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -10053,9 +10064,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#9eb5ce",
+        "hex": "#90b4d2",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -10087,9 +10098,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#c47652",
+        "hex": "#a86c5a",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -10104,9 +10115,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#2a497f",
+        "hex": "#4e6fc0",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -10155,9 +10166,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#354d4c",
+        "hex": "#2a3740",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -10172,9 +10183,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#697068",
+        "hex": "#595f68",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -10189,9 +10200,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#af634f",
+        "hex": "#9f5435",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -10206,9 +10217,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#b598c9",
+        "hex": "#ac97d8",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -10223,9 +10234,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#a9b79f",
+        "hex": "#b6baab",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -10240,9 +10251,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#570003",
+        "hex": "#461b15",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -10257,9 +10268,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#fff55a",
+        "hex": "#f1d985",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -10274,9 +10285,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#6b8c37",
+        "hex": "#6a6932",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -10291,9 +10302,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#b74073",
+        "hex": "#e2639b",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -10308,9 +10319,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#484b4e",
+        "hex": "#2e3034",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -10325,9 +10336,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#c01411",
+        "hex": "#b52a2d",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -10342,9 +10353,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#6d94b3",
+        "hex": "#5d7b94",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -10359,9 +10370,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#f4874e",
+        "hex": "#f36c2b",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -10376,9 +10387,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#fff300",
+        "hex": "#f4b809",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -10393,9 +10404,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#eec483",
+        "hex": "#cfb697",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -10410,9 +10421,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#f3abca",
+        "hex": "#f2ade2",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -10444,9 +10455,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#7fc1a5",
+        "hex": "#7fd4bb",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -10478,9 +10489,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#7658a5",
+        "hex": "#744f94",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -10495,9 +10506,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#5f463f",
+        "hex": "#593d36",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -10529,9 +10540,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#4c78af",
+        "hex": "#0d62a0",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -10563,9 +10574,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#008962",
+        "hex": "#034c44",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -10580,9 +10591,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#8869ae",
+        "hex": "#966a9f",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -10597,9 +10608,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#b7945c",
+        "hex": "#937e69",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -10614,9 +10625,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#d1a570",
+        "hex": "#c6906d",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -10631,9 +10642,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#996563",
+        "hex": "#6f4942",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -10648,9 +10659,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#bcbb7e",
+        "hex": "#ada879",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -10682,9 +10693,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#486c25",
+        "hex": "#414b33",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -10699,9 +10710,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#2c9bcc",
+        "hex": "#3394c3",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -10716,9 +10727,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#f69b82",
+        "hex": "#f69069",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -10733,9 +10744,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#3daf44",
+        "hex": "#5d9a32",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -10750,9 +10761,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#7e975e",
+        "hex": "#82885a",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -10767,9 +10778,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#96a648",
+        "hex": "#9d8f57",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -10784,9 +10795,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#caccbb",
+        "hex": "#d2c4bd",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -10801,9 +10812,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#ffe200",
+        "hex": "#f6d026",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -10818,9 +10829,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#8e2757",
+        "hex": "#b74855",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -10852,9 +10863,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#507085",
+        "hex": "#4d657f",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -10869,9 +10880,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#b9c099",
+        "hex": "#d1be9f",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -10886,9 +10897,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#588f6b",
+        "hex": "#749357",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -10903,9 +10914,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#45413b",
+        "hex": "#373739",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -10920,9 +10931,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#8b4806",
+        "hex": "#884126",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -10954,9 +10965,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#8b8893",
+        "hex": "#887e99",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -10971,9 +10982,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#00545e",
+        "hex": "#325256",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -10988,9 +10999,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#0b6371",
+        "hex": "#00556b",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -11005,9 +11016,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#a74d42",
+        "hex": "#b2544a",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -11039,9 +11050,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#6d655f",
+        "hex": "#555450",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -11056,9 +11067,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#597f1c",
+        "hex": "#656a48",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -11073,9 +11084,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#17a166",
+        "hex": "#258d6e",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -11107,9 +11118,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#a07409",
+        "hex": "#836b4c",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -11124,9 +11135,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#bc6b10",
+        "hex": "#c57d49",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -11141,9 +11152,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#3877bf",
+        "hex": "#0c72b6",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -11158,9 +11169,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#239489",
+        "hex": "#0295b6",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -11175,9 +11186,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#396a70",
+        "hex": "#2f4b59",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -11192,9 +11203,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#f16c23",
+        "hex": "#e6491b",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -11209,9 +11220,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#863231",
+        "hex": "#8d4338",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -11226,9 +11237,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#c4ddd5",
+        "hex": "#c1c9cb",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -11243,9 +11254,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#d1a560",
+        "hex": "#dd9552",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -11260,9 +11271,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#aba173",
+        "hex": "#bfa781",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -11277,9 +11288,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#223c2e",
+        "hex": "#232f26",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -11294,9 +11305,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#317e57",
+        "hex": "#476b43",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -11311,9 +11322,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#66656e",
+        "hex": "#645d73",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -11328,9 +11339,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#0f702a",
+        "hex": "#075e2e",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -11345,9 +11356,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#880804",
+        "hex": "#a1343b",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -11362,9 +11373,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#ffffff",
+        "hex": "#ebeef0",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -11379,9 +11390,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#e82e1b",
+        "hex": "#e03f39",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -11396,9 +11407,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#620104",
+        "hex": "#672220",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -11413,9 +11424,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#47125a",
+        "hex": "#3a2746",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -11430,9 +11441,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#ffd900",
+        "hex": "#f3a014",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"
@@ -11447,9 +11458,9 @@
       "type": "layer",
       "metallic": false,
       "color": {
-        "hex": "#d89d1b",
+        "hex": "#b08047",
         "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
+        "sourceId": "simogecko-citadel-colours-sampled"
       },
       "status": {
         "kind": "active"

@@ -46,7 +46,7 @@ El monorepo está montado. `domain` ya tiene el contrato del catálogo (esquema,
 - **Equivalencias oficiales**: aristas dirigidas (origen → destino) con una fuente del fabricante obligatoria. No se infieren ni las inversas ni las transitivas.
 - **Equivalencias calculadas**: CIEDE2000 en el cliente. No se guardan en el JSON. Se agrupan por marca, con una etiqueta de calidad por tramos de ΔE y sin umbral que oculte resultados. Por defecto solo son candidatas las pinturas opacas no metálicas ([docs/06](docs/06-pinturas-parecidas.md), [ADR-0022](docs/adr/0022-busqueda-pinturas-parecidas.md)).
 - **Color aproximado**: un hex es aproximado si la pintura es metálica, si su tipo es lavado, tinta, veladura, contrast o técnica, o si el hex es de origen comunitario. Se calcula en el dominio; en el JSON solo se guardan el origen y la fuente del hex. No se ofrecen equivalencias calculadas con colores aproximados sin avisar.
-- **Origen del color**: un único hex por pintura, con su origen (`measured`, `manufacturer` o `community`) y su fuente. Los degradados oficiales de Citadel se reducen a su punto medio en CIELAB ([ADR-0014](docs/adr/0014-origen-seleccion-color.md)). En el MVP cada pintura tiene una sola fuente de color ([ADR-0019](docs/adr/0019-alcance-minimo-mvp.md)).
+- **Origen del color**: un único hex por pintura, con su origen (`measured`, `manufacturer` o `community`) y su fuente. Los degradados oficiales de Citadel se reducen a su punto medio en CIELAB ([ADR-0014](docs/adr/0014-origen-seleccion-color.md)). Si una pintura tiene varios candidatos, el builder elige por origen y por el orden de `color-policy.json`, con descartes y elección manual en la ficha, y un informe de discrepancias entre fuentes ([ADR-0031](docs/adr/0031-varios-candidatos-color.md)).
 - **Sustitución frente a equivalencia**: solo hay sustituta si la fuente del fabricante dice que X sustituye a Y. Las cartas de conversión son equivalencias oficiales.
 - **Esquema de miniatura** ([ADR-0020](docs/adr/0020-rueda-paquete-independiente.md)): la base con su sombra y su luz, los otros dos colores de su tríada y su complementario, en ese orden.
   - Las mezclas simulan pigmentos (Kubelka-Munk), no luz.
@@ -101,7 +101,7 @@ El alcance mínimo y lo aplazado están razonados en el [ADR-0019](docs/adr/0019
    - Equivalencias oficiales y sustituciones, incluida la carta de GW de 2012 si existe una copia fiel ([ADR-0015](docs/adr/0015-fuentes-trazabilidad-licencias.md)).
    - Líneas descatalogadas: las antiguas de Citadel (Citadel Colour, Foundation, Washes de 2008, tintas, Glaze y Edge) y los Warpaints originales.
    - Datos curados en dos capas, con transcripciones literales, claves por documento y exclusiones: hecho ([ADR-0030](docs/adr/0030-datos-curados-dos-capas.md), [docs/04](docs/04-datos-curados.md)).
-   - Varios candidatos de color por pintura, con prioridad `measured` > `manufacturer` > `community` y elección manual.
+   - Varios candidatos de color por pintura, con prioridad `measured` > `manufacturer` > `community`, elección manual, descartes e informe de discrepancias, y la tabla muestreada de SimoGecko como segunda fuente de Citadel: hecho ([ADR-0031](docs/adr/0031-varios-candidatos-color.md), [docs/04](docs/04-datos-curados.md)).
    - Desactivación de fuentes con su resumen de cambios, y el script `archive-sources` (Wayback Machine y SHA-256).
 
 6. **Backend, administración del catálogo y sesiones de usuario**, la última fase ([ADR-0017](docs/adr/0017-arquitectura-objetivo-backend.md)). Incluye:

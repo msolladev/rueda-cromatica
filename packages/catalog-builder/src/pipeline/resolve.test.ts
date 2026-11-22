@@ -139,7 +139,7 @@ describe("resolveKeys (docs/04 §6)", () => {
       ignored.reasonId = "no-colour";
       expect(issues(data)).toEqual([
         "sources/acme-chart.json ignoredKeys[0].reasonId: Unknown reason no-colour; add it to ignore-reasons.json",
-        "ignore-reasons.json [1]: Reason auxiliary is not used by any ignore",
+        "ignore-reasons.json [1]: Reason auxiliary is not used by any ignore or rejected colour",
       ]);
     });
 
@@ -147,7 +147,27 @@ describe("resolveKeys (docs/04 §6)", () => {
       const data = curatedData();
       data.ignoreReasons.content.push({ id: "spray", text: "Spray line." });
       expect(issues(data)).toEqual([
-        "ignore-reasons.json [2]: Reason spray is not used by any ignore",
+        "ignore-reasons.json [2]: Reason spray is not used by any ignore or rejected colour",
+      ]);
+    });
+
+    it("counts the reasons of rejected colours, and checks them", () => {
+      const data = curatedData();
+      data.ignoreReasons.content.push({ id: "spray", text: "Spray line." });
+      const [red] = acme(data).paints;
+      if (red === undefined) throw new Error("Fixture without paints");
+      const rejection = {
+        sourceId: "acme-chart",
+        origin: "manufacturer",
+        hex: "#aa0000",
+        note: null,
+      };
+      red.rejectedColors = [
+        { ...rejection, reasonId: "spray" },
+        { ...rejection, reasonId: "faded" },
+      ];
+      expect(issues(data)).toEqual([
+        "brands/acme.json paints[0].rejectedColors[1].reasonId: Unknown reason faded; add it to ignore-reasons.json",
       ]);
     });
   });

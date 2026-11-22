@@ -641,13 +641,13 @@ describe("the paint search", () => {
     const notice = await vi.waitFor(() =>
       query(".paint-search-ryb", HTMLElement),
     );
-    expect(notice.textContent).toContain("ΔE 8,6");
+    expect(notice.textContent).toContain("ΔE 6,8");
     await userEvent.click(query(".paint-search-ryb button", HTMLButtonElement));
     await vi.waitFor(() => {
       expect(container.querySelector(".paint-search-ryb")).toBeNull();
       expect(
         activePanel().querySelector(".panel-heading code")?.textContent,
-      ).toBe("#2c9bcc");
+      ).toBe("#3394c3");
     });
   });
 

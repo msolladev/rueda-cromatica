@@ -58,8 +58,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Abaddon Black"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Abaddon Black"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -77,8 +83,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Averland Sunset"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Averland Sunset"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -98,6 +110,8 @@
           "key": "base/Balthasar Gold"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -115,8 +129,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Barak-Nar Burgundy"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Barak-Nar Burgundy"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -134,8 +154,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Bugman's Glow"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Bugman's Glow"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -153,8 +179,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Caledor Sky"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Caledor Sky"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -172,8 +204,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Caliban Green"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Caliban Green"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -191,8 +229,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Castellan Green"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Castellan Green"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -210,8 +254,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Catachan Flesh"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Catachan Flesh"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -229,8 +279,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Celestra Grey"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Celestra Grey"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -248,6 +304,20 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Corax White"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Corax White"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "origin": "community",
+          "hex": "#b6bbc0",
+          "reasonId": "photo-artifact",
+          "note": "Un blanco que la foto da gris claro; la tabla oficial da #FFFFFF."
         }
       ],
       "note": null
@@ -267,8 +337,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Corvus Black"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Corvus Black"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -286,8 +362,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Daemonette Hide"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Daemonette Hide"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -305,8 +387,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Death Guard Green"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Death Guard Green"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -324,8 +412,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Death Korps Drab"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Death Korps Drab"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -343,8 +437,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Deathworld Forest"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Deathworld Forest"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -362,8 +462,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Dryad Bark"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Dryad Bark"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -381,8 +487,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Gal Vorbak Red"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Gal Vorbak Red"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -402,6 +514,8 @@
           "key": "base/Grey Knights Steel"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -419,8 +533,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Grey Seer"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Grey Seer"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -438,8 +558,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Hobgrot Hide"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Hobgrot Hide"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -457,8 +583,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Incubi Darkness"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Incubi Darkness"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -476,8 +608,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Ionrach Skin"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Ionrach Skin"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -497,6 +635,8 @@
           "key": "base/Iron Hands Steel"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -516,6 +656,8 @@
           "key": "base/Iron Warriors"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -533,8 +675,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Jokaero Orange"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Jokaero Orange"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -552,8 +700,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Kantor Blue"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Kantor Blue"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -571,8 +725,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Khorne Red"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Khorne Red"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -592,6 +752,8 @@
           "key": "base/Leadbelcher"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -609,8 +771,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Lupercal Green"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Lupercal Green"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -628,8 +796,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Macragge Blue"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Macragge Blue"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -647,8 +821,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Mechanicus Standard Grey"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Mechanicus Standard Grey"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -666,8 +846,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Mephiston Red"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Mephiston Red"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -685,8 +871,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Morghast Bone"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Morghast Bone"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -704,8 +896,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Mournfang Brown"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Mournfang Brown"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -723,8 +921,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Naggaroth Night"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Naggaroth Night"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -742,8 +946,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Night Lords Blue"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Night Lords Blue"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -761,8 +971,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Nocturne Green"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Nocturne Green"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -780,8 +996,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Orruk Flesh"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Orruk Flesh"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -799,8 +1021,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Phoenician Purple"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Phoenician Purple"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -818,8 +1046,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Rakarth Flesh"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Rakarth Flesh"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -837,8 +1071,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Ratskin Flesh"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Ratskin Flesh"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -858,6 +1098,8 @@
           "key": "base/Retributor Armour"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -875,8 +1117,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Rhinox Hide"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Rhinox Hide"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -896,6 +1144,8 @@
           "key": "base/Runelord Brass"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -913,8 +1163,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Screamer Pink"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Screamer Pink"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -934,6 +1190,8 @@
           "key": "base/Screaming Bell"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -951,8 +1209,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Steel Legion Drab"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Steel Legion Drab"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -970,8 +1234,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Stegadon Scale Green"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Stegadon Scale Green"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -989,8 +1259,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/The Fang"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "The Fang"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -1008,8 +1284,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Thondia Brown"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Thondia Brown"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -1027,8 +1309,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Thousand Sons Blue"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Thousand Sons Blue"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -1046,8 +1334,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Waaagh! Flesh"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Waaagh! Flesh"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -1067,6 +1361,8 @@
           "key": "base/Warplock Bronze"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -1084,8 +1380,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Wraithbone"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Wraithbone"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -1103,8 +1405,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/XV-88"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "XV-88"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -1122,8 +1430,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Zandri Dust"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Zandri Dust"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -1143,6 +1457,8 @@
           "key": "contrast/Aeldari Emerald"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -1162,6 +1478,8 @@
           "key": "contrast/Aethermatic Blue"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -1181,6 +1499,8 @@
           "key": "contrast/Aggaros Dunes"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -1200,6 +1520,8 @@
           "key": "contrast/Akhelian Green"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -1219,6 +1541,8 @@
           "key": "contrast/Apothecary White"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -1238,6 +1562,8 @@
           "key": "contrast/Asurmen Blue"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -1257,6 +1583,8 @@
           "key": "contrast/Baal Red"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -1276,6 +1604,8 @@
           "key": "contrast/Bad Moon Yellow"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -1295,6 +1625,8 @@
           "key": "contrast/Basilicanum Grey"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -1314,6 +1646,8 @@
           "key": "contrast/Black Legion"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -1333,6 +1667,8 @@
           "key": "contrast/Black Templar"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -1352,6 +1688,8 @@
           "key": "contrast/Blood Angels Red"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -1371,6 +1709,8 @@
           "key": "contrast/Briar Queen Chill"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -1390,6 +1730,8 @@
           "key": "contrast/Celestium Blue"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -1409,6 +1751,8 @@
           "key": "contrast/Creed Camo"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -1428,6 +1772,8 @@
           "key": "contrast/Cygor Brown"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -1447,6 +1793,8 @@
           "key": "contrast/Dark Angels Green"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -1466,6 +1814,8 @@
           "key": "contrast/Darkoath Flesh"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -1485,6 +1835,8 @@
           "key": "contrast/Doomfire Magenta"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -1504,6 +1856,8 @@
           "key": "contrast/Dreadful Visage"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -1523,6 +1877,8 @@
           "key": "contrast/Flesh Tearers Red"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -1542,6 +1898,8 @@
           "key": "contrast/Frostheart"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -1561,6 +1919,8 @@
           "key": "contrast/Fyreslayer Flesh"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -1580,6 +1940,8 @@
           "key": "contrast/Garaghak's Sewer"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -1599,6 +1961,8 @@
           "key": "contrast/Gore-Grunta Fur"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -1618,6 +1982,8 @@
           "key": "contrast/Gryph-Charger Grey"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -1637,6 +2003,8 @@
           "key": "contrast/Gryph-Hound Orange"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -1656,6 +2024,8 @@
           "key": "contrast/Guilliman Flesh"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -1675,6 +2045,8 @@
           "key": "contrast/Gutrippa Flesh"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -1694,6 +2066,8 @@
           "key": "contrast/Hexwraith Flame"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -1713,6 +2087,8 @@
           "key": "contrast/Imperial Fist"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -1732,6 +2108,8 @@
           "key": "contrast/Ironjawz Yellow"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -1751,6 +2129,8 @@
           "key": "contrast/Iyanden Yellow"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -1770,6 +2150,8 @@
           "key": "contrast/Karandras Green"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -1789,6 +2171,8 @@
           "key": "contrast/Kroxigor Scales"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -1808,6 +2192,8 @@
           "key": "contrast/Leviadon Blue"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -1827,6 +2213,8 @@
           "key": "contrast/Leviathan Purple"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -1846,6 +2234,8 @@
           "key": "contrast/Luxion Purple"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -1865,6 +2255,8 @@
           "key": "contrast/Magmadroth Flame"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -1884,6 +2276,8 @@
           "key": "contrast/Magos Purple"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -1903,6 +2297,8 @@
           "key": "contrast/Mantis Warriors Green"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -1922,6 +2318,8 @@
           "key": "contrast/Militarum Green"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -1941,6 +2339,8 @@
           "key": "contrast/Nazdreg Yellow"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -1960,6 +2360,8 @@
           "key": "contrast/Nighthaunt Gloom"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -1979,6 +2381,8 @@
           "key": "contrast/Ork Flesh"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -1998,6 +2402,8 @@
           "key": "contrast/Plaguebearer Flesh"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -2017,6 +2423,8 @@
           "key": "contrast/Pylar Glacier"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -2036,6 +2444,8 @@
           "key": "contrast/Ratling Grime"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -2055,6 +2465,8 @@
           "key": "contrast/Shyish Purple"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -2074,6 +2486,8 @@
           "key": "contrast/Sigvald Burgundy"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -2093,6 +2507,8 @@
           "key": "contrast/Skeleton Horde"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -2112,6 +2528,8 @@
           "key": "contrast/Snakebite Leather"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -2131,6 +2549,8 @@
           "key": "contrast/Space Wolves Grey"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -2150,6 +2570,8 @@
           "key": "contrast/Stormfiend"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -2169,6 +2591,8 @@
           "key": "contrast/Striking Scorpion Green"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -2188,6 +2612,8 @@
           "key": "contrast/Talassar Blue"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -2207,6 +2633,8 @@
           "key": "contrast/Terradon Turquoise"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -2226,6 +2654,8 @@
           "key": "contrast/Ultramarines Blue"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -2245,6 +2675,8 @@
           "key": "contrast/Volupus Pink"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -2264,6 +2696,8 @@
           "key": "contrast/Warp Lightning"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -2283,6 +2717,8 @@
           "key": "contrast/Wyldwood"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -2302,6 +2738,8 @@
           "key": "dry/Astorath Red"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -2321,6 +2759,8 @@
           "key": "dry/Dawnstone"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -2340,6 +2780,8 @@
           "key": "dry/Eldar Flesh"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -2359,6 +2801,8 @@
           "key": "dry/Etherium Blue"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -2378,6 +2822,8 @@
           "key": "dry/Golden Griffon"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -2397,6 +2843,8 @@
           "key": "dry/Golgfag Brown"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -2416,6 +2864,8 @@
           "key": "dry/Hexos Palesun"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -2435,6 +2885,8 @@
           "key": "dry/Hoeth Blue"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -2454,6 +2906,8 @@
           "key": "dry/Imrik Blue"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -2473,6 +2927,8 @@
           "key": "dry/Longbeard Grey"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -2492,6 +2948,8 @@
           "key": "dry/Lucius Lilac"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -2511,6 +2969,8 @@
           "key": "dry/Necron Compound"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -2530,6 +2990,8 @@
           "key": "dry/Niblet Green"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -2549,6 +3011,8 @@
           "key": "dry/Nurgling Green"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -2568,6 +3032,8 @@
           "key": "dry/Praxeti White"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -2587,6 +3053,8 @@
           "key": "dry/Ryza Rust"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -2606,6 +3074,8 @@
           "key": "dry/Sigmarite"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -2625,6 +3095,8 @@
           "key": "dry/Skink Blue"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -2644,6 +3116,8 @@
           "key": "dry/Stormfang"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -2663,6 +3137,8 @@
           "key": "dry/Sylvaneth Bark"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -2682,6 +3158,8 @@
           "key": "dry/Terminatus Stone"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -2701,6 +3179,8 @@
           "key": "dry/Tyrant Skull"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -2720,6 +3200,8 @@
           "key": "dry/Underhive Ash"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -2739,6 +3221,8 @@
           "key": "dry/Wrack White"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -2756,8 +3240,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Administratum Grey"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Administratum Grey"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -2775,8 +3265,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Ahriman Blue"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Ahriman Blue"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -2794,8 +3290,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Alaitoc Blue"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Alaitoc Blue"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -2813,8 +3315,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Altdorf Guard Blue"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Altdorf Guard Blue"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -2834,6 +3342,8 @@
           "key": "layer/Auric Armour Gold"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -2851,8 +3361,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Baharroth Blue"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Baharroth Blue"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -2870,8 +3386,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Balor Brown"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Balor Brown"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -2889,8 +3411,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Baneblade Brown"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Baneblade Brown"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -2908,8 +3436,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Bestigor Flesh"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Bestigor Flesh"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -2927,8 +3461,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Bloodreaver Flesh"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Bloodreaver Flesh"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -2946,8 +3486,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Blue Horror"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Blue Horror"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -2967,6 +3513,8 @@
           "key": "layer/Brass Scorpion"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -2984,8 +3532,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Cadian Fleshtone"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Cadian Fleshtone"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -3003,8 +3557,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Calgar Blue"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Calgar Blue"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -3024,6 +3584,8 @@
           "key": "layer/Canoptek Alloy"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -3043,6 +3605,8 @@
           "key": "layer/Castellax Bronze"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -3060,8 +3624,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Dark Reaper"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Dark Reaper"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -3079,8 +3649,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Dawnstone"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Dawnstone"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -3098,8 +3674,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Deathclaw Brown"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Deathclaw Brown"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -3117,8 +3699,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Dechala Lilac"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Dechala Lilac"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -3136,8 +3724,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Deepkin Flesh"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Deepkin Flesh"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -3155,8 +3749,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Doombull Brown"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Doombull Brown"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -3174,8 +3774,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Dorn Yellow"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Dorn Yellow"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -3193,8 +3799,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Elysian Green"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Elysian Green"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -3212,8 +3824,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Emperor's Children"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Emperor's Children"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -3231,8 +3849,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Eshin Grey"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Eshin Grey"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -3250,8 +3874,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Evil Sunz Scarlet"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Evil Sunz Scarlet"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -3269,8 +3899,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Fenrisian Grey"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Fenrisian Grey"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -3288,8 +3924,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Fire Dragon Bright"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Fire Dragon Bright"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -3307,8 +3949,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Flash Gitz Yellow"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Flash Gitz Yellow"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -3326,8 +3974,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Flayed One Flesh"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Flayed One Flesh"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -3345,8 +3999,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Fulgrim Pink"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Fulgrim Pink"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -3366,6 +4026,8 @@
           "key": "layer/Fulgurite Copper"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -3383,8 +4045,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Gauss Blaster Green"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Gauss Blaster Green"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -3404,6 +4072,8 @@
           "key": "layer/Gehenna's Gold"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -3421,8 +4091,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Genestealer Purple"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Genestealer Purple"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -3440,8 +4116,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Gorthor Brown"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Gorthor Brown"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -3461,6 +4143,8 @@
           "key": "layer/Hashut Copper"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -3478,8 +4162,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Hoeth Blue"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Hoeth Blue"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -3499,6 +4189,8 @@
           "key": "layer/Ironbreaker"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -3516,8 +4208,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Kabalite Green"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Kabalite Green"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -3535,8 +4233,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Kakophoni Purple"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Kakophoni Purple"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -3554,8 +4258,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Karak Stone"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Karak Stone"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -3573,8 +4283,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Kislev Flesh"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Kislev Flesh"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -3592,8 +4308,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Knight-Questor Flesh"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Knight-Questor Flesh"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -3611,8 +4333,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Krieg Khaki"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Krieg Khaki"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -3632,6 +4360,8 @@
           "key": "layer/Liberator Gold"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -3649,8 +4379,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Loren Forest"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Loren Forest"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -3668,8 +4404,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Lothern Blue"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Lothern Blue"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -3687,8 +4429,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Lugganath Orange"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Lugganath Orange"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -3706,8 +4454,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Moot Green"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Moot Green"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -3725,8 +4479,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Nurgling Green"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Nurgling Green"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -3744,8 +4504,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Ogryn Camo"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Ogryn Camo"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -3763,8 +4529,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Pallid Wych Flesh"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Pallid Wych Flesh"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -3782,8 +4554,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Phalanx Yellow"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Phalanx Yellow"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -3801,8 +4579,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Pink Horror"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Pink Horror"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -3822,6 +4606,8 @@
           "key": "layer/Runefang Steel"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -3839,8 +4625,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Russ Grey"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Russ Grey"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -3858,8 +4650,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Screaming Skull"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Screaming Skull"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -3877,8 +4675,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Skarsnik Green"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Skarsnik Green"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -3896,8 +4700,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Skavenblight Dinge"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Skavenblight Dinge"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -3915,8 +4725,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Skrag Brown"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Skrag Brown"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -3936,6 +4752,8 @@
           "key": "layer/Skullcrusher Brass"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -3953,8 +4771,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Slaanesh Grey"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Slaanesh Grey"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -3972,8 +4796,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Sons of Horus Green"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Sons of Horus Green"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -3991,8 +4821,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Sotek Green"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Sotek Green"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -4010,8 +4846,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Squig Orange"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Squig Orange"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -4031,6 +4873,8 @@
           "key": "layer/Stormhost Silver"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -4048,8 +4892,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Stormvermin Fur"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Stormvermin Fur"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -4067,8 +4917,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Straken Green"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Straken Green"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -4086,8 +4942,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Sybarite Green"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Sybarite Green"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -4107,6 +4969,8 @@
           "key": "layer/Sycorax Bronze"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -4124,8 +4988,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Tallarn Sand"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Tallarn Sand"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -4143,8 +5013,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Tau Light Ochre"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Tau Light Ochre"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -4162,8 +5038,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Teclis Blue"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Teclis Blue"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -4181,8 +5063,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Temple Guard Blue"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Temple Guard Blue"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -4200,8 +5088,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Thunderhawk Blue"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Thunderhawk Blue"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -4219,8 +5113,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Troll Slayer Orange"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Troll Slayer Orange"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -4238,8 +5138,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Tuskgor Fur"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Tuskgor Fur"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -4257,8 +5163,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Ulthuan Grey"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Ulthuan Grey"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -4276,8 +5188,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Ungor Flesh"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Ungor Flesh"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -4295,8 +5213,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Ushabti Bone"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Ushabti Bone"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -4314,8 +5238,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Vulkan Green"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Vulkan Green"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -4333,8 +5263,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Warboss Green"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Warboss Green"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -4352,8 +5288,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Warpfiend Grey"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Warpfiend Grey"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -4371,8 +5313,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Warpstone Glow"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Warpstone Glow"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -4390,8 +5338,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Wazdakka Red"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Wazdakka Red"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -4409,8 +5363,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/White Scar"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "White Scar"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -4428,8 +5388,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Wild Rider Red"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Wild Rider Red"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -4447,8 +5413,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Word Bearers Red"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Word Bearers Red"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -4466,8 +5438,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Xereus Purple"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Xereus Purple"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -4485,8 +5463,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Yriel Yellow"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Yriel Yellow"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -4504,8 +5488,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Zamesi Desert"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours-sampled",
+          "key": "Zamesi Desert"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -4525,6 +5515,8 @@
           "key": "shade/Agrax Earthshade"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -4544,6 +5536,8 @@
           "key": "shade/Athonian Camoshade"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -4563,6 +5557,8 @@
           "key": "shade/Berserker Bloodshade"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -4582,6 +5578,8 @@
           "key": "shade/Biel-Tan Green"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -4601,6 +5599,8 @@
           "key": "shade/Carroburg Crimson"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -4620,6 +5620,8 @@
           "key": "shade/Casandora Yellow"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -4639,6 +5641,8 @@
           "key": "shade/Coelia Greenshade"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -4658,6 +5662,8 @@
           "key": "shade/Drakenhof Nightshade"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -4677,6 +5683,8 @@
           "key": "shade/Druchii Violet"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -4696,6 +5704,8 @@
           "key": "shade/Fuegan Orange"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -4715,6 +5725,8 @@
           "key": "shade/Kroak Green"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -4734,6 +5746,8 @@
           "key": "shade/Mortarion Grime"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -4753,6 +5767,8 @@
           "key": "shade/Nuln Oil"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -4772,6 +5788,8 @@
           "key": "shade/Poxwalker"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -4791,6 +5809,8 @@
           "key": "shade/Reikland Fleshshade"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -4810,6 +5830,8 @@
           "key": "shade/Seraphim Sepia"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -4829,6 +5851,8 @@
           "key": "shade/Soulblight Grey"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -4848,6 +5872,8 @@
           "key": "shade/Targor Rageshade"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -4867,6 +5893,8 @@
           "key": "shade/Tyran Blue"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -4886,6 +5914,8 @@
           "key": "technical/Agrellan Badland"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -4905,6 +5935,8 @@
           "key": "technical/Agrellan Earth"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -4924,6 +5956,8 @@
           "key": "technical/Armageddon Dust"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -4943,6 +5977,8 @@
           "key": "technical/Astrogranite"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -4962,6 +5998,8 @@
           "key": "technical/Blood For The Blood God"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -4981,6 +6019,8 @@
           "key": "technical/Martian Ironcrust"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -5000,6 +6040,8 @@
           "key": "technical/Martian Ironearth"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -5019,6 +6061,8 @@
           "key": "technical/Mordant Earth"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -5038,6 +6082,8 @@
           "key": "technical/Nihilakh Oxide"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -5057,6 +6103,8 @@
           "key": "technical/Nurgles Rot"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": "Nombre oficial según https://www.warhammer.com/en-GB/shop/Technical-Nurgles-Rot-2019; SimoGecko escribe «Nurgles Rot»."
     },
     {
@@ -5076,6 +6124,8 @@
           "key": "technical/Soulstone Blue"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -5095,6 +6145,8 @@
           "key": "technical/Spiritstone Red"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -5114,6 +6166,8 @@
           "key": "technical/Stirland Mud"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -5133,6 +6187,8 @@
           "key": "technical/Tesseract Glow"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -5152,6 +6208,8 @@
           "key": "technical/Typhus Corrosion"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -5171,6 +6229,8 @@
           "key": "technical/Valhallan Blizzard"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     },
     {
@@ -5190,6 +6250,8 @@
           "key": "technical/Waystone Green"
         }
       ],
+      "colorChoice": null,
+      "rejectedColors": [],
       "note": null
     }
   ]

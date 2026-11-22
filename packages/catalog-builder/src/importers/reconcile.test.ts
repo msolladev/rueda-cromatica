@@ -60,6 +60,8 @@ describe("reconcile (docs/04 §7)", () => {
         metallic: true,
         status: { kind: "active" },
         keys: [{ sourceId: "acme-chart", key: "AC-04" }],
+        colorChoice: null,
+        rejectedColors: [],
         note: null,
       },
     ]);
@@ -70,9 +72,24 @@ describe("reconcile (docs/04 §7)", () => {
     expect(run(row({ key: "AC-50", group: "Inks" }))).toEqual({
       ok: false,
       error: [
-        '"AC-50" (Inks): no rule for its group; ignore it or add its paint by hand',
+        '"AC-50" (Inks): no rule for its group; ignore it, or add it by hand as a key of an existing paint or of a new one',
       ],
     });
+  });
+
+  it("leaves new rows pending for a source without rules", () => {
+    const result = valid(
+      reconcile({
+        current: current(),
+        sourceId: sourceIdSchema.parse("acme-chart"),
+        rows: rowsWith(row({ key: "AC-50", group: "Inks" })),
+        rules: null,
+      }),
+    );
+    expect(result.proposals).toEqual([]);
+    expect(result.pending.map((i) => i.message)).toEqual([
+      '"AC-50" (Inks) is not a key of any paint and is not ignored',
+    ]);
   });
 
   it("fails when the proposed ID is taken, so the suffix is chosen by hand", () => {

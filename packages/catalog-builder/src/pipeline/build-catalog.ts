@@ -1,9 +1,9 @@
 /**
  * Builder process (docs/04 §6): reads the curated files, resolves the keys of
- * every source row, takes each paint's colour from its rows and assembles the
- * `catalog.json` document. Then validates it with `parseCatalog` and
- * serialises it deterministically (docs/02 §1). Pure: the files arrive
- * already read.
+ * every source row, chooses each paint's colour among the candidates of its
+ * rows and assembles the `catalog.json` document. Then validates it with
+ * `parseCatalog` and serialises it deterministically (docs/02 §1), with the
+ * report of colour discrepancies. Pure: the files arrive already read.
  */
 import { createHash } from "node:crypto";
 import {
@@ -22,7 +22,8 @@ import {
   type CuratedData,
   type DataIssue,
 } from "../curated/files.ts";
-import { checkColorPolicy, paintColor } from "./color.ts";
+import { checkColorPolicy, selectColor } from "./color.ts";
+import { colorDiscrepancies, type Discrepancy } from "./discrepancies.ts";
 import { resolveKeys } from "./resolve.ts";
 
 export type { CuratedData };
@@ -31,6 +32,10 @@ export interface BuiltCatalog {
   readonly document: CatalogDocument;
   /** Exact content of `catalog.json`. */
   readonly json: string;
+  /** The colour discrepancies between sources, sorted by paint ID. */
+  readonly discrepancies: readonly Discrepancy[];
+  /** Exact content of the discrepancy report. */
+  readonly discrepanciesJson: string;
 }
 
 /** Where an entity of the assembled catalog comes from, to report issues. */
@@ -63,16 +68,30 @@ export function buildCatalog(
     })),
   ];
 
-  // 3. The catalog paints, with the colour of their rows.
+  // 3. The catalog paints, with the colour chosen among their candidates.
   const paintItems: Located<Paint>[] = [];
+  const discrepancies: Discrepancy[] = [];
   for (const file of brandFiles) {
     file.paints.forEach((curated, i) => {
       const origin = { file: file.name, path: `paints[${String(i)}]` };
-      const color = paintColor(resolution.rows.get(curated.id) ?? [], policy);
-      if (!color.ok) {
-        issues.push({ ...origin, message: color.error });
+      const selection = selectColor(
+        resolution.rows.get(curated.id) ?? [],
+        policy,
+        curated,
+      );
+      if (!selection.ok) {
+        for (const issue of selection.error) {
+          const path = issue.path === "" ? "" : `.${issue.path}`;
+          issues.push({
+            ...origin,
+            path: `${origin.path}${path}`,
+            message: issue.message,
+          });
+        }
         return;
       }
+      const { color, others } = selection.value;
+      discrepancies.push(...colorDiscrepancies(curated.id, color, others));
       // Key order of docs/02 §3.
       const item: Paint = {
         id: curated.id,
@@ -82,7 +101,7 @@ export function buildCatalog(
         manufacturerCode: curated.manufacturerCode,
         type: curated.type,
         metallic: curated.metallic,
-        color: color.value,
+        color,
         status: curated.status,
       };
       paintItems.push({ item, origin });
@@ -138,8 +157,22 @@ export function buildCatalog(
     return err(parsed.error.issues.map((issue) => locate(issue, origins)));
   }
 
-  // 7. Deterministic serialisation (docs/02 §1).
-  return ok({ document, json: `${JSON.stringify(document, null, 2)}\n` });
+  // 7. Deterministic serialisation (docs/02 §1), and the discrepancy report
+  // in the same order as the paints.
+  const order = new Map(paints.map((p, i) => [p.item.id, i]));
+  const report = [...discrepancies].sort(
+    (a, b) => (order.get(a.paintId) ?? 0) - (order.get(b.paintId) ?? 0),
+  );
+  return ok({
+    document,
+    json: serialise(document),
+    discrepancies: report,
+    discrepanciesJson: serialise(report),
+  });
+}
+
+function serialise(value: unknown): string {
+  return `${JSON.stringify(value, null, 2)}\n`;
 }
 
 function sorted<T extends { readonly id: string }>(

@@ -41,7 +41,8 @@ export interface ImportOptions {
   readonly transcribe: (
     files: readonly { readonly name: string; readonly text: string }[],
   ) => Result<readonly SourceRow[], readonly string[]>;
-  readonly rules: ProposalRules;
+  /** `null` for a source that never proposes paints (see `reconcile`). */
+  readonly rules: ProposalRules | null;
 }
 
 function fail(messages: readonly string[]): number {

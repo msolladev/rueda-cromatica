@@ -1,6 +1,7 @@
 /**
- * Locations of the curated data and of `catalog.json` (docs/04 §2), and the
- * reading of those files shared by the entry points.
+ * Locations of the curated data, of `catalog.json` and of the discrepancy
+ * report (docs/04 §2 and §6), and the reading of those files shared by the
+ * entry points.
  */
 import { readdir, readFile, writeFile } from "node:fs/promises";
 import { join, relative, resolve } from "node:path";
@@ -17,6 +18,11 @@ export const TOMBSTONES_FILE = "tombstones.json";
 const IGNORE_REASONS_FILE = "ignore-reasons.json";
 const COLOR_POLICY_FILE = "color-policy.json";
 export const OUTPUT_FILE = join(REPO_DIR, "apps/web/public/catalog.json");
+/** The colour discrepancies between sources (docs/04 §6, step 9). */
+export const DISCREPANCIES_FILE = join(
+  PACKAGE_DIR,
+  "reports/color-discrepancies.json",
+);
 
 export const fromRepo = (path: string): string => relative(REPO_DIR, path);
 

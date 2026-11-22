@@ -19,7 +19,7 @@ const parsed = parseCatalog(
 if (!parsed.ok) throw new Error("catalog.json is not valid");
 const catalog = parsed.value;
 const index = buildPaintIndex(catalog);
-const base = { role: "base" as const, hex: "#3daf44" };
+const base = { role: "base" as const, hex: "#5d9a32" };
 const three = () => 3;
 
 describe("searchColor", () => {
@@ -40,8 +40,8 @@ describe("searchColor", () => {
     const citadel = results.byBrand[1];
     expect(citadel?.paints.map((paint) => paint.name)).toEqual([
       "Moot Green",
-      "Sybarite Green",
-      "Orruk Flesh",
+      "Niblet Green",
+      "Skarsnik Green",
     ]);
     expect(citadel?.hasMore).toBe(true);
     expect(citadel?.paints[0]).toMatchObject({
@@ -65,8 +65,8 @@ describe("searchColor", () => {
     );
     expect(results.overall.map((paint) => paint.name)).toEqual([
       "Moot Green",
-      "Ferocious Green",
-      "Clear Green",
+      "Leafy Green",
+      "Light Green",
     ]);
   });
 
@@ -106,11 +106,11 @@ describe("searchColor", () => {
     };
     const citadel = searchColor(catalog, index, base, filters, three)
       .byBrand[1];
-    // docs/06 §6.1: Moot Green, Tesseract Glow (technical), Hexwraith Flame (contrast).
+    // docs/06 §6.1: Moot Green, Tesseract Glow (technical), Mantis Warriors Green (contrast).
     expect(citadel?.paints.map((paint) => paint.name)).toEqual([
       "Moot Green",
       "Tesseract Glow",
-      "Hexwraith Flame",
+      "Mantis Warriors Green",
     ]);
   });
 

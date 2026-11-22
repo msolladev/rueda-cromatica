@@ -1,7 +1,8 @@
 /**
  * Key resolution (docs/04 §6, step 2): crosses every row of every source with
  * the curated paints through their keys. Each row ends up with exactly one
- * paint, or ignored by its group or its key; anything else is an issue.
+ * paint, or ignored by its group or its key; anything else is an issue. Also
+ * checks the reasons cited by ignores and rejected colours.
  * Shared by the builder and the importers' reconciliation. Pure.
  */
 import type { SourceId } from "@chromatic-wheel/domain";
@@ -22,10 +23,12 @@ export interface ResolveInput {
   };
 }
 
-/** A source row with the source it comes from. */
+/** A source row with the source it comes from and where it is written. */
 export interface ResolvedRow {
   readonly sourceId: SourceId;
   readonly row: SourceRow;
+  /** The source file and the path of the row in it, to point issues at. */
+  readonly at: { readonly file: string; readonly path: string };
 }
 
 export interface Resolution {
@@ -100,7 +103,18 @@ export function resolveKeys(input: ResolveInput): Resolution {
         }
         owner.set(id, paint.id);
         const row = source.file.paints[rowIndex];
-        if (row !== undefined) resolved.push({ sourceId, row });
+        if (row !== undefined) {
+          const path = `paints[${String(rowIndex)}]`;
+          resolved.push({
+            sourceId,
+            row,
+            at: { file: source.file.name, path },
+          });
+        }
+      });
+      paint.rejectedColors.forEach(({ reasonId }, r) => {
+        const path = `paints[${String(i)}].rejectedColors[${String(r)}]`;
+        checkReason(brand.name, path, reasonId);
       });
       rows.set(paint.id, resolved);
     });
@@ -121,7 +135,7 @@ export function resolveKeys(input: ResolveInput): Resolution {
           message: `"${row.key}" is ignored but is a key of ${paint}; remove the stale ignore`,
         });
       } else if (paint === undefined && !ignored) {
-        uncovered.push({ sourceId, row });
+        uncovered.push({ sourceId, row, at });
         issues.push({
           ...at,
           message: `"${row.key}" (${row.group}) is not a key of any paint and is not ignored`,
@@ -136,7 +150,7 @@ export function resolveKeys(input: ResolveInput): Resolution {
       issues.push({
         file: input.reasons.name,
         path: `[${String(i)}]`,
-        message: `Reason ${reason.id} is not used by any ignore`,
+        message: `Reason ${reason.id} is not used by any ignore or rejected colour`,
       });
     }
   });
