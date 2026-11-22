@@ -25,8 +25,12 @@ export interface PointerHandlers {
   readonly position: () => WheelColor;
   /** A drag starts on `zone`. */
   readonly start: (zone: Zone) => void;
-  /** The base moves during the drag. */
-  readonly move: (position: WheelColor) => void;
+  /**
+   * The base moves during the drag. `jump` is true when it goes at once to
+   * where the pointer landed (a mouse or pen press, or a tap), and false
+   * when it follows the pointer.
+   */
+  readonly move: (position: WheelColor, jump: boolean) => void;
   /** The drag ends, also when the browser cancels it. */
   readonly end: () => void;
 }
@@ -61,7 +65,10 @@ export function attachPointer(
   const finish = (event: PointerEvent) => {
     if (drag?.pointerId !== event.pointerId) return;
     if (event.type === "pointerup" && drag.relative && !drag.moved) {
-      handlers.move(placeAt(drag.zone, drag.startUnit, drag.startPosition));
+      handlers.move(
+        placeAt(drag.zone, drag.startUnit, drag.startPosition),
+        true,
+      );
     }
     drag = undefined;
     handlers.end();
@@ -88,7 +95,7 @@ export function attachPointer(
         moved: false,
       };
       handlers.start(zone);
-      if (!drag.relative) handlers.move(placeAt(zone, unit, position));
+      if (!drag.relative) handlers.move(placeAt(zone, unit, position), true);
     },
     { signal },
   );
@@ -99,7 +106,7 @@ export function attachPointer(
       if (drag?.pointerId !== event.pointerId) return;
       const unit = toUnit(event);
       if (!drag.relative) {
-        handlers.move(placeAt(drag.zone, unit, drag.startPosition));
+        handlers.move(placeAt(drag.zone, unit, drag.startPosition), false);
         return;
       }
       if (!drag.moved) {
@@ -110,7 +117,7 @@ export function attachPointer(
         if (moved < TAP_SLOP) return;
         drag.moved = true;
       }
-      handlers.move(moveBy(drag, unit));
+      handlers.move(moveBy(drag, unit), false);
     },
     { signal },
   );
