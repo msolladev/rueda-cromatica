@@ -174,6 +174,12 @@ export class ColorWheel extends EventTarget {
   #disabled: boolean;
   #destroyed = false;
   #dragSnapshot: string | undefined;
+  /**
+   * The sliders got the focus from a press on the wheel, not from the
+   * keyboard: their focus is not drawn until a key is used on them. The
+   * browser may still take a focus given by code as visible.
+   */
+  #pointerFocus = false;
   #announceToggle = false;
   /**
    * The wheel on its way to its new place (docs/05 §6.2): the template and,
@@ -877,12 +883,20 @@ export class ColorWheel extends EventTarget {
     this.#motionFrame = requestAnimationFrame(frame);
   }
 
-  /** Moves the base from the wheel itself: the position rules from now on. */
-  #movePosition(position: WheelColor): void {
-    this.#stopMotion();
+  /**
+   * Moves the base from the wheel itself: the position rules from now on. A
+   * jump (a press or a tap) travels to its place, as a change from outside
+   * the wheel does; following a drag goes there at once, and cuts a travel
+   * short (docs/05 §6.2).
+   */
+  #movePosition(position: WheelColor, jump: boolean): void {
+    const frame = this.#frame();
+    const model = this.#config.model;
     this.#position = position;
     this.#sourceHex = undefined;
     this.#colors = this.#harmonize();
+    if (jump) this.#startMotion(frame, model);
+    else this.#stopMotion();
     this.#render();
   }
 
@@ -899,12 +913,13 @@ export class ColorWheel extends EventTarget {
           this.#dragSnapshot = this.#snapshot();
           dom.root.classList.add("cw-is-dragging");
           this.#hovered = [];
+          this.#pointerFocus = true;
           (zone === "ring" ? dom.ring : dom.triangle).focus({
             preventScroll: true,
           });
         },
-        move: (position) => {
-          this.#movePosition(position);
+        move: (position, jump) => {
+          this.#movePosition(position, jump);
           this.#emit("input", "user");
         },
         end: () => {
@@ -920,6 +935,10 @@ export class ColorWheel extends EventTarget {
     );
 
     const onKey = (zone: Zone) => (event: KeyboardEvent) => {
+      if (this.#pointerFocus) {
+        this.#pointerFocus = false;
+        this.#draw();
+      }
       if (this.#disabled || event.altKey || event.ctrlKey || event.metaKey) {
         return;
       }
@@ -963,6 +982,7 @@ export class ColorWheel extends EventTarget {
       slider.addEventListener(
         "blur",
         () => {
+          this.#pointerFocus = false;
           this.#draw();
         },
         { signal },
@@ -1207,11 +1227,14 @@ export class ColorWheel extends EventTarget {
     const dom = this.#dom;
     const context = dom.canvas.getContext("2d");
     if (context === null || dom.canvas.width === 0) return;
-    const focus: Zone | undefined = dom.ring.matches(":focus-visible")
-      ? "ring"
-      : dom.triangle.matches(":focus-visible")
-        ? "triangle"
-        : undefined;
+    // The focus is drawn only when it comes from the keyboard.
+    const focus: Zone | undefined = this.#pointerFocus
+      ? undefined
+      : dom.ring.matches(":focus-visible")
+        ? "ring"
+        : dom.triangle.matches(":focus-visible")
+          ? "triangle"
+          : undefined;
     // The canvas's `color` is `--cw-focus` resolved for the theme: the
     // variable itself may be an unresolved `light-dark()`.
     const focusColor =
