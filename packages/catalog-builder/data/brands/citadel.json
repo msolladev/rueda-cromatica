@@ -51,14 +51,16 @@
       "manufacturerCode": null,
       "type": "base",
       "metallic": false,
-      "color": {
-        "hex": "#000000",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "base/Abaddon Black"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/base/averland-sunset",
@@ -68,14 +70,16 @@
       "manufacturerCode": null,
       "type": "base",
       "metallic": false,
-      "color": {
-        "hex": "#fbb81c",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "base/Averland Sunset"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/base/balthasar-gold",
@@ -85,14 +89,16 @@
       "manufacturerCode": null,
       "type": "base",
       "metallic": true,
-      "color": {
-        "hex": "#846146",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "base/Balthasar Gold"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/base/barak-nar-burgundy",
@@ -102,14 +108,16 @@
       "manufacturerCode": null,
       "type": "base",
       "metallic": false,
-      "color": {
-        "hex": "#451636",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "base/Barak-Nar Burgundy"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/base/bugmans-glow",
@@ -119,14 +127,16 @@
       "manufacturerCode": null,
       "type": "base",
       "metallic": false,
-      "color": {
-        "hex": "#804c43",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "base/Bugman's Glow"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/base/caledor-sky",
@@ -136,14 +146,16 @@
       "manufacturerCode": null,
       "type": "base",
       "metallic": false,
-      "color": {
-        "hex": "#366699",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "base/Caledor Sky"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/base/caliban-green",
@@ -153,14 +165,16 @@
       "manufacturerCode": null,
       "type": "base",
       "metallic": false,
-      "color": {
-        "hex": "#003d15",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "base/Caliban Green"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/base/castellan-green",
@@ -170,14 +184,16 @@
       "manufacturerCode": null,
       "type": "base",
       "metallic": false,
-      "color": {
-        "hex": "#264715",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "base/Castellan Green"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/base/catachan-flesh",
@@ -187,14 +203,16 @@
       "manufacturerCode": null,
       "type": "base",
       "metallic": false,
-      "color": {
-        "hex": "#442b25",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "base/Catachan Flesh"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/base/celestra-grey",
@@ -204,14 +222,16 @@
       "manufacturerCode": null,
       "type": "base",
       "metallic": false,
-      "color": {
-        "hex": "#8ba3a3",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "base/Celestra Grey"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/base/corax-white",
@@ -221,14 +241,16 @@
       "manufacturerCode": null,
       "type": "base",
       "metallic": false,
-      "color": {
-        "hex": "#ffffff",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "base/Corax White"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/base/corvus-black",
@@ -238,14 +260,16 @@
       "manufacturerCode": null,
       "type": "base",
       "metallic": false,
-      "color": {
-        "hex": "#171314",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "base/Corvus Black"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/base/daemonette-hide",
@@ -255,14 +279,16 @@
       "manufacturerCode": null,
       "type": "base",
       "metallic": false,
-      "color": {
-        "hex": "#655f81",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "base/Daemonette Hide"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/base/death-guard-green",
@@ -272,14 +298,16 @@
       "manufacturerCode": null,
       "type": "base",
       "metallic": false,
-      "color": {
-        "hex": "#6d774d",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "base/Death Guard Green"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/base/death-korps-drab",
@@ -289,14 +317,16 @@
       "manufacturerCode": null,
       "type": "base",
       "metallic": false,
-      "color": {
-        "hex": "#3d4539",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "base/Death Korps Drab"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/base/deathworld-forest",
@@ -306,14 +336,16 @@
       "manufacturerCode": null,
       "type": "base",
       "metallic": false,
-      "color": {
-        "hex": "#556229",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "base/Deathworld Forest"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/base/dryad-bark",
@@ -323,14 +355,16 @@
       "manufacturerCode": null,
       "type": "base",
       "metallic": false,
-      "color": {
-        "hex": "#2b2a24",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "base/Dryad Bark"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/base/gal-vorbak-red",
@@ -340,14 +374,16 @@
       "manufacturerCode": null,
       "type": "base",
       "metallic": false,
-      "color": {
-        "hex": "#4b213c",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "base/Gal Vorbak Red"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/base/grey-knights-steel",
@@ -357,14 +393,16 @@
       "manufacturerCode": null,
       "type": "base",
       "metallic": true,
-      "color": {
-        "hex": "#9ea8ae",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "base/Grey Knights Steel"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/base/grey-seer",
@@ -374,14 +412,16 @@
       "manufacturerCode": null,
       "type": "base",
       "metallic": false,
-      "color": {
-        "hex": "#a2a5a7",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "base/Grey Seer"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/base/hobgrot-hide",
@@ -391,14 +431,16 @@
       "manufacturerCode": null,
       "type": "base",
       "metallic": false,
-      "color": {
-        "hex": "#a1812a",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "base/Hobgrot Hide"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/base/incubi-darkness",
@@ -408,14 +450,16 @@
       "manufacturerCode": null,
       "type": "base",
       "metallic": false,
-      "color": {
-        "hex": "#082e32",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "base/Incubi Darkness"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/base/ionrach-skin",
@@ -425,14 +469,16 @@
       "manufacturerCode": null,
       "type": "base",
       "metallic": false,
-      "color": {
-        "hex": "#97a384",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "base/Ionrach Skin"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/base/iron-hands-steel",
@@ -442,14 +488,16 @@
       "manufacturerCode": null,
       "type": "base",
       "metallic": true,
-      "color": {
-        "hex": "#95938f",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "base/Iron Hands Steel"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/base/iron-warriors",
@@ -459,14 +507,16 @@
       "manufacturerCode": null,
       "type": "base",
       "metallic": true,
-      "color": {
-        "hex": "#787776",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "base/Iron Warriors"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/base/jokaero-orange",
@@ -476,14 +526,16 @@
       "manufacturerCode": null,
       "type": "base",
       "metallic": false,
-      "color": {
-        "hex": "#ed3814",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "base/Jokaero Orange"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/base/kantor-blue",
@@ -493,14 +545,16 @@
       "manufacturerCode": null,
       "type": "base",
       "metallic": false,
-      "color": {
-        "hex": "#02134e",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "base/Kantor Blue"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/base/khorne-red",
@@ -510,14 +564,16 @@
       "manufacturerCode": null,
       "type": "base",
       "metallic": false,
-      "color": {
-        "hex": "#650001",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "base/Khorne Red"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/base/leadbelcher",
@@ -527,14 +583,16 @@
       "manufacturerCode": null,
       "type": "base",
       "metallic": true,
-      "color": {
-        "hex": "#7a7f82",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "base/Leadbelcher"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/base/lupercal-green",
@@ -544,14 +602,16 @@
       "manufacturerCode": null,
       "type": "base",
       "metallic": false,
-      "color": {
-        "hex": "#002c2b",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "base/Lupercal Green"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/base/macragge-blue",
@@ -561,14 +621,16 @@
       "manufacturerCode": null,
       "type": "base",
       "metallic": false,
-      "color": {
-        "hex": "#0f3d7c",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "base/Macragge Blue"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/base/mechanicus-standard-grey",
@@ -578,14 +640,16 @@
       "manufacturerCode": null,
       "type": "base",
       "metallic": false,
-      "color": {
-        "hex": "#39484a",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "base/Mechanicus Standard Grey"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/base/mephiston-red",
@@ -595,14 +659,16 @@
       "manufacturerCode": null,
       "type": "base",
       "metallic": false,
-      "color": {
-        "hex": "#960c09",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "base/Mephiston Red"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/base/morghast-bone",
@@ -612,14 +678,16 @@
       "manufacturerCode": null,
       "type": "base",
       "metallic": false,
-      "color": {
-        "hex": "#c0a973",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "base/Morghast Bone"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/base/mournfang-brown",
@@ -629,14 +697,16 @@
       "manufacturerCode": null,
       "type": "base",
       "metallic": false,
-      "color": {
-        "hex": "#490f06",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "base/Mournfang Brown"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/base/naggaroth-night",
@@ -646,14 +716,16 @@
       "manufacturerCode": null,
       "type": "base",
       "metallic": false,
-      "color": {
-        "hex": "#3b2b50",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "base/Naggaroth Night"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/base/night-lords-blue",
@@ -663,14 +735,16 @@
       "manufacturerCode": null,
       "type": "base",
       "metallic": false,
-      "color": {
-        "hex": "#002b5c",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "base/Night Lords Blue"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/base/nocturne-green",
@@ -680,14 +754,16 @@
       "manufacturerCode": null,
       "type": "base",
       "metallic": false,
-      "color": {
-        "hex": "#162a29",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "base/Nocturne Green"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/base/orruk-flesh",
@@ -697,14 +773,16 @@
       "manufacturerCode": null,
       "type": "base",
       "metallic": false,
-      "color": {
-        "hex": "#8cc276",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "base/Orruk Flesh"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/base/phoenician-purple",
@@ -714,14 +792,16 @@
       "manufacturerCode": null,
       "type": "base",
       "metallic": false,
-      "color": {
-        "hex": "#440052",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "base/Phoenician Purple"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/base/rakarth-flesh",
@@ -731,14 +811,16 @@
       "manufacturerCode": null,
       "type": "base",
       "metallic": false,
-      "color": {
-        "hex": "#9c998d",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "base/Rakarth Flesh"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/base/ratskin-flesh",
@@ -748,14 +830,16 @@
       "manufacturerCode": null,
       "type": "base",
       "metallic": false,
-      "color": {
-        "hex": "#a86648",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "base/Ratskin Flesh"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/base/retributor-armour",
@@ -765,14 +849,16 @@
       "manufacturerCode": null,
       "type": "base",
       "metallic": true,
-      "color": {
-        "hex": "#c9a789",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "base/Retributor Armour"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/base/rhinox-hide",
@@ -782,14 +868,16 @@
       "manufacturerCode": null,
       "type": "base",
       "metallic": false,
-      "color": {
-        "hex": "#462f30",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "base/Rhinox Hide"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/base/runelord-brass",
@@ -799,14 +887,16 @@
       "manufacturerCode": null,
       "type": "base",
       "metallic": true,
-      "color": {
-        "hex": "#7d746d",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "base/Runelord Brass"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/base/screamer-pink",
@@ -816,14 +906,16 @@
       "manufacturerCode": null,
       "type": "base",
       "metallic": false,
-      "color": {
-        "hex": "#7a0e44",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "base/Screamer Pink"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/base/screaming-bell",
@@ -833,14 +925,16 @@
       "manufacturerCode": null,
       "type": "base",
       "metallic": true,
-      "color": {
-        "hex": "#ae8667",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "base/Screaming Bell"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/base/steel-legion-drab",
@@ -850,14 +944,16 @@
       "manufacturerCode": null,
       "type": "base",
       "metallic": false,
-      "color": {
-        "hex": "#584e2d",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "base/Steel Legion Drab"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/base/stegadon-scale-green",
@@ -867,14 +963,16 @@
       "manufacturerCode": null,
       "type": "base",
       "metallic": false,
-      "color": {
-        "hex": "#06455d",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "base/Stegadon Scale Green"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/base/the-fang",
@@ -884,14 +982,16 @@
       "manufacturerCode": null,
       "type": "base",
       "metallic": false,
-      "color": {
-        "hex": "#405b71",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "base/The Fang"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/base/thondia-brown",
@@ -901,14 +1001,16 @@
       "manufacturerCode": null,
       "type": "base",
       "metallic": false,
-      "color": {
-        "hex": "#54302a",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "base/Thondia Brown"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/base/thousand-sons-blue",
@@ -918,14 +1020,16 @@
       "manufacturerCode": null,
       "type": "base",
       "metallic": false,
-      "color": {
-        "hex": "#00506f",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "base/Thousand Sons Blue"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/base/waaagh-flesh",
@@ -935,14 +1039,16 @@
       "manufacturerCode": null,
       "type": "base",
       "metallic": false,
-      "color": {
-        "hex": "#0b3b36",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "base/Waaagh! Flesh"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/base/warplock-bronze",
@@ -952,14 +1058,16 @@
       "manufacturerCode": null,
       "type": "base",
       "metallic": true,
-      "color": {
-        "hex": "#996253",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "base/Warplock Bronze"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/base/wraithbone",
@@ -969,14 +1077,16 @@
       "manufacturerCode": null,
       "type": "base",
       "metallic": false,
-      "color": {
-        "hex": "#dbd1b2",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "base/Wraithbone"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/base/xv-88",
@@ -986,14 +1096,16 @@
       "manufacturerCode": null,
       "type": "base",
       "metallic": false,
-      "color": {
-        "hex": "#6c4811",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "base/XV-88"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/base/zandri-dust",
@@ -1003,14 +1115,16 @@
       "manufacturerCode": null,
       "type": "base",
       "metallic": false,
-      "color": {
-        "hex": "#988e56",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "base/Zandri Dust"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/contrast/aeldari-emerald",
@@ -1020,14 +1134,16 @@
       "manufacturerCode": null,
       "type": "contrast",
       "metallic": false,
-      "color": {
-        "hex": "#017166",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "contrast/Aeldari Emerald"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/contrast/aethermatic-blue",
@@ -1037,14 +1153,16 @@
       "manufacturerCode": null,
       "type": "contrast",
       "metallic": false,
-      "color": {
-        "hex": "#4f94a5",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "contrast/Aethermatic Blue"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/contrast/aggaros-dunes",
@@ -1054,14 +1172,16 @@
       "manufacturerCode": null,
       "type": "contrast",
       "metallic": false,
-      "color": {
-        "hex": "#908351",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "contrast/Aggaros Dunes"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/contrast/akhelian-green",
@@ -1071,14 +1191,16 @@
       "manufacturerCode": null,
       "type": "contrast",
       "metallic": false,
-      "color": {
-        "hex": "#005e77",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "contrast/Akhelian Green"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/contrast/apothecary-white",
@@ -1088,14 +1210,16 @@
       "manufacturerCode": null,
       "type": "contrast",
       "metallic": false,
-      "color": {
-        "hex": "#c2d3e3",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "contrast/Apothecary White"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/contrast/asurmen-blue",
@@ -1105,14 +1229,16 @@
       "manufacturerCode": null,
       "type": "contrast",
       "metallic": false,
-      "color": {
-        "hex": "#015993",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "contrast/Asurmen Blue"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/contrast/baal-red",
@@ -1122,14 +1248,16 @@
       "manufacturerCode": null,
       "type": "contrast",
       "metallic": false,
-      "color": {
-        "hex": "#ca1a26",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "contrast/Baal Red"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/contrast/bad-moon-yellow",
@@ -1139,14 +1267,16 @@
       "manufacturerCode": null,
       "type": "contrast",
       "metallic": false,
-      "color": {
-        "hex": "#fec710",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "contrast/Bad Moon Yellow"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/contrast/basilicanum-grey",
@@ -1156,14 +1286,16 @@
       "manufacturerCode": null,
       "type": "contrast",
       "metallic": false,
-      "color": {
-        "hex": "#4a4a49",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "contrast/Basilicanum Grey"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/contrast/black-legion",
@@ -1173,14 +1305,16 @@
       "manufacturerCode": null,
       "type": "contrast",
       "metallic": false,
-      "color": {
-        "hex": "#242425",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "contrast/Black Legion"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/contrast/black-templar",
@@ -1190,14 +1324,16 @@
       "manufacturerCode": null,
       "type": "contrast",
       "metallic": false,
-      "color": {
-        "hex": "#363635",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "contrast/Black Templar"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/contrast/blood-angels-red",
@@ -1207,14 +1343,16 @@
       "manufacturerCode": null,
       "type": "contrast",
       "metallic": false,
-      "color": {
-        "hex": "#9b0e12",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "contrast/Blood Angels Red"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/contrast/briar-queen-chill",
@@ -1224,14 +1362,16 @@
       "manufacturerCode": null,
       "type": "contrast",
       "metallic": false,
-      "color": {
-        "hex": "#6ca8b9",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "contrast/Briar Queen Chill"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/contrast/celestium-blue",
@@ -1241,14 +1381,16 @@
       "manufacturerCode": null,
       "type": "contrast",
       "metallic": false,
-      "color": {
-        "hex": "#174a86",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "contrast/Celestium Blue"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/contrast/creed-camo",
@@ -1258,14 +1400,16 @@
       "manufacturerCode": null,
       "type": "contrast",
       "metallic": false,
-      "color": {
-        "hex": "#356f45",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "contrast/Creed Camo"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/contrast/cygor-brown",
@@ -1275,14 +1419,16 @@
       "manufacturerCode": null,
       "type": "contrast",
       "metallic": false,
-      "color": {
-        "hex": "#512a29",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "contrast/Cygor Brown"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/contrast/dark-angels-green",
@@ -1292,14 +1438,16 @@
       "manufacturerCode": null,
       "type": "contrast",
       "metallic": false,
-      "color": {
-        "hex": "#0e2925",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "contrast/Dark Angels Green"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/contrast/darkoath-flesh",
@@ -1309,14 +1457,16 @@
       "manufacturerCode": null,
       "type": "contrast",
       "metallic": false,
-      "color": {
-        "hex": "#af756a",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "contrast/Darkoath Flesh"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/contrast/doomfire-magenta",
@@ -1326,14 +1476,16 @@
       "manufacturerCode": null,
       "type": "contrast",
       "metallic": false,
-      "color": {
-        "hex": "#c90077",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "contrast/Doomfire Magenta"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/contrast/dreadful-visage",
@@ -1343,14 +1495,16 @@
       "manufacturerCode": null,
       "type": "contrast",
       "metallic": false,
-      "color": {
-        "hex": "#b6a0b6",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "contrast/Dreadful Visage"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/contrast/flesh-tearers-red",
@@ -1360,14 +1514,16 @@
       "manufacturerCode": null,
       "type": "contrast",
       "metallic": false,
-      "color": {
-        "hex": "#5f0608",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "contrast/Flesh Tearers Red"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/contrast/frostheart",
@@ -1377,14 +1533,16 @@
       "manufacturerCode": null,
       "type": "contrast",
       "metallic": false,
-      "color": {
-        "hex": "#005479",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "contrast/Frostheart"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/contrast/fyreslayer-flesh",
@@ -1394,14 +1552,16 @@
       "manufacturerCode": null,
       "type": "contrast",
       "metallic": false,
-      "color": {
-        "hex": "#8c5c4b",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "contrast/Fyreslayer Flesh"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/contrast/garaghaks-sewer",
@@ -1411,14 +1571,16 @@
       "manufacturerCode": null,
       "type": "contrast",
       "metallic": false,
-      "color": {
-        "hex": "#6e502a",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "contrast/Garaghak's Sewer"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/contrast/gore-grunta-fur",
@@ -1428,14 +1590,16 @@
       "manufacturerCode": null,
       "type": "contrast",
       "metallic": false,
-      "color": {
-        "hex": "#723d19",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "contrast/Gore-Grunta Fur"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/contrast/gryph-charger-grey",
@@ -1445,14 +1609,16 @@
       "manufacturerCode": null,
       "type": "contrast",
       "metallic": false,
-      "color": {
-        "hex": "#6189a6",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "contrast/Gryph-Charger Grey"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/contrast/gryph-hound-orange",
@@ -1462,14 +1628,16 @@
       "manufacturerCode": null,
       "type": "contrast",
       "metallic": false,
-      "color": {
-        "hex": "#b1411b",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "contrast/Gryph-Hound Orange"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/contrast/guilliman-flesh",
@@ -1479,14 +1647,16 @@
       "manufacturerCode": null,
       "type": "contrast",
       "metallic": false,
-      "color": {
-        "hex": "#b46857",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "contrast/Guilliman Flesh"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/contrast/gutrippa-flesh",
@@ -1496,14 +1666,16 @@
       "manufacturerCode": null,
       "type": "contrast",
       "metallic": false,
-      "color": {
-        "hex": "#588755",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "contrast/Gutrippa Flesh"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/contrast/hexwraith-flame",
@@ -1513,14 +1685,16 @@
       "manufacturerCode": null,
       "type": "contrast",
       "metallic": false,
-      "color": {
-        "hex": "#00a237",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "contrast/Hexwraith Flame"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/contrast/imperial-fist",
@@ -1530,14 +1704,16 @@
       "manufacturerCode": null,
       "type": "contrast",
       "metallic": false,
-      "color": {
-        "hex": "#fbad17",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "contrast/Imperial Fist"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/contrast/ironjawz-yellow",
@@ -1547,14 +1723,16 @@
       "manufacturerCode": null,
       "type": "contrast",
       "metallic": false,
-      "color": {
-        "hex": "#d5a239",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "contrast/Ironjawz Yellow"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/contrast/iyanden-yellow",
@@ -1564,14 +1742,16 @@
       "manufacturerCode": null,
       "type": "contrast",
       "metallic": false,
-      "color": {
-        "hex": "#e79a16",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "contrast/Iyanden Yellow"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/contrast/karandras-green",
@@ -1581,14 +1761,16 @@
       "manufacturerCode": null,
       "type": "contrast",
       "metallic": false,
-      "color": {
-        "hex": "#007837",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "contrast/Karandras Green"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/contrast/kroxigor-scales",
@@ -1598,14 +1780,16 @@
       "manufacturerCode": null,
       "type": "contrast",
       "metallic": false,
-      "color": {
-        "hex": "#01798c",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "contrast/Kroxigor Scales"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/contrast/leviadon-blue",
@@ -1615,14 +1799,16 @@
       "manufacturerCode": null,
       "type": "contrast",
       "metallic": false,
-      "color": {
-        "hex": "#0e1a2e",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "contrast/Leviadon Blue"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/contrast/leviathan-purple",
@@ -1632,14 +1818,16 @@
       "manufacturerCode": null,
       "type": "contrast",
       "metallic": false,
-      "color": {
-        "hex": "#1b044c",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "contrast/Leviathan Purple"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/contrast/luxion-purple",
@@ -1649,14 +1837,16 @@
       "manufacturerCode": null,
       "type": "contrast",
       "metallic": false,
-      "color": {
-        "hex": "#350e60",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "contrast/Luxion Purple"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/contrast/magmadroth-flame",
@@ -1666,14 +1856,16 @@
       "manufacturerCode": null,
       "type": "contrast",
       "metallic": false,
-      "color": {
-        "hex": "#e45826",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "contrast/Magmadroth Flame"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/contrast/magos-purple",
@@ -1683,14 +1875,16 @@
       "manufacturerCode": null,
       "type": "contrast",
       "metallic": false,
-      "color": {
-        "hex": "#94648b",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "contrast/Magos Purple"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/contrast/mantis-warriors-green",
@@ -1700,14 +1894,16 @@
       "manufacturerCode": null,
       "type": "contrast",
       "metallic": false,
-      "color": {
-        "hex": "#5d893c",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "contrast/Mantis Warriors Green"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/contrast/militarum-green",
@@ -1717,14 +1913,16 @@
       "manufacturerCode": null,
       "type": "contrast",
       "metallic": false,
-      "color": {
-        "hex": "#7b842c",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "contrast/Militarum Green"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/contrast/nazdreg-yellow",
@@ -1734,14 +1932,16 @@
       "manufacturerCode": null,
       "type": "contrast",
       "metallic": false,
-      "color": {
-        "hex": "#906602",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "contrast/Nazdreg Yellow"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/contrast/nighthaunt-gloom",
@@ -1751,14 +1951,16 @@
       "manufacturerCode": null,
       "type": "contrast",
       "metallic": false,
-      "color": {
-        "hex": "#4c838a",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "contrast/Nighthaunt Gloom"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/contrast/ork-flesh",
@@ -1768,14 +1970,16 @@
       "manufacturerCode": null,
       "type": "contrast",
       "metallic": false,
-      "color": {
-        "hex": "#006823",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "contrast/Ork Flesh"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/contrast/plaguebearer-flesh",
@@ -1785,14 +1989,16 @@
       "manufacturerCode": null,
       "type": "contrast",
       "metallic": false,
-      "color": {
-        "hex": "#919b57",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "contrast/Plaguebearer Flesh"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/contrast/pylar-glacier",
@@ -1802,14 +2008,16 @@
       "manufacturerCode": null,
       "type": "contrast",
       "metallic": false,
-      "color": {
-        "hex": "#4fafe5",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "contrast/Pylar Glacier"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/contrast/ratling-grime",
@@ -1819,14 +2027,16 @@
       "manufacturerCode": null,
       "type": "contrast",
       "metallic": false,
-      "color": {
-        "hex": "#655f5d",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "contrast/Ratling Grime"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/contrast/shyish-purple",
@@ -1836,14 +2046,16 @@
       "manufacturerCode": null,
       "type": "contrast",
       "metallic": false,
-      "color": {
-        "hex": "#3b2050",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "contrast/Shyish Purple"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/contrast/sigvald-burgundy",
@@ -1853,14 +2065,16 @@
       "manufacturerCode": null,
       "type": "contrast",
       "metallic": false,
-      "color": {
-        "hex": "#6d004e",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "contrast/Sigvald Burgundy"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/contrast/skeleton-horde",
@@ -1870,14 +2084,16 @@
       "manufacturerCode": null,
       "type": "contrast",
       "metallic": false,
-      "color": {
-        "hex": "#bdb08b",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "contrast/Skeleton Horde"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/contrast/snakebite-leather",
@@ -1887,14 +2103,16 @@
       "manufacturerCode": null,
       "type": "contrast",
       "metallic": false,
-      "color": {
-        "hex": "#835725",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "contrast/Snakebite Leather"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/contrast/space-wolves-grey",
@@ -1904,14 +2122,16 @@
       "manufacturerCode": null,
       "type": "contrast",
       "metallic": false,
-      "color": {
-        "hex": "#4c698a",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "contrast/Space Wolves Grey"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/contrast/stormfiend",
@@ -1921,14 +2141,16 @@
       "manufacturerCode": null,
       "type": "contrast",
       "metallic": false,
-      "color": {
-        "hex": "#00517d",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "contrast/Stormfiend"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/contrast/striking-scorpion-green",
@@ -1938,14 +2160,16 @@
       "manufacturerCode": null,
       "type": "contrast",
       "metallic": false,
-      "color": {
-        "hex": "#067e3a",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "contrast/Striking Scorpion Green"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/contrast/talassar-blue",
@@ -1955,14 +2179,16 @@
       "manufacturerCode": null,
       "type": "contrast",
       "metallic": false,
-      "color": {
-        "hex": "#004e8c",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "contrast/Talassar Blue"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/contrast/terradon-turquoise",
@@ -1972,14 +2198,16 @@
       "manufacturerCode": null,
       "type": "contrast",
       "metallic": false,
-      "color": {
-        "hex": "#006a79",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "contrast/Terradon Turquoise"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/contrast/ultramarines-blue",
@@ -1989,14 +2217,16 @@
       "manufacturerCode": null,
       "type": "contrast",
       "metallic": false,
-      "color": {
-        "hex": "#122c5d",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "contrast/Ultramarines Blue"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/contrast/volupus-pink",
@@ -2006,14 +2236,16 @@
       "manufacturerCode": null,
       "type": "contrast",
       "metallic": false,
-      "color": {
-        "hex": "#700129",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "contrast/Volupus Pink"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/contrast/warp-lightning",
@@ -2023,14 +2255,16 @@
       "manufacturerCode": null,
       "type": "contrast",
       "metallic": false,
-      "color": {
-        "hex": "#017134",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "contrast/Warp Lightning"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/contrast/wyldwood",
@@ -2040,14 +2274,16 @@
       "manufacturerCode": null,
       "type": "contrast",
       "metallic": false,
-      "color": {
-        "hex": "#513630",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "contrast/Wyldwood"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/dry/astorath-red",
@@ -2057,14 +2293,16 @@
       "manufacturerCode": null,
       "type": "dry",
       "metallic": false,
-      "color": {
-        "hex": "#a9311e",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "dry/Astorath Red"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/dry/dawnstone",
@@ -2074,14 +2312,16 @@
       "manufacturerCode": null,
       "type": "dry",
       "metallic": false,
-      "color": {
-        "hex": "#697068",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "dry/Dawnstone"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/dry/eldar-flesh",
@@ -2091,14 +2331,16 @@
       "manufacturerCode": null,
       "type": "dry",
       "metallic": false,
-      "color": {
-        "hex": "#e8c07f",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "dry/Eldar Flesh"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/dry/etherium-blue",
@@ -2108,14 +2350,16 @@
       "manufacturerCode": null,
       "type": "dry",
       "metallic": false,
-      "color": {
-        "hex": "#9eb5ce",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "dry/Etherium Blue"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/dry/golden-griffon",
@@ -2125,14 +2369,16 @@
       "manufacturerCode": null,
       "type": "dry",
       "metallic": true,
-      "color": {
-        "hex": "#c7af8e",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "dry/Golden Griffon"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/dry/golgfag-brown",
@@ -2142,14 +2388,16 @@
       "manufacturerCode": null,
       "type": "dry",
       "metallic": false,
-      "color": {
-        "hex": "#8f502a",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "dry/Golgfag Brown"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/dry/hexos-palesun",
@@ -2159,14 +2407,16 @@
       "manufacturerCode": null,
       "type": "dry",
       "metallic": false,
-      "color": {
-        "hex": "#fff55a",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "dry/Hexos Palesun"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/dry/hoeth-blue",
@@ -2176,14 +2426,16 @@
       "manufacturerCode": null,
       "type": "dry",
       "metallic": false,
-      "color": {
-        "hex": "#4c78af",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "dry/Hoeth Blue"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/dry/imrik-blue",
@@ -2193,14 +2445,16 @@
       "manufacturerCode": null,
       "type": "dry",
       "metallic": false,
-      "color": {
-        "hex": "#208abf",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "dry/Imrik Blue"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/dry/longbeard-grey",
@@ -2210,14 +2464,16 @@
       "manufacturerCode": null,
       "type": "dry",
       "metallic": false,
-      "color": {
-        "hex": "#dbdcc6",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "dry/Longbeard Grey"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/dry/lucius-lilac",
@@ -2227,14 +2483,16 @@
       "manufacturerCode": null,
       "type": "dry",
       "metallic": false,
-      "color": {
-        "hex": "#b598c9",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "dry/Lucius Lilac"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/dry/necron-compound",
@@ -2244,14 +2502,16 @@
       "manufacturerCode": null,
       "type": "dry",
       "metallic": true,
-      "color": {
-        "hex": "#cbced0",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "dry/Necron Compound"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/dry/niblet-green",
@@ -2261,14 +2521,16 @@
       "manufacturerCode": null,
       "type": "dry",
       "metallic": false,
-      "color": {
-        "hex": "#378c35",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "dry/Niblet Green"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/dry/nurgling-green",
@@ -2278,14 +2540,16 @@
       "manufacturerCode": null,
       "type": "dry",
       "metallic": false,
-      "color": {
-        "hex": "#7e975e",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "dry/Nurgling Green"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/dry/praxeti-white",
@@ -2295,14 +2559,16 @@
       "manufacturerCode": null,
       "type": "dry",
       "metallic": false,
-      "color": {
-        "hex": "#ffffff",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "dry/Praxeti White"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/dry/ryza-rust",
@@ -2312,14 +2578,16 @@
       "manufacturerCode": null,
       "type": "dry",
       "metallic": false,
-      "color": {
-        "hex": "#f16c23",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "dry/Ryza Rust"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/dry/sigmarite",
@@ -2329,14 +2597,16 @@
       "manufacturerCode": null,
       "type": "dry",
       "metallic": true,
-      "color": {
-        "hex": "#dea755",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "dry/Sigmarite"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/dry/skink-blue",
@@ -2346,14 +2616,16 @@
       "manufacturerCode": null,
       "type": "dry",
       "metallic": false,
-      "color": {
-        "hex": "#54bdca",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "dry/Skink Blue"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/dry/stormfang",
@@ -2363,14 +2635,16 @@
       "manufacturerCode": null,
       "type": "dry",
       "metallic": false,
-      "color": {
-        "hex": "#5a7fa3",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "dry/Stormfang"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/dry/sylvaneth-bark",
@@ -2380,14 +2654,16 @@
       "manufacturerCode": null,
       "type": "dry",
       "metallic": false,
-      "color": {
-        "hex": "#4e483b",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "dry/Sylvaneth Bark"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/dry/terminatus-stone",
@@ -2397,14 +2673,16 @@
       "manufacturerCode": null,
       "type": "dry",
       "metallic": false,
-      "color": {
-        "hex": "#c8b79d",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "dry/Terminatus Stone"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/dry/tyrant-skull",
@@ -2414,14 +2692,16 @@
       "manufacturerCode": null,
       "type": "dry",
       "metallic": false,
-      "color": {
-        "hex": "#c8c483",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "dry/Tyrant Skull"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/dry/underhive-ash",
@@ -2431,14 +2711,16 @@
       "manufacturerCode": null,
       "type": "dry",
       "metallic": false,
-      "color": {
-        "hex": "#bcbb7e",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "dry/Underhive Ash"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/dry/wrack-white",
@@ -2448,14 +2730,16 @@
       "manufacturerCode": null,
       "type": "dry",
       "metallic": false,
-      "color": {
-        "hex": "#d3d0cf",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "dry/Wrack White"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/administratum-grey",
@@ -2465,14 +2749,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#989c94",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Administratum Grey"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/ahriman-blue",
@@ -2482,14 +2768,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#00708a",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Ahriman Blue"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/alaitoc-blue",
@@ -2499,14 +2787,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#2f4f85",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Alaitoc Blue"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/altdorf-guard-blue",
@@ -2516,14 +2806,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#2d4696",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Altdorf Guard Blue"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/auric-armour-gold",
@@ -2533,14 +2825,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": true,
-      "color": {
-        "hex": "#dca573",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Auric Armour Gold"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/baharroth-blue",
@@ -2550,14 +2844,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#54bdca",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Baharroth Blue"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/balor-brown",
@@ -2567,14 +2863,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#875408",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Balor Brown"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/baneblade-brown",
@@ -2584,14 +2882,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#8f7c68",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Baneblade Brown"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/bestigor-flesh",
@@ -2601,14 +2901,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#d08951",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Bestigor Flesh"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/bloodreaver-flesh",
@@ -2618,14 +2920,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#6a4848",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Bloodreaver Flesh"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/blue-horror",
@@ -2635,14 +2939,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#9eb5ce",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Blue Horror"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/brass-scorpion",
@@ -2652,14 +2958,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": true,
-      "color": {
-        "hex": "#996033",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Brass Scorpion"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/cadian-fleshtone",
@@ -2669,14 +2977,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#c47652",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Cadian Fleshtone"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/calgar-blue",
@@ -2686,14 +2996,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#2a497f",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Calgar Blue"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/canoptek-alloy",
@@ -2703,14 +3015,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": true,
-      "color": {
-        "hex": "#cabdba",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Canoptek Alloy"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/castellax-bronze",
@@ -2720,14 +3034,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": true,
-      "color": {
-        "hex": "#9b7363",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Castellax Bronze"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/dark-reaper",
@@ -2737,14 +3053,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#354d4c",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Dark Reaper"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/dawnstone",
@@ -2754,14 +3072,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#697068",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Dawnstone"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/deathclaw-brown",
@@ -2771,14 +3091,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#af634f",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Deathclaw Brown"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/dechala-lilac",
@@ -2788,14 +3110,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#b598c9",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Dechala Lilac"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/deepkin-flesh",
@@ -2805,14 +3129,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#a9b79f",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Deepkin Flesh"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/doombull-brown",
@@ -2822,14 +3148,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#570003",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Doombull Brown"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/dorn-yellow",
@@ -2839,14 +3167,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#fff55a",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Dorn Yellow"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/elysian-green",
@@ -2856,14 +3186,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#6b8c37",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Elysian Green"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/emperors-children",
@@ -2873,14 +3205,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#b74073",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Emperor's Children"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/eshin-grey",
@@ -2890,14 +3224,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#484b4e",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Eshin Grey"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/evil-sunz-scarlet",
@@ -2907,14 +3243,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#c01411",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Evil Sunz Scarlet"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/fenrisian-grey",
@@ -2924,14 +3262,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#6d94b3",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Fenrisian Grey"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/fire-dragon-bright",
@@ -2941,14 +3281,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#f4874e",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Fire Dragon Bright"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/flash-gitz-yellow",
@@ -2958,14 +3300,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#fff300",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Flash Gitz Yellow"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/flayed-one-flesh",
@@ -2975,14 +3319,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#eec483",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Flayed One Flesh"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/fulgrim-pink",
@@ -2992,14 +3338,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#f3abca",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Fulgrim Pink"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/fulgurite-copper",
@@ -3009,14 +3357,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": true,
-      "color": {
-        "hex": "#ae7d69",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Fulgurite Copper"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/gauss-blaster-green",
@@ -3026,14 +3376,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#7fc1a5",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Gauss Blaster Green"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/gehennas-gold",
@@ -3043,14 +3395,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": true,
-      "color": {
-        "hex": "#b87c1e",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Gehenna's Gold"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/genestealer-purple",
@@ -3060,14 +3414,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#7658a5",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Genestealer Purple"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/gorthor-brown",
@@ -3077,14 +3433,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#5f463f",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Gorthor Brown"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/hashut-copper",
@@ -3094,14 +3452,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": true,
-      "color": {
-        "hex": "#a07346",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Hashut Copper"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/hoeth-blue",
@@ -3111,14 +3471,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#4c78af",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Hoeth Blue"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/ironbreaker",
@@ -3128,14 +3490,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": true,
-      "color": {
-        "hex": "#959595",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Ironbreaker"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/kabalite-green",
@@ -3145,14 +3509,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#008962",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Kabalite Green"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/kakophoni-purple",
@@ -3162,14 +3528,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#8869ae",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Kakophoni Purple"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/karak-stone",
@@ -3179,14 +3547,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#b7945c",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Karak Stone"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/kislev-flesh",
@@ -3196,14 +3566,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#d1a570",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Kislev Flesh"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/knight-questor-flesh",
@@ -3213,14 +3585,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#996563",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Knight-Questor Flesh"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/krieg-khaki",
@@ -3230,14 +3604,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#bcbb7e",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Krieg Khaki"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/liberator-gold",
@@ -3247,14 +3623,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": true,
-      "color": {
-        "hex": "#c7af8e",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Liberator Gold"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/loren-forest",
@@ -3264,14 +3642,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#486c25",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Loren Forest"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/lothern-blue",
@@ -3281,14 +3661,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#2c9bcc",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Lothern Blue"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/lugganath-orange",
@@ -3298,14 +3680,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#f69b82",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Lugganath Orange"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/moot-green",
@@ -3315,14 +3699,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#3daf44",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Moot Green"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/nurgling-green",
@@ -3332,14 +3718,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#7e975e",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Nurgling Green"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/ogryn-camo",
@@ -3349,14 +3737,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#96a648",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Ogryn Camo"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/pallid-wych-flesh",
@@ -3366,14 +3756,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#caccbb",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Pallid Wych Flesh"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/phalanx-yellow",
@@ -3383,14 +3775,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#ffe200",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Phalanx Yellow"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/pink-horror",
@@ -3400,14 +3794,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#8e2757",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Pink Horror"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/runefang-steel",
@@ -3417,14 +3813,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": true,
-      "color": {
-        "hex": "#b4b7b9",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Runefang Steel"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/russ-grey",
@@ -3434,14 +3832,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#507085",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Russ Grey"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/screaming-skull",
@@ -3451,14 +3851,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#b9c099",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Screaming Skull"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/skarsnik-green",
@@ -3468,14 +3870,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#588f6b",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Skarsnik Green"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/skavenblight-dinge",
@@ -3485,14 +3889,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#45413b",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Skavenblight Dinge"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/skrag-brown",
@@ -3502,14 +3908,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#8b4806",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Skrag Brown"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/skullcrusher-brass",
@@ -3519,14 +3927,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": true,
-      "color": {
-        "hex": "#e6c29e",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Skullcrusher Brass"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/slaanesh-grey",
@@ -3536,14 +3946,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#8b8893",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Slaanesh Grey"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/sons-of-horus-green",
@@ -3553,14 +3965,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#00545e",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Sons of Horus Green"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/sotek-green",
@@ -3570,14 +3984,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#0b6371",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Sotek Green"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/squig-orange",
@@ -3587,14 +4003,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#a74d42",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Squig Orange"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/stormhost-silver",
@@ -3604,14 +4022,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": true,
-      "color": {
-        "hex": "#cbced0",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Stormhost Silver"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/stormvermin-fur",
@@ -3621,14 +4041,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#6d655f",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Stormvermin Fur"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/straken-green",
@@ -3638,14 +4060,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#597f1c",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Straken Green"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/sybarite-green",
@@ -3655,14 +4079,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#17a166",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Sybarite Green"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/sycorax-bronze",
@@ -3672,14 +4098,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": true,
-      "color": {
-        "hex": "#ab928f",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Sycorax Bronze"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/tallarn-sand",
@@ -3689,14 +4117,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#a07409",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Tallarn Sand"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/tau-light-ochre",
@@ -3706,14 +4136,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#bc6b10",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Tau Light Ochre"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/teclis-blue",
@@ -3723,14 +4155,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#3877bf",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Teclis Blue"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/temple-guard-blue",
@@ -3740,14 +4174,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#239489",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Temple Guard Blue"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/thunderhawk-blue",
@@ -3757,14 +4193,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#396a70",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Thunderhawk Blue"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/troll-slayer-orange",
@@ -3774,14 +4212,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#f16c23",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Troll Slayer Orange"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/tuskgor-fur",
@@ -3791,14 +4231,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#863231",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Tuskgor Fur"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/ulthuan-grey",
@@ -3808,14 +4250,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#c4ddd5",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Ulthuan Grey"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/ungor-flesh",
@@ -3825,14 +4269,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#d1a560",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Ungor Flesh"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/ushabti-bone",
@@ -3842,14 +4288,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#aba173",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Ushabti Bone"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/vulkan-green",
@@ -3859,14 +4307,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#223c2e",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Vulkan Green"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/warboss-green",
@@ -3876,14 +4326,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#317e57",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Warboss Green"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/warpfiend-grey",
@@ -3893,14 +4345,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#66656e",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Warpfiend Grey"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/warpstone-glow",
@@ -3910,14 +4364,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#0f702a",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Warpstone Glow"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/wazdakka-red",
@@ -3927,14 +4383,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#880804",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Wazdakka Red"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/white-scar",
@@ -3944,14 +4402,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#ffffff",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/White Scar"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/wild-rider-red",
@@ -3961,14 +4421,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#e82e1b",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Wild Rider Red"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/word-bearers-red",
@@ -3978,14 +4440,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#620104",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Word Bearers Red"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/xereus-purple",
@@ -3995,14 +4459,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#47125a",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Xereus Purple"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/yriel-yellow",
@@ -4012,14 +4478,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#ffd900",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Yriel Yellow"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/layer/zamesi-desert",
@@ -4029,14 +4497,16 @@
       "manufacturerCode": null,
       "type": "layer",
       "metallic": false,
-      "color": {
-        "hex": "#d89d1b",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Zamesi Desert"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/shade/agrax-earthshade",
@@ -4046,14 +4516,16 @@
       "manufacturerCode": null,
       "type": "wash",
       "metallic": false,
-      "color": {
-        "hex": "#837263",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "shade/Agrax Earthshade"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/shade/athonian-camoshade",
@@ -4063,14 +4535,16 @@
       "manufacturerCode": null,
       "type": "wash",
       "metallic": false,
-      "color": {
-        "hex": "#838460",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "shade/Athonian Camoshade"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/shade/berserker-bloodshade",
@@ -4080,14 +4554,16 @@
       "manufacturerCode": null,
       "type": "wash",
       "metallic": false,
-      "color": {
-        "hex": "#d58286",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "shade/Berserker Bloodshade"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/shade/biel-tan-green",
@@ -4097,14 +4573,16 @@
       "manufacturerCode": null,
       "type": "wash",
       "metallic": false,
-      "color": {
-        "hex": "#5c7f5d",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "shade/Biel-Tan Green"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/shade/carroburg-crimson",
@@ -4114,14 +4592,16 @@
       "manufacturerCode": null,
       "type": "wash",
       "metallic": false,
-      "color": {
-        "hex": "#935971",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "shade/Carroburg Crimson"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/shade/casandora-yellow",
@@ -4131,14 +4611,16 @@
       "manufacturerCode": null,
       "type": "wash",
       "metallic": false,
-      "color": {
-        "hex": "#f6b878",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "shade/Casandora Yellow"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/shade/coelia-greenshade",
@@ -4148,14 +4630,16 @@
       "manufacturerCode": null,
       "type": "wash",
       "metallic": false,
-      "color": {
-        "hex": "#1c736b",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "shade/Coelia Greenshade"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/shade/drakenhof-nightshade",
@@ -4165,14 +4649,16 @@
       "manufacturerCode": null,
       "type": "wash",
       "metallic": false,
-      "color": {
-        "hex": "#6f747e",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "shade/Drakenhof Nightshade"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/shade/druchii-violet",
@@ -4182,14 +4668,16 @@
       "manufacturerCode": null,
       "type": "wash",
       "metallic": false,
-      "color": {
-        "hex": "#6d4870",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "shade/Druchii Violet"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/shade/fuegan-orange",
@@ -4199,14 +4687,16 @@
       "manufacturerCode": null,
       "type": "wash",
       "metallic": false,
-      "color": {
-        "hex": "#a65d34",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "shade/Fuegan Orange"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/shade/kroak-green",
@@ -4216,14 +4706,16 @@
       "manufacturerCode": null,
       "type": "wash",
       "metallic": false,
-      "color": {
-        "hex": "#afcdb4",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "shade/Kroak Green"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/shade/mortarion-grime",
@@ -4233,14 +4725,16 @@
       "manufacturerCode": null,
       "type": "wash",
       "metallic": false,
-      "color": {
-        "hex": "#ccbe7b",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "shade/Mortarion Grime"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/shade/nuln-oil",
@@ -4250,14 +4744,16 @@
       "manufacturerCode": null,
       "type": "wash",
       "metallic": false,
-      "color": {
-        "hex": "#6f6c6b",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "shade/Nuln Oil"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/shade/poxwalker",
@@ -4267,14 +4763,16 @@
       "manufacturerCode": null,
       "type": "wash",
       "metallic": false,
-      "color": {
-        "hex": "#9cb9b9",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "shade/Poxwalker"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/shade/reikland-fleshshade",
@@ -4284,14 +4782,16 @@
       "manufacturerCode": null,
       "type": "wash",
       "metallic": false,
-      "color": {
-        "hex": "#92705a",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "shade/Reikland Fleshshade"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/shade/seraphim-sepia",
@@ -4301,14 +4801,16 @@
       "manufacturerCode": null,
       "type": "wash",
       "metallic": false,
-      "color": {
-        "hex": "#856240",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "shade/Seraphim Sepia"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/shade/soulblight-grey",
@@ -4318,14 +4820,16 @@
       "manufacturerCode": null,
       "type": "wash",
       "metallic": false,
-      "color": {
-        "hex": "#c2bdbd",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "shade/Soulblight Grey"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/shade/targor-rageshade",
@@ -4335,14 +4839,16 @@
       "manufacturerCode": null,
       "type": "wash",
       "metallic": false,
-      "color": {
-        "hex": "#9e919c",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "shade/Targor Rageshade"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/shade/tyran-blue",
@@ -4352,14 +4858,16 @@
       "manufacturerCode": null,
       "type": "wash",
       "metallic": false,
-      "color": {
-        "hex": "#91add1",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "shade/Tyran Blue"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/technical/agrellan-badland",
@@ -4369,14 +4877,16 @@
       "manufacturerCode": null,
       "type": "technical",
       "metallic": false,
-      "color": {
-        "hex": "#a38f72",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "technical/Agrellan Badland"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/technical/agrellan-earth",
@@ -4386,14 +4896,16 @@
       "manufacturerCode": null,
       "type": "technical",
       "metallic": false,
-      "color": {
-        "hex": "#a38f72",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "technical/Agrellan Earth"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/technical/armageddon-dust",
@@ -4403,14 +4915,16 @@
       "manufacturerCode": null,
       "type": "technical",
       "metallic": false,
-      "color": {
-        "hex": "#dec045",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "technical/Armageddon Dust"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/technical/astrogranite",
@@ -4420,14 +4934,16 @@
       "manufacturerCode": null,
       "type": "technical",
       "metallic": false,
-      "color": {
-        "hex": "#898989",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "technical/Astrogranite"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/technical/blood-for-the-blood-god",
@@ -4437,14 +4953,16 @@
       "manufacturerCode": null,
       "type": "technical",
       "metallic": false,
-      "color": {
-        "hex": "#7a2d2c",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "technical/Blood For The Blood God"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/technical/martian-ironcrust",
@@ -4454,14 +4972,16 @@
       "manufacturerCode": null,
       "type": "technical",
       "metallic": false,
-      "color": {
-        "hex": "#b5604f",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "technical/Martian Ironcrust"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/technical/martian-ironearth",
@@ -4471,14 +4991,16 @@
       "manufacturerCode": null,
       "type": "technical",
       "metallic": false,
-      "color": {
-        "hex": "#b5604f",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "technical/Martian Ironearth"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/technical/mordant-earth",
@@ -4488,14 +5010,16 @@
       "manufacturerCode": null,
       "type": "technical",
       "metallic": false,
-      "color": {
-        "hex": "#302c2d",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "technical/Mordant Earth"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/technical/nihilakh-oxide",
@@ -4505,14 +5029,16 @@
       "manufacturerCode": null,
       "type": "technical",
       "metallic": false,
-      "color": {
-        "hex": "#66b39a",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "technical/Nihilakh Oxide"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/technical/nurgles-rot",
@@ -4522,14 +5048,16 @@
       "manufacturerCode": null,
       "type": "technical",
       "metallic": false,
-      "color": {
-        "hex": "#9d8b16",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "technical/Nurgles Rot"
+        }
+      ],
+      "note": "Nombre oficial según https://www.warhammer.com/en-GB/shop/Technical-Nurgles-Rot-2019; SimoGecko escribe «Nurgles Rot»."
     },
     {
       "id": "citadel/technical/soulstone-blue",
@@ -4539,14 +5067,16 @@
       "manufacturerCode": null,
       "type": "technical",
       "metallic": false,
-      "color": {
-        "hex": "#313a69",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "technical/Soulstone Blue"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/technical/spiritstone-red",
@@ -4556,14 +5086,16 @@
       "manufacturerCode": null,
       "type": "technical",
       "metallic": false,
-      "color": {
-        "hex": "#943c2c",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "technical/Spiritstone Red"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/technical/stirland-mud",
@@ -4573,14 +5105,16 @@
       "manufacturerCode": null,
       "type": "technical",
       "metallic": false,
-      "color": {
-        "hex": "#5b3a07",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "technical/Stirland Mud"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/technical/tesseract-glow",
@@ -4590,14 +5124,16 @@
       "manufacturerCode": null,
       "type": "technical",
       "metallic": false,
-      "color": {
-        "hex": "#49ad33",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "technical/Tesseract Glow"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/technical/typhus-corrosion",
@@ -4607,14 +5143,16 @@
       "manufacturerCode": null,
       "type": "technical",
       "metallic": false,
-      "color": {
-        "hex": "#373a22",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "technical/Typhus Corrosion"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/technical/valhallan-blizzard",
@@ -4624,14 +5162,16 @@
       "manufacturerCode": null,
       "type": "technical",
       "metallic": false,
-      "color": {
-        "hex": "#f0f0f0",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "technical/Valhallan Blizzard"
+        }
+      ],
+      "note": null
     },
     {
       "id": "citadel/technical/waystone-green",
@@ -4641,14 +5181,16 @@
       "manufacturerCode": null,
       "type": "technical",
       "metallic": false,
-      "color": {
-        "hex": "#2d5842",
-        "origin": "community",
-        "sourceId": "simogecko-citadel-colours"
-      },
       "status": {
         "kind": "active"
-      }
+      },
+      "keys": [
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "technical/Waystone Green"
+        }
+      ],
+      "note": null
     }
   ]
 }

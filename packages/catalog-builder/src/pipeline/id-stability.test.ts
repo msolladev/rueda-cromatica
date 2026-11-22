@@ -4,7 +4,7 @@ import {
   type IdCollection,
   type Tombstones,
 } from "../curated/files.ts";
-import { acmeFile, globexFile, sourcesFile } from "../fixtures.ts";
+import { curatedData } from "../fixtures.ts";
 import { buildCatalog } from "./build-catalog.ts";
 import {
   catalogIds,
@@ -26,10 +26,7 @@ const RETIRED: Readonly<Record<IdCollection, string>> = {
 
 /** The IDs of the catalog built from the fixtures. */
 function current(): CatalogIds {
-  const built = buildCatalog({
-    sources: sourcesFile(),
-    brands: [acmeFile(), globexFile()],
-  });
+  const built = buildCatalog(curatedData());
   if (!built.ok) throw new Error(JSON.stringify(built.error));
   const ids = catalogIds(built.value.document);
   if (!ids.ok) throw new Error(ids.error);
