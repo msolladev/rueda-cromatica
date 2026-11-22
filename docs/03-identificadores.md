@@ -94,6 +94,8 @@ Compara el catálogo generado con el de la última publicación: el `catalog.jso
 
 Se aplica a pinturas, gamas, marcas y fuentes.
 
+Una fuente desactivada sale del catálogo, pero su fichero sigue en los datos curados, así que su ID no cuenta como desaparecido y no lleva lápida: vuelve al reactivarla ([ADR-0019](adr/0019-alcance-minimo-mvp.md), decisión 5, y [ADR-0032](adr/0032-desactivacion-fuentes-archivado.md)). Sus pinturas se quedan, con otro color o sin él ([docs/04](04-datos-curados.md) §6).
+
 - Lo ejecuta `build-catalog`, también con `--check`, y si falla no escribe nada. El mensaje dice cómo arreglar cada caso y, para un ID que desaparece, da la lápida lista para pegar.
 - Mientras no haya ninguna etiqueta, solo se comprueba la regla 2: ningún usuario guarda IDs todavía, así que se pueden corregir libremente.
 - Cada publicación en producción crea su etiqueta: `release/AAAA-MM-DD` la primera del día, con la fecha en UTC, y `release/AAAA-MM-DD.2`, `.3`… las siguientes del mismo día. La más reciente es la de fecha y número mayores. Las etiquetas de `release/` con otro formato hacen fallar el builder, y `next-release-tag` da la de una publicación nueva.

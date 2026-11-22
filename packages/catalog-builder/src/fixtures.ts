@@ -50,6 +50,8 @@ export interface SourceContent {
     license: string;
     attribution: string | null;
   };
+  disabled: { note: string } | null;
+  files: { url: string; name: string; sha256: string }[];
   paints: Row[];
   ignoredGroups: (Ignore & { group: string })[];
   ignoredKeys: (Ignore & { key: string })[];
@@ -71,6 +73,8 @@ export function acmeSource(): RawFile & { content: SourceContent } {
         license: "terms-of-use",
         attribution: null,
       },
+      disabled: null,
+      files: [],
       paints: [
         row({ key: "AC-01", name: "Red", hex: "#AA0000" }),
         row({ key: "AC-02", name: "Blue", hex: "#0000aa" }),

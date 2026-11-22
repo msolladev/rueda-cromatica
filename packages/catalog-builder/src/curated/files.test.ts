@@ -54,6 +54,55 @@ describe("readSourceFile (docs/04 §3)", () => {
     ]);
   });
 
+  it("requires the capture to be of the source URL (ADR-0032)", () => {
+    const file = acmeSource();
+    file.content.source.archiveUrl =
+      "https://web.archive.org/web/20261122120000/https://example.com/acme";
+    expect(readSourceFile(file).ok).toBe(true);
+    // The URL moved to a new revision and the capture is of the old one.
+    file.content.source.url = "https://example.com/acme-2";
+    expect(paths(readSourceFile(file))).toEqual([
+      "sources/acme-chart.json source.archiveUrl",
+    ]);
+    file.content.source.archiveUrl = "https://web.archive.org/";
+    expect(paths(readSourceFile(file))).toEqual([
+      "sources/acme-chart.json source.archiveUrl",
+    ]);
+  });
+
+  it("accepts a disabled source, always with its note", () => {
+    const file = acmeSource();
+    file.content.disabled = { note: "Fictitious reason." };
+    expect(readSourceFile(file).ok).toBe(true);
+    file.content.disabled = { note: "" };
+    expect(paths(readSourceFile(file))).toEqual([
+      "sources/acme-chart.json disabled.note",
+    ]);
+  });
+
+  it("checks the downloaded files: a hash and a name each, not repeated", () => {
+    const file = acmeSource();
+    const download = {
+      url: "https://example.com/acme.pdf",
+      name: "acme.pdf",
+      sha256: "0".repeat(64),
+    };
+    file.content.files = [download];
+    expect(readSourceFile(file).ok).toBe(true);
+    file.content.files = [download, { ...download, sha256: "ABC" }];
+    expect(paths(readSourceFile(file))).toEqual([
+      "sources/acme-chart.json files[1].sha256",
+    ]);
+    file.content.files = [download, { ...download, name: "../acme.pdf" }];
+    expect(paths(readSourceFile(file))).toEqual([
+      "sources/acme-chart.json files[1].name",
+    ]);
+    file.content.files = [download, download];
+    expect(paths(readSourceFile(file))).toEqual([
+      "sources/acme-chart.json files[1].name",
+    ]);
+  });
+
   it("rejects unknown fields", () => {
     const file = acmeSource();
     file.content.paints = [{ ...row({ key: "AC-01" }), ean: "0" } as never];

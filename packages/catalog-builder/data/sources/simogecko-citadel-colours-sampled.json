@@ -5,11 +5,19 @@
     "title": "Citadel Colours Sampled Values",
     "publisher": "SimoGecko",
     "url": "https://github.com/SimoGecko/CitadelColours/blob/0ea153b7c6e747cf15691dd16b8e8cc6a4551244/tables/citadel_colors_sampled.md",
-    "archiveUrl": null,
+    "archiveUrl": "https://web.archive.org/web/20261122155116/https://github.com/SimoGecko/CitadelColours/blob/0ea153b7c6e747cf15691dd16b8e8cc6a4551244/tables/citadel_colors_sampled.md",
     "retrievedAt": "2026-11-22",
     "license": "unknown",
     "attribution": "SimoGecko/CitadelColours, from the painted swatches of Tale of Painters"
   },
+  "disabled": null,
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/SimoGecko/CitadelColours/0ea153b7c6e747cf15691dd16b8e8cc6a4551244/tables/citadel_colors_sampled.md",
+      "name": "citadel_colors_sampled.md",
+      "sha256": "ab8c05dd3f3a7cf7792209c1c43e00b9d418510f4914c9c5990fb118326f6eed"
+    }
+  ],
   "paints": [
     {
       "key": "Rhinox Hide",

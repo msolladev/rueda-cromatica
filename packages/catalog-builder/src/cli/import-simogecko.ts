@@ -15,7 +15,7 @@ import {
   transcribeSimoGecko,
   transcribeSimoGeckoSampled,
 } from "../importers/simogecko.ts";
-import { rawUrl, runImport } from "./run-import.ts";
+import { runImport } from "./run-import.ts";
 
 const join = (files: readonly { readonly text: string }[]): string =>
   files.map((f) => f.text).join("\n");
@@ -23,13 +23,11 @@ const join = (files: readonly { readonly text: string }[]): string =>
 process.exitCode =
   (await runImport({
     sourceId: sourceIdSchema.parse("simogecko-citadel-colours"),
-    fileUrls: (pinned) => [rawUrl(pinned)],
     transcribe: (files) => transcribeSimoGecko(join(files)),
     rules: SIMOGECKO_RULES,
   })) ||
   (await runImport({
     sourceId: sourceIdSchema.parse("simogecko-citadel-colours-sampled"),
-    fileUrls: (pinned) => [rawUrl(pinned)],
     transcribe: (files) => transcribeSimoGeckoSampled(join(files)),
     rules: null,
   }));

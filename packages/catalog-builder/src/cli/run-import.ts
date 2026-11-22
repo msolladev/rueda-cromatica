@@ -1,6 +1,6 @@
 /**
- * Flow shared by the importer entry points (docs/04 §7): fetches the source
- * at the commit pinned in its file, transcribes it, reconciles it with the
+ * Flow shared by the importer entry points (docs/04 §7): fetches the files of
+ * the source (`source-files.ts`) at the commit pinned in its file, transcribes it, reconciles it with the
  * curated paints and writes the source file and the proposed paints. The
  * importer logic itself stays pure.
  */
@@ -9,8 +9,8 @@ import {
   readBrandFile,
   readCurated,
   readSourceFile,
+  sourceContent,
   type SourceFile,
-  type SourceFileContent,
   type SourceRow,
 } from "../curated/files.ts";
 import { reconcile, type ProposalRules } from "../importers/reconcile.ts";
@@ -20,24 +20,10 @@ import {
   readCuratedFiles,
   writeDataFile,
 } from "./data-files.ts";
-
-/** A GitHub URL pinned to a commit: `…/blob/<sha>/<path>` or `…/tree/<sha>`. */
-export interface PinnedGitHub {
-  readonly repo: string;
-  readonly commit: string;
-  readonly path: string;
-}
-
-const PINNED_URL =
-  /^https:\/\/github\.com\/([^/]+\/[^/]+)\/(?:blob|tree)\/([0-9a-f]{40})(?:\/(.*))?$/;
-
-export const rawUrl = (pinned: PinnedGitHub, path = pinned.path): string =>
-  `https://raw.githubusercontent.com/${pinned.repo}/${pinned.commit}/${path}`;
+import { sourceFileUrls } from "./source-files.ts";
 
 export interface ImportOptions {
   readonly sourceId: SourceId;
-  /** The raw files to fetch, from the pinned URL of the source. */
-  readonly fileUrls: (pinned: PinnedGitHub) => readonly string[];
   readonly transcribe: (
     files: readonly { readonly name: string; readonly text: string }[],
   ) => Result<readonly SourceRow[], readonly string[]>;
@@ -64,16 +50,14 @@ export async function runImport(options: ImportOptions): Promise<number> {
   if (source === undefined) {
     return fail([`No source file for ${options.sourceId}`]);
   }
-  const match = PINNED_URL.exec(source.source.url ?? "");
-  if (match === null) {
-    return fail([
-      `${dataPath(source.name)}: ${options.sourceId} needs a GitHub URL pinned to a commit`,
-    ]);
+  const urls = sourceFileUrls(source.source);
+  if (!urls.ok) return fail([`${dataPath(source.name)}: ${urls.error}`]);
+  if (urls.value === null || urls.value.length === 0) {
+    return fail([`${dataPath(source.name)}: ${options.sourceId} has no URL`]);
   }
-  const [, repo = "", commit = "", path = ""] = match;
 
   const fetched: { name: string; text: string }[] = [];
-  for (const url of options.fileUrls({ repo, commit, path })) {
+  for (const url of urls.value) {
     const response = await fetch(url);
     if (!response.ok) {
       return fail([`Could not fetch ${url}: HTTP ${String(response.status)}`]);
@@ -137,14 +121,4 @@ export async function runImport(options: ImportOptions): Promise<number> {
   }
   console.log("\nNext: pnpm format, then build-catalog, and review the diff.");
   return 0;
-}
-
-/** The content of a source file, in the order of its schema. */
-function sourceContent(file: SourceFile): SourceFileContent {
-  return {
-    source: file.source,
-    paints: file.paints,
-    ignoredGroups: file.ignoredGroups,
-    ignoredKeys: file.ignoredKeys,
-  };
 }

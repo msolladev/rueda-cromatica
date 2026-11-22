@@ -82,10 +82,36 @@ export const sourceRowSchema = z
 const ignoredSchema = <T extends z.ZodRawShape>(shape: T) =>
   z.strictObject({ ...shape, reasonId: slug, note }).readonly();
 
+/**
+ * Why a source is disabled (ADR-0015): it stays in the curated data, but it
+ * leaves `catalog.json` and gives no colour.
+ */
+export const sourceDisabledSchema = z.strictObject({ note: text }).readonly();
+
+/**
+ * A file of the source downloaded by `archive-sources` (ADR-0015), outside
+ * the repository: the URL it was downloaded from, its name in the downloads
+ * folder of the source and its SHA-256.
+ */
+export const sourceDownloadSchema = z
+  .strictObject({
+    url: z.url({ protocol: /^https?$/ }),
+    name: z
+      .string()
+      .regex(/^[^/\\]+$/)
+      .refine((name) => name !== "." && name !== "..", "Not a file name"),
+    sha256: z.string().regex(/^[0-9a-f]{64}$/),
+  })
+  .readonly();
+
 export const sourceFileSchema = z
   .strictObject({
     /** The source as it goes to `catalog.json`. */
     source: z.strictObject(sourceSchema.unwrap().shape).readonly(),
+    /** `null` if the source is enabled. */
+    disabled: sourceDisabledSchema.nullable(),
+    /** The files downloaded by `archive-sources`; empty until it runs. */
+    files: z.array(sourceDownloadSchema).readonly(),
     paints: z.array(sourceRowSchema).readonly(),
     /** Whole groups left out of the catalog, with their reason. */
     ignoredGroups: z.array(ignoredSchema({ group: text })).readonly(),
@@ -95,9 +121,22 @@ export const sourceFileSchema = z
   .readonly();
 
 export type SourceRow = z.infer<typeof sourceRowSchema>;
+export type SourceDownload = z.infer<typeof sourceDownloadSchema>;
 export type SourceFileContent = z.infer<typeof sourceFileSchema>;
 export interface SourceFile extends SourceFileContent {
   readonly name: string;
+}
+
+/** The content of a source file, in the order of its schema. */
+export function sourceContent(file: SourceFile): SourceFileContent {
+  return {
+    source: file.source,
+    disabled: file.disabled,
+    files: file.files,
+    paints: file.paints,
+    ignoredGroups: file.ignoredGroups,
+    ignoredKeys: file.ignoredKeys,
+  };
 }
 
 /** Validates a source file; its name is the source ID. */
@@ -106,16 +145,43 @@ export function readSourceFile(file: RawFile): FileResult<SourceFile> {
   if (!parsed.success) return err(zodIssues(file.name, parsed.error));
   const issues: DataIssue[] = [];
   const { source } = parsed.data;
+  const report = (path: string, message: string): void => {
+    issues.push({ file: file.name, path, message });
+  };
   if (!namedAfter(file, source.id)) {
-    issues.push({
-      file: file.name,
-      path: "source.id",
-      message: `Must match the file name (expected ${source.id}.json)`,
-    });
+    report(
+      "source.id",
+      `Must match the file name (expected ${source.id}.json)`,
+    );
+  }
+  if (
+    source.archiveUrl !== null &&
+    (source.url === null || captureOf(source.archiveUrl) !== source.url)
+  ) {
+    report(
+      "source.archiveUrl",
+      `Must be a capture of the source URL, https://web.archive.org/web/<timestamp>/${source.url ?? "<url>"}; if the URL changed, set it to null and run archive-sources`,
+    );
+  }
+  for (const path of repeated(
+    parsed.data.files.map(({ name }) => name),
+    (i) => `files[${String(i)}].name`,
+  )) {
+    report(path.path, path.message);
   }
   return issues.length > 0
     ? err(issues)
     : ok({ name: file.name, ...parsed.data });
+}
+
+const CAPTURE = /^https:\/\/web\.archive\.org\/web\/\d{14}\/(.+)$/;
+
+/**
+ * The URL captured by a Wayback Machine playback URL,
+ * `https://web.archive.org/web/<timestamp>/<url>`, or `null` if it is not one.
+ */
+export function captureOf(archiveUrl: string): string | null {
+  return CAPTURE.exec(archiveUrl)?.[1] ?? null;
 }
 
 // ── brands/<brand-id>.json: the curated paints (docs/04 §4) ──

@@ -65,6 +65,7 @@ describe("checkIdStability (docs/03 §7)", () => {
           current: current(),
           tombstones: noTombstones,
           published,
+          disabledSources: new Set(),
         }),
       ).toEqual([{ kind: "missing", collection, id }]);
     });
@@ -75,6 +76,7 @@ describe("checkIdStability (docs/03 §7)", () => {
           current: current(),
           tombstones: tombstoned(collection, id),
           published,
+          disabledSources: new Set(),
         }),
       ).toEqual([]);
     });
@@ -85,6 +87,7 @@ describe("checkIdStability (docs/03 §7)", () => {
           current: withId(current(), collection, id),
           tombstones: tombstoned(collection, id),
           published,
+          disabledSources: new Set(),
         }),
       ).toEqual([{ kind: "reused", collection, id }]);
     });
@@ -97,6 +100,7 @@ describe("checkIdStability (docs/03 §7)", () => {
         current: ids,
         tombstones: noTombstones,
         published: { release: "release/2026-12-01", ids },
+        disabledSources: new Set(),
       }),
     ).toEqual([]);
   });
@@ -107,6 +111,7 @@ describe("checkIdStability (docs/03 §7)", () => {
         current: current(),
         tombstones: noTombstones,
         published: null,
+        disabledSources: new Set(),
       }),
     ).toEqual([]);
   });
@@ -117,8 +122,24 @@ describe("checkIdStability (docs/03 §7)", () => {
         current: current(),
         tombstones: tombstoned("paints", "acme/core/red"),
         published: null,
+        disabledSources: new Set(),
       }),
     ).toEqual([{ kind: "reused", collection: "paints", id: "acme/core/red" }]);
+  });
+
+  it("accepts a published source that is disabled, and only a source (ADR-0019, 5)", () => {
+    const published = {
+      release: "release/2026-12-01",
+      ids: withId(withId(current(), "sources", "initech"), "brands", "initech"),
+    };
+    expect(
+      checkIdStability({
+        current: current(),
+        tombstones: noTombstones,
+        published,
+        disabledSources: new Set(["initech"]),
+      }),
+    ).toEqual([{ kind: "missing", collection: "brands", id: "initech" }]);
   });
 
   it("does not mix up collections that share a slug", () => {
@@ -128,6 +149,7 @@ describe("checkIdStability (docs/03 §7)", () => {
         current: withId(current(), "sources", "initech"),
         tombstones: tombstoned("brands", "initech"),
         published: null,
+        disabledSources: new Set(),
       }),
     ).toEqual([]);
   });

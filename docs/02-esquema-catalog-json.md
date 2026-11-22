@@ -114,6 +114,8 @@
 
 ### `sources`
 
+Solo las fuentes activas: una fuente desactivada en los datos curados no se publica ([docs/04](04-datos-curados.md) §6).
+
 | Campo                | Tipo           | Reglas                                                                                            |
 | -------------------- | -------------- | ------------------------------------------------------------------------------------------------- |
 | `id`                 | `SourceId`     | slug ([03](03-identificadores.md)), único                                                         |
