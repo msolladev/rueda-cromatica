@@ -114,6 +114,79 @@ describe("buildCatalog", () => {
     });
   });
 
+  describe("several colour candidates (ADR-0031)", () => {
+    /** Red gets a measured hex: blue, far from its red chart hex. */
+    const withMeasured = (measuredHex: string) => {
+      const input = data();
+      const [source] = input.sources;
+      if (source === undefined) throw new Error("Fixture without sources");
+      source.content.paints[0] = row({
+        key: "AC-01",
+        name: "Red",
+        hex: "#AA0000",
+        measuredHex,
+      });
+      input.colorPolicy.content.measured = ["acme-chart"];
+      return input;
+    };
+
+    it("publishes the best candidate by priority", () => {
+      const { document } = built(withMeasured("#0000aa"));
+      expect(
+        document.paints.find((p) => p.id === "acme/core/red")?.color,
+      ).toEqual({ hex: "#0000aa", origin: "measured", sourceId: "acme-chart" });
+    });
+
+    it("reports a losing candidate that is not similar (ΔE > 5)", () => {
+      const { discrepancies, discrepanciesJson } = built(
+        withMeasured("#0000aa"),
+      );
+      expect(discrepancies).toEqual([
+        {
+          paintId: "acme/core/red",
+          published: {
+            hex: "#0000aa",
+            origin: "measured",
+            sourceId: "acme-chart",
+          },
+          other: {
+            hex: "#aa0000",
+            origin: "manufacturer",
+            sourceId: "acme-chart",
+          },
+          deltaE2000: expect.any(Number) as number,
+        },
+      ]);
+      expect(discrepancies[0]?.deltaE2000).toBeGreaterThan(5);
+      expect(discrepanciesJson).toBe(
+        `${JSON.stringify(discrepancies, null, 2)}\n`,
+      );
+    });
+
+    it("does not report a similar candidate, nor a rejected one", () => {
+      expect(built(withMeasured("#ab0101")).discrepancies).toEqual([]);
+      const input = withMeasured("#0000aa");
+      const [acme] = input.brands;
+      if (acme === undefined) throw new Error("Fixture without brands");
+      patchPaint(acme, 0, {
+        rejectedColors: [
+          {
+            sourceId: "acme-chart",
+            origin: "manufacturer",
+            hex: "#aa0000",
+            reasonId: "auxiliary",
+            note: null,
+          },
+        ],
+      });
+      const { document, discrepancies } = built(input);
+      expect(discrepancies).toEqual([]);
+      expect(
+        document.paints.find((p) => p.id === "acme/core/red")?.color?.hex,
+      ).toBe("#0000aa");
+    });
+  });
+
   describe("issues", () => {
     it("collects the issues of every file before failing", () => {
       const acme = acmeFile();
@@ -151,26 +224,21 @@ describe("buildCatalog", () => {
       ]);
     });
 
-    it("fails on a paint with several colour candidates", () => {
-      const input = data();
-      const [source] = input.sources;
-      if (source === undefined) throw new Error("Fixture without sources");
-      source.content.paints[0] = row({
-        key: "AC-01",
-        name: "Red",
-        measuredHex: "#ab0101",
-      });
-      input.colorPolicy = {
-        ...input.colorPolicy,
-        content: {
-          measured: ["acme-chart"],
-          manufacturer: ["acme-chart"],
-          community: [],
+    it("locates a colour correction issue in the paint that holds it", () => {
+      const acme = acmeFile();
+      patchPaint(acme, 0, {
+        colorChoice: {
+          sourceId: "acme-chart",
+          origin: "manufacturer",
+          hex: "#aa0000",
+          note: "Fictitious reason.",
         },
-      };
-      expect(issues(input).map((i) => `${i.file} ${i.path}`)).toEqual([
-        "brands/acme.json paints[0]",
-      ]);
+      });
+      expect(
+        issues({ ...data(), brands: [acme, globexFile()] }).map(
+          (i) => `${i.file} ${i.path}`,
+        ),
+      ).toEqual(["brands/acme.json paints[0].colorChoice"]);
     });
 
     it("locates catalog integrity issues in the file that holds the data", () => {

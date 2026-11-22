@@ -1,5 +1,9 @@
 {
-  "measured": [],
+  "measured": ["donnervs-miniature-paints"],
   "manufacturer": [],
-  "community": ["donnervs-miniature-paints", "simogecko-citadel-colours"]
+  "community": [
+    "donnervs-miniature-paints",
+    "simogecko-citadel-colours-sampled",
+    "simogecko-citadel-colours"
+  ]
 }

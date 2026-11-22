@@ -49,7 +49,11 @@ export interface ReconcileInput {
   readonly sourceId: SourceId;
   /** The new transcription of that source. */
   readonly rows: readonly SourceRow[];
-  readonly rules: ProposalRules;
+  /**
+   * How new rows become proposed paints, or `null` for a source that never
+   * proposes any: its new rows are left pending, to key them by hand.
+   */
+  readonly rules: ProposalRules | null;
 }
 
 /** A field where a row changed in this revision and differs from its paint. */
@@ -88,17 +92,16 @@ export function reconcile(
   const ids = new Set(current.brands.flatMap((b) => b.paints.map((p) => p.id)));
   const proposals: CuratedPaint[] = [];
   const issues: string[] = [];
-  for (const { row } of resolution.uncovered.filter(
-    (r) => r.sourceId === sourceId,
-  )) {
-    const rule = rules.groups[row.group];
+  const uncovered = rules === null ? [] : resolution.uncovered;
+  for (const { row } of uncovered.filter((r) => r.sourceId === sourceId)) {
+    const rule = rules?.groups[row.group];
     if (rule === undefined) {
       issues.push(
-        `"${row.key}" (${row.group}): no rule for its group; ignore it or add its paint by hand`,
+        `"${row.key}" (${row.group}): no rule for its group; ignore it, or add it by hand as a key of an existing paint or of a new one`,
       );
       continue;
     }
-    const name = rules.name?.(row) ?? row.name;
+    const name = rules?.name?.(row) ?? row.name;
     const id = paintIdSchema.safeParse(`${rule.rangeId}/${proposeSlug(name)}`);
     if (!id.success) {
       issues.push(`"${row.key}": no valid ID from the name "${name}"`);
@@ -118,9 +121,11 @@ export function reconcile(
       aliases: [],
       manufacturerCode: row.code,
       type: rule.type,
-      metallic: rules.metallic?.(row) ?? rule.metallic,
+      metallic: rules?.metallic?.(row) ?? rule.metallic,
       status: { kind: "active" },
       keys: [{ sourceId, key: row.key }],
+      colorChoice: null,
+      rejectedColors: [],
       note: null,
     });
   }
@@ -137,7 +142,7 @@ export function reconcile(
         const changed =
           old === undefined || old.name !== row.name || old.code !== row.code;
         if (from !== sourceId || !changed) continue;
-        const name = rules.name?.(row) ?? row.name;
+        const name = rules?.name?.(row) ?? row.name;
         if (name !== paint.name) {
           differences.push({
             paintId: paint.id,

@@ -99,6 +99,19 @@ export interface PaintContent {
   metallic: boolean;
   status: { kind: string };
   keys: { sourceId: string; key: string }[];
+  colorChoice: {
+    sourceId: string;
+    origin: string;
+    hex: string;
+    note: string;
+  } | null;
+  rejectedColors: {
+    sourceId: string;
+    origin: string;
+    hex: string;
+    reasonId: string;
+    note: string | null;
+  }[];
   note: string | null;
 }
 
@@ -118,6 +131,8 @@ const paint = (id: string, name: string, key: string): PaintContent => ({
   metallic: false,
   status: { kind: "active" },
   keys: [{ sourceId: "acme-chart", key }],
+  colorChoice: null,
+  rejectedColors: [],
   note: null,
 });
 

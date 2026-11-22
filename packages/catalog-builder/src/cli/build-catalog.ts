@@ -1,8 +1,9 @@
 /**
  * Entry point of the builder (docs/04 §6). Reads the curated files, runs the
  * pure pipeline, checks the ID stability against the latest release (docs/03
- * §7) and writes `catalog.json`. With `--check` it writes nothing and fails if
- * the versioned file is out of date (ADR-0011, CI step 4).
+ * §7) and writes `catalog.json` and the colour discrepancy report. With
+ * `--check` it writes nothing and fails if either versioned file is out of
+ * date (ADR-0011, CI step 4).
  *
  *   pnpm --filter @chromatic-wheel/catalog-builder build-catalog [--check]
  */
@@ -17,6 +18,7 @@ import {
 } from "../pipeline/id-stability.ts";
 import {
   dataPath,
+  DISCREPANCIES_FILE,
   fromRepo,
   OUTPUT_FILE,
   printIssues,
@@ -73,24 +75,40 @@ async function main(check: boolean): Promise<number> {
       : `IDs stable against ${release}.`,
   );
 
-  const output = fromRepo(OUTPUT_FILE);
+  const outputs = [
+    { path: OUTPUT_FILE, content: result.value.json },
+    { path: DISCREPANCIES_FILE, content: result.value.discrepanciesJson },
+  ];
   if (check) {
-    const current = await readFile(OUTPUT_FILE, "utf8").catch(() => null);
-    if (current !== result.value.json) {
+    let stale = 0;
+    for (const { path, content } of outputs) {
+      const current = await readFile(path, "utf8").catch(() => null);
+      if (current === content) {
+        console.log(`${fromRepo(path)} is up to date.`);
+      } else {
+        stale++;
+        console.error(`${fromRepo(path)} is out of date.`);
+      }
+    }
+    if (stale > 0) {
       console.error(
-        `${output} is out of date. Run: pnpm --filter @chromatic-wheel/catalog-builder build-catalog`,
+        "Run: pnpm --filter @chromatic-wheel/catalog-builder build-catalog",
       );
       return 1;
     }
-    console.log(`${output} is up to date.`);
     return 0;
   }
 
-  await mkdir(dirname(OUTPUT_FILE), { recursive: true });
-  await writeFile(OUTPUT_FILE, result.value.json, "utf8");
+  for (const { path, content } of outputs) {
+    await mkdir(dirname(path), { recursive: true });
+    await writeFile(path, content, "utf8");
+  }
   const { meta, paints } = result.value.document;
   console.log(
-    `${output}: ${String(paints.length)} paints, ${meta.dataVersion}`,
+    `${fromRepo(OUTPUT_FILE)}: ${String(paints.length)} paints, ${meta.dataVersion}`,
+  );
+  console.log(
+    `${fromRepo(DISCREPANCIES_FILE)}: ${String(result.value.discrepancies.length)} colour discrepancies`,
   );
   return 0;
 }

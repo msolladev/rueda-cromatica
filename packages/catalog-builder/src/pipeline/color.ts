@@ -1,7 +1,8 @@
 /**
- * The colour of each paint (docs/04 §6, step 3; ADR-0014): taken from the
- * rows of its sources, with the origin that `color-policy.json` gives each
- * source. Pure.
+ * The colour of each paint (docs/04 §6, step 3; ADR-0014, ADR-0031): the
+ * candidates of the rows of its sources, with the origin that
+ * `color-policy.json` gives each source, chosen by priority unless the paint
+ * rejects some or chooses one by hand. Pure.
  */
 import { converter, formatHex } from "culori";
 import {
@@ -13,7 +14,13 @@ import {
   type Result,
   type SourceId,
 } from "@chromatic-wheel/domain";
-import type { ColorPolicy, SourceFile, SourceRow } from "../curated/files.ts";
+import type {
+  ColorChoice,
+  ColorPolicy,
+  RejectedColor,
+  SourceFile,
+  SourceRow,
+} from "../curated/files.ts";
 import type { ResolvedRow } from "./resolve.ts";
 
 const toLab = converter("lab65");
@@ -68,25 +75,151 @@ export function checkColorPolicy(
   return issues;
 }
 
+/** A colour a row offers, with where the row is written. */
+export interface Candidate {
+  readonly color: PaintColor;
+  readonly at: ResolvedRow["at"];
+}
+
+/** What a paint says about its candidates (docs/04 §4). */
+export interface ColorCorrections {
+  readonly colorChoice: ColorChoice | null;
+  readonly rejectedColors: readonly RejectedColor[];
+}
+
+/** A problem with a paint's colour, at a path inside the paint. */
+export interface ColorIssue {
+  /** Relative to the paint: `colorChoice`, `rejectedColors[0]` or empty. */
+  readonly path: string;
+  readonly message: string;
+}
+
+export interface ColorSelection {
+  /** The published colour, or `null` if no candidate is left. */
+  readonly color: PaintColor | null;
+  /** The candidates that lose, neither published nor rejected, by priority. */
+  readonly others: readonly Candidate[];
+}
+
+const ORIGIN_PRIORITY: readonly ColorOrigin[] = [
+  "measured",
+  "manufacturer",
+  "community",
+];
+
 /**
- * The colour of a paint from its rows, or `null` if none gives one. Several
- * candidates are an error until phase 5 step 2 chooses between them.
+ * Every candidate of a paint, from the best to the worst (ADR-0014): by
+ * origin, `measured` > `manufacturer` > `community`, and within an origin by
+ * the order of its list in `color-policy.json`.
  */
-export function paintColor(
+export function colorCandidates(
   rows: readonly ResolvedRow[],
   policy: ColorPolicy,
-): Result<PaintColor | null, string> {
-  const candidates = rows.flatMap(({ sourceId, row }) =>
-    candidatesOf(sourceId, row, policy),
-  );
-  if (candidates.length > 1) {
-    const from = candidates.map((c) => `${c.sourceId} (${c.origin})`);
-    return err(
-      `Several colour candidates (${from.join(", ")}); choosing between them is not supported yet`,
-    );
-  }
-  return ok(candidates[0] ?? null);
+): readonly Candidate[] {
+  const byPriority = (a: PaintColor, b: PaintColor): number =>
+    ORIGIN_PRIORITY.indexOf(a.origin) - ORIGIN_PRIORITY.indexOf(b.origin) ||
+    policy[a.origin].indexOf(a.sourceId) - policy[b.origin].indexOf(b.sourceId);
+  return rows
+    .flatMap(({ sourceId, row, at }) =>
+      candidatesOf(sourceId, row, policy).map((color) => ({ color, at })),
+    )
+    .sort((a, b) => byPriority(a.color, b.color));
 }
+
+/**
+ * The colour of a paint (docs/04 §6, step 3): its rejected candidates are left
+ * out, and its manual choice, if any, wins over the priority. A rejection or a
+ * choice that no longer matches a candidate fails, naming the candidate that
+ * would be published without it (ADR-0019, decision 4).
+ */
+export function selectColor(
+  rows: readonly ResolvedRow[],
+  policy: ColorPolicy,
+  corrections: ColorCorrections,
+): Result<ColorSelection, readonly ColorIssue[]> {
+  const candidates = colorCandidates(rows, policy);
+  const issues: ColorIssue[] = [];
+  const find = (ref: CandidateRef): Candidate | undefined =>
+    candidates.find(({ color }) => sameCandidate(color, ref));
+
+  const rejected = new Set<Candidate>();
+  corrections.rejectedColors.forEach((rejection, i) => {
+    const path = `rejectedColors[${String(i)}]`;
+    const candidate = find(rejection);
+    if (candidate === undefined) {
+      issues.push({
+        path,
+        message: `${describeRef(rejection)} gives no colour for this paint; remove the stale rejection`,
+      });
+    } else if (rejected.has(candidate)) {
+      issues.push({
+        path,
+        message: `${describeRef(rejection)} is already rejected`,
+      });
+    } else if (candidate.color.hex !== rejection.hex) {
+      issues.push({
+        path: `${path}.hex`,
+        message: `${describeRef(rejection)} now gives ${candidate.color.hex}, not ${rejection.hex} (${located(candidate)}); review the rejection and update its hex or remove it`,
+      });
+    }
+    if (candidate !== undefined) rejected.add(candidate);
+  });
+  const remaining = candidates.filter((c) => !rejected.has(c));
+  const next = (exclude?: Candidate): string => {
+    const candidate = remaining.find((c) => c !== exclude);
+    return candidate === undefined
+      ? "without it the paint has no colour"
+      : `without it: ${describe(candidate)}`;
+  };
+
+  let chosen = remaining[0];
+  const choice = corrections.colorChoice;
+  if (choice !== null) {
+    const candidate = find(choice);
+    if (candidate === undefined) {
+      issues.push({
+        path: "colorChoice",
+        message: `${describeRef(choice)} gives no colour for this paint; ${next()}`,
+      });
+    } else if (rejected.has(candidate)) {
+      issues.push({
+        path: "colorChoice",
+        message: `${describeRef(choice)} is also rejected; keep only one of the two`,
+      });
+    } else if (candidate.color.hex !== choice.hex) {
+      issues.push({
+        path: "colorChoice.hex",
+        message: `${describeRef(choice)} now gives ${candidate.color.hex}, not ${choice.hex} (${located(candidate)}); review the choice and update its hex or remove it; ${next(candidate)}`,
+      });
+    } else if (candidate === remaining[0]) {
+      issues.push({
+        path: "colorChoice",
+        message: `The priority already picks ${describeRef(choice)}; remove the choice`,
+      });
+    } else {
+      chosen = candidate;
+    }
+  }
+  if (issues.length > 0) return err(issues);
+
+  return ok({
+    color: chosen?.color ?? null,
+    others: remaining.filter((c) => c !== chosen),
+  });
+}
+
+type CandidateRef = Pick<PaintColor, "sourceId" | "origin">;
+
+const sameCandidate = (a: CandidateRef, b: CandidateRef): boolean =>
+  a.sourceId === b.sourceId && a.origin === b.origin;
+
+const describeRef = ({ sourceId, origin }: CandidateRef): string =>
+  `${sourceId} (${origin})`;
+
+const located = ({ at }: Candidate): string => `${at.file} ${at.path}`;
+
+const describe = (candidate: Candidate): string =>
+  `${candidate.color.hex} from ${describeRef(candidate.color)}, ${located(candidate)}`;
 
 function candidatesOf(
   sourceId: SourceId,

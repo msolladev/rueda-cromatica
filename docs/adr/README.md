@@ -36,6 +36,7 @@ Cada fichero recoge una decisión relevante: su contexto, la decisión tomada, l
 | [0028](0028-produccion-homelab.md)                   | Producción en el homelab                                             | aceptada                                             |
 | [0029](0029-buscador-pinturas-mvp.md)                | Buscador de pinturas en el MVP                                       | aceptada                                             |
 | [0030](0030-datos-curados-dos-capas.md)              | Datos curados en dos capas                                           | aceptada                                             |
+| [0031](0031-varios-candidatos-color.md)              | Varios candidatos de color por pintura                               | aceptada                                             |
 
 ## Normas
 
