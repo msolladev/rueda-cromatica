@@ -1,6 +1,6 @@
 # Datos curados de `catalog-builder`
 
-Este documento especifica los datos que mantiene el proyecto y cómo el builder genera `catalog.json` a partir de ellos. Las decisiones están en los ADR [0013](adr/0013-clasificacion-pinturas.md), [0014](adr/0014-origen-seleccion-color.md), [0015](adr/0015-fuentes-trazabilidad-licencias.md), [0019](adr/0019-alcance-minimo-mvp.md), [0030](adr/0030-datos-curados-dos-capas.md), [0031](adr/0031-varios-candidatos-color.md), [0032](adr/0032-desactivacion-fuentes-archivado.md) y [0033](adr/0033-equivalencias-oficiales-lineas-vigentes.md).
+Este documento especifica los datos que mantiene el proyecto y cómo el builder genera `catalog.json` a partir de ellos. Las decisiones están en los ADR [0013](adr/0013-clasificacion-pinturas.md), [0014](adr/0014-origen-seleccion-color.md), [0015](adr/0015-fuentes-trazabilidad-licencias.md), [0019](adr/0019-alcance-minimo-mvp.md), [0030](adr/0030-datos-curados-dos-capas.md), [0031](adr/0031-varios-candidatos-color.md), [0032](adr/0032-desactivacion-fuentes-archivado.md), [0033](adr/0033-equivalencias-oficiales-lineas-vigentes.md) y [0034](adr/0034-warpaints-originales-sustituciones.md).
 
 ## 1. Principios
 
@@ -30,7 +30,7 @@ packages/catalog-builder/data/
 
 ## 3. `sources/<source-id>.json`
 
-Una fuente por fichero, con siete claves:
+Una fuente por fichero, con ocho claves:
 
 | Clave           | Contenido                                                                                                                    |
 | --------------- | ---------------------------------------------------------------------------------------------------------------------------- |
@@ -39,6 +39,7 @@ Una fuente por fichero, con siete claves:
 | `files`         | los ficheros que ha descargado `archive-sources` (§9), cada uno con su `url`, su `name` y su `sha256`. Vacío hasta entonces  |
 | `paints`        | las filas de la fuente, todas y en su orden, copiadas de forma literal                                                       |
 | `equivalences`  | en una carta de equivalencias, sus parejas de filas (§3.1); vacío en las demás fuentes                                       |
+| `replacements`  | las sustituciones que afirma un documento del fabricante (§3.2); vacío en las demás fuentes                                  |
 | `ignoredGroups` | los grupos de la fuente que no entran en el catálogo: `group`, `reasonId` y `note` (string \| null)                          |
 | `ignoredKeys`   | las filas sueltas que no entran en el catálogo, dentro de un grupo que sí entra: `key`, `reasonId` y `note` (string \| null) |
 
@@ -67,9 +68,10 @@ La clave de cada fuente actual:
 | `donnervs-miniature-paints`         | el código del fabricante            | `72.120`                          |
 | `simogecko-citadel-colours`         | el tipo y el nombre                 | `technical/Nurgles Rot`           |
 | `simogecko-citadel-colours-sampled` | el nombre                           | `Macragge Blue`                   |
+| `arcturus5404-miniature-paints`     | el grupo y el nombre                | `Warpaints/Matt Black`            |
 | las cartas de equivalencias (§3.1)  | el código, o la columna y el nombre | `72.051`, `Citadel/Abbadon Black` |
 
-SimoGecko no tiene códigos, y su tabla oficial repite nombres entre tipos (Abaddon Black es `base` y `spray`), así que en ella el nombre solo no basta. La tabla muestreada solo tiene Base y Layer, sin tipo y sin nombres repetidos.
+SimoGecko no tiene códigos, y su tabla oficial repite nombres entre tipos (Abaddon Black es `base` y `spray`), así que en ella el nombre solo no basta. Arcturus deja sin código muchas filas y repite nombres entre grupos, así que su clave es el grupo y el nombre. La tabla muestreada solo tiene Base y Layer, sin tipo y sin nombres repetidos.
 
 Un ejemplo real, la fila de Abyssal Turquoise en DonnervS:
 
@@ -91,16 +93,18 @@ Un ejemplo real, la fila de Abyssal Turquoise en DonnervS:
 
 Las cartas de conversión de los fabricantes, en PDF, con el reparto del [ADR-0033](adr/0033-equivalencias-oficiales-lineas-vigentes.md): entran las equivalencias entre líneas vigentes, y las de líneas descatalogadas llegan en el paso 5 de la fase 5.
 
-| Fuente                                      | Carta                                                  | Qué relaciona                                                                   |
-| ------------------------------------------- | ------------------------------------------------------ | ------------------------------------------------------------------------------- |
-| `vallejo-cc266`                             | CC266 de Vallejo                                       | Game Color con Game Air, Hobby Paint y Citadel; Wash y Xpress Color con Citadel |
-| `the-army-painter-fanatic-conversion-chart` | Warpaints Fanatic Conversion Chart de The Army Painter | Fanatic con los Warpaints originales, Warpaints Air y Citadel                   |
-| `ak-interactive-3gen-equivalence-table`     | Tabla de equivalencias de AK (`EQUIVALENCIAS2023`)     | 3rd Gen con Model Color, Game Color, Citadel actual y Citadel antiguo           |
+| Fuente                                        | Carta                                                  | Qué relaciona                                                                   |
+| --------------------------------------------- | ------------------------------------------------------ | ------------------------------------------------------------------------------- |
+| `vallejo-cc266`                               | CC266 de Vallejo                                       | Game Color con Game Air, Hobby Paint y Citadel; Wash y Xpress Color con Citadel |
+| `the-army-painter-fanatic-conversion-chart`   | Warpaints Fanatic Conversion Chart de The Army Painter | Fanatic con los Warpaints originales, Warpaints Air y Citadel                   |
+| `ak-interactive-3gen-equivalence-table`       | Tabla de equivalencias de AK (`EQUIVALENCIAS2023`)     | 3rd Gen con Model Color, Game Color, Citadel actual y Citadel antiguo           |
+| `the-army-painter-warpaints-conversion-chart` | Conversion Chart de The Army Painter (2020)            | Los Warpaints originales con Citadel (`GM`) y Vallejo (`AV`)                    |
 
 - **`paints`** nombra cada pintura una vez, en el orden en que aparece, aunque salga en varias filas. Su `group` es la columna o la línea de la carta. Su clave es el código tal como lo escribe la carta, si lo da (`72.051`, `AK11029`), con la columna delante si es un código de otra marca sin su prefijo (`Vallejo MC/951`); si no, la columna y el nombre literal (`Citadel/Abbadon Black`, `GW/Fulgrim Pink`, `WP/Matt White`), porque un mismo nombre puede estar en varias columnas. Una fila sin nombre en la carta, como las de AK, lleva `name` vacío. Ninguna lleva color.
 - **`equivalences`**: las parejas `{ from, to, note }` de claves de `paints`, en el orden y la dirección de la carta. Una casilla con dos códigos, como «049/047», son dos parejas con la nota «Casilla «049/047».». Una casilla vacía no da ninguna. Una pareja no puede unir una fila consigo misma ni repetirse.
-- **Lo que no entra se ignora** como en cualquier fuente: por grupo (Citadel antiguo y los Warpaints originales con `discontinued-line-pending`, Game Air y Warpaints Air con `airbrush`, Hobby Paint con `out-of-scope-line`) o por clave (Dawnstone, que es Layer y Dry, con `ambiguous`; un Model Color retirado con `not-in-current-chart`).
+- **Lo que no entra se ignora** como en cualquier fuente: por grupo (Citadel antiguo con `discontinued-line-pending`, Game Air y Warpaints Air con `airbrush`, Hobby Paint con `out-of-scope-line`) o por clave (Dawnstone, que es Layer y Dry, con `ambiguous`; un Model Color retirado con `not-in-current-chart`; una errata que repite una pintura que la carta ya escribe bien, con `duplicate-row`).
 - **Una errata** se resuelve con la clave literal en la ficha, cuya `note` cita la carta («CC266 escribe «Abbadon Black».»), sin añadir un alias.
+- **La carta de 2020** es una imagen sin texto: está transcrita a mano, sin importador ([ADR-0034](adr/0034-warpaints-originales-sustituciones.md)). Un fragmento de una casilla doble que es el nombre completo de otra casilla de su columna («Agrax/ Reikland») se transcribe con ese nombre, porque una pintura tiene una sola clave por fuente, y la nota de la pareja guarda la casilla literal. Un test coteja sus Warpaints con la carta de Fanatic y su clasificación con los recuentos del set completo de The Army Painter.
 
 Un ejemplo real, la fila de 72.051 Black de CC266:
 
@@ -118,12 +122,16 @@ Un ejemplo real, la fila de 72.051 Black de CC266:
 
 `72.051` es la clave de `vallejo/game-color/black`, `Citadel/Abbadon Black` la de `citadel/base/abaddon-black` y el grupo Game Air está ignorado, así que la carta publica `vallejo/game-color/black → citadel/base/abaddon-black` y nada más.
 
+### 3.2. Sustituciones
+
+Un documento del fabricante que dice que una pintura sustituye a otra ([ADR-0005](adr/0005-sustitucion-en-estado.md)) lista en `replacements` las parejas `{ from, to, note }`: la clave de la fila de la pintura descatalogada y la de la que la sustituye, como en `equivalences`. Una carta de conversión da equivalencias, no sustituciones. Solo un documento de tipo `manufacturer` puede tenerlas, y nombra como mucho una sustituta por pintura. Hoy ninguna fuente tiene sustituciones; las primeras llegan con la carta de GW de 2012.
+
 ## 4. `brands/<brand-id>.json`
 
 Un objeto con tres claves: `brand` (la marca), `ranges` (sus gamas) y `paints` (sus pinturas curadas).
 
 - `brand` y `ranges` siguen las reglas de [docs/02](02-esquema-catalog-json.md) §3. El `brandId` de cada gama es el de la marca del fichero.
-- Cada pintura tiene los campos de la pintura de `catalog.json` salvo `color`, que el builder elige entre los candidatos de sus fuentes (§6), y cuatro más:
+- Cada pintura tiene los campos de la pintura de `catalog.json` salvo `color`, que el builder elige entre los candidatos de sus fuentes (§6), y la sustituta, que el builder toma de las fuentes (§3.2), más cuatro campos:
   - `keys`: la lista de sus claves, una por fuente como mucho y al menos una ([ADR-0019](adr/0019-alcance-minimo-mvp.md), decisión 6). Cada clave es `{ sourceId, key }`. Es una lista y no un objeto por fuente porque `JSON.parse` sobrescribe sin avisar las claves duplicadas (docs/02 §1).
   - `colorChoice` (objeto \| null): la elección manual de un candidato que la prioridad no elegiría, con `sourceId`, `origin`, `hex` y una `note` obligatoria.
   - `rejectedColors`: los candidatos descartados, cada uno con `sourceId`, `origin`, `hex`, `reasonId` (un motivo de `ignore-reasons.json`) y `note` (string \| null).
@@ -133,6 +141,7 @@ Un objeto con tres claves: `brand` (la marca), `ranges` (sus gamas) y `paints` (
 - `id` es el ID congelado ([docs/03](03-identificadores.md)). El builder nunca lo recalcula.
 - El `rangeId` de cada pintura es una gama del mismo fichero.
 - `type` y `metallic` siguen la clasificación del fabricante ([ADR-0013](adr/0013-clasificacion-pinturas.md)).
+- `status` es `{ "kind": "active" }` o `{ "kind": "discontinued", "replacementChoice": null }`. Solo se marca descatalogada con un documento del fabricante; el de una línea entera, como el blog de The Army Painter que retira los Warpaints originales, está en el ADR de esa línea ([ADR-0034](adr/0034-warpaints-originales-sustituciones.md)). `replacementChoice` es `null` o `{ sourceId, note }`, el documento cuya sustituta se publica cuando dos documentos nombran sustitutas distintas ([ADR-0019](adr/0019-alcance-minimo-mvp.md), decisión 1).
 
 Un ejemplo real, Nurgle's Rot, cuya clave conserva la errata de SimoGecko:
 
@@ -172,7 +181,7 @@ Un descarte real, el de Corax White, cuyo color en la tabla muestreada sale gris
 ## 5. `ignore-reasons.json`, `color-policy.json` y `tombstones.json`
 
 - **`ignore-reasons.json`**: los motivos de las filas ignoradas y de los candidatos de color descartados, cada uno con su `id` (un slug) y su `text`. Cada ignorada y cada descarte citan uno con `reasonId`, y su `note` recoge el detalle propio de ese caso. Por ejemplo, 73.300 Sepia Wash se ignora con `not-in-current-chart` y la nota «Carta CC266-Rev03 (2025).». El `text` es una explicación de curación, en castellano, y no se traduce: si algún día se publican los motivos, irá a `catalog.json` el ID y cada interfaz lo traducirá en sus ficheros de idioma, como hace la web con los tipos de pintura. Mientras no se publiquen, los IDs se pueden renombrar; desde que se publiquen, quedan congelados como los demás IDs.
-- **`color-policy.json`**: tres listas de fuentes, `measured`, `manufacturer` y `community`, en orden de preferencia dentro de su origen ([ADR-0014](adr/0014-origen-seleccion-color.md)). Hoy, DonnervS en `measured`, y en `community` DonnervS y las dos tablas de SimoGecko, la muestreada por delante de la oficial ([ADR-0031](adr/0031-varios-candidatos-color.md)).
+- **`color-policy.json`**: tres listas de fuentes, `measured`, `manufacturer` y `community`, en orden de preferencia dentro de su origen ([ADR-0014](adr/0014-origen-seleccion-color.md)). Hoy, DonnervS en `measured`, y en `community` DonnervS, las dos tablas de SimoGecko, la muestreada por delante de la oficial ([ADR-0031](adr/0031-varios-candidatos-color.md)), y Arcturus la última, que solo aporta los Warpaints originales ([ADR-0034](adr/0034-warpaints-originales-sustituciones.md)).
   - El `hex` y el `gradient` de una fuente toman el origen de la lista en la que aparece, `manufacturer` o `community`, y la fuente solo puede estar en una de las dos ([ADR-0019](adr/0019-alcance-minimo-mvp.md), decisión 2).
   - El `measuredHex` siempre es `measured`, y solo se usa si la fuente está además en `measured`.
   - Toda fuente que aporte `hex` o `gradient` tiene que estar en `manufacturer` o en `community`.
@@ -190,7 +199,8 @@ Se ejecuta a demanda, cada vez que cambian los datos. `catalog.json` se versiona
    - una pintura cita una fuente que no existe o una clave que no está en su fuente;
    - una ignorada no corresponde a ninguna fila, o ignora una clave que ya ignora su grupo;
    - una ignorada o un descarte citan un motivo que no existe, o un motivo no lo usa nadie;
-   - una pareja de `equivalences` cita una clave que no está en su fuente, o se repite.
+   - una pareja de `equivalences` cita una clave que no está en su fuente, o se repite;
+   - una pareja de `replacements` cita una clave que no está en su fuente, su fuente no es de tipo `manufacturer`, o la fuente nombra dos sustitutas para la misma fila.
 3. **Color** de cada pintura, a partir de las filas de sus claves ([ADR-0031](adr/0031-varios-candidatos-color.md)):
    1. Los candidatos son el `hex` o el `gradient` de cada fila de una fuente activa, con el origen de su fuente, y su `measuredHex` si la fuente está en `measured`.
    2. Un `gradient` se reduce a su punto medio en CIELAB con blanco D65, calculado con culori, y se recorta canal a canal si cae fuera de sRGB.
@@ -202,6 +212,7 @@ Se ejecuta a demanda, cada vez que cambian los datos. `catalog.json` se versiona
       - un candidato se descarta dos veces, o se elige y se descarta a la vez;
       - la elección coincide con lo que ya elige la prioridad.
 4. **Ensamblado**: junta las fuentes activas, las marcas, las gamas y las pinturas, sin las claves ni las notas, y las ordena como exige docs/02 §1. Cada pareja de una fuente activa cuyas dos filas son claves de pinturas es una equivalencia oficial `from → to` con esa fuente; si una de las dos está ignorada, la pareja no llega al catálogo. No se infieren ni las inversas ni las transitivas ([ADR-0004](adr/0004-equivalencias-dirigidas.md)).
+   - **Sustituta** de cada pintura descatalogada: cada pareja de `replacements` de una fuente activa cuyas dos filas son claves de pinturas es lo que afirma esa fuente. Si los documentos coinciden, se publica el primero por ID; si nombran sustitutas distintas, la de `replacementChoice`. El build falla, con la ruta de la ficha, si un documento sustituye una pintura activa, si los documentos se contradicen sin elección, si la elección sobra o si cita un documento que no nombra ninguna, también por estar desactivado (decisión 4 del ADR-0019), con la sustituta que se publicaría sin ella.
 5. **`meta`**: `schemaVersion` es `SUPPORTED_SCHEMA_VERSION`, y `dataVersion` se calcula según docs/02 §4.
 6. **Validación final** con `parseCatalog`. Cada problema se sitúa en el fichero y la ruta donde está el dato.
 7. **Estabilidad de IDs** frente a la última publicación y a las lápidas, con las fuentes desactivadas ([docs/03](03-identificadores.md) §7).
@@ -212,15 +223,15 @@ Se ejecuta a demanda, cada vez que cambian los datos. `catalog.json` se versiona
 Se pone en su fichero `"disabled": { "note": "…" }`, con el motivo, y se regenera el catálogo ([ADR-0015](adr/0015-fuentes-trazabilidad-licencias.md), [ADR-0032](adr/0032-desactivacion-fuentes-archivado.md)). El fichero se queda en `data/sources/`, con sus filas y sus ignoradas, y se sigue validando como los demás.
 
 - La fuente sale de `sources` en `catalog.json`, y su ID no hace fallar el test de estabilidad (docs/03 §7). No lleva lápida: al reactivarla, vuelve.
-- Sus filas no dan candidatos, así que cada pintura pasa a su siguiente candidato o se queda sin color. Una pintura sin color sigue en el catálogo, con su ID, pero no entra en las pinturas parecidas ni en el buscador (docs/06).
+- Sus filas no dan candidatos, así que cada pintura pasa a su siguiente candidato o se queda sin color. Una pintura sin color sigue en el catálogo, con su ID; no entra en las pinturas parecidas, pero sí en el buscador (docs/06 §9, docs/07 §15).
 - Un descarte o una elección de esa fuente hacen fallar el build, con el candidato que se publicaría sin ellos ([ADR-0019](adr/0019-alcance-minimo-mvp.md), decisión 4). Si con eso un motivo se queda sin uso, también hay que quitarlo.
-- Sus equivalencias oficiales desaparecen, y desde el paso 5 de la fase 5, también sus sustituciones.
+- Sus equivalencias oficiales y sus sustituciones desaparecen.
 
 Para reactivarla, se vuelve a poner `"disabled": null`.
 
 ### Resumen de las fuentes desactivadas
 
-El builder calcula el color de cada pintura dos veces, con todas las fuentes y sin las desactivadas, y escribe en `disabled-sources.json` lo que cambia: `disabledSources`, los IDs de las fuentes desactivadas; `equivalences`, las equivalencias oficiales que publicarían, en el orden de `catalog.json`, y `colors`, cada pintura cuyo color no es el mismo, con `paintId`, `published` (el color publicado, o `null`), `ifEnabled` (el que tendría con todas las fuentes) y `deltaE2000`, con 2 decimales, o `null` si falta uno de los dos. Va en el orden de las pinturas de `catalog.json`. No compara con ningún catálogo anterior, así que no se mezcla con otros cambios de los datos y se queda igual mientras la fuente siga desactivada. La salida del builder da el número de pinturas que cambian y las que se quedan sin color. El resumen nunca hace fallar el build. Lo que sí lo hace fallar es un dato que sería un error con todas las fuentes activas, como cualquier otro error, con el prefijo «With the disabled sources enabled».
+El builder calcula el color de cada pintura dos veces, con todas las fuentes y sin las desactivadas, y escribe en `disabled-sources.json` lo que cambia: `disabledSources`, los IDs de las fuentes desactivadas; `equivalences`, las equivalencias oficiales que publicarían, en el orden de `catalog.json`; `colors`, cada pintura cuyo color no es el mismo, con `paintId`, `published` (el color publicado, o `null`), `ifEnabled` (el que tendría con todas las fuentes) y `deltaE2000`, con 2 decimales, o `null` si falta uno de los dos, y `replacements`, cada pintura cuya sustituta no es la misma, con `paintId`, `published` e `ifEnabled`. Va en el orden de las pinturas de `catalog.json`. No compara con ningún catálogo anterior, así que no se mezcla con otros cambios de los datos y se queda igual mientras la fuente siga desactivada. La salida del builder da el número de pinturas que cambian y las que se quedan sin color. El resumen nunca hace fallar el build. Lo que sí lo hace fallar es un dato que sería un error con todas las fuentes activas, como cualquier otro error, con el prefijo «With the disabled sources enabled».
 
 Por ejemplo, con la tabla muestreada de SimoGecko desactivada, Moot Green tendría `published` `#3daf44` (la tabla oficial), `ifEnabled` `#5d9a32` y un ΔE de 7,72.
 
@@ -240,7 +251,7 @@ Se ejecutan a demanda, nunca en el build ni en la CI. Cada importador correspond
 
   Falla si una fila nueva no tiene regla para su grupo o si su ID propuesto ya existe. En esos casos, la pintura se da de alta a mano, con un sufijo si colisiona, o la fila se ignora. Una fuente que nunca propone fichas, como la tabla muestreada de SimoGecko, no tiene reglas: sus filas nuevas quedan pendientes, para añadir a mano su clave a la ficha que corresponda.
 
-El script de cada importador lee los ficheros de la fuente en el commit fijado en su `url`, transcribe y concilia. La lista de ficheros de cada fuente está en `src/cli/source-files.ts` y es la misma que descarga `archive-sources` (§9). Después reemplaza las filas del fichero de la fuente, conserva su `source` y sus ignoradas, añade las pinturas propuestas al fichero de su marca y muestra las diferencias y lo pendiente. No cambia nunca una pintura que ya existe: lo decide Miguel a la vista del informe (§8). Después hay que ejecutar `pnpm format` y `build-catalog`, y revisar el diff, con el del informe de discrepancias. `import-simogecko` importa las dos tablas de SimoGecko, cada una en su fichero.
+El script de cada importador lee los ficheros de la fuente en el commit fijado en su `url`, transcribe y concilia. La lista de ficheros de cada fuente está en `src/cli/source-files.ts` y es la misma que descarga `archive-sources` (§9). Después reemplaza las filas del fichero de la fuente, conserva su `source` y sus ignoradas, añade las pinturas propuestas al fichero de su marca y muestra las diferencias y lo pendiente. No cambia nunca una pintura que ya existe: lo decide Miguel a la vista del informe (§8). Después hay que ejecutar `pnpm format` y `build-catalog`, y revisar el diff, con el del informe de discrepancias. `import-simogecko` importa las dos tablas de SimoGecko, cada una en su fichero. `import-arcturus` importa la tabla de The Army Painter de Arcturus y solo propone pinturas de los grupos de los Warpaints originales; una pintura del grupo cuyo tipo no es el del grupo, como las metálicas y los efectos de «Warpaints», se corrige en su ficha con una nota (§8). Un importador también propone descatalogada la pintura de una gama descatalogada.
 
 ### Cartas de equivalencias
 
@@ -248,6 +259,8 @@ El script de cada importador lee los ficheros de la fuente en el commit fijado e
 
 - **Transcribir**: `src/cli/pdf.ts` lee el texto del PDF con su posición, con [pdf.js](https://github.com/mozilla/pdf.js), y una función pura por carta, en `src/importers/`, lo convierte en filas y parejas con la regla de columnas de esa carta. Falla si sobra algún texto de la tabla o si las cabeceras cambian, y los tests fijan el número de filas de cada tabla.
 - **Conciliar**: una carta nunca propone pinturas. A cada fila nueva, ni clave ni ignorada, le añade su clave en la única pintura con su código o con su nombre (o un alias), letra por letra salvo el apóstrofo tipográfico, que cuenta como el recto. Lo demás (una errata, un nombre de dos pinturas, una pintura que no está en el catálogo) queda pendiente, para escribir la clave a mano o ignorar la fila. Solo añade claves: no cambia ningún otro campo de las fichas.
+
+La carta de Warpaints de 2020 no está en `import-charts`: es una imagen y se transcribió a mano (§3.1).
 
 Una revisión nueva de una carta se toma cambiando su `url` y `retrievedAt`, poniendo `archiveUrl` a `null` y ejecutando `import-charts` y `archive-sources`.
 
