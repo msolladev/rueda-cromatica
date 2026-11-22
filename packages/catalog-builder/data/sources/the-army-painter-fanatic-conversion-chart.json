@@ -7529,11 +7529,6 @@
   ],
   "ignoredGroups": [
     {
-      "group": "Original Warpaints",
-      "reasonId": "discontinued-line-pending",
-      "note": "Warpaints originales, sustituidos por Warpaints Fanatic."
-    },
-    {
       "group": "Warpaints Air",
       "reasonId": "airbrush",
       "note": null

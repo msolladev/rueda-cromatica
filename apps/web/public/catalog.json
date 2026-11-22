@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 1,
-    "dataVersion": "sha256:9c5d17dab2aadea2cb45bed99485c611f90ed80db813f2d619ccd0de50953b8f"
+    "dataVersion": "sha256:e0daaf25221ff4f6574aebd805082b1d2f9d3f49b862337ff7f96ba8bf12cbb6"
   },
   "sources": [
     {
@@ -13,6 +13,17 @@
       "archiveUrl": "https://web.archive.org/web/20250920111312/https://ak-masters.com/app/pdf/EQUIVALENCIAS2023.pdf",
       "retrievedAt": "2026-11-22",
       "license": "unknown",
+      "attribution": null
+    },
+    {
+      "id": "arcturus5404-miniature-paints",
+      "kind": "third-party",
+      "title": "miniature-paints",
+      "publisher": "Arcturus5404",
+      "url": "https://github.com/Arcturus5404/miniature-paints/blob/22791a682e1d155da388f4f856cd7196cd9f2677/paints/Army_Painter.md",
+      "archiveUrl": "https://web.archive.org/web/20261122222422/https://github.com/Arcturus5404/miniature-paints/blob/22791a682e1d155da388f4f856cd7196cd9f2677/paints/Army_Painter.md",
+      "retrievedAt": "2026-11-22",
+      "license": "MIT",
       "attribution": null
     },
     {
@@ -55,6 +66,17 @@
       "publisher": "The Army Painter",
       "url": "https://cdn.shopify.com/s/files/1/0636/1232/1970/files/A3_Fanatic_Colour_Conversion_Chart_WEB.pdf",
       "archiveUrl": "https://web.archive.org/web/20261122174559/https://cdn.shopify.com/s/files/1/0636/1232/1970/files/A3_Fanatic_Colour_Conversion_Chart_WEB.pdf",
+      "retrievedAt": "2026-11-22",
+      "license": "unknown",
+      "attribution": null
+    },
+    {
+      "id": "the-army-painter-warpaints-conversion-chart",
+      "kind": "manufacturer",
+      "title": "Warpaints Conversion Chart",
+      "publisher": "The Army Painter",
+      "url": "https://cdn.shopify.com/s/files/1/0636/1232/1970/files/Warpaints_Colour_Conversion_Chart_web.pdf",
+      "archiveUrl": "https://web.archive.org/web/20261122222503/https://cdn.shopify.com/s/files/1/0636/1232/1970/files/Warpaints_Colour_Conversion_Chart_web.pdf",
       "retrievedAt": "2026-11-22",
       "license": "unknown",
       "attribution": null
@@ -150,6 +172,12 @@
       "brandId": "the-army-painter",
       "name": "Speedpaint 2.0",
       "status": "active"
+    },
+    {
+      "id": "the-army-painter/warpaints",
+      "brandId": "the-army-painter",
+      "name": "Warpaints",
+      "status": "discontinued"
     },
     {
       "id": "the-army-painter/warpaints-fanatic",
@@ -17201,6 +17229,2382 @@
       }
     },
     {
+      "id": "the-army-painter/warpaints/abomination-gore",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Abomination Gore",
+      "aliases": [],
+      "manufacturerCode": "WP1401",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#a32f26",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/alien-purple",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Alien Purple",
+      "aliases": [],
+      "manufacturerCode": "WP1128",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#462d59",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/amber-skin",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Amber Skin",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#ac835d",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/angel-green",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Angel Green",
+      "aliases": [],
+      "manufacturerCode": "WP1112",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#0f3515",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/arid-earth",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Arid Earth",
+      "aliases": [],
+      "manufacturerCode": "WP1402",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#fdedc7",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/army-green",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Army Green",
+      "aliases": [],
+      "manufacturerCode": "WP1110",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#747260",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/ash-grey",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Ash Grey",
+      "aliases": [],
+      "manufacturerCode": "WP1117",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#95959f",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/babe-blonde",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Babe Blonde",
+      "aliases": [],
+      "manufacturerCode": "WP1403",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#fbdc04",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/banshee-brown",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Banshee Brown",
+      "aliases": [],
+      "manufacturerCode": "WP1404",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#bfa59b",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/barbarian-flesh",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Barbarian Flesh",
+      "aliases": [],
+      "manufacturerCode": "WP1126",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#e38c7f",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/basilisk-brown",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Basilisk Brown",
+      "aliases": [],
+      "manufacturerCode": "WP1405",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#cf8100",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/blue-tone",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Blue Tone",
+      "aliases": [],
+      "manufacturerCode": "WP1139",
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#112a47",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/brainmatter-beige",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Brainmatter Beige",
+      "aliases": [],
+      "manufacturerCode": "WP1405",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#f1f2e2",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/bright-gold",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Bright Gold",
+      "aliases": [],
+      "manufacturerCode": "WP1144",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#bb8702",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/castle-grey",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Castle Grey",
+      "aliases": [],
+      "manufacturerCode": "WP1407",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#8d887f",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/centaur-skin",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Centaur Skin",
+      "aliases": [],
+      "manufacturerCode": "WP1408",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#e3b1a5",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/chaotic-red",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Chaotic Red",
+      "aliases": [],
+      "manufacturerCode": "WP1142",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#6f1d06",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/combat-fatigues",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Combat Fatigues",
+      "aliases": [],
+      "manufacturerCode": "WP1409",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#868e59",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/commando-green",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Commando Green",
+      "aliases": [],
+      "manufacturerCode": "WP1410",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#847f37",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/corpse-pale",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Corpse Pale",
+      "aliases": [],
+      "manufacturerCode": "WP1411",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#efd0af",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/crusted-sore",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Crusted Sore",
+      "aliases": [],
+      "manufacturerCode": "WP1412",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#843046",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/crypt-wraith",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Crypt Wraith",
+      "aliases": [],
+      "manufacturerCode": "WP1413",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#5d5f4d",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/crystal-blue",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Crystal Blue",
+      "aliases": [],
+      "manufacturerCode": "WP1114",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#2579bb",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/cultist-robe",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Cultist Robe",
+      "aliases": [],
+      "manufacturerCode": "WP1414",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#787164",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/daemonic-yellow",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Daemonic Yellow",
+      "aliases": [],
+      "manufacturerCode": "WP1107",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#f8bf3e",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/dark-skin-wash",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Dark Skin Wash",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#332123",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/dark-sky",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Dark Sky",
+      "aliases": [],
+      "manufacturerCode": "WP1415",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#314f5e",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/dark-stone",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Dark Stone",
+      "aliases": [],
+      "manufacturerCode": "WP1425",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#49383c",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/dark-tone",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Dark Tone",
+      "aliases": [],
+      "manufacturerCode": "WP1136",
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#050505",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/deep-blue",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Deep Blue",
+      "aliases": [],
+      "manufacturerCode": "WP1116",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#0e4e76",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/desert-yellow",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Desert Yellow",
+      "aliases": [],
+      "manufacturerCode": "WP1121",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#d7955a",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/dirt-spatter",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Dirt Spatter",
+      "aliases": [],
+      "manufacturerCode": "WP1416",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#603920",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/disgusting-slime",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Disgusting Slime",
+      "aliases": [],
+      "manufacturerCode": "WP1477",
+      "type": "technical",
+      "metallic": false,
+      "color": {
+        "hex": "#cbb503",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/dorado-skin",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Dorado Skin",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#a97761",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/dragon-red",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Dragon Red",
+      "aliases": [],
+      "manufacturerCode": "WP1105",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#b91130",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/drake-tooth",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Drake Tooth",
+      "aliases": [],
+      "manufacturerCode": "WP1417",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#d5d2bd",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/dry-rust",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Dry Rust",
+      "aliases": [],
+      "manufacturerCode": "WP1479",
+      "type": "technical",
+      "metallic": false,
+      "color": {
+        "hex": "#e74f35",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/dungeon-grey",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Dungeon Grey",
+      "aliases": [],
+      "manufacturerCode": "WP1418",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#676b70",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/electric-blue",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Electric Blue",
+      "aliases": [],
+      "manufacturerCode": "WP1113",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#5288b8",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/elemental-bolt",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Elemental Bolt",
+      "aliases": [],
+      "manufacturerCode": "WP1419",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#158e76",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/elf-green",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Elf Green",
+      "aliases": [],
+      "manufacturerCode": "WP1420",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#4b5212",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/elven-flesh",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Elven Flesh",
+      "aliases": [],
+      "manufacturerCode": "WP1421",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#f9be94",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/field-grey",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Field Grey",
+      "aliases": [],
+      "manufacturerCode": "WP1481",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#7d807b",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/filthy-cape",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Filthy Cape",
+      "aliases": [],
+      "manufacturerCode": "WP1424",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#7d785a",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/fire-lizard",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Fire Lizard",
+      "aliases": [],
+      "manufacturerCode": "WP1426",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#f07000",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/flesh-wash",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Flesh Wash",
+      "aliases": [],
+      "manufacturerCode": "WP1143",
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#4a1b0e",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/fog-grey",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Fog Grey",
+      "aliases": [],
+      "manufacturerCode": "WP1427",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#7a97b1",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/fur-brown",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Fur Brown",
+      "aliases": [],
+      "manufacturerCode": "WP1122",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#a13a0f",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/gemstone",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Gemstone",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#ae1c28",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/glistening-blood",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Glistening Blood",
+      "aliases": [],
+      "manufacturerCode": "WP1476",
+      "type": "technical",
+      "metallic": false,
+      "color": {
+        "hex": "#b3082d",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/glitter-green",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Glitter Green",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#007b3a",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/goblin-green",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Goblin Green",
+      "aliases": [],
+      "manufacturerCode": "WP1109",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#338e46",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/gorgon-hide",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Gorgon Hide",
+      "aliases": [],
+      "manufacturerCode": "WP1428",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#cfd7e7",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/greedy-gold",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Greedy Gold",
+      "aliases": [],
+      "manufacturerCode": "WP1132",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#cc7d00",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/green-tone",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Green Tone",
+      "aliases": [],
+      "manufacturerCode": "WP1137",
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#162f12",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/greenskin",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Greenskin",
+      "aliases": [],
+      "manufacturerCode": "WP1111",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#04662b",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/griffon-blue",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Griffon Blue",
+      "aliases": [],
+      "manufacturerCode": "WP1429",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#20477a",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/grimoire-purple",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Grimoire Purple",
+      "aliases": [],
+      "manufacturerCode": "WP1444",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#724860",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/gun-metal",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Gun Metal",
+      "aliases": [],
+      "manufacturerCode": "WP1131",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#7e7c7b",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/hardened-carapace",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Hardened Carapace",
+      "aliases": [],
+      "manufacturerCode": "WP1430",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#44453b",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/hemp-rope",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Hemp Rope",
+      "aliases": [],
+      "manufacturerCode": "WP1431",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#977c3a",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/hydra-turquoise",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Hydra Turquoise",
+      "aliases": [],
+      "manufacturerCode": "WP1141",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#1e939c",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/ice-storm",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Ice Storm",
+      "aliases": [],
+      "manufacturerCode": "WP1432",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#3ba0cb",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/jungle-green",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Jungle Green",
+      "aliases": [],
+      "manufacturerCode": "WP1433",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#8ea901",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/kobold-skin",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Kobold Skin",
+      "aliases": [],
+      "manufacturerCode": "WP1434",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#d89d8f",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/kraken-skin",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Kraken Skin",
+      "aliases": [],
+      "manufacturerCode": "WP1435",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#71bf87",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/lava-orange",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Lava Orange",
+      "aliases": [],
+      "manufacturerCode": "WP1106",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#e24606",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/leather-brown",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Leather Brown",
+      "aliases": [],
+      "manufacturerCode": "WP1123",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#7c4f10",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/light-tone",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Light Tone",
+      "aliases": [],
+      "manufacturerCode": "WP1470",
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#b03812",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/mars-red",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Mars Red",
+      "aliases": [],
+      "manufacturerCode": "WP1436",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#d33830",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/matt-black",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Matt Black",
+      "aliases": [],
+      "manufacturerCode": "WP1101",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#000000",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/matt-white",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Matt White",
+      "aliases": [],
+      "manufacturerCode": "WP1102",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#ffffff",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/mid-brown",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Mid Brown",
+      "aliases": [],
+      "manufacturerCode": "WP1469",
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#925a11",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/military-shader",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Military Shader",
+      "aliases": [],
+      "manufacturerCode": "WP1471",
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#4c631c",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/monster-brown",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Monster Brown",
+      "aliases": [],
+      "manufacturerCode": "WP1120",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#9d6a5f",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/moon-dust",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Moon Dust",
+      "aliases": [],
+      "manufacturerCode": "WP1438",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#f0d45f",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/mouldy-clothes",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Mouldy Clothes",
+      "aliases": [],
+      "manufacturerCode": "WP1439",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#3a7529",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/mummy-robes",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Mummy Robes",
+      "aliases": [],
+      "manufacturerCode": "WP1440",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#efded6",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/mutant-hue",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Mutant Hue",
+      "aliases": [],
+      "manufacturerCode": "WP1441",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#ac8a8d",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/mythical-orange",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Mythical Orange",
+      "aliases": [],
+      "manufacturerCode": "WP1442",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#e22e0d",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/necromancer-cloak",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Necromancer Cloak",
+      "aliases": [],
+      "manufacturerCode": "WP1443",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#413c47",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/necrotic-flesh",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Necrotic Flesh",
+      "aliases": [],
+      "manufacturerCode": "WP1108",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#b6a789",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/oak-brown",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Oak Brown",
+      "aliases": [],
+      "manufacturerCode": "WP1124",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#48240a",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/obsidian-pigment-toner",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Obsidian Pigment Toner",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#1f2224",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/onyx-skin",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Onyx Skin",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#363231",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/oozing-purple",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Oozing Purple",
+      "aliases": [],
+      "manufacturerCode": "WP1445",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#b29db7",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/opal-skin",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Opal Skin",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#d6c3c1",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/orc-blood",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Orc Blood",
+      "aliases": [],
+      "manufacturerCode": "WP1422",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#904b7a",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/phoenix-flames",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Phoenix Flames",
+      "aliases": [],
+      "manufacturerCode": "WP1446",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#f7a103",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/pixie-pink",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Pixie Pink",
+      "aliases": [],
+      "manufacturerCode": "WP1447",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#d67b83",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/plate-mail-metal",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Plate Mail Metal",
+      "aliases": [],
+      "manufacturerCode": "WP1130",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#949494",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/poisonous-cloud",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Poisonous Cloud",
+      "aliases": [],
+      "manufacturerCode": "WP1448",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#cfda2f",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/pure-red",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Pure Red",
+      "aliases": [],
+      "manufacturerCode": "WP1104",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#ca1913",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/purple-tone",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Purple Tone",
+      "aliases": [],
+      "manufacturerCode": "WP1140",
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#2a1c4d",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/red-tone",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Red Tone",
+      "aliases": [],
+      "manufacturerCode": "WP1138",
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#502114",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/rough-iron",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Rough Iron",
+      "aliases": [],
+      "manufacturerCode": "WP1468",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#22130f",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/royal-cloak",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Royal Cloak",
+      "aliases": [],
+      "manufacturerCode": "WP1449",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#1c9095",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/ruby-skin",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Ruby Skin",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#e5abab",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/scaly-hide",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Scaly Hide",
+      "aliases": [],
+      "manufacturerCode": "WP1450",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#939f8c",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/scar-tissue",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Scar Tissue",
+      "aliases": [],
+      "manufacturerCode": "WP1480",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#cf8c73",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/shining-silver",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Shining Silver",
+      "aliases": [],
+      "manufacturerCode": "WP1129",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#b1b1af",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/skeleton-bone",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Skeleton Bone",
+      "aliases": [],
+      "manufacturerCode": "WP1125",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#c2ae9d",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/snake-scales",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Snake Scales",
+      "aliases": [],
+      "manufacturerCode": "WP1453",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#8eae11",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/soft-tone",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Soft Tone",
+      "aliases": [],
+      "manufacturerCode": "WP1134",
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#532814",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/spaceship-exterior",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Spaceship Exterior",
+      "aliases": [],
+      "manufacturerCode": "WP1454",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#d6d6d6",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/stone-golem",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Stone Golem",
+      "aliases": [],
+      "manufacturerCode": "WP1455",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#c3c5be",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/strong-skin-wash",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Strong Skin Wash",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#382a22",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/strong-tone",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Strong Tone",
+      "aliases": [],
+      "manufacturerCode": "WP1135",
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#3a2a11",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/sulfide-ochre",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Sulfide Ochre",
+      "aliases": [],
+      "manufacturerCode": "WP1456",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#c78600",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/tainted-gold",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Tainted Gold",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#686139",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/tanned-flesh",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Tanned Flesh",
+      "aliases": [],
+      "manufacturerCode": "WP1127",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#bb6f51",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/tigers-eye-skin",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Tiger's Eye Skin",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#7f4841",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/topaz-skin",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Topaz Skin",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#bf8477",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/toxic-boils",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Toxic Boils",
+      "aliases": [],
+      "manufacturerCode": "WP1457",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#a66e7d",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/toxic-mist",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Toxic Mist",
+      "aliases": [],
+      "manufacturerCode": "WP1437",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#40bac0",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/troglodyte-blue",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Troglodyte Blue",
+      "aliases": [],
+      "manufacturerCode": "WP1458",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#2588b9",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/troll-claws",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Troll Claws",
+      "aliases": [],
+      "manufacturerCode": "WP1459",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#cb883e",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/true-copper",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "True Copper",
+      "aliases": [],
+      "manufacturerCode": "WP1467",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#e07d2d",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/ultramarine-blue",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Ultramarine Blue",
+      "aliases": [],
+      "manufacturerCode": "WP1115",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#3b57a5",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/uniform-grey",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Uniform Grey",
+      "aliases": [],
+      "manufacturerCode": "WP1118",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#70737f",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/vampire-red",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Vampire Red",
+      "aliases": [],
+      "manufacturerCode": "WP1460",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#98172a",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/venom-wyrm",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Venom Wyrm",
+      "aliases": [],
+      "manufacturerCode": "WP1461",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#6a653e",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/viking-blue",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Viking Blue",
+      "aliases": [],
+      "manufacturerCode": "WP1462",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#1c5b98",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/voidshield-blue",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Voidshield Blue",
+      "aliases": [],
+      "manufacturerCode": "WP1452",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#5bbcd7",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/warlock-purple",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Warlock Purple",
+      "aliases": [],
+      "manufacturerCode": "WP1451",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#c34d81",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/wasteland-soil",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Wasteland Soil",
+      "aliases": [],
+      "manufacturerCode": "WP1463",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#844857",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/weapon-bronze",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Weapon Bronze",
+      "aliases": [],
+      "manufacturerCode": "WP1133",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#e47533",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/werewolf-fur",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Werewolf Fur",
+      "aliases": [],
+      "manufacturerCode": "WP1464",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#796352",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/wet-mud",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Wet Mud",
+      "aliases": [],
+      "manufacturerCode": "WP1478",
+      "type": "technical",
+      "metallic": false,
+      "color": {
+        "hex": "#9e3e35",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/witch-brew",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Witch Brew",
+      "aliases": [],
+      "manufacturerCode": "WP1465",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#919634",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/wizards-orb",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Wizards Orb",
+      "aliases": [],
+      "manufacturerCode": "WP1466",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#0f7260",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "the-army-painter/warpaints/wolf-grey",
+      "rangeId": "the-army-painter/warpaints",
+      "name": "Wolf Grey",
+      "aliases": [],
+      "manufacturerCode": "WP1119",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#5e7f9f",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
       "id": "vallejo/game-color/abyssal-turquoise",
       "rangeId": "vallejo/game-color",
       "name": "Abyssal Turquoise",
@@ -25007,8 +27411,18 @@
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
+      "from": "the-army-painter/warpaints-fanatic/aegis-aqua",
+      "to": "the-army-painter/warpaints/voidshield-blue",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
       "from": "the-army-painter/warpaints-fanatic/agate-skin",
       "to": "citadel/layer/cadian-fleshtone",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/alien-purple",
+      "to": "the-army-painter/warpaints/alien-purple",
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
@@ -25022,8 +27436,18 @@
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
+      "from": "the-army-painter/warpaints-fanatic/amber-skin",
+      "to": "the-army-painter/warpaints/amber-skin",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
       "from": "the-army-painter/warpaints-fanatic/angel-green",
       "to": "citadel/base/caliban-green",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/angel-green",
+      "to": "the-army-painter/warpaints/angel-green",
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
@@ -25032,8 +27456,18 @@
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
+      "from": "the-army-painter/warpaints-fanatic/angelic-red",
+      "to": "the-army-painter/warpaints/mars-red",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
       "from": "the-army-painter/warpaints-fanatic/aquamarine",
       "to": "citadel/layer/baharroth-blue",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/arctic-gem",
+      "to": "the-army-painter/warpaints/electric-blue",
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
@@ -25042,8 +27476,18 @@
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
+      "from": "the-army-painter/warpaints-fanatic/army-green",
+      "to": "the-army-painter/warpaints/army-green",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
       "from": "the-army-painter/warpaints-fanatic/ash-grey",
       "to": "citadel/layer/administratum-grey",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/ash-grey",
+      "to": "the-army-painter/warpaints/ash-grey",
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
@@ -25052,8 +27496,18 @@
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
+      "from": "the-army-painter/warpaints-fanatic/augur-blue",
+      "to": "the-army-painter/warpaints/gorgon-hide",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
       "from": "the-army-painter/warpaints-fanatic/barbarian-flesh",
       "to": "citadel/layer/bestigor-flesh",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/barbarian-flesh",
+      "to": "the-army-painter/warpaints/barbarian-flesh",
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
@@ -25062,8 +27516,18 @@
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
+      "from": "the-army-painter/warpaints-fanatic/barren-dune",
+      "to": "the-army-painter/warpaints/troll-claws",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
       "from": "the-army-painter/warpaints-fanatic/basilisk-red",
       "to": "citadel/layer/word-bearers-red",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/basilisk-red",
+      "to": "the-army-painter/warpaints/crusted-sore",
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
@@ -25072,8 +27536,18 @@
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
+      "from": "the-army-painter/warpaints-fanatic/blue-tone",
+      "to": "the-army-painter/warpaints/blue-tone",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
       "from": "the-army-painter/warpaints-fanatic/bony-spikes",
       "to": "citadel/layer/screaming-skull",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/bootstrap-brown",
+      "to": "the-army-painter/warpaints/werewolf-fur",
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
@@ -25082,8 +27556,18 @@
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
+      "from": "the-army-painter/warpaints-fanatic/brainmatter-beige",
+      "to": "the-army-painter/warpaints/brainmatter-beige",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
       "from": "the-army-painter/warpaints-fanatic/brigade-grey",
       "to": "citadel/base/corax-white",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/brigade-grey",
+      "to": "the-army-painter/warpaints/spaceship-exterior",
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
@@ -25092,8 +27576,18 @@
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
+      "from": "the-army-painter/warpaints-fanatic/brigandine-brown",
+      "to": "the-army-painter/warpaints/hardened-carapace",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
       "from": "the-army-painter/warpaints-fanatic/bright-gold",
       "to": "citadel/layer/auric-armour-gold",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/bright-gold",
+      "to": "the-army-painter/warpaints/bright-gold",
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
@@ -25107,8 +27601,18 @@
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
+      "from": "the-army-painter/warpaints-fanatic/burning-ore",
+      "to": "the-army-painter/warpaints/mythical-orange",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
       "from": "the-army-painter/warpaints-fanatic/burnt-turf",
       "to": "citadel/layer/zamesi-desert",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/burnt-turf",
+      "to": "the-army-painter/warpaints/hemp-rope",
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
@@ -25117,8 +27621,18 @@
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
+      "from": "the-army-painter/warpaints-fanatic/camouflage-green",
+      "to": "the-army-painter/warpaints/commando-green",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
       "from": "the-army-painter/warpaints-fanatic/carnelian-skin",
       "to": "citadel/layer/bloodreaver-flesh",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/carnelian-skin",
+      "to": "the-army-painter/warpaints/chaotic-red",
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
@@ -25142,8 +27656,18 @@
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
+      "from": "the-army-painter/warpaints-fanatic/crystal-blue",
+      "to": "the-army-painter/warpaints/crystal-blue",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
       "from": "the-army-painter/warpaints-fanatic/cultist-purple",
       "to": "citadel/layer/genestealer-purple",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/daemonic-yellow",
+      "to": "the-army-painter/warpaints/daemonic-yellow",
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
@@ -25162,8 +27686,18 @@
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
+      "from": "the-army-painter/warpaints-fanatic/dark-skin-shade",
+      "to": "the-army-painter/warpaints/dark-skin-wash",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
       "from": "the-army-painter/warpaints-fanatic/dark-tone",
       "to": "citadel/shade/nuln-oil",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/dark-tone",
+      "to": "the-army-painter/warpaints/dark-tone",
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
@@ -25174,6 +27708,11 @@
     {
       "from": "the-army-painter/warpaints-fanatic/deep-grey",
       "to": "citadel/base/mechanicus-standard-grey",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/deep-grey",
+      "to": "the-army-painter/warpaints/necromancer-cloak",
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
@@ -25192,6 +27731,11 @@
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
+      "from": "the-army-painter/warpaints-fanatic/desert-yellow",
+      "to": "the-army-painter/warpaints/desert-yellow",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
       "from": "the-army-painter/warpaints-fanatic/diabolic-plum",
       "to": "citadel/base/phoenician-purple",
       "sourceId": "the-army-painter-fanatic-conversion-chart"
@@ -25202,8 +27746,18 @@
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
+      "from": "the-army-painter/warpaints-fanatic/dorado-skin",
+      "to": "the-army-painter/warpaints/corpse-pale",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
       "from": "the-army-painter/warpaints-fanatic/dragon-red",
       "to": "citadel/base/mephiston-red",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/dragon-red",
+      "to": "the-army-painter/warpaints/dragon-red",
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
@@ -25217,8 +27771,18 @@
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
+      "from": "the-army-painter/warpaints-fanatic/emerald-forest",
+      "to": "the-army-painter/warpaints/snake-scales",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
       "from": "the-army-painter/warpaints-fanatic/eternal-hunt",
       "to": "citadel/layer/sybarite-green",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/eternal-hunt",
+      "to": "the-army-painter/warpaints/goblin-green",
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
@@ -25237,8 +27801,18 @@
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
+      "from": "the-army-painter/warpaints-fanatic/ferocious-green",
+      "to": "the-army-painter/warpaints/kraken-skin",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
       "from": "the-army-painter/warpaints-fanatic/fiendish-yellow",
       "to": "citadel/base/averland-sunset",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/fiendish-yellow",
+      "to": "the-army-painter/warpaints/fire-lizard",
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
@@ -25247,8 +27821,38 @@
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
+      "from": "the-army-painter/warpaints-fanatic/forbidden-fruit",
+      "to": "the-army-painter/warpaints/toxic-boils",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/forest-faun",
+      "to": "the-army-painter/warpaints/scaly-hide",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/frost-blue",
+      "to": "the-army-painter/warpaints/ice-storm",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/fur-brown",
+      "to": "the-army-painter/warpaints/fur-brown",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
       "from": "the-army-painter/warpaints-fanatic/gargoyle-grey",
       "to": "citadel/base/ionrach-skin",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/gemstone-red",
+      "to": "the-army-painter/warpaints/gemstone",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/glittering-green",
+      "to": "the-army-painter/warpaints/glitter-green",
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
@@ -25262,8 +27866,18 @@
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
+      "from": "the-army-painter/warpaints-fanatic/great-hall-grey",
+      "to": "the-army-painter/warpaints/stone-golem",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
       "from": "the-army-painter/warpaints-fanatic/greedy-gold",
       "to": "citadel/base/retributor-armour",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/greedy-gold",
+      "to": "the-army-painter/warpaints/greedy-gold",
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
@@ -25272,8 +27886,23 @@
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
+      "from": "the-army-painter/warpaints-fanatic/green-tone",
+      "to": "the-army-painter/warpaints/green-tone",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
       "from": "the-army-painter/warpaints-fanatic/greenskin",
       "to": "citadel/layer/warpstone-glow",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/greenskin",
+      "to": "the-army-painter/warpaints/greenskin",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/grey-castle",
+      "to": "the-army-painter/warpaints/combat-fatigues",
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
@@ -25287,6 +27916,11 @@
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
+      "from": "the-army-painter/warpaints-fanatic/gun-metal",
+      "to": "the-army-painter/warpaints/gun-metal",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
       "from": "the-army-painter/warpaints-fanatic/hexed-violet",
       "to": "citadel/base/daemonette-hide",
       "sourceId": "the-army-painter-fanatic-conversion-chart"
@@ -25297,8 +27931,18 @@
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
+      "from": "the-army-painter/warpaints-fanatic/hydra-turquoise",
+      "to": "the-army-painter/warpaints/hydra-turquoise",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
       "from": "the-army-painter/warpaints-fanatic/ice-yellow",
       "to": "citadel/layer/dorn-yellow",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/ice-yellow",
+      "to": "the-army-painter/warpaints/arid-earth",
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
@@ -25307,8 +27951,33 @@
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
+      "from": "the-army-painter/warpaints-fanatic/imperial-navy",
+      "to": "the-army-painter/warpaints/deep-blue",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/inner-light",
+      "to": "the-army-painter/warpaints/phoenix-flames",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/jasper-skin",
+      "to": "the-army-painter/warpaints/dorado-skin",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/kraken-lavender",
+      "to": "the-army-painter/warpaints/orc-blood",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
       "from": "the-army-painter/warpaints-fanatic/lava-orange",
       "to": "citadel/layer/fire-dragon-bright",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/lava-orange",
+      "to": "the-army-painter/warpaints/lava-orange",
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
@@ -25322,8 +27991,23 @@
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
+      "from": "the-army-painter/warpaints-fanatic/leather-brown",
+      "to": "the-army-painter/warpaints/leather-brown",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
       "from": "the-army-painter/warpaints-fanatic/legendary-red",
       "to": "citadel/layer/squig-orange",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/leopard-stone-skin",
+      "to": "the-army-painter/warpaints/centaur-skin",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/light-tone",
+      "to": "the-army-painter/warpaints/light-tone",
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
@@ -25332,8 +28016,18 @@
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
+      "from": "the-army-painter/warpaints-fanatic/marine-mist",
+      "to": "the-army-painter/warpaints/toxic-mist",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
       "from": "the-army-painter/warpaints-fanatic/matt-black",
       "to": "citadel/base/abaddon-black",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/matt-black",
+      "to": "the-army-painter/warpaints/matt-black",
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
@@ -25342,8 +28036,18 @@
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
+      "from": "the-army-painter/warpaints-fanatic/matt-white",
+      "to": "the-army-painter/warpaints/matt-white",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
       "from": "the-army-painter/warpaints-fanatic/military-shade",
       "to": "citadel/shade/athonian-camoshade",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/military-shade",
+      "to": "the-army-painter/warpaints/military-shader",
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
@@ -25362,6 +28066,16 @@
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
+      "from": "the-army-painter/warpaints-fanatic/moldy-wine",
+      "to": "the-army-painter/warpaints/wasteland-soil",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/moonstone-skin",
+      "to": "the-army-painter/warpaints/scar-tissue",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
       "from": "the-army-painter/warpaints-fanatic/mossy-green",
       "to": "citadel/layer/deepkin-flesh",
       "sourceId": "the-army-painter-fanatic-conversion-chart"
@@ -25372,8 +28086,23 @@
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
+      "from": "the-army-painter/warpaints-fanatic/mulled-berry",
+      "to": "the-army-painter/warpaints/grimoire-purple",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/necrotic-flesh",
+      "to": "the-army-painter/warpaints/necrotic-flesh",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
       "from": "the-army-painter/warpaints-fanatic/night-sky",
       "to": "citadel/layer/dark-reaper",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/oak-brown",
+      "to": "the-army-painter/warpaints/oak-brown",
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
@@ -25382,13 +28111,28 @@
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
+      "from": "the-army-painter/warpaints-fanatic/obsidian-skin",
+      "to": "the-army-painter/warpaints/onyx-skin",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
       "from": "the-army-painter/warpaints-fanatic/olive-drab",
       "to": "citadel/layer/straken-green",
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
+      "from": "the-army-painter/warpaints-fanatic/olive-drab",
+      "to": "the-army-painter/warpaints/witch-brew",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
       "from": "the-army-painter/warpaints-fanatic/onyx-skin",
       "to": "citadel/layer/gorthor-brown",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/opal-skin",
+      "to": "the-army-painter/warpaints/opal-skin",
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
@@ -25407,8 +28151,28 @@
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
+      "from": "the-army-painter/warpaints-fanatic/paratrooper-tan",
+      "to": "the-army-painter/warpaints/monster-brown",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
       "from": "the-army-painter/warpaints-fanatic/patagon-pine",
       "to": "citadel/layer/skarsnik-green",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/pearl-skin",
+      "to": "the-army-painter/warpaints/mummy-robes",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/phalanx-blue",
+      "to": "the-army-painter/warpaints/troglodyte-blue",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/pharaoh-guard",
+      "to": "the-army-painter/warpaints/wizards-orb",
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
@@ -25417,8 +28181,18 @@
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
+      "from": "the-army-painter/warpaints-fanatic/pixie-pink",
+      "to": "the-army-painter/warpaints/pixie-pink",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
       "from": "the-army-painter/warpaints-fanatic/plate-mail-metal",
       "to": "citadel/base/iron-hands-steel",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/plate-mail-metal",
+      "to": "the-army-painter/warpaints/plate-mail-metal",
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
@@ -25427,8 +28201,23 @@
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
+      "from": "the-army-painter/warpaints-fanatic/prairie-ochre",
+      "to": "the-army-painter/warpaints/sulfide-ochre",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/pure-red",
+      "to": "the-army-painter/warpaints/pure-red",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
       "from": "the-army-painter/warpaints-fanatic/purple-tone",
       "to": "citadel/shade/druchii-violet",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/purple-tone",
+      "to": "the-army-painter/warpaints/purple-tone",
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
@@ -25437,8 +28226,18 @@
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
+      "from": "the-army-painter/warpaints-fanatic/rainforest",
+      "to": "the-army-painter/warpaints/jungle-green",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
       "from": "the-army-painter/warpaints-fanatic/red-copper",
       "to": "citadel/base/screaming-bell",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/red-tone",
+      "to": "the-army-painter/warpaints/red-tone",
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
@@ -25452,8 +28251,28 @@
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
+      "from": "the-army-painter/warpaints-fanatic/resplendent-red",
+      "to": "the-army-painter/warpaints/abomination-gore",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
       "from": "the-army-painter/warpaints-fanatic/rough-iron",
       "to": "citadel/base/warplock-bronze",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/rough-iron",
+      "to": "the-army-painter/warpaints/rough-iron",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/royal-blue",
+      "to": "the-army-painter/warpaints/viking-blue",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/ruby-skin",
+      "to": "the-army-painter/warpaints/ruby-skin",
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
@@ -25462,8 +28281,18 @@
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
+      "from": "the-army-painter/warpaints-fanatic/ruddy-umber",
+      "to": "the-army-painter/warpaints/tanned-flesh",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
       "from": "the-army-painter/warpaints-fanatic/runic-cobalt",
       "to": "citadel/layer/fenrisian-grey",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/runic-cobalt",
+      "to": "the-army-painter/warpaints/fog-grey",
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
@@ -25472,8 +28301,18 @@
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
+      "from": "the-army-painter/warpaints-fanatic/scarab-green",
+      "to": "the-army-painter/warpaints/obsidian-pigment-toner",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
       "from": "the-army-painter/warpaints-fanatic/sepia-tone",
       "to": "citadel/shade/seraphim-sepia",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/sepia-tone",
+      "to": "the-army-painter/warpaints/mid-brown",
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
@@ -25487,8 +28326,23 @@
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
+      "from": "the-army-painter/warpaints-fanatic/shining-silver",
+      "to": "the-army-painter/warpaints/shining-silver",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
       "from": "the-army-painter/warpaints-fanatic/skeleton-bone",
       "to": "citadel/layer/ushabti-bone",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/skeleton-bone",
+      "to": "the-army-painter/warpaints/skeleton-bone",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/soft-tone",
+      "to": "the-army-painter/warpaints/soft-tone",
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
@@ -25497,8 +28351,18 @@
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
+      "from": "the-army-painter/warpaints-fanatic/space-dust",
+      "to": "the-army-painter/warpaints/moon-dust",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
       "from": "the-army-painter/warpaints-fanatic/spellbound-fuchsia",
       "to": "citadel/layer/kakophoni-purple",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/stratos-blue",
+      "to": "the-army-painter/warpaints/griffon-blue",
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
@@ -25507,8 +28371,28 @@
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
+      "from": "the-army-painter/warpaints-fanatic/strong-skin-shade",
+      "to": "the-army-painter/warpaints/strong-skin-wash",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
       "from": "the-army-painter/warpaints-fanatic/strong-tone",
       "to": "citadel/shade/agrax-earthshade",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/strong-tone",
+      "to": "the-army-painter/warpaints/strong-tone",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/tainted-gold",
+      "to": "the-army-painter/warpaints/tainted-gold",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/talisman-teal",
+      "to": "the-army-painter/warpaints/elemental-bolt",
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
@@ -25537,8 +28421,23 @@
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
+      "from": "the-army-painter/warpaints-fanatic/tigers-eye-skin",
+      "to": "the-army-painter/warpaints/tigers-eye-skin",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
       "from": "the-army-painter/warpaints-fanatic/tomb-king-tan",
       "to": "citadel/layer/karak-stone",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/tomb-king-tan",
+      "to": "the-army-painter/warpaints/banshee-brown",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/topaz-skin",
+      "to": "the-army-painter/warpaints/topaz-skin",
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
@@ -25547,8 +28446,18 @@
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
+      "from": "the-army-painter/warpaints-fanatic/tree-ancient",
+      "to": "the-army-painter/warpaints/dirt-spatter",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
       "from": "the-army-painter/warpaints-fanatic/triumphant-navy",
       "to": "citadel/base/kantor-blue",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/triumphant-navy",
+      "to": "the-army-painter/warpaints/dark-sky",
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
@@ -25562,13 +28471,43 @@
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
+      "from": "the-army-painter/warpaints-fanatic/true-copper",
+      "to": "the-army-painter/warpaints/true-copper",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
       "from": "the-army-painter/warpaints-fanatic/tundra-taupe",
       "to": "citadel/base/deathworld-forest",
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
+      "from": "the-army-painter/warpaints-fanatic/tundra-taupe",
+      "to": "the-army-painter/warpaints/venom-wyrm",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/turquoise-siren",
+      "to": "the-army-painter/warpaints/royal-cloak",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
       "from": "the-army-painter/warpaints-fanatic/ultramarine-blue",
       "to": "citadel/layer/altdorf-guard-blue",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/ultramarine-blue",
+      "to": "the-army-painter/warpaints/ultramarine-blue",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/uniform-grey",
+      "to": "the-army-painter/warpaints/uniform-grey",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/urban-buff",
+      "to": "the-army-painter/warpaints/kobold-skin",
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
@@ -25582,6 +28521,16 @@
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
+      "from": "the-army-painter/warpaints-fanatic/violet-coven",
+      "to": "the-army-painter/warpaints/oozing-purple",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/vivid-volt",
+      "to": "the-army-painter/warpaints/poisonous-cloud",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
       "from": "the-army-painter/warpaints-fanatic/warlock-magenta",
       "to": "citadel/layer/xereus-purple",
       "sourceId": "the-army-painter-fanatic-conversion-chart"
@@ -25592,13 +28541,28 @@
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
+      "from": "the-army-painter/warpaints-fanatic/warped-yellow",
+      "to": "the-army-painter/warpaints/babe-blonde",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
       "from": "the-army-painter/warpaints-fanatic/wasteland-clay",
       "to": "citadel/layer/balor-brown",
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
+      "from": "the-army-painter/warpaints-fanatic/wasteland-clay",
+      "to": "the-army-painter/warpaints/basilisk-brown",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
       "from": "the-army-painter/warpaints-fanatic/weapon-bronze",
       "to": "citadel/layer/brass-scorpion",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/weapon-bronze",
+      "to": "the-army-painter/warpaints/weapon-bronze",
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
@@ -25612,8 +28576,23 @@
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
+      "from": "the-army-painter/warpaints-fanatic/wicked-pink",
+      "to": "the-army-painter/warpaints/warlock-purple",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/wilted-rose",
+      "to": "the-army-painter/warpaints/mutant-hue",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
       "from": "the-army-painter/warpaints-fanatic/wolf-grey",
       "to": "citadel/layer/russ-grey",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/wolf-grey",
+      "to": "the-army-painter/warpaints/wolf-grey",
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
@@ -25622,14 +28601,894 @@
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
+      "from": "the-army-painter/warpaints-fanatic/woodland-camo",
+      "to": "the-army-painter/warpaints/elf-green",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
       "from": "the-army-painter/warpaints-fanatic/worn-stone",
       "to": "citadel/base/wraithbone",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/worn-stone",
+      "to": "the-army-painter/warpaints/drake-tooth",
       "sourceId": "the-army-painter-fanatic-conversion-chart"
     },
     {
       "from": "the-army-painter/warpaints-fanatic/wyvern-fury",
       "to": "citadel/layer/wazdakka-red",
       "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/wyvern-fury",
+      "to": "the-army-painter/warpaints/vampire-red",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/abomination-gore",
+      "to": "citadel/base/khorne-red",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/abomination-gore",
+      "to": "vallejo/game-color/scarlet-red",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/alien-purple",
+      "to": "citadel/layer/xereus-purple",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/alien-purple",
+      "to": "vallejo/game-color/royal-purple",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/angel-green",
+      "to": "citadel/base/caliban-green",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/angel-green",
+      "to": "vallejo/game-color/sick-green",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/arid-earth",
+      "to": "citadel/layer/dorn-yellow",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/army-green",
+      "to": "citadel/layer/straken-green",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/ash-grey",
+      "to": "citadel/layer/administratum-grey",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/ash-grey",
+      "to": "vallejo/game-color/stonewall-grey",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/babe-blonde",
+      "to": "vallejo/game-color/moon-yellow",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/banshee-brown",
+      "to": "citadel/base/rakarth-flesh",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/barbarian-flesh",
+      "to": "citadel/layer/bestigor-flesh",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/barbarian-flesh",
+      "to": "vallejo/game-color/scrofulous-brown",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/basilisk-brown",
+      "to": "citadel/layer/zamesi-desert",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/basilisk-brown",
+      "to": "vallejo/game-color/plague-brown",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/blue-tone",
+      "to": "citadel/shade/drakenhof-nightshade",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/blue-tone",
+      "to": "vallejo/game-color/blue-wash",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/brainmatter-beige",
+      "to": "citadel/layer/screaming-skull",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/brainmatter-beige",
+      "to": "vallejo/game-color/off-white",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/bright-gold",
+      "to": "citadel/layer/auric-armour-gold",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/bright-gold",
+      "to": "vallejo/game-color/polished-gold",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/castle-grey",
+      "to": "citadel/layer/stormvermin-fur",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/centaur-skin",
+      "to": "citadel/layer/fulgrim-pink",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/combat-fatigues",
+      "to": "vallejo/game-color/dead-flesh",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/commando-green",
+      "to": "citadel/layer/elysian-green",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/corpse-pale",
+      "to": "citadel/layer/flayed-one-flesh",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/corpse-pale",
+      "to": "vallejo/game-color/elfic-flesh",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/crusted-sore",
+      "to": "citadel/base/khorne-red",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/crypt-wraith",
+      "to": "citadel/base/castellan-green",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/crypt-wraith",
+      "to": "vallejo/game-color/cayman-green",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/crystal-blue",
+      "to": "citadel/layer/teclis-blue",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/cultist-robe",
+      "to": "citadel/layer/baneblade-brown",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/daemonic-yellow",
+      "to": "citadel/layer/flash-gitz-yellow",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/daemonic-yellow",
+      "to": "vallejo/game-color/sun-yellow",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/dark-sky",
+      "to": "citadel/base/kantor-blue",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/dark-sky",
+      "to": "vallejo/game-color/imperial-blue",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/dark-stone",
+      "to": "citadel/base/mechanicus-standard-grey",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/dark-tone",
+      "to": "citadel/shade/nuln-oil",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/dark-tone",
+      "to": "vallejo/game-color/black-wash",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/deep-blue",
+      "to": "citadel/base/kantor-blue",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/deep-blue",
+      "to": "vallejo/game-color/imperial-blue",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/desert-yellow",
+      "to": "citadel/base/zandri-dust",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/desert-yellow",
+      "to": "vallejo/game-color/khaki",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/dirt-spatter",
+      "to": "citadel/base/mournfang-brown",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/dirt-spatter",
+      "to": "vallejo/game-color/beasty-brown",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/disgusting-slime",
+      "to": "citadel/technical/nurgles-rot",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/disgusting-slime",
+      "to": "vallejo/game-color/vomit",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/dragon-red",
+      "to": "citadel/layer/wazdakka-red",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/dragon-red",
+      "to": "vallejo/game-color/gory-red",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/drake-tooth",
+      "to": "citadel/layer/screaming-skull",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/dry-rust",
+      "to": "citadel/dry/ryza-rust",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/dry-rust",
+      "to": "vallejo/game-color/rust",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/electric-blue",
+      "to": "citadel/layer/calgar-blue",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/elemental-bolt",
+      "to": "citadel/layer/sybarite-green",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/elemental-bolt",
+      "to": "vallejo/game-color/foul-green",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/elf-green",
+      "to": "citadel/base/deathworld-forest",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/elven-flesh",
+      "to": "citadel/layer/kislev-flesh",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/elven-flesh",
+      "to": "citadel/layer/ungor-flesh",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/elven-flesh",
+      "to": "vallejo/game-color/pale-flesh",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/filthy-cape",
+      "to": "citadel/layer/stormvermin-fur",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/fire-lizard",
+      "to": "citadel/base/jokaero-orange",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/fire-lizard",
+      "to": "vallejo/game-color/scrofulous-brown",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/flesh-wash",
+      "to": "citadel/shade/reikland-fleshshade",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/flesh-wash",
+      "to": "vallejo/game-color/flesh-wash",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/fog-grey",
+      "to": "citadel/layer/fenrisian-grey",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/fur-brown",
+      "to": "citadel/layer/skrag-brown",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/fur-brown",
+      "to": "vallejo/game-color/parasite-brown",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/glistening-blood",
+      "to": "citadel/technical/blood-for-the-blood-god",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/glistening-blood",
+      "to": "vallejo/game-color/fresh-blood",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/goblin-green",
+      "to": "citadel/layer/warboss-green",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/goblin-green",
+      "to": "vallejo/game-color/goblin-green",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/gorgon-hide",
+      "to": "citadel/layer/ulthuan-grey",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/greedy-gold",
+      "to": "citadel/layer/gehennas-gold",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/greedy-gold",
+      "to": "vallejo/game-color/glorious-gold",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/green-tone",
+      "to": "citadel/shade/biel-tan-green",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/greenskin",
+      "to": "citadel/layer/warpstone-glow",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/greenskin",
+      "to": "vallejo/game-color/sick-green",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/griffon-blue",
+      "to": "citadel/base/macragge-blue",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/grimoire-purple",
+      "to": "citadel/base/daemonette-hide",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/grimoire-purple",
+      "to": "citadel/layer/warpfiend-grey",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/grimoire-purple",
+      "to": "vallejo/game-color/hexed-lichen",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/gun-metal",
+      "to": "citadel/base/leadbelcher",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/hardened-carapace",
+      "to": "citadel/layer/skavenblight-dinge",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/hemp-rope",
+      "to": "citadel/layer/balor-brown",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/hemp-rope",
+      "to": "vallejo/game-color/leather-brown",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/hydra-turquoise",
+      "to": "citadel/base/thousand-sons-blue",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/hydra-turquoise",
+      "to": "vallejo/game-color/turquoise",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/ice-storm",
+      "to": "citadel/layer/blue-horror",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/ice-storm",
+      "to": "vallejo/game-color/glacier-blue",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/jungle-green",
+      "to": "citadel/dry/niblet-green",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/kobold-skin",
+      "to": "citadel/layer/cadian-fleshtone",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/kraken-skin",
+      "to": "citadel/layer/gauss-blaster-green",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/lava-orange",
+      "to": "vallejo/game-color/hot-orange",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/leather-brown",
+      "to": "vallejo/game-color/earth",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/light-tone",
+      "to": "citadel/shade/seraphim-sepia",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/light-tone",
+      "to": "vallejo/game-color/sepia-wash",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/matt-black",
+      "to": "citadel/base/abaddon-black",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/matt-black",
+      "to": "vallejo/game-color/black",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/matt-white",
+      "to": "citadel/layer/white-scar",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/matt-white",
+      "to": "vallejo/game-color/dead-white",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/mid-brown",
+      "to": "citadel/shade/agrax-earthshade",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/mid-brown",
+      "to": "citadel/shade/reikland-fleshshade",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/mid-brown",
+      "to": "vallejo/game-color/umber-wash",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/military-shader",
+      "to": "citadel/shade/athonian-camoshade",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/monster-brown",
+      "to": "citadel/layer/baneblade-brown",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/moon-dust",
+      "to": "citadel/dry/hexos-palesun",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/moon-dust",
+      "to": "citadel/layer/dorn-yellow",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/mouldy-clothes",
+      "to": "citadel/layer/skarsnik-green",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/mouldy-clothes",
+      "to": "vallejo/game-color/scorpy-green",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/mummy-robes",
+      "to": "citadel/layer/pallid-wych-flesh",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/mythical-orange",
+      "to": "citadel/layer/fire-dragon-bright",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/mythical-orange",
+      "to": "vallejo/game-color/orange-fire",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/necromancer-cloak",
+      "to": "citadel/layer/eshin-grey",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/necrotic-flesh",
+      "to": "citadel/layer/krieg-khaki",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/oak-brown",
+      "to": "citadel/base/dryad-bark",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/oak-brown",
+      "to": "vallejo/game-color/charred-brown",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/oozing-purple",
+      "to": "citadel/layer/genestealer-purple",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/phoenix-flames",
+      "to": "citadel/layer/yriel-yellow",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/phoenix-flames",
+      "to": "vallejo/game-color/gold-yellow",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/pixie-pink",
+      "to": "citadel/layer/emperors-children",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/pixie-pink",
+      "to": "vallejo/game-color/squid-pink",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/plate-mail-metal",
+      "to": "citadel/layer/ironbreaker",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/pure-red",
+      "to": "citadel/layer/evil-sunz-scarlet",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/pure-red",
+      "to": "vallejo/game-color/bloody-red",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/purple-tone",
+      "to": "citadel/shade/druchii-violet",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/red-tone",
+      "to": "citadel/shade/carroburg-crimson",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/red-tone",
+      "to": "vallejo/game-color/red-wash",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/rough-iron",
+      "to": "citadel/base/warplock-bronze",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/rough-iron",
+      "to": "vallejo/game-color/tinny-tin",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/royal-cloak",
+      "to": "citadel/layer/baharroth-blue",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/scaly-hide",
+      "to": "citadel/layer/krieg-khaki",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/scar-tissue",
+      "to": "citadel/base/bugmans-glow",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/scar-tissue",
+      "to": "vallejo/game-color/tan",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/shining-silver",
+      "to": "citadel/layer/runefang-steel",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/shining-silver",
+      "to": "citadel/layer/stormhost-silver",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/shining-silver",
+      "to": "vallejo/game-color/silver",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/skeleton-bone",
+      "to": "vallejo/game-color/bone-white",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/snake-scales",
+      "to": "citadel/layer/moot-green",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/snake-scales",
+      "to": "vallejo/game-color/scorpy-green",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/soft-tone",
+      "to": "citadel/shade/agrax-earthshade",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/soft-tone",
+      "to": "citadel/shade/seraphim-sepia",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/soft-tone",
+      "to": "vallejo/game-color/sepia-wash",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/soft-tone",
+      "to": "vallejo/game-color/umber-wash",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/spaceship-exterior",
+      "to": "citadel/layer/ulthuan-grey",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/stone-golem",
+      "to": "citadel/layer/pallid-wych-flesh",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/strong-tone",
+      "to": "citadel/shade/agrax-earthshade",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/strong-tone",
+      "to": "vallejo/game-color/umber-wash",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/sulfide-ochre",
+      "to": "citadel/layer/zamesi-desert",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/sulfide-ochre",
+      "to": "vallejo/game-color/plague-brown",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/tanned-flesh",
+      "to": "citadel/base/ratskin-flesh",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/toxic-boils",
+      "to": "citadel/layer/slaanesh-grey",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/toxic-mist",
+      "to": "citadel/layer/temple-guard-blue",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/troglodyte-blue",
+      "to": "citadel/layer/lothern-blue",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/troll-claws",
+      "to": "citadel/layer/tau-light-ochre",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/true-copper",
+      "to": "citadel/base/balthasar-gold",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/true-copper",
+      "to": "vallejo/game-color/hammered-copper",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/ultramarine-blue",
+      "to": "citadel/layer/altdorf-guard-blue",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/vampire-red",
+      "to": "citadel/base/mephiston-red",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/venom-wyrm",
+      "to": "citadel/base/death-guard-green",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/viking-blue",
+      "to": "citadel/base/caledor-sky",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/viking-blue",
+      "to": "vallejo/game-color/magic-blue",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/voidshield-blue",
+      "to": "vallejo/game-color/electric-blue",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/warlock-purple",
+      "to": "citadel/layer/pink-horror",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/wasteland-soil",
+      "to": "citadel/base/screamer-pink",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/wasteland-soil",
+      "to": "vallejo/game-color/warlord-purple",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/weapon-bronze",
+      "to": "citadel/layer/brass-scorpion",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/wet-mud",
+      "to": "citadel/technical/typhus-corrosion",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/witch-brew",
+      "to": "citadel/layer/ogryn-camo",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/wizards-orb",
+      "to": "citadel/layer/kabalite-green",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/wizards-orb",
+      "to": "vallejo/game-color/jade-green",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/wolf-grey",
+      "to": "citadel/layer/russ-grey",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints/wolf-grey",
+      "to": "vallejo/game-color/sombre-grey",
+      "sourceId": "the-army-painter-warpaints-conversion-chart"
     },
     {
       "from": "vallejo/game-color/abyssal-turquoise",

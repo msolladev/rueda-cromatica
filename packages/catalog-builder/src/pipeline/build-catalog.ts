@@ -130,7 +130,10 @@ export function buildCatalog(
         type: curated.type,
         metallic: curated.metallic,
         color,
-        status: curated.status,
+        status:
+          curated.status.kind === "active"
+            ? curated.status
+            : { kind: "discontinued", replacement: null },
       };
       paintItems.push({ item, origin });
     });

@@ -1,0 +1,4781 @@
+{
+  "source": {
+    "id": "the-army-painter-warpaints-conversion-chart",
+    "kind": "manufacturer",
+    "title": "Warpaints Conversion Chart",
+    "publisher": "The Army Painter",
+    "url": "https://cdn.shopify.com/s/files/1/0636/1232/1970/files/Warpaints_Colour_Conversion_Chart_web.pdf",
+    "archiveUrl": "https://web.archive.org/web/20261122222503/https://cdn.shopify.com/s/files/1/0636/1232/1970/files/Warpaints_Colour_Conversion_Chart_web.pdf",
+    "retrievedAt": "2026-11-22",
+    "license": "unknown",
+    "attribution": null
+  },
+  "disabled": null,
+  "files": [
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0636/1232/1970/files/Warpaints_Colour_Conversion_Chart_web.pdf",
+      "name": "Warpaints_Colour_Conversion_Chart_web.pdf",
+      "sha256": "0ddfb40b5ce46c53e9a4d462c84106905e7f6168fcff0ccbc140cb7afc331051"
+    }
+  ],
+  "paints": [
+    {
+      "key": "Warpaints/Wizards Orb",
+      "group": "Warpaints",
+      "name": "Wizards Orb",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Kabalite Green",
+      "group": "GM",
+      "name": "Kabalite Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Jade Green",
+      "group": "AV",
+      "name": "Jade Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Elemental Bolt",
+      "group": "Warpaints",
+      "name": "Elemental Bolt",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Sybarite Green",
+      "group": "GM",
+      "name": "Sybarite Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Foul Green",
+      "group": "AV",
+      "name": "Foul Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Toxic Mist",
+      "group": "Warpaints",
+      "name": "Toxic Mist",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Temple Guard Blue",
+      "group": "GM",
+      "name": "Temple Guard Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Royal Cloak",
+      "group": "Warpaints",
+      "name": "Royal Cloak",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Baharroth Blue",
+      "group": "GM",
+      "name": "Baharroth Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Hydra Turquoise",
+      "group": "Warpaints",
+      "name": "Hydra Turquoise",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Thousand Sons Blue",
+      "group": "GM",
+      "name": "Thousand Sons Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Turquoise",
+      "group": "AV",
+      "name": "Turquoise",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Deep Blue",
+      "group": "Warpaints",
+      "name": "Deep Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Kantor Blue",
+      "group": "GM",
+      "name": "Kantor Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Imperial Blue",
+      "group": "AV",
+      "name": "Imperial Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Griffon Blue",
+      "group": "Warpaints",
+      "name": "Griffon Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Macagge Blue",
+      "group": "GM",
+      "name": "Macagge Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Ultramarine Blue",
+      "group": "Warpaints",
+      "name": "Ultramarine Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Altdorf Guard Blue",
+      "group": "GM",
+      "name": "Altdorf Guard Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Ultramarine",
+      "group": "AV",
+      "name": "Ultramarine",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Viking Blue",
+      "group": "Warpaints",
+      "name": "Viking Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Caledor Sky",
+      "group": "GM",
+      "name": "Caledor Sky",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Magic Blue",
+      "group": "AV",
+      "name": "Magic Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Electric Blue",
+      "group": "Warpaints",
+      "name": "Electric Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Calgar Blue",
+      "group": "GM",
+      "name": "Calgar Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Ice Storm",
+      "group": "Warpaints",
+      "name": "Ice Storm",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Blue Horror",
+      "group": "GM",
+      "name": "Blue Horror",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Glacier Blue",
+      "group": "AV",
+      "name": "Glacier Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Voidshield Blue",
+      "group": "Warpaints",
+      "name": "Voidshield Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Hoeth Blue",
+      "group": "GM",
+      "name": "Hoeth Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Electric Blue",
+      "group": "AV",
+      "name": "Electric Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Troglodyte Blue",
+      "group": "Warpaints",
+      "name": "Troglodyte Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Lothern Blue",
+      "group": "GM",
+      "name": "Lothern Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Crystal Blue",
+      "group": "Warpaints",
+      "name": "Crystal Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Teclis Blue",
+      "group": "GM",
+      "name": "Teclis Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Andrea Blue",
+      "group": "AV",
+      "name": "Andrea Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Dark Sky",
+      "group": "Warpaints",
+      "name": "Dark Sky",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Wolf Grey",
+      "group": "Warpaints",
+      "name": "Wolf Grey",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Russ Grey",
+      "group": "GM",
+      "name": "Russ Grey",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Sombre Grey",
+      "group": "AV",
+      "name": "Sombre Grey",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Fog Grey",
+      "group": "Warpaints",
+      "name": "Fog Grey",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Fenrisian Grey",
+      "group": "GM",
+      "name": "Fenrisian Grey",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Grey Blue",
+      "group": "AV",
+      "name": "Grey Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Gorgon Hide",
+      "group": "Warpaints",
+      "name": "Gorgon Hide",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Ulthuan Grey",
+      "group": "GM",
+      "name": "Ulthuan Grey",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Ghost Grey",
+      "group": "AV",
+      "name": "Ghost Grey",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Matt Black",
+      "group": "Warpaints",
+      "name": "Matt Black",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Abaddon Black",
+      "group": "GM",
+      "name": "Abaddon Black",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Black",
+      "group": "AV",
+      "name": "Black",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Necromancer Cloak",
+      "group": "Warpaints",
+      "name": "Necromancer Cloak",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Eshin Grey",
+      "group": "GM",
+      "name": "Eshin Grey",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Dungeon Grey",
+      "group": "Warpaints",
+      "name": "Dungeon Grey",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Dawnstone",
+      "group": "GM",
+      "name": "Dawnstone",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Cold Grey",
+      "group": "AV",
+      "name": "Cold Grey",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Field Grey",
+      "group": "Warpaints",
+      "name": "Field Grey",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Warpfield Grey",
+      "group": "GM",
+      "name": "Warpfield Grey",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Uniform Grey",
+      "group": "Warpaints",
+      "name": "Uniform Grey",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Castle Grey",
+      "group": "Warpaints",
+      "name": "Castle Grey",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Stormvermin Fur",
+      "group": "GM",
+      "name": "Stormvermin Fur",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Heavy Charcoal",
+      "group": "AV",
+      "name": "Heavy Charcoal",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Hardened Carapace",
+      "group": "Warpaints",
+      "name": "Hardened Carapace",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Skavenblight Dinge",
+      "group": "GM",
+      "name": "Skavenblight Dinge",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Hemp Rope",
+      "group": "Warpaints",
+      "name": "Hemp Rope",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Balor Brown",
+      "group": "GM",
+      "name": "Balor Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Leather Brown",
+      "group": "AV",
+      "name": "Leather Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Monster Brown",
+      "group": "Warpaints",
+      "name": "Monster Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Baneblade Brown",
+      "group": "GM",
+      "name": "Baneblade Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Heavy Brown",
+      "group": "AV",
+      "name": "Heavy Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Leather Brown",
+      "group": "Warpaints",
+      "name": "Leather Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Steel Legion Brown",
+      "group": "GM",
+      "name": "Steel Legion Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Earth",
+      "group": "AV",
+      "name": "Earth",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Dirt Spatter",
+      "group": "Warpaints",
+      "name": "Dirt Spatter",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Mournfang Brown",
+      "group": "GM",
+      "name": "Mournfang Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Beasty Brown",
+      "group": "AV",
+      "name": "Beasty Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Oak Brown",
+      "group": "Warpaints",
+      "name": "Oak Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Dryard Bark",
+      "group": "GM",
+      "name": "Dryard Bark",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Charred Brown",
+      "group": "AV",
+      "name": "Charred Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Basilisk Brown",
+      "group": "Warpaints",
+      "name": "Basilisk Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Zamesi Desert",
+      "group": "GM",
+      "name": "Zamesi Desert",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Plague Brown",
+      "group": "AV",
+      "name": "Plague Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Sulfide Ochre",
+      "group": "Warpaints",
+      "name": "Sulfide Ochre",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Desert Yellow",
+      "group": "Warpaints",
+      "name": "Desert Yellow",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Zandri Dust",
+      "group": "GM",
+      "name": "Zandri Dust",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Khaki",
+      "group": "AV",
+      "name": "Khaki",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Moon Dust",
+      "group": "Warpaints",
+      "name": "Moon Dust",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Hexos Palesun",
+      "group": "GM",
+      "name": "Hexos Palesun",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Dorn Yellow",
+      "group": "GM",
+      "name": "Dorn Yellow",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Pale Yellow",
+      "group": "AV",
+      "name": "Pale Yellow",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Arid Earth",
+      "group": "Warpaints",
+      "name": "Arid Earth",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Babe Blonde",
+      "group": "Warpaints",
+      "name": "Babe Blonde",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Moon Yellow",
+      "group": "AV",
+      "name": "Moon Yellow",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Daemonic Yellow",
+      "group": "Warpaints",
+      "name": "Daemonic Yellow",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Flash Gitz Yellow",
+      "group": "GM",
+      "name": "Flash Gitz Yellow",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Sun Yellow",
+      "group": "AV",
+      "name": "Sun Yellow",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Phoenix Flames",
+      "group": "Warpaints",
+      "name": "Phoenix Flames",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Yriel Yellow",
+      "group": "GM",
+      "name": "Yriel Yellow",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Gold Yellow",
+      "group": "AV",
+      "name": "Gold Yellow",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Fire Lizard",
+      "group": "Warpaints",
+      "name": "Fire Lizard",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Jokaero Orange",
+      "group": "GM",
+      "name": "Jokaero Orange",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Scrofulous Brown",
+      "group": "AV",
+      "name": "Scrofulous Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Lava Orange",
+      "group": "Warpaints",
+      "name": "Lava Orange",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Trollslayer Orange",
+      "group": "GM",
+      "name": "Trollslayer Orange",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Hot Orange",
+      "group": "AV",
+      "name": "Hot Orange",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Mythical Orange",
+      "group": "Warpaints",
+      "name": "Mythical Orange",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Fire Dragon Bright",
+      "group": "GM",
+      "name": "Fire Dragon Bright",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Orange Fire",
+      "group": "AV",
+      "name": "Orange Fire",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Mars Red",
+      "group": "Warpaints",
+      "name": "Mars Red",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Wildrider Red",
+      "group": "GM",
+      "name": "Wildrider Red",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Pure Red",
+      "group": "Warpaints",
+      "name": "Pure Red",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Evil Sunz Scarlet",
+      "group": "GM",
+      "name": "Evil Sunz Scarlet",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Bloody Red",
+      "group": "AV",
+      "name": "Bloody Red",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Dragon Red",
+      "group": "Warpaints",
+      "name": "Dragon Red",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Wazdakka Red",
+      "group": "GM",
+      "name": "Wazdakka Red",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Gory Red",
+      "group": "AV",
+      "name": "Gory Red",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Abomination Gore",
+      "group": "Warpaints",
+      "name": "Abomination Gore",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Khorne Red",
+      "group": "GM",
+      "name": "Khorne Red",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Scarlet Red",
+      "group": "AV",
+      "name": "Scarlet Red",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Vampire Red",
+      "group": "Warpaints",
+      "name": "Vampire Red",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Mephiston Red",
+      "group": "GM",
+      "name": "Mephiston Red",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Heavy Red",
+      "group": "AV",
+      "name": "Heavy Red",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Chaotic Red",
+      "group": "Warpaints",
+      "name": "Chaotic Red",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Crusted Sore",
+      "group": "Warpaints",
+      "name": "Crusted Sore",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Wasteland Soil",
+      "group": "Warpaints",
+      "name": "Wasteland Soil",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Screamer Pink",
+      "group": "GM",
+      "name": "Screamer Pink",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Warlord Purple",
+      "group": "AV",
+      "name": "Warlord Purple",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Grimoire Purple",
+      "group": "Warpaints",
+      "name": "Grimoire Purple",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Warpfiend Grey",
+      "group": "GM",
+      "name": "Warpfiend Grey",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Daemonette Hide",
+      "group": "GM",
+      "name": "Daemonette Hide",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Hexed Lichen",
+      "group": "AV",
+      "name": "Hexed Lichen",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Dark Stone",
+      "group": "Warpaints",
+      "name": "Dark Stone",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Mechanicus Standard Grey",
+      "group": "GM",
+      "name": "Mechanicus Standard Grey",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Heavy Grey",
+      "group": "AV",
+      "name": "Heavy Grey",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Cultist Robe",
+      "group": "Warpaints",
+      "name": "Cultist Robe",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Werewolf Fur",
+      "group": "Warpaints",
+      "name": "Werewolf Fur",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Gothor Brown",
+      "group": "GM",
+      "name": "Gothor Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Banshee Brown",
+      "group": "Warpaints",
+      "name": "Banshee Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Rakarth Flesh",
+      "group": "GM",
+      "name": "Rakarth Flesh",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Heavy Warm Grey",
+      "group": "AV",
+      "name": "Heavy Warm Grey",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Brainmatter Beige",
+      "group": "Warpaints",
+      "name": "Brainmatter Beige",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Screaming Skull",
+      "group": "GM",
+      "name": "Screaming Skull",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Off-White",
+      "group": "AV",
+      "name": "Off-White",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Spaceship Exterior",
+      "group": "Warpaints",
+      "name": "Spaceship Exterior",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Stone Golem",
+      "group": "Warpaints",
+      "name": "Stone Golem",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Pallid Wych Flesh",
+      "group": "GM",
+      "name": "Pallid Wych Flesh",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Matt White",
+      "group": "Warpaints",
+      "name": "Matt White",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/White Scar",
+      "group": "GM",
+      "name": "White Scar",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Ceramite",
+      "group": "GM",
+      "name": "Ceramite",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Dead White",
+      "group": "AV",
+      "name": "Dead White",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Ash Grey",
+      "group": "Warpaints",
+      "name": "Ash Grey",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Administorum Grey",
+      "group": "GM",
+      "name": "Administorum Grey",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Stonewall Grey",
+      "group": "AV",
+      "name": "Stonewall Grey",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Mutant Hue",
+      "group": "Warpaints",
+      "name": "Mutant Hue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Oozing Purple",
+      "group": "Warpaints",
+      "name": "Oozing Purple",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Genestealer Purple",
+      "group": "GM",
+      "name": "Genestealer Purple",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Orc Blood",
+      "group": "Warpaints",
+      "name": "Orc Blood",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Alien Purple",
+      "group": "Warpaints",
+      "name": "Alien Purple",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Xereus Purple",
+      "group": "GM",
+      "name": "Xereus Purple",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Royal Purple",
+      "group": "AV",
+      "name": "Royal Purple",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Warlock Purple",
+      "group": "Warpaints",
+      "name": "Warlock Purple",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Pink Horror",
+      "group": "GM",
+      "name": "Pink Horror",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Pixie Pink",
+      "group": "Warpaints",
+      "name": "Pixie Pink",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Emperors Children",
+      "group": "GM",
+      "name": "Emperors Children",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Squid Pink",
+      "group": "AV",
+      "name": "Squid Pink",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Centaur Skin",
+      "group": "Warpaints",
+      "name": "Centaur Skin",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Fulgrim Pink",
+      "group": "GM",
+      "name": "Fulgrim Pink",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Scar Tissue",
+      "group": "Warpaints",
+      "name": "Scar Tissue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Bugman’s Glow",
+      "group": "GM",
+      "name": "Bugman’s Glow",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Tan",
+      "group": "AV",
+      "name": "Tan",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Tanned Flesh",
+      "group": "Warpaints",
+      "name": "Tanned Flesh",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Ratskin Flesh",
+      "group": "GM",
+      "name": "Ratskin Flesh",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Dwarf Skin",
+      "group": "AV",
+      "name": "Dwarf Skin",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Fur Brown",
+      "group": "Warpaints",
+      "name": "Fur Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Skrag Brown",
+      "group": "GM",
+      "name": "Skrag Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Parasite Brown",
+      "group": "AV",
+      "name": "Parasite Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Troll Claws",
+      "group": "Warpaints",
+      "name": "Troll Claws",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Tau Light Ochre",
+      "group": "GM",
+      "name": "Tau Light Ochre",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Filthy Brown",
+      "group": "AV",
+      "name": "Filthy Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Barbarian Flesh",
+      "group": "Warpaints",
+      "name": "Barbarian Flesh",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Bestigor Flesh",
+      "group": "GM",
+      "name": "Bestigor Flesh",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Kobold Skin",
+      "group": "Warpaints",
+      "name": "Kobold Skin",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Cadian Fleshtone",
+      "group": "GM",
+      "name": "Cadian Fleshtone",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Heavy Skintone",
+      "group": "AV",
+      "name": "Heavy Skintone",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Elven Flesh",
+      "group": "Warpaints",
+      "name": "Elven Flesh",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Kislev",
+      "group": "GM",
+      "name": "Kislev",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Ungor Flesh",
+      "group": "GM",
+      "name": "Ungor Flesh",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Pale Flesh",
+      "group": "AV",
+      "name": "Pale Flesh",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Corpse Pale",
+      "group": "Warpaints",
+      "name": "Corpse Pale",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Flayed One Flesh",
+      "group": "GM",
+      "name": "Flayed One Flesh",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Elfic Flesh",
+      "group": "AV",
+      "name": "Elfic Flesh",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Toxic Boils",
+      "group": "Warpaints",
+      "name": "Toxic Boils",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Slaanesh Grey",
+      "group": "GM",
+      "name": "Slaanesh Grey",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Skeleton Bone",
+      "group": "Warpaints",
+      "name": "Skeleton Bone",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Ushtabi Bone",
+      "group": "GM",
+      "name": "Ushtabi Bone",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Bone White",
+      "group": "AV",
+      "name": "Bone White",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Mummy Robes",
+      "group": "Warpaints",
+      "name": "Mummy Robes",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Drake Tooth",
+      "group": "Warpaints",
+      "name": "Drake Tooth",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Bonewhite",
+      "group": "AV",
+      "name": "Bonewhite",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Necrotic Flesh",
+      "group": "Warpaints",
+      "name": "Necrotic Flesh",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Kreig Khaki",
+      "group": "GM",
+      "name": "Kreig Khaki",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Dead Flash",
+      "group": "AV",
+      "name": "Dead Flash",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Combat Fatigues",
+      "group": "Warpaints",
+      "name": "Combat Fatigues",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Nurgling Green",
+      "group": "GM",
+      "name": "Nurgling Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Dead Flesh",
+      "group": "AV",
+      "name": "Dead Flesh",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Venom Wyrm",
+      "group": "Warpaints",
+      "name": "Venom Wyrm",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Death Guard Green",
+      "group": "GM",
+      "name": "Death Guard Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Yellow Olive",
+      "group": "AV",
+      "name": "Yellow Olive",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Filthy Cape",
+      "group": "Warpaints",
+      "name": "Filthy Cape",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Crypt Wraith",
+      "group": "Warpaints",
+      "name": "Crypt Wraith",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Castellan Green",
+      "group": "GM",
+      "name": "Castellan Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Cayman Green",
+      "group": "AV",
+      "name": "Cayman Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Elf Green",
+      "group": "Warpaints",
+      "name": "Elf Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Deathworld Forest",
+      "group": "GM",
+      "name": "Deathworld Forest",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Camo Green",
+      "group": "AV",
+      "name": "Camo Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Commando Green",
+      "group": "Warpaints",
+      "name": "Commando Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Elysian Green",
+      "group": "GM",
+      "name": "Elysian Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Witch Brew",
+      "group": "Warpaints",
+      "name": "Witch Brew",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Ogryn Camo",
+      "group": "GM",
+      "name": "Ogryn Camo",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Scaly Hide",
+      "group": "Warpaints",
+      "name": "Scaly Hide",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Goblin Green",
+      "group": "Warpaints",
+      "name": "Goblin Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Warboss Green",
+      "group": "GM",
+      "name": "Warboss Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Goblin Green",
+      "group": "AV",
+      "name": "Goblin Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Kraken Skin",
+      "group": "Warpaints",
+      "name": "Kraken Skin",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Gauss Blaster Green",
+      "group": "GM",
+      "name": "Gauss Blaster Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Greenskin",
+      "group": "Warpaints",
+      "name": "Greenskin",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Warpstone Glow",
+      "group": "GM",
+      "name": "Warpstone Glow",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Sick Green",
+      "group": "AV",
+      "name": "Sick Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Angel Green",
+      "group": "Warpaints",
+      "name": "Angel Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Caliban Green",
+      "group": "GM",
+      "name": "Caliban Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Mouldy Clothes",
+      "group": "Warpaints",
+      "name": "Mouldy Clothes",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Skarsnik Green",
+      "group": "GM",
+      "name": "Skarsnik Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Scorpy Green",
+      "group": "AV",
+      "name": "Scorpy Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Army Green",
+      "group": "Warpaints",
+      "name": "Army Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Straken Green",
+      "group": "GM",
+      "name": "Straken Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Snake Scales",
+      "group": "Warpaints",
+      "name": "Snake Scales",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Moot Green",
+      "group": "GM",
+      "name": "Moot Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Jungle Green",
+      "group": "Warpaints",
+      "name": "Jungle Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Niblet Green",
+      "group": "GM",
+      "name": "Niblet Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Livery Green",
+      "group": "AV",
+      "name": "Livery Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Poisonous Cloud",
+      "group": "Warpaints",
+      "name": "Poisonous Cloud",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Fluo Yellow",
+      "group": "AV",
+      "name": "Fluo Yellow",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Fluo Green",
+      "group": "AV",
+      "name": "Fluo Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Dry Rust",
+      "group": "Warpaints",
+      "name": "Dry Rust",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Ryza Rust",
+      "group": "GM",
+      "name": "Ryza Rust",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Rust",
+      "group": "AV",
+      "name": "Rust",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Dry Rust",
+      "group": "AV",
+      "name": "Dry Rust",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Glistening Blood",
+      "group": "Warpaints",
+      "name": "Glistening Blood",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Blood For The Blood God",
+      "group": "GM",
+      "name": "Blood For The Blood God",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Fresh Blood",
+      "group": "AV",
+      "name": "Fresh Blood",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Wet Mud",
+      "group": "Warpaints",
+      "name": "Wet Mud",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Typhus Corrosion",
+      "group": "GM",
+      "name": "Typhus Corrosion",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Disgusting Slime",
+      "group": "Warpaints",
+      "name": "Disgusting Slime",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Nurgle’s Rot",
+      "group": "GM",
+      "name": "Nurgle’s Rot",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Vomit",
+      "group": "AV",
+      "name": "Vomit",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Brush-On Primer",
+      "group": "Warpaints",
+      "name": "Brush-On Primer",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Warpaints Mixing Medium",
+      "group": "Warpaints",
+      "name": "Warpaints Mixing Medium",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Lahmium Medium",
+      "group": "GM",
+      "name": "Lahmium Medium",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Quickshade Wash Mixing Medium",
+      "group": "Warpaints",
+      "name": "Quickshade Wash Mixing Medium",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Anti-Shine Matt Varnish",
+      "group": "Warpaints",
+      "name": "Anti-Shine Matt Varnish",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Gloss Varnish",
+      "group": "Warpaints",
+      "name": "Gloss Varnish",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Ardcoat",
+      "group": "GM",
+      "name": "Ardcoat",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Rough Iron",
+      "group": "Warpaints",
+      "name": "Rough Iron",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Warlock Bronze",
+      "group": "GM",
+      "name": "Warlock Bronze",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Tinny Tin",
+      "group": "AV",
+      "name": "Tinny Tin",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Gun Metal",
+      "group": "Warpaints",
+      "name": "Gun Metal",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Leadbelcher",
+      "group": "GM",
+      "name": "Leadbelcher",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Gunmetal",
+      "group": "AV",
+      "name": "Gunmetal",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Plate Mail Metal",
+      "group": "Warpaints",
+      "name": "Plate Mail Metal",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Ironbreaker",
+      "group": "GM",
+      "name": "Ironbreaker",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Chainmail Silver",
+      "group": "AV",
+      "name": "Chainmail Silver",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Shining Silver",
+      "group": "Warpaints",
+      "name": "Shining Silver",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Runefang",
+      "group": "GM",
+      "name": "Runefang",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Stormhost Silver",
+      "group": "GM",
+      "name": "Stormhost Silver",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Silver",
+      "group": "AV",
+      "name": "Silver",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Weapon Bronze",
+      "group": "Warpaints",
+      "name": "Weapon Bronze",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Brass Scorpion",
+      "group": "GM",
+      "name": "Brass Scorpion",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Bright Brass",
+      "group": "AV",
+      "name": "Bright Brass",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/True Copper",
+      "group": "Warpaints",
+      "name": "True Copper",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Balthazar Gold",
+      "group": "GM",
+      "name": "Balthazar Gold",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Hammered Copper",
+      "group": "AV",
+      "name": "Hammered Copper",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Greedy Gold",
+      "group": "Warpaints",
+      "name": "Greedy Gold",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Gehenna Gold",
+      "group": "GM",
+      "name": "Gehenna Gold",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Glorious Gold",
+      "group": "AV",
+      "name": "Glorious Gold",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Bright Gold",
+      "group": "Warpaints",
+      "name": "Bright Gold",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Auric Armour Gold",
+      "group": "GM",
+      "name": "Auric Armour Gold",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Polished Gold",
+      "group": "AV",
+      "name": "Polished Gold",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Red Tone",
+      "group": "Warpaints",
+      "name": "Red Tone",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Carroburg Crimson",
+      "group": "GM",
+      "name": "Carroburg Crimson",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Red Wash",
+      "group": "AV",
+      "name": "Red Wash",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Flesh Wash",
+      "group": "Warpaints",
+      "name": "Flesh Wash",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Reikland Fleshshade",
+      "group": "GM",
+      "name": "Reikland Fleshshade",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Flesh Wash",
+      "group": "AV",
+      "name": "Flesh Wash",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Light Tone",
+      "group": "Warpaints",
+      "name": "Light Tone",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Seraphim Sepia",
+      "group": "GM",
+      "name": "Seraphim Sepia",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Sepia Wash",
+      "group": "AV",
+      "name": "Sepia Wash",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Dark Tone",
+      "group": "Warpaints",
+      "name": "Dark Tone",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Nuln Oil",
+      "group": "GM",
+      "name": "Nuln Oil",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Black Wash",
+      "group": "AV",
+      "name": "Black Wash",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Mid Brown",
+      "group": "Warpaints",
+      "name": "Mid Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Agrax Earthshade",
+      "group": "GM",
+      "name": "Agrax Earthshade",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Umber Wash",
+      "group": "AV",
+      "name": "Umber Wash",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Strong Tone",
+      "group": "Warpaints",
+      "name": "Strong Tone",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Purple Tone",
+      "group": "Warpaints",
+      "name": "Purple Tone",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Druchii Violet",
+      "group": "GM",
+      "name": "Druchii Violet",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Green Tone",
+      "group": "Warpaints",
+      "name": "Green Tone",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Beil-Tan Green",
+      "group": "GM",
+      "name": "Beil-Tan Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Green Wash",
+      "group": "AV",
+      "name": "Green Wash",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Military Shader",
+      "group": "Warpaints",
+      "name": "Military Shader",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Athonian Camoshade",
+      "group": "GM",
+      "name": "Athonian Camoshade",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Blue Tone",
+      "group": "Warpaints",
+      "name": "Blue Tone",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GM/Drakenhof Nightshade",
+      "group": "GM",
+      "name": "Drakenhof Nightshade",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AV/Blue Wash",
+      "group": "AV",
+      "name": "Blue Wash",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Warpaints/Soft Tone",
+      "group": "Warpaints",
+      "name": "Soft Tone",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    }
+  ],
+  "equivalences": [
+    {
+      "from": "Warpaints/Wizards Orb",
+      "to": "GM/Kabalite Green",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Wizards Orb",
+      "to": "AV/Jade Green",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Elemental Bolt",
+      "to": "GM/Sybarite Green",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Elemental Bolt",
+      "to": "AV/Foul Green",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Toxic Mist",
+      "to": "GM/Temple Guard Blue",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Royal Cloak",
+      "to": "GM/Baharroth Blue",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Hydra Turquoise",
+      "to": "GM/Thousand Sons Blue",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Hydra Turquoise",
+      "to": "AV/Turquoise",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Deep Blue",
+      "to": "GM/Kantor Blue",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Deep Blue",
+      "to": "AV/Imperial Blue",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Griffon Blue",
+      "to": "GM/Macagge Blue",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Ultramarine Blue",
+      "to": "GM/Altdorf Guard Blue",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Ultramarine Blue",
+      "to": "AV/Ultramarine",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Viking Blue",
+      "to": "GM/Caledor Sky",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Viking Blue",
+      "to": "AV/Magic Blue",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Electric Blue",
+      "to": "GM/Calgar Blue",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Ice Storm",
+      "to": "GM/Blue Horror",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Ice Storm",
+      "to": "AV/Glacier Blue",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Voidshield Blue",
+      "to": "GM/Hoeth Blue",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Voidshield Blue",
+      "to": "AV/Electric Blue",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Troglodyte Blue",
+      "to": "GM/Lothern Blue",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Crystal Blue",
+      "to": "GM/Teclis Blue",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Crystal Blue",
+      "to": "AV/Andrea Blue",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Dark Sky",
+      "to": "GM/Kantor Blue",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Dark Sky",
+      "to": "AV/Imperial Blue",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Wolf Grey",
+      "to": "GM/Russ Grey",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Wolf Grey",
+      "to": "AV/Sombre Grey",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Fog Grey",
+      "to": "GM/Fenrisian Grey",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Fog Grey",
+      "to": "AV/Grey Blue",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Gorgon Hide",
+      "to": "GM/Ulthuan Grey",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Gorgon Hide",
+      "to": "AV/Ghost Grey",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Matt Black",
+      "to": "GM/Abaddon Black",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Matt Black",
+      "to": "AV/Black",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Necromancer Cloak",
+      "to": "GM/Eshin Grey",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Dungeon Grey",
+      "to": "GM/Dawnstone",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Dungeon Grey",
+      "to": "AV/Cold Grey",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Field Grey",
+      "to": "GM/Warpfield Grey",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Uniform Grey",
+      "to": "GM/Dawnstone",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Uniform Grey",
+      "to": "AV/Cold Grey",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Castle Grey",
+      "to": "GM/Stormvermin Fur",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Castle Grey",
+      "to": "AV/Heavy Charcoal",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Hardened Carapace",
+      "to": "GM/Skavenblight Dinge",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Hemp Rope",
+      "to": "GM/Balor Brown",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Hemp Rope",
+      "to": "AV/Leather Brown",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Monster Brown",
+      "to": "GM/Baneblade Brown",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Monster Brown",
+      "to": "AV/Heavy Brown",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Leather Brown",
+      "to": "GM/Steel Legion Brown",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Leather Brown",
+      "to": "AV/Earth",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Dirt Spatter",
+      "to": "GM/Mournfang Brown",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Dirt Spatter",
+      "to": "AV/Beasty Brown",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Oak Brown",
+      "to": "GM/Dryard Bark",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Oak Brown",
+      "to": "AV/Charred Brown",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Basilisk Brown",
+      "to": "GM/Zamesi Desert",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Basilisk Brown",
+      "to": "AV/Plague Brown",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Sulfide Ochre",
+      "to": "GM/Zamesi Desert",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Sulfide Ochre",
+      "to": "AV/Plague Brown",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Desert Yellow",
+      "to": "GM/Zandri Dust",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Desert Yellow",
+      "to": "AV/Khaki",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Moon Dust",
+      "to": "GM/Hexos Palesun",
+      "note": "Casilla «Hexos Palesun/ Dorn Yellow»."
+    },
+    {
+      "from": "Warpaints/Moon Dust",
+      "to": "GM/Dorn Yellow",
+      "note": "Casilla «Hexos Palesun/ Dorn Yellow»."
+    },
+    {
+      "from": "Warpaints/Moon Dust",
+      "to": "AV/Pale Yellow",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Arid Earth",
+      "to": "GM/Dorn Yellow",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Arid Earth",
+      "to": "AV/Pale Yellow",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Babe Blonde",
+      "to": "AV/Moon Yellow",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Daemonic Yellow",
+      "to": "GM/Flash Gitz Yellow",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Daemonic Yellow",
+      "to": "AV/Sun Yellow",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Phoenix Flames",
+      "to": "GM/Yriel Yellow",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Phoenix Flames",
+      "to": "AV/Gold Yellow",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Fire Lizard",
+      "to": "GM/Jokaero Orange",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Fire Lizard",
+      "to": "AV/Scrofulous Brown",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Lava Orange",
+      "to": "GM/Trollslayer Orange",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Lava Orange",
+      "to": "AV/Hot Orange",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Mythical Orange",
+      "to": "GM/Fire Dragon Bright",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Mythical Orange",
+      "to": "AV/Orange Fire",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Mars Red",
+      "to": "GM/Wildrider Red",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Pure Red",
+      "to": "GM/Evil Sunz Scarlet",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Pure Red",
+      "to": "AV/Bloody Red",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Dragon Red",
+      "to": "GM/Wazdakka Red",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Dragon Red",
+      "to": "AV/Gory Red",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Abomination Gore",
+      "to": "GM/Khorne Red",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Abomination Gore",
+      "to": "AV/Scarlet Red",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Vampire Red",
+      "to": "GM/Mephiston Red",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Vampire Red",
+      "to": "AV/Heavy Red",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Crusted Sore",
+      "to": "GM/Khorne Red",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Wasteland Soil",
+      "to": "GM/Screamer Pink",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Wasteland Soil",
+      "to": "AV/Warlord Purple",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Grimoire Purple",
+      "to": "GM/Warpfiend Grey",
+      "note": "Casilla «Warpfiend Grey/ Daemonette Hide»."
+    },
+    {
+      "from": "Warpaints/Grimoire Purple",
+      "to": "GM/Daemonette Hide",
+      "note": "Casilla «Warpfiend Grey/ Daemonette Hide»."
+    },
+    {
+      "from": "Warpaints/Grimoire Purple",
+      "to": "AV/Hexed Lichen",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Dark Stone",
+      "to": "GM/Mechanicus Standard Grey",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Dark Stone",
+      "to": "AV/Heavy Grey",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Cultist Robe",
+      "to": "GM/Baneblade Brown",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Cultist Robe",
+      "to": "AV/Heavy Brown",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Werewolf Fur",
+      "to": "GM/Gothor Brown",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Banshee Brown",
+      "to": "GM/Rakarth Flesh",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Banshee Brown",
+      "to": "AV/Heavy Warm Grey",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Brainmatter Beige",
+      "to": "GM/Screaming Skull",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Brainmatter Beige",
+      "to": "AV/Off-White",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Spaceship Exterior",
+      "to": "GM/Ulthuan Grey",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Spaceship Exterior",
+      "to": "AV/Cold Grey",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Stone Golem",
+      "to": "GM/Pallid Wych Flesh",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Matt White",
+      "to": "GM/White Scar",
+      "note": "Casilla «White Scar / Ceramite»."
+    },
+    {
+      "from": "Warpaints/Matt White",
+      "to": "GM/Ceramite",
+      "note": "Casilla «White Scar / Ceramite»."
+    },
+    {
+      "from": "Warpaints/Matt White",
+      "to": "AV/Dead White",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Ash Grey",
+      "to": "GM/Administorum Grey",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Ash Grey",
+      "to": "AV/Stonewall Grey",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Oozing Purple",
+      "to": "GM/Genestealer Purple",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Alien Purple",
+      "to": "GM/Xereus Purple",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Alien Purple",
+      "to": "AV/Royal Purple",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Warlock Purple",
+      "to": "GM/Pink Horror",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Pixie Pink",
+      "to": "GM/Emperors Children",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Pixie Pink",
+      "to": "AV/Squid Pink",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Centaur Skin",
+      "to": "GM/Fulgrim Pink",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Scar Tissue",
+      "to": "GM/Bugman’s Glow",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Scar Tissue",
+      "to": "AV/Tan",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Tanned Flesh",
+      "to": "GM/Ratskin Flesh",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Tanned Flesh",
+      "to": "AV/Dwarf Skin",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Fur Brown",
+      "to": "GM/Skrag Brown",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Fur Brown",
+      "to": "AV/Parasite Brown",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Troll Claws",
+      "to": "GM/Tau Light Ochre",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Troll Claws",
+      "to": "AV/Filthy Brown",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Barbarian Flesh",
+      "to": "GM/Bestigor Flesh",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Barbarian Flesh",
+      "to": "AV/Scrofulous Brown",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Kobold Skin",
+      "to": "GM/Cadian Fleshtone",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Kobold Skin",
+      "to": "AV/Heavy Skintone",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Elven Flesh",
+      "to": "GM/Kislev",
+      "note": "Casilla «Kislev/Ungor Flesh»."
+    },
+    {
+      "from": "Warpaints/Elven Flesh",
+      "to": "GM/Ungor Flesh",
+      "note": "Casilla «Kislev/Ungor Flesh»."
+    },
+    {
+      "from": "Warpaints/Elven Flesh",
+      "to": "AV/Pale Flesh",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Corpse Pale",
+      "to": "GM/Flayed One Flesh",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Corpse Pale",
+      "to": "AV/Elfic Flesh",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Toxic Boils",
+      "to": "GM/Slaanesh Grey",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Skeleton Bone",
+      "to": "GM/Ushtabi Bone",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Skeleton Bone",
+      "to": "AV/Bone White",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Mummy Robes",
+      "to": "GM/Pallid Wych Flesh",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Drake Tooth",
+      "to": "GM/Screaming Skull",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Drake Tooth",
+      "to": "AV/Bonewhite",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Necrotic Flesh",
+      "to": "GM/Kreig Khaki",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Necrotic Flesh",
+      "to": "AV/Dead Flash",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Combat Fatigues",
+      "to": "GM/Nurgling Green",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Combat Fatigues",
+      "to": "AV/Dead Flesh",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Venom Wyrm",
+      "to": "GM/Death Guard Green",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Venom Wyrm",
+      "to": "AV/Yellow Olive",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Filthy Cape",
+      "to": "GM/Stormvermin Fur",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Crypt Wraith",
+      "to": "GM/Castellan Green",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Crypt Wraith",
+      "to": "AV/Cayman Green",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Elf Green",
+      "to": "GM/Deathworld Forest",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Elf Green",
+      "to": "AV/Camo Green",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Commando Green",
+      "to": "GM/Elysian Green",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Commando Green",
+      "to": "AV/Camo Green",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Witch Brew",
+      "to": "GM/Ogryn Camo",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Scaly Hide",
+      "to": "GM/Kreig Khaki",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Goblin Green",
+      "to": "GM/Warboss Green",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Goblin Green",
+      "to": "AV/Goblin Green",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Kraken Skin",
+      "to": "GM/Gauss Blaster Green",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Greenskin",
+      "to": "GM/Warpstone Glow",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Greenskin",
+      "to": "AV/Sick Green",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Angel Green",
+      "to": "GM/Caliban Green",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Angel Green",
+      "to": "AV/Sick Green",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Mouldy Clothes",
+      "to": "GM/Skarsnik Green",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Mouldy Clothes",
+      "to": "AV/Scorpy Green",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Army Green",
+      "to": "GM/Straken Green",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Army Green",
+      "to": "AV/Yellow Olive",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Snake Scales",
+      "to": "GM/Moot Green",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Snake Scales",
+      "to": "AV/Scorpy Green",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Jungle Green",
+      "to": "GM/Niblet Green",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Jungle Green",
+      "to": "AV/Livery Green",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Poisonous Cloud",
+      "to": "AV/Fluo Yellow",
+      "note": "Casilla «Fluo Yellow/ Fluo Green»."
+    },
+    {
+      "from": "Warpaints/Poisonous Cloud",
+      "to": "AV/Fluo Green",
+      "note": "Casilla «Fluo Yellow/ Fluo Green»."
+    },
+    {
+      "from": "Warpaints/Dry Rust",
+      "to": "GM/Ryza Rust",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Dry Rust",
+      "to": "AV/Rust",
+      "note": "Casilla «Rust/ Dry Rust»."
+    },
+    {
+      "from": "Warpaints/Dry Rust",
+      "to": "AV/Dry Rust",
+      "note": "Casilla «Rust/ Dry Rust»."
+    },
+    {
+      "from": "Warpaints/Glistening Blood",
+      "to": "GM/Blood For The Blood God",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Glistening Blood",
+      "to": "AV/Fresh Blood",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Wet Mud",
+      "to": "GM/Typhus Corrosion",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Disgusting Slime",
+      "to": "GM/Nurgle’s Rot",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Disgusting Slime",
+      "to": "AV/Vomit",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Warpaints Mixing Medium",
+      "to": "GM/Lahmium Medium",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Quickshade Wash Mixing Medium",
+      "to": "GM/Lahmium Medium",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Gloss Varnish",
+      "to": "GM/Ardcoat",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Rough Iron",
+      "to": "GM/Warlock Bronze",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Rough Iron",
+      "to": "AV/Tinny Tin",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Gun Metal",
+      "to": "GM/Leadbelcher",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Gun Metal",
+      "to": "AV/Gunmetal",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Plate Mail Metal",
+      "to": "GM/Ironbreaker",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Plate Mail Metal",
+      "to": "AV/Chainmail Silver",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Shining Silver",
+      "to": "GM/Runefang",
+      "note": "Casilla «Runefang/Stormhost Silver»."
+    },
+    {
+      "from": "Warpaints/Shining Silver",
+      "to": "GM/Stormhost Silver",
+      "note": "Casilla «Runefang/Stormhost Silver»."
+    },
+    {
+      "from": "Warpaints/Shining Silver",
+      "to": "AV/Silver",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Weapon Bronze",
+      "to": "GM/Brass Scorpion",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Weapon Bronze",
+      "to": "AV/Bright Brass",
+      "note": null
+    },
+    {
+      "from": "Warpaints/True Copper",
+      "to": "GM/Balthazar Gold",
+      "note": null
+    },
+    {
+      "from": "Warpaints/True Copper",
+      "to": "AV/Hammered Copper",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Greedy Gold",
+      "to": "GM/Gehenna Gold",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Greedy Gold",
+      "to": "AV/Glorious Gold",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Bright Gold",
+      "to": "GM/Auric Armour Gold",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Bright Gold",
+      "to": "AV/Polished Gold",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Red Tone",
+      "to": "GM/Carroburg Crimson",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Red Tone",
+      "to": "AV/Red Wash",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Flesh Wash",
+      "to": "GM/Reikland Fleshshade",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Flesh Wash",
+      "to": "AV/Flesh Wash",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Light Tone",
+      "to": "GM/Seraphim Sepia",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Light Tone",
+      "to": "AV/Sepia Wash",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Dark Tone",
+      "to": "GM/Nuln Oil",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Dark Tone",
+      "to": "AV/Black Wash",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Mid Brown",
+      "to": "GM/Agrax Earthshade",
+      "note": "Casilla «Agrax/ Reikland»."
+    },
+    {
+      "from": "Warpaints/Mid Brown",
+      "to": "GM/Reikland Fleshshade",
+      "note": "Casilla «Agrax/ Reikland»."
+    },
+    {
+      "from": "Warpaints/Mid Brown",
+      "to": "AV/Umber Wash",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Strong Tone",
+      "to": "GM/Agrax Earthshade",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Strong Tone",
+      "to": "AV/Umber Wash",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Purple Tone",
+      "to": "GM/Druchii Violet",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Green Tone",
+      "to": "GM/Beil-Tan Green",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Green Tone",
+      "to": "AV/Green Wash",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Military Shader",
+      "to": "GM/Athonian Camoshade",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Blue Tone",
+      "to": "GM/Drakenhof Nightshade",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Blue Tone",
+      "to": "AV/Blue Wash",
+      "note": null
+    },
+    {
+      "from": "Warpaints/Soft Tone",
+      "to": "GM/Seraphim Sepia",
+      "note": "Casilla «Seraphim/Agrax»."
+    },
+    {
+      "from": "Warpaints/Soft Tone",
+      "to": "GM/Agrax Earthshade",
+      "note": "Casilla «Seraphim/Agrax»."
+    },
+    {
+      "from": "Warpaints/Soft Tone",
+      "to": "AV/Sepia Wash",
+      "note": "Casilla «Sepia/Umber Wash»."
+    },
+    {
+      "from": "Warpaints/Soft Tone",
+      "to": "AV/Umber Wash",
+      "note": "Casilla «Sepia/Umber Wash»."
+    }
+  ],
+  "ignoredGroups": [],
+  "ignoredKeys": [
+    {
+      "key": "AV/Ultramarine",
+      "reasonId": "ambiguous",
+      "note": "No es un nombre de Vallejo; puede ser Ultramarine Blue."
+    },
+    {
+      "key": "GM/Hoeth Blue",
+      "reasonId": "ambiguous",
+      "note": "Es Layer y Dry."
+    },
+    {
+      "key": "AV/Andrea Blue",
+      "reasonId": "ambiguous",
+      "note": "En Game Color no está; en Model Color, sí, pero la carta no dice la línea."
+    },
+    {
+      "key": "AV/Grey Blue",
+      "reasonId": "ambiguous",
+      "note": "En Game Color no está; en Model Color, sí, pero la carta no dice la línea."
+    },
+    {
+      "key": "AV/Ghost Grey",
+      "reasonId": "not-in-catalog",
+      "note": null
+    },
+    {
+      "key": "GM/Dawnstone",
+      "reasonId": "ambiguous",
+      "note": "Es Layer y Dry."
+    },
+    {
+      "key": "AV/Cold Grey",
+      "reasonId": "not-in-catalog",
+      "note": null
+    },
+    {
+      "key": "GM/Warpfield Grey",
+      "reasonId": "ambiguous",
+      "note": "No es un nombre de Citadel; puede ser Warpfiend Grey."
+    },
+    {
+      "key": "AV/Heavy Charcoal",
+      "reasonId": "not-in-catalog",
+      "note": null
+    },
+    {
+      "key": "AV/Heavy Brown",
+      "reasonId": "not-in-catalog",
+      "note": null
+    },
+    {
+      "key": "GM/Steel Legion Brown",
+      "reasonId": "ambiguous",
+      "note": "No es un nombre de Citadel; puede ser Steel Legion Drab."
+    },
+    {
+      "key": "AV/Pale Yellow",
+      "reasonId": "not-in-catalog",
+      "note": null
+    },
+    {
+      "key": "GM/Trollslayer Orange",
+      "reasonId": "not-in-catalog",
+      "note": null
+    },
+    {
+      "key": "GM/Wildrider Red",
+      "reasonId": "not-in-catalog",
+      "note": null
+    },
+    {
+      "key": "AV/Heavy Red",
+      "reasonId": "not-in-catalog",
+      "note": null
+    },
+    {
+      "key": "AV/Heavy Grey",
+      "reasonId": "not-in-catalog",
+      "note": null
+    },
+    {
+      "key": "GM/Gothor Brown",
+      "reasonId": "not-in-catalog",
+      "note": null
+    },
+    {
+      "key": "AV/Heavy Warm Grey",
+      "reasonId": "not-in-catalog",
+      "note": null
+    },
+    {
+      "key": "GM/Ceramite",
+      "reasonId": "not-in-catalog",
+      "note": null
+    },
+    {
+      "key": "AV/Dwarf Skin",
+      "reasonId": "not-in-catalog",
+      "note": null
+    },
+    {
+      "key": "AV/Filthy Brown",
+      "reasonId": "not-in-catalog",
+      "note": null
+    },
+    {
+      "key": "AV/Heavy Skintone",
+      "reasonId": "not-in-catalog",
+      "note": null
+    },
+    {
+      "key": "GM/Ushtabi Bone",
+      "reasonId": "not-in-catalog",
+      "note": null
+    },
+    {
+      "key": "AV/Bonewhite",
+      "reasonId": "duplicate-row",
+      "note": "La carta escribe «Bone White» en otra casilla; las dos son 72.034."
+    },
+    {
+      "key": "AV/Dead Flash",
+      "reasonId": "duplicate-row",
+      "note": "Errata de «Dead Flesh», que la carta escribe bien en otra casilla."
+    },
+    {
+      "key": "GM/Nurgling Green",
+      "reasonId": "ambiguous",
+      "note": "Es Layer y Dry."
+    },
+    {
+      "key": "AV/Yellow Olive",
+      "reasonId": "ambiguous",
+      "note": "En Game Color no está; en Model Color, sí, pero la carta no dice la línea."
+    },
+    {
+      "key": "AV/Camo Green",
+      "reasonId": "not-in-catalog",
+      "note": null
+    },
+    {
+      "key": "AV/Livery Green",
+      "reasonId": "not-in-catalog",
+      "note": null
+    },
+    {
+      "key": "AV/Fluo Yellow",
+      "reasonId": "not-in-catalog",
+      "note": null
+    },
+    {
+      "key": "AV/Fluo Green",
+      "reasonId": "not-in-catalog",
+      "note": null
+    },
+    {
+      "key": "AV/Dry Rust",
+      "reasonId": "not-in-catalog",
+      "note": null
+    },
+    {
+      "key": "Warpaints/Brush-On Primer",
+      "reasonId": "auxiliary",
+      "note": null
+    },
+    {
+      "key": "Warpaints/Warpaints Mixing Medium",
+      "reasonId": "auxiliary",
+      "note": null
+    },
+    {
+      "key": "GM/Lahmium Medium",
+      "reasonId": "auxiliary",
+      "note": null
+    },
+    {
+      "key": "Warpaints/Quickshade Wash Mixing Medium",
+      "reasonId": "auxiliary",
+      "note": null
+    },
+    {
+      "key": "Warpaints/Anti-Shine Matt Varnish",
+      "reasonId": "auxiliary",
+      "note": null
+    },
+    {
+      "key": "Warpaints/Gloss Varnish",
+      "reasonId": "auxiliary",
+      "note": null
+    },
+    {
+      "key": "GM/Ardcoat",
+      "reasonId": "auxiliary",
+      "note": null
+    },
+    {
+      "key": "AV/Gunmetal",
+      "reasonId": "ambiguous",
+      "note": "En Game Color no está; en Model Color, sí, pero la carta no dice la línea."
+    },
+    {
+      "key": "AV/Chainmail Silver",
+      "reasonId": "not-in-catalog",
+      "note": null
+    },
+    {
+      "key": "AV/Bright Brass",
+      "reasonId": "not-in-catalog",
+      "note": null
+    },
+    {
+      "key": "AV/Green Wash",
+      "reasonId": "not-in-catalog",
+      "note": null
+    }
+  ]
+}
