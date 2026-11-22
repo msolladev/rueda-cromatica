@@ -753,6 +753,8 @@ describe("base motion", () => {
     await new Promise((resolve) => setTimeout(resolve, 600));
     const ring = query(".cw-ring", HTMLElement);
     expect(document.activeElement).toBe(ring);
+    // Neither the outline of its box nor the drawing around its shape.
+    expect(getComputedStyle(ring).outlineStyle).toBe("none");
     const clicked = pixels(container);
     ring.blur();
     expect(pixels(container)).toBe(clicked);
