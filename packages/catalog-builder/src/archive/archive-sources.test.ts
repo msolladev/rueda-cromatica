@@ -4,12 +4,15 @@ import { acmeSource, valid } from "../fixtures.ts";
 import {
   applyArchive,
   cdxQuery,
+  describeRequestFailure,
   downloadName,
   parseCdx,
   parseIaConfig,
   parseJobStatus,
   parseSaveAnswer,
+  parseRetryAfter,
   planArchive,
+  retryWait,
   s3Authorization,
   saveRequest,
   sha256,
@@ -263,5 +266,64 @@ describe("parseIaConfig", () => {
     expect(parseIaConfig("[s3]\naccess = fictitious-access\n")).toBeNull();
     expect(parseIaConfig("[other]\naccess = a\nsecret = b\n")).toBeNull();
     expect(parseIaConfig("[s3]\naccess =\nsecret = b\n")).toBeNull();
+  });
+});
+
+describe("retryWait", () => {
+  const now = new Date("2026-11-22T12:00:00Z");
+  const network = { kind: "network", code: "ECONNREFUSED" } as const;
+  const http = (status: number, retryAfter: string | null = null) =>
+    ({ kind: "http", status, retryAfter }) as const;
+
+  it("tries twice more what may pass, waiting longer each time", () => {
+    for (const failure of [network, http(503), http(429)]) {
+      expect([1, 2, 3].map((n) => retryWait(failure, n, now))).toEqual([
+        30_000,
+        60_000,
+        null,
+      ]);
+    }
+  });
+
+  it("never tries again an answer of the client side", () => {
+    expect(retryWait(http(404), 1, now)).toBeNull();
+    expect(retryWait(http(401), 1, now)).toBeNull();
+  });
+
+  it("waits what a 429 asks, unless it is longer than the run should", () => {
+    expect(retryWait(http(429, "90"), 1, now)).toBe(90_000);
+    expect(retryWait(http(429, "5"), 1, now)).toBe(30_000);
+    expect(retryWait(http(429, "3600"), 1, now)).toBeNull();
+    expect(retryWait(http(429, "Sun, 22 Nov 2026 12:01:00 GMT"), 1, now)).toBe(
+      60_000,
+    );
+  });
+});
+
+describe("parseRetryAfter", () => {
+  const now = new Date("2026-11-22T12:00:00Z");
+
+  it("reads seconds and HTTP dates", () => {
+    expect(parseRetryAfter("120", now)).toBe(120_000);
+    expect(parseRetryAfter("Sun, 22 Nov 2026 12:00:30 GMT", now)).toBe(30_000);
+    expect(parseRetryAfter("Sun, 22 Nov 2026 11:00:00 GMT", now)).toBe(0);
+  });
+
+  it("is null for anything else", () => {
+    expect(parseRetryAfter("soon", now)).toBeNull();
+  });
+});
+
+describe("describeRequestFailure", () => {
+  it("says what happened, with the network cause", () => {
+    expect(
+      describeRequestFailure({ kind: "network", code: "ECONNREFUSED" }),
+    ).toBe("no answer (ECONNREFUSED)");
+    expect(describeRequestFailure({ kind: "network", code: null })).toBe(
+      "no answer",
+    );
+    expect(
+      describeRequestFailure({ kind: "http", status: 429, retryAfter: "60" }),
+    ).toBe("HTTP 429, Retry-After 60");
   });
 });

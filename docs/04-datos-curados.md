@@ -236,7 +236,7 @@ Para cada fuente con `url`:
 
 1. **Captura**, si no tiene `archiveUrl`:
    - busca con la API CDX la última captura de la URL exacta con respuesta 200, sin claves;
-   - si no hay ninguna, la solicita con Save Page Now 2 y consulta su estado cada 5 segundos, durante 2 minutos como mucho;
+   - si no hay ninguna, la solicita con Save Page Now 2 y consulta su estado hasta que termina, durante 2 minutos como mucho;
    - anota `https://web.archive.org/web/<fecha>/<url>` en `archiveUrl`.
 2. **Descarga** de los ficheros que todavía no están en `files`, en `<carpeta>/<source-id>/<nombre>`:
    - en una página de un fichero de GitHub, su fichero en bruto (`raw.githubusercontent.com`);
@@ -247,8 +247,11 @@ Para cada fuente con `url`:
 
 3. **Escritura** del fichero de la fuente, solo si algo ha cambiado. Después hay que ejecutar `pnpm format` y `build-catalog`, y revisar el diff.
 
-- **Reejecución**: solo hace lo que falta, así que se puede ejecutar varias veces sin efectos duplicados.
-- **Fallos**: un error de la Wayback Machine (un sitio que bloquea el archivado, un límite de uso, una captura que no termina) o de una descarga se muestra con su código, deja ese dato como estaba y no impide el resto. El script termina con error si hubo alguno, para reintentarlo en la siguiente ejecución. No reintenta solo.
+- **Reejecución**: solo hace lo que falta, así que se ejecuta otra vez hasta que no falte nada, sin efectos duplicados. Una captura solicitada que no termina a tiempo la encuentra la siguiente ejecución con la API CDX.
+- **Ritmo**: una petición a la Wayback Machine cada 5 segundos como mucho, sondeos incluidos. Internet Archive no publica sus límites; sus usuarios hablan de entre 30 y 60 peticiones por minuto, y Save Page Now 2 admite 12 capturas por minuto.
+- **Reintentos**: lo que puede ser pasajero (sin respuesta, un 5xx o un 429) se reintenta dos veces, a los 30 y a los 60 segundos, o cuando diga su `Retry-After` si no pasa de 2 minutos. Una respuesta 4xx o un error de Save Page Now (un sitio que bloquea el archivado, el límite diario de una URL) no se reintenta.
+- **Si la Wayback Machine deja de responder** después de los reintentos, no se le pide nada más en esa ejecución, porque insistir es lo que hace que bloquee la IP durante una hora. Las descargas siguen.
+- **Fallos**: se muestran al momento y otra vez al final, por fuente, con su causa. Lo que falla se queda vacío en el fichero de la fuente, sin impedir el resto, y el script termina con error.
 - **Carpeta de descargas**: `CATALOG_SOURCES_DIR`, fuera del repositorio. Solo hace falta si hay algo que descargar.
 - **Claves de archive.org**: solo para solicitar capturas. Son las claves S3 de una cuenta gratuita de archive.org, en `https://archive.org/account/s3.php`, y van en `~/.config/internetarchive/ia.ini`, el fichero de la herramienta oficial `ia`, con permisos `600`:
 

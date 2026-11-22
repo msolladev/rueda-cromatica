@@ -5,13 +5,19 @@
     "title": "Citadel Official Colours Table",
     "publisher": "SimoGecko",
     "url": "https://github.com/SimoGecko/CitadelColours/blob/0ea153b7c6e747cf15691dd16b8e8cc6a4551244/tables/citadel_official_colors_table.md",
-    "archiveUrl": null,
+    "archiveUrl": "https://web.archive.org/web/20261122155136/https://github.com/SimoGecko/CitadelColours/blob/0ea153b7c6e747cf15691dd16b8e8cc6a4551244/tables/citadel_official_colors_table.md",
     "retrievedAt": "2026-11-12",
     "license": "unknown",
     "attribution": "SimoGecko/CitadelColours"
   },
   "disabled": null,
-  "files": [],
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/SimoGecko/CitadelColours/0ea153b7c6e747cf15691dd16b8e8cc6a4551244/tables/citadel_official_colors_table.md",
+      "name": "citadel_official_colors_table.md",
+      "sha256": "d16a1c0328fa41801fe6e5356c8f07b72e8166bf745edf6b87a1afa766b1e2bb"
+    }
+  ],
   "paints": [
     {
       "key": "spray/Chaos Black",

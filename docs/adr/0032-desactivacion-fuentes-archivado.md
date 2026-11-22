@@ -29,8 +29,11 @@ A 2026-11-22, las tres fuentes son repositorios de GitHub, con la `url` fijada a
 - **La Wayback Machine**:
   - la captura se busca con la API CDX, sin claves: la más reciente de la URL exacta con respuesta 200;
   - si no hay ninguna, se solicita con Save Page Now 2, que exige las claves S3 de una cuenta gratuita de archive.org;
-  - las capturas se piden de una en una, y el estado se consulta cada 5 segundos durante 2 minutos como mucho, el máximo de una captura;
-  - cualquier error, también el de un sitio que bloquea el archivado, se muestra con el código de Save Page Now y deja `archiveUrl: null` para la siguiente ejecución, sin reintentos automáticos.
+  - las capturas se piden de una en una, y el estado se consulta durante 2 minutos como mucho, el máximo de una captura;
+  - como mucho una petición cada 5 segundos, sondeos incluidos. Internet Archive no publica sus límites: sus usuarios hablan de entre 30 y 60 por minuto, y de un bloqueo de la IP durante una hora si se insiste tras un 429;
+  - lo pasajero (sin respuesta, un 5xx o un 429) se reintenta dos veces, a los 30 y a los 60 segundos o según su `Retry-After`. Si sigue fallando, la ejecución no vuelve a pedir nada a la Wayback Machine;
+  - un error de Save Page Now, como el de un sitio que bloquea el archivado, no se reintenta: se muestra con su código;
+  - lo que falla deja `archiveUrl: null`, se lista al final por fuente, y lo hace la siguiente ejecución, que solo hace lo que falta.
 - **Las claves** se leen de `~/.config/internetarchive/ia.ini`, el fichero de la herramienta oficial `ia`. El script se niega a leerlo si otros usuarios del sistema pueden hacerlo. Nunca se ponen en variables de entorno.
 - **La carpeta de descargas** se indica con `CATALOG_SOURCES_DIR` y tiene que estar fuera del repositorio.
 
@@ -50,6 +53,7 @@ A 2026-11-22, las tres fuentes son repositorios de GitHub, con la `url` fijada a
 - **Archivar también cada fichero en bruto**: cada fichero necesitaría su propia captura en los datos, y en un PDF repetiría el `archiveUrl` de la fuente.
 - **No descargar las fuentes de GitHub**: el commit fija el contenido, pero si el repositorio desaparece no queda una copia exacta.
 - **Save Page Now sin claves**: su documentación lo desaconseja, y su límite es de 4 capturas por minuto.
+- **Sin ritmo ni reintentos**, como en la primera versión del script: en su primera ejecución, el 22 de noviembre de 2026, web.archive.org rechazó la conexión de forma intermitente durante unos minutos, y dos de las tres búsquedas fallaron sin volver a intentarlo.
 - **Solo buscar capturas, sin solicitarlas**: vuelve al trabajo manual que el ADR-0015 descarta.
 - **Las claves en variables de entorno**: los procesos hijos las heredan y acaban en el historial de la shell.
 - **Las claves en los secretos de GitHub**: solo se leen en un workflow, y el script nunca se ejecuta en la CI.

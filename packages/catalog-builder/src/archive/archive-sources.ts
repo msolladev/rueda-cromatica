@@ -277,3 +277,77 @@ export function parseIaConfig(
     ? { access, secret }
     : null;
 }
+
+// ── Pacing and retries ───────────────────────────────────────
+
+/**
+ * The minimum time between two requests to the Wayback Machine, polls
+ * included: at most 12 a minute, half of the limit its users report (it
+ * publishes none) and the capture limit of Save Page Now 2.
+ */
+export const WAYBACK_GAP_MS = 5_000;
+
+/** The waits before the second and the third attempt of a request. */
+export const RETRY_WAITS_MS: readonly number[] = [30_000, 60_000];
+
+/** The longest `Retry-After` worth waiting for in a run. */
+export const MAX_RETRY_AFTER_MS = 120_000;
+
+/** Why one HTTP request failed. */
+export type RequestFailure =
+  | {
+      /** No answer: refused, reset, timed out… */
+      readonly kind: "network";
+      readonly code: string | null;
+    }
+  | {
+      readonly kind: "http";
+      readonly status: number;
+      /** The `Retry-After` header, if any. */
+      readonly retryAfter: string | null;
+    };
+
+/**
+ * The milliseconds a `Retry-After` asks to wait, in seconds or as an HTTP
+ * date, or `null` if it is not valid.
+ */
+export function parseRetryAfter(value: string, now: Date): number | null {
+  if (/^\d+$/.test(value.trim())) return Number(value.trim()) * 1000;
+  const date = Date.parse(value);
+  return Number.isNaN(date) ? null : Math.max(0, date - now.getTime());
+}
+
+/**
+ * How long to wait before attempting again a request that failed on its
+ * `attempt` (1 for the first one), or `null` not to try again. Only what
+ * may pass is retried: no answer, a 5xx, or a 429 whose `Retry-After` is at
+ * most {@link MAX_RETRY_AFTER_MS}. A 4xx is an answer, never retried.
+ */
+export function retryWait(
+  failure: RequestFailure,
+  attempt: number,
+  now: Date,
+): number | null {
+  const wait = RETRY_WAITS_MS[attempt - 1];
+  if (wait === undefined) return null;
+  if (failure.kind === "network") return wait;
+  if (failure.status === 429) {
+    const asked =
+      failure.retryAfter === null
+        ? null
+        : parseRetryAfter(failure.retryAfter, now);
+    if (asked === null) return wait;
+    return asked <= MAX_RETRY_AFTER_MS ? Math.max(asked, wait) : null;
+  }
+  return failure.status >= 500 ? wait : null;
+}
+
+/** A failed request in words, such as `HTTP 503` or `no answer (ECONNREFUSED)`. */
+export function describeRequestFailure(failure: RequestFailure): string {
+  if (failure.kind === "network") {
+    return failure.code === null ? "no answer" : `no answer (${failure.code})`;
+  }
+  const after =
+    failure.retryAfter === null ? "" : `, Retry-After ${failure.retryAfter}`;
+  return `HTTP ${String(failure.status)}${after}`;
+}

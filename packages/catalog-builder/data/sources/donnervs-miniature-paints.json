@@ -5,13 +5,29 @@
     "title": "Name, Set, RGB, and Hex values of Miniature Paints",
     "publisher": "DonnervS",
     "url": "https://github.com/DonnervS/miniature-paints/tree/7097a03e4fe2cf9b815a5a5a4eab85478a14737b",
-    "archiveUrl": null,
+    "archiveUrl": "https://web.archive.org/web/20261122155036/https://github.com/DonnervS/miniature-paints/tree/7097a03e4fe2cf9b815a5a5a4eab85478a14737b",
     "retrievedAt": "2026-11-13",
     "license": "MIT",
     "attribution": "DonnervS/miniature-paints, based on Arcturus5404/miniature-paints (MIT, © 2022 Rick Fleuren)"
   },
   "disabled": null,
-  "files": [],
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/DonnervS/miniature-paints/7097a03e4fe2cf9b815a5a5a4eab85478a14737b/paints/json/AK.json",
+      "name": "AK.json",
+      "sha256": "09337458428545a3b3c56aa12aacd08e25093dbb0effb9d54f8c7052ed292fa2"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/DonnervS/miniature-paints/7097a03e4fe2cf9b815a5a5a4eab85478a14737b/paints/json/Army_Painter.json",
+      "name": "Army_Painter.json",
+      "sha256": "a634c0b36824d6e09e2aa45044faa1e6b4d299544dc57fc38c575c98fd6996fb"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/DonnervS/miniature-paints/7097a03e4fe2cf9b815a5a5a4eab85478a14737b/paints/json/Vallejo.json",
+      "name": "Vallejo.json",
+      "sha256": "b344220c2fd413ebf4056ede25fb5c54c5d5bebd9101bb7cd4a8121ddc90bfef"
+    }
+  ],
   "paints": [
     {
       "key": "AK11001",
