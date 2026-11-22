@@ -38,6 +38,11 @@ export {
   type MatchingError,
   type MatchOptions,
 } from "./matching/closest-paints.ts";
+export {
+  findOfficialEquivalences,
+  type OfficialEquivalences,
+  type OfficialMatch,
+} from "./matching/official-equivalences.ts";
 export { buildPaintIndex, type PaintIndex } from "./matching/paint-index.ts";
 export {
   MATCH_QUALITY_LIMITS,
