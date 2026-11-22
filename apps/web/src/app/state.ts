@@ -104,8 +104,15 @@ export type Action =
   | { readonly type: "show-less"; readonly key: string }
   | { readonly type: "colors-changed"; readonly count: number }
   | { readonly type: "wheel-changed"; readonly wheel: WheelPreferences }
-  /** A paint of the search becomes the base; the wheel is told apart. */
-  | { readonly type: "choose-paint"; readonly paint: ChosenPaint }
+  /**
+   * A paint becomes the base; the wheel is told apart. From an official
+   * equivalence, the paint it comes from is remembered for «Back to…».
+   */
+  | {
+      readonly type: "choose-paint";
+      readonly paint: ChosenPaint;
+      readonly remember?: boolean;
+    }
   /** The search is emptied: the base stays, but no longer as a paint. */
   | { readonly type: "clear-paint" }
   | { readonly type: "set-theme"; readonly theme: Theme }
@@ -245,7 +252,7 @@ export function reduce(state: ScreenState, action: Action): ScreenState {
       return {
         ...state,
         preferences: { ...preferences, paint: action.paint },
-        previousPaint: null,
+        previousPaint: action.remember === true ? preferences.paint : null,
         tab: 0,
         more: NO_MORE,
       };

@@ -8,6 +8,11 @@ savePrefix: ""
 # Only versions published at least 7 days ago (in minutes).
 minimumReleaseAge: 10080
 
+# pdfjs-dist (catalog-builder) only extracts text from the charts: its native
+# canvas, used to render pages, is not needed.
+ignoredOptionalDependencies:
+  - "@napi-rs/canvas"
+
 # Versions shared between packages (`catalog:` protocol).
 catalog:
   "@types/culori": 4.0.1

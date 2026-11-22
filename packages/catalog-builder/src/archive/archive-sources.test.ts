@@ -225,6 +225,7 @@ describe("applyArchive", () => {
       "disabled",
       "files",
       "paints",
+      "equivalences",
       "ignoredGroups",
       "ignoredKeys",
     ]);

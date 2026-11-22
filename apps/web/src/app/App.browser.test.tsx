@@ -702,6 +702,84 @@ describe("the paint search", () => {
     });
   });
 
+  it("shows the official equivalences of the chosen paint, and jumps to one and back (docs/07 §16)", async () => {
+    await ready();
+    await choose("moot green");
+    const official = () => query(".official", HTMLElement);
+    const names = () =>
+      [...official().querySelectorAll(".paint .paint-name")].map(
+        (name) => name.textContent,
+      );
+    await vi.waitFor(() => {
+      expect(names()).toEqual(["Light Green", "Leafy Green", "Scorpy Green"]);
+    });
+    expect(official().querySelector("h4")?.textContent).toBe(
+      "Equivalencias oficiales",
+    );
+    expect(official().textContent).toContain(
+      "Ningún documento propone otra pintura para Moot Green.",
+    );
+    const scorpy = [...official().querySelectorAll(".paint")].at(-1);
+    expect(scorpy?.querySelector(".paint-sources")?.textContent).toBe(
+      "Según Acrylicos Vallejo, en Game Color chart (CC266).",
+    );
+    expect(scorpy?.querySelector(".paint-quality")?.textContent).toContain(
+      "ΔE",
+    );
+    await animationsFinished();
+    await expectNoAxeViolations();
+
+    const use = scorpy?.querySelector(".use-as-base");
+    if (!(use instanceof HTMLButtonElement)) throw new Error("No button");
+    expect(use.getAttribute("aria-label")).toBe(
+      "Usar Scorpy Green como base de la rueda",
+    );
+    await userEvent.click(use);
+    await vi.waitFor(() => {
+      expect(field().value).toBe("Scorpy Green");
+      expect(names()).toEqual(["Moot Green", "Light Green"]);
+    });
+    const back = query(".paint-search-back button", HTMLButtonElement);
+    expect(back.textContent).toBe("Volver a Moot Green");
+    await userEvent.click(back);
+    await vi.waitFor(() => {
+      expect(field().value).toBe("Moot Green");
+      expect(container.querySelector(".paint-search-back")).toBeNull();
+    });
+  });
+
+  it("says so when the chosen paint has no official equivalences", async () => {
+    await ready();
+    await choose("hammered");
+    await vi.waitFor(() => {
+      expect(query(".official", HTMLElement).textContent).toBe(
+        "Equivalencias oficialesNingún fabricante publica una equivalencia para Hammered Copper (Vallejo · Game Color · 72.059).",
+      );
+    });
+  });
+
+  it("lists the official equivalences of a row in its «Details»", async () => {
+    await ready();
+    await choose("moot green");
+    const row = await vi.waitFor(() => {
+      const found = firstOf("Warhammer Colour");
+      if (found === undefined || found === null) throw new Error("No row");
+      return found;
+    });
+    await userEvent.click(
+      query(".brand-group .paint-details summary", HTMLElement),
+    );
+    const links = row.querySelector(".official-links");
+    expect(links?.querySelector("p")?.textContent).toBe(
+      "Moot Green se propone para",
+    );
+    expect(
+      [...(links?.querySelectorAll(".official-link-name") ?? [])].map(
+        (name) => name.textContent,
+      ),
+    ).toEqual(["Light Green", "Leafy Green", "Scorpy Green"]);
+  });
+
   it("keeps the chosen paint for the next visit", async () => {
     await ready();
     await choose("lothern");

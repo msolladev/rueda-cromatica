@@ -15,19 +15,24 @@ import {
   transcribeSimoGecko,
   transcribeSimoGeckoSampled,
 } from "../importers/simogecko.ts";
-import { runImport } from "./run-import.ts";
+import {
+  fileText,
+  rowsOnly,
+  runImport,
+  type FetchedFile,
+} from "./run-import.ts";
 
-const join = (files: readonly { readonly text: string }[]): string =>
-  files.map((f) => f.text).join("\n");
+const join = (files: readonly FetchedFile[]): string =>
+  files.map(fileText).join("\n");
 
 process.exitCode =
   (await runImport({
     sourceId: sourceIdSchema.parse("simogecko-citadel-colours"),
-    transcribe: (files) => transcribeSimoGecko(join(files)),
+    transcribe: (files) => rowsOnly(transcribeSimoGecko(join(files))),
     rules: SIMOGECKO_RULES,
   })) ||
   (await runImport({
     sourceId: sourceIdSchema.parse("simogecko-citadel-colours-sampled"),
-    transcribe: (files) => transcribeSimoGeckoSampled(join(files)),
+    transcribe: (files) => rowsOnly(transcribeSimoGeckoSampled(join(files))),
     rules: null,
   }));

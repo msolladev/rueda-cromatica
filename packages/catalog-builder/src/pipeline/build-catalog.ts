@@ -1,8 +1,8 @@
 /**
  * Builder process (docs/04 §6): reads the curated files, resolves the keys of
  * every source row, chooses each paint's colour among the candidates of its
- * rows and assembles the `catalog.json` document, without the disabled
- * sources. Then validates it with `parseCatalog` and serialises it
+ * rows, turns the equivalences of the charts into edges and assembles the
+ * `catalog.json` document, without the disabled sources. Then validates it with `parseCatalog` and serialises it
  * deterministically (docs/02 §1), with the report of colour discrepancies and
  * the summary of the disabled sources. Pure: the files arrive already read.
  */
@@ -32,6 +32,7 @@ import {
   type DisabledSourcesReport,
 } from "./disabled-sources.ts";
 import { colorDiscrepancies, type Discrepancy } from "./discrepancies.ts";
+import { officialEquivalences } from "./equivalences.ts";
 import { resolveKeys } from "./resolve.ts";
 
 export type { CuratedData };
@@ -160,14 +161,21 @@ export function buildCatalog(
     ),
   );
   const paints = sorted(paintItems);
+  const enabled = sourceFiles.filter((f) => !disabled.has(f.source.id));
+  const equivalences = officialEquivalences(enabled, resolution.owners);
+  // The edges that the disabled sources take away (ADR-0032).
+  const lostEquivalences = officialEquivalences(
+    sourceFiles.filter((f) => disabled.has(f.source.id)),
+    resolution.owners,
+  );
 
-  // Key order follows docs/02; official equivalences arrive in phase 5 step 4.
+  // Key order follows docs/02.
   const body = {
     sources: sources.map((s) => s.item),
     brands: brands.map((b) => b.item),
     ranges: ranges.map((r) => r.item),
     paints: paints.map((p) => p.item),
-    equivalences: [],
+    equivalences,
   };
 
   // 5. Meta (docs/02 §4).
@@ -197,6 +205,7 @@ export function buildCatalog(
   const disabledSources: DisabledSourcesReport = {
     disabledSources: [...disabled].sort(),
     colors: [...colorChanges].sort(byPaint),
+    equivalences: lostEquivalences,
   };
   return ok({
     document,

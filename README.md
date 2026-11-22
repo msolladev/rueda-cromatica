@@ -9,10 +9,11 @@ Está publicada en [colorwheel.msolla.dev](https://colorwheel.msolla.dev/).
 - **Rueda de color** continua, con un anillo de tono y un triángulo de blanco y negro, y una plantilla giratoria. Calcula en el modelo RYB, el de la pintura física, o en el digital. Genera las armonías (complementario, complementario dividido, análogos, análogos con acento, tríada, tétrada, cuadrado y monocromático) y un esquema de miniatura: la base con su sombra y su luz, su tríada y su complementario, con mezclas que simulan pigmentos.
 - **Pinturas parecidas**: para cada color, las pinturas más cercanas de cada marca por ΔE CIEDE2000, o las más cercanas de todas, con filtros por marca y tipo, y una etiqueta de cercanía. Avisa cuando el color de una pintura es aproximado.
 - **Buscador de pinturas**: se busca una pintura que se tiene, por su nombre, su código o su marca, y su color pasa a ser la base de la rueda.
+- **Equivalencias oficiales**: para la pintura elegida, lo que dicen las cartas de conversión de Vallejo, The Army Painter y AK, en sus dos direcciones y con quién lo afirma, aparte de las pinturas parecidas.
 - **Catálogo** de las líneas vigentes de Warhammer Colour (antes Citadel), Vallejo, The Army Painter y AK Interactive: unas 1400 pinturas.
 - **Preferencias** (marcas, filtros, vista, tema, idioma, rueda y la pintura elegida) guardadas en el navegador.
 
-Las equivalencias oficiales entre marcas, las líneas descatalogadas y las cuentas de usuario llegan en fases posteriores. La hoja de ruta está en el [CLAUDE.md](CLAUDE.md#estado-y-hoja-de-ruta), y el alcance del MVP, razonado en el [ADR-0019](docs/adr/0019-alcance-minimo-mvp.md).
+Las líneas descatalogadas, las sustituciones y las cuentas de usuario llegan en fases posteriores. La hoja de ruta está en el [CLAUDE.md](CLAUDE.md#estado-y-hoja-de-ruta), y el alcance del MVP, razonado en el [ADR-0019](docs/adr/0019-alcance-minimo-mvp.md).
 
 ## Paquetes
 
@@ -74,6 +75,7 @@ Desde la raíz:
 - `pnpm --filter @chromatic-wheel/catalog-builder build-catalog`: regenera `apps/web/public/catalog.json`, el informe de discrepancias de color entre fuentes y el resumen de las fuentes desactivadas a partir de los datos, y falla sin escribir nada si un ID publicado desaparece sin lápida o si reaparece uno retirado ([docs/03](docs/03-identificadores.md) §6-7). Con `--check` no escribe nada y falla si el versionado está desactualizado.
 - `pnpm --filter @chromatic-wheel/catalog-builder import-simogecko`: transcribe las dos tablas de SimoGecko (Citadel), la oficial y la muestreada, en `data/sources/`, propone las pinturas nuevas de la oficial y lista lo que hay que decidir a mano ([docs/04](docs/04-datos-curados.md) §7). Se ejecuta a demanda; después, `pnpm format` y `build-catalog`.
 - `pnpm --filter @chromatic-wheel/catalog-builder import-donnervs`: igual, con los datos de DonnervS de AK Interactive, The Army Painter y Vallejo.
+- `pnpm --filter @chromatic-wheel/catalog-builder import-charts`: transcribe las cartas de equivalencias en PDF de Vallejo, The Army Painter y AK en `data/sources/` y añade sus claves a las fichas, y lista lo que hay que decidir a mano ([docs/04](docs/04-datos-curados.md) §7). Se ejecuta a demanda; después, `pnpm format` y `build-catalog`.
 - `CATALOG_SOURCES_DIR=<carpeta> pnpm --filter @chromatic-wheel/catalog-builder archive-sources`: archiva cada fuente en la Wayback Machine y descarga sus ficheros, con su SHA-256, a esa carpeta, fuera del repositorio. Solo hace lo que falta. Para solicitar capturas nuevas necesita las claves de archive.org en `~/.config/internetarchive/ia.ini` ([docs/04](docs/04-datos-curados.md) §9). Se ejecuta a demanda; después, `pnpm format` y `build-catalog`.
 - `pnpm --filter @chromatic-wheel/catalog-builder --silent next-release-tag`: escribe la etiqueta de una publicación hecha hoy ([docs/03](docs/03-identificadores.md) §7). La usa el despliegue a producción.
 - `pnpm --filter <paquete> <script>`: ejecuta un script de un paquete concreto.

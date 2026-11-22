@@ -7,6 +7,7 @@
  */
 import {
   colorDifference,
+  type OfficialEquivalence,
   type PaintColor,
   type PaintId,
   type SourceId,
@@ -25,14 +26,19 @@ export interface ColorChange {
 }
 
 /**
- * The summary. Phase 5 adds the official equivalences and the replacements
- * that the disabled sources take away, next to the colours.
+ * The summary: the colours and the official equivalences that the disabled
+ * sources change. Phase 5 step 5 adds the replacements.
  */
 export interface DisabledSourcesReport {
   /** Sorted by ID. */
   readonly disabledSources: readonly SourceId[];
   /** In the order of the paints of `catalog.json`. */
   readonly colors: readonly ColorChange[];
+  /**
+   * The edges that the disabled sources would publish, in the order of
+   * `catalog.json` (docs/02 §1).
+   */
+  readonly equivalences: readonly OfficialEquivalence[];
 }
 
 const sameColor = (a: PaintColor | null, b: PaintColor | null): boolean =>
@@ -68,5 +74,6 @@ export function formatDisabledSources(
   return [
     `Disabled sources: ${report.disabledSources.join(", ")}.`,
     `  ${String(report.colors.length)} paint(s) change colour, ${String(lost)} of them left without colour.`,
+    `  ${String(report.equivalences.length)} official equivalence(s) left out.`,
   ];
 }

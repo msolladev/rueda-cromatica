@@ -40,6 +40,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.120"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.120"
         }
       ],
       "colorChoice": null,
@@ -82,6 +86,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.076"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.076"
         }
       ],
       "colorChoice": null,
@@ -102,6 +110,10 @@
       "keys": [
         {
           "sourceId": "donnervs-miniature-paints",
+          "key": "72.123"
+        },
+        {
+          "sourceId": "vallejo-cc266",
           "key": "72.123"
         }
       ],
@@ -145,6 +157,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.107"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.107"
         }
       ],
       "colorChoice": null,
@@ -165,6 +181,10 @@
       "keys": [
         {
           "sourceId": "donnervs-miniature-paints",
+          "key": "72.071"
+        },
+        {
+          "sourceId": "vallejo-cc266",
           "key": "72.071"
         }
       ],
@@ -187,6 +207,14 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.043"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.043"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo GC/043"
         }
       ],
       "colorChoice": null,
@@ -229,6 +257,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.122"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.122"
         }
       ],
       "colorChoice": null,
@@ -250,6 +282,14 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.051"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.051"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo GC/051"
         }
       ],
       "colorChoice": null,
@@ -313,6 +353,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "73.201"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "73.201"
         }
       ],
       "colorChoice": null,
@@ -334,6 +378,14 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.010"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.010"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo GC/010"
         }
       ],
       "colorChoice": null,
@@ -397,6 +449,14 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.034"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.034"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo GC/034"
         }
       ],
       "colorChoice": null,
@@ -439,6 +499,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.057"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo GC/057"
         }
       ],
       "colorChoice": null,
@@ -459,6 +523,10 @@
       "keys": [
         {
           "sourceId": "donnervs-miniature-paints",
+          "key": "72.036"
+        },
+        {
+          "sourceId": "vallejo-cc266",
           "key": "72.036"
         }
       ],
@@ -481,6 +549,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.031"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.031"
         }
       ],
       "colorChoice": null,
@@ -502,6 +574,14 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.067"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.067"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo GC/067"
         }
       ],
       "colorChoice": null,
@@ -523,6 +603,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.053"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo GC/053"
         }
       ],
       "colorChoice": null,
@@ -544,6 +628,14 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.155"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.155"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo GC/155"
         }
       ],
       "colorChoice": null,
@@ -565,6 +657,14 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.045"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.045"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo GC/045"
         }
       ],
       "colorChoice": null,
@@ -607,6 +707,14 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.044"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.044"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo GC/044"
         }
       ],
       "colorChoice": null,
@@ -628,6 +736,14 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.028"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.028"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo GC/028"
         }
       ],
       "colorChoice": null,
@@ -649,6 +765,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.054"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo GC/054"
         }
       ],
       "colorChoice": null,
@@ -691,6 +811,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.035"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.035"
         }
       ],
       "colorChoice": null,
@@ -712,6 +836,14 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.001"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.001"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo GC/001"
         }
       ],
       "colorChoice": null,
@@ -775,6 +907,14 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.063"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.063"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo GC/063"
         }
       ],
       "colorChoice": null,
@@ -795,6 +935,10 @@
       "keys": [
         {
           "sourceId": "donnervs-miniature-paints",
+          "key": "72.145"
+        },
+        {
+          "sourceId": "vallejo-cc266",
           "key": "72.145"
         }
       ],
@@ -817,6 +961,14 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.062"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.062"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo GC/062"
         }
       ],
       "colorChoice": null,
@@ -837,6 +989,10 @@
       "keys": [
         {
           "sourceId": "donnervs-miniature-paints",
+          "key": "72.023"
+        },
+        {
+          "sourceId": "vallejo-cc266",
           "key": "72.023"
         }
       ],
@@ -859,6 +1015,14 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.004"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.004"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo GC/004"
         }
       ],
       "colorChoice": null,
@@ -879,6 +1043,10 @@
       "keys": [
         {
           "sourceId": "donnervs-miniature-paints",
+          "key": "72.117"
+        },
+        {
+          "sourceId": "vallejo-cc266",
           "key": "72.117"
         }
       ],
@@ -942,6 +1110,10 @@
       "keys": [
         {
           "sourceId": "donnervs-miniature-paints",
+          "key": "73.204"
+        },
+        {
+          "sourceId": "vallejo-cc266",
           "key": "73.204"
         }
       ],
@@ -1132,6 +1304,14 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.025"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.025"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo GC/025"
         }
       ],
       "colorChoice": null,
@@ -1216,6 +1396,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.121"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.121"
         }
       ],
       "colorChoice": null,
@@ -1237,6 +1421,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.095"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo GC/095"
         }
       ],
       "colorChoice": null,
@@ -1279,6 +1467,14 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.030"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.030"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo GC/030"
         }
       ],
       "colorChoice": null,
@@ -1300,6 +1496,14 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.007"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.007"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo GC/007"
         }
       ],
       "colorChoice": null,
@@ -1320,6 +1524,10 @@
       "keys": [
         {
           "sourceId": "donnervs-miniature-paints",
+          "key": "72.124"
+        },
+        {
+          "sourceId": "vallejo-cc266",
           "key": "72.124"
         }
       ],
@@ -1342,6 +1550,14 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.011"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.011"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo GC/011"
         }
       ],
       "colorChoice": null,
@@ -1405,6 +1621,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.115"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.115"
         }
       ],
       "colorChoice": null,
@@ -1447,6 +1667,14 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.015"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.015"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo GC/015"
         }
       ],
       "colorChoice": null,
@@ -1468,6 +1696,14 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.009"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.009"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo GC/009"
         }
       ],
       "colorChoice": null,
@@ -1489,6 +1725,14 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.020"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.020"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo GC/020"
         }
       ],
       "colorChoice": null,
@@ -1510,6 +1754,14 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.026"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.026"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo GC/026"
         }
       ],
       "colorChoice": null,
@@ -1530,6 +1782,10 @@
       "keys": [
         {
           "sourceId": "donnervs-miniature-paints",
+          "key": "72.061"
+        },
+        {
+          "sourceId": "vallejo-cc266",
           "key": "72.061"
         }
       ],
@@ -1552,6 +1808,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.040"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.040"
         }
       ],
       "colorChoice": null,
@@ -1572,6 +1832,10 @@
       "keys": [
         {
           "sourceId": "donnervs-miniature-paints",
+          "key": "72.114"
+        },
+        {
+          "sourceId": "vallejo-cc266",
           "key": "72.114"
         }
       ],
@@ -1615,6 +1879,14 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.021"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.021"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo GC/021"
         }
       ],
       "colorChoice": null,
@@ -1635,6 +1907,10 @@
       "keys": [
         {
           "sourceId": "donnervs-miniature-paints",
+          "key": "72.116"
+        },
+        {
+          "sourceId": "vallejo-cc266",
           "key": "72.116"
         }
       ],
@@ -1657,6 +1933,14 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.005"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.005"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo GC/005"
         }
       ],
       "colorChoice": null,
@@ -1699,6 +1983,14 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.050"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.050"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo GC/050"
         }
       ],
       "colorChoice": null,
@@ -1720,6 +2012,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.019"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.019"
         }
       ],
       "colorChoice": null,
@@ -1740,6 +2036,10 @@
       "keys": [
         {
           "sourceId": "donnervs-miniature-paints",
+          "key": "72.111"
+        },
+        {
+          "sourceId": "vallejo-cc266",
           "key": "72.111"
         }
       ],
@@ -1783,6 +2083,14 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.008"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.008"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo GC/008"
         }
       ],
       "colorChoice": null,
@@ -1803,6 +2111,10 @@
       "keys": [
         {
           "sourceId": "donnervs-miniature-paints",
+          "key": "72.003"
+        },
+        {
+          "sourceId": "vallejo-cc266",
           "key": "72.003"
         }
       ],
@@ -1825,6 +2137,14 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.042"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.042"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo GC/042"
         }
       ],
       "colorChoice": null,
@@ -1846,6 +2166,14 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.039"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.039"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo GC/039"
         }
       ],
       "colorChoice": null,
@@ -1930,6 +2258,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.100"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.100"
         }
       ],
       "colorChoice": null,
@@ -1950,6 +2282,10 @@
       "keys": [
         {
           "sourceId": "donnervs-miniature-paints",
+          "key": "72.016"
+        },
+        {
+          "sourceId": "vallejo-cc266",
           "key": "72.016"
         }
       ],
@@ -2014,6 +2350,14 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.012"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.012"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo GC/012"
         }
       ],
       "colorChoice": null,
@@ -2035,6 +2379,14 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.032"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.032"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo GC/032"
         }
       ],
       "colorChoice": null,
@@ -2056,6 +2408,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.038"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.038"
         }
       ],
       "colorChoice": null,
@@ -2076,6 +2432,10 @@
       "keys": [
         {
           "sourceId": "donnervs-miniature-paints",
+          "key": "72.027"
+        },
+        {
+          "sourceId": "vallejo-cc266",
           "key": "72.027"
         }
       ],
@@ -2119,6 +2479,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "73.200"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "73.200"
         }
       ],
       "colorChoice": null,
@@ -2139,6 +2503,10 @@
       "keys": [
         {
           "sourceId": "donnervs-miniature-paints",
+          "key": "72.029"
+        },
+        {
+          "sourceId": "vallejo-cc266",
           "key": "72.029"
         }
       ],
@@ -2161,6 +2529,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.052"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo GC/052"
         }
       ],
       "colorChoice": null,
@@ -2224,6 +2596,14 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.048"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.048"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo GC/048"
         }
       ],
       "colorChoice": null,
@@ -2245,6 +2625,14 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.013"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.013"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo GC/013"
         }
       ],
       "colorChoice": null,
@@ -2287,6 +2675,14 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.049"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.049"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo GC/049"
         }
       ],
       "colorChoice": null,
@@ -2329,6 +2725,14 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.006"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.006"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo GC/006"
         }
       ],
       "colorChoice": null,
@@ -2349,6 +2753,10 @@
       "keys": [
         {
           "sourceId": "donnervs-miniature-paints",
+          "key": "72.118"
+        },
+        {
+          "sourceId": "vallejo-cc266",
           "key": "72.118"
         }
       ],
@@ -2455,6 +2863,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.109"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.109"
         }
       ],
       "colorChoice": null,
@@ -2476,6 +2888,14 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.024"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.024"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo GC/024"
         }
       ],
       "colorChoice": null,
@@ -2497,6 +2917,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.022"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.022"
         }
       ],
       "colorChoice": null,
@@ -2517,6 +2941,10 @@
       "keys": [
         {
           "sourceId": "donnervs-miniature-paints",
+          "key": "73.203"
+        },
+        {
+          "sourceId": "vallejo-cc266",
           "key": "73.203"
         }
       ],
@@ -2581,6 +3009,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "73.209"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "73.209"
         }
       ],
       "colorChoice": null,
@@ -2623,6 +3055,14 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.014"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.014"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo GC/014"
         }
       ],
       "colorChoice": null,
@@ -2643,6 +3083,10 @@
       "keys": [
         {
           "sourceId": "donnervs-miniature-paints",
+          "key": "72.148"
+        },
+        {
+          "sourceId": "vallejo-cc266",
           "key": "72.148"
         }
       ],
@@ -2686,6 +3130,14 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.047"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.047"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo GC/047"
         }
       ],
       "colorChoice": null,
@@ -2749,6 +3201,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.829"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/829"
         }
       ],
       "colorChoice": null,
@@ -2770,6 +3226,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.841"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/841"
         }
       ],
       "colorChoice": null,
@@ -2812,6 +3272,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.869"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/869"
         }
       ],
       "colorChoice": null,
@@ -2833,6 +3297,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.815"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/815"
         }
       ],
       "colorChoice": null,
@@ -2875,6 +3343,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.917"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/917"
         }
       ],
       "colorChoice": null,
@@ -2896,6 +3368,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.875"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/875"
         }
       ],
       "colorChoice": null,
@@ -2917,6 +3393,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.804"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/804"
         }
       ],
       "colorChoice": null,
@@ -2938,6 +3418,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.950"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/950"
         }
       ],
       "colorChoice": null,
@@ -2959,6 +3443,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.980"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/980"
         }
       ],
       "colorChoice": null,
@@ -2980,6 +3468,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.862"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/862"
         }
       ],
       "colorChoice": null,
@@ -3001,6 +3493,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.859"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/859"
         }
       ],
       "colorChoice": null,
@@ -3043,6 +3539,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.925"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/925"
         }
       ],
       "colorChoice": null,
@@ -3064,6 +3564,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.808"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/808"
         }
       ],
       "colorChoice": null,
@@ -3106,6 +3610,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.811"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/811"
         }
       ],
       "colorChoice": null,
@@ -3127,6 +3635,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.801"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/801"
         }
       ],
       "colorChoice": null,
@@ -3169,6 +3681,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.851"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/851"
         }
       ],
       "colorChoice": null,
@@ -3190,6 +3706,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.998"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/998"
         }
       ],
       "colorChoice": null,
@@ -3211,6 +3731,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.897"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/897"
         }
       ],
       "colorChoice": null,
@@ -3232,6 +3756,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.803"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/803"
         }
       ],
       "colorChoice": null,
@@ -3274,6 +3802,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.976"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/976"
         }
       ],
       "colorChoice": null,
@@ -3295,6 +3827,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.814"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/814"
         }
       ],
       "colorChoice": null,
@@ -3316,6 +3852,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.941"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/941"
         }
       ],
       "colorChoice": null,
@@ -3337,6 +3877,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.822"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/822"
         }
       ],
       "colorChoice": null,
@@ -3421,6 +3965,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.894"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/894"
         }
       ],
       "colorChoice": null,
@@ -3463,6 +4011,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.908"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/908"
         }
       ],
       "colorChoice": null,
@@ -3484,6 +4036,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.982"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/982"
         }
       ],
       "colorChoice": null,
@@ -3526,6 +4082,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.872"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/872"
         }
       ],
       "colorChoice": null,
@@ -3610,6 +4170,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.999"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/999"
         }
       ],
       "colorChoice": null,
@@ -3631,6 +4195,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.843"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/843"
         }
       ],
       "colorChoice": null,
@@ -3673,6 +4241,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.930"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/930"
         }
       ],
       "colorChoice": null,
@@ -3694,6 +4266,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.867"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/867"
         }
       ],
       "colorChoice": null,
@@ -3715,6 +4291,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.927"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/927"
         }
       ],
       "colorChoice": null,
@@ -3736,6 +4316,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.994"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/994"
         }
       ],
       "colorChoice": null,
@@ -3757,6 +4341,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.899"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/899"
         }
       ],
       "colorChoice": null,
@@ -3799,6 +4387,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.946"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/946"
         }
       ],
       "colorChoice": null,
@@ -3862,6 +4454,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.847"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/847"
         }
       ],
       "colorChoice": null,
@@ -3883,6 +4479,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.898"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/898"
         }
       ],
       "colorChoice": null,
@@ -3925,6 +4525,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.991"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/991"
         }
       ],
       "colorChoice": null,
@@ -3946,6 +4550,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.947"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/947"
         }
       ],
       "colorChoice": null,
@@ -3988,6 +4596,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.986"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/986"
         }
       ],
       "colorChoice": null,
@@ -4009,6 +4621,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.970"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/970"
         }
       ],
       "colorChoice": null,
@@ -4030,6 +4646,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.844"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/844"
         }
       ],
       "colorChoice": null,
@@ -4051,6 +4671,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.915"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/915"
         }
       ],
       "colorChoice": null,
@@ -4114,6 +4738,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.977"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/977"
         }
       ],
       "colorChoice": null,
@@ -4135,6 +4763,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.838"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/838"
         }
       ],
       "colorChoice": null,
@@ -4156,6 +4788,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.921"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/921"
         }
       ],
       "colorChoice": null,
@@ -4177,6 +4813,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.896"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/896"
         }
       ],
       "colorChoice": null,
@@ -4219,6 +4859,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.833"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/833"
         }
       ],
       "colorChoice": null,
@@ -4282,6 +4926,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.984"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/984"
         }
       ],
       "colorChoice": null,
@@ -4324,6 +4972,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.955"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/955"
         }
       ],
       "colorChoice": null,
@@ -4366,6 +5018,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.957"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/957"
         }
       ],
       "colorChoice": null,
@@ -4387,6 +5043,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.953"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/953"
         }
       ],
       "colorChoice": null,
@@ -4429,6 +5089,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.830"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/830"
         }
       ],
       "colorChoice": null,
@@ -4450,6 +5114,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.995"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/995"
         }
       ],
       "colorChoice": null,
@@ -4471,6 +5139,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.805"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/805"
         }
       ],
       "colorChoice": null,
@@ -4534,6 +5206,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.806"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/806"
         }
       ],
       "colorChoice": null,
@@ -4597,6 +5273,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.877"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/877"
         }
       ],
       "colorChoice": null,
@@ -4618,6 +5298,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.948"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/948"
         }
       ],
       "colorChoice": null,
@@ -4639,6 +5323,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.879"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/879"
         }
       ],
       "colorChoice": null,
@@ -4660,6 +5348,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.886"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/886"
         }
       ],
       "colorChoice": null,
@@ -4681,6 +5373,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.914"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/914"
         }
       ],
       "colorChoice": null,
@@ -4702,6 +5398,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.974"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/974"
         }
       ],
       "colorChoice": null,
@@ -4744,6 +5444,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.943"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/943"
         }
       ],
       "colorChoice": null,
@@ -4786,6 +5490,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.866"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/866"
         }
       ],
       "colorChoice": null,
@@ -4807,6 +5515,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.863"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/863"
         }
       ],
       "colorChoice": null,
@@ -4849,6 +5561,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.895"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/895"
         }
       ],
       "colorChoice": null,
@@ -4870,6 +5586,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.985"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/985"
         }
       ],
       "colorChoice": null,
@@ -4891,6 +5611,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.858"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/858"
         }
       ],
       "colorChoice": null,
@@ -4933,6 +5657,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.891"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/891"
         }
       ],
       "colorChoice": null,
@@ -4954,6 +5682,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.819"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/819"
         }
       ],
       "colorChoice": null,
@@ -4975,6 +5707,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.918"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/918"
         }
       ],
       "colorChoice": null,
@@ -4996,6 +5732,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.923"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/923"
         }
       ],
       "colorChoice": null,
@@ -5017,6 +5757,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.988"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/988"
         }
       ],
       "colorChoice": null,
@@ -5080,6 +5824,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.871"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/871"
         }
       ],
       "colorChoice": null,
@@ -5101,6 +5849,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.952"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/952"
         }
       ],
       "colorChoice": null,
@@ -5143,6 +5895,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.929"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/929"
         }
       ],
       "colorChoice": null,
@@ -5185,6 +5941,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.928"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/928"
         }
       ],
       "colorChoice": null,
@@ -5227,6 +5987,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.971"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/971"
         }
       ],
       "colorChoice": null,
@@ -5248,6 +6012,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.990"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/990"
         }
       ],
       "colorChoice": null,
@@ -5290,6 +6058,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.911"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/911"
         }
       ],
       "colorChoice": null,
@@ -5332,6 +6104,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.840"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/840"
         }
       ],
       "colorChoice": null,
@@ -5374,6 +6150,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.949"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/949"
         }
       ],
       "colorChoice": null,
@@ -5395,6 +6175,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.827"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/827"
         }
       ],
       "colorChoice": null,
@@ -5416,6 +6200,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.836"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/836"
         }
       ],
       "colorChoice": null,
@@ -5479,6 +6267,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.945"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/945"
         }
       ],
       "colorChoice": null,
@@ -5500,6 +6292,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.846"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/846"
         }
       ],
       "colorChoice": null,
@@ -5542,6 +6338,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.963"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/963"
         }
       ],
       "colorChoice": null,
@@ -5563,6 +6363,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.826"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/826"
         }
       ],
       "colorChoice": null,
@@ -5584,6 +6388,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.860"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/860"
         }
       ],
       "colorChoice": null,
@@ -5647,6 +6455,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.850"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/850"
         }
       ],
       "colorChoice": null,
@@ -5689,6 +6501,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.882"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/882"
         }
       ],
       "colorChoice": null,
@@ -5773,6 +6589,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.864"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/864"
         }
       ],
       "colorChoice": null,
@@ -5794,6 +6614,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.992"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/992"
         }
       ],
       "colorChoice": null,
@@ -5857,6 +6681,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.820"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/820"
         }
       ],
       "colorChoice": null,
@@ -5878,6 +6706,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.865"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/865"
         }
       ],
       "colorChoice": null,
@@ -5920,6 +6752,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.944"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/944"
         }
       ],
       "colorChoice": null,
@@ -5983,6 +6819,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.967"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/967"
         }
       ],
       "colorChoice": null,
@@ -6004,6 +6844,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.888"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/888"
         }
       ],
       "colorChoice": null,
@@ -6025,6 +6869,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.981"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/981"
         }
       ],
       "colorChoice": null,
@@ -6046,6 +6894,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.824"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/824"
         }
       ],
       "colorChoice": null,
@@ -6067,6 +6919,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.807"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/807"
         }
       ],
       "colorChoice": null,
@@ -6109,6 +6965,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.906"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/906"
         }
       ],
       "colorChoice": null,
@@ -6130,6 +6990,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.825"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/825"
         }
       ],
       "colorChoice": null,
@@ -6151,6 +7015,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.907"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/907"
         }
       ],
       "colorChoice": null,
@@ -6172,6 +7040,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.837"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/837"
         }
       ],
       "colorChoice": null,
@@ -6193,6 +7065,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.969"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/969"
         }
       ],
       "colorChoice": null,
@@ -6256,6 +7132,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.958"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/958"
         }
       ],
       "colorChoice": null,
@@ -6277,6 +7157,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.965"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/965"
         }
       ],
       "colorChoice": null,
@@ -6298,6 +7182,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.959"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/959"
         }
       ],
       "colorChoice": null,
@@ -6319,6 +7207,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.926"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/926"
         }
       ],
       "colorChoice": null,
@@ -6340,6 +7232,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.818"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/818"
         }
       ],
       "colorChoice": null,
@@ -6361,6 +7257,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.890"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/890"
         }
       ],
       "colorChoice": null,
@@ -6445,6 +7345,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.940"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/940"
         }
       ],
       "colorChoice": null,
@@ -6466,6 +7370,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.835"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/835"
         }
       ],
       "colorChoice": null,
@@ -6487,6 +7395,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.916"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/916"
         }
       ],
       "colorChoice": null,
@@ -6508,6 +7420,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.817"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/817"
         }
       ],
       "colorChoice": null,
@@ -6529,6 +7445,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.997"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/997"
         }
       ],
       "colorChoice": null,
@@ -6550,6 +7470,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.883"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/883"
         }
       ],
       "colorChoice": null,
@@ -6571,6 +7495,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.961"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/961"
         }
       ],
       "colorChoice": null,
@@ -6592,6 +7520,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.989"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/989"
         }
       ],
       "colorChoice": null,
@@ -6613,6 +7545,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.939"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/939"
         }
       ],
       "colorChoice": null,
@@ -6676,6 +7612,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.845"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/845"
         }
       ],
       "colorChoice": null,
@@ -6697,6 +7637,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.802"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/802"
         }
       ],
       "colorChoice": null,
@@ -6718,6 +7662,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.874"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/874"
         }
       ],
       "colorChoice": null,
@@ -6739,6 +7687,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.966"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/966"
         }
       ],
       "colorChoice": null,
@@ -6781,6 +7733,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.893"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/893"
         }
       ],
       "colorChoice": null,
@@ -6802,6 +7758,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.873"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/873"
         }
       ],
       "colorChoice": null,
@@ -6823,6 +7783,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.887"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/887"
         }
       ],
       "colorChoice": null,
@@ -6844,6 +7808,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.909"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/909"
         }
       ],
       "colorChoice": null,
@@ -6907,6 +7875,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.812"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/812"
         }
       ],
       "colorChoice": null,
@@ -6928,6 +7900,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.951"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/951"
         }
       ],
       "colorChoice": null,
@@ -6949,6 +7925,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.993"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/993"
         }
       ],
       "colorChoice": null,
@@ -6970,6 +7950,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.954"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/954"
         }
       ],
       "colorChoice": null,
@@ -6991,6 +7975,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "70.913"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Vallejo MC/913"
         }
       ],
       "colorChoice": null,
@@ -7054,6 +8042,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.450"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.450"
         }
       ],
       "colorChoice": null,
@@ -7095,6 +8087,10 @@
       "keys": [
         {
           "sourceId": "donnervs-miniature-paints",
+          "key": "72.423"
+        },
+        {
+          "sourceId": "vallejo-cc266",
           "key": "72.423"
         }
       ],
@@ -7138,6 +8134,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.408"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.408"
         }
       ],
       "colorChoice": null,
@@ -7158,6 +8158,10 @@
       "keys": [
         {
           "sourceId": "donnervs-miniature-paints",
+          "key": "72.414"
+        },
+        {
+          "sourceId": "vallejo-cc266",
           "key": "72.414"
         }
       ],
@@ -7222,6 +8226,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.421"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.421"
         }
       ],
       "colorChoice": null,
@@ -7242,6 +8250,10 @@
       "keys": [
         {
           "sourceId": "donnervs-miniature-paints",
+          "key": "72.409"
+        },
+        {
+          "sourceId": "vallejo-cc266",
           "key": "72.409"
         }
       ],
@@ -7327,6 +8339,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.402"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.402"
         }
       ],
       "colorChoice": null,
@@ -7390,6 +8406,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.465"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.465"
         }
       ],
       "colorChoice": null,
@@ -7411,6 +8431,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.410"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.410"
         }
       ],
       "colorChoice": null,
@@ -7431,6 +8455,10 @@
       "keys": [
         {
           "sourceId": "donnervs-miniature-paints",
+          "key": "72.476"
+        },
+        {
+          "sourceId": "vallejo-cc266",
           "key": "72.476"
         }
       ],
@@ -7516,6 +8544,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.403"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.403"
         }
       ],
       "colorChoice": null,
@@ -7600,6 +8632,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.418"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.418"
         }
       ],
       "colorChoice": null,
@@ -7641,6 +8677,10 @@
       "keys": [
         {
           "sourceId": "donnervs-miniature-paints",
+          "key": "72.405"
+        },
+        {
+          "sourceId": "vallejo-cc266",
           "key": "72.405"
         }
       ],
@@ -7705,6 +8745,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.475"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.475"
         }
       ],
       "colorChoice": null,
@@ -7725,6 +8769,10 @@
       "keys": [
         {
           "sourceId": "donnervs-miniature-paints",
+          "key": "72.449"
+        },
+        {
+          "sourceId": "vallejo-cc266",
           "key": "72.449"
         }
       ],
@@ -7747,6 +8795,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.411"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.411"
         }
       ],
       "colorChoice": null,
@@ -7767,6 +8819,10 @@
       "keys": [
         {
           "sourceId": "donnervs-miniature-paints",
+          "key": "72.404"
+        },
+        {
+          "sourceId": "vallejo-cc266",
           "key": "72.404"
         }
       ],
@@ -7789,6 +8845,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.413"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.413"
         }
       ],
       "colorChoice": null,
@@ -7809,6 +8869,10 @@
       "keys": [
         {
           "sourceId": "donnervs-miniature-paints",
+          "key": "72.415"
+        },
+        {
+          "sourceId": "vallejo-cc266",
           "key": "72.415"
         }
       ],
@@ -7831,6 +8895,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.478"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.478"
         }
       ],
       "colorChoice": null,
@@ -7851,6 +8919,10 @@
       "keys": [
         {
           "sourceId": "donnervs-miniature-paints",
+          "key": "72.419"
+        },
+        {
+          "sourceId": "vallejo-cc266",
           "key": "72.419"
         }
       ],
@@ -7873,6 +8945,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.406"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.406"
         }
       ],
       "colorChoice": null,
@@ -7893,6 +8969,10 @@
       "keys": [
         {
           "sourceId": "donnervs-miniature-paints",
+          "key": "72.452"
+        },
+        {
+          "sourceId": "vallejo-cc266",
           "key": "72.452"
         }
       ],
@@ -7936,6 +9016,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.417"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.417"
         }
       ],
       "colorChoice": null,
@@ -7956,6 +9040,10 @@
       "keys": [
         {
           "sourceId": "donnervs-miniature-paints",
+          "key": "72.422"
+        },
+        {
+          "sourceId": "vallejo-cc266",
           "key": "72.422"
         }
       ],
@@ -7978,6 +9066,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.462"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.462"
         }
       ],
       "colorChoice": null,
@@ -7998,6 +9090,10 @@
       "keys": [
         {
           "sourceId": "donnervs-miniature-paints",
+          "key": "72.412"
+        },
+        {
+          "sourceId": "vallejo-cc266",
           "key": "72.412"
         }
       ],
@@ -8020,6 +9116,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.471"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.471"
         }
       ],
       "colorChoice": null,
@@ -8040,6 +9140,10 @@
       "keys": [
         {
           "sourceId": "donnervs-miniature-paints",
+          "key": "72.401"
+        },
+        {
+          "sourceId": "vallejo-cc266",
           "key": "72.401"
         }
       ],
@@ -8062,6 +9166,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.416"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.416"
         }
       ],
       "colorChoice": null,
@@ -8082,6 +9190,10 @@
       "keys": [
         {
           "sourceId": "donnervs-miniature-paints",
+          "key": "72.460"
+        },
+        {
+          "sourceId": "vallejo-cc266",
           "key": "72.460"
         }
       ],
@@ -8104,6 +9216,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.461"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.461"
         }
       ],
       "colorChoice": null,
@@ -8124,6 +9240,10 @@
       "keys": [
         {
           "sourceId": "donnervs-miniature-paints",
+          "key": "72.407"
+        },
+        {
+          "sourceId": "vallejo-cc266",
           "key": "72.407"
         }
       ],
@@ -8188,6 +9308,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.420"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.420"
         }
       ],
       "colorChoice": null,
@@ -8209,6 +9333,10 @@
         {
           "sourceId": "donnervs-miniature-paints",
           "key": "72.456"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "72.456"
         }
       ],
       "colorChoice": null,
@@ -8229,6 +9357,10 @@
       "keys": [
         {
           "sourceId": "donnervs-miniature-paints",
+          "key": "72.474"
+        },
+        {
+          "sourceId": "vallejo-cc266",
           "key": "72.474"
         }
       ],

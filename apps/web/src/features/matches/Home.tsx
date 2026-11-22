@@ -126,8 +126,13 @@ export function Home({
     const difference = colorDifference(saved.hex, base);
     return difference.ok ? difference.value : null;
   }, [saved, result?.model, base]);
-  const choose = (paint: ChosenPaint) => {
-    dispatch({ type: "choose-paint", paint });
+  /**
+   * The only way a paint becomes the base: from the search, from «Back to…»
+   * or from an official equivalence (docs/07 §15-16), which remembers the
+   * paint it leaves.
+   */
+  const choose = (paint: ChosenPaint, remember = false) => {
+    dispatch({ type: "choose-paint", paint, remember });
     wheel.current?.update({ color: paint.hex });
   };
 
@@ -252,6 +257,9 @@ export function Home({
             wheelLabels={wheelLabels}
             locale={locale}
             creditsPath={pathOf({ kind: "credits", locale })}
+            onUse={(paint) => {
+              choose(paint, true);
+            }}
             onPreview={setPreview}
             rows={entrance}
             following={following}
