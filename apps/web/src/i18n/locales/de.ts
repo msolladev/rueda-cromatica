@@ -95,7 +95,8 @@ export const de: Messages = {
   },
   search: {
     label: "Starte mit einer Farbe, die du hast",
-    hint: "Mindestens {min} Zeichen aus Name, Code oder Marke.",
+    placeholder: "Name, Code oder Marke",
+    hint: "Mindestens {min} Zeichen.",
     paints: "Farben",
     noMatches: "Keine Farbe passt zu deiner Eingabe.",
     seeMore: "Mehr Farben anzeigen ({shown} von {total})",
@@ -206,5 +207,16 @@ export const de: Messages = {
   },
   footer: {
     credits: "Danksagungen und Quellen",
+    tagline:
+      "Ein Farbkreis, der wie ein echter funktioniert, und die ähnlichsten Farben jeder Marke, auch offline.",
+    projectHeading: "Projekt",
+    appHeading: "App",
+    sourceCode: "Quellcode auf {host}",
+    donate: "Spenden über {host}",
+    apiReference: "API-Referenz",
+    disclaimer:
+      "Unabhängiges Projekt, nicht verbunden mit Games Workshop, Vallejo, The Army Painter oder AK Interactive. Marken und Farbnamen gehören ihren Inhabern.",
+    version: "Version vom {date}",
+    commit: "{commit} auf {host}",
   },
 };

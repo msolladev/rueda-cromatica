@@ -55,6 +55,24 @@ describe("the prerendering", () => {
     expect(html).toContain("MIT License text");
   });
 
+  it("puts the footer, with its links and the notice, in the HTML", () => {
+    const { html } = render({ kind: "credits", locale: "es" });
+    expect(html).toContain(
+      'href="https://github.com/msolladev/rueda-cromatica"',
+    );
+    expect(html).toContain('href="https://paypal.me/miguelangelss4"');
+    expect(html).toContain('href="/reference/"');
+    expect(html).toContain("Proyecto independiente, sin relación con");
+    // The version: the commit the web is built from, with its date.
+    expect(html).toMatch(
+      /Versión del \d{1,2} de \w+ de \d{4}<\/time>.*href="https:\/\/github\.com\/msolladev\/rueda-cromatica\/commit\/[0-9a-f]{40}"/s,
+    );
+    // The strip with the twelve hues of the wheel, computed in the render.
+    expect(html).toMatch(
+      /--hue-strip:linear-gradient\(to right, (#[0-9a-f]{6}(, )?){12}\)/,
+    );
+  });
+
   it("links every language from `/`", () => {
     const { html } = render({ kind: "languages" });
     for (const path of ["/es/", "/ja/", "/pt-br/"])

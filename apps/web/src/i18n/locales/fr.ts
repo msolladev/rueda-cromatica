@@ -94,7 +94,8 @@ export const fr: Messages = {
   },
   search: {
     label: "Partez d'une peinture que vous avez",
-    hint: "Au moins {min} lettres du nom, du code ou de la marque.",
+    placeholder: "Nom, code ou marque",
+    hint: "Au moins {min} lettres.",
     paints: "Peintures",
     noMatches: "Aucune peinture ne correspond à votre saisie.",
     seeMore: "Voir plus de peintures ({shown} sur {total})",
@@ -206,5 +207,16 @@ export const fr: Messages = {
   },
   footer: {
     credits: "Crédits et sources",
+    tagline:
+      "Une roue chromatique qui fonctionne comme une vraie, et les peintures les plus proches de chaque marque, même hors ligne.",
+    projectHeading: "Projet",
+    appHeading: "Application",
+    sourceCode: "Code source sur {host}",
+    donate: "Faire un don sur {host}",
+    apiReference: "Référence de l’API",
+    disclaimer:
+      "Projet indépendant, sans lien avec Games Workshop, Vallejo, The Army Painter ni AK Interactive. Les marques et les noms des peintures appartiennent à leurs propriétaires.",
+    version: "Version du {date}",
+    commit: "{commit} sur {host}",
   },
 };

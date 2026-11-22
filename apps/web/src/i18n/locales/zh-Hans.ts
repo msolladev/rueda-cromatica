@@ -88,7 +88,8 @@ export const zhHans: Messages = {
   },
   search: {
     label: "从你已有的颜料开始",
-    hint: "至少输入名称、编号或品牌中的 {min} 个字符。",
+    placeholder: "名称、编号或品牌",
+    hint: "至少输入 {min} 个字符。",
     paints: "颜料",
     noMatches: "没有与输入内容匹配的颜料。",
     seeMore: "查看更多颜料（{shown} / {total}）",
@@ -192,5 +193,15 @@ export const zhHans: Messages = {
   },
   footer: {
     credits: "致谢与来源",
+    tagline: "像实物一样使用的色轮，以及每个品牌中最接近的颜料，离线也能用。",
+    projectHeading: "项目",
+    appHeading: "应用",
+    sourceCode: "{host} 上的源代码",
+    donate: "在 {host} 上捐赠",
+    apiReference: "API 参考",
+    disclaimer:
+      "独立项目，与 Games Workshop、Vallejo、The Army Painter 和 AK Interactive 均无关联。商标和颜料名称归其各自所有者所有。",
+    version: "{date} 版本",
+    commit: "{host} 上的 {commit}",
   },
 };
