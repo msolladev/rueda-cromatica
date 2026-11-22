@@ -1,34 +1,34 @@
 /**
- * Imports one brand from DonnervS/miniature-paints into
- * `data/brands/<brand-id>.json` (docs/04 §4). Run on demand, never in the CI:
+ * Transcribes the DonnervS/miniature-paints files of the brands in the
+ * catalogue into `data/sources/donnervs-miniature-paints.json` and proposes
+ * their new paints (docs/04 §7). Run on demand, never in the CI:
  *
- *   pnpm --filter @chromatic-wheel/catalog-builder import-donnervs <brand-id>
+ *   pnpm --filter @chromatic-wheel/catalog-builder import-donnervs
  *
- * The file is fetched at the commit pinned in the source's `url`.
+ * The files are fetched at the commit pinned in the source's `url`.
  */
-import { err } from "@chromatic-wheel/domain";
-import { DONNERVS_BRANDS, importDonnervS } from "../importers/donnervs.ts";
+import { err, sourceIdSchema } from "@chromatic-wheel/domain";
+import {
+  DONNERVS_FILES,
+  DONNERVS_RULES,
+  transcribeDonnervS,
+} from "../importers/donnervs.ts";
 import { rawUrl, runImport } from "./run-import.ts";
 
-const brandId = process.argv[2] ?? "";
-const brand = DONNERVS_BRANDS[brandId];
-
-if (brand === undefined) {
-  console.error(
-    `Usage: import-donnervs <brand-id>, one of: ${Object.keys(DONNERVS_BRANDS).join(", ")}`,
-  );
-  process.exitCode = 1;
-} else {
-  process.exitCode = await runImport({
-    sourceId: "donnervs-miniature-paints",
-    brandId,
-    fileUrl: (pinned) => rawUrl(pinned, brand.file),
-    read: (text, sourceId) => {
-      try {
-        return importDonnervS(JSON.parse(text), brand, sourceId);
-      } catch (error) {
-        return err([`Invalid JSON: ${String(error)}`]);
-      }
-    },
-  });
-}
+process.exitCode = await runImport({
+  sourceId: sourceIdSchema.parse("donnervs-miniature-paints"),
+  fileUrls: (pinned) => DONNERVS_FILES.map((file) => rawUrl(pinned, file)),
+  transcribe: (files) => {
+    try {
+      return transcribeDonnervS(
+        files.map(({ name, text }) => ({
+          name,
+          content: JSON.parse(text) as unknown,
+        })),
+      );
+    } catch (error) {
+      return err([`Invalid JSON: ${String(error)}`]);
+    }
+  },
+  rules: DONNERVS_RULES,
+});

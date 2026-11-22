@@ -1,0 +1,22 @@
+[
+  {
+    "id": "airbrush",
+    "text": "Pintura de aerógrafo, fuera del alcance del MVP."
+  },
+  {
+    "id": "auxiliary",
+    "text": "Producto auxiliar (medium, barniz, diluyente, retardante o imprimación), fuera del catálogo."
+  },
+  {
+    "id": "not-in-current-chart",
+    "text": "No figura en la carta vigente del fabricante."
+  },
+  {
+    "id": "out-of-scope-line",
+    "text": "Línea fuera del alcance del MVP."
+  },
+  {
+    "id": "spray",
+    "text": "Spray, fuera del alcance del MVP."
+  }
+]

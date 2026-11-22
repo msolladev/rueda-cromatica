@@ -1,29 +1,12 @@
 import { describe, expect, it } from "vitest";
-import { importDonnervS, type DonnervSBrand } from "./donnervs.ts";
+import { DONNERVS_RULES, transcribeDonnervS } from "./donnervs.ts";
 
-const brand: DonnervSBrand = {
-  file: "paints/json/Acme.json",
-  lines: {
-    Core: { rangeId: "acme/core", type: "standard", metallic: false },
-    Metals: { rangeId: "acme/core", type: "standard", metallic: true },
-    Air: null,
-  },
-  excluded: (code) => code === "AC90",
-  override: (code) =>
-    code === "AC10"
-      ? { metallic: true }
-      : code === "AC20"
-        ? { type: "technical" }
-        : undefined,
-  cleanName: (name) => name.replace(/^FIG /, ""),
-  nameErrata: { AC30: "Bony White" },
-  slugs: { AC40: "red-figures" },
-  photoOverMeasured: new Set(["AC50"]),
-};
-
+// Fictitious rows in the layout of the DonnervS files.
 const row = (patch: Record<string, unknown> = {}) => ({
+  id: "acme-ac01",
   name: "Red",
   code: "AC01",
+  ean: null,
   set: "Core",
   hex: "#AA0000",
   colourless: false,
@@ -31,84 +14,74 @@ const row = (patch: Record<string, unknown> = {}) => ({
   ...patch,
 });
 
-function imported(rows: unknown[]) {
-  const result = importDonnervS({ paints: rows }, brand, "donnervs");
+const file = (rows: unknown[]) => ({
+  name: "Acme.json",
+  content: { paints: rows },
+});
+
+function transcribed(rows: unknown[]) {
+  const result = transcribeDonnervS([file(rows)]);
   if (!result.ok) throw new Error(result.error.join("\n"));
   return result.value;
 }
 
-const issues = (rows: unknown[]) => {
-  const result = importDonnervS({ paints: rows }, brand, "donnervs");
-  return result.ok ? [] : result.error;
-};
-
-describe("importDonnervS", () => {
-  it("reads a row into a paint of its range, with code and lowercase hex", () => {
-    expect(imported([row()])).toEqual([
+describe("transcribeDonnervS", () => {
+  it("copies a row literally, keyed by its code, without the unused fields", () => {
+    expect(transcribed([row()])).toEqual([
       {
-        rangeId: "acme/core",
+        key: "AC01",
+        group: "Core",
         name: "Red",
-        manufacturerCode: "AC01",
-        type: "standard",
-        metallic: false,
-        color: { hex: "#aa0000", origin: "community", sourceId: "donnervs" },
+        code: "AC01",
+        hex: "#AA0000",
+        gradient: null,
+        measuredHex: null,
+        finish: null,
+        colourless: false,
       },
     ]);
   });
 
-  it("takes type and metallic from the line or, by code, from an override", () => {
-    const paints = imported([
-      row({ code: "AC02", set: "Metals" }),
-      row({ code: "AC10" }),
-      row({ code: "AC20" }),
+  it("keeps the measured hex, the missing hex and the colourless mark", () => {
+    const [measured, colourless] = transcribed([
+      row({ measuredHex: "#AB0101" }),
+      row({ code: "AC02", hex: null, colourless: true }),
     ]);
-    expect(paints.map((p) => `${p.type} ${String(p.metallic)}`)).toEqual([
-      "standard true",
-      "standard true",
-      "technical false",
+    expect(measured?.measuredHex).toBe("#AB0101");
+    expect(colourless).toMatchObject({ hex: null, colourless: true });
+  });
+
+  it("transcribes several files in order", () => {
+    const result = transcribeDonnervS([
+      file([row()]),
+      file([row({ code: "GX01", set: "Standard" })]),
     ]);
-  });
-
-  it("leaves out sets outside the MVP and excluded codes", () => {
-    expect(imported([row({ set: "Air" }), row({ code: "AC90" })])).toEqual([]);
-  });
-
-  it("strips the prefix DonnervS adds and corrects misspelt names", () => {
-    const paints = imported([
-      row({ name: "FIG Light Flesh" }),
-      row({ name: "FIG Boney White", code: "AC30" }),
-    ]);
-    expect(paints.map((p) => p.name)).toEqual(["Light Flesh", "Bony White"]);
-  });
-
-  it("carries the slug chosen by hand for a colliding name", () => {
-    expect(imported([row({ code: "AC40" })])[0]?.slug).toBe("red-figures");
-  });
-
-  it("keeps the photo colour where the measured one is set aside", () => {
-    const [paint] = imported([row({ code: "AC50", measuredHex: "#C2B193" })]);
-    expect(paint?.color?.hex).toBe("#aa0000");
-  });
-
-  it("fails on anything it cannot place, instead of guessing", () => {
-    expect(
-      issues([
-        row({ set: "Contrast" }),
-        row({ name: "Plain", code: null }),
-        row({ name: "Medium", colourless: true }),
-        row({ name: "Blue", measuredHex: "#0000aa" }),
-        row({ name: "Green", hex: null }),
-      ]),
-    ).toEqual([
-      'Contrast / Red: unknown set "Contrast"',
-      "Core / Plain: no manufacturer code",
-      "Core / Medium: colourless but not excluded",
-      "Core / Blue: has a measured colour, not handled yet",
-      "Core / Green: invalid hex null",
+    expect(result.ok ? result.value.map((r) => r.key) : []).toEqual([
+      "AC01",
+      "GX01",
     ]);
   });
 
-  it("rejects a file without the expected shape", () => {
-    expect(importDonnervS({ brands: [] }, brand, "donnervs").ok).toBe(false);
+  it("fails on a row without code, since the code is the key", () => {
+    const result = transcribeDonnervS([file([row({ code: null })])]);
+    expect(result.ok ? [] : result.error).toEqual([
+      "Acme.json Core / Red: no code",
+    ]);
+  });
+});
+
+describe("DONNERVS_RULES.name", () => {
+  const name = (code: string, written: string) =>
+    transcribed([row({ code, name: written })]).map((r) =>
+      DONNERVS_RULES.name?.(r),
+    )[0];
+
+  it("removes what DonnervS adds to the AK names", () => {
+    expect(name("AK11334", "AFV Olive Drab Base")).toBe("Olive Drab Base");
+    expect(name("AK17008", "Bile Yellow Medium")).toBe("Bile Yellow");
+  });
+
+  it("keeps the other names as written", () => {
+    expect(name("72.120", "Abyssal Turquoise")).toBe("Abyssal Turquoise");
   });
 });

@@ -1,13 +1,13 @@
 /**
- * Entry point of the builder (docs/04 §3). Reads the curated files, runs the
+ * Entry point of the builder (docs/04 §6). Reads the curated files, runs the
  * pure pipeline, checks the ID stability against the latest release (docs/03
  * §7) and writes `catalog.json`. With `--check` it writes nothing and fails if
  * the versioned file is out of date (ADR-0011, CI step 4).
  *
  *   pnpm --filter @chromatic-wheel/catalog-builder build-catalog [--check]
  */
-import { mkdir, readdir, readFile, writeFile } from "node:fs/promises";
-import { basename, dirname, join } from "node:path";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { dirname } from "node:path";
 import { readTombstonesFile } from "../curated/files.ts";
 import { buildCatalog } from "../pipeline/build-catalog.ts";
 import {
@@ -16,51 +16,30 @@ import {
   formatStabilityIssues,
 } from "../pipeline/id-stability.ts";
 import {
-  BRANDS_DIR,
+  dataPath,
   fromRepo,
   OUTPUT_FILE,
-  readJson,
-  SOURCES_FILE,
+  printIssues,
+  readCuratedFiles,
   TOMBSTONES_FILE,
 } from "./data-files.ts";
 import { readPublishedCatalog } from "./published-catalog.ts";
 
 async function main(check: boolean): Promise<number> {
-  // Alphabetical order, so the run does not depend on the file system.
-  const brandNames = (await readdir(BRANDS_DIR))
-    .filter((name) => name.endsWith(".json"))
-    .sort();
-  const paths = [
-    TOMBSTONES_FILE,
-    SOURCES_FILE,
-    ...brandNames.map((n) => join(BRANDS_DIR, n)),
-  ];
-  const pathOf = new Map(paths.map((path) => [basename(path), path]));
-  const files = await Promise.all(paths.map(readJson));
-
-  const unreadable = files.filter((file) => typeof file === "string");
-  if (unreadable.length > 0) {
-    for (const message of unreadable) console.error(message);
+  const files = await readCuratedFiles();
+  if (!files.ok) {
+    for (const message of files.error) console.error(message);
     return 1;
   }
-  const [tombstonesFile, sources, ...brands] = files.filter(
-    (file) => typeof file !== "string",
-  );
-  if (tombstonesFile === undefined || sources === undefined) {
-    throw new Error("Unreachable: tombstones or sources not read");
-  }
 
-  const tombstones = readTombstonesFile(tombstonesFile);
-  const result = buildCatalog({ sources, brands });
+  const tombstones = readTombstonesFile(files.value.tombstones);
+  const result = buildCatalog(files.value.data);
   const issues = [
     ...(tombstones.ok ? [] : tombstones.error),
     ...(result.ok ? [] : result.error),
   ];
   if (!tombstones.ok || !result.ok) {
-    for (const issue of issues) {
-      const file = pathOf.get(issue.file) ?? issue.file;
-      console.error(`${fromRepo(file)} ${issue.path}: ${issue.message}`);
-    }
+    printIssues(issues);
     console.error(`\n${String(issues.length)} issue(s); nothing written.`);
     return 1;
   }
@@ -82,7 +61,7 @@ async function main(check: boolean): Promise<number> {
   if (unstable.length > 0) {
     const report = formatStabilityIssues(unstable, {
       release,
-      tombstonesFile: fromRepo(TOMBSTONES_FILE),
+      tombstonesFile: dataPath(TOMBSTONES_FILE),
     });
     console.error(report);
     console.error(`\n${String(unstable.length)} issue(s); nothing written.`);

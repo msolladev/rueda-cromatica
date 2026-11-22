@@ -24,7 +24,7 @@ Cada fichero recoge una decisión relevante: su contexto, la decisión tomada, l
 | [0016](0016-datos-curados-json.md)                   | Datos curados en JSON de dos capas                                   | sustituida por ADR-0019                              |
 | [0017](0017-arquitectura-objetivo-backend.md)        | Arquitectura objetivo con backend                                    | aceptada                                             |
 | [0018](0018-organizacion-codigo-patrones.md)         | Organización del código y patrones                                   | aceptada; corregida en parte por ADR-0024            |
-| [0019](0019-alcance-minimo-mvp.md)                   | Alcance mínimo del MVP                                               | aceptada                                             |
+| [0019](0019-alcance-minimo-mvp.md)                   | Alcance mínimo del MVP                                               | aceptada; corregida en parte por ADR-0030            |
 | [0020](0020-rueda-paquete-independiente.md)          | La rueda de color como paquete independiente                         | aceptada; corregida en parte por ADR-0021 y ADR-0027 |
 | [0021](0021-cambio-modelo-conserva-color.md)         | El cambio de modelo conserva el color base                           | aceptada                                             |
 | [0022](0022-busqueda-pinturas-parecidas.md)          | Búsqueda de las pinturas parecidas                                   | aceptada                                             |
@@ -35,6 +35,7 @@ Cada fichero recoge una decisión relevante: su contexto, la decisión tomada, l
 | [0027](0027-lenguas-cooficiales-espana.md)           | Las lenguas cooficiales de España                                    | aceptada                                             |
 | [0028](0028-produccion-homelab.md)                   | Producción en el homelab                                             | aceptada                                             |
 | [0029](0029-buscador-pinturas-mvp.md)                | Buscador de pinturas en el MVP                                       | aceptada                                             |
+| [0030](0030-datos-curados-dos-capas.md)              | Datos curados en dos capas                                           | aceptada                                             |
 
 ## Normas
 

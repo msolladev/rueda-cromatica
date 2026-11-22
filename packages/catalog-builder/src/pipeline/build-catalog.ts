@@ -1,7 +1,9 @@
 /**
- * Builder process (docs/04 §3): assembles the curated files into the
- * `catalog.json` document, validates it with `parseCatalog` and serialises it
- * deterministically (docs/02 §1). Pure: the files arrive already read.
+ * Builder process (docs/04 §6): reads the curated files, resolves the keys of
+ * every source row, takes each paint's colour from its rows and assembles the
+ * `catalog.json` document. Then validates it with `parseCatalog` and
+ * serialises it deterministically (docs/02 §1). Pure: the files arrive
+ * already read.
  */
 import { createHash } from "node:crypto";
 import {
@@ -12,20 +14,18 @@ import {
   parseCatalog,
   SUPPORTED_SCHEMA_VERSION,
   type CatalogDocument,
+  type Paint,
   type Result,
 } from "@chromatic-wheel/domain";
 import {
-  readBrandFile,
-  readSourcesFile,
-  type BrandFile,
+  readCurated,
+  type CuratedData,
   type DataIssue,
-  type RawFile,
 } from "../curated/files.ts";
+import { checkColorPolicy, paintColor } from "./color.ts";
+import { resolveKeys } from "./resolve.ts";
 
-export interface CuratedData {
-  readonly sources: RawFile;
-  readonly brands: readonly RawFile[];
-}
+export type { CuratedData };
 
 export interface BuiltCatalog {
   readonly document: CatalogDocument;
@@ -48,22 +48,53 @@ export function buildCatalog(
   data: CuratedData,
 ): Result<BuiltCatalog, readonly DataIssue[]> {
   // 1. Load and check every file, collecting all issues.
-  const issues: DataIssue[] = [];
-  const sourcesFile = readSourcesFile(data.sources);
-  if (!sourcesFile.ok) issues.push(...sourcesFile.error);
-  const brandFiles: BrandFile[] = [];
-  for (const file of data.brands) {
-    const result = readBrandFile(file);
-    if (result.ok) brandFiles.push(result.value);
-    else issues.push(...result.error);
-  }
-  if (!sourcesFile.ok || issues.length > 0) return err(issues);
+  const curated = readCurated(data);
+  if (!curated.ok) return err(curated.error);
+  const { sources: sourceFiles, brands: brandFiles, policy } = curated.value;
 
-  // 2. Assemble and sort (docs/02 §1).
+  // 2. Key resolution: every row has one paint or is ignored.
+  const resolution = resolveKeys(curated.value);
+  const issues: DataIssue[] = [
+    ...resolution.issues,
+    ...checkColorPolicy(policy, sourceFiles).map((message) => ({
+      file: data.colorPolicy.name,
+      path: "",
+      message,
+    })),
+  ];
+
+  // 3. The catalog paints, with the colour of their rows.
+  const paintItems: Located<Paint>[] = [];
+  for (const file of brandFiles) {
+    file.paints.forEach((curated, i) => {
+      const origin = { file: file.name, path: `paints[${String(i)}]` };
+      const color = paintColor(resolution.rows.get(curated.id) ?? [], policy);
+      if (!color.ok) {
+        issues.push({ ...origin, message: color.error });
+        return;
+      }
+      // Key order of docs/02 §3.
+      const item: Paint = {
+        id: curated.id,
+        rangeId: curated.rangeId,
+        name: curated.name,
+        aliases: curated.aliases,
+        manufacturerCode: curated.manufacturerCode,
+        type: curated.type,
+        metallic: curated.metallic,
+        color: color.value,
+        status: curated.status,
+      };
+      paintItems.push({ item, origin });
+    });
+  }
+  if (issues.length > 0) return err(issues);
+
+  // 4. Assemble and sort (docs/02 §1).
   const sources = sorted(
-    sourcesFile.value.map((item, i) => ({
-      item,
-      origin: { file: data.sources.name, path: `[${String(i)}]` },
+    sourceFiles.map((file) => ({
+      item: file.source,
+      origin: { file: file.name, path: "source" },
     })),
   );
   const brands = sorted(
@@ -80,16 +111,9 @@ export function buildCatalog(
       })),
     ),
   );
-  const paints = sorted(
-    brandFiles.flatMap((file) =>
-      file.paints.map((item, i) => ({
-        item,
-        origin: { file: file.name, path: `paints[${String(i)}]` },
-      })),
-    ),
-  );
+  const paints = sorted(paintItems);
 
-  // Key order follows docs/02; equivalences are empty in the MVP (ADR-0019).
+  // Key order follows docs/02; official equivalences arrive in phase 5 step 4.
   const body = {
     sources: sources.map((s) => s.item),
     brands: brands.map((b) => b.item),
@@ -98,13 +122,13 @@ export function buildCatalog(
     equivalences: [],
   };
 
-  // 3. Meta (docs/02 §4).
+  // 5. Meta (docs/02 §4).
   const document = {
     meta: { schemaVersion: SUPPORTED_SCHEMA_VERSION, dataVersion: hash(body) },
     ...body,
   };
 
-  // 4. Final validation, with issues located in their files.
+  // 6. Final validation, with issues located in their files.
   const parsed = parseCatalog(document);
   if (!parsed.ok) {
     if (parsed.error.kind === "unsupported-schema-version") {
@@ -114,7 +138,7 @@ export function buildCatalog(
     return err(parsed.error.issues.map((issue) => locate(issue, origins)));
   }
 
-  // 5. Deterministic serialisation (docs/02 §1).
+  // 7. Deterministic serialisation (docs/02 §1).
   return ok({ document, json: `${JSON.stringify(document, null, 2)}\n` });
 }
 

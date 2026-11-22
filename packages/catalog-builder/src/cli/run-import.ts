@@ -1,14 +1,25 @@
 /**
- * Flow shared by the importer entry points (docs/04 §4): reads the source and
- * the brand file, fetches the source at its pinned commit, merges and writes
- * the brand file. The importer logic itself stays pure.
+ * Flow shared by the importer entry points (docs/04 §7): fetches the source
+ * at the commit pinned in its file, transcribes it, reconciles it with the
+ * curated paints and writes the source file and the proposed paints. The
+ * importer logic itself stays pure.
  */
-import { writeFile } from "node:fs/promises";
-import { join } from "node:path";
-import type { Result } from "@chromatic-wheel/domain";
-import { readBrandFile, readSourcesFile } from "../curated/files.ts";
-import { mergePaints, type ImportedPaint } from "../importers/merge.ts";
-import { BRANDS_DIR, fromRepo, readJson, SOURCES_FILE } from "./data-files.ts";
+import type { Result, SourceId } from "@chromatic-wheel/domain";
+import {
+  readBrandFile,
+  readCurated,
+  readSourceFile,
+  type SourceFile,
+  type SourceFileContent,
+  type SourceRow,
+} from "../curated/files.ts";
+import { reconcile, type ProposalRules } from "../importers/reconcile.ts";
+import {
+  dataPath,
+  printIssues,
+  readCuratedFiles,
+  writeDataFile,
+} from "./data-files.ts";
 
 /** A GitHub URL pinned to a commit: `…/blob/<sha>/<path>` or `…/tree/<sha>`. */
 export interface PinnedGitHub {
@@ -24,14 +35,13 @@ export const rawUrl = (pinned: PinnedGitHub, path = pinned.path): string =>
   `https://raw.githubusercontent.com/${pinned.repo}/${pinned.commit}/${path}`;
 
 export interface ImportOptions {
-  readonly sourceId: string;
-  readonly brandId: string;
-  /** The raw file to fetch, from the pinned URL of the source. */
-  readonly fileUrl: (pinned: PinnedGitHub) => string;
-  readonly read: (
-    text: string,
-    sourceId: string,
-  ) => Result<readonly ImportedPaint[], readonly string[]>;
+  readonly sourceId: SourceId;
+  /** The raw files to fetch, from the pinned URL of the source. */
+  readonly fileUrls: (pinned: PinnedGitHub) => readonly string[];
+  readonly transcribe: (
+    files: readonly { readonly name: string; readonly text: string }[],
+  ) => Result<readonly SourceRow[], readonly string[]>;
+  readonly rules: ProposalRules;
 }
 
 function fail(messages: readonly string[]): number {
@@ -40,60 +50,100 @@ function fail(messages: readonly string[]): number {
 }
 
 export async function runImport(options: ImportOptions): Promise<number> {
-  const brandPath = join(BRANDS_DIR, `${options.brandId}.json`);
-  const sourcesFile = await readJson(SOURCES_FILE);
-  const brandFile = await readJson(brandPath);
-  if (typeof sourcesFile === "string") return fail([sourcesFile]);
-  if (typeof brandFile === "string") return fail([brandFile]);
-
-  const sources = readSourcesFile(sourcesFile);
-  if (!sources.ok) {
-    return fail(sources.error.map((i) => `${i.path}: ${i.message}`));
+  const files = await readCuratedFiles();
+  if (!files.ok) return fail(files.error);
+  const curated = readCurated(files.value.data);
+  if (!curated.ok) {
+    printIssues(curated.error);
+    return 1;
   }
-  const source = sources.value.find((s) => s.id === options.sourceId);
-  const match = PINNED_URL.exec(source?.url ?? "");
+  const { sources } = curated.value;
+
+  const source = sources.find((s) => s.source.id === options.sourceId);
+  if (source === undefined) {
+    return fail([`No source file for ${options.sourceId}`]);
+  }
+  const match = PINNED_URL.exec(source.source.url ?? "");
   if (match === null) {
     return fail([
-      `${fromRepo(SOURCES_FILE)}: ${options.sourceId} needs a GitHub URL pinned to a commit`,
+      `${dataPath(source.name)}: ${options.sourceId} needs a GitHub URL pinned to a commit`,
     ]);
   }
   const [, repo = "", commit = "", path = ""] = match;
 
-  const current = readBrandFile(brandFile);
-  if (!current.ok) {
-    return fail(current.error.map((i) => `${i.file} ${i.path}: ${i.message}`));
+  const fetched: { name: string; text: string }[] = [];
+  for (const url of options.fileUrls({ repo, commit, path })) {
+    const response = await fetch(url);
+    if (!response.ok) {
+      return fail([`Could not fetch ${url}: HTTP ${String(response.status)}`]);
+    }
+    fetched.push({ name: url, text: await response.text() });
   }
+  const rows = options.transcribe(fetched);
+  if (!rows.ok) return fail(rows.error);
 
-  const url = options.fileUrl({ repo, commit, path });
-  const response = await fetch(url);
-  if (!response.ok) {
-    return fail([`Could not fetch ${url}: HTTP ${String(response.status)}`]);
+  const result = reconcile({
+    current: curated.value,
+    sourceId: options.sourceId,
+    rows: rows.value,
+    rules: options.rules,
+  });
+  if (!result.ok) return fail(result.error);
+  const { proposals, differences, pending } = result.value;
+
+  // Never write a file that does not pass its own checks.
+  const sourceFile: SourceFile = { ...source, paints: rows.value };
+  const writes: { name: string; content: unknown }[] = [
+    { name: source.name, content: sourceContent(sourceFile) },
+  ];
+  for (const brand of result.value.brands) {
+    writes.push({
+      name: brand.name,
+      content: {
+        brand: brand.brand,
+        ranges: brand.ranges,
+        paints: brand.paints,
+      },
+    });
   }
-
-  const imported = options.read(await response.text(), options.sourceId);
-  if (!imported.ok) return fail(imported.error);
-  const merged = mergePaints(current.value.paints, imported.value);
-  if (!merged.ok) return fail(merged.error);
-
-  const content = {
-    brand: current.value.brand,
-    ranges: current.value.ranges,
-    paints: merged.value.paints,
-  };
-  // Never write a file the builder would reject.
-  const check = readBrandFile({ name: brandFile.name, content });
-  if (!check.ok) {
-    return fail(check.error.map((i) => `${i.file} ${i.path}: ${i.message}`));
+  const invalid = [
+    readSourceFile(writes[0] ?? { name: source.name, content: null }),
+    ...writes.slice(1).map(readBrandFile),
+  ].flatMap((check) => (check.ok ? [] : check.error));
+  if (invalid.length > 0) {
+    printIssues(invalid);
+    return 1;
   }
-  await writeFile(brandPath, `${JSON.stringify(content, null, 2)}\n`, "utf8");
+  for (const write of writes) await writeDataFile(write.name, write.content);
 
   console.log(
-    `${fromRepo(brandPath)}: ${String(merged.value.paints.length)} paints`,
+    `${dataPath(source.name)}: ${String(rows.value.length)} rows, ${String(proposals.length)} new paint(s)`,
   );
-  if (merged.value.missing.length > 0) {
-    console.log("\nNo longer in the source (kept, decide by hand):");
-    for (const paint of merged.value.missing) console.log(`  ${paint.id}`);
+  for (const paint of proposals) console.log(`  + ${paint.id}`);
+  if (differences.length > 0) {
+    console.log(
+      "\nChanged in the source, kept in the curated paints (decide by hand):",
+    );
+    for (const d of differences) {
+      console.log(
+        `  ${d.paintId} ${d.field}: source ${String(d.source)}, curated ${String(d.curated)}`,
+      );
+    }
+  }
+  if (pending.length > 0) {
+    console.log("\nThe builder will reject these until they are decided:");
+    printIssues(pending);
   }
   console.log("\nNext: pnpm format, then build-catalog, and review the diff.");
   return 0;
+}
+
+/** The content of a source file, in the order of its schema. */
+function sourceContent(file: SourceFile): SourceFileContent {
+  return {
+    source: file.source,
+    paints: file.paints,
+    ignoredGroups: file.ignoredGroups,
+    ignoredKeys: file.ignoredKeys,
+  };
 }

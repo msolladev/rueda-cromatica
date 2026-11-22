@@ -1,6 +1,6 @@
 # ADR-0019: Alcance mínimo del MVP
 
-- **Estado:** aceptada
+- **Estado:** aceptada; corregida en parte por [ADR-0030](0030-datos-curados-dos-capas.md)
 - **Fecha:** 2026-11-12
 - **Sustituye a:** [ADR-0016](0016-datos-curados-json.md)
 - **Aplaza en parte:** [ADR-0001](0001-identificadores-slug-congelado.md), [ADR-0014](0014-origen-seleccion-color.md) y [ADR-0015](0015-fuentes-trazabilidad-licencias.md)
