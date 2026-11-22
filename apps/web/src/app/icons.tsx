@@ -36,8 +36,10 @@
  */
 
 // The web's icons (docs/07 §11), copied like those of color-wheel instead of
-// depending on a library for a few icons. Decorative: the controls that use
-// them have their own accessible name.
+// depending on a library for a few icons, and "wheel", the web's own: the
+// circle and the triangle of its icon, drawn on the grid and with the line of
+// Lucide (docs/07 §16). Decorative: the controls that use them have their own
+// accessible name.
 
 import type { CSSProperties, ReactNode } from "react";
 
@@ -163,6 +165,14 @@ export const RefreshIcon = () => (
     <path d="M21 3v5h-5" />
     <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16" />
     <path d="M8 16H3v5" />
+  </Icon>
+);
+
+/** The wheel of the web's icon: «make it the base of the wheel». */
+export const WheelIcon = () => (
+  <Icon>
+    <circle cx="12" cy="12" r="10" />
+    <path d="M12 6.5 16.8 14.8H7.2Z" />
   </Icon>
 );
 

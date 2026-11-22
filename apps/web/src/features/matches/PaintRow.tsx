@@ -1,18 +1,44 @@
-import type { CSSProperties } from "react";
-import { format, formatDeltaE, SEPARATOR } from "../../i18n/i18n.ts";
+import type { CSSProperties, ReactNode } from "react";
+import { WheelIcon } from "../../app/icons.tsx";
+import {
+  format,
+  formatDeltaE,
+  formatParts,
+  SEPARATOR,
+} from "../../i18n/i18n.ts";
 import type { Messages } from "../../i18n/messages.ts";
-import type { PaintView } from "./search.ts";
+import {
+  paintLabel,
+  type EquivalenceLink,
+  type PaintView,
+  type SourceView,
+} from "./search.ts";
+
+/** Makes a paint the base of the wheel, as the paint search does. */
+export type UsePaint = (paint: {
+  readonly id: string;
+  readonly hex: string;
+}) => void;
 
 interface PaintRowProps {
   readonly paint: PaintView;
   /** The color of the wheel, for the top half of the swatch. */
   readonly target: string;
-  /** In «Closest overall», each paint says its brand. */
+  /** In «Closest overall» and in the official block, each paint says its brand. */
   readonly showBrand: boolean;
   /** Whether approximate paints carry the chip (docs/07 §3). */
   readonly markApproximate: boolean;
   readonly messages: Messages;
   readonly locale: string;
+  /** Where the documents of the official equivalences are listed. */
+  readonly creditsPath: string;
+  /** Makes an official equivalent the base; without it, no button. */
+  readonly onUse?: UsePaint | undefined;
+  /**
+   * In the official block (docs/07 §16): who states the equivalence, under
+   * the range, and the button to make the paint the base.
+   */
+  readonly sources?: readonly SourceView[] | undefined;
   /** Its place in an entrance animation, if it enters (docs/07 §1). */
   readonly enter?: number | undefined;
   /** Whether it is leaving, before «See less» removes it. */
@@ -36,10 +62,12 @@ export function PaintRow({
   markApproximate,
   messages: m,
   locale,
+  creditsPath,
+  onUse,
+  sources,
   enter,
   leaving = false,
 }: PaintRowProps) {
-  const deltaE = formatDeltaE(paint.deltaE, locale);
   return (
     <li
       className={
@@ -49,6 +77,7 @@ export function PaintRow({
             ? "paint"
             : "paint paint-enter"
       }
+      data-sources={sources === undefined ? undefined : ""}
       style={
         enter === undefined
           ? undefined
@@ -57,14 +86,34 @@ export function PaintRow({
     >
       <span className="split" aria-hidden="true">
         <span style={{ background: target }} />
-        <span style={{ background: paint.hex }} />
+        {paint.hex === null ? (
+          <span className="split-any" />
+        ) : (
+          <span style={{ background: paint.hex }} />
+        )}
       </span>
-      <span className="paint-name">{paint.name}</span>
+      <span className="paint-name">
+        <span>{paint.name}</span>
+        {sources !== undefined && (
+          <UseAsBase
+            id={paint.id}
+            name={paint.name}
+            hex={paint.hex}
+            onUse={onUse}
+            messages={m}
+          />
+        )}
+      </span>
       <span className="paint-range">
         {showBrand
           ? [paint.brandName, paint.rangeName].join(SEPARATOR)
           : paint.rangeName}
       </span>
+      {sources !== undefined && (
+        <span className="paint-sources">
+          <Sources sources={sources} creditsPath={creditsPath} messages={m} />
+        </span>
+      )}
       <span className="chips">
         <span className="chip">{m.paintTypes[paint.type]}</span>
         {paint.metallic && <span className="chip">{m.results.metallic}</span>}
@@ -79,14 +128,18 @@ export function PaintRow({
         )}
       </span>
       {/* docs/07 §2: the label and, beside it, how far it is. */}
-      <span
-        className="paint-quality"
-        data-quality={paint.quality}
-        style={{ "--closeness": closeness(paint.deltaE) } as CSSProperties}
-      >
-        {m.quality[paint.quality]}
-        <span className="paint-delta">ΔE {deltaE}</span>
-      </span>
+      {paint.quality !== null && paint.deltaE !== null && (
+        <span
+          className="paint-quality"
+          data-quality={paint.quality}
+          style={{ "--closeness": closeness(paint.deltaE) } as CSSProperties}
+        >
+          {m.quality[paint.quality]}
+          <span className="paint-delta">
+            ΔE {formatDeltaE(paint.deltaE, locale)}
+          </span>
+        </span>
+      )}
       <details className="paint-details">
         <summary>{m.results.details}</summary>
         <dl>
@@ -94,11 +147,13 @@ export function PaintRow({
           <dd>{paint.code ?? m.results.noCode}</dd>
           <dt>{m.results.hex}</dt>
           <dd>
-            {format(m.results.hexFrom, {
-              hex: paint.hex,
-              source: paint.sourceName,
-              origin: m.origins[paint.origin],
-            })}
+            {paint.hex === null
+              ? m.results.noColor
+              : format(m.results.hexFrom, {
+                  hex: paint.hex,
+                  source: paint.sourceName ?? "",
+                  origin: paint.origin === null ? "" : m.origins[paint.origin],
+                })}
           </dd>
           <dt>{m.results.color}</dt>
           <dd>
@@ -108,8 +163,130 @@ export function PaintRow({
                   .map((reason) => m.approximate.reasons[reason])
                   .join(". ")}
           </dd>
+          <dt className="official-details">{m.official.heading}</dt>
+          <dd className="official-details">
+            <OfficialLinks
+              paint={paint}
+              creditsPath={creditsPath}
+              onUse={onUse}
+              messages={m}
+            />
+          </dd>
         </dl>
       </details>
     </li>
+  );
+}
+
+/**
+ * The button that makes a paint the base (docs/07 §16): the wheel's icon,
+ * its name in a tooltip, and the whole action in its accessible name. Not
+ * for a paint without colour, which cannot be the base.
+ */
+function UseAsBase({
+  id,
+  name,
+  hex,
+  onUse,
+  messages: m,
+}: {
+  readonly id: string;
+  readonly name: string;
+  readonly hex: string | null;
+  readonly onUse: UsePaint | undefined;
+  readonly messages: Messages;
+}): ReactNode {
+  if (hex === null || onUse === undefined) return null;
+  return (
+    <button
+      type="button"
+      className="use-as-base has-tooltip"
+      aria-label={format(m.official.use, { name })}
+      data-tooltip={m.official.useShort}
+      onClick={() => {
+        onUse({ id, hex });
+      }}
+    >
+      <WheelIcon />
+    </button>
+  );
+}
+
+/** «According to {publisher}, in {title}», one per document. */
+export function Sources({
+  sources,
+  creditsPath,
+  messages: m,
+}: {
+  readonly sources: readonly SourceView[];
+  readonly creditsPath: string;
+  readonly messages: Messages;
+}): ReactNode {
+  return sources.map((source, at) => (
+    <span key={`${source.publisher}/${source.title}`}>
+      {at > 0 && " "}
+      {formatParts(m.official.by, {
+        publisher: source.publisher,
+        title: (
+          <a key="title" href={creditsPath}>
+            {source.title}
+          </a>
+        ),
+      })}
+    </span>
+  ));
+}
+
+/** The official equivalences of a paint, in its «Details» (docs/07 §2). */
+function OfficialLinks({
+  paint,
+  creditsPath,
+  onUse,
+  messages: m,
+}: {
+  readonly paint: PaintView;
+  readonly creditsPath: string;
+  readonly onUse: UsePaint | undefined;
+  readonly messages: Messages;
+}): ReactNode {
+  if (paint.official.length === 0) return m.official.noneInDetails;
+  const group = (direction: EquivalenceLink["direction"], title: string) => {
+    const links = paint.official.filter((l) => l.direction === direction);
+    if (links.length === 0) return null;
+    return (
+      <div className="official-links">
+        <p>{title}</p>
+        <ul>
+          {links.map((link) => (
+            <li key={link.id}>
+              <span className="official-link-name">
+                {link.name}
+                <UseAsBase
+                  id={link.id}
+                  name={link.name}
+                  hex={link.hex}
+                  onUse={onUse}
+                  messages={m}
+                />
+              </span>
+              <span className="official-link-meta">{paintLabel(link)}</span>
+              <span className="official-link-meta">
+                <Sources
+                  sources={link.sources}
+                  creditsPath={creditsPath}
+                  messages={m}
+                />
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  };
+  return (
+    <>
+      {group("outgoing", format(m.official.outgoing, { name: paint.name }))}
+      {group("incoming", format(m.official.incoming, { name: paint.name }))}
+    </>
   );
 }

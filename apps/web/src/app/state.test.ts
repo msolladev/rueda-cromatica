@@ -157,6 +157,23 @@ describe("reduce", () => {
       expect(state.previousPaint).toBe(lothern);
     });
 
+    it("remembers the one it leaves for an official equivalent (docs/07 §16)", () => {
+      const moot = { id: "citadel/layer/moot-green", hex: "#3daf44" };
+      const jumped = run(
+        { type: "choose-paint", paint: lothern },
+        { type: "choose-paint", paint: moot, remember: true },
+      );
+      expect(jumped.preferences.paint).toBe(moot);
+      expect(jumped.previousPaint).toBe(lothern);
+      const back = run(
+        { type: "choose-paint", paint: lothern },
+        { type: "choose-paint", paint: moot, remember: true },
+        { type: "choose-paint", paint: lothern },
+      );
+      expect(back.preferences.paint).toBe(lothern);
+      expect(back.previousPaint).toBeNull();
+    });
+
     it("is forgotten, with «Back to…», when the search is emptied", () => {
       const state = run(
         { type: "choose-paint", paint: lothern },

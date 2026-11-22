@@ -131,4 +131,64 @@ describe("searchColor", () => {
     expect(results.overall[0]?.name).toBe("Hammered Copper");
     expect(vallejo?.paints.slice(1).some((paint) => paint.chosen)).toBe(false);
   });
+
+  it("gives no official equivalences without a chosen paint", () => {
+    const results = searchColor(
+      catalog,
+      index,
+      base,
+      DEFAULT_PREFERENCES.filters,
+      three,
+    );
+    expect(results.official).toBeNull();
+  });
+
+  it("gives the official equivalences of the chosen paint (docs/07 §16)", () => {
+    const results = searchColor(
+      catalog,
+      index,
+      { role: "base", hex: "#5d9a32" },
+      DEFAULT_PREFERENCES.filters,
+      three,
+      paintIdSchema.parse("citadel/layer/moot-green"),
+    );
+    const official = results.official;
+    expect(official).toMatchObject({
+      name: "Moot Green",
+      brandName: "Warhammer Colour",
+      label: "Warhammer Colour · Layer",
+      outgoing: [],
+    });
+    expect(
+      official?.incoming.map(({ paint, sources }) => [
+        paint.name,
+        paint.brandName,
+        paint.quality,
+        sources.map((s) => s.publisher),
+      ]),
+    ).toEqual([
+      ["Light Green", "AK Interactive", "similar", ["AK Interactive"]],
+      ["Leafy Green", "The Army Painter", "very-similar", ["The Army Painter"]],
+      ["Scorpy Green", "Vallejo", "nearest-available", ["Acrylicos Vallejo"]],
+    ]);
+  });
+
+  it("lists each row's official equivalences, for its «Details»", () => {
+    const results = searchColor(
+      catalog,
+      index,
+      { role: "base", hex: "#5d9a32" },
+      DEFAULT_PREFERENCES.filters,
+      three,
+    );
+    const moot = results.byBrand[1]?.paints[0];
+    expect(moot?.name).toBe("Moot Green");
+    expect(
+      moot?.official.map((link) => [link.direction, link.name, link.code]),
+    ).toEqual([
+      ["incoming", "Light Green", "AK11141"],
+      ["incoming", "Leafy Green", "WP3056P"],
+      ["incoming", "Scorpy Green", "72.032"],
+    ]);
+  });
 });

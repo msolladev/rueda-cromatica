@@ -1,13 +1,13 @@
 {
   "meta": {
     "schemaVersion": 1,
-    "dataVersion": "sha256:9309caf175b6746f20b356ba715847b52b45557b20cbfccb350ee78ea82ef083"
+    "dataVersion": "sha256:9c5d17dab2aadea2cb45bed99485c611f90ed80db813f2d619ccd0de50953b8f"
   },
   "sources": [
     {
       "id": "ak-interactive-3gen-equivalence-table",
       "kind": "manufacturer",
-      "title": "Equivalence table: AK 3G - Vallejo MC - Vallejo GC - New Citadel - Old Citadel",
+      "title": "AK 3G Equivalence Table",
       "publisher": "AK Interactive",
       "url": "https://ak-masters.com/app/pdf/EQUIVALENCIAS2023.pdf",
       "archiveUrl": "https://web.archive.org/web/20250920111312/https://ak-masters.com/app/pdf/EQUIVALENCIAS2023.pdf",

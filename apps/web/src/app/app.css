@@ -753,7 +753,15 @@ legend {
   }
 }
 
-.theme-options label::after {
+/* The tooltip of the controls named only by an icon: the theme (docs/07
+   §11) and «Use as base» (docs/07 §16). Under the control, on hover with a
+   short delay or at once with the keyboard focus; the name is also in the
+   control's accessible name. */
+.has-tooltip {
+  position: relative;
+}
+
+.has-tooltip::after {
   content: attr(data-tooltip);
   position: absolute;
   top: calc(100% + 0.6rem);
@@ -775,14 +783,14 @@ legend {
 }
 
 @media (hover: hover) {
-  .theme-options label:hover::after {
+  .has-tooltip:hover::after {
     opacity: 1;
     translate: -50% 0;
     transition-delay: 0.3s;
   }
 }
 
-.theme-options label:has(input:focus-visible)::after {
+.has-tooltip:is(:focus-visible, :has(:focus-visible))::after {
   opacity: 1;
   translate: -50% 0;
 }
@@ -2120,9 +2128,64 @@ brands per row. */
 
 .paint-name {
   grid-area: name;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
   min-width: 0;
   font-weight: 600;
   overflow-wrap: anywhere;
+}
+
+/* docs/07 §16: an official equivalent, with who states it under its range. */
+.paint[data-sources] {
+  grid-template-areas:
+    "split name name"
+    "split range range"
+    "split sources sources"
+    "split chips quality"
+    ". details details";
+}
+
+.paint-sources {
+  grid-area: sources;
+  min-width: 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+/* The button that makes a paint the base: the wheel's icon, in the accent,
+   beside the name. Its target is larger than it looks (WCAG 2.5.8). */
+.use-as-base {
+  flex: none;
+  display: inline-grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  margin-block: -0.4rem;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-small);
+  background: transparent;
+  color: var(--accent);
+  cursor: pointer;
+  transition:
+    background-color 0.15s,
+    scale 0.1s;
+}
+
+.use-as-base .icon {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+.use-as-base:active {
+  scale: 0.92;
+}
+
+@media (hover: hover) {
+  .use-as-base:hover {
+    background: var(--chip);
+  }
 }
 
 .paint-range {
@@ -2290,6 +2353,58 @@ brands per row. */
 
 .empty {
   margin: 0.5rem 0;
+  color: var(--muted);
+}
+
+/* docs/07 §16: the official equivalences of the chosen paint, above the
+   closest paints of the base and apart from them. */
+.official {
+  padding-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.official-heading {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+.official-intro {
+  margin: 0.25rem 0 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* In «Details», the official equivalences take the whole width under their
+   title, so that they read well on a phone; each one, its name with the
+   button, then its brand and who states it. */
+.paint-details .official-details {
+  grid-column: 1 / -1;
+}
+.official-links p {
+  margin: 0;
+}
+
+.official-links ul {
+  margin: 0.15rem 0 0.4rem;
+  padding: 0;
+  list-style: none;
+}
+
+.official-links li {
+  display: grid;
+  padding-block: 0.15rem;
+}
+
+.official-link-name {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-weight: 600;
+}
+
+.official-link-meta {
+  font-size: 0.8rem;
   color: var(--muted);
 }
 
@@ -2630,7 +2745,7 @@ brands per row. */
 
 /* ---------- Footer and the page for `/` ---------- */
 
-/* docs/07 §16: on top, a strip with the twelve hues of the wheel, which the
+/* docs/07 §17: on top, a strip with the twelve hues of the wheel, which the
    footer computes from the wheel (`--hue-strip`). */
 .footer {
   background: var(--surface);

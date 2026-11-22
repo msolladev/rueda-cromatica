@@ -148,7 +148,7 @@ export function Navbar({
                 return (
                   <label
                     key={option}
-                    className="segment"
+                    className="segment has-tooltip"
                     data-tooltip={m.nav.themes[option]}
                   >
                     <input

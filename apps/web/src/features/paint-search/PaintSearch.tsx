@@ -266,22 +266,22 @@ export function PaintSearch({
             })}
         </ul>
       </div>
-      {chosenShown !== null ? (
+      {chosenShown !== null && (
         <p className="paint-search-chosen" id="paint-search-meta">
           <PaintDetails choice={chosenShown} />
         </p>
-      ) : (
-        previous !== null &&
-        !open && (
-          <p className="paint-search-back">
-            <button type="button" className="link-button" onClick={onBack}>
-              <RotateCcwIcon />
-              <span className="link-text">
-                {format(m.search.back, { name: previous.name })}
-              </span>
-            </button>
-          </p>
-        )
+      )}
+      {/* After moving the wheel, or after jumping to an official equivalent,
+          the paint it came from (docs/07 §15-16). */}
+      {previous !== null && !open && (
+        <p className="paint-search-back">
+          <button type="button" className="link-button" onClick={onBack}>
+            <RotateCcwIcon />
+            <span className="link-text">
+              {format(m.search.back, { name: previous.name })}
+            </span>
+          </button>
+        </p>
       )}
       {chosenShown !== null &&
         rybDeltaE !== null &&

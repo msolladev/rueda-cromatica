@@ -37,7 +37,7 @@ interface FooterProps {
 }
 
 /**
- * The footer (docs/07 §16): the name of the web with what it does, the
+ * The footer (docs/07 §17): the name of the web with what it does, the
  * links of the project and of the app, the notice that it is not official
  * and the version: the commit it is built from.
  */

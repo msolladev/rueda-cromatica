@@ -70,9 +70,27 @@ export const eu: Messages = {
     hexFrom: "{hex}, iturria: {source} ({origin})",
     color: "Kolorea",
     exactColor: "Zehatza",
+    noColor: "Kolorerik gabe",
     metallic: "Metalikoa",
     discontinued: "Katalogotik kanpo",
     chosen: "Aukeratua",
+  },
+  official: {
+    heading: "Baliokidetasun ofizialak",
+    intro:
+      "Fabrikatzaileek beren kartetan diotena, ez kalkulatutako kolorea. Bakoitzak norabide bakarrean balio du.",
+    outgoing: "{name} pinturarako proposatzen da",
+    incoming: "{name} hauetarako proposatzen da",
+    noneOutgoing:
+      "Ez dago {name} pinturarako beste pinturarik proposatzen duen dokumenturik.",
+    noneIncoming:
+      "Ez dago {name} beste pintura baterako proposatzen duen dokumenturik.",
+    none: "Ez dago {name} pinturaren ({label}) baliokiderik argitaratzen duen fabrikatzailerik.",
+    noneInDetails:
+      "Ez dago beste pintura batekin lotzen duen fabrikatzailerik.",
+    by: "{publisher}(r)en arabera, hemen: {title}.",
+    use: "Erabili {name} gurpilaren oinarri gisa",
+    useShort: "Erabili oinarri gisa",
   },
   filters: {
     title: "Iragazkiak",

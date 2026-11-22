@@ -1,6 +1,6 @@
 # @chromatic-wheel/web
 
-La PWA: una web instalable que funciona sin conexión, hecha con React, Vite y vite-plugin-pwa. Integra la rueda de `@chromatic-wheel/color-wheel` y, para cada color, busca con `@chromatic-wheel/domain` las pinturas más parecidas de cada marca en `public/catalog.json`, que genera `catalog-builder`. Un buscador de pinturas, sobre la rueda, lleva a la rueda el color de una pintura que se tiene. Solo presenta: la lógica vive en esos dos paquetes.
+La PWA: una web instalable que funciona sin conexión, hecha con React, Vite y vite-plugin-pwa. Integra la rueda de `@chromatic-wheel/color-wheel` y, para cada color, busca con `@chromatic-wheel/domain` las pinturas más parecidas de cada marca en `public/catalog.json`, que genera `catalog-builder`. Un buscador de pinturas, sobre la rueda, lleva a la rueda el color de una pintura que se tiene, y muestra sus equivalencias oficiales en otras marcas. Solo presenta: la lógica vive en esos dos paquetes.
 
 Está en 13 idiomas (`/es/`, `/en/`…), y cada página se prerenderiza en el build, así que su contenido y sus metadatos llegan sin JavaScript.
 
