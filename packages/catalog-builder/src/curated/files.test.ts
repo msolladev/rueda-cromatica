@@ -44,6 +44,14 @@ describe("readSourceFile (docs/04 §3)", () => {
     ]);
   });
 
+  it("rejects an equivalence of a row with itself (ADR-0033)", () => {
+    const file = acmeSource();
+    file.content.equivalences = [{ from: "AC-01", to: "AC-01", note: null }];
+    expect(paths(readSourceFile(file))).toEqual([
+      "sources/acme-chart.json equivalences[0]",
+    ]);
+  });
+
   it("rejects a row with a hex and a gradient", () => {
     const file = acmeSource();
     file.content.paints = [

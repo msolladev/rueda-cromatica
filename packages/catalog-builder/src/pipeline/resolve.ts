@@ -2,10 +2,11 @@
  * Key resolution (docs/04 §6, step 2): crosses every row of every source with
  * the curated paints through their keys. Each row ends up with exactly one
  * paint, or ignored by its group or its key; anything else is an issue. Also
- * checks the reasons cited by ignores and rejected colours.
+ * checks the reasons cited by ignores and rejected colours, and that every
+ * equivalence of a chart joins two rows of its source (ADR-0033).
  * Shared by the builder and the importers' reconciliation. Pure.
  */
-import type { SourceId } from "@chromatic-wheel/domain";
+import type { PaintId, SourceId } from "@chromatic-wheel/domain";
 import type {
   BrandFile,
   DataIssue,
@@ -34,6 +35,8 @@ export interface ResolvedRow {
 export interface Resolution {
   /** The rows of each paint, by paint ID, in the order of its keys. */
   readonly rows: ReadonlyMap<string, readonly ResolvedRow[]>;
+  /** The paint of each key, by `keyOf(sourceId, key)`. */
+  readonly owners: ReadonlyMap<string, PaintId>;
   /** Rows with no paint and not ignored. Each one is also in `issues`. */
   readonly uncovered: readonly ResolvedRow[];
   readonly issues: readonly DataIssue[];
@@ -46,6 +49,10 @@ interface IndexedSource {
   readonly ignoredGroups: ReadonlySet<string>;
   readonly ignoredKeys: ReadonlySet<string>;
 }
+
+/** How {@link Resolution.owners} identifies a key of a source. */
+export const keyOf = (sourceId: string, key: string): string =>
+  `${sourceId}\n${key}`;
 
 export function resolveKeys(input: ResolveInput): Resolution {
   const issues: DataIssue[] = [];
@@ -69,7 +76,7 @@ export function resolveKeys(input: ResolveInput): Resolution {
   }
 
   // 2. Index the keys of the curated paints.
-  const owner = new Map<string, string>(); // `${sourceId}\n${key}` → paint ID
+  const owner = new Map<string, PaintId>(); // keyOf(sourceId, key) → paint ID
   const rows = new Map<string, ResolvedRow[]>();
   for (const brand of input.brands) {
     brand.paints.forEach((paint, i) => {
@@ -92,7 +99,7 @@ export function resolveKeys(input: ResolveInput): Resolution {
           });
           return;
         }
-        const id = `${sourceId}\n${key}`;
+        const id = keyOf(sourceId, key);
         const other = owner.get(id);
         if (other !== undefined) {
           issues.push({
@@ -125,7 +132,7 @@ export function resolveKeys(input: ResolveInput): Resolution {
   for (const source of sources.values()) {
     const sourceId = source.file.source.id;
     source.file.paints.forEach((row, i) => {
-      const paint = owner.get(`${sourceId}\n${row.key}`);
+      const paint = owner.get(keyOf(sourceId, row.key));
       const ignored =
         source.ignoredGroups.has(row.group) || source.ignoredKeys.has(row.key);
       const at = { file: source.file.name, path: `paints[${String(i)}]` };
@@ -155,7 +162,7 @@ export function resolveKeys(input: ResolveInput): Resolution {
     }
   });
 
-  return { rows, uncovered, issues };
+  return { rows, owners: owner, uncovered, issues };
 }
 
 function indexSource(
@@ -176,6 +183,22 @@ function indexSource(
     } else {
       rows.set(row.key, i);
     }
+  });
+
+  const pairs = new Set<string>();
+  file.equivalences.forEach(({ from, to }, i) => {
+    const path = `equivalences[${String(i)}]`;
+    for (const [side, key] of [
+      ["from", from],
+      ["to", to],
+    ] as const) {
+      if (!rows.has(key)) report(`${path}.${side}`, `No row has key "${key}"`);
+    }
+    const pair = `${from}\n${to}`;
+    if (pairs.has(pair)) {
+      report(path, `The equivalence "${from}" → "${to}" is repeated`);
+    }
+    pairs.add(pair);
   });
 
   const ignoredGroups = new Set<string>();

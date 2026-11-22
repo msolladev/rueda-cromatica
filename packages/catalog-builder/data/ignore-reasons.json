@@ -4,12 +4,24 @@
     "text": "Pintura de aerógrafo, fuera del alcance del MVP."
   },
   {
+    "id": "ambiguous",
+    "text": "La fuente no deja claro de qué pintura se trata: el nombre corresponde a más de una, o la casilla no se entiende."
+  },
+  {
     "id": "auxiliary",
     "text": "Producto auxiliar (medium, barniz, diluyente, retardante o imprimación), fuera del catálogo."
   },
   {
+    "id": "discontinued-line-pending",
+    "text": "Línea descatalogada que el catálogo todavía no tiene. Llega en el paso 5 de la fase 5."
+  },
+  {
     "id": "inconsistent-measurement",
     "text": "Medición poco fiable: las lecturas de la muestra no coinciden entre sí."
+  },
+  {
+    "id": "not-in-catalog",
+    "text": "Pintura que el catálogo no tiene: ninguna de sus fuentes de color la recoge."
   },
   {
     "id": "not-in-current-chart",

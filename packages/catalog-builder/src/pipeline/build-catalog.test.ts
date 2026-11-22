@@ -278,6 +278,7 @@ describe("buildCatalog", () => {
             deltaE2000: expect.any(Number) as number,
           },
         ],
+        equivalences: [],
       });
       expect(disabledSourcesJson).toBe(
         `${JSON.stringify(disabledSources, null, 2)}\n`,
@@ -288,10 +289,12 @@ describe("buildCatalog", () => {
       expect(built(withForum("hooli-forum")).disabledSources).toEqual({
         disabledSources: ["hooli-forum"],
         colors: [],
+        equivalences: [],
       });
       expect(built(data()).disabledSources).toEqual({
         disabledSources: [],
         colors: [],
+        equivalences: [],
       });
     });
 
@@ -315,6 +318,88 @@ describe("buildCatalog", () => {
           file: "brands/acme.json",
           path: "paints[0].rejectedColors[0]",
           message: "hooli-forum is disabled; remove the stale rejection",
+        },
+      ]);
+    });
+  });
+
+  describe("official equivalences (ADR-0033)", () => {
+    /** Acme says that its Red is Globex Green, and that its Air Red is too. */
+    const withEquivalences = () => {
+      const input = data();
+      const acme = input.sources[0]?.content;
+      if (acme === undefined) throw new Error("Fixture without sources");
+      acme.equivalences = [
+        { from: "AC-02", to: "GX-01", note: null },
+        { from: "AC-90", to: "GX-01", note: null },
+        { from: "AC-01", to: "GX-01", note: null },
+      ];
+      return input;
+    };
+
+    it("publishes each one whose two rows are keys, sorted", () => {
+      const { document } = built(withEquivalences());
+      expect(document.equivalences).toEqual([
+        {
+          from: "acme/core/blue",
+          to: "globex/standard/green",
+          sourceId: "acme-chart",
+        },
+        {
+          from: "acme/core/red",
+          to: "globex/standard/green",
+          sourceId: "acme-chart",
+        },
+      ]);
+    });
+
+    it("leaves out those of a disabled source, and lists them", () => {
+      const input = withEquivalences();
+      const acme = input.sources[0]?.content;
+      if (acme === undefined) throw new Error("Fixture without sources");
+      // A second, disabled chart that repeats one equivalence of Acme.
+      input.sources.push({
+        name: "sources/hooli-chart.json",
+        content: {
+          ...acme,
+          source: { ...acme.source, id: "hooli-chart", title: "Hooli chart" },
+          disabled: { note: "Under review." },
+          paints: [
+            row({ key: "R", group: "Acme", name: "Red", hex: null }),
+            row({ key: "G", group: "Globex", name: "Green", hex: null }),
+          ],
+          equivalences: [{ from: "G", to: "R", note: null }],
+          ignoredGroups: [],
+          ignoredKeys: [],
+        },
+      });
+      const [acmeBrand, globexBrand] = input.brands;
+      if (acmeBrand === undefined || globexBrand === undefined) {
+        throw new Error("Fixture without brands");
+      }
+      patchPaint(acmeBrand, 0, {
+        keys: [
+          { sourceId: "acme-chart", key: "AC-01" },
+          { sourceId: "hooli-chart", key: "R" },
+        ],
+      });
+      patchPaint(globexBrand, 0, {
+        keys: [
+          { sourceId: "acme-chart", key: "GX-01" },
+          { sourceId: "hooli-chart", key: "G" },
+        ],
+      });
+      const { document, disabledSources } = built(input);
+      expect(document.sources.map((s) => s.id)).toEqual(["acme-chart"]);
+      expect(document.equivalences.map((e) => e.sourceId)).toEqual([
+        "acme-chart",
+        "acme-chart",
+      ]);
+      expect(disabledSources.equivalences).toEqual([
+        {
+          from: "globex/standard/green",
+          to: "acme/core/red",
+          sourceId: "hooli-chart",
         },
       ]);
     });

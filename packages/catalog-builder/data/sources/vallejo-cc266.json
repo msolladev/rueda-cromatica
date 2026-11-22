@@ -1,0 +1,3845 @@
+{
+  "source": {
+    "id": "vallejo-cc266",
+    "kind": "manufacturer",
+    "title": "Game Color chart (CC266)",
+    "publisher": "Acrylicos Vallejo",
+    "url": "https://acrylicosvallejo.com/wp-content/uploads/2025/09/CC266-Game_Color.pdf",
+    "archiveUrl": "https://web.archive.org/web/20260918190415/https://acrylicosvallejo.com/wp-content/uploads/2025/09/CC266-Game_Color.pdf",
+    "retrievedAt": "2026-11-22",
+    "license": "unknown",
+    "attribution": null
+  },
+  "disabled": null,
+  "files": [
+    {
+      "url": "https://acrylicosvallejo.com/wp-content/uploads/2025/09/CC266-Game_Color.pdf",
+      "name": "CC266-Game_Color.pdf",
+      "sha256": "f5a042f92e5f4a9bd944627653a2c5556636fc8767805af820abe874e8dcd18f"
+    }
+  ],
+  "paints": [
+    {
+      "key": "72.001",
+      "group": "Game Color",
+      "name": "Dead White",
+      "code": "72.001",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "76.001",
+      "group": "Game Air",
+      "name": "Dead White",
+      "code": "76.001",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/White Scar",
+      "group": "Citadel",
+      "name": "White Scar",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.034",
+      "group": "Game Color",
+      "name": "Bone White",
+      "code": "72.034",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "76.034",
+      "group": "Game Air",
+      "name": "Bone White",
+      "code": "76.034",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "28.013",
+      "group": "Hobby Paint",
+      "name": "Bone White",
+      "code": "28.013",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Screaming Skull",
+      "group": "Citadel",
+      "name": "Screaming Skull",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.003",
+      "group": "Game Color",
+      "name": "Pale Flesh",
+      "code": "72.003",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "76.003",
+      "group": "Game Air",
+      "name": "Pale Flesh",
+      "code": "76.003",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "28.024",
+      "group": "Hobby Paint",
+      "name": "Pale Flesh",
+      "code": "28.024",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.100",
+      "group": "Game Color",
+      "name": "Rosy Flesh",
+      "code": "72.100",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "76.100",
+      "group": "Game Air",
+      "name": "Rosy Flesh",
+      "code": "76.100",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.107",
+      "group": "Game Color",
+      "name": "Athena Skin",
+      "code": "72.107",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "76.107",
+      "group": "Game Air",
+      "name": "Athena Skin",
+      "code": "76.107",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Bugmans Glow",
+      "group": "Citadel",
+      "name": "Bugmans Glow",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.004",
+      "group": "Game Color",
+      "name": "Elf Skin Tone",
+      "code": "72.004",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "76.004",
+      "group": "Game Air",
+      "name": "Elf Skin Tone",
+      "code": "76.004",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Kislev Flesh",
+      "group": "Citadel",
+      "name": "Kislev Flesh",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.071",
+      "group": "Game Color",
+      "name": "Barbarian Skin",
+      "code": "72.071",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "76.071",
+      "group": "Game Air",
+      "name": "Barbarian Flesh",
+      "code": "76.071",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.109",
+      "group": "Game Color",
+      "name": "Toxic Yellow",
+      "code": "72.109",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "76.109",
+      "group": "Game Air",
+      "name": "Toxic Yellow",
+      "code": "76.109",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Dorn Yellow",
+      "group": "Citadel",
+      "name": "Dorn Yellow",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.005",
+      "group": "Game Color",
+      "name": "Moon Yellow",
+      "code": "72.005",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "76.005",
+      "group": "Game Air",
+      "name": "Moon Yellow",
+      "code": "76.005",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Flash Gitz Yellow",
+      "group": "Citadel",
+      "name": "Flash Gitz Yellow",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.006",
+      "group": "Game Color",
+      "name": "Sun Yellow",
+      "code": "72.006",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "76.006",
+      "group": "Game Air",
+      "name": "Sun Yellow",
+      "code": "76.006",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "28.018",
+      "group": "Hobby Paint",
+      "name": "Sun Yellow",
+      "code": "28.018",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Yriel Yellow",
+      "group": "Citadel",
+      "name": "Yriel Yellow",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.007",
+      "group": "Game Color",
+      "name": "Gold Yellow",
+      "code": "72.007",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "76.007",
+      "group": "Game Air",
+      "name": "Gold Yellow",
+      "code": "76.007",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.038",
+      "group": "Game Color",
+      "name": "Scrofulous Brown",
+      "code": "72.038",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Bestigor Flesh",
+      "group": "Citadel",
+      "name": "Bestigor Flesh",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.008",
+      "group": "Game Color",
+      "name": "Orange Fire",
+      "code": "72.008",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "76.008",
+      "group": "Game Air",
+      "name": "Orange Fire",
+      "code": "76.008",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Fire Dragon Bright",
+      "group": "Citadel",
+      "name": "Fire Dragon Bright",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.009",
+      "group": "Game Color",
+      "name": "Hot Orange",
+      "code": "72.009",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Troll Slayer Orange",
+      "group": "Citadel",
+      "name": "Troll Slayer Orange",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.010",
+      "group": "Game Color",
+      "name": "Bloody Red",
+      "code": "72.010",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "76.010",
+      "group": "Game Air",
+      "name": "Bloody Red",
+      "code": "76.010",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "28.023",
+      "group": "Hobby Paint",
+      "name": "Bloody Red",
+      "code": "28.023",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Evil Sunz Scarlet",
+      "group": "Citadel",
+      "name": "Evil Sunz Scarlet",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.012",
+      "group": "Game Color",
+      "name": "Scarlet Red",
+      "code": "72.012",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "76.012",
+      "group": "Game Air",
+      "name": "Scarlet Red",
+      "code": "76.012",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "28.016",
+      "group": "Hobby Paint",
+      "name": "Scarlet Red",
+      "code": "28.016",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Khorne Red",
+      "group": "Citadel",
+      "name": "Khorne Red",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.011",
+      "group": "Game Color",
+      "name": "Gory Red",
+      "code": "72.011",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "28.029",
+      "group": "Hobby Paint",
+      "name": "Gory Red",
+      "code": "28.029",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Wazdakka Red",
+      "group": "Citadel",
+      "name": "Wazdakka Red",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.111",
+      "group": "Game Color",
+      "name": "Nocturnal Red",
+      "code": "72.111",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "76.111",
+      "group": "Game Air",
+      "name": "Nocturnal Red",
+      "code": "76.111",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.013",
+      "group": "Game Color",
+      "name": "Squid Pink",
+      "code": "72.013",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "76.013",
+      "group": "Game Air",
+      "name": "Squid Pink",
+      "code": "76.013",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Fulgrim Pink",
+      "group": "Citadel",
+      "name": "Fulgrim Pink",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.014",
+      "group": "Game Color",
+      "name": "Warlord Purple",
+      "code": "72.014",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "76.014",
+      "group": "Game Air",
+      "name": "Warlord Purple",
+      "code": "76.014",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Screamer Pink",
+      "group": "Citadel",
+      "name": "Screamer Pink",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.114",
+      "group": "Game Color",
+      "name": "Lustful Purple",
+      "code": "72.114",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "76.114",
+      "group": "Game Air",
+      "name": "Lustful Purple",
+      "code": "76.114",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Dechala Lilac",
+      "group": "Citadel",
+      "name": "Dechala Lilac",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.076",
+      "group": "Game Color",
+      "name": "Alien Purple",
+      "code": "72.076",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "76.076",
+      "group": "Game Air",
+      "name": "Alien Purple",
+      "code": "76.076",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "28.025",
+      "group": "Hobby Paint",
+      "name": "Alien Purple",
+      "code": "28.025",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Daemonette Hide",
+      "group": "Citadel",
+      "name": "Daemonette Hide",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.015",
+      "group": "Game Color",
+      "name": "Hexed Lichen",
+      "code": "72.015",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Xereus Purple",
+      "group": "Citadel",
+      "name": "Xereus Purple",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.016",
+      "group": "Game Color",
+      "name": "Royal Purple",
+      "code": "72.016",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "76.016",
+      "group": "Game Air",
+      "name": "Royal Purple",
+      "code": "76.016",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.116",
+      "group": "Game Color",
+      "name": "Midnight Purple",
+      "code": "72.116",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "76.116",
+      "group": "Game Air",
+      "name": "Minight Purple",
+      "code": "76.116",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.117",
+      "group": "Game Color",
+      "name": "Elfic Blue",
+      "code": "72.117",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Calgar Blue",
+      "group": "Citadel",
+      "name": "Calgar Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.022",
+      "group": "Game Color",
+      "name": "Ultramarine Blue",
+      "code": "72.022",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "76.022",
+      "group": "Game Air",
+      "name": "Ultramarine Blue",
+      "code": "76.022",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "28.017",
+      "group": "Hobby Paint",
+      "name": "Ultramarine Blue",
+      "code": "28.017",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Macragge Blue",
+      "group": "Citadel",
+      "name": "Macragge Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.019",
+      "group": "Game Color",
+      "name": "Night Blue",
+      "code": "72.019",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "76.019",
+      "group": "Game Air",
+      "name": "Night Blue",
+      "code": "76.019",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Night Lords Blue",
+      "group": "Citadel",
+      "name": "Night Lords Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.118",
+      "group": "Game Color",
+      "name": "Sunrise Blue",
+      "code": "72.118",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "76.118",
+      "group": "Game Air",
+      "name": "Sunrise Blue",
+      "code": "76.118",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Kantor Blue",
+      "group": "Citadel",
+      "name": "Kantor Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.023",
+      "group": "Game Color",
+      "name": "Electric Blue",
+      "code": "72.023",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "76.023",
+      "group": "Game Air",
+      "name": "Electric Blue",
+      "code": "76.023",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Lothern Blue",
+      "group": "Citadel",
+      "name": "Lothern Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.021",
+      "group": "Game Color",
+      "name": "Magic Blue",
+      "code": "72.021",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "76.021",
+      "group": "Game Air",
+      "name": "Magic Blue",
+      "code": "76.021",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "28.030",
+      "group": "Hobby Paint",
+      "name": "Magic Blue",
+      "code": "28.030",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Caledor Sky",
+      "group": "Citadel",
+      "name": "Caledor Sky",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.020",
+      "group": "Game Color",
+      "name": "Imperial Blue",
+      "code": "72.020",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "76.020",
+      "group": "Game Air",
+      "name": "Imperial Blue",
+      "code": "76.020",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.024",
+      "group": "Game Color",
+      "name": "Turquoise",
+      "code": "72.024",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "76.024",
+      "group": "Game Air",
+      "name": "Turquoise",
+      "code": "76.024",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Sotek Green",
+      "group": "Citadel",
+      "name": "Sotek Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.120",
+      "group": "Game Color",
+      "name": "Abyssal Turquoise",
+      "code": "72.120",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "76.120",
+      "group": "Game Air",
+      "name": "Abyssal Turquoise",
+      "code": "76.120",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Stegadon Scale Green",
+      "group": "Citadel",
+      "name": "Stegadon Scale Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.121",
+      "group": "Game Color",
+      "name": "Ghost Green",
+      "code": "72.121",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "76.121",
+      "group": "Game Air",
+      "name": "Ghost Green",
+      "code": "76.121",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Gauss Blaster Green",
+      "group": "Citadel",
+      "name": "Gauss Blaster Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.025",
+      "group": "Game Color",
+      "name": "Foul Green",
+      "code": "72.025",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Sybarite Green",
+      "group": "Citadel",
+      "name": "Sybarite Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.026",
+      "group": "Game Color",
+      "name": "Jade Green",
+      "code": "72.026",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "76.026",
+      "group": "Game Air",
+      "name": "Jade Green",
+      "code": "76.026",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.027",
+      "group": "Game Color",
+      "name": "Scurvy Green",
+      "code": "72.027",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "76.027",
+      "group": "Game Air",
+      "name": "Scurvy Green",
+      "code": "76.027",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Kabalite Green",
+      "group": "Citadel",
+      "name": "Kabalite Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.122",
+      "group": "Game Color",
+      "name": "Bile Green",
+      "code": "72.122",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "76.122",
+      "group": "Game Air",
+      "name": "Bile Green",
+      "code": "76.122",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.032",
+      "group": "Game Color",
+      "name": "Scorpy Green",
+      "code": "72.032",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "76.032",
+      "group": "Game Air",
+      "name": "Scorpy Green",
+      "code": "76.032",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Moot Green",
+      "group": "Citadel",
+      "name": "Moot Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.030",
+      "group": "Game Color",
+      "name": "Goblin Green",
+      "code": "72.030",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "28.027",
+      "group": "Hobby Paint",
+      "name": "Goblin Green",
+      "code": "28.027",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.029",
+      "group": "Game Color",
+      "name": "Sick Green",
+      "code": "72.029",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "28.028",
+      "group": "Hobby Paint",
+      "name": "Sick Green",
+      "code": "28.028",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Warboss Green",
+      "group": "Citadel",
+      "name": "Warboss Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.123",
+      "group": "Game Color",
+      "name": "Angel Green",
+      "code": "72.123",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "76.123",
+      "group": "Game Air",
+      "name": "Angel Green",
+      "code": "76.123",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.028",
+      "group": "Game Color",
+      "name": "Dark Green",
+      "code": "72.028",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "76.028",
+      "group": "Game Air",
+      "name": "Dark Green",
+      "code": "76.028",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "28.026",
+      "group": "Hobby Paint",
+      "name": "Dark Green",
+      "code": "28.026",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Caliban Green",
+      "group": "Citadel",
+      "name": "Caliban Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.035",
+      "group": "Game Color",
+      "name": "Dead Flesh",
+      "code": "72.035",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "76.035",
+      "group": "Game Air",
+      "name": "Dead Flesh",
+      "code": "76.035",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "28.022",
+      "group": "Hobby Paint",
+      "name": "Dead Flesh",
+      "code": "28.022",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Ogryn Camo",
+      "group": "Citadel",
+      "name": "Ogryn Camo",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.031",
+      "group": "Game Color",
+      "name": "Camouflage Green",
+      "code": "72.031",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "76.031",
+      "group": "Game Air",
+      "name": "Camouflage Green",
+      "code": "76.031",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Elysian Green",
+      "group": "Citadel",
+      "name": "Elysian Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.145",
+      "group": "Game Color",
+      "name": "Dirty Grey",
+      "code": "72.145",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Deathworld Forest",
+      "group": "Citadel",
+      "name": "Deathworld Forest",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.067",
+      "group": "Game Color",
+      "name": "Cayman Green",
+      "code": "72.067",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Castellan Green",
+      "group": "Citadel",
+      "name": "Castellan Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.061",
+      "group": "Game Color",
+      "name": "Khaki",
+      "code": "72.061",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Zandri Dust",
+      "group": "Citadel",
+      "name": "Zandri Dust",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.063",
+      "group": "Game Color",
+      "name": "Desert Yellow",
+      "code": "72.063",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "76.063",
+      "group": "Game Air",
+      "name": "Desert Yellow",
+      "code": "76.063",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "28.015",
+      "group": "Hobby Paint",
+      "name": "Desert Yellow",
+      "code": "28.015",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Tallarn Sand",
+      "group": "Citadel",
+      "name": "Tallarn Sand",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.062",
+      "group": "Game Color",
+      "name": "Earth",
+      "code": "72.062",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "76.062",
+      "group": "Game Air",
+      "name": "Earth",
+      "code": "76.062",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Steel Legion Drab",
+      "group": "Citadel",
+      "name": "Steel Legion Drab",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.036",
+      "group": "Game Color",
+      "name": "Bronze Brown",
+      "code": "72.036",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "76.036",
+      "group": "Game Air",
+      "name": "Bronze Brown",
+      "code": "76.036",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Tau Light Ochre",
+      "group": "Citadel",
+      "name": "Tau Light Ochre",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.039",
+      "group": "Game Color",
+      "name": "Plague Brown",
+      "code": "72.039",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Balor Brown",
+      "group": "Citadel",
+      "name": "Balor Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.040",
+      "group": "Game Color",
+      "name": "Leather Brown",
+      "code": "72.040",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "76.040",
+      "group": "Game Air",
+      "name": "Leather Brown",
+      "code": "76.040",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "28.014",
+      "group": "Hobby Paint",
+      "name": "Leather Brown",
+      "code": "28.014",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/XV88",
+      "group": "Citadel",
+      "name": "XV88",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.043",
+      "group": "Game Color",
+      "name": "Beasty Brown",
+      "code": "72.043",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "76.043",
+      "group": "Game Air",
+      "name": "Beasty Brown",
+      "code": "76.043",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "28.019",
+      "group": "Hobby Paint",
+      "name": "Parasite Brown",
+      "code": "28.019",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.042",
+      "group": "Game Color",
+      "name": "Parasite Brown",
+      "code": "72.042",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "76.042",
+      "group": "Game Air",
+      "name": "Parasite Brown",
+      "code": "76.042",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Skrag Brown",
+      "group": "Citadel",
+      "name": "Skrag Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.115",
+      "group": "Game Color",
+      "name": "Grunge Brown",
+      "code": "72.115",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "76.115",
+      "group": "Game Air",
+      "name": "Grunge Brown",
+      "code": "76.115",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.124",
+      "group": "Game Color",
+      "name": "Gorgon Brown",
+      "code": "72.124",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Mourfang Brown",
+      "group": "Citadel",
+      "name": "Mourfang Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.044",
+      "group": "Game Color",
+      "name": "Dark Flesh Tone",
+      "code": "72.044",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Doombull Brown",
+      "group": "Citadel",
+      "name": "Doombull Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.045",
+      "group": "Game Color",
+      "name": "Charred Brown",
+      "code": "72.045",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "76.045",
+      "group": "Game Air",
+      "name": "Charred Brown",
+      "code": "76.045",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Rinox Hide",
+      "group": "Citadel",
+      "name": "Rinox Hide",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.047",
+      "group": "Game Color",
+      "name": "Wolf Grey",
+      "code": "72.047",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "76.047",
+      "group": "Game Air",
+      "name": "Wolf Grey",
+      "code": "76.047",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "28.020",
+      "group": "Hobby Paint",
+      "name": "Wolf Grey",
+      "code": "28.020",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Blue Horror",
+      "group": "Citadel",
+      "name": "Blue Horror",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.048",
+      "group": "Game Color",
+      "name": "Sombre Grey",
+      "code": "72.048",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "76.048",
+      "group": "Game Air",
+      "name": "Sombre Grey",
+      "code": "76.048",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/The Fang",
+      "group": "Citadel",
+      "name": "The Fang",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.148",
+      "group": "Game Color",
+      "name": "Warm Grey",
+      "code": "72.148",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Rackarth Flesh",
+      "group": "Citadel",
+      "name": "Rackarth Flesh",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.049",
+      "group": "Game Color",
+      "name": "Stonewall Grey",
+      "code": "72.049",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "76.049",
+      "group": "Game Air",
+      "name": "Stonewall Grey",
+      "code": "76.049",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Dawnstone",
+      "group": "Citadel",
+      "name": "Dawnstone",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.050",
+      "group": "Game Color",
+      "name": "Neutral Grey",
+      "code": "72.050",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "76.050",
+      "group": "Game Air",
+      "name": "Neutral Grey",
+      "code": "76.050",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.155",
+      "group": "Game Color",
+      "name": "Charcoal",
+      "code": "72.155",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Corvus Black",
+      "group": "Citadel",
+      "name": "Corvus Black",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.051",
+      "group": "Game Color",
+      "name": "Black",
+      "code": "72.051",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "76.051",
+      "group": "Game Air",
+      "name": "Black",
+      "code": "76.051",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Abbadon Black",
+      "group": "Citadel",
+      "name": "Abbadon Black",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "73.204",
+      "group": "Game Color Wash",
+      "name": "Flesh",
+      "code": "73.204",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Reikland Fleshshade",
+      "group": "Citadel",
+      "name": "Reikland Fleshshade",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "73.209",
+      "group": "Game Color Wash",
+      "name": "Violet",
+      "code": "73.209",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Druchii Violet",
+      "group": "Citadel",
+      "name": "Druchii Violet",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "73.203",
+      "group": "Game Color Wash",
+      "name": "Umber",
+      "code": "73.203",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Agrax Earthshade",
+      "group": "Citadel",
+      "name": "Agrax Earthshade",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "73.200",
+      "group": "Game Color Wash",
+      "name": "Sepia",
+      "code": "73.200",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Seraphim Sepia",
+      "group": "Citadel",
+      "name": "Seraphim Sepia",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "73.201",
+      "group": "Game Color Wash",
+      "name": "Black",
+      "code": "73.201",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Nuln Oil",
+      "group": "Citadel",
+      "name": "Nuln Oil",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.401",
+      "group": "Xpress Color",
+      "name": "Templar White",
+      "code": "72.401",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Apothecary White",
+      "group": "Citadel",
+      "name": "Apothecary White",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.402",
+      "group": "Xpress Color",
+      "name": "Dwarf Skin",
+      "code": "72.402",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Guilliman Flesh",
+      "group": "Citadel",
+      "name": "Guilliman Flesh",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.403",
+      "group": "Xpress Color",
+      "name": "Imperial Yellow",
+      "code": "72.403",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Imperial Fist",
+      "group": "Citadel",
+      "name": "Imperial Fist",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.404",
+      "group": "Xpress Color",
+      "name": "Nuclear Yellow",
+      "code": "72.404",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Iyanden Yellow",
+      "group": "Citadel",
+      "name": "Iyanden Yellow",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.405",
+      "group": "Xpress Color",
+      "name": "Martian Orange",
+      "code": "72.405",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Gryph-Hound Orange",
+      "group": "Citadel",
+      "name": "Gryph-Hound Orange",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.406",
+      "group": "Xpress Color",
+      "name": "Plasma Red",
+      "code": "72.406",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Blood Angels Red",
+      "group": "Citadel",
+      "name": "Blood Angels Red",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.407",
+      "group": "Xpress Color",
+      "name": "Velvet Red",
+      "code": "72.407",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Flesh Tearers Red",
+      "group": "Citadel",
+      "name": "Flesh Tearers Red",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.408",
+      "group": "Xpress Color",
+      "name": "Cardinal Purple",
+      "code": "72.408",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Doomfire Magenta",
+      "group": "Citadel",
+      "name": "Doomfire Magenta",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.409",
+      "group": "Xpress Color",
+      "name": "Deep Purple",
+      "code": "72.409",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Sigvald Burgundy",
+      "group": "Citadel",
+      "name": "Sigvald Burgundy",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.410",
+      "group": "Xpress Color",
+      "name": "Gloomy Violet",
+      "code": "72.410",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Luxion Purple",
+      "group": "Citadel",
+      "name": "Luxion Purple",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.411",
+      "group": "Xpress Color",
+      "name": "Mystic Blue",
+      "code": "72.411",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Talassar Blue",
+      "group": "Citadel",
+      "name": "Talassar Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.412",
+      "group": "Xpress Color",
+      "name": "Storm Blue",
+      "code": "72.412",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Ultramarines Blue",
+      "group": "Citadel",
+      "name": "Ultramarines Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.413",
+      "group": "Xpress Color",
+      "name": "Omega Blue",
+      "code": "72.413",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Celestium Blue",
+      "group": "Citadel",
+      "name": "Celestium Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.414",
+      "group": "Xpress Color",
+      "name": "Caribbean Turq.",
+      "code": "72.414",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Akhelian Green",
+      "group": "Citadel",
+      "name": "Akhelian Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.415",
+      "group": "Xpress Color",
+      "name": "Orc Skin",
+      "code": "72.415",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Mantis Warrior Green",
+      "group": "Citadel",
+      "name": "Mantis Warrior Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.416",
+      "group": "Xpress Color",
+      "name": "Troll Green",
+      "code": "72.416",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Warp Lightning",
+      "group": "Citadel",
+      "name": "Warp Lightning",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.417",
+      "group": "Xpress Color",
+      "name": "Snake Green",
+      "code": "72.417",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Aeldari Emerald",
+      "group": "Citadel",
+      "name": "Aeldari Emerald",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.418",
+      "group": "Xpress Color",
+      "name": "Lizard Green",
+      "code": "72.418",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Dark Angels Green",
+      "group": "Citadel",
+      "name": "Dark Angels Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.419",
+      "group": "Xpress Color",
+      "name": "Plague Green",
+      "code": "72.419",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Militarum Green",
+      "group": "Citadel",
+      "name": "Militarum Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.420",
+      "group": "Xpress Color",
+      "name": "Wasteland Brown",
+      "code": "72.420",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Snakebite Leather",
+      "group": "Citadel",
+      "name": "Snakebite Leather",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.421",
+      "group": "Xpress Color",
+      "name": "Copper Brown",
+      "code": "72.421",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Gore-Grunta Fur",
+      "group": "Citadel",
+      "name": "Gore-Grunta Fur",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.422",
+      "group": "Xpress Color",
+      "name": "Space Grey",
+      "code": "72.422",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Nighthound Gloom",
+      "group": "Citadel",
+      "name": "Nighthound Gloom",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.423",
+      "group": "Xpress Color",
+      "name": "Black Lotus",
+      "code": "72.423",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Black Templar",
+      "group": "Citadel",
+      "name": "Black Templar",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.448",
+      "group": "Xpress Color",
+      "name": "Xpress Medium",
+      "code": "72.448",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Contrast Medium",
+      "group": "Citadel",
+      "name": "Contrast Medium",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.449",
+      "group": "Xpress Color",
+      "name": "Mummy White",
+      "code": "72.449",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Baneblade Brown (Layer)",
+      "group": "Citadel",
+      "name": "Baneblade Brown (Layer)",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.450",
+      "group": "Xpress Color",
+      "name": "Bag of Bones",
+      "code": "72.450",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Skeleton Horde",
+      "group": "Citadel",
+      "name": "Skeleton Horde",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.452",
+      "group": "Xpress Color",
+      "name": "Rotten Flesh",
+      "code": "72.452",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Plaguebearer Flesh",
+      "group": "Citadel",
+      "name": "Plaguebearer Flesh",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.456",
+      "group": "Xpress Color",
+      "name": "Wicked Purple",
+      "code": "72.456",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Dreadful Visage",
+      "group": "Citadel",
+      "name": "Dreadful Visage",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.460",
+      "group": "Xpress Color",
+      "name": "Twilight Rose",
+      "code": "72.460",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Magos Purple",
+      "group": "Citadel",
+      "name": "Magos Purple",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.461",
+      "group": "Xpress Color",
+      "name": "Vampiric Purple",
+      "code": "72.461",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Leviathan Purple",
+      "group": "Citadel",
+      "name": "Leviathan Purple",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.462",
+      "group": "Xpress Color",
+      "name": "Starship Steel",
+      "code": "72.462",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Gryph-Charger Grey",
+      "group": "Citadel",
+      "name": "Gryph-Charger Grey",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.465",
+      "group": "Xpress Color",
+      "name": "Forest Green",
+      "code": "72.465",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Ork Flesh",
+      "group": "Citadel",
+      "name": "Ork Flesh",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.471",
+      "group": "Xpress Color",
+      "name": "Tanned Skin",
+      "code": "72.471",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Fyreslayer Flesh",
+      "group": "Citadel",
+      "name": "Fyreslayer Flesh",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.474",
+      "group": "Xpress Color",
+      "name": "Willow Bark",
+      "code": "72.474",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Wyldwood",
+      "group": "Citadel",
+      "name": "Wyldwood",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.475",
+      "group": "Xpress Color",
+      "name": "Muddy Ground",
+      "code": "72.475",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Cygor Brown",
+      "group": "Citadel",
+      "name": "Cygor Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.476",
+      "group": "Xpress Color",
+      "name": "Greasy Black",
+      "code": "72.476",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Ratling Grime",
+      "group": "Citadel",
+      "name": "Ratling Grime",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "72.478",
+      "group": "Xpress Color",
+      "name": "Phoenix Orange",
+      "code": "72.478",
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Citadel/Magmadroth Flame",
+      "group": "Citadel",
+      "name": "Magmadroth Flame",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    }
+  ],
+  "equivalences": [
+    {
+      "from": "72.001",
+      "to": "76.001",
+      "note": null
+    },
+    {
+      "from": "72.001",
+      "to": "Citadel/White Scar",
+      "note": null
+    },
+    {
+      "from": "72.034",
+      "to": "76.034",
+      "note": null
+    },
+    {
+      "from": "72.034",
+      "to": "28.013",
+      "note": null
+    },
+    {
+      "from": "72.034",
+      "to": "Citadel/Screaming Skull",
+      "note": null
+    },
+    {
+      "from": "72.003",
+      "to": "76.003",
+      "note": null
+    },
+    {
+      "from": "72.003",
+      "to": "28.024",
+      "note": null
+    },
+    {
+      "from": "72.100",
+      "to": "76.100",
+      "note": null
+    },
+    {
+      "from": "72.107",
+      "to": "76.107",
+      "note": null
+    },
+    {
+      "from": "72.107",
+      "to": "Citadel/Bugmans Glow",
+      "note": null
+    },
+    {
+      "from": "72.004",
+      "to": "76.004",
+      "note": null
+    },
+    {
+      "from": "72.004",
+      "to": "Citadel/Kislev Flesh",
+      "note": null
+    },
+    {
+      "from": "72.071",
+      "to": "76.071",
+      "note": null
+    },
+    {
+      "from": "72.109",
+      "to": "76.109",
+      "note": null
+    },
+    {
+      "from": "72.109",
+      "to": "Citadel/Dorn Yellow",
+      "note": null
+    },
+    {
+      "from": "72.005",
+      "to": "76.005",
+      "note": null
+    },
+    {
+      "from": "72.005",
+      "to": "Citadel/Flash Gitz Yellow",
+      "note": null
+    },
+    {
+      "from": "72.006",
+      "to": "76.006",
+      "note": null
+    },
+    {
+      "from": "72.006",
+      "to": "28.018",
+      "note": null
+    },
+    {
+      "from": "72.006",
+      "to": "Citadel/Yriel Yellow",
+      "note": null
+    },
+    {
+      "from": "72.007",
+      "to": "76.007",
+      "note": null
+    },
+    {
+      "from": "72.038",
+      "to": "Citadel/Bestigor Flesh",
+      "note": null
+    },
+    {
+      "from": "72.008",
+      "to": "76.008",
+      "note": null
+    },
+    {
+      "from": "72.008",
+      "to": "Citadel/Fire Dragon Bright",
+      "note": null
+    },
+    {
+      "from": "72.009",
+      "to": "Citadel/Troll Slayer Orange",
+      "note": null
+    },
+    {
+      "from": "72.010",
+      "to": "76.010",
+      "note": null
+    },
+    {
+      "from": "72.010",
+      "to": "28.023",
+      "note": null
+    },
+    {
+      "from": "72.010",
+      "to": "Citadel/Evil Sunz Scarlet",
+      "note": null
+    },
+    {
+      "from": "72.012",
+      "to": "76.012",
+      "note": null
+    },
+    {
+      "from": "72.012",
+      "to": "28.016",
+      "note": null
+    },
+    {
+      "from": "72.012",
+      "to": "Citadel/Khorne Red",
+      "note": null
+    },
+    {
+      "from": "72.011",
+      "to": "28.029",
+      "note": null
+    },
+    {
+      "from": "72.011",
+      "to": "Citadel/Wazdakka Red",
+      "note": null
+    },
+    {
+      "from": "72.111",
+      "to": "76.111",
+      "note": null
+    },
+    {
+      "from": "72.013",
+      "to": "76.013",
+      "note": null
+    },
+    {
+      "from": "72.013",
+      "to": "Citadel/Fulgrim Pink",
+      "note": null
+    },
+    {
+      "from": "72.014",
+      "to": "76.014",
+      "note": null
+    },
+    {
+      "from": "72.014",
+      "to": "Citadel/Screamer Pink",
+      "note": null
+    },
+    {
+      "from": "72.114",
+      "to": "76.114",
+      "note": null
+    },
+    {
+      "from": "72.114",
+      "to": "Citadel/Dechala Lilac",
+      "note": null
+    },
+    {
+      "from": "72.076",
+      "to": "76.076",
+      "note": null
+    },
+    {
+      "from": "72.076",
+      "to": "28.025",
+      "note": null
+    },
+    {
+      "from": "72.076",
+      "to": "Citadel/Daemonette Hide",
+      "note": null
+    },
+    {
+      "from": "72.015",
+      "to": "Citadel/Xereus Purple",
+      "note": null
+    },
+    {
+      "from": "72.016",
+      "to": "76.016",
+      "note": null
+    },
+    {
+      "from": "72.116",
+      "to": "76.116",
+      "note": null
+    },
+    {
+      "from": "72.117",
+      "to": "Citadel/Calgar Blue",
+      "note": null
+    },
+    {
+      "from": "72.022",
+      "to": "76.022",
+      "note": null
+    },
+    {
+      "from": "72.022",
+      "to": "28.017",
+      "note": null
+    },
+    {
+      "from": "72.022",
+      "to": "Citadel/Macragge Blue",
+      "note": null
+    },
+    {
+      "from": "72.019",
+      "to": "76.019",
+      "note": null
+    },
+    {
+      "from": "72.019",
+      "to": "Citadel/Night Lords Blue",
+      "note": null
+    },
+    {
+      "from": "72.118",
+      "to": "76.118",
+      "note": null
+    },
+    {
+      "from": "72.118",
+      "to": "Citadel/Kantor Blue",
+      "note": null
+    },
+    {
+      "from": "72.023",
+      "to": "76.023",
+      "note": null
+    },
+    {
+      "from": "72.023",
+      "to": "Citadel/Lothern Blue",
+      "note": null
+    },
+    {
+      "from": "72.021",
+      "to": "76.021",
+      "note": null
+    },
+    {
+      "from": "72.021",
+      "to": "28.030",
+      "note": null
+    },
+    {
+      "from": "72.021",
+      "to": "Citadel/Caledor Sky",
+      "note": null
+    },
+    {
+      "from": "72.020",
+      "to": "76.020",
+      "note": null
+    },
+    {
+      "from": "72.024",
+      "to": "76.024",
+      "note": null
+    },
+    {
+      "from": "72.024",
+      "to": "Citadel/Sotek Green",
+      "note": null
+    },
+    {
+      "from": "72.120",
+      "to": "76.120",
+      "note": null
+    },
+    {
+      "from": "72.120",
+      "to": "Citadel/Stegadon Scale Green",
+      "note": null
+    },
+    {
+      "from": "72.121",
+      "to": "76.121",
+      "note": null
+    },
+    {
+      "from": "72.121",
+      "to": "Citadel/Gauss Blaster Green",
+      "note": null
+    },
+    {
+      "from": "72.025",
+      "to": "Citadel/Sybarite Green",
+      "note": null
+    },
+    {
+      "from": "72.026",
+      "to": "76.026",
+      "note": null
+    },
+    {
+      "from": "72.027",
+      "to": "76.027",
+      "note": null
+    },
+    {
+      "from": "72.027",
+      "to": "Citadel/Kabalite Green",
+      "note": null
+    },
+    {
+      "from": "72.122",
+      "to": "76.122",
+      "note": null
+    },
+    {
+      "from": "72.032",
+      "to": "76.032",
+      "note": null
+    },
+    {
+      "from": "72.032",
+      "to": "Citadel/Moot Green",
+      "note": null
+    },
+    {
+      "from": "72.030",
+      "to": "28.027",
+      "note": null
+    },
+    {
+      "from": "72.029",
+      "to": "28.028",
+      "note": null
+    },
+    {
+      "from": "72.029",
+      "to": "Citadel/Warboss Green",
+      "note": null
+    },
+    {
+      "from": "72.123",
+      "to": "76.123",
+      "note": null
+    },
+    {
+      "from": "72.028",
+      "to": "76.028",
+      "note": null
+    },
+    {
+      "from": "72.028",
+      "to": "28.026",
+      "note": null
+    },
+    {
+      "from": "72.028",
+      "to": "Citadel/Caliban Green",
+      "note": null
+    },
+    {
+      "from": "72.035",
+      "to": "76.035",
+      "note": null
+    },
+    {
+      "from": "72.035",
+      "to": "28.022",
+      "note": null
+    },
+    {
+      "from": "72.035",
+      "to": "Citadel/Ogryn Camo",
+      "note": null
+    },
+    {
+      "from": "72.031",
+      "to": "76.031",
+      "note": null
+    },
+    {
+      "from": "72.031",
+      "to": "Citadel/Elysian Green",
+      "note": null
+    },
+    {
+      "from": "72.145",
+      "to": "Citadel/Deathworld Forest",
+      "note": null
+    },
+    {
+      "from": "72.067",
+      "to": "Citadel/Castellan Green",
+      "note": null
+    },
+    {
+      "from": "72.061",
+      "to": "Citadel/Zandri Dust",
+      "note": null
+    },
+    {
+      "from": "72.063",
+      "to": "76.063",
+      "note": null
+    },
+    {
+      "from": "72.063",
+      "to": "28.015",
+      "note": null
+    },
+    {
+      "from": "72.063",
+      "to": "Citadel/Tallarn Sand",
+      "note": null
+    },
+    {
+      "from": "72.062",
+      "to": "76.062",
+      "note": null
+    },
+    {
+      "from": "72.062",
+      "to": "Citadel/Steel Legion Drab",
+      "note": null
+    },
+    {
+      "from": "72.036",
+      "to": "76.036",
+      "note": null
+    },
+    {
+      "from": "72.036",
+      "to": "Citadel/Tau Light Ochre",
+      "note": null
+    },
+    {
+      "from": "72.039",
+      "to": "Citadel/Balor Brown",
+      "note": null
+    },
+    {
+      "from": "72.040",
+      "to": "76.040",
+      "note": null
+    },
+    {
+      "from": "72.040",
+      "to": "28.014",
+      "note": null
+    },
+    {
+      "from": "72.040",
+      "to": "Citadel/XV88",
+      "note": null
+    },
+    {
+      "from": "72.043",
+      "to": "76.043",
+      "note": null
+    },
+    {
+      "from": "72.043",
+      "to": "28.019",
+      "note": null
+    },
+    {
+      "from": "72.042",
+      "to": "76.042",
+      "note": null
+    },
+    {
+      "from": "72.042",
+      "to": "Citadel/Skrag Brown",
+      "note": null
+    },
+    {
+      "from": "72.115",
+      "to": "76.115",
+      "note": null
+    },
+    {
+      "from": "72.124",
+      "to": "Citadel/Mourfang Brown",
+      "note": null
+    },
+    {
+      "from": "72.044",
+      "to": "Citadel/Doombull Brown",
+      "note": null
+    },
+    {
+      "from": "72.045",
+      "to": "76.045",
+      "note": null
+    },
+    {
+      "from": "72.045",
+      "to": "Citadel/Rinox Hide",
+      "note": null
+    },
+    {
+      "from": "72.047",
+      "to": "76.047",
+      "note": null
+    },
+    {
+      "from": "72.047",
+      "to": "28.020",
+      "note": null
+    },
+    {
+      "from": "72.047",
+      "to": "Citadel/Blue Horror",
+      "note": null
+    },
+    {
+      "from": "72.048",
+      "to": "76.048",
+      "note": null
+    },
+    {
+      "from": "72.048",
+      "to": "Citadel/The Fang",
+      "note": null
+    },
+    {
+      "from": "72.148",
+      "to": "Citadel/Rackarth Flesh",
+      "note": null
+    },
+    {
+      "from": "72.049",
+      "to": "76.049",
+      "note": null
+    },
+    {
+      "from": "72.049",
+      "to": "Citadel/Dawnstone",
+      "note": null
+    },
+    {
+      "from": "72.050",
+      "to": "76.050",
+      "note": null
+    },
+    {
+      "from": "72.155",
+      "to": "Citadel/Corvus Black",
+      "note": null
+    },
+    {
+      "from": "72.051",
+      "to": "76.051",
+      "note": null
+    },
+    {
+      "from": "72.051",
+      "to": "Citadel/Abbadon Black",
+      "note": null
+    },
+    {
+      "from": "73.204",
+      "to": "Citadel/Reikland Fleshshade",
+      "note": null
+    },
+    {
+      "from": "73.209",
+      "to": "Citadel/Druchii Violet",
+      "note": null
+    },
+    {
+      "from": "73.203",
+      "to": "Citadel/Agrax Earthshade",
+      "note": null
+    },
+    {
+      "from": "73.200",
+      "to": "Citadel/Seraphim Sepia",
+      "note": null
+    },
+    {
+      "from": "73.201",
+      "to": "Citadel/Nuln Oil",
+      "note": null
+    },
+    {
+      "from": "72.401",
+      "to": "Citadel/Apothecary White",
+      "note": null
+    },
+    {
+      "from": "72.402",
+      "to": "Citadel/Guilliman Flesh",
+      "note": null
+    },
+    {
+      "from": "72.403",
+      "to": "Citadel/Imperial Fist",
+      "note": null
+    },
+    {
+      "from": "72.404",
+      "to": "Citadel/Iyanden Yellow",
+      "note": null
+    },
+    {
+      "from": "72.405",
+      "to": "Citadel/Gryph-Hound Orange",
+      "note": null
+    },
+    {
+      "from": "72.406",
+      "to": "Citadel/Blood Angels Red",
+      "note": null
+    },
+    {
+      "from": "72.407",
+      "to": "Citadel/Flesh Tearers Red",
+      "note": null
+    },
+    {
+      "from": "72.408",
+      "to": "Citadel/Doomfire Magenta",
+      "note": null
+    },
+    {
+      "from": "72.409",
+      "to": "Citadel/Sigvald Burgundy",
+      "note": null
+    },
+    {
+      "from": "72.410",
+      "to": "Citadel/Luxion Purple",
+      "note": null
+    },
+    {
+      "from": "72.411",
+      "to": "Citadel/Talassar Blue",
+      "note": null
+    },
+    {
+      "from": "72.412",
+      "to": "Citadel/Ultramarines Blue",
+      "note": null
+    },
+    {
+      "from": "72.413",
+      "to": "Citadel/Celestium Blue",
+      "note": null
+    },
+    {
+      "from": "72.414",
+      "to": "Citadel/Akhelian Green",
+      "note": null
+    },
+    {
+      "from": "72.415",
+      "to": "Citadel/Mantis Warrior Green",
+      "note": null
+    },
+    {
+      "from": "72.416",
+      "to": "Citadel/Warp Lightning",
+      "note": null
+    },
+    {
+      "from": "72.417",
+      "to": "Citadel/Aeldari Emerald",
+      "note": null
+    },
+    {
+      "from": "72.418",
+      "to": "Citadel/Dark Angels Green",
+      "note": null
+    },
+    {
+      "from": "72.419",
+      "to": "Citadel/Militarum Green",
+      "note": null
+    },
+    {
+      "from": "72.420",
+      "to": "Citadel/Snakebite Leather",
+      "note": null
+    },
+    {
+      "from": "72.421",
+      "to": "Citadel/Gore-Grunta Fur",
+      "note": null
+    },
+    {
+      "from": "72.422",
+      "to": "Citadel/Nighthound Gloom",
+      "note": null
+    },
+    {
+      "from": "72.423",
+      "to": "Citadel/Black Templar",
+      "note": null
+    },
+    {
+      "from": "72.448",
+      "to": "Citadel/Contrast Medium",
+      "note": null
+    },
+    {
+      "from": "72.449",
+      "to": "Citadel/Baneblade Brown (Layer)",
+      "note": null
+    },
+    {
+      "from": "72.450",
+      "to": "Citadel/Skeleton Horde",
+      "note": null
+    },
+    {
+      "from": "72.452",
+      "to": "Citadel/Plaguebearer Flesh",
+      "note": null
+    },
+    {
+      "from": "72.456",
+      "to": "Citadel/Dreadful Visage",
+      "note": null
+    },
+    {
+      "from": "72.460",
+      "to": "Citadel/Magos Purple",
+      "note": null
+    },
+    {
+      "from": "72.461",
+      "to": "Citadel/Leviathan Purple",
+      "note": null
+    },
+    {
+      "from": "72.462",
+      "to": "Citadel/Gryph-Charger Grey",
+      "note": null
+    },
+    {
+      "from": "72.465",
+      "to": "Citadel/Ork Flesh",
+      "note": null
+    },
+    {
+      "from": "72.471",
+      "to": "Citadel/Fyreslayer Flesh",
+      "note": null
+    },
+    {
+      "from": "72.474",
+      "to": "Citadel/Wyldwood",
+      "note": null
+    },
+    {
+      "from": "72.475",
+      "to": "Citadel/Cygor Brown",
+      "note": null
+    },
+    {
+      "from": "72.476",
+      "to": "Citadel/Ratling Grime",
+      "note": null
+    },
+    {
+      "from": "72.478",
+      "to": "Citadel/Magmadroth Flame",
+      "note": null
+    }
+  ],
+  "ignoredGroups": [
+    {
+      "group": "Game Air",
+      "reasonId": "airbrush",
+      "note": null
+    },
+    {
+      "group": "Hobby Paint",
+      "reasonId": "out-of-scope-line",
+      "note": null
+    }
+  ],
+  "ignoredKeys": [
+    {
+      "key": "Citadel/Dawnstone",
+      "reasonId": "ambiguous",
+      "note": "Dawnstone es Layer y Dry, y la carta no dice cuál."
+    },
+    {
+      "key": "72.448",
+      "reasonId": "auxiliary",
+      "note": "Xpress Medium."
+    },
+    {
+      "key": "Citadel/Contrast Medium",
+      "reasonId": "auxiliary",
+      "note": null
+    }
+  ]
+}

@@ -1,9 +1,20 @@
 {
   "meta": {
     "schemaVersion": 1,
-    "dataVersion": "sha256:7ec8d7016d07d9035ee27492f67a95c22e96325bd3647419fb82712091e26d52"
+    "dataVersion": "sha256:9309caf175b6746f20b356ba715847b52b45557b20cbfccb350ee78ea82ef083"
   },
   "sources": [
+    {
+      "id": "ak-interactive-3gen-equivalence-table",
+      "kind": "manufacturer",
+      "title": "Equivalence table: AK 3G - Vallejo MC - Vallejo GC - New Citadel - Old Citadel",
+      "publisher": "AK Interactive",
+      "url": "https://ak-masters.com/app/pdf/EQUIVALENCIAS2023.pdf",
+      "archiveUrl": "https://web.archive.org/web/20250920111312/https://ak-masters.com/app/pdf/EQUIVALENCIAS2023.pdf",
+      "retrievedAt": "2026-11-22",
+      "license": "unknown",
+      "attribution": null
+    },
     {
       "id": "donnervs-miniature-paints",
       "kind": "third-party",
@@ -36,6 +47,28 @@
       "retrievedAt": "2026-11-22",
       "license": "unknown",
       "attribution": "SimoGecko/CitadelColours, from the painted swatches of Tale of Painters"
+    },
+    {
+      "id": "the-army-painter-fanatic-conversion-chart",
+      "kind": "manufacturer",
+      "title": "Warpaints Fanatic Conversion Chart",
+      "publisher": "The Army Painter",
+      "url": "https://cdn.shopify.com/s/files/1/0636/1232/1970/files/A3_Fanatic_Colour_Conversion_Chart_WEB.pdf",
+      "archiveUrl": "https://web.archive.org/web/20261122174559/https://cdn.shopify.com/s/files/1/0636/1232/1970/files/A3_Fanatic_Colour_Conversion_Chart_WEB.pdf",
+      "retrievedAt": "2026-11-22",
+      "license": "unknown",
+      "attribution": null
+    },
+    {
+      "id": "vallejo-cc266",
+      "kind": "manufacturer",
+      "title": "Game Color chart (CC266)",
+      "publisher": "Acrylicos Vallejo",
+      "url": "https://acrylicosvallejo.com/wp-content/uploads/2025/09/CC266-Game_Color.pdf",
+      "archiveUrl": "https://web.archive.org/web/20260918190415/https://acrylicosvallejo.com/wp-content/uploads/2025/09/CC266-Game_Color.pdf",
+      "retrievedAt": "2026-11-22",
+      "license": "unknown",
+      "attribution": null
     }
   ],
   "brands": [
@@ -23832,5 +23865,2231 @@
       }
     }
   ],
-  "equivalences": []
+  "equivalences": [
+    {
+      "from": "ak-interactive/3gen-acrylics/alga-green",
+      "to": "vallejo/model-color/fern-green",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/aluminium",
+      "to": "vallejo/model-color/white-grey",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/amaranth-red",
+      "to": "vallejo/model-color/amaranth-red",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/aquatic-turquoise",
+      "to": "citadel/layer/sotek-green",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/aquatic-turquoise",
+      "to": "vallejo/game-color/turquoise",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/aquatic-turquoise",
+      "to": "vallejo/model-color/light-turquoise",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/ash-grey",
+      "to": "vallejo/model-color/grey-green",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/basalt-grey",
+      "to": "vallejo/game-color/neutral-grey",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/basalt-grey",
+      "to": "vallejo/model-color/basalt-grey",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/basic-skin-tone",
+      "to": "vallejo/model-color/basic-skin-tone",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/beige",
+      "to": "vallejo/model-color/beige",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/beige-red",
+      "to": "citadel/layer/tau-light-ochre",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/beige-red",
+      "to": "vallejo/model-color/beige-red",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/black",
+      "to": "citadel/base/abaddon-black",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/black",
+      "to": "vallejo/game-color/black",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/black",
+      "to": "vallejo/model-color/black",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/black-green",
+      "to": "citadel/base/waaagh-flesh",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/black-green",
+      "to": "vallejo/model-color/black-green",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/black-red",
+      "to": "vallejo/model-color/black-red",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/blood-red",
+      "to": "citadel/layer/evil-sunz-scarlet",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/blood-red",
+      "to": "vallejo/game-color/bloody-red",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/blood-red",
+      "to": "vallejo/model-color/vermilion",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/blue-green",
+      "to": "vallejo/model-color/blue-green",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/blue-violet",
+      "to": "citadel/layer/xereus-purple",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/blue-violet",
+      "to": "vallejo/game-color/hexed-lichen",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/blue-violet",
+      "to": "vallejo/model-color/blue-violet",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/brass",
+      "to": "vallejo/model-color/brass",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/brick-red",
+      "to": "vallejo/model-color/dark-red",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/british-khaki",
+      "to": "citadel/base/steel-legion-drab",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/british-khaki",
+      "to": "vallejo/game-color/earth",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/british-khaki",
+      "to": "vallejo/model-color/english-uniform",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/bronze",
+      "to": "citadel/layer/hashut-copper",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/bronze",
+      "to": "vallejo/game-color/bright-bronze",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/bronze",
+      "to": "vallejo/model-color/bronze",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/brown-rose",
+      "to": "vallejo/model-color/brown-rose",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/buff",
+      "to": "citadel/layer/ushabti-bone",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/buff",
+      "to": "vallejo/game-color/bone-white",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/buff",
+      "to": "vallejo/model-color/buff",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/burn-orange",
+      "to": "citadel/base/jokaero-orange",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/burn-orange",
+      "to": "vallejo/model-color/german-orange",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/burnt-red",
+      "to": "vallejo/model-color/burnt-red",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/burnt-umber",
+      "to": "vallejo/model-color/burnt-umber",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/camouflage-green",
+      "to": "vallejo/model-color/us-olive-drab",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/canvas-tone",
+      "to": "vallejo/model-color/khaki",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/carmine",
+      "to": "citadel/base/khorne-red",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/carmine",
+      "to": "vallejo/game-color/scarlet-red",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/carmine",
+      "to": "vallejo/model-color/carmine-red",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/chocolate-chipping",
+      "to": "vallejo/model-color/chocolate-brown",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/clear-smoke",
+      "to": "vallejo/model-color/smoke-ink",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/command-green",
+      "to": "vallejo/model-color/olive-grey",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/copper",
+      "to": "vallejo/model-color/copper",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/cork",
+      "to": "citadel/layer/cadian-fleshtone",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/cork",
+      "to": "vallejo/model-color/cork-brown",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/dark-blue",
+      "to": "vallejo/model-color/blue",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/dark-brown",
+      "to": "vallejo/model-color/medium-brown",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/dark-flesh",
+      "to": "vallejo/model-color/dark-flesh",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/dark-green",
+      "to": "vallejo/model-color/deep-green",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/dark-grey",
+      "to": "vallejo/model-color/dark-grey",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/dark-prussian-blue",
+      "to": "citadel/base/kantor-blue",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/dark-prussian-blue",
+      "to": "vallejo/game-color/imperial-blue",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/dark-prussian-blue",
+      "to": "vallejo/model-color/dark-prussian-blue",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/dark-sand",
+      "to": "vallejo/model-color/dark-sand",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/dark-sea-blue",
+      "to": "vallejo/model-color/dark-sea-blue",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/dark-sea-grey",
+      "to": "vallejo/model-color/dark-sea-grey",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/dark-shadow-flesh",
+      "to": "citadel/layer/wazdakka-red",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/dark-shadow-flesh",
+      "to": "vallejo/game-color/gory-red",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/dark-shadow-flesh",
+      "to": "vallejo/model-color/cavalry-brown",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/deck-tan",
+      "to": "vallejo/model-color/deck-tan",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/deep-blue",
+      "to": "citadel/base/caledor-sky",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/deep-blue",
+      "to": "vallejo/game-color/magic-blue",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/deep-blue",
+      "to": "vallejo/model-color/dark-blue",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/deep-brown",
+      "to": "vallejo/model-color/red-leather",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/deep-green",
+      "to": "citadel/layer/sybarite-green",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/deep-green",
+      "to": "vallejo/game-color/foul-green",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/deep-green",
+      "to": "vallejo/model-color/park-green-flat",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/deep-orange",
+      "to": "vallejo/model-color/bright-orange",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/deep-sky-blue",
+      "to": "citadel/layer/lothern-blue",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/deep-sky-blue",
+      "to": "vallejo/game-color/glacier-blue",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/deep-sky-blue",
+      "to": "vallejo/model-color/deep-sky-blue",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/deep-yellow",
+      "to": "citadel/layer/flash-gitz-yellow",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/deep-yellow",
+      "to": "vallejo/game-color/sun-yellow",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/deep-yellow",
+      "to": "vallejo/model-color/deep-yellow",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/dirty-red",
+      "to": "citadel/base/mephiston-red",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/dirty-red",
+      "to": "vallejo/model-color/red",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/ducat-blue",
+      "to": "vallejo/model-color/andrea-blue",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/emerald",
+      "to": "vallejo/game-color/jade-green",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/emerald",
+      "to": "vallejo/model-color/emerald",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/english-grey",
+      "to": "vallejo/model-color/london-grey",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/extra-dark-green",
+      "to": "vallejo/model-color/extra-dark-green",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/field-drab",
+      "to": "vallejo/model-color/us-field-drab",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/field-grey-base-1-green-uniform",
+      "to": "citadel/base/castellan-green",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/field-grey-base-1-green-uniform",
+      "to": "vallejo/game-color/cayman-green",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/field-grey-base-1-green-uniform",
+      "to": "vallejo/model-color/bronze-green",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/field-grey-base-2-grey-uniform",
+      "to": "vallejo/model-color/dark-blue-grey",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/german-field-grey",
+      "to": "vallejo/model-color/german-fieldgrey-wwii",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/german-grey",
+      "to": "citadel/layer/stormvermin-fur",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/german-grey",
+      "to": "vallejo/game-color/charcoal",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/german-grey",
+      "to": "vallejo/model-color/german-grey",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/golden-brown",
+      "to": "citadel/base/averland-sunset",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/golden-brown",
+      "to": "vallejo/model-color/gold-brown",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/golden-yellow",
+      "to": "citadel/layer/yriel-yellow",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/golden-yellow",
+      "to": "vallejo/game-color/gold-yellow",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/golden-yellow",
+      "to": "vallejo/model-color/golden-yellow",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/green-brown",
+      "to": "vallejo/model-color/green-brown",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/green-grey",
+      "to": "vallejo/model-color/light-green-grey",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/green-ochre",
+      "to": "vallejo/model-color/green-ochre",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/green-sky",
+      "to": "vallejo/model-color/green-sky",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/grey-blue",
+      "to": "vallejo/model-color/grey-blue",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/grey-green",
+      "to": "vallejo/model-color/green-grey",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/grim-brown",
+      "to": "citadel/base/rhinox-hide",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/grim-brown",
+      "to": "vallejo/game-color/charred-brown",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/grim-brown",
+      "to": "vallejo/model-color/camouflage-black-brown",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/gun-metal",
+      "to": "citadel/base/leadbelcher",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/gun-metal",
+      "to": "vallejo/game-color/dark-gunmetal",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/gun-metal",
+      "to": "vallejo/model-color/gunmetal",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/gunship-green",
+      "to": "vallejo/model-color/gunship-green",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/hull-red",
+      "to": "vallejo/model-color/hull-red",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/ice-yellow",
+      "to": "vallejo/model-color/ice-yellow",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/intense-pink",
+      "to": "citadel/layer/emperors-children",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/intense-pink",
+      "to": "vallejo/game-color/squid-pink",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/intense-pink",
+      "to": "vallejo/model-color/pink",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/intermediate-green",
+      "to": "citadel/base/caliban-green",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/intermediate-green",
+      "to": "vallejo/game-color/dark-green",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/intermediate-green",
+      "to": "vallejo/model-color/intermediate-green",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/ivory",
+      "to": "vallejo/model-color/ivory",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/japanese-brown",
+      "to": "citadel/layer/tallarn-sand",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/japanese-brown",
+      "to": "vallejo/game-color/desert-yellow",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/japanese-brown",
+      "to": "vallejo/model-color/japanese-uniform-wwii",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/laser-yellow",
+      "to": "vallejo/model-color/yellow-green",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/leather-brown",
+      "to": "vallejo/model-color/leather-brown",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/lemon-yellow",
+      "to": "citadel/layer/dorn-yellow",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/lemon-yellow",
+      "to": "vallejo/game-color/moon-yellow",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/lemon-yellow",
+      "to": "vallejo/model-color/lemon-yellow",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/light-brown",
+      "to": "vallejo/model-color/light-brown",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/light-earth",
+      "to": "vallejo/model-color/iraqi-sand",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/light-flesh",
+      "to": "vallejo/model-color/light-flesh",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/light-green",
+      "to": "citadel/layer/moot-green",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/light-green",
+      "to": "vallejo/game-color/scorpy-green",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/light-orange",
+      "to": "citadel/layer/fire-dragon-bright",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/light-orange",
+      "to": "vallejo/game-color/orange-fire",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/light-orange",
+      "to": "vallejo/model-color/light-orange",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/light-prussian-blue",
+      "to": "citadel/base/macragge-blue",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/light-prussian-blue",
+      "to": "vallejo/model-color/prussian-blue",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/lime-green",
+      "to": "vallejo/model-color/lime-green",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/magenta",
+      "to": "citadel/base/screamer-pink",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/magenta",
+      "to": "vallejo/game-color/warlord-purple",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/magenta",
+      "to": "vallejo/model-color/magenta",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/mahogany-brown",
+      "to": "citadel/layer/doombull-brown",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/mahogany-brown",
+      "to": "vallejo/game-color/dark-fleshtone",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/mahogany-brown",
+      "to": "vallejo/model-color/mahogany-brown",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/matt-red",
+      "to": "vallejo/model-color/flat-red",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/medium-blue",
+      "to": "vallejo/model-color/medium-blue",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/medium-flesh-tone",
+      "to": "vallejo/model-color/medium-flesh-tone",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/medium-grey",
+      "to": "citadel/layer/administratum-grey",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/medium-grey",
+      "to": "vallejo/game-color/stonewall-grey",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/medium-grey",
+      "to": "vallejo/game-color/wolf-grey",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/medium-grey",
+      "to": "vallejo/model-color/pale-grey-blue",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/medium-olive-green",
+      "to": "vallejo/model-color/medium-olive",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/medium-sand",
+      "to": "vallejo/model-color/desert-yellow",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/middle-stone",
+      "to": "citadel/base/deathworld-forest",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/middle-stone",
+      "to": "vallejo/model-color/middle-stone",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/mint-green",
+      "to": "citadel/layer/kabalite-green",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/mud-brown",
+      "to": "vallejo/model-color/pale-brown",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/natural-steel",
+      "to": "vallejo/model-color/natural-steel",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/neutral-grey",
+      "to": "vallejo/model-color/neutral-grey",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/ocher-khaki",
+      "to": "vallejo/model-color/orange-ochre",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/ochre",
+      "to": "citadel/layer/zamesi-desert",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/ochre",
+      "to": "vallejo/game-color/plague-brown",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/ochre",
+      "to": "vallejo/model-color/yellow-ochre",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/offwhite",
+      "to": "vallejo/model-color/off-white",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/oily-steel",
+      "to": "citadel/layer/ironbreaker",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/oily-steel",
+      "to": "vallejo/game-color/chainmail",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/oily-steel",
+      "to": "vallejo/model-color/oily-steel",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/old-rose",
+      "to": "vallejo/model-color/old-rose",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/olive-green",
+      "to": "citadel/layer/warboss-green",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/olive-green",
+      "to": "vallejo/game-color/goblin-green",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/olive-green",
+      "to": "vallejo/model-color/olive-green",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/orange-brown",
+      "to": "citadel/layer/skrag-brown",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/orange-brown",
+      "to": "vallejo/game-color/parasite-brown",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/orange-brown",
+      "to": "vallejo/model-color/orange-brown",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/oxford",
+      "to": "citadel/base/the-fang",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/oxford",
+      "to": "vallejo/game-color/sombre-grey",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/oxford",
+      "to": "vallejo/model-color/oxford-blue",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/pale-blue",
+      "to": "vallejo/model-color/pale-blue",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/pale-grey",
+      "to": "vallejo/model-color/light-grey",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/pale-sand",
+      "to": "vallejo/model-color/pale-sand",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/pale-yellow",
+      "to": "vallejo/model-color/light-yellow",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/purple",
+      "to": "vallejo/model-color/purple",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/purulent-yellow",
+      "to": "vallejo/model-color/german-yellow",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/radiant-flesh",
+      "to": "citadel/layer/kislev-flesh",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/radiant-flesh",
+      "to": "vallejo/game-color/elf-skin-tone",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/radiant-flesh",
+      "to": "vallejo/model-color/flat-flesh",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/reflective-green",
+      "to": "vallejo/model-color/refractive-green",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/ruby",
+      "to": "vallejo/model-color/sunset-red",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/russian-green",
+      "to": "vallejo/model-color/camouflage-olive-green",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/saddle-brown",
+      "to": "vallejo/model-color/saddle-brown",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/salmon",
+      "to": "vallejo/model-color/salmon-rose",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/sand-yellow",
+      "to": "vallejo/model-color/sand-yellow",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/scarlet-red",
+      "to": "citadel/layer/troll-slayer-orange",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/scarlet-red",
+      "to": "vallejo/game-color/hot-orange",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/scarlet-red",
+      "to": "vallejo/model-color/scarlet",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/silver",
+      "to": "citadel/layer/runefang-steel",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/silver",
+      "to": "vallejo/game-color/silver",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/silver",
+      "to": "vallejo/model-color/silver",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/silver-grey",
+      "to": "vallejo/model-color/silver-grey",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/sky-blue",
+      "to": "vallejo/model-color/sky-blue",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/sky-grey-fs-36463",
+      "to": "vallejo/model-color/sky-grey",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/smoke-black",
+      "to": "vallejo/model-color/black-grey",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/sunny-skin-tone",
+      "to": "vallejo/model-color/sunny-skin-tone",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/tan-earth",
+      "to": "vallejo/model-color/tan-earth",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/turquoise",
+      "to": "vallejo/model-color/turquoise",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/ultramarine",
+      "to": "citadel/layer/altdorf-guard-blue",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/ultramarine",
+      "to": "vallejo/game-color/imperial-blue",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/us-dark-green",
+      "to": "vallejo/model-color/us-dark-green",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/vermillion",
+      "to": "vallejo/model-color/dark-vermilion",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/violet-red",
+      "to": "vallejo/model-color/violet-red",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/waffen-brown",
+      "to": "citadel/base/mournfang-brown",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/waffen-brown",
+      "to": "vallejo/game-color/beasty-brown",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/waffen-brown",
+      "to": "vallejo/model-color/beige-brown",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/waffen-red-brown",
+      "to": "vallejo/model-color/flat-brown",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/white",
+      "to": "citadel/layer/white-scar",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/white",
+      "to": "vallejo/game-color/dead-white",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/white",
+      "to": "vallejo/model-color/white",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/white-grey",
+      "to": "vallejo/model-color/white-grey",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/yellow",
+      "to": "citadel/layer/flash-gitz-yellow",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/yellow",
+      "to": "vallejo/game-color/sun-yellow",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/yellow",
+      "to": "vallejo/model-color/flat-yellow",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/abyssal-blue",
+      "to": "citadel/base/thousand-sons-blue",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/agate-skin",
+      "to": "citadel/layer/cadian-fleshtone",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/alpha-blue",
+      "to": "citadel/layer/calgar-blue",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/amber-skin",
+      "to": "citadel/layer/kislev-flesh",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/angel-green",
+      "to": "citadel/base/caliban-green",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/angelic-red",
+      "to": "citadel/layer/wild-rider-red",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/aquamarine",
+      "to": "citadel/layer/baharroth-blue",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/army-green",
+      "to": "citadel/layer/loren-forest",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/ash-grey",
+      "to": "citadel/layer/administratum-grey",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/augur-blue",
+      "to": "citadel/layer/blue-horror",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/barbarian-flesh",
+      "to": "citadel/layer/bestigor-flesh",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/barren-dune",
+      "to": "citadel/layer/ungor-flesh",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/basilisk-red",
+      "to": "citadel/layer/word-bearers-red",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/blue-tone",
+      "to": "citadel/shade/tyran-blue",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/bony-spikes",
+      "to": "citadel/layer/screaming-skull",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/brainmatter-beige",
+      "to": "citadel/layer/pallid-wych-flesh",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/brigade-grey",
+      "to": "citadel/base/corax-white",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/brigandine-brown",
+      "to": "citadel/base/rhinox-hide",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/bright-gold",
+      "to": "citadel/layer/auric-armour-gold",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/buffed-hide",
+      "to": "citadel/layer/deathclaw-brown",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/burning-ore",
+      "to": "citadel/layer/troll-slayer-orange",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/burnt-turf",
+      "to": "citadel/layer/zamesi-desert",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/camouflage-green",
+      "to": "citadel/base/death-guard-green",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/carnelian-skin",
+      "to": "citadel/layer/bloodreaver-flesh",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/cobalt-metal",
+      "to": "citadel/base/grey-knights-steel",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/command-khaki",
+      "to": "citadel/layer/knight-questor-flesh",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/company-grey",
+      "to": "citadel/base/grey-seer",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/crystal-blue",
+      "to": "citadel/layer/teclis-blue",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/cultist-purple",
+      "to": "citadel/layer/genestealer-purple",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/dark-blue-tone",
+      "to": "citadel/shade/drakenhof-nightshade",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/dark-red-tone",
+      "to": "citadel/shade/berserker-bloodshade",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/dark-skin-shade",
+      "to": "citadel/shade/targor-rageshade",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/dark-tone",
+      "to": "citadel/shade/nuln-oil",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/deep-azure",
+      "to": "citadel/layer/sotek-green",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/deep-grey",
+      "to": "citadel/base/mechanicus-standard-grey",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/deep-ocean-blue",
+      "to": "citadel/base/stegadon-scale-green",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/demigod-flames",
+      "to": "citadel/layer/tau-light-ochre",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/desert-yellow",
+      "to": "citadel/base/hobgrot-hide",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/diabolic-plum",
+      "to": "citadel/base/phoenician-purple",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/dorado-skin",
+      "to": "citadel/layer/flayed-one-flesh",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/dragon-red",
+      "to": "citadel/base/mephiston-red",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/dryad-brown",
+      "to": "citadel/layer/doombull-brown",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/dusty-skull",
+      "to": "citadel/layer/stormvermin-fur",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/eternal-hunt",
+      "to": "citadel/layer/sybarite-green",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/evergreen-fog",
+      "to": "citadel/layer/sons-of-horus-green",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/evil-chrome",
+      "to": "citadel/layer/sycorax-bronze",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/ferocious-green",
+      "to": "citadel/layer/gauss-blaster-green",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/fiendish-yellow",
+      "to": "citadel/base/averland-sunset",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/figgy-pink",
+      "to": "citadel/layer/fulgrim-pink",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/gargoyle-grey",
+      "to": "citadel/base/ionrach-skin",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/glowing-inferno",
+      "to": "citadel/layer/yriel-yellow",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/gothic-blue",
+      "to": "citadel/base/macragge-blue",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/greedy-gold",
+      "to": "citadel/base/retributor-armour",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/green-tone",
+      "to": "citadel/shade/biel-tan-green",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/greenskin",
+      "to": "citadel/layer/warpstone-glow",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/grotesque-green",
+      "to": "citadel/layer/krieg-khaki",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/gun-metal",
+      "to": "citadel/base/leadbelcher",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/hexed-violet",
+      "to": "citadel/base/daemonette-hide",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/hydra-turquoise",
+      "to": "citadel/layer/temple-guard-blue",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/ice-yellow",
+      "to": "citadel/layer/dorn-yellow",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/imperial-navy",
+      "to": "citadel/base/night-lords-blue",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/lava-orange",
+      "to": "citadel/layer/fire-dragon-bright",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/leafy-green",
+      "to": "citadel/layer/moot-green",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/leather-brown",
+      "to": "citadel/base/mournfang-brown",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/legendary-red",
+      "to": "citadel/layer/squig-orange",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/magenta-tone",
+      "to": "citadel/shade/carroburg-crimson",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/matt-black",
+      "to": "citadel/base/abaddon-black",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/matt-white",
+      "to": "citadel/layer/white-scar",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/military-shade",
+      "to": "citadel/shade/athonian-camoshade",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/mithril",
+      "to": "citadel/layer/stormhost-silver",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/mocca-skin",
+      "to": "citadel/base/steel-legion-drab",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/moldy-wine",
+      "to": "citadel/base/screamer-pink",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/mossy-green",
+      "to": "citadel/layer/deepkin-flesh",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/mulled-berry",
+      "to": "citadel/base/gal-vorbak-red",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/night-sky",
+      "to": "citadel/layer/dark-reaper",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/obsidian-skin",
+      "to": "citadel/base/dryad-bark",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/olive-drab",
+      "to": "citadel/layer/straken-green",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/onyx-skin",
+      "to": "citadel/layer/gorthor-brown",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/orange-tone",
+      "to": "citadel/shade/fuegan-orange",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/pale-sand",
+      "to": "citadel/base/wraithbone",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/paratrooper-tan",
+      "to": "citadel/layer/baneblade-brown",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/patagon-pine",
+      "to": "citadel/layer/skarsnik-green",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/pixie-pink",
+      "to": "citadel/layer/emperors-children",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/plate-mail-metal",
+      "to": "citadel/base/iron-hands-steel",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/prairie-ochre",
+      "to": "citadel/layer/tallarn-sand",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/purple-tone",
+      "to": "citadel/shade/druchii-violet",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/raging-rouge",
+      "to": "citadel/base/ratskin-flesh",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/red-copper",
+      "to": "citadel/base/screaming-bell",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/regal-blue",
+      "to": "citadel/base/caledor-sky",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/resplendent-red",
+      "to": "citadel/layer/evil-sunz-scarlet",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/rough-iron",
+      "to": "citadel/base/warplock-bronze",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/ruddy-umber",
+      "to": "citadel/base/bugmans-glow",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/runic-cobalt",
+      "to": "citadel/layer/fenrisian-grey",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/scarab-green",
+      "to": "citadel/base/incubi-darkness",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/sepia-tone",
+      "to": "citadel/shade/seraphim-sepia",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/shieldwall-blue",
+      "to": "citadel/layer/lothern-blue",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/shining-silver",
+      "to": "citadel/layer/runefang-steel",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/skeleton-bone",
+      "to": "citadel/layer/ushabti-bone",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/space-dust",
+      "to": "citadel/layer/flash-gitz-yellow",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/spellbound-fuchsia",
+      "to": "citadel/layer/kakophoni-purple",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/strong-skin-shade",
+      "to": "citadel/shade/reikland-fleshshade",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/strong-tone",
+      "to": "citadel/shade/agrax-earthshade",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/temple-gate-teal",
+      "to": "citadel/layer/kabalite-green",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/terrestrial-titan",
+      "to": "citadel/base/naggaroth-night",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/thunderous-blue",
+      "to": "citadel/base/the-fang",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/tidal-blue",
+      "to": "citadel/layer/ahriman-blue",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/tigers-eye-skin",
+      "to": "citadel/layer/tuskgor-fur",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/tomb-king-tan",
+      "to": "citadel/layer/karak-stone",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/tree-ancient",
+      "to": "citadel/base/catachan-flesh",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/triumphant-navy",
+      "to": "citadel/base/kantor-blue",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/true-brass",
+      "to": "citadel/layer/canoptek-alloy",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/true-copper",
+      "to": "citadel/base/balthasar-gold",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/tundra-taupe",
+      "to": "citadel/base/deathworld-forest",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/ultramarine-blue",
+      "to": "citadel/layer/altdorf-guard-blue",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/violent-vermilion",
+      "to": "citadel/layer/lugganath-orange",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/violet-coven",
+      "to": "citadel/layer/dechala-lilac",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/warlock-magenta",
+      "to": "citadel/layer/xereus-purple",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/warped-yellow",
+      "to": "citadel/layer/phalanx-yellow",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/wasteland-clay",
+      "to": "citadel/layer/balor-brown",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/weapon-bronze",
+      "to": "citadel/layer/brass-scorpion",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/weird-elixir",
+      "to": "citadel/layer/fulgrim-pink",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/wicked-pink",
+      "to": "citadel/layer/pink-horror",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/wolf-grey",
+      "to": "citadel/layer/russ-grey",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/woodland-camo",
+      "to": "citadel/base/waaagh-flesh",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/worn-stone",
+      "to": "citadel/base/wraithbone",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "the-army-painter/warpaints-fanatic/wyvern-fury",
+      "to": "citadel/layer/wazdakka-red",
+      "sourceId": "the-army-painter-fanatic-conversion-chart"
+    },
+    {
+      "from": "vallejo/game-color/abyssal-turquoise",
+      "to": "citadel/base/stegadon-scale-green",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/game-color/alien-purple",
+      "to": "citadel/base/daemonette-hide",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/game-color/athena-skin",
+      "to": "citadel/base/bugmans-glow",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/game-color/black",
+      "to": "citadel/base/abaddon-black",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/game-color/black-wash",
+      "to": "citadel/shade/nuln-oil",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/game-color/bloody-red",
+      "to": "citadel/layer/evil-sunz-scarlet",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/game-color/bone-white",
+      "to": "citadel/layer/screaming-skull",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/game-color/bronze-brown",
+      "to": "citadel/layer/tau-light-ochre",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/game-color/camouflage-green",
+      "to": "citadel/layer/elysian-green",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/game-color/cayman-green",
+      "to": "citadel/base/castellan-green",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/game-color/charcoal",
+      "to": "citadel/base/corvus-black",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/game-color/charred-brown",
+      "to": "citadel/base/rhinox-hide",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/game-color/dark-fleshtone",
+      "to": "citadel/layer/doombull-brown",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/game-color/dark-green",
+      "to": "citadel/base/caliban-green",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/game-color/dead-flesh",
+      "to": "citadel/layer/ogryn-camo",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/game-color/dead-white",
+      "to": "citadel/layer/white-scar",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/game-color/desert-yellow",
+      "to": "citadel/layer/tallarn-sand",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/game-color/dirty-grey",
+      "to": "citadel/base/deathworld-forest",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/game-color/earth",
+      "to": "citadel/base/steel-legion-drab",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/game-color/electric-blue",
+      "to": "citadel/layer/lothern-blue",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/game-color/elf-skin-tone",
+      "to": "citadel/layer/kislev-flesh",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/game-color/elfic-blue",
+      "to": "citadel/layer/calgar-blue",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/game-color/flesh-wash",
+      "to": "citadel/shade/reikland-fleshshade",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/game-color/foul-green",
+      "to": "citadel/layer/sybarite-green",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/game-color/ghost-green",
+      "to": "citadel/layer/gauss-blaster-green",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/game-color/gorgon-brown",
+      "to": "citadel/base/mournfang-brown",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/game-color/gory-red",
+      "to": "citadel/layer/wazdakka-red",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/game-color/hexed-lichen",
+      "to": "citadel/layer/xereus-purple",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/game-color/hot-orange",
+      "to": "citadel/layer/troll-slayer-orange",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/game-color/khaki",
+      "to": "citadel/base/zandri-dust",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/game-color/leather-brown",
+      "to": "citadel/base/xv-88",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/game-color/lustful-purple",
+      "to": "citadel/layer/dechala-lilac",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/game-color/magic-blue",
+      "to": "citadel/base/caledor-sky",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/game-color/moon-yellow",
+      "to": "citadel/layer/flash-gitz-yellow",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/game-color/night-blue",
+      "to": "citadel/base/night-lords-blue",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/game-color/orange-fire",
+      "to": "citadel/layer/fire-dragon-bright",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/game-color/parasite-brown",
+      "to": "citadel/layer/skrag-brown",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/game-color/plague-brown",
+      "to": "citadel/layer/balor-brown",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/game-color/scarlet-red",
+      "to": "citadel/base/khorne-red",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/game-color/scorpy-green",
+      "to": "citadel/layer/moot-green",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/game-color/scrofulous-brown",
+      "to": "citadel/layer/bestigor-flesh",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/game-color/scurvy-green",
+      "to": "citadel/layer/kabalite-green",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/game-color/sepia-wash",
+      "to": "citadel/shade/seraphim-sepia",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/game-color/sick-green",
+      "to": "citadel/layer/warboss-green",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/game-color/sombre-grey",
+      "to": "citadel/base/the-fang",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/game-color/squid-pink",
+      "to": "citadel/layer/fulgrim-pink",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/game-color/sun-yellow",
+      "to": "citadel/layer/yriel-yellow",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/game-color/sunrise-blue",
+      "to": "citadel/base/kantor-blue",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/game-color/toxic-yellow",
+      "to": "citadel/layer/dorn-yellow",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/game-color/turquoise",
+      "to": "citadel/layer/sotek-green",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/game-color/ultramarine-blue",
+      "to": "citadel/base/macragge-blue",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/game-color/umber-wash",
+      "to": "citadel/shade/agrax-earthshade",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/game-color/violet-wash",
+      "to": "citadel/shade/druchii-violet",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/game-color/warlord-purple",
+      "to": "citadel/base/screamer-pink",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/game-color/warm-grey",
+      "to": "citadel/base/rakarth-flesh",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/game-color/wolf-grey",
+      "to": "citadel/layer/blue-horror",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/xpress-color/bag-of-bones",
+      "to": "citadel/contrast/skeleton-horde",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/xpress-color/black-lotus",
+      "to": "citadel/contrast/black-templar",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/xpress-color/cardinal-purple",
+      "to": "citadel/contrast/doomfire-magenta",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/xpress-color/caribbean-turquoise",
+      "to": "citadel/contrast/akhelian-green",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/xpress-color/copper-brown",
+      "to": "citadel/contrast/gore-grunta-fur",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/xpress-color/deep-purple",
+      "to": "citadel/contrast/sigvald-burgundy",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/xpress-color/dwarf-skin",
+      "to": "citadel/contrast/guilliman-flesh",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/xpress-color/forest-green",
+      "to": "citadel/contrast/ork-flesh",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/xpress-color/gloomy-violet",
+      "to": "citadel/contrast/luxion-purple",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/xpress-color/greasy-black",
+      "to": "citadel/contrast/ratling-grime",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/xpress-color/imperial-yellow",
+      "to": "citadel/contrast/imperial-fist",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/xpress-color/lizard-green",
+      "to": "citadel/contrast/dark-angels-green",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/xpress-color/martian-orange",
+      "to": "citadel/contrast/gryph-hound-orange",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/xpress-color/muddy-ground",
+      "to": "citadel/contrast/cygor-brown",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/xpress-color/mummy-white",
+      "to": "citadel/layer/baneblade-brown",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/xpress-color/mystic-blue",
+      "to": "citadel/contrast/talassar-blue",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/xpress-color/nuclear-yellow",
+      "to": "citadel/contrast/iyanden-yellow",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/xpress-color/omega-blue",
+      "to": "citadel/contrast/celestium-blue",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/xpress-color/orc-skin",
+      "to": "citadel/contrast/mantis-warriors-green",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/xpress-color/phoenix-orange",
+      "to": "citadel/contrast/magmadroth-flame",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/xpress-color/plague-green",
+      "to": "citadel/contrast/militarum-green",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/xpress-color/plasma-red",
+      "to": "citadel/contrast/blood-angels-red",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/xpress-color/rotten-flesh",
+      "to": "citadel/contrast/plaguebearer-flesh",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/xpress-color/snake-green",
+      "to": "citadel/contrast/aeldari-emerald",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/xpress-color/space-grey",
+      "to": "citadel/contrast/nighthaunt-gloom",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/xpress-color/starship-steel",
+      "to": "citadel/contrast/gryph-charger-grey",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/xpress-color/storm-blue",
+      "to": "citadel/contrast/ultramarines-blue",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/xpress-color/tanned-skin",
+      "to": "citadel/contrast/fyreslayer-flesh",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/xpress-color/templar-white",
+      "to": "citadel/contrast/apothecary-white",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/xpress-color/troll-green",
+      "to": "citadel/contrast/warp-lightning",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/xpress-color/twilight-rose",
+      "to": "citadel/contrast/magos-purple",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/xpress-color/vampiric-purple",
+      "to": "citadel/contrast/leviathan-purple",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/xpress-color/velvet-red",
+      "to": "citadel/contrast/flesh-tearers-red",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/xpress-color/wasteland-brown",
+      "to": "citadel/contrast/snakebite-leather",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/xpress-color/wicked-purple",
+      "to": "citadel/contrast/dreadful-visage",
+      "sourceId": "vallejo-cc266"
+    },
+    {
+      "from": "vallejo/xpress-color/willow-bark",
+      "to": "citadel/contrast/wyldwood",
+      "sourceId": "vallejo-cc266"
+    }
+  ]
 }

@@ -53,6 +53,7 @@ export interface SourceContent {
   disabled: { note: string } | null;
   files: { url: string; name: string; sha256: string }[];
   paints: Row[];
+  equivalences: { from: string; to: string; note: string | null }[];
   ignoredGroups: (Ignore & { group: string })[];
   ignoredKeys: (Ignore & { key: string })[];
 }
@@ -87,6 +88,7 @@ export function acmeSource(): RawFile & { content: SourceContent } {
         row({ key: "AC-90", name: "Air Red", group: "Air" }),
         row({ key: "GX-01", name: "Green", group: "Globex", hex: null }),
       ],
+      equivalences: [],
       ignoredGroups: [{ group: "Air", reasonId: "airbrush", note: null }],
       ignoredKeys: [{ key: "AC-03", reasonId: "auxiliary", note: null }],
     },

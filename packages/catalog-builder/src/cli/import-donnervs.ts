@@ -9,17 +9,19 @@
  */
 import { err, sourceIdSchema } from "@chromatic-wheel/domain";
 import { DONNERVS_RULES, transcribeDonnervS } from "../importers/donnervs.ts";
-import { runImport } from "./run-import.ts";
+import { fileText, rowsOnly, runImport } from "./run-import.ts";
 
 process.exitCode = await runImport({
   sourceId: sourceIdSchema.parse("donnervs-miniature-paints"),
   transcribe: (files) => {
     try {
-      return transcribeDonnervS(
-        files.map(({ name, text }) => ({
-          name,
-          content: JSON.parse(text) as unknown,
-        })),
+      return rowsOnly(
+        transcribeDonnervS(
+          files.map((file) => ({
+            name: file.name,
+            content: JSON.parse(fileText(file)) as unknown,
+          })),
+        ),
       );
     } catch (error) {
       return err([`Invalid JSON: ${String(error)}`]);

@@ -79,6 +79,19 @@ export const sourceRowSchema = z
   })
   .readonly();
 
+/**
+ * One equivalence of a conversion chart, copied literally (ADR-0033): the keys
+ * of two rows of the same source, in the direction the chart publishes. A
+ * cell that names two paints, such as «049/047», is two equivalences, with a
+ * note.
+ */
+export const equivalenceRowSchema = z
+  .strictObject({ from: text, to: text, note })
+  .refine((row) => row.from !== row.to, {
+    message: "An equivalence joins two different rows",
+  })
+  .readonly();
+
 const ignoredSchema = <T extends z.ZodRawShape>(shape: T) =>
   z.strictObject({ ...shape, reasonId: slug, note }).readonly();
 
@@ -113,6 +126,8 @@ export const sourceFileSchema = z
     /** The files downloaded by `archive-sources`; empty until it runs. */
     files: z.array(sourceDownloadSchema).readonly(),
     paints: z.array(sourceRowSchema).readonly(),
+    /** The equivalences of a conversion chart; empty in any other source. */
+    equivalences: z.array(equivalenceRowSchema).readonly(),
     /** Whole groups left out of the catalog, with their reason. */
     ignoredGroups: z.array(ignoredSchema({ group: text })).readonly(),
     /** Single rows left out of the catalog, with their reason. */
@@ -121,6 +136,7 @@ export const sourceFileSchema = z
   .readonly();
 
 export type SourceRow = z.infer<typeof sourceRowSchema>;
+export type EquivalenceRow = z.infer<typeof equivalenceRowSchema>;
 export type SourceDownload = z.infer<typeof sourceDownloadSchema>;
 export type SourceFileContent = z.infer<typeof sourceFileSchema>;
 export interface SourceFile extends SourceFileContent {
@@ -134,6 +150,7 @@ export function sourceContent(file: SourceFile): SourceFileContent {
     disabled: file.disabled,
     files: file.files,
     paints: file.paints,
+    equivalences: file.equivalences,
     ignoredGroups: file.ignoredGroups,
     ignoredKeys: file.ignoredKeys,
   };

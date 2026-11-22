@@ -62,11 +62,23 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Abaddon Black"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Abaddon Black"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Abaddon Black"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Abbadon Black"
         }
       ],
       "colorChoice": null,
       "rejectedColors": [],
-      "note": null
+      "note": "CC266 escribe «Abbadon Black»."
     },
     {
       "id": "citadel/base/averland-sunset",
@@ -87,6 +99,14 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Averland Sunset"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Averland Sunset"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Averland Sunset"
         }
       ],
       "colorChoice": null,
@@ -108,6 +128,10 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Balthasar Gold"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Balthasar Gold"
         }
       ],
       "colorChoice": null,
@@ -158,11 +182,19 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Bugman's Glow"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Bugman’s Glow"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Bugmans Glow"
         }
       ],
       "colorChoice": null,
       "rejectedColors": [],
-      "note": null
+      "note": "CC266 escribe «Bugmans Glow»."
     },
     {
       "id": "citadel/base/caledor-sky",
@@ -183,6 +215,18 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Caledor Sky"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Caledor Sky"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Caledor Sky"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Caledor Sky"
         }
       ],
       "colorChoice": null,
@@ -208,6 +252,18 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Caliban Green"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Caliban Green"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Caliban Green"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Caliban Green"
         }
       ],
       "colorChoice": null,
@@ -233,6 +289,14 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Castellan Green"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Castellan Green"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Castellan Green"
         }
       ],
       "colorChoice": null,
@@ -258,6 +322,10 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Catachan Flesh"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Catachan Flesh"
         }
       ],
       "colorChoice": null,
@@ -308,6 +376,10 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Corax White"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Corax White"
         }
       ],
       "colorChoice": null,
@@ -341,6 +413,10 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Corvus Black"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Corvus Black"
         }
       ],
       "colorChoice": null,
@@ -366,6 +442,14 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Daemonette Hide"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Daemonette Hide"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Daemonette Hide"
         }
       ],
       "colorChoice": null,
@@ -391,6 +475,10 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Death Guard Green"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Death Guard Green"
         }
       ],
       "colorChoice": null,
@@ -441,6 +529,18 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Deathworld Forest"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Deathworld Forest"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Deathworld Forest"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Deathworld Forest"
         }
       ],
       "colorChoice": null,
@@ -466,6 +566,10 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Dryad Bark"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Dryad Bark"
         }
       ],
       "colorChoice": null,
@@ -491,6 +595,10 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Gal Vorbak Red"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Gal Vorbak Red"
         }
       ],
       "colorChoice": null,
@@ -512,6 +620,10 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Grey Knights Steel"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Grey Knights Steel"
         }
       ],
       "colorChoice": null,
@@ -537,6 +649,10 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Grey Seer"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Grey Seer"
         }
       ],
       "colorChoice": null,
@@ -562,6 +678,10 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Hobgrot Hide"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Hobgrot Hide"
         }
       ],
       "colorChoice": null,
@@ -587,6 +707,10 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Incubi Darkness"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Incubi Darkness"
         }
       ],
       "colorChoice": null,
@@ -612,6 +736,10 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Ionrach Skin"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Ionrach Skin"
         }
       ],
       "colorChoice": null,
@@ -633,6 +761,10 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Iron Hands Steel"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Iron Hands Steel"
         }
       ],
       "colorChoice": null,
@@ -679,6 +811,10 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Jokaero Orange"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Jokaero Orange"
         }
       ],
       "colorChoice": null,
@@ -704,6 +840,18 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Kantor Blue"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Kantor Blue"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Kantor Blue"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Kantor Blue"
         }
       ],
       "colorChoice": null,
@@ -729,6 +877,14 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Khorne Red"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Khorne Red"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Khorne Red"
         }
       ],
       "colorChoice": null,
@@ -750,6 +906,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Leadbelcher"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Leadbelcher"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Leadbelcher"
         }
       ],
       "colorChoice": null,
@@ -800,6 +964,18 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Macragge Blue"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Macragge Blue"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Macragge Blue"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Macragge Blue"
         }
       ],
       "colorChoice": null,
@@ -825,6 +1001,10 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Mechanicus Standard Grey"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Mechanicus Standard Grey"
         }
       ],
       "colorChoice": null,
@@ -850,6 +1030,14 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Mephiston Red"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Mephiston Red"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Mephiston Red"
         }
       ],
       "colorChoice": null,
@@ -900,11 +1088,23 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Mournfang Brown"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Mournfang Brown"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Mourfang Brown"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Mourfang Brown"
         }
       ],
       "colorChoice": null,
       "rejectedColors": [],
-      "note": null
+      "note": "CC266 escribe «Mourfang Brown». La tabla de equivalencias de AK escribe «Mourfang Brown»."
     },
     {
       "id": "citadel/base/naggaroth-night",
@@ -925,6 +1125,10 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Naggaroth Night"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Naggaroth Night"
         }
       ],
       "colorChoice": null,
@@ -950,11 +1154,19 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Night Lords Blue"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Night Lords Blue"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Nightlords Blue"
         }
       ],
       "colorChoice": null,
       "rejectedColors": [],
-      "note": null
+      "note": "La carta de conversión de Fanatic escribe «Nightlords Blue»."
     },
     {
       "id": "citadel/base/nocturne-green",
@@ -1025,6 +1237,10 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Phoenician Purple"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Phoenician Purple"
         }
       ],
       "colorChoice": null,
@@ -1050,11 +1266,15 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Rakarth Flesh"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Rackarth Flesh"
         }
       ],
       "colorChoice": null,
       "rejectedColors": [],
-      "note": null
+      "note": "CC266 escribe «Rackarth Flesh»."
     },
     {
       "id": "citadel/base/ratskin-flesh",
@@ -1075,6 +1295,10 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Ratskin Flesh"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Ratskin Flesh"
         }
       ],
       "colorChoice": null,
@@ -1096,6 +1320,10 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Retributor Armour"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Retributor Armour"
         }
       ],
       "colorChoice": null,
@@ -1121,11 +1349,23 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Rhinox Hide"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Rhinox Hide"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Rhinox Hide"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Rinox Hide"
         }
       ],
       "colorChoice": null,
       "rejectedColors": [],
-      "note": null
+      "note": "CC266 escribe «Rinox Hide»."
     },
     {
       "id": "citadel/base/runelord-brass",
@@ -1167,6 +1407,18 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Screamer Pink"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Screamer Pink"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Screamer Pink"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Screamer Pink"
         }
       ],
       "colorChoice": null,
@@ -1188,6 +1440,10 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Screaming Bell"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Screaming Bell"
         }
       ],
       "colorChoice": null,
@@ -1213,6 +1469,18 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Steel Legion Drab"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Steel Legion Drab"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Steel Legion Drab"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Steel Legion Drab"
         }
       ],
       "colorChoice": null,
@@ -1238,6 +1506,14 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Stegadon Scale Green"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Stegadon Scale Green"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Stegadon Scale Green"
         }
       ],
       "colorChoice": null,
@@ -1263,6 +1539,18 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "The Fang"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/The Fang"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/The Fang"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/The Fang"
         }
       ],
       "colorChoice": null,
@@ -1313,6 +1601,10 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Thousand Sons Blue"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Thousand Sons Blue"
         }
       ],
       "colorChoice": null,
@@ -1338,11 +1630,19 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Waaagh! Flesh"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Waaagh! Flesh"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Waaagh¡ Flesh"
         }
       ],
       "colorChoice": null,
       "rejectedColors": [],
-      "note": null
+      "note": "La tabla de equivalencias de AK escribe «Waaagh¡ Flesh»."
     },
     {
       "id": "citadel/base/warplock-bronze",
@@ -1359,11 +1659,15 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Warplock Bronze"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Warlock Bronze"
         }
       ],
       "colorChoice": null,
       "rejectedColors": [],
-      "note": null
+      "note": "La carta de conversión de Fanatic escribe «Warlock Bronze»."
     },
     {
       "id": "citadel/base/wraithbone",
@@ -1384,6 +1688,10 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Wraithbone"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Wraithbone"
         }
       ],
       "colorChoice": null,
@@ -1409,11 +1717,15 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "XV-88"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/XV88"
         }
       ],
       "colorChoice": null,
       "rejectedColors": [],
-      "note": null
+      "note": "CC266 escribe «XV88»."
     },
     {
       "id": "citadel/base/zandri-dust",
@@ -1434,6 +1746,10 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Zandri Dust"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Zandri Dust"
         }
       ],
       "colorChoice": null,
@@ -1455,6 +1771,10 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "contrast/Aeldari Emerald"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Aeldari Emerald"
         }
       ],
       "colorChoice": null,
@@ -1518,6 +1838,10 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "contrast/Akhelian Green"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Akhelian Green"
         }
       ],
       "colorChoice": null,
@@ -1539,6 +1863,10 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "contrast/Apothecary White"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Apothecary White"
         }
       ],
       "colorChoice": null,
@@ -1665,6 +1993,10 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "contrast/Black Templar"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Black Templar"
         }
       ],
       "colorChoice": null,
@@ -1686,6 +2018,10 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "contrast/Blood Angels Red"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Blood Angels Red"
         }
       ],
       "colorChoice": null,
@@ -1728,6 +2064,10 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "contrast/Celestium Blue"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Celestium Blue"
         }
       ],
       "colorChoice": null,
@@ -1770,6 +2110,10 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "contrast/Cygor Brown"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Cygor Brown"
         }
       ],
       "colorChoice": null,
@@ -1791,6 +2135,10 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "contrast/Dark Angels Green"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Dark Angels Green"
         }
       ],
       "colorChoice": null,
@@ -1833,6 +2181,10 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "contrast/Doomfire Magenta"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Doomfire Magenta"
         }
       ],
       "colorChoice": null,
@@ -1854,6 +2206,10 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "contrast/Dreadful Visage"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Dreadful Visage"
         }
       ],
       "colorChoice": null,
@@ -1875,6 +2231,10 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "contrast/Flesh Tearers Red"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Flesh Tearers Red"
         }
       ],
       "colorChoice": null,
@@ -1917,6 +2277,10 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "contrast/Fyreslayer Flesh"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Fyreslayer Flesh"
         }
       ],
       "colorChoice": null,
@@ -1959,6 +2323,10 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "contrast/Gore-Grunta Fur"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Gore-Grunta Fur"
         }
       ],
       "colorChoice": null,
@@ -1980,6 +2348,10 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "contrast/Gryph-Charger Grey"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Gryph-Charger Grey"
         }
       ],
       "colorChoice": null,
@@ -2001,6 +2373,10 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "contrast/Gryph-Hound Orange"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Gryph-Hound Orange"
         }
       ],
       "colorChoice": null,
@@ -2022,6 +2398,10 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "contrast/Guilliman Flesh"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Guilliman Flesh"
         }
       ],
       "colorChoice": null,
@@ -2085,6 +2465,10 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "contrast/Imperial Fist"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Imperial Fist"
         }
       ],
       "colorChoice": null,
@@ -2127,6 +2511,10 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "contrast/Iyanden Yellow"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Iyanden Yellow"
         }
       ],
       "colorChoice": null,
@@ -2211,6 +2599,10 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "contrast/Leviathan Purple"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Leviathan Purple"
         }
       ],
       "colorChoice": null,
@@ -2232,6 +2624,10 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "contrast/Luxion Purple"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Luxion Purple"
         }
       ],
       "colorChoice": null,
@@ -2253,6 +2649,10 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "contrast/Magmadroth Flame"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Magmadroth Flame"
         }
       ],
       "colorChoice": null,
@@ -2274,6 +2674,10 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "contrast/Magos Purple"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Magos Purple"
         }
       ],
       "colorChoice": null,
@@ -2295,11 +2699,15 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "contrast/Mantis Warriors Green"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Mantis Warrior Green"
         }
       ],
       "colorChoice": null,
       "rejectedColors": [],
-      "note": null
+      "note": "CC266 escribe «Mantis Warrior Green»."
     },
     {
       "id": "citadel/contrast/militarum-green",
@@ -2316,6 +2724,10 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "contrast/Militarum Green"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Militarum Green"
         }
       ],
       "colorChoice": null,
@@ -2358,11 +2770,15 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "contrast/Nighthaunt Gloom"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Nighthound Gloom"
         }
       ],
       "colorChoice": null,
       "rejectedColors": [],
-      "note": null
+      "note": "CC266 escribe «Nighthound Gloom»."
     },
     {
       "id": "citadel/contrast/ork-flesh",
@@ -2379,6 +2795,10 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "contrast/Ork Flesh"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Ork Flesh"
         }
       ],
       "colorChoice": null,
@@ -2400,6 +2820,10 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "contrast/Plaguebearer Flesh"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Plaguebearer Flesh"
         }
       ],
       "colorChoice": null,
@@ -2442,6 +2866,10 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "contrast/Ratling Grime"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Ratling Grime"
         }
       ],
       "colorChoice": null,
@@ -2484,6 +2912,10 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "contrast/Sigvald Burgundy"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Sigvald Burgundy"
         }
       ],
       "colorChoice": null,
@@ -2505,6 +2937,10 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "contrast/Skeleton Horde"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Skeleton Horde"
         }
       ],
       "colorChoice": null,
@@ -2526,6 +2962,10 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "contrast/Snakebite Leather"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Snakebite Leather"
         }
       ],
       "colorChoice": null,
@@ -2610,6 +3050,10 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "contrast/Talassar Blue"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Talassar Blue"
         }
       ],
       "colorChoice": null,
@@ -2652,6 +3096,10 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "contrast/Ultramarines Blue"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Ultramarines Blue"
         }
       ],
       "colorChoice": null,
@@ -2694,6 +3142,10 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "contrast/Warp Lightning"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Warp Lightning"
         }
       ],
       "colorChoice": null,
@@ -2715,6 +3167,10 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "contrast/Wyldwood"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Wyldwood"
         }
       ],
       "colorChoice": null,
@@ -3244,11 +3700,19 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Administratum Grey"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Administratum Grey"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Administratum grey"
         }
       ],
       "colorChoice": null,
       "rejectedColors": [],
-      "note": null
+      "note": "La tabla de equivalencias de AK escribe «Administratum grey»."
     },
     {
       "id": "citadel/layer/ahriman-blue",
@@ -3269,6 +3733,10 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Ahriman Blue"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Ahriman Blue"
         }
       ],
       "colorChoice": null,
@@ -3319,11 +3787,19 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Altdorf Guard Blue"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Altdorf Guard Blue"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Altford Guard Blue"
         }
       ],
       "colorChoice": null,
       "rejectedColors": [],
-      "note": null
+      "note": "La tabla de equivalencias de AK escribe «Altford Guard Blue»."
     },
     {
       "id": "citadel/layer/auric-armour-gold",
@@ -3340,6 +3816,10 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Auric Armour Gold"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Auric Armour Gold"
         }
       ],
       "colorChoice": null,
@@ -3365,6 +3845,10 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Baharroth Blue"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Baharroth Blue"
         }
       ],
       "colorChoice": null,
@@ -3390,6 +3874,14 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Balor Brown"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Balor Brown"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Balor Brown"
         }
       ],
       "colorChoice": null,
@@ -3415,11 +3907,19 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Baneblade Brown"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Baneblade Brown"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Baneblade Brown (Layer)"
         }
       ],
       "colorChoice": null,
       "rejectedColors": [],
-      "note": null
+      "note": "CC266 escribe «Baneblade Brown (Layer)»."
     },
     {
       "id": "citadel/layer/bestigor-flesh",
@@ -3440,6 +3940,14 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Bestigor Flesh"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Bestigor Flesh"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Bestigor Flesh"
         }
       ],
       "colorChoice": null,
@@ -3465,6 +3973,10 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Bloodreaver Flesh"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Bloodreaver Flesh"
         }
       ],
       "colorChoice": null,
@@ -3490,6 +4002,14 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Blue Horror"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Blue Horror"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Blue Horror"
         }
       ],
       "colorChoice": null,
@@ -3511,6 +4031,10 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Brass Scorpion"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Brass Scorpion"
         }
       ],
       "colorChoice": null,
@@ -3536,6 +4060,14 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Cadian Fleshtone"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Cadian Fleshtone"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Cadian Fleshtone"
         }
       ],
       "colorChoice": null,
@@ -3561,6 +4093,14 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Calgar Blue"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Calgar Blue"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Calgar Blue"
         }
       ],
       "colorChoice": null,
@@ -3582,6 +4122,10 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Canoptek Alloy"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Canoptek Alloy"
         }
       ],
       "colorChoice": null,
@@ -3628,6 +4172,10 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Dark Reaper"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Dark Reaper"
         }
       ],
       "colorChoice": null,
@@ -3678,6 +4226,10 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Deathclaw Brown"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Deathclaw Brown"
         }
       ],
       "colorChoice": null,
@@ -3703,6 +4255,14 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Dechala Lilac"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Dechala Lilac"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Dechala Lilac"
         }
       ],
       "colorChoice": null,
@@ -3728,6 +4288,10 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Deepkin Flesh"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Deepkin Flesh"
         }
       ],
       "colorChoice": null,
@@ -3753,6 +4317,18 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Doombull Brown"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Doombull Brown"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Doombull Brown"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Doombull Brown"
         }
       ],
       "colorChoice": null,
@@ -3778,6 +4354,18 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Dorn Yellow"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Dorn Yellow"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Dorn Yellow"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Dorn Yellow"
         }
       ],
       "colorChoice": null,
@@ -3803,6 +4391,10 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Elysian Green"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Elysian Green"
         }
       ],
       "colorChoice": null,
@@ -3828,6 +4420,14 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Emperor's Children"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Emperor’s Children"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Emperor’s Children"
         }
       ],
       "colorChoice": null,
@@ -3878,6 +4478,18 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Evil Sunz Scarlet"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Evil Sunz Scarlet"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Evil Sunz Scarlet"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Evil Sunz Scarlet"
         }
       ],
       "colorChoice": null,
@@ -3903,6 +4515,10 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Fenrisian Grey"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Fenrisian Grey"
         }
       ],
       "colorChoice": null,
@@ -3928,6 +4544,18 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Fire Dragon Bright"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Fire Dragon Bright"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Fire Dragon Bright"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Fire Dragon Bright"
         }
       ],
       "colorChoice": null,
@@ -3953,6 +4581,18 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Flash Gitz Yellow"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Flash Gitz Yellow"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Flash Gitz Yellow"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Flash Gitz Yellow"
         }
       ],
       "colorChoice": null,
@@ -3978,6 +4618,10 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Flayed One Flesh"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Flayed One Flesh"
         }
       ],
       "colorChoice": null,
@@ -4003,6 +4647,14 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Fulgrim Pink"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Fulgrim Pink"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Fulgrim Pink"
         }
       ],
       "colorChoice": null,
@@ -4049,6 +4701,14 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Gauss Blaster Green"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Gauss Blaster Green"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Gauss Blaster Green"
         }
       ],
       "colorChoice": null,
@@ -4095,6 +4755,10 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Genestealer Purple"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Genestealer Purple"
         }
       ],
       "colorChoice": null,
@@ -4120,6 +4784,10 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Gorthor Brown"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Gorthor Brown"
         }
       ],
       "colorChoice": null,
@@ -4141,6 +4809,10 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Hashut Copper"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Hashut Copper"
         }
       ],
       "colorChoice": null,
@@ -4187,6 +4859,10 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Ironbreaker"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Ironbreaker"
         }
       ],
       "colorChoice": null,
@@ -4212,6 +4888,18 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Kabalite Green"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Kabalite Green"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Kabalite Green"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Kabalite Green"
         }
       ],
       "colorChoice": null,
@@ -4237,6 +4925,10 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Kakophoni Purple"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Kakophoni Purple"
         }
       ],
       "colorChoice": null,
@@ -4262,6 +4954,10 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Karak Stone"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Karak Stone"
         }
       ],
       "colorChoice": null,
@@ -4287,6 +4983,18 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Kislev Flesh"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Kislev Flesh"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Kislev Flesh"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Kislev Flesh"
         }
       ],
       "colorChoice": null,
@@ -4312,6 +5020,10 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Knight-Questor Flesh"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Knight-Questor Flesh"
         }
       ],
       "colorChoice": null,
@@ -4337,6 +5049,10 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Krieg Khaki"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Krieg Khaki"
         }
       ],
       "colorChoice": null,
@@ -4383,6 +5099,10 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Loren Forest"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Loren Forest"
         }
       ],
       "colorChoice": null,
@@ -4408,6 +5128,18 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Lothern Blue"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Lothern Blue"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Lothern Blue"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Lothern Blue"
         }
       ],
       "colorChoice": null,
@@ -4433,6 +5165,10 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Lugganath Orange"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Lugganath Orange"
         }
       ],
       "colorChoice": null,
@@ -4458,6 +5194,18 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Moot Green"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Moot Green"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Moot Green"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Moot Green"
         }
       ],
       "colorChoice": null,
@@ -4508,6 +5256,10 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Ogryn Camo"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Ogryn Camo"
         }
       ],
       "colorChoice": null,
@@ -4533,6 +5285,10 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Pallid Wych Flesh"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Pallid Wych Flesh"
         }
       ],
       "colorChoice": null,
@@ -4558,6 +5314,10 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Phalanx Yellow"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Phalanx Yellow"
         }
       ],
       "colorChoice": null,
@@ -4583,11 +5343,15 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Pink Horror"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Pink Horor"
         }
       ],
       "colorChoice": null,
       "rejectedColors": [],
-      "note": null
+      "note": "La carta de conversión de Fanatic escribe «Pink Horor»."
     },
     {
       "id": "citadel/layer/runefang-steel",
@@ -4604,6 +5368,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Runefang Steel"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Runefang Steel"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Runefang Steel"
         }
       ],
       "colorChoice": null,
@@ -4629,6 +5401,10 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Russ Grey"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Russ Grey"
         }
       ],
       "colorChoice": null,
@@ -4654,6 +5430,14 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Screaming Skull"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Screaming Skull"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Screaming Skull"
         }
       ],
       "colorChoice": null,
@@ -4679,6 +5463,10 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Skarsnik Green"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Skarsnik Green"
         }
       ],
       "colorChoice": null,
@@ -4729,6 +5517,14 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Skrag Brown"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Skrag Brown"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Skrag Brown"
         }
       ],
       "colorChoice": null,
@@ -4800,6 +5596,10 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Sons of Horus Green"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Sons of Horus Green"
         }
       ],
       "colorChoice": null,
@@ -4825,6 +5625,18 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Sotek Green"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Sotek Green"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Sotek Green"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Sotek Green"
         }
       ],
       "colorChoice": null,
@@ -4850,6 +5662,10 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Squig Orange"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Squig Orange"
         }
       ],
       "colorChoice": null,
@@ -4871,6 +5687,10 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Stormhost Silver"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Stormhost Silver"
         }
       ],
       "colorChoice": null,
@@ -4896,6 +5716,14 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Stormvermin Fur"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Stormvermin Fur"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Stormvermin Fur"
         }
       ],
       "colorChoice": null,
@@ -4921,6 +5749,10 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Straken Green"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Straken Green"
         }
       ],
       "colorChoice": null,
@@ -4946,6 +5778,18 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Sybarite Green"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Sybarite Green"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Sybarite Green"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Sybarite Green"
         }
       ],
       "colorChoice": null,
@@ -4967,6 +5811,10 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Sycorax Bronze"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Sycorax Bronze"
         }
       ],
       "colorChoice": null,
@@ -4992,6 +5840,18 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Tallarn Sand"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Tallarn Sand"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Tallarn Sand"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Tallarn Sand"
         }
       ],
       "colorChoice": null,
@@ -5017,6 +5877,18 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Tau Light Ochre"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Tau Light Ochre"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Tau Light Ochre"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Tau Light Ochre"
         }
       ],
       "colorChoice": null,
@@ -5042,6 +5914,10 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Teclis Blue"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Teclis Blue"
         }
       ],
       "colorChoice": null,
@@ -5067,6 +5943,10 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Temple Guard Blue"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Temple Guard Blue"
         }
       ],
       "colorChoice": null,
@@ -5117,6 +5997,18 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Troll Slayer Orange"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Troll Slayer Orange"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Troll Slayer Orange"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Troll Slayer Orange"
         }
       ],
       "colorChoice": null,
@@ -5142,6 +6034,10 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Tuskgor Fur"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Tuskgor Fur"
         }
       ],
       "colorChoice": null,
@@ -5192,6 +6088,10 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Ungor Flesh"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Ungor Flesh"
         }
       ],
       "colorChoice": null,
@@ -5217,11 +6117,19 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Ushabti Bone"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Ushabti Bone"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Ushabit Bone"
         }
       ],
       "colorChoice": null,
       "rejectedColors": [],
-      "note": null
+      "note": "La tabla de equivalencias de AK escribe «Ushabit Bone»."
     },
     {
       "id": "citadel/layer/vulkan-green",
@@ -5267,6 +6175,14 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Warboss Green"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Warboss Green"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Warboss Green"
         }
       ],
       "colorChoice": null,
@@ -5317,6 +6233,10 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Warpstone Glow"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Warpstone Glow"
         }
       ],
       "colorChoice": null,
@@ -5342,6 +6262,18 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Wazdakka Red"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Wazdakka Red"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Wazdakka Red"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Wazdakka Red"
         }
       ],
       "colorChoice": null,
@@ -5367,6 +6299,18 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "White Scar"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/White Scar"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/White Scar"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/White Scar"
         }
       ],
       "colorChoice": null,
@@ -5392,6 +6336,10 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Wild Rider Red"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Wild Rider Red"
         }
       ],
       "colorChoice": null,
@@ -5417,6 +6365,10 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Word Bearers Red"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Word Bearers Red"
         }
       ],
       "colorChoice": null,
@@ -5442,6 +6394,18 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Xereus Purple"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Xereus Purple"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Xereus Purple"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Xereus Purple"
         }
       ],
       "colorChoice": null,
@@ -5467,6 +6431,18 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Yriel Yellow"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Yriel Yellow"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Yriel Yellow"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Yriel Yellow"
         }
       ],
       "colorChoice": null,
@@ -5492,6 +6468,14 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Zamesi Desert"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Zamesi Desert"
+        },
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Zamesi Desert"
         }
       ],
       "colorChoice": null,
@@ -5513,6 +6497,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "shade/Agrax Earthshade"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Agrax Earthshade"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Agrax Earthshade"
         }
       ],
       "colorChoice": null,
@@ -5534,6 +6526,10 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "shade/Athonian Camoshade"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Athonian Camoshade"
         }
       ],
       "colorChoice": null,
@@ -5555,6 +6551,10 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "shade/Berserker Bloodshade"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Berserker Bloodshade"
         }
       ],
       "colorChoice": null,
@@ -5576,6 +6576,10 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "shade/Biel-Tan Green"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Biel-Tan Green"
         }
       ],
       "colorChoice": null,
@@ -5597,6 +6601,10 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "shade/Carroburg Crimson"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Carroburg Crimson"
         }
       ],
       "colorChoice": null,
@@ -5660,6 +6668,10 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "shade/Drakenhof Nightshade"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Drakenhof Nightshade"
         }
       ],
       "colorChoice": null,
@@ -5681,6 +6693,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "shade/Druchii Violet"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Druchii Violet"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Druchii Violet"
         }
       ],
       "colorChoice": null,
@@ -5702,6 +6722,10 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "shade/Fuegan Orange"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Fuegan Orange"
         }
       ],
       "colorChoice": null,
@@ -5765,6 +6789,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "shade/Nuln Oil"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Nuln Oil"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Nuln Oil"
         }
       ],
       "colorChoice": null,
@@ -5807,6 +6839,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "shade/Reikland Fleshshade"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Reikland Fleshshade"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Reikland Fleshshade"
         }
       ],
       "colorChoice": null,
@@ -5828,6 +6868,14 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "shade/Seraphim Sepia"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Seraphim Sepia"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Seraphim Sepia"
         }
       ],
       "colorChoice": null,
@@ -5870,6 +6918,10 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "shade/Targor Rageshade"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Targor Rageshade"
         }
       ],
       "colorChoice": null,
@@ -5891,6 +6943,10 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "shade/Tyran Blue"
+        },
+        {
+          "sourceId": "the-army-painter-fanatic-conversion-chart",
+          "key": "GW/Tyran Blue"
         }
       ],
       "colorChoice": null,

@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { curated, curatedData, row } from "../fixtures.ts";
-import { resolveKeys } from "./resolve.ts";
+import { keyOf, resolveKeys } from "./resolve.ts";
 
 type Data = ReturnType<typeof curatedData>;
 
@@ -127,6 +127,37 @@ describe("resolveKeys (docs/04 §6)", () => {
       });
       expect(issues(data)).toEqual([
         'sources/acme-chart.json ignoredKeys[1]: "AC-90" is already ignored by its group "Air"',
+      ]);
+    });
+  });
+
+  describe("equivalences (ADR-0033)", () => {
+    it("gives the paint of each key, for the equivalences", () => {
+      const { owners } = resolve(curatedData());
+      expect(owners.get(keyOf("acme-chart", "GX-01"))).toBe(
+        "globex/standard/green",
+      );
+      expect(owners.has(keyOf("acme-chart", "AC-90"))).toBe(false);
+    });
+
+    it("fails on an equivalence of a key the source does not have", () => {
+      const data = curatedData();
+      source(data).equivalences.push({
+        from: "AC-01",
+        to: "AC-77",
+        note: null,
+      });
+      expect(issues(data)).toEqual([
+        'sources/acme-chart.json equivalences[0].to: No row has key "AC-77"',
+      ]);
+    });
+
+    it("fails on a repeated equivalence", () => {
+      const data = curatedData();
+      const pair = { from: "AC-01", to: "GX-01", note: null };
+      source(data).equivalences.push(pair, { ...pair, note: "Again." });
+      expect(issues(data)).toEqual([
+        'sources/acme-chart.json equivalences[1]: The equivalence "AC-01" → "GX-01" is repeated',
       ]);
     });
   });
