@@ -36,10 +36,11 @@ export function colorDiscrepancies(
     const deltaE = colorDifference(published.hex, other.hex);
     if (!deltaE.ok) throw new Error(`Builder bug: ${deltaE.error.kind}`);
     return matchQuality(deltaE.value) === "nearest-available"
-      ? [{ paintId, published, other, deltaE2000: round(deltaE.value) }]
+      ? [{ paintId, published, other, deltaE2000: roundDeltaE(deltaE.value) }]
       : [];
   });
 }
 
 /** 2 decimals, the precision at which docs/06 §4 compares ΔE. */
-const round = (deltaE: number): number => Math.round(deltaE * 100) / 100;
+export const roundDeltaE = (deltaE: number): number =>
+  Math.round(deltaE * 100) / 100;

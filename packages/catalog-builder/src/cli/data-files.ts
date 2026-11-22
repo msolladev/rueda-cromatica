@@ -1,6 +1,6 @@
 /**
- * Locations of the curated data, of `catalog.json` and of the discrepancy
- * report (docs/04 §2 and §6), and the reading of those files shared by the
+ * Locations of the curated data, of `catalog.json` and of the reports
+ * (docs/04 §2 and §6), and the reading of those files shared by the
  * entry points.
  */
 import { readdir, readFile, writeFile } from "node:fs/promises";
@@ -22,6 +22,12 @@ export const OUTPUT_FILE = join(REPO_DIR, "apps/web/public/catalog.json");
 export const DISCREPANCIES_FILE = join(
   PACKAGE_DIR,
   "reports/color-discrepancies.json",
+);
+
+/** What the disabled sources change (docs/04 §6, ADR-0032). */
+export const DISABLED_SOURCES_FILE = join(
+  PACKAGE_DIR,
+  "reports/disabled-sources.json",
 );
 
 export const fromRepo = (path: string): string => relative(REPO_DIR, path);

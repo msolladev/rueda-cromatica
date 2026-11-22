@@ -1,9 +1,9 @@
 /**
  * Entry point of the builder (docs/04 §6). Reads the curated files, runs the
  * pure pipeline, checks the ID stability against the latest release (docs/03
- * §7) and writes `catalog.json` and the colour discrepancy report. With
- * `--check` it writes nothing and fails if either versioned file is out of
- * date (ADR-0011, CI step 4).
+ * §7) and writes `catalog.json`, the colour discrepancy report and the
+ * summary of the disabled sources. With `--check` it writes nothing and fails
+ * if any of those versioned files is out of date (ADR-0011, CI step 4).
  *
  *   pnpm --filter @chromatic-wheel/catalog-builder build-catalog [--check]
  */
@@ -11,6 +11,7 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname } from "node:path";
 import { readTombstonesFile } from "../curated/files.ts";
 import { buildCatalog } from "../pipeline/build-catalog.ts";
+import { formatDisabledSources } from "../pipeline/disabled-sources.ts";
 import {
   catalogIds,
   checkIdStability,
@@ -18,6 +19,7 @@ import {
 } from "../pipeline/id-stability.ts";
 import {
   dataPath,
+  DISABLED_SOURCES_FILE,
   DISCREPANCIES_FILE,
   fromRepo,
   OUTPUT_FILE,
@@ -58,6 +60,7 @@ async function main(check: boolean): Promise<number> {
     current: current.value,
     tombstones: tombstones.value,
     published: published.value,
+    disabledSources: new Set(result.value.disabledSources.disabledSources),
   });
   const release = published.value?.release ?? null;
   if (unstable.length > 0) {
@@ -78,7 +81,14 @@ async function main(check: boolean): Promise<number> {
   const outputs = [
     { path: OUTPUT_FILE, content: result.value.json },
     { path: DISCREPANCIES_FILE, content: result.value.discrepanciesJson },
+    {
+      path: DISABLED_SOURCES_FILE,
+      content: result.value.disabledSourcesJson,
+    },
   ];
+  for (const line of formatDisabledSources(result.value.disabledSources)) {
+    console.log(line);
+  }
   if (check) {
     let stale = 0;
     for (const { path, content } of outputs) {
@@ -109,6 +119,9 @@ async function main(check: boolean): Promise<number> {
   );
   console.log(
     `${fromRepo(DISCREPANCIES_FILE)}: ${String(result.value.discrepancies.length)} colour discrepancies`,
+  );
+  console.log(
+    `${fromRepo(DISABLED_SOURCES_FILE)}: ${String(result.value.disabledSources.disabledSources.length)} disabled source(s)`,
   );
   return 0;
 }

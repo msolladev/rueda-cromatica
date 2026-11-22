@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "archive-sources": "node src/cli/archive-sources.ts",
     "build-catalog": "node src/cli/build-catalog.ts",
     "import-donnervs": "node src/cli/import-donnervs.ts",
     "import-simogecko": "node src/cli/import-simogecko.ts",

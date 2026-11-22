@@ -1,9 +1,10 @@
 /**
  * Builder process (docs/04 §6): reads the curated files, resolves the keys of
  * every source row, chooses each paint's colour among the candidates of its
- * rows and assembles the `catalog.json` document. Then validates it with
- * `parseCatalog` and serialises it deterministically (docs/02 §1), with the
- * report of colour discrepancies. Pure: the files arrive already read.
+ * rows and assembles the `catalog.json` document, without the disabled
+ * sources. Then validates it with `parseCatalog` and serialises it
+ * deterministically (docs/02 §1), with the report of colour discrepancies and
+ * the summary of the disabled sources. Pure: the files arrive already read.
  */
 import { createHash } from "node:crypto";
 import {
@@ -15,14 +16,21 @@ import {
   SUPPORTED_SCHEMA_VERSION,
   type CatalogDocument,
   type Paint,
+  type PaintId,
   type Result,
+  type SourceId,
 } from "@chromatic-wheel/domain";
 import {
   readCurated,
   type CuratedData,
   type DataIssue,
 } from "../curated/files.ts";
-import { checkColorPolicy, selectColor } from "./color.ts";
+import { checkColorPolicy, selectColor, type ColorIssue } from "./color.ts";
+import {
+  colorChange,
+  type ColorChange,
+  type DisabledSourcesReport,
+} from "./disabled-sources.ts";
 import { colorDiscrepancies, type Discrepancy } from "./discrepancies.ts";
 import { resolveKeys } from "./resolve.ts";
 
@@ -36,6 +44,10 @@ export interface BuiltCatalog {
   readonly discrepancies: readonly Discrepancy[];
   /** Exact content of the discrepancy report. */
   readonly discrepanciesJson: string;
+  /** What the disabled sources change (ADR-0032). */
+  readonly disabledSources: DisabledSourcesReport;
+  /** Exact content of the summary of the disabled sources. */
+  readonly disabledSourcesJson: string;
 }
 
 /** Where an entity of the assembled catalog comes from, to report issues. */
@@ -68,30 +80,45 @@ export function buildCatalog(
     })),
   ];
 
-  // 3. The catalog paints, with the colour chosen among their candidates.
+  // 3. The catalog paints, with the colour chosen among the candidates of
+  // the enabled sources. With some source disabled, also with every source
+  // enabled, for the summary (ADR-0032).
+  const disabled = new Set<SourceId>(
+    sourceFiles.filter((f) => f.disabled !== null).map((f) => f.source.id),
+  );
   const paintItems: Located<Paint>[] = [];
   const discrepancies: Discrepancy[] = [];
+  const colorChanges: ColorChange[] = [];
   for (const file of brandFiles) {
     file.paints.forEach((curated, i) => {
       const origin = { file: file.name, path: `paints[${String(i)}]` };
-      const selection = selectColor(
-        resolution.rows.get(curated.id) ?? [],
-        policy,
-        curated,
-      );
-      if (!selection.ok) {
-        for (const issue of selection.error) {
+      const rows = resolution.rows.get(curated.id) ?? [];
+      const report = (prefix: string, found: readonly ColorIssue[]): void => {
+        for (const issue of found) {
           const path = issue.path === "" ? "" : `.${issue.path}`;
           issues.push({
             ...origin,
             path: `${origin.path}${path}`,
-            message: issue.message,
+            message: `${prefix}${issue.message}`,
           });
         }
+      };
+      const selection = selectColor(rows, policy, curated, disabled);
+      const ifEnabled =
+        disabled.size === 0 ? selection : selectColor(rows, policy, curated);
+      if (!ifEnabled.ok && ifEnabled !== selection) {
+        report("With the disabled sources enabled: ", ifEnabled.error);
+      }
+      if (!selection.ok) {
+        report("", selection.error);
         return;
       }
       const { color, others } = selection.value;
       discrepancies.push(...colorDiscrepancies(curated.id, color, others));
+      if (ifEnabled.ok) {
+        const change = colorChange(curated.id, color, ifEnabled.value.color);
+        if (change !== null) colorChanges.push(change);
+      }
       // Key order of docs/02 §3.
       const item: Paint = {
         id: curated.id,
@@ -111,10 +138,12 @@ export function buildCatalog(
 
   // 4. Assemble and sort (docs/02 §1).
   const sources = sorted(
-    sourceFiles.map((file) => ({
-      item: file.source,
-      origin: { file: file.name, path: "source" },
-    })),
+    sourceFiles
+      .filter((file) => !disabled.has(file.source.id))
+      .map((file) => ({
+        item: file.source,
+        origin: { file: file.name, path: "source" },
+      })),
   );
   const brands = sorted(
     brandFiles.map((file) => ({
@@ -160,14 +189,22 @@ export function buildCatalog(
   // 7. Deterministic serialisation (docs/02 §1), and the discrepancy report
   // in the same order as the paints.
   const order = new Map(paints.map((p, i) => [p.item.id, i]));
-  const report = [...discrepancies].sort(
-    (a, b) => (order.get(a.paintId) ?? 0) - (order.get(b.paintId) ?? 0),
-  );
+  const byPaint = (
+    a: { readonly paintId: PaintId },
+    b: { readonly paintId: PaintId },
+  ): number => (order.get(a.paintId) ?? 0) - (order.get(b.paintId) ?? 0);
+  const report = [...discrepancies].sort(byPaint);
+  const disabledSources: DisabledSourcesReport = {
+    disabledSources: [...disabled].sort(),
+    colors: [...colorChanges].sort(byPaint),
+  };
   return ok({
     document,
     json: serialise(document),
     discrepancies: report,
     discrepanciesJson: serialise(report),
+    disabledSources,
+    disabledSourcesJson: serialise(disabledSources),
   });
 }
 

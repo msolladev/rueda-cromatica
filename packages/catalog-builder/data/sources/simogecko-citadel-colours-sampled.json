@@ -10,6 +10,8 @@
     "license": "unknown",
     "attribution": "SimoGecko/CitadelColours, from the painted swatches of Tale of Painters"
   },
+  "disabled": null,
+  "files": [],
   "paints": [
     {
       "key": "Rhinox Hide",

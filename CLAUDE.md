@@ -102,7 +102,7 @@ El alcance mínimo y lo aplazado están razonados en el [ADR-0019](docs/adr/0019
    - Líneas descatalogadas: las antiguas de Citadel (Citadel Colour, Foundation, Washes de 2008, tintas, Glaze y Edge) y los Warpaints originales.
    - Datos curados en dos capas, con transcripciones literales, claves por documento y exclusiones: hecho ([ADR-0030](docs/adr/0030-datos-curados-dos-capas.md), [docs/04](docs/04-datos-curados.md)).
    - Varios candidatos de color por pintura, con prioridad `measured` > `manufacturer` > `community`, elección manual, descartes e informe de discrepancias, y la tabla muestreada de SimoGecko como segunda fuente de Citadel: hecho ([ADR-0031](docs/adr/0031-varios-candidatos-color.md), [docs/04](docs/04-datos-curados.md)).
-   - Desactivación de fuentes con su resumen de cambios, y el script `archive-sources` (Wayback Machine y SHA-256).
+   - Desactivación de fuentes con su resumen de cambios, y el script `archive-sources` (Wayback Machine y SHA-256): hecho ([ADR-0032](docs/adr/0032-desactivacion-fuentes-archivado.md), [docs/04](docs/04-datos-curados.md)).
 
 6. **Backend, administración del catálogo y sesiones de usuario**, la última fase ([ADR-0017](docs/adr/0017-arquitectura-objetivo-backend.md)). Incluye:
    - Una API REST con base de datos y una web de administración del catálogo, con el frontal y el backend separados.

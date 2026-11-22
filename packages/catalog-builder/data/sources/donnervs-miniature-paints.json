@@ -10,6 +10,8 @@
     "license": "MIT",
     "attribution": "DonnervS/miniature-paints, based on Arcturus5404/miniature-paints (MIT, © 2022 Rick Fleuren)"
   },
+  "disabled": null,
+  "files": [],
   "paints": [
     {
       "key": "AK11001",

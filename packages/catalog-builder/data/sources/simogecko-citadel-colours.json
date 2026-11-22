@@ -10,6 +10,8 @@
     "license": "unknown",
     "attribution": "SimoGecko/CitadelColours"
   },
+  "disabled": null,
+  "files": [],
   "paints": [
     {
       "key": "spray/Chaos Black",

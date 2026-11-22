@@ -130,15 +130,25 @@ export function colorCandidates(
  * The colour of a paint (docs/04 §6, step 3): its rejected candidates are left
  * out, and its manual choice, if any, wins over the priority. A rejection or a
  * choice that no longer matches a candidate fails, naming the candidate that
- * would be published without it (ADR-0019, decision 4).
+ * would be published without it (ADR-0019, decision 4). The rows of the
+ * disabled sources give no candidates, and a rejection or a choice of one of
+ * them fails too, so that it is reviewed.
  */
 export function selectColor(
   rows: readonly ResolvedRow[],
   policy: ColorPolicy,
   corrections: ColorCorrections,
+  disabledSources: ReadonlySet<SourceId> = new Set(),
 ): Result<ColorSelection, readonly ColorIssue[]> {
-  const candidates = colorCandidates(rows, policy);
+  const candidates = colorCandidates(
+    rows.filter(({ sourceId }) => !disabledSources.has(sourceId)),
+    policy,
+  );
   const issues: ColorIssue[] = [];
+  const noColor = (ref: CandidateRef): string =>
+    disabledSources.has(ref.sourceId)
+      ? `${ref.sourceId} is disabled`
+      : `${describeRef(ref)} gives no colour for this paint`;
   const find = (ref: CandidateRef): Candidate | undefined =>
     candidates.find(({ color }) => sameCandidate(color, ref));
 
@@ -149,7 +159,7 @@ export function selectColor(
     if (candidate === undefined) {
       issues.push({
         path,
-        message: `${describeRef(rejection)} gives no colour for this paint; remove the stale rejection`,
+        message: `${noColor(rejection)}; remove the stale rejection`,
       });
     } else if (rejected.has(candidate)) {
       issues.push({
@@ -179,7 +189,7 @@ export function selectColor(
     if (candidate === undefined) {
       issues.push({
         path: "colorChoice",
-        message: `${describeRef(choice)} gives no colour for this paint; ${next()}`,
+        message: `${noColor(choice)}; ${next()}`,
       });
     } else if (rejected.has(candidate)) {
       issues.push({

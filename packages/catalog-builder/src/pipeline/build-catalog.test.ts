@@ -187,6 +187,139 @@ describe("buildCatalog", () => {
     });
   });
 
+  describe("disabled sources (ADR-0015, ADR-0032)", () => {
+    /**
+     * A second fictitious source, a community forum that also gives Red, and
+     * one of the two sources disabled.
+     */
+    const withForum = (disabled: "acme-chart" | "hooli-forum") => {
+      const input = data();
+      const [acme] = input.sources;
+      if (acme === undefined) throw new Error("Fixture without sources");
+      input.sources.push({
+        name: "sources/hooli-forum.json",
+        content: {
+          ...acme.content,
+          source: {
+            ...acme.content.source,
+            id: "hooli-forum",
+            kind: "third-party",
+            title: "Hooli paint forum",
+            publisher: "Hooli",
+            url: "https://example.com/hooli",
+          },
+          paints: [row({ key: "Red", name: "Red", hex: "#BB1111" })],
+          ignoredGroups: [],
+          ignoredKeys: [],
+        },
+      });
+      input.colorPolicy.content.community = ["hooli-forum"];
+      const [brand] = input.brands;
+      if (brand === undefined) throw new Error("Fixture without brands");
+      patchPaint(brand, 0, {
+        keys: [
+          { sourceId: "acme-chart", key: "AC-01" },
+          { sourceId: "hooli-forum", key: "Red" },
+        ],
+      });
+      const source = input.sources.find(
+        (s) => s.content.source.id === disabled,
+      );
+      if (source === undefined) throw new Error(`No source ${disabled}`);
+      source.content.disabled = { note: "Fictitious reason." };
+      return input;
+    };
+
+    it("leaves the source out of the catalog and its colours to the next candidate or null", () => {
+      const { document } = built(withForum("acme-chart"));
+      expect(document.sources.map((s) => s.id)).toEqual(["hooli-forum"]);
+      expect(document.paints.map((p) => [p.id, p.color])).toEqual([
+        ["acme/core/blue", null],
+        [
+          "acme/core/red",
+          { hex: "#bb1111", origin: "community", sourceId: "hooli-forum" },
+        ],
+        ["globex/standard/green", null],
+      ]);
+    });
+
+    it("keeps every paint ID", () => {
+      const ids = (input: CuratedData) =>
+        built(input).document.paints.map((p) => p.id);
+      expect(ids(withForum("acme-chart"))).toEqual(ids(data()));
+    });
+
+    it("summarises what the build would publish with the source enabled", () => {
+      const { disabledSources, disabledSourcesJson } = built(
+        withForum("acme-chart"),
+      );
+      const acme = (hex: string) => ({
+        hex,
+        origin: "manufacturer",
+        sourceId: "acme-chart",
+      });
+      expect(disabledSources).toEqual({
+        disabledSources: ["acme-chart"],
+        colors: [
+          {
+            paintId: "acme/core/blue",
+            published: null,
+            ifEnabled: acme("#0000aa"),
+            deltaE2000: null,
+          },
+          {
+            paintId: "acme/core/red",
+            published: {
+              hex: "#bb1111",
+              origin: "community",
+              sourceId: "hooli-forum",
+            },
+            ifEnabled: acme("#aa0000"),
+            deltaE2000: expect.any(Number) as number,
+          },
+        ],
+      });
+      expect(disabledSourcesJson).toBe(
+        `${JSON.stringify(disabledSources, null, 2)}\n`,
+      );
+    });
+
+    it("summarises nothing when disabling changes no colour", () => {
+      expect(built(withForum("hooli-forum")).disabledSources).toEqual({
+        disabledSources: ["hooli-forum"],
+        colors: [],
+      });
+      expect(built(data()).disabledSources).toEqual({
+        disabledSources: [],
+        colors: [],
+      });
+    });
+
+    it("fails on a rejection or a choice of a disabled source (ADR-0019, 4)", () => {
+      const input = withForum("hooli-forum");
+      const [brand] = input.brands;
+      if (brand === undefined) throw new Error("Fixture without brands");
+      patchPaint(brand, 0, {
+        rejectedColors: [
+          {
+            sourceId: "hooli-forum",
+            origin: "community",
+            hex: "#bb1111",
+            reasonId: "auxiliary",
+            note: null,
+          },
+        ],
+      });
+      expect(issues(input)).toEqual([
+        {
+          file: "brands/acme.json",
+          path: "paints[0].rejectedColors[0]",
+          message: "hooli-forum is disabled; remove the stale rejection",
+        },
+      ]);
+    });
+  });
+
   describe("issues", () => {
     it("collects the issues of every file before failing", () => {
       const acme = acmeFile();

@@ -8,16 +8,11 @@
  * The files are fetched at the commit pinned in the source's `url`.
  */
 import { err, sourceIdSchema } from "@chromatic-wheel/domain";
-import {
-  DONNERVS_FILES,
-  DONNERVS_RULES,
-  transcribeDonnervS,
-} from "../importers/donnervs.ts";
-import { rawUrl, runImport } from "./run-import.ts";
+import { DONNERVS_RULES, transcribeDonnervS } from "../importers/donnervs.ts";
+import { runImport } from "./run-import.ts";
 
 process.exitCode = await runImport({
   sourceId: sourceIdSchema.parse("donnervs-miniature-paints"),
-  fileUrls: (pinned) => DONNERVS_FILES.map((file) => rawUrl(pinned, file)),
   transcribe: (files) => {
     try {
       return transcribeDonnervS(

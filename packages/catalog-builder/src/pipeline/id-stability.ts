@@ -142,19 +142,24 @@ export function catalogIds(content: unknown): Result<CatalogIds, string> {
 
 /**
  * Checks both rules of docs/03 §7 on the four collections. Without a release
- * yet, only rule 2 applies: until then IDs can be corrected freely.
+ * yet, only rule 2 applies: until then IDs can be corrected freely. A
+ * disabled source leaves the catalog but keeps its file in the curated data,
+ * so its ID is not missing: it comes back if the source is enabled again
+ * (ADR-0019, decision 5).
  */
 export function checkIdStability(input: {
   readonly current: CatalogIds;
   readonly tombstones: Tombstones;
   readonly published: PublishedCatalog | null;
+  readonly disabledSources: ReadonlySet<string>;
 }): readonly StabilityIssue[] {
-  const { current, tombstones, published } = input;
+  const { current, tombstones, published, disabledSources } = input;
   return ID_COLLECTIONS.flatMap((collection): StabilityIssue[] => {
     const now = current[collection];
     const retired = tombstones[collection];
+    const kept = collection === "sources" ? disabledSources : new Set();
     const missing = [...(published?.ids[collection] ?? [])]
-      .filter((id) => !now.has(id) && !retired.has(id))
+      .filter((id) => !now.has(id) && !retired.has(id) && !kept.has(id))
       .map((id) => ({ kind: "missing" as const, collection, id }));
     const reused = [...retired]
       .filter((id) => now.has(id))
