@@ -88,7 +88,8 @@ export const zhHans: Messages = {
   },
   search: {
     label: "从你已有的颜料开始",
-    hint: "至少输入名称、编号或品牌中的 {min} 个字符。",
+    placeholder: "名称、编号或品牌",
+    hint: "至少输入 {min} 个字符。",
     paints: "颜料",
     noMatches: "没有与输入内容匹配的颜料。",
     seeMore: "查看更多颜料（{shown} / {total}）",

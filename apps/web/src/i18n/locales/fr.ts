@@ -94,7 +94,8 @@ export const fr: Messages = {
   },
   search: {
     label: "Partez d'une peinture que vous avez",
-    hint: "Au moins {min} lettres du nom, du code ou de la marque.",
+    placeholder: "Nom, code ou marque",
+    hint: "Au moins {min} lettres.",
     paints: "Peintures",
     noMatches: "Aucune peinture ne correspond à votre saisie.",
     seeMore: "Voir plus de peintures ({shown} sur {total})",

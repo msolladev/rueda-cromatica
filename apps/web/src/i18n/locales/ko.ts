@@ -90,7 +90,8 @@ export const ko: Messages = {
   },
   search: {
     label: "가지고 있는 물감에서 시작하기",
-    hint: "이름, 품번 또는 브랜드를 {min}글자 이상 입력하세요.",
+    placeholder: "이름, 품번 또는 브랜드",
+    hint: "{min}글자 이상 입력하세요.",
     paints: "물감",
     noMatches: "입력과 일치하는 물감이 없습니다.",
     seeMore: "물감 더 보기 ({total}개 중 {shown}개)",

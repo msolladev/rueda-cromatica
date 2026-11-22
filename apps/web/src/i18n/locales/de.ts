@@ -95,7 +95,8 @@ export const de: Messages = {
   },
   search: {
     label: "Starte mit einer Farbe, die du hast",
-    hint: "Mindestens {min} Zeichen aus Name, Code oder Marke.",
+    placeholder: "Name, Code oder Marke",
+    hint: "Mindestens {min} Zeichen.",
     paints: "Farben",
     noMatches: "Keine Farbe passt zu deiner Eingabe.",
     seeMore: "Mehr Farben anzeigen ({shown} von {total})",

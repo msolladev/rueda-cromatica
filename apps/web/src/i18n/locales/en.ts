@@ -89,7 +89,8 @@ export const en: Messages = {
   },
   search: {
     label: "Start from a paint you own",
-    hint: "At least {min} letters of the name, code or brand.",
+    placeholder: "Name, code or brand",
+    hint: "At least {min} letters.",
     paints: "Paints",
     noMatches: "No paint matches what you typed.",
     seeMore: "See more paints ({shown} of {total})",

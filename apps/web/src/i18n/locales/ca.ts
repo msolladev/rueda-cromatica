@@ -88,7 +88,8 @@ export const ca: Messages = {
   },
   search: {
     label: "Comença per una pintura que tinguis",
-    hint: "Almenys {min} lletres del nom, el codi o la marca.",
+    placeholder: "Nom, codi o marca",
+    hint: "Almenys {min} lletres.",
     paints: "Pintures",
     noMatches: "Cap pintura no coincideix amb el que has escrit.",
     seeMore: "Mostra més pintures ({shown} de {total})",

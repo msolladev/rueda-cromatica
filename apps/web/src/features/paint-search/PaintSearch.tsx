@@ -186,6 +186,7 @@ export function PaintSearch({
             autoCapitalize: "off",
             spellCheck: false,
             enterKeyHint: "search",
+            placeholder: m.search.placeholder,
             "aria-describedby":
               chosenShown === null
                 ? "paint-search-hint"

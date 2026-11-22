@@ -1355,6 +1355,12 @@ legend {
     padding 0.2s var(--ease);
 }
 
+/* The muted text of the web, AA on the field, not the browser's paler one. */
+.paint-search-input::placeholder {
+  color: var(--muted);
+  opacity: 1;
+}
+
 .paint-search-input:disabled {
   opacity: 0.6;
 }

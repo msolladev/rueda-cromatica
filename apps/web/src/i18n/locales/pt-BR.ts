@@ -92,7 +92,8 @@ export const ptBR: Messages = {
   },
   search: {
     label: "Comece por uma tinta que você tem",
-    hint: "Pelo menos {min} letras do nome, do código ou da marca.",
+    placeholder: "Nome, código ou marca",
+    hint: "Pelo menos {min} letras.",
     paints: "Tintas",
     noMatches: "Nenhuma tinta corresponde ao que você digitou.",
     seeMore: "Ver mais tintas ({shown} de {total})",

@@ -89,7 +89,8 @@ export const eu: Messages = {
   },
   search: {
     label: "Hasi duzun pintura batetik",
-    hint: "Izenaren, kodearen edo markaren {min} letra gutxienez.",
+    placeholder: "Izena, kodea edo marka",
+    hint: "Gutxienez {min} letra.",
     paints: "Pinturak",
     noMatches: "Ez dago idatzitakoarekin bat datorren pinturarik.",
     seeMore: "Ikusi pintura gehiago ({shown}/{total})",

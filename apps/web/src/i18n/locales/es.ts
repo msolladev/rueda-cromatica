@@ -89,7 +89,8 @@ export const es: Messages = {
   },
   search: {
     label: "Empieza por una pintura que tengas",
-    hint: "Al menos {min} letras del nombre, el código o la marca.",
+    placeholder: "Nombre, código o marca",
+    hint: "Al menos {min} letras.",
     paints: "Pinturas",
     noMatches: "Ninguna pintura coincide con lo escrito.",
     seeMore: "Ver más pinturas ({shown} de {total})",

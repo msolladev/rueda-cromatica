@@ -91,7 +91,8 @@ export const ja: Messages = {
   },
   search: {
     label: "手持ちの塗料から始める",
-    hint: "名前・品番・ブランドを {min} 文字以上入力してください。",
+    placeholder: "名前・品番・ブランド",
+    hint: "{min} 文字以上入力してください。",
     paints: "塗料",
     noMatches: "入力に一致する塗料はありません。",
     seeMore: "塗料をもっと見る（{total} 件中 {shown} 件）",

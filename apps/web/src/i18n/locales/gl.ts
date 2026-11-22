@@ -87,7 +87,8 @@ export const gl: Messages = {
   },
   search: {
     label: "Comeza por unha pintura que teñas",
-    hint: "Polo menos {min} letras do nome, o código ou a marca.",
+    placeholder: "Nome, código ou marca",
+    hint: "Polo menos {min} letras.",
     paints: "Pinturas",
     noMatches: "Ningunha pintura coincide co escrito.",
     seeMore: "Ver máis pinturas ({shown} de {total})",

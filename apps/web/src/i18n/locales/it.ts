@@ -93,7 +93,8 @@ export const it: Messages = {
   },
   search: {
     label: "Parti da una vernice che hai",
-    hint: "Almeno {min} lettere del nome, del codice o del marchio.",
+    placeholder: "Nome, codice o marchio",
+    hint: "Almeno {min} lettere.",
     paints: "Vernici",
     noMatches: "Nessuna vernice corrisponde a ciò che hai scritto.",
     seeMore: "Mostra altre vernici ({shown} di {total})",

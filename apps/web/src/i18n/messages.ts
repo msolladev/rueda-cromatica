@@ -94,7 +94,9 @@ export interface Messages {
   /** The paint search above the wheel (docs/07 §15). */
   readonly search: {
     readonly label: string;
-    /** Always visible under the label: what can be written, with `{min}`. */
+    /** Inside the empty field: what can be searched. */
+    readonly placeholder: string;
+    /** Always visible under the label: the minimum of letters, `{min}`. */
     readonly hint: string;
     /** Accessible name of the list of suggestions. */
     readonly paints: string;
