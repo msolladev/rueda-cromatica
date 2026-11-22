@@ -1297,9 +1297,15 @@ legend {
   margin-inline: auto;
 }
 
+/* The search starts its column as «Similar paints» starts the other one:
+   the label looks like its heading and the hint like the legend of «Show»,
+   with the same spaces, so that the field and «Show» line up (docs/07
+   §15). */
 .paint-search-label {
-  font-size: 0.875rem;
-  font-weight: 600;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.25;
+  text-wrap: balance;
 }
 
 /* The small print: the hint, and the brand, range and code of a paint. */
@@ -1311,8 +1317,14 @@ legend {
   font-size: 0.8125rem;
 }
 
+/* The grid puts 0.35rem between its children: the heading of the results
+   is 0.75rem above the legend, and the legend var(--legend-gap) above its
+   control. */
 .paint-search-hint {
-  margin-top: -0.2rem;
+  margin-top: calc(0.75rem - 0.35rem);
+  margin-bottom: calc(var(--legend-gap) - 0.35rem);
+  font-size: var(--legend-size);
+  line-height: 1.5;
 }
 
 .paint-search-field {
@@ -1570,20 +1582,13 @@ legend {
   gap: 0.75rem 1rem;
 }
 
+/* In their own row under «Show», at any width: open, they grow down over
+   the whole width, without leaving a gap beside it (docs/07 §1). */
 .filters {
   flex: 1 1 100%;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--surface);
-}
-
-@media (min-width: 60rem) {
-  /* Beside «Show», the filters leave the space of its legend above, so
-     that both bars line up. */
-  .filters {
-    flex: 1 1 18rem;
-    margin-top: calc(var(--legend-size) * 1.5 + var(--legend-gap));
-  }
 }
 
 .filters summary {
