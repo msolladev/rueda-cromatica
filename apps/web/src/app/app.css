@@ -1222,13 +1222,23 @@ legend {
 
 /* One line; the explanation opens below it. */
 .notice-approx {
+  flex: 1 1 100%;
   display: block;
   padding-block: 0;
 }
 
+/* Beside «Show», in the space its width leaves free, with the space of its
+   legend above, so that both bars line up (docs/07 §1). */
+@media (min-width: 60rem) {
+  .notice-approx {
+    flex-basis: 18rem;
+    margin-top: calc(var(--legend-size) * 1.5 + var(--legend-gap));
+  }
+}
+
 /* The information icon first, and the arrow of the disclosure at the end. */
 .notice-approx summary {
-  min-height: 2.5rem;
+  min-height: var(--control);
   display: flex;
   align-items: center;
   gap: 0.5rem;
