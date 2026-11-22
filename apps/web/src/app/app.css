@@ -206,13 +206,13 @@ a:not(.button, .brand, .skip-link):focus-visible,
 }
 
 /* The links laid out as boxes sink a little when pressed, as the buttons. */
-:is(.external-link, .footer-inner a, .link-button) {
+:is(.external-link, .footer-group a, .link-button) {
   transition:
     color 0.2s,
     scale 0.12s var(--ease);
 }
 
-:is(.external-link, .footer-inner a, .link-button):active {
+:is(.external-link, .footer-group a, .link-button):active {
   scale: 0.96;
 }
 
@@ -2169,7 +2169,7 @@ brands per row. */
   inset-inline-start: 0;
   bottom: 0;
   width: calc(var(--closeness, 0) * 100%);
-  height: 3px;
+  height: 1px;
   background: currentColor;
   opacity: 0.45;
   animation: closeness-grow 0.6s 0.1s var(--ease) both;
@@ -2609,32 +2609,100 @@ brands per row. */
 
 /* ---------- Footer and the page for `/` ---------- */
 
+/* docs/07 §16: on top, a strip with the twelve hues of the wheel, which the
+   footer computes from the wheel (`--hue-strip`). */
 .footer {
-  border-top: 1px solid var(--line);
+  background: var(--surface);
 }
 
+.footer::before {
+  content: "";
+  display: block;
+  height: 1px;
+  background: var(--hue-strip);
+}
+
+@media (forced-colors: active) {
+  .footer {
+    border-top: 1px solid CanvasText;
+  }
+}
+
+/* One column on phones; on wider screens, the name with what the web does
+   on the left and the two groups of links on the right. */
 .footer-inner {
   max-width: 80rem;
   margin-inline: auto;
-  padding: 0.5rem max(1rem, env(safe-area-inset-right))
-    max(1rem, env(safe-area-inset-bottom)) max(1rem, env(safe-area-inset-left));
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0 1.5rem;
+  padding: 2rem max(1rem, env(safe-area-inset-right))
+    max(1.5rem, env(safe-area-inset-bottom))
+    max(1rem, env(safe-area-inset-left));
+  display: grid;
+  gap: 1.5rem;
 }
 
-.footer-inner a {
+@media (min-width: 48rem) {
+  .footer-inner {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: 2.5rem;
+  }
+}
+
+.footer-about .brand {
+  margin-inline-end: 0;
+}
+
+.footer-about p {
+  max-width: 34ch;
+  margin: 0.5rem 0 0;
+  color: var(--muted);
+}
+
+.footer-group h2 {
+  margin: 0 0 0.25rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.footer-group ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-group :is(a, .link-button) {
   min-height: var(--control);
   display: inline-flex;
   align-items: center;
 }
 
 .footer-note {
-  max-width: 80rem;
-  margin: 0 auto 1rem;
-  padding-inline: 1rem;
+  max-width: 34ch;
+  margin: 0 0 0.5rem;
   color: var(--muted);
+}
+
+/* The notice and the version, under everything, across the whole width. */
+.footer-bottom {
+  grid-column: 1 / -1;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem 2rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+.footer-bottom p:first-child {
+  max-width: 70ch;
 }
 
 .languages ul {

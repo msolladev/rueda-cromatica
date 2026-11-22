@@ -202,5 +202,16 @@ export const ptBR: Messages = {
   },
   footer: {
     credits: "Créditos e fontes",
+    tagline:
+      "Uma roda de cores que funciona como uma de verdade, e as tintas mais parecidas de cada marca, também offline.",
+    projectHeading: "Projeto",
+    appHeading: "Aplicativo",
+    sourceCode: "Código-fonte no {host}",
+    donate: "Doar pelo {host}",
+    apiReference: "Referência da API",
+    disclaimer:
+      "Projeto independente, sem relação com Games Workshop, Vallejo, The Army Painter ou AK Interactive. As marcas e os nomes das tintas pertencem aos seus proprietários.",
+    version: "Versão de {date}",
+    commit: "{commit} no {host}",
   },
 };

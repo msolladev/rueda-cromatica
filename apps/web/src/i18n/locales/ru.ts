@@ -203,5 +203,16 @@ export const ru: Messages = {
   },
   footer: {
     credits: "Благодарности и источники",
+    tagline:
+      "Цветовой круг, который работает как настоящий, и самые похожие краски каждого бренда, в том числе без интернета.",
+    projectHeading: "Проект",
+    appHeading: "Приложение",
+    sourceCode: "Исходный код на {host}",
+    donate: "Поддержать на {host}",
+    apiReference: "Справочник API",
+    disclaimer:
+      "Независимый проект, не связанный с Games Workshop, Vallejo, The Army Painter и AK Interactive. Товарные знаки и названия красок принадлежат их владельцам.",
+    version: "Версия от {date}",
+    commit: "{commit} на {host}",
   },
 };

@@ -199,5 +199,16 @@ export const es: Messages = {
   },
   footer: {
     credits: "Créditos y fuentes",
+    tagline:
+      "Una rueda de color como la física y las pinturas más parecidas de cada marca, también sin conexión.",
+    projectHeading: "Proyecto",
+    appHeading: "Aplicación",
+    sourceCode: "Código fuente en {host}",
+    donate: "Donar en {host}",
+    apiReference: "Referencia de la API",
+    disclaimer:
+      "Proyecto independiente, sin relación con Games Workshop, Vallejo, The Army Painter ni AK Interactive. Las marcas y los nombres de las pinturas pertenecen a sus propietarios.",
+    version: "Versión del {date}",
+    commit: "{commit} en {host}",
   },
 };

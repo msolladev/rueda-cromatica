@@ -199,5 +199,16 @@ export const ca: Messages = {
   },
   footer: {
     credits: "Crèdits i fonts",
+    tagline:
+      "Una roda de color com la física i les pintures més semblants de cada marca, també sense connexió.",
+    projectHeading: "Projecte",
+    appHeading: "Aplicació",
+    sourceCode: "Codi font a {host}",
+    donate: "Fes una donació a {host}",
+    apiReference: "Referència de l'API",
+    disclaimer:
+      "Projecte independent, sense relació amb Games Workshop, Vallejo, The Army Painter ni AK Interactive. Les marques i els noms de les pintures pertanyen als seus propietaris.",
+    version: "Versió del {date}",
+    commit: "{commit} a {host}",
   },
 };

@@ -163,7 +163,7 @@ En la fase 6 las preferencias pasarán a la cuenta del usuario ([ADR-0017](adr/0
 ## 13. Créditos y fuentes
 
 - **Fuentes del catálogo**: cada una con su título, quién la publica, su enlace, su copia archivada, su licencia, su atribución y la fecha de consulta, y lo que aporta: los colores de qué marcas y gamas, y cuántas sustituciones y equivalencias oficiales (`sourceContributions`). Todo sale de `catalog.json`. En pantallas estrechas cada dato va bajo su nombre.
-- **Enlaces a otros sitios** (las fuentes, sus copias archivadas y los repositorios): se abren en una pestaña nueva, con `rel="noopener noreferrer nofollow"` para no pasarles autoridad en los buscadores, y llevan delante el icono `external-link` de Lucide. Su texto dice qué abren y dónde («Ver la fuente en github.com»), no la dirección entera, y los lectores de pantalla oyen además que se abren en una pestaña nueva.
+- **Enlaces a otros sitios** (las fuentes, sus copias archivadas, los repositorios y los del pie, §16): se abren en una pestaña nueva, con `rel="noopener noreferrer nofollow"` para no pasarles autoridad en los buscadores, y llevan delante el icono `external-link` de Lucide. Su texto dice qué abren y dónde («Ver la fuente en github.com»), no la dirección entera, y los lectores de pantalla oyen además que se abren en una pestaña nueva.
 - **Código de terceros**: cada paquete que acaba en el código distribuido (la web y el service worker), con su versión, su licencia, su repositorio y el texto de su licencia, plegado y en el idioma original. Además, los avisos `@license` del código propio (los iconos de Lucide). Un plugin de Vite los saca del bundle en cada build, así que la lista siempre coincide con lo que se distribuye.
 
 ## 14. Tests
@@ -195,7 +195,18 @@ Para empezar desde una pintura que se tiene: se busca y su color pasa a ser la b
 - **Si la rueda RYB no alcanza la pintura** (ΔE mayor que 1 entre su hex y la base, `colorDifference` de docs/06 §2), bajo el campo, con el aspecto del aviso de color aproximado: «La rueda RYB no llega a este color: usa el más parecido (ΔE 8,6). Usar la rueda digital». El enlace cambia el modelo y la base vuelve a ser la pintura exacta ([ADR-0021](adr/0021-cambio-modelo-conserva-color.md)). Con el catálogo actual pasa con 124 pinturas, sobre todo cianes y azules intensos.
 - **Sin JavaScript** el campo sale desactivado, con su etiqueta y su ayuda.
 
-## 16. Prototipos
+## 16. Pie
+
+- **Franja de tonos**: arriba, una franja con los 12 tonos puros de la rueda RYB, de rojo a magenta, como los del icono. Los calcula el pie con `fromWheelColor` de `color-wheel` en el render, así que llegan en el HTML y no se escriben a mano.
+- **La web**: su icono y su nombre, que llevan a la principal, y una frase con lo que hace.
+- **Dos grupos de enlaces**, cada uno con su título:
+  - **Proyecto**: «Créditos y fuentes», el código fuente en GitHub y la donación en PayPal.me. Los dos últimos son enlaces a otros sitios (§13).
+  - **Aplicación**: «Instalar la aplicación» mientras el navegador permita instalarla (§8) y la referencia de la API (`/reference/`), en inglés. La referencia es otro sitio, generado con TypeDoc y servido junto a la web por el servidor de cada entorno, así que su enlace es externo, como los de otros sitios (§13). El servidor de desarrollo y `vite preview` no la sirven.
+- **Aviso**: la web es un proyecto independiente, sin relación con los fabricantes, y las marcas y los nombres de las pinturas son de sus propietarios.
+- **Versión**: la fecha del commit del que se compila la web y su hash corto, que enlaza a ese commit en GitHub («Versión del 21 de noviembre de 2026 · aeb4dca en github.com»). Es la misma versión que usa el despliegue (docs/08), así que vale para preproducción y producción. La etiqueta `release/` no sirve: se crea después de desplegar. `vite.config.ts` la lee de git al compilar y la escribe en el código; sin git, el pie no la muestra.
+- **Maquetación**: en el móvil, todo en una columna; desde 48rem, la web a la izquierda y los dos grupos a la derecha. El aviso y la versión van debajo, a todo el ancho, separados por una línea.
+
+## 17. Prototipos
 
 Artifacts privados de claude.ai, hechos al decidir la maquetación. Solo los abre su propietario.
 

@@ -199,5 +199,16 @@ export const ko: Messages = {
   },
   footer: {
     credits: "출처와 크레딧",
+    tagline:
+      "실제처럼 쓰는 색상환과 브랜드별로 가장 비슷한 물감, 오프라인에서도 사용할 수 있습니다.",
+    projectHeading: "프로젝트",
+    appHeading: "앱",
+    sourceCode: "{host}의 소스 코드",
+    donate: "{host}에서 후원하기",
+    apiReference: "API 레퍼런스",
+    disclaimer:
+      "Games Workshop, Vallejo, The Army Painter, AK Interactive와 관계없는 독립 프로젝트입니다. 상표와 물감 이름은 각 소유자에게 있습니다.",
+    version: "{date} 버전",
+    commit: "{host}의 {commit}",
   },
 };

@@ -187,7 +187,23 @@ export interface Messages {
     readonly body: string;
     readonly backHome: string;
   };
+  /** The footer (docs/07 §16). */
   readonly footer: {
     readonly credits: string;
+    /** What the web does, under its name. */
+    readonly tagline: string;
+    readonly projectHeading: string;
+    readonly appHeading: string;
+    /** An external link: `{host}` is the site it opens. */
+    readonly sourceCode: string;
+    /** An external link: `{host}` is the site it opens. */
+    readonly donate: string;
+    readonly apiReference: string;
+    /** The web is not official: the brands belong to their owners. */
+    readonly disclaimer: string;
+    /** `{date}`: the date of the commit the web is built from. */
+    readonly version: string;
+    /** An external link to that commit: `{commit}` and `{host}`. */
+    readonly commit: string;
   };
 }

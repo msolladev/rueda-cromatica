@@ -840,7 +840,9 @@ describe("the credits page", () => {
   it("opens other sites in a new tab, without passing them standing", () => {
     mount({ kind: "credits", locale: "es" });
     const links = [
-      ...container.querySelectorAll<HTMLAnchorElement>(".external-link"),
+      ...container.querySelectorAll<HTMLAnchorElement>(
+        ".credits .external-link",
+      ),
     ];
     expect(links.length).toBeGreaterThan(0);
     for (const link of links) {

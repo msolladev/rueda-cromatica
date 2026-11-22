@@ -146,6 +146,8 @@ function LocalizedApp({
         )}
       </main>
       <Footer
+        locale={locale}
+        homePath={pathOf({ kind: "home", locale })}
         creditsPath={pathOf({ kind: "credits", locale })}
         installMode={installMode}
         messages={m}

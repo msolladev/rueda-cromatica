@@ -206,5 +206,16 @@ export const fr: Messages = {
   },
   footer: {
     credits: "Crédits et sources",
+    tagline:
+      "Une roue chromatique qui fonctionne comme une vraie, et les peintures les plus proches de chaque marque, même hors ligne.",
+    projectHeading: "Projet",
+    appHeading: "Application",
+    sourceCode: "Code source sur {host}",
+    donate: "Faire un don sur {host}",
+    apiReference: "Référence de l’API",
+    disclaimer:
+      "Projet indépendant, sans lien avec Games Workshop, Vallejo, The Army Painter ni AK Interactive. Les marques et les noms des peintures appartiennent à leurs propriétaires.",
+    version: "Version du {date}",
+    commit: "{commit} sur {host}",
   },
 };

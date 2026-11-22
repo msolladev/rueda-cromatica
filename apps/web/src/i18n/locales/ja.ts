@@ -201,5 +201,16 @@ export const ja: Messages = {
   },
   footer: {
     credits: "クレジットと出典",
+    tagline:
+      "本物のように使えるカラーホイールと、各ブランドの最も近い塗料。オフラインでも使えます。",
+    projectHeading: "プロジェクト",
+    appHeading: "アプリ",
+    sourceCode: "{host} のソースコード",
+    donate: "{host} で寄付する",
+    apiReference: "API リファレンス",
+    disclaimer:
+      "独立したプロジェクトであり、Games Workshop、Vallejo、The Army Painter、AK Interactive とは関係ありません。商標と塗料名は各所有者に帰属します。",
+    version: "{date} 版",
+    commit: "{host} の {commit}",
   },
 };

@@ -197,5 +197,16 @@ export const gl: Messages = {
   },
   footer: {
     credits: "Créditos e fontes",
+    tagline:
+      "Unha roda de cor coma a física e as pinturas máis parecidas de cada marca, tamén sen conexión.",
+    projectHeading: "Proxecto",
+    appHeading: "Aplicación",
+    sourceCode: "Código fonte en {host}",
+    donate: "Facer unha doazón en {host}",
+    apiReference: "Referencia da API",
+    disclaimer:
+      "Proxecto independente, sen relación con Games Workshop, Vallejo, The Army Painter nin AK Interactive. As marcas e os nomes das pinturas pertencen aos seus propietarios.",
+    version: "Versión do {date}",
+    commit: "{commit} en {host}",
   },
 };

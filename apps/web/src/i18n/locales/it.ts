@@ -203,5 +203,16 @@ export const it: Messages = {
   },
   footer: {
     credits: "Crediti e fonti",
+    tagline:
+      "Una ruota dei colori che funziona come una vera, e i colori più simili di ogni marca, anche offline.",
+    projectHeading: "Progetto",
+    appHeading: "App",
+    sourceCode: "Codice sorgente su {host}",
+    donate: "Fai una donazione su {host}",
+    apiReference: "Riferimento dell’API",
+    disclaimer:
+      "Progetto indipendente, non affiliato a Games Workshop, Vallejo, The Army Painter o AK Interactive. I marchi e i nomi dei colori appartengono ai rispettivi proprietari.",
+    version: "Versione del {date}",
+    commit: "{commit} su {host}",
   },
 };

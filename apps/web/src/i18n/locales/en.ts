@@ -198,5 +198,16 @@ export const en: Messages = {
   },
   footer: {
     credits: "Credits and sources",
+    tagline:
+      "A color wheel that works like a physical one, and the closest paints of each brand, offline too.",
+    projectHeading: "Project",
+    appHeading: "App",
+    sourceCode: "Source code on {host}",
+    donate: "Donate on {host}",
+    apiReference: "API reference",
+    disclaimer:
+      "Independent project, not affiliated with Games Workshop, Vallejo, The Army Painter or AK Interactive. Trademarks and paint names belong to their owners.",
+    version: "Version of {date}",
+    commit: "{commit} on {host}",
   },
 };

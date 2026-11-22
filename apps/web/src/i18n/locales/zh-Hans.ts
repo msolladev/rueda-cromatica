@@ -192,5 +192,15 @@ export const zhHans: Messages = {
   },
   footer: {
     credits: "致谢与来源",
+    tagline: "像实物一样使用的色轮，以及每个品牌中最接近的颜料，离线也能用。",
+    projectHeading: "项目",
+    appHeading: "应用",
+    sourceCode: "{host} 上的源代码",
+    donate: "在 {host} 上捐赠",
+    apiReference: "API 参考",
+    disclaimer:
+      "独立项目，与 Games Workshop、Vallejo、The Army Painter 和 AK Interactive 均无关联。商标和颜料名称归其各自所有者所有。",
+    version: "{date} 版本",
+    commit: "{host} 上的 {commit}",
   },
 };

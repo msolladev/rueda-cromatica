@@ -206,5 +206,16 @@ export const de: Messages = {
   },
   footer: {
     credits: "Danksagungen und Quellen",
+    tagline:
+      "Ein Farbkreis, der wie ein echter funktioniert, und die ähnlichsten Farben jeder Marke, auch offline.",
+    projectHeading: "Projekt",
+    appHeading: "App",
+    sourceCode: "Quellcode auf {host}",
+    donate: "Spenden über {host}",
+    apiReference: "API-Referenz",
+    disclaimer:
+      "Unabhängiges Projekt, nicht verbunden mit Games Workshop, Vallejo, The Army Painter oder AK Interactive. Marken und Farbnamen gehören ihren Inhabern.",
+    version: "Version vom {date}",
+    commit: "{commit} auf {host}",
   },
 };
