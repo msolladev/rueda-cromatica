@@ -100,7 +100,7 @@ El alcance mínimo y lo aplazado están razonados en el [ADR-0019](docs/adr/0019
 5. **Catálogo completo**, aplazado del MVP ([ADR-0019](docs/adr/0019-alcance-minimo-mvp.md)):
    - Equivalencias oficiales y sustituciones, incluida la carta de GW de 2012 si existe una copia fiel ([ADR-0015](docs/adr/0015-fuentes-trazabilidad-licencias.md)).
    - Líneas descatalogadas: las antiguas de Citadel (Citadel Colour, Foundation, Washes de 2008, tintas, Glaze y Edge) y los Warpaints originales.
-   - Datos curados en dos capas, con transcripciones literales, claves por documento y exclusiones.
+   - Datos curados en dos capas, con transcripciones literales, claves por documento y exclusiones: hecho ([ADR-0030](docs/adr/0030-datos-curados-dos-capas.md), [docs/04](docs/04-datos-curados.md)).
    - Varios candidatos de color por pintura, con prioridad `measured` > `manufacturer` > `community` y elección manual.
    - Desactivación de fuentes con su resumen de cambios, y el script `archive-sources` (Wayback Machine y SHA-256).
 
