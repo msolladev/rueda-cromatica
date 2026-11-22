@@ -1,6 +1,6 @@
 # Pinturas parecidas
 
-Este documento especifica el módulo `matching` de `@chromatic-wheel/domain`: la búsqueda de las pinturas del catálogo más parecidas a un color, que son las equivalencias calculadas de [docs/01](01-modelo-dominio.md) §4. Por qué se decidió así está en el [ADR-0022](adr/0022-busqueda-pinturas-parecidas.md).
+Este documento especifica el módulo `matching` de `@chromatic-wheel/domain`: la búsqueda de las pinturas del catálogo más parecidas a un color, que son las equivalencias calculadas de [docs/01](01-modelo-dominio.md) §4, y las equivalencias oficiales de una pintura medidas con el mismo criterio (§10). Por qué se decidió así está en el [ADR-0022](adr/0022-busqueda-pinturas-parecidas.md) y el [ADR-0033](adr/0033-equivalencias-oficiales-lineas-vigentes.md).
 
 ## 1. Principios
 
@@ -147,3 +147,15 @@ Cuando la búsqueda tolere faltas de ortografía, este orden pasará a ser por p
 ### 9.3. Rendimiento
 
 Busca en el índice en memoria, de forma síncrona. Medido el 2026-11-21 en el mismo equipo que §7, con 7 búsquedas distintas («red», «lothern», «vallejo black», «70950»…) repetidas 300 veces después de 50 de calentamiento, sobre las 1393 pinturas: mediana de 0,16 ms y percentil 95 de 0,33 ms. Está muy por debajo de un fotograma (16 ms), así que la web no necesita retardo ni descartar búsquedas antiguas. No hay medidas en un móvil.
+
+## 10. Equivalencias oficiales de una pintura
+
+Lo que los fabricantes afirman en sus cartas ([ADR-0004](adr/0004-equivalencias-dirigidas.md)), para mostrarlo con la misma fila que las pinturas parecidas sin mezclarlo con ellas ([docs/07](07-web.md) §16):
+
+- **Las dos direcciones, por separado**: las salientes, cuyas aristas salen de la pintura, y las entrantes, que llegan a ella. Una arista solo se lee en su dirección: no se infieren ni las inversas ni las transitivas.
+- **Una entrada por cada otra pintura**, con todas las fuentes que afirman esa arista, en el orden del catálogo. Las entradas van en el orden del catálogo de la otra pintura, así que salen agrupadas por marca.
+- **Medida contra un color**, el de la rueda, con el ΔE, la etiqueta de §3 y el aviso de color aproximado, como un resultado de §6. Una pintura sin color sale igual, sin ΔE ni etiqueta.
+- **Sin filtros ni límite**: son lo que dice la fuente, no candidatas.
+- Un color que no es `#rrggbb` es un error esperable; una pintura que no está en el catálogo, un error de programación.
+
+La firma de `findOfficialEquivalences` está en la referencia de la API, que se genera con `pnpm docs:api` ([README](../README.md#comandos)).

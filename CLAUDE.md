@@ -98,11 +98,11 @@ El alcance mínimo y lo aplazado están razonados en el [ADR-0019](docs/adr/0019
    Los importadores se escriben como funciones puras (fuente → filas), sin acceso a disco dentro de la lógica, para poder reutilizarlos en la fase 6.
 
 5. **Catálogo completo**, aplazado del MVP ([ADR-0019](docs/adr/0019-alcance-minimo-mvp.md)):
-   - Equivalencias oficiales y sustituciones, incluida la carta de GW de 2012 si existe una copia fiel ([ADR-0015](docs/adr/0015-fuentes-trazabilidad-licencias.md)).
-   - Líneas descatalogadas: las antiguas de Citadel (Citadel Colour, Foundation, Washes de 2008, tintas, Glaze y Edge) y los Warpaints originales.
    - Datos curados en dos capas, con transcripciones literales, claves por documento y exclusiones: hecho ([ADR-0030](docs/adr/0030-datos-curados-dos-capas.md), [docs/04](docs/04-datos-curados.md)).
    - Varios candidatos de color por pintura, con prioridad `measured` > `manufacturer` > `community`, elección manual, descartes e informe de discrepancias, y la tabla muestreada de SimoGecko como segunda fuente de Citadel: hecho ([ADR-0031](docs/adr/0031-varios-candidatos-color.md), [docs/04](docs/04-datos-curados.md)).
    - Desactivación de fuentes con su resumen de cambios, y el script `archive-sources` (Wayback Machine y SHA-256): hecho ([ADR-0032](docs/adr/0032-desactivacion-fuentes-archivado.md), [docs/04](docs/04-datos-curados.md)).
+   - Equivalencias oficiales cuyos dos extremos son pinturas de líneas vigentes, desde las cartas de Vallejo (CC266), The Army Painter (Warpaints Fanatic) y AK (3rd Gen), con su bloque en la web: hecho ([ADR-0033](docs/adr/0033-equivalencias-oficiales-lineas-vigentes.md), [docs/04](docs/04-datos-curados.md), [docs/07](docs/07-web.md)). Las filas con un extremo en una línea descatalogada se ignoran hasta el paso siguiente.
+   - Líneas descatalogadas con sus cartas y, con ellas, las sustituciones: las antiguas de Citadel (Citadel Colour, Foundation, Washes de 2008, tintas, Glaze y Edge) con la carta de GW de 2012 si existe una copia fiel ([ADR-0015](docs/adr/0015-fuentes-trazabilidad-licencias.md)), y los Warpaints originales con su carta hacia Fanatic.
 
 6. **Backend, administración del catálogo y sesiones de usuario**, la última fase ([ADR-0017](docs/adr/0017-arquitectura-objetivo-backend.md)). Incluye:
    - Una API REST con base de datos y una web de administración del catálogo, con el frontal y el backend separados.
