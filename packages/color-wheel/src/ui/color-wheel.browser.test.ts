@@ -11,6 +11,8 @@ import {
   type Control,
 } from "../index.ts";
 import { expectNoAxeViolations } from "./testing/axe.ts";
+import { pointAt, RING_INNER } from "./geometry.ts";
+import { mouseDrag, touchDrag, wheelPoint } from "./testing/input.ts";
 
 // The text and focus colors of style.css, as getComputedStyle gives them.
 const LIGHT_TEXT = "rgb(29, 31, 34)";
@@ -704,6 +706,68 @@ describe("base motion", () => {
     expect(pixels(container)).not.toBe(final);
     await new Promise((resolve) => setTimeout(resolve, 500));
     expect(pixels(container)).toBe(final);
+  });
+
+  /** A point of the ring of the wheel under test, at `hue` degrees. */
+  const ringPoint = (hue: number) => {
+    const canvas = container.querySelector("canvas");
+    if (canvas === null) throw new Error("No canvas.");
+    return wheelPoint(canvas, pointAt(hue, (RING_INNER + 1) / 2));
+  };
+
+  /** The drawing still moves at 100 ms, and has settled at 600 ms. */
+  async function expectTravel(): Promise<void> {
+    await new Promise((resolve) => setTimeout(resolve, 100));
+    const halfway = pixels(container);
+    await new Promise((resolve) => setTimeout(resolve, 500));
+    const settled = pixels(container);
+    expect(halfway).not.toBe(settled);
+    await frame();
+    expect(pixels(container)).toBe(settled);
+  }
+
+  it("travels to where the ring is clicked", async () => {
+    container.style.width = "400px";
+    const created = create({ color: "#3daf44" });
+    await frame();
+    await mouseDrag([ringPoint(250)]);
+    // The result is the new one at once; only the drawing travels.
+    expect(created.getState().color).not.toBe("#3daf44");
+    await expectTravel();
+  });
+
+  it("travels to where the ring is tapped", async () => {
+    container.style.width = "400px";
+    const created = create({ color: "#3daf44" });
+    await frame();
+    await touchDrag([ringPoint(250)]);
+    expect(created.getState().color).not.toBe("#3daf44");
+    await expectTravel();
+  });
+
+  it("does not draw the focus after a click", async () => {
+    container.style.width = "400px";
+    create({ color: "#3daf44" });
+    await frame();
+    await mouseDrag([ringPoint(250)]);
+    await new Promise((resolve) => setTimeout(resolve, 600));
+    const ring = query(".cw-ring", HTMLElement);
+    expect(document.activeElement).toBe(ring);
+    // Neither the outline of its box nor the drawing around its shape.
+    expect(getComputedStyle(ring).outlineStyle).toBe("none");
+    const clicked = pixels(container);
+    ring.blur();
+    expect(pixels(container)).toBe(clicked);
+  });
+
+  it("follows a drag at once", async () => {
+    container.style.width = "400px";
+    create({ color: "#3daf44" });
+    await frame();
+    await mouseDrag([ringPoint(250), ringPoint(260), ringPoint(270)]);
+    const now = pixels(container);
+    await new Promise((resolve) => setTimeout(resolve, 100));
+    expect(pixels(container)).toBe(now);
   });
 
   it("answers the keys of the ring at once", async () => {

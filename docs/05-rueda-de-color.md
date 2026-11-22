@@ -138,6 +138,7 @@ wheel.addEventListener("change", (e) => {
   - **Movimiento**, en 450 ms, rápido al principio y suave al final ([ADR-0029](adr/0029-buscador-pinturas-mvp.md)). Sin movimiento si el sistema pide reducirlo (`prefers-reduced-motion`).
     - Al cambiar de armonía o de luz, cuando la base no se mueve, cada marca viaja por el arco más corto hasta su nuevo tono; las que sobran vuelven a la base y las nuevas salen de ella.
     - Cuando la base cambia desde fuera de la rueda (la propiedad `color`, el campo hex, `update`, `setState` o el modelo), la base viaja hasta su nuevo sitio: el tono por el arco más corto y las proporciones en línea recta. El triángulo gira con ella y las marcas la siguen sin cambiar su sitio respecto a la base, salvo que también cambie la armonía. Al cambiar de modelo, el anillo anterior se funde con el nuevo.
+    - Al pulsar o tocar un punto de la rueda, la base viaja hasta él, como cuando cambia desde fuera. Si después se arrastra, el viaje se corta y la base sigue al puntero al momento.
     - Al arrastrar y con el teclado, la base va al momento a donde se lleva.
     - Solo se mueve el dibujo: el resultado, el estado y el evento `change` llevan el valor final desde el principio. Mientras la rueda se mueve no se ven los nombres de las marcas ni el anillo del color resaltado.
 - **Interacción**: arrastrar en el anillo cambia el tono, y arrastrar en el triángulo cambia las proporciones.
@@ -151,7 +152,7 @@ wheel.addEventListener("change", (e) => {
 - **Ratón, teclado y pantalla táctil**, todo con la misma precisión:
   - **Ratón y lápiz**, con Pointer Events: el punto va a donde está el puntero.
   - **Táctil**, con Pointer Events: el punto no salta bajo el dedo. Se mueve lo mismo que el dedo, esté donde esté el dedo, así que sigue a la vista. En el anillo, el tono gira lo mismo que gira el dedo alrededor del centro. Un toque sin desplazamiento (menos de 6 px) sí coloca el punto donde cae, para los saltos grandes.
-  - **Teclado**: el anillo y el triángulo son deslizadores (`role="slider"`) que reciben el foco, y el foco se dibuja alrededor de su forma.
+  - **Teclado**: el anillo y el triángulo son deslizadores (`role="slider"`) que reciben el foco, y el foco se dibuja alrededor de su forma. Al pulsar o tocar la rueda, la parte pulsada recibe el foco para seguir con el teclado, pero su foco no se dibuja hasta que se usa una tecla: con el ratón o el dedo no aporta nada.
     - Anillo: ← y ↓ restan 1°, → y ↑ suman 1°; con Mayúsculas, 10°. Re Pág y Av Pág mueven 30°, un paso de la rueda de 12 tonos.
     - Triángulo: → y ← suben o bajan el color puro un 1 % y conservan la relación entre blanco y negro; ↑ y ↓ pasan un 1 % del negro al blanco, o al revés, y conservan el color puro. Con Mayúsculas, un 10 %. Los ejes significan siempre lo mismo, gire como gire el triángulo.
     - El lector de pantalla anuncia el tono («30°») y las proporciones («45 % puro, 10 % blanco, 45 % negro»), y cada deslizador enlaza su explicación de teclas con `aria-describedby`.

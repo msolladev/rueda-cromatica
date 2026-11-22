@@ -120,12 +120,17 @@
   opacity: 0.5;
 }
 
-/* The focus of the sliders is drawn on the canvas, around their shape. */
+/* The focus of the sliders is drawn on the canvas, around their shape, and
+   only from the keyboard (docs/05 §6.3): never the outline of the box, which
+   `.cw-root :focus-visible` and the page's own focus styles would give. */
 .cw-ring,
 .cw-triangle {
   position: absolute;
   inset: 0;
   pointer-events: none;
+}
+
+.cw-root :is(.cw-ring, .cw-triangle):focus-visible {
   outline: none;
 }
 
