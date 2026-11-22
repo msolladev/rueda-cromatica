@@ -89,7 +89,8 @@ export const en: Messages = {
   },
   search: {
     label: "Start from a paint you own",
-    hint: "At least {min} letters of the name, code or brand.",
+    placeholder: "Name, code or brand",
+    hint: "At least {min} letters.",
     paints: "Paints",
     noMatches: "No paint matches what you typed.",
     seeMore: "See more paints ({shown} of {total})",
@@ -198,5 +199,16 @@ export const en: Messages = {
   },
   footer: {
     credits: "Credits and sources",
+    tagline:
+      "A color wheel that works like a physical one, and the closest paints of each brand, offline too.",
+    projectHeading: "Project",
+    appHeading: "App",
+    sourceCode: "Source code on {host}",
+    donate: "Donate on {host}",
+    apiReference: "API reference",
+    disclaimer:
+      "Independent project, not affiliated with Games Workshop, Vallejo, The Army Painter or AK Interactive. Trademarks and paint names belong to their owners.",
+    version: "Version of {date}",
+    commit: "{commit} on {host}",
   },
 };

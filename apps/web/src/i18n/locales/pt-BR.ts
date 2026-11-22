@@ -92,7 +92,8 @@ export const ptBR: Messages = {
   },
   search: {
     label: "Comece por uma tinta que você tem",
-    hint: "Pelo menos {min} letras do nome, do código ou da marca.",
+    placeholder: "Nome, código ou marca",
+    hint: "Pelo menos {min} letras.",
     paints: "Tintas",
     noMatches: "Nenhuma tinta corresponde ao que você digitou.",
     seeMore: "Ver mais tintas ({shown} de {total})",
@@ -202,5 +203,16 @@ export const ptBR: Messages = {
   },
   footer: {
     credits: "Créditos e fontes",
+    tagline:
+      "Uma roda de cores que funciona como uma de verdade, e as tintas mais parecidas de cada marca, também offline.",
+    projectHeading: "Projeto",
+    appHeading: "Aplicativo",
+    sourceCode: "Código-fonte no {host}",
+    donate: "Doar pelo {host}",
+    apiReference: "Referência da API",
+    disclaimer:
+      "Projeto independente, sem relação com Games Workshop, Vallejo, The Army Painter ou AK Interactive. As marcas e os nomes das tintas pertencem aos seus proprietários.",
+    version: "Versão de {date}",
+    commit: "{commit} no {host}",
   },
 };

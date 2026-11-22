@@ -89,7 +89,8 @@ export const eu: Messages = {
   },
   search: {
     label: "Hasi duzun pintura batetik",
-    hint: "Izenaren, kodearen edo markaren {min} letra gutxienez.",
+    placeholder: "Izena, kodea edo marka",
+    hint: "Gutxienez {min} letra.",
     paints: "Pinturak",
     noMatches: "Ez dago idatzitakoarekin bat datorren pinturarik.",
     seeMore: "Ikusi pintura gehiago ({shown}/{total})",
@@ -199,5 +200,16 @@ export const eu: Messages = {
   },
   footer: {
     credits: "Kredituak eta iturriak",
+    tagline:
+      "Benetakoa bezala dabilen kolore-gurpila eta marka bakoitzeko pinturarik antzekoenak, konexiorik gabe ere.",
+    projectHeading: "Proiektua",
+    appHeading: "Aplikazioa",
+    sourceCode: "Iturburu-kodea {host} webgunean",
+    donate: "Egin dohaintza {host} webgunean",
+    apiReference: "APIaren erreferentzia",
+    disclaimer:
+      "Proiektu independentea da, eta ez du zerikusirik Games Workshop, Vallejo, The Army Painter edo AK Interactive enpresekin. Markak eta pinturen izenak beren jabeenak dira.",
+    version: "{date} bertsioa",
+    commit: "{commit} {host} webgunean",
   },
 };

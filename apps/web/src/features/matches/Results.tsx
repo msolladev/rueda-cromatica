@@ -161,6 +161,23 @@ export function Results(props: ResultsProps) {
             ))}
           </div>
         </fieldset>
+        {approximate > 0 && (
+          // One line; the explanation opens below it. In the toolbar: beside
+          // «Show» on wide screens (docs/07 §1).
+          <details className="notice notice-warn notice-approx">
+            <summary>
+              <InfoIcon />
+              <span>
+                {mixed ? m.approximate.someTitle : m.approximate.allTitle}
+                <span aria-hidden="true"> ≈</span>
+              </span>
+            </summary>
+            <p>
+              {mixed ? m.approximate.some : m.approximate.all}{" "}
+              <a href={props.creditsPath}>{m.approximate.sources}</a>
+            </p>
+          </details>
+        )}
         <Filters
           brands={brands}
           filters={filters}
@@ -168,22 +185,6 @@ export function Results(props: ResultsProps) {
           messages={m}
         />
       </div>
-      {approximate > 0 && (
-        // One line; the explanation opens below it.
-        <details className="notice notice-warn notice-approx">
-          <summary>
-            <InfoIcon />
-            <span>
-              {mixed ? m.approximate.someTitle : m.approximate.allTitle}
-              <span aria-hidden="true"> ≈</span>
-            </span>
-          </summary>
-          <p>
-            {mixed ? m.approximate.some : m.approximate.all}{" "}
-            <a href={props.creditsPath}>{m.approximate.sources}</a>
-          </p>
-        </details>
-      )}
       <ColorTabs {...withEntrance} />
       <p className="legend">
         <span className="split split-mini" aria-hidden="true">

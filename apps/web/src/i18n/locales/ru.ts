@@ -94,7 +94,8 @@ export const ru: Messages = {
   },
   search: {
     label: "Начните с краски, которая у вас есть",
-    hint: "Не менее {min} символов названия, кода или марки.",
+    placeholder: "Название, код или марка",
+    hint: "Не менее {min} символов.",
     paints: "Краски",
     noMatches: "Нет красок, подходящих под запрос.",
     seeMore: "Показать ещё краски ({shown} из {total})",
@@ -203,5 +204,16 @@ export const ru: Messages = {
   },
   footer: {
     credits: "Благодарности и источники",
+    tagline:
+      "Цветовой круг, который работает как настоящий, и самые похожие краски каждого бренда, в том числе без интернета.",
+    projectHeading: "Проект",
+    appHeading: "Приложение",
+    sourceCode: "Исходный код на {host}",
+    donate: "Поддержать на {host}",
+    apiReference: "Справочник API",
+    disclaimer:
+      "Независимый проект, не связанный с Games Workshop, Vallejo, The Army Painter и AK Interactive. Товарные знаки и названия красок принадлежат их владельцам.",
+    version: "Версия от {date}",
+    commit: "{commit} на {host}",
   },
 };

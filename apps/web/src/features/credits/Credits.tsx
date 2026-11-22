@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { ExternalLinkIcon } from "../../app/icons.tsx";
+import { ExternalLink } from "../../app/ExternalLink.tsx";
 import { format } from "../../i18n/i18n.ts";
 import type { Messages } from "../../i18n/messages.ts";
 import type { CreditsData, LicenseEntry, SourceView } from "./data.ts";
@@ -53,46 +53,6 @@ export function Credits({ data, messages: m, locale, homePath }: CreditsProps) {
         <a href={homePath}>{m.credits.backToWheel}</a>
       </p>
     </article>
-  );
-}
-
-/** The site of an address, without `www.`; the address itself if it has none. */
-function hostOf(href: string): string {
-  try {
-    return new URL(href).host.replace(/^www\./, "") || href;
-  } catch {
-    return href;
-  }
-}
-
-/**
- * A link to another site (docs/07 §13): in a new tab, with `nofollow`, so
- * that the web does not pass its standing to it in search engines, and with
- * Lucide's "external-link" icon in front. Its text says what it opens and
- * where, instead of the whole address.
- */
-function ExternalLink({
-  href,
-  text,
-  messages: m,
-}: {
-  readonly href: string;
-  readonly text: string;
-  readonly messages: Messages;
-}) {
-  return (
-    <a
-      className="external-link"
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer nofollow"
-    >
-      <ExternalLinkIcon />
-      <span className="link-text">
-        {format(text, { host: hostOf(href) })}
-        <span className="visually-hidden"> {m.credits.newTab}</span>
-      </span>
-    </a>
   );
 }
 

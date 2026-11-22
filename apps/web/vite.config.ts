@@ -6,6 +6,7 @@ import {
   type Plugin,
 } from "vite";
 import { VitePWA } from "vite-plugin-pwa";
+import { execFileSync } from "node:child_process";
 import { defineConfig } from "vitest/config";
 import { licenseCollector } from "./build/licenses.ts";
 import { prerender } from "./build/prerender.ts";
@@ -18,6 +19,28 @@ import { prerender } from "./build/prerender.ts";
 const SITE_ORIGIN = (
   process.env["SITE_ORIGIN"] ?? "http://localhost:4173"
 ).replace(/\/$/, "");
+
+/**
+ * The commit the web is built from, and its date, for the version in the
+ * footer (docs/07 §16). Empty if there is no git, as in a copy of the code
+ * without its history.
+ */
+function commitOf(): { readonly hash: string; readonly date: string } {
+  try {
+    const [hash = "", date = ""] = execFileSync(
+      "git",
+      ["log", "-1", "--format=%H%n%cs"],
+      { encoding: "utf8" },
+    )
+      .trim()
+      .split("\n");
+    return { hash, date };
+  } catch {
+    return { hash: "", date: "" };
+  }
+}
+
+const COMMIT = commitOf();
 
 /**
  * In the prerendering there is no service worker: the module that registers
@@ -47,6 +70,10 @@ export default defineConfig(({ command, isSsrBuild }) => {
     // Each page is its own HTML (docs/07 §12): no single-page fallback, so
     // that an unknown address is a 404 and not the root page.
     appType: "mpa",
+    define: {
+      "import.meta.env.VITE_COMMIT": JSON.stringify(COMMIT.hash),
+      "import.meta.env.VITE_COMMIT_DATE": JSON.stringify(COMMIT.date),
+    },
     resolve: {
       conditions: fromSource
         ? [SOURCE, ...defaultClientConditions]

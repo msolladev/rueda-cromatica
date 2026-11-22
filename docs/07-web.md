@@ -10,8 +10,8 @@ Este documento especifica `apps/web`: la PWA que integra la rueda de `color-whee
 - **La lista de colores de la rueda se oculta** (`hideControl("results")`): la web muestra los colores en sus pestañas, y así cada color aparece una vez.
 - **Resultados**, en este orden:
   1. El selector «Mostrar», siempre visible: «Por marca» o «Las más parecidas».
-  2. Los filtros, en un desplegable (`<details>`) con un resumen de lo activo: «todas las marcas · opacas · sin descatalogadas». Dentro, las marcas, los tipos que se pueden añadir con las metálicas, y las descatalogadas. Por defecto, todas las marcas, solo las opacas no metálicas y sin descatalogadas (docs/06 §6.1).
-  3. El aviso de color aproximado (§3).
+  2. El aviso de color aproximado (§3). Desde 60rem va a la derecha de «Mostrar», en el hueco que deja su ancho, alineado con su barra y de su misma altura.
+  3. Los filtros, en un desplegable (`<details>`) en su propia fila, a todo el ancho y debajo de «Mostrar» en cualquier pantalla, para que al abrirse crezcan hacia abajo sin dejar un hueco junto al selector, con un resumen de lo activo: «todas las marcas · opacas · sin descatalogadas». Dentro, las marcas, los tipos que se pueden añadir con las metálicas, y las descatalogadas. Por defecto, todas las marcas, solo las opacas no metálicas y sin descatalogadas (docs/06 §6.1).
   4. Una pestaña por color de la armonía, con su muestra y su nombre: el papel, numerado si se repite («Tríada 1», «Tríada 2»), como en las marcas de la rueda (`colorNames` de `color-wheel`). La rueda señala el color de la pestaña elegida, con un anillo en su marca y su nombre (`highlightColor`); al pasar el ratón o el foco por otra pestaña, señala la de esa mientras tanto. En el móvil se quedan fijas bajo la barra de navegación al desplazar. Si no caben, se desplazan de lado, y en cada lado con pestañas ocultas aparece un degradado del fondo con una flecha (`chevron-left` y `chevron-right` de Lucide), que se desvanece al llegar a ese extremo; pulsada, desplaza la fila. Las flechas no están en el orden del teclado, que recorre las pestañas con las suyas. Se recorren con las flechas, Inicio y Fin (patrón `tablist`).
   5. La leyenda de la muestra partida (§2), una línea de texto sin recuadro.
   6. El panel del color elegido.
@@ -163,7 +163,7 @@ En la fase 6 las preferencias pasarán a la cuenta del usuario ([ADR-0017](adr/0
 ## 13. Créditos y fuentes
 
 - **Fuentes del catálogo**: cada una con su título, quién la publica, su enlace, su copia archivada, su licencia, su atribución y la fecha de consulta, y lo que aporta: los colores de qué marcas y gamas, y cuántas sustituciones y equivalencias oficiales (`sourceContributions`). Todo sale de `catalog.json`. En pantallas estrechas cada dato va bajo su nombre.
-- **Enlaces a otros sitios** (las fuentes, sus copias archivadas y los repositorios): se abren en una pestaña nueva, con `rel="noopener noreferrer nofollow"` para no pasarles autoridad en los buscadores, y llevan delante el icono `external-link` de Lucide. Su texto dice qué abren y dónde («Ver la fuente en github.com»), no la dirección entera, y los lectores de pantalla oyen además que se abren en una pestaña nueva.
+- **Enlaces a otros sitios** (las fuentes, sus copias archivadas, los repositorios y los del pie, §16): se abren en una pestaña nueva, con `rel="noopener noreferrer nofollow"` para no pasarles autoridad en los buscadores, y llevan delante el icono `external-link` de Lucide. Su texto dice qué abren y dónde («Ver la fuente en github.com»), no la dirección entera, y los lectores de pantalla oyen además que se abren en una pestaña nueva.
 - **Código de terceros**: cada paquete que acaba en el código distribuido (la web y el service worker), con su versión, su licencia, su repositorio y el texto de su licencia, plegado y en el idioma original. Además, los avisos `@license` del código propio (los iconos de Lucide). Un plugin de Vite los saca del bundle en cada build, así que la lista siempre coincide con lo que se distribuye.
 
 ## 14. Tests
@@ -178,7 +178,7 @@ En la fase 6 las preferencias pasarán a la cuenta del usuario ([ADR-0017](adr/0
 
 Para empezar desde una pintura que se tiene: se busca y su color pasa a ser la base de la rueda ([ADR-0029](adr/0029-buscador-pinturas-mvp.md)). Qué encuentra y en qué orden está en docs/06 §9.
 
-- **Encima de la rueda**, con el ancho máximo de la rueda, en su propio elemento `<search>`, fuera de la sección de la rueda, para que «Saltar a la rueda» siga llevando al anillo (§11): la etiqueta («Empieza por una pintura que tengas»), una línea de ayuda siempre visible («Al menos 3 letras del nombre, el código o la marca.») y el campo. Sin texto de ejemplo dentro del campo: no cabe en el móvil y desaparece al escribir.
+- **Encima de la rueda**, con el ancho máximo de la rueda, en su propio elemento `<search>`, fuera de la sección de la rueda, para que «Saltar a la rueda» siga llevando al anillo (§11): la etiqueta («Empieza por una pintura que tengas»), una línea de ayuda siempre visible con el mínimo de letras («Al menos 3 letras.») y el campo, con lo que se puede buscar como texto de ejemplo («Nombre, código o marca»), en el color atenuado de la web para que cumpla el contraste AA. La etiqueta tiene el aspecto del título «Pinturas parecidas» y la ayuda el de la leyenda de «Mostrar», con los mismos espacios, para que desde 60rem, con las dos columnas, el campo y «Mostrar» queden a la misma altura. Si la ayuda ocupa dos líneas en algún idioma, se descuadra. El mínimo va fuera del campo porque el texto de ejemplo desaparece al escribir, justo cuando hace falta.
 - **Patrón _combobox_ con lista de sugerencias** de la APG, con `useCombobox` de [Downshift](https://github.com/downshift-js/downshift): Downshift da el estado, el teclado (las flechas, Intro y Esc) y el ARIA (`aria-expanded`, `aria-activedescendant`…), y la web, el marcado y el estilo. La web no controla el texto del campo, porque con el texto controlado Downshift rompe la escritura con IME (#1452). Salir del campo no elige nada.
 - **Desde 3 caracteres**: con menos, la lista no se abre. El campo está desactivado hasta que el catálogo se carga.
 - **Cada sugerencia**, de dos líneas:
@@ -195,7 +195,18 @@ Para empezar desde una pintura que se tiene: se busca y su color pasa a ser la b
 - **Si la rueda RYB no alcanza la pintura** (ΔE mayor que 1 entre su hex y la base, `colorDifference` de docs/06 §2), bajo el campo, con el aspecto del aviso de color aproximado: «La rueda RYB no llega a este color: usa el más parecido (ΔE 8,6). Usar la rueda digital». El enlace cambia el modelo y la base vuelve a ser la pintura exacta ([ADR-0021](adr/0021-cambio-modelo-conserva-color.md)). Con el catálogo actual pasa con 124 pinturas, sobre todo cianes y azules intensos.
 - **Sin JavaScript** el campo sale desactivado, con su etiqueta y su ayuda.
 
-## 16. Prototipos
+## 16. Pie
+
+- **Franja de tonos**: arriba, una franja con los 12 tonos puros de la rueda RYB, de rojo a magenta, como los del icono. Los calcula el pie con `fromWheelColor` de `color-wheel` en el render, así que llegan en el HTML y no se escriben a mano.
+- **La web**: su icono y su nombre, que llevan a la principal, y una frase con lo que hace.
+- **Dos grupos de enlaces**, cada uno con su título:
+  - **Proyecto**: «Créditos y fuentes», el código fuente en GitHub y la donación en PayPal.me. Los dos últimos son enlaces a otros sitios (§13).
+  - **Aplicación**: «Instalar la aplicación» mientras el navegador permita instalarla (§8) y la referencia de la API (`/reference/`), en inglés. La referencia es otro sitio, generado con TypeDoc y servido junto a la web por el servidor de cada entorno, así que su enlace es externo, como los de otros sitios (§13). El servidor de desarrollo y `vite preview` no la sirven.
+- **Aviso**: la web es un proyecto independiente, sin relación con los fabricantes, y las marcas y los nombres de las pinturas son de sus propietarios.
+- **Versión**: la fecha del commit del que se compila la web y su hash corto, que enlaza a ese commit en GitHub («Versión del 21 de noviembre de 2026 · aeb4dca en github.com»). Es la misma versión que usa el despliegue (docs/08), así que vale para preproducción y producción. La etiqueta `release/` no sirve: se crea después de desplegar. `vite.config.ts` la lee de git al compilar y la escribe en el código; sin git, el pie no la muestra.
+- **Maquetación**: en el móvil, todo en una columna; desde 48rem, la web a la izquierda y los dos grupos a la derecha. El aviso y la versión van debajo, a todo el ancho, separados por una línea.
+
+## 17. Prototipos
 
 Artifacts privados de claude.ai, hechos al decidir la maquetación. Solo los abre su propietario.
 

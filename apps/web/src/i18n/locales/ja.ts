@@ -91,7 +91,8 @@ export const ja: Messages = {
   },
   search: {
     label: "手持ちの塗料から始める",
-    hint: "名前・品番・ブランドを {min} 文字以上入力してください。",
+    placeholder: "名前・品番・ブランド",
+    hint: "{min} 文字以上入力してください。",
     paints: "塗料",
     noMatches: "入力に一致する塗料はありません。",
     seeMore: "塗料をもっと見る（{total} 件中 {shown} 件）",
@@ -201,5 +202,16 @@ export const ja: Messages = {
   },
   footer: {
     credits: "クレジットと出典",
+    tagline:
+      "本物のように使えるカラーホイールと、各ブランドの最も近い塗料。オフラインでも使えます。",
+    projectHeading: "プロジェクト",
+    appHeading: "アプリ",
+    sourceCode: "{host} のソースコード",
+    donate: "{host} で寄付する",
+    apiReference: "API リファレンス",
+    disclaimer:
+      "独立したプロジェクトであり、Games Workshop、Vallejo、The Army Painter、AK Interactive とは関係ありません。商標と塗料名は各所有者に帰属します。",
+    version: "{date} 版",
+    commit: "{host} の {commit}",
   },
 };
