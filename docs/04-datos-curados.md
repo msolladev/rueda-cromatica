@@ -112,7 +112,7 @@ Un ejemplo real, Nurgle's Rot, cuya clave conserva la errata de SimoGecko:
 
 ## 5. `ignore-reasons.json`, `color-policy.json` y `tombstones.json`
 
-- **`ignore-reasons.json`**: los motivos de las filas ignoradas, cada uno con su `id` (un slug) y su `text`. Cada ignorada cita uno con `reasonId`, y su `note` recoge el detalle propio de ese caso. Por ejemplo, 73.300 Sepia Wash se ignora con `not-in-current-chart` y la nota «Carta CC266-Rev03 (2025).». Estos IDs no van a `catalog.json`, así que se pueden renombrar.
+- **`ignore-reasons.json`**: los motivos de las filas ignoradas, cada uno con su `id` (un slug) y su `text`. Cada ignorada cita uno con `reasonId`, y su `note` recoge el detalle propio de ese caso. Por ejemplo, 73.300 Sepia Wash se ignora con `not-in-current-chart` y la nota «Carta CC266-Rev03 (2025).». El `text` es una explicación de curación, en castellano, y no se traduce: si algún día se publican los motivos, irá a `catalog.json` el ID y cada interfaz lo traducirá en sus ficheros de idioma, como hace la web con los tipos de pintura. Mientras no se publiquen, los IDs se pueden renombrar; desde que se publiquen, quedan congelados como los demás IDs.
 - **`color-policy.json`**: tres listas de fuentes, `measured`, `manufacturer` y `community`, en orden de preferencia ([ADR-0014](adr/0014-origen-seleccion-color.md)).
   - El `hex` y el `gradient` de una fuente toman el origen de la lista en la que aparece, `manufacturer` o `community`, y la fuente solo puede estar en una de las dos ([ADR-0019](adr/0019-alcance-minimo-mvp.md), decisión 2).
   - El `measuredHex` siempre es `measured`, y solo se usa si la fuente está además en `measured`.

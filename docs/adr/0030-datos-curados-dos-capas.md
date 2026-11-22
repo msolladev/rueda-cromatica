@@ -27,7 +27,7 @@ Es la separación habitual entre una capa de entrada con los datos tal como lleg
 
 - **Todas las filas** de cada fuente, con los campos que tienen sentido para el catálogo: clave, grupo, nombre, código, hex o degradado (los dos extremos), hex medido, acabado y la marca de «sin color». Se descartan el EAN, los tamaños de bote, las descripciones y el RGB.
 - **Las ignoradas, en dos niveles**: por grupo de la fuente (el `set` de DonnervS o el tipo de SimoGecko) y por clave, para una fila suelta dentro de un grupo que entra.
-- **Los motivos, en una colección aparte**: cada ignorada cita el ID de su motivo y lleva una nota opcional para el detalle propio de ese caso. Cambiar el texto de un motivo no toca ninguna ignorada.
+- **Los motivos, en una colección aparte**: cada ignorada cita el ID de su motivo y lleva una nota opcional para el detalle propio de ese caso. Cambiar el texto de un motivo no toca ninguna ignorada. El texto es una explicación de curación en castellano, sin traducir. Si algún día se publican, el ID será el contrato y cada interfaz lo traducirá, como la web hace con los tipos de pintura; desde entonces el ID queda congelado.
 - **Las cartas de Vallejo CC329 y CC266 no se transcriben en este paso**: no tienen hex, y lo que aportan son las equivalencias del paso 4. Lo que se sacaba de ellas para clasificar pinturas pasa a ser interpretación: el tipo y el acabado metálico van en la ficha y la carta se cita en su nota.
 
 ### Las claves

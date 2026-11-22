@@ -1,7 +1,7 @@
 [
   {
     "id": "airbrush",
-    "text": "Pintura de aerógrafo, fuera del alcance del MVP (ADR-0019)."
+    "text": "Pintura de aerógrafo, fuera del alcance del MVP."
   },
   {
     "id": "auxiliary",
@@ -13,10 +13,10 @@
   },
   {
     "id": "out-of-scope-line",
-    "text": "Línea fuera del alcance del MVP (ADR-0019)."
+    "text": "Línea fuera del alcance del MVP."
   },
   {
     "id": "spray",
-    "text": "Spray, fuera del alcance del MVP (ADR-0019)."
+    "text": "Spray, fuera del alcance del MVP."
   }
 ]
