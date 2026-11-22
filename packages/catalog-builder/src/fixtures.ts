@@ -54,6 +54,7 @@ export interface SourceContent {
   files: { url: string; name: string; sha256: string }[];
   paints: Row[];
   equivalences: { from: string; to: string; note: string | null }[];
+  replacements: { from: string; to: string; note: string | null }[];
   ignoredGroups: (Ignore & { group: string })[];
   ignoredKeys: (Ignore & { key: string })[];
 }
@@ -89,6 +90,7 @@ export function acmeSource(): RawFile & { content: SourceContent } {
         row({ key: "GX-01", name: "Green", group: "Globex", hex: null }),
       ],
       equivalences: [],
+      replacements: [],
       ignoredGroups: [{ group: "Air", reasonId: "airbrush", note: null }],
       ignoredKeys: [{ key: "AC-03", reasonId: "auxiliary", note: null }],
     },
@@ -103,7 +105,12 @@ export interface PaintContent {
   manufacturerCode: string | null;
   type: string;
   metallic: boolean;
-  status: { kind: string };
+  status:
+    | { kind: "active" }
+    | {
+        kind: "discontinued";
+        replacementChoice: { sourceId: string; note: string } | null;
+      };
   keys: { sourceId: string; key: string }[];
   colorChoice: {
     sourceId: string;
