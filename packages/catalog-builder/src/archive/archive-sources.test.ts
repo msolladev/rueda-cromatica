@@ -21,11 +21,12 @@ import {
 // The fictitious Acme chart, with its official PDF as its only file.
 const PDF = "https://example.com/acme/Acme%20Chart.pdf";
 const source = () => valid(readSourceFile(acmeSource()));
-const download = { url: PDF, name: "Acme Chart.pdf", sha256: "0".repeat(64) };
+const target = { url: PDF, name: "Acme Chart.pdf" };
+const download = { ...target, sha256: "0".repeat(64) };
 
 describe("planArchive", () => {
   it("asks for the capture and every file of a source with none", () => {
-    expect(valid(planArchive(source(), [PDF]))).toEqual({
+    expect(valid(planArchive(source(), [target]))).toEqual({
       capture: "https://example.com/acme",
       kept: [],
       downloads: [{ url: PDF, name: "Acme Chart.pdf" }],
@@ -44,7 +45,7 @@ describe("planArchive", () => {
       },
       files: [download],
     };
-    expect(valid(planArchive(done, [PDF]))).toEqual({
+    expect(valid(planArchive(done, [target]))).toEqual({
       capture: null,
       kept: [download],
       downloads: [],
@@ -55,7 +56,8 @@ describe("planArchive", () => {
   it("drops a file that the source no longer has, such as an old revision", () => {
     const file = { ...source(), files: [download] };
     const next = "https://example.com/acme/Acme%20Chart%202.pdf";
-    expect(valid(planArchive(file, [next]))).toMatchObject({
+    const nextTarget = { url: next, name: "Acme Chart 2.pdf" };
+    expect(valid(planArchive(file, [nextTarget]))).toMatchObject({
       kept: [],
       downloads: [{ url: next, name: "Acme Chart 2.pdf" }],
       stale: [download],
@@ -75,8 +77,8 @@ describe("planArchive", () => {
 
   it("fails if two files would get the same name", () => {
     const result = planArchive(source(), [
-      "https://example.com/a/chart.pdf",
-      "https://example.com/b/chart.pdf",
+      { url: "https://example.com/a/chart.pdf", name: "chart.pdf" },
+      { url: "https://example.com/b/chart.pdf", name: "chart.pdf" },
     ]);
     expect(result).toEqual({
       ok: false,

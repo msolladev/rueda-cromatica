@@ -1,0 +1,1928 @@
+{
+  "source": {
+    "id": "games-workshop-citadel-conversion-chart-2012",
+    "kind": "manufacturer",
+    "title": "Citadel Conversion Chart",
+    "publisher": "Games Workshop",
+    "url": "http://www.games-workshop.com/MEDIA_CustomProductCatalog/m2320032a_Citadel_Conversion_Chart",
+    "archiveUrl": "https://web.archive.org/web/20120605023151/http://www.games-workshop.com/MEDIA_CustomProductCatalog/m2320032a_Citadel_Conversion_Chart",
+    "retrievedAt": "2026-11-23",
+    "license": "unknown",
+    "attribution": null
+  },
+  "disabled": null,
+  "files": [
+    {
+      "url": "https://web.archive.org/web/20120605023151id_/http://www.games-workshop.com/MEDIA_CustomProductCatalog/m2320032a_Citadel_Conversion_Chart",
+      "name": "m2320032a_Citadel_Conversion_Chart.pdf",
+      "sha256": "33e4e729d7b3f18c0d111abf963adf11da4df58e7e9e2411c7cb72bf65db26f9"
+    }
+  ],
+  "paints": [
+    {
+      "key": "Old/Sunburst Yellow",
+      "group": "Old Citadel Colour",
+      "name": "Sunburst Yellow",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Flash Gitz Yellow",
+      "group": "New paint range",
+      "name": "Flash Gitz Yellow",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Golden Yellow",
+      "group": "Old Citadel Colour",
+      "name": "Golden Yellow",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Yriel Yellow",
+      "group": "New paint range",
+      "name": "Yriel Yellow",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Blazing Orange",
+      "group": "Old Citadel Colour",
+      "name": "Blazing Orange",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Troll Slayer Orange",
+      "group": "New paint range",
+      "name": "Troll Slayer Orange",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Blood Red",
+      "group": "Old Citadel Colour",
+      "name": "Blood Red",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Evil Sunz Scarlet",
+      "group": "New paint range",
+      "name": "Evil Sunz Scarlet",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Red Gore",
+      "group": "Old Citadel Colour",
+      "name": "Red Gore",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Wazdakka Red",
+      "group": "New paint range",
+      "name": "Wazdakka Red",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Scab Red",
+      "group": "Old Citadel Colour",
+      "name": "Scab Red",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Khorne Red",
+      "group": "New paint range",
+      "name": "Khorne Red",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Dark Flesh",
+      "group": "Old Citadel Colour",
+      "name": "Dark Flesh",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Doombull Brown",
+      "group": "New paint range",
+      "name": "Doombull Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Dwarf Flesh",
+      "group": "Old Citadel Colour",
+      "name": "Dwarf Flesh",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Ratskin Flesh",
+      "group": "New paint range",
+      "name": "Ratskin Flesh",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Elf Flesh",
+      "group": "Old Citadel Colour",
+      "name": "Elf Flesh",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Kislev Flesh",
+      "group": "New paint range",
+      "name": "Kislev Flesh",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Warlock Purple",
+      "group": "Old Citadel Colour",
+      "name": "Warlock Purple",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Screamer Pink",
+      "group": "New paint range",
+      "name": "Screamer Pink",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Liche Purple",
+      "group": "Old Citadel Colour",
+      "name": "Liche Purple",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Xereus Purple",
+      "group": "New paint range",
+      "name": "Xereus Purple",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Regal Blue",
+      "group": "Old Citadel Colour",
+      "name": "Regal Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Kantor Blue",
+      "group": "New paint range",
+      "name": "Kantor Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Ultramarines Blue",
+      "group": "Old Citadel Colour",
+      "name": "Ultramarines Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Altdorf Guard Blue",
+      "group": "New paint range",
+      "name": "Altdorf Guard Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Enchanted Blue",
+      "group": "Old Citadel Colour",
+      "name": "Enchanted Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Caledor Sky",
+      "group": "New paint range",
+      "name": "Caledor Sky",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Shadow Grey",
+      "group": "Old Citadel Colour",
+      "name": "Shadow Grey",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/The Fang",
+      "group": "New paint range",
+      "name": "The Fang",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Space Wolves Grey",
+      "group": "Old Citadel Colour",
+      "name": "Space Wolves Grey",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Fenrisian Grey",
+      "group": "New paint range",
+      "name": "Fenrisian Grey",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Ice Blue",
+      "group": "Old Citadel Colour",
+      "name": "Ice Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Lothern Blue",
+      "group": "New paint range",
+      "name": "Lothern Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Hawk Turquoise",
+      "group": "Old Citadel Colour",
+      "name": "Hawk Turquoise",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Sotek Green",
+      "group": "New paint range",
+      "name": "Sotek Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Dark Angels Green",
+      "group": "Old Citadel Colour",
+      "name": "Dark Angels Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Caliban Green",
+      "group": "New paint range",
+      "name": "Caliban Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Snot Green",
+      "group": "Old Citadel Colour",
+      "name": "Snot Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Warpstone Glow",
+      "group": "New paint range",
+      "name": "Warpstone Glow",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Goblin Green",
+      "group": "Old Citadel Colour",
+      "name": "Goblin Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Warboss Green",
+      "group": "New paint range",
+      "name": "Warboss Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Scorpion Green",
+      "group": "Old Citadel Colour",
+      "name": "Scorpion Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Moot Green",
+      "group": "New paint range",
+      "name": "Moot Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Rotting Flesh",
+      "group": "Old Citadel Colour",
+      "name": "Rotting Flesh",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Nurgling Green",
+      "group": "New paint range",
+      "name": "Nurgling Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Camo Green",
+      "group": "Old Citadel Colour",
+      "name": "Camo Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Elysian Green",
+      "group": "New paint range",
+      "name": "Elysian Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Catachan Green",
+      "group": "Old Citadel Colour",
+      "name": "Catachan Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Castellan Green",
+      "group": "New paint range",
+      "name": "Castellan Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Graveyard Earth",
+      "group": "Old Citadel Colour",
+      "name": "Graveyard Earth",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Steel Legion Drab",
+      "group": "New paint range",
+      "name": "Steel Legion Drab",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Scorched Brown",
+      "group": "Old Citadel Colour",
+      "name": "Scorched Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Rhinox Hide",
+      "group": "New paint range",
+      "name": "Rhinox Hide",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Bestial Brown",
+      "group": "Old Citadel Colour",
+      "name": "Bestial Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Mournfang Brown",
+      "group": "New paint range",
+      "name": "Mournfang Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Vermin Brown",
+      "group": "Old Citadel Colour",
+      "name": "Vermin Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Skrag Brown",
+      "group": "New paint range",
+      "name": "Skrag Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Snakebite Leather",
+      "group": "Old Citadel Colour",
+      "name": "Snakebite Leather",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Balor Brown",
+      "group": "New paint range",
+      "name": "Balor Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Bubonic Brown",
+      "group": "Old Citadel Colour",
+      "name": "Bubonic Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Zamesi Desert",
+      "group": "New paint range",
+      "name": "Zamesi Desert",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Vomit Brown",
+      "group": "Old Citadel Colour",
+      "name": "Vomit Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Tau Light Ochre",
+      "group": "New paint range",
+      "name": "Tau Light Ochre",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Desert Yellow",
+      "group": "Old Citadel Colour",
+      "name": "Desert Yellow",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Tallarn Sand",
+      "group": "New paint range",
+      "name": "Tallarn Sand",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Kommando Khaki",
+      "group": "Old Citadel Colour",
+      "name": "Kommando Khaki",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Karak Stone",
+      "group": "New paint range",
+      "name": "Karak Stone",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Bleached Bone",
+      "group": "Old Citadel Colour",
+      "name": "Bleached Bone",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Ushabti Bone",
+      "group": "New paint range",
+      "name": "Ushabti Bone",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Fortress Grey",
+      "group": "Old Citadel Colour",
+      "name": "Fortress Grey",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Administratum Grey",
+      "group": "New paint range",
+      "name": "Administratum Grey",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Codex Grey",
+      "group": "Old Citadel Colour",
+      "name": "Codex Grey",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Dawnstone",
+      "group": "New paint range",
+      "name": "Dawnstone",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Chaos Black",
+      "group": "Old Citadel Colour",
+      "name": "Chaos Black",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Abaddon Black",
+      "group": "New paint range",
+      "name": "Abaddon Black",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Skull White",
+      "group": "Old Citadel Colour",
+      "name": "Skull White",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/White Scar",
+      "group": "New paint range",
+      "name": "White Scar",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Burnished Gold",
+      "group": "Old Citadel Colour",
+      "name": "Burnished Gold",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Auric Armour Gold",
+      "group": "New paint range",
+      "name": "Auric Armour Gold",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Shining Gold",
+      "group": "Old Citadel Colour",
+      "name": "Shining Gold",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Gehenna’s Gold",
+      "group": "New paint range",
+      "name": "Gehenna’s Gold",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Dwarf Bronze",
+      "group": "Old Citadel Colour",
+      "name": "Dwarf Bronze",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Hashut Copper",
+      "group": "New paint range",
+      "name": "Hashut Copper",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Tin Bitz",
+      "group": "Old Citadel Colour",
+      "name": "Tin Bitz",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Warplock Bronze",
+      "group": "New paint range",
+      "name": "Warplock Bronze",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Boltgun Metal",
+      "group": "Old Citadel Colour",
+      "name": "Boltgun Metal",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Leadbelcher",
+      "group": "New paint range",
+      "name": "Leadbelcher",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Chainmail",
+      "group": "Old Citadel Colour",
+      "name": "Chainmail",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Ironbreaker",
+      "group": "New paint range",
+      "name": "Ironbreaker",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Mithril Silver",
+      "group": "Old Citadel Colour",
+      "name": "Mithril Silver",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Runefang Steel",
+      "group": "New paint range",
+      "name": "Runefang Steel",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Baal Red",
+      "group": "Old Citadel Colour",
+      "name": "Baal Red",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Carroburg Crimson",
+      "group": "New paint range",
+      "name": "Carroburg Crimson",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Asurmen Blue",
+      "group": "Old Citadel Colour",
+      "name": "Asurmen Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Drakenhof Nightshade",
+      "group": "New paint range",
+      "name": "Drakenhof Nightshade",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Leviathan Purple",
+      "group": "Old Citadel Colour",
+      "name": "Leviathan Purple",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Druchii Violet",
+      "group": "New paint range",
+      "name": "Druchii Violet",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Devlan Mud",
+      "group": "Old Citadel Colour",
+      "name": "Devlan Mud",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Agrax Earthshade",
+      "group": "New paint range",
+      "name": "Agrax Earthshade",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Ogryn Flesh",
+      "group": "Old Citadel Colour",
+      "name": "Ogryn Flesh",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Reikland Fleshshade",
+      "group": "New paint range",
+      "name": "Reikland Fleshshade",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Gryphonne Sepia",
+      "group": "Old Citadel Colour",
+      "name": "Gryphonne Sepia",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Seraphim Sepia",
+      "group": "New paint range",
+      "name": "Seraphim Sepia",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Thraka Green",
+      "group": "Old Citadel Colour",
+      "name": "Thraka Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Biel-Tan Green",
+      "group": "New paint range",
+      "name": "Biel-Tan Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Badab Black",
+      "group": "Old Citadel Colour",
+      "name": "Badab Black",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Nuln Oil",
+      "group": "New paint range",
+      "name": "Nuln Oil",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Iyanden Darksun",
+      "group": "Old Citadel Colour",
+      "name": "Iyanden Darksun",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Averland Sunset",
+      "group": "New paint range",
+      "name": "Averland Sunset",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Macharius Solar Orange",
+      "group": "Old Citadel Colour",
+      "name": "Macharius Solar Orange",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Jokaero Orange",
+      "group": "New paint range",
+      "name": "Jokaero Orange",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Mechrite Red",
+      "group": "Old Citadel Colour",
+      "name": "Mechrite Red",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Mephiston Red",
+      "group": "New paint range",
+      "name": "Mephiston Red",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Tausept Ochre",
+      "group": "Old Citadel Colour",
+      "name": "Tausept Ochre",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Calthan Brown",
+      "group": "Old Citadel Colour",
+      "name": "Calthan Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Khemri Brown",
+      "group": "Old Citadel Colour",
+      "name": "Khemri Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Baneblade Brown",
+      "group": "New paint range",
+      "name": "Baneblade Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Tallarn Flesh",
+      "group": "Old Citadel Colour",
+      "name": "Tallarn Flesh",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Cadian Fleshtone",
+      "group": "New paint range",
+      "name": "Cadian Fleshtone",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Dheneb Stone",
+      "group": "Old Citadel Colour",
+      "name": "Dheneb Stone",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Rakarth Flesh",
+      "group": "New paint range",
+      "name": "Rakarth Flesh",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Gretchin Green",
+      "group": "Old Citadel Colour",
+      "name": "Gretchin Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Deathworld Forest",
+      "group": "New paint range",
+      "name": "Deathworld Forest",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Knarloc Green",
+      "group": "Old Citadel Colour",
+      "name": "Knarloc Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Loren Forest",
+      "group": "New paint range",
+      "name": "Loren Forest",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Orkhide Shade",
+      "group": "Old Citadel Colour",
+      "name": "Orkhide Shade",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Fenris Grey",
+      "group": "Old Citadel Colour",
+      "name": "Fenris Grey",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Hormagaunt Purple",
+      "group": "Old Citadel Colour",
+      "name": "Hormagaunt Purple",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Daemonette Hide",
+      "group": "New paint range",
+      "name": "Daemonette Hide",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Mordian Blue",
+      "group": "Old Citadel Colour",
+      "name": "Mordian Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Macragge Blue",
+      "group": "New paint range",
+      "name": "Macragge Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Charadon Granite",
+      "group": "Old Citadel Colour",
+      "name": "Charadon Granite",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Stormvermin Fur",
+      "group": "New paint range",
+      "name": "Stormvermin Fur",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Necron Abyss",
+      "group": "Old Citadel Colour",
+      "name": "Necron Abyss",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Adeptus Battlegrey",
+      "group": "Old Citadel Colour",
+      "name": "Adeptus Battlegrey",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Mechanicus Standard Grey",
+      "group": "New paint range",
+      "name": "Mechanicus Standard Grey",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Old/Astronomican Grey",
+      "group": "Old Citadel Colour",
+      "name": "Astronomican Grey",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "New/Celestra Grey",
+      "group": "New paint range",
+      "name": "Celestra Grey",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    }
+  ],
+  "equivalences": [
+    {
+      "from": "Old/Sunburst Yellow",
+      "to": "New/Flash Gitz Yellow",
+      "note": null
+    },
+    {
+      "from": "Old/Golden Yellow",
+      "to": "New/Yriel Yellow",
+      "note": null
+    },
+    {
+      "from": "Old/Blazing Orange",
+      "to": "New/Troll Slayer Orange",
+      "note": null
+    },
+    {
+      "from": "Old/Blood Red",
+      "to": "New/Evil Sunz Scarlet",
+      "note": null
+    },
+    {
+      "from": "Old/Red Gore",
+      "to": "New/Wazdakka Red",
+      "note": null
+    },
+    {
+      "from": "Old/Scab Red",
+      "to": "New/Khorne Red",
+      "note": null
+    },
+    {
+      "from": "Old/Dark Flesh",
+      "to": "New/Doombull Brown",
+      "note": null
+    },
+    {
+      "from": "Old/Dwarf Flesh",
+      "to": "New/Ratskin Flesh",
+      "note": null
+    },
+    {
+      "from": "Old/Elf Flesh",
+      "to": "New/Kislev Flesh",
+      "note": null
+    },
+    {
+      "from": "Old/Warlock Purple",
+      "to": "New/Screamer Pink",
+      "note": null
+    },
+    {
+      "from": "Old/Liche Purple",
+      "to": "New/Xereus Purple",
+      "note": null
+    },
+    {
+      "from": "Old/Regal Blue",
+      "to": "New/Kantor Blue",
+      "note": null
+    },
+    {
+      "from": "Old/Ultramarines Blue",
+      "to": "New/Altdorf Guard Blue",
+      "note": null
+    },
+    {
+      "from": "Old/Enchanted Blue",
+      "to": "New/Caledor Sky",
+      "note": null
+    },
+    {
+      "from": "Old/Shadow Grey",
+      "to": "New/The Fang",
+      "note": null
+    },
+    {
+      "from": "Old/Space Wolves Grey",
+      "to": "New/Fenrisian Grey",
+      "note": null
+    },
+    {
+      "from": "Old/Ice Blue",
+      "to": "New/Lothern Blue",
+      "note": null
+    },
+    {
+      "from": "Old/Hawk Turquoise",
+      "to": "New/Sotek Green",
+      "note": null
+    },
+    {
+      "from": "Old/Dark Angels Green",
+      "to": "New/Caliban Green",
+      "note": null
+    },
+    {
+      "from": "Old/Snot Green",
+      "to": "New/Warpstone Glow",
+      "note": null
+    },
+    {
+      "from": "Old/Goblin Green",
+      "to": "New/Warboss Green",
+      "note": null
+    },
+    {
+      "from": "Old/Scorpion Green",
+      "to": "New/Moot Green",
+      "note": null
+    },
+    {
+      "from": "Old/Rotting Flesh",
+      "to": "New/Nurgling Green",
+      "note": null
+    },
+    {
+      "from": "Old/Camo Green",
+      "to": "New/Elysian Green",
+      "note": null
+    },
+    {
+      "from": "Old/Catachan Green",
+      "to": "New/Castellan Green",
+      "note": null
+    },
+    {
+      "from": "Old/Graveyard Earth",
+      "to": "New/Steel Legion Drab",
+      "note": null
+    },
+    {
+      "from": "Old/Scorched Brown",
+      "to": "New/Rhinox Hide",
+      "note": null
+    },
+    {
+      "from": "Old/Bestial Brown",
+      "to": "New/Mournfang Brown",
+      "note": null
+    },
+    {
+      "from": "Old/Vermin Brown",
+      "to": "New/Skrag Brown",
+      "note": null
+    },
+    {
+      "from": "Old/Snakebite Leather",
+      "to": "New/Balor Brown",
+      "note": null
+    },
+    {
+      "from": "Old/Bubonic Brown",
+      "to": "New/Zamesi Desert",
+      "note": null
+    },
+    {
+      "from": "Old/Vomit Brown",
+      "to": "New/Tau Light Ochre",
+      "note": null
+    },
+    {
+      "from": "Old/Desert Yellow",
+      "to": "New/Tallarn Sand",
+      "note": null
+    },
+    {
+      "from": "Old/Kommando Khaki",
+      "to": "New/Karak Stone",
+      "note": null
+    },
+    {
+      "from": "Old/Bleached Bone",
+      "to": "New/Ushabti Bone",
+      "note": null
+    },
+    {
+      "from": "Old/Fortress Grey",
+      "to": "New/Administratum Grey",
+      "note": null
+    },
+    {
+      "from": "Old/Codex Grey",
+      "to": "New/Dawnstone",
+      "note": null
+    },
+    {
+      "from": "Old/Chaos Black",
+      "to": "New/Abaddon Black",
+      "note": null
+    },
+    {
+      "from": "Old/Skull White",
+      "to": "New/White Scar",
+      "note": null
+    },
+    {
+      "from": "Old/Burnished Gold",
+      "to": "New/Auric Armour Gold",
+      "note": null
+    },
+    {
+      "from": "Old/Shining Gold",
+      "to": "New/Gehenna’s Gold",
+      "note": null
+    },
+    {
+      "from": "Old/Dwarf Bronze",
+      "to": "New/Hashut Copper",
+      "note": null
+    },
+    {
+      "from": "Old/Tin Bitz",
+      "to": "New/Warplock Bronze",
+      "note": null
+    },
+    {
+      "from": "Old/Boltgun Metal",
+      "to": "New/Leadbelcher",
+      "note": null
+    },
+    {
+      "from": "Old/Chainmail",
+      "to": "New/Ironbreaker",
+      "note": null
+    },
+    {
+      "from": "Old/Mithril Silver",
+      "to": "New/Runefang Steel",
+      "note": null
+    },
+    {
+      "from": "Old/Baal Red",
+      "to": "New/Carroburg Crimson",
+      "note": null
+    },
+    {
+      "from": "Old/Asurmen Blue",
+      "to": "New/Drakenhof Nightshade",
+      "note": null
+    },
+    {
+      "from": "Old/Leviathan Purple",
+      "to": "New/Druchii Violet",
+      "note": null
+    },
+    {
+      "from": "Old/Devlan Mud",
+      "to": "New/Agrax Earthshade",
+      "note": null
+    },
+    {
+      "from": "Old/Ogryn Flesh",
+      "to": "New/Reikland Fleshshade",
+      "note": null
+    },
+    {
+      "from": "Old/Gryphonne Sepia",
+      "to": "New/Seraphim Sepia",
+      "note": null
+    },
+    {
+      "from": "Old/Thraka Green",
+      "to": "New/Biel-Tan Green",
+      "note": null
+    },
+    {
+      "from": "Old/Badab Black",
+      "to": "New/Nuln Oil",
+      "note": null
+    },
+    {
+      "from": "Old/Iyanden Darksun",
+      "to": "New/Averland Sunset",
+      "note": null
+    },
+    {
+      "from": "Old/Macharius Solar Orange",
+      "to": "New/Jokaero Orange",
+      "note": null
+    },
+    {
+      "from": "Old/Mechrite Red",
+      "to": "New/Mephiston Red",
+      "note": null
+    },
+    {
+      "from": "Old/Tausept Ochre",
+      "to": "New/Balor Brown",
+      "note": null
+    },
+    {
+      "from": "Old/Calthan Brown",
+      "to": "New/Mournfang Brown",
+      "note": null
+    },
+    {
+      "from": "Old/Khemri Brown",
+      "to": "New/Baneblade Brown",
+      "note": null
+    },
+    {
+      "from": "Old/Tallarn Flesh",
+      "to": "New/Cadian Fleshtone",
+      "note": null
+    },
+    {
+      "from": "Old/Dheneb Stone",
+      "to": "New/Rakarth Flesh",
+      "note": null
+    },
+    {
+      "from": "Old/Gretchin Green",
+      "to": "New/Deathworld Forest",
+      "note": null
+    },
+    {
+      "from": "Old/Knarloc Green",
+      "to": "New/Loren Forest",
+      "note": null
+    },
+    {
+      "from": "Old/Orkhide Shade",
+      "to": "New/Caliban Green",
+      "note": null
+    },
+    {
+      "from": "Old/Fenris Grey",
+      "to": "New/The Fang",
+      "note": null
+    },
+    {
+      "from": "Old/Hormagaunt Purple",
+      "to": "New/Daemonette Hide",
+      "note": null
+    },
+    {
+      "from": "Old/Mordian Blue",
+      "to": "New/Macragge Blue",
+      "note": null
+    },
+    {
+      "from": "Old/Charadon Granite",
+      "to": "New/Stormvermin Fur",
+      "note": null
+    },
+    {
+      "from": "Old/Necron Abyss",
+      "to": "New/Kantor Blue",
+      "note": null
+    },
+    {
+      "from": "Old/Adeptus Battlegrey",
+      "to": "New/Mechanicus Standard Grey",
+      "note": null
+    },
+    {
+      "from": "Old/Astronomican Grey",
+      "to": "New/Celestra Grey",
+      "note": null
+    }
+  ],
+  "replacements": [],
+  "ignoredGroups": [],
+  "ignoredKeys": [
+    {
+      "key": "New/Dawnstone",
+      "reasonId": "ambiguous",
+      "note": "Dawnstone es Layer y Dry, y la carta no dice cuál."
+    },
+    {
+      "key": "New/Nurgling Green",
+      "reasonId": "ambiguous",
+      "note": "Nurgling Green es Layer y Dry, y la carta no dice cuál."
+    }
+  ]
+}

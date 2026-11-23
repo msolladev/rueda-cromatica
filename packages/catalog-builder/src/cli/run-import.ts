@@ -23,7 +23,7 @@ import {
   readCuratedFiles,
   writeDataFile,
 } from "./data-files.ts";
-import { sourceFileUrls } from "./source-files.ts";
+import { sourceFiles } from "./source-files.ts";
 
 /** A file of the source as fetched: its URL and its bytes. */
 export interface FetchedFile {
@@ -73,14 +73,16 @@ export async function runImport(options: ImportOptions): Promise<number> {
   if (source === undefined) {
     return fail([`No source file for ${options.sourceId}`]);
   }
-  const urls = sourceFileUrls(source.source);
-  if (!urls.ok) return fail([`${dataPath(source.name)}: ${urls.error}`]);
-  if (urls.value === null || urls.value.length === 0) {
+  const targets = sourceFiles(source.source);
+  if (!targets.ok) {
+    return fail([`${dataPath(source.name)}: ${targets.error}`]);
+  }
+  if (targets.value === null || targets.value.length === 0) {
     return fail([`${dataPath(source.name)}: ${options.sourceId} has no URL`]);
   }
 
   const fetched: FetchedFile[] = [];
-  for (const url of urls.value) {
+  for (const { url } of targets.value) {
     const response = await fetch(url);
     if (!response.ok) {
       return fail([`Could not fetch ${url}: HTTP ${String(response.status)}`]);

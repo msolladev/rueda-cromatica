@@ -9793,13 +9793,7 @@
     }
   ],
   "replacements": [],
-  "ignoredGroups": [
-    {
-      "group": "Old Citadel",
-      "reasonId": "discontinued-line-pending",
-      "note": "Citadel anterior a 2012."
-    }
-  ],
+  "ignoredGroups": [],
   "ignoredKeys": [
     {
       "key": "Vallejo MC/973",
@@ -9880,6 +9874,16 @@
       "key": "Vallejo MC/942",
       "reasonId": "not-in-current-chart",
       "note": "No figura en la carta CC329-R00 (2024)."
+    },
+    {
+      "key": "Old Citadel/Vile Green",
+      "reasonId": "no-manufacturer-document",
+      "note": "Ningún documento de Games Workshop de los datos curados la nombra."
+    },
+    {
+      "key": "Old Citadel/Jade Green",
+      "reasonId": "no-manufacturer-document",
+      "note": "Ningún documento de Games Workshop de los datos curados la nombra."
     },
     {
       "key": "Vallejo GC/147",

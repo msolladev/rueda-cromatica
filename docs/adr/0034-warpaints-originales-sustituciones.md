@@ -1,6 +1,6 @@
 # ADR-0034: Los Warpaints originales, las sustituciones y las pinturas descatalogadas en la web
 
-- **Estado:** aceptada
+- **Estado:** aceptada; corregida en parte por [ADR-0035](0035-lineas-antiguas-citadel.md)
 - **Fecha:** 2026-11-22
 
 ## Contexto

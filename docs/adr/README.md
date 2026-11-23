@@ -18,7 +18,7 @@ Cada fichero recoge una decisión relevante: su contexto, la decisión tomada, l
 | [0010](0010-lint-formato.md)                            | Lint con ESLint y formato con Prettier                                     | aceptada                                             |
 | [0011](0011-ci-cd.md)                                   | CI/CD con GitHub Actions                                                   | aceptada; corregida en parte por ADR-0026            |
 | [0012](0012-entornos.md)                                | Entornos de desarrollo, preproducción y producción                         | aceptada; corregida en parte por ADR-0028            |
-| [0013](0013-clasificacion-pinturas.md)                  | Clasificación de pinturas: gamas, tipos y acabado                          | aceptada                                             |
+| [0013](0013-clasificacion-pinturas.md)                  | Clasificación de pinturas: gamas, tipos y acabado                          | aceptada; corregida en parte por ADR-0035            |
 | [0014](0014-origen-seleccion-color.md)                  | Origen y selección del color                                               | aceptada; aplazada en parte por ADR-0019             |
 | [0015](0015-fuentes-trazabilidad-licencias.md)          | Fuentes: trazabilidad, licencias y desactivación                           | aceptada; aplazada en parte por ADR-0019             |
 | [0016](0016-datos-curados-json.md)                      | Datos curados en JSON de dos capas                                         | sustituida por ADR-0019                              |
@@ -39,7 +39,8 @@ Cada fichero recoge una decisión relevante: su contexto, la decisión tomada, l
 | [0031](0031-varios-candidatos-color.md)                 | Varios candidatos de color por pintura                                     | aceptada                                             |
 | [0032](0032-desactivacion-fuentes-archivado.md)         | Desactivación de fuentes y archivado                                       | aceptada; corregida en parte por ADR-0034            |
 | [0033](0033-equivalencias-oficiales-lineas-vigentes.md) | Equivalencias oficiales entre líneas vigentes                              | aceptada                                             |
-| [0034](0034-warpaints-originales-sustituciones.md)      | Los Warpaints originales, las sustituciones y las descatalogadas en la web | aceptada                                             |
+| [0034](0034-warpaints-originales-sustituciones.md)      | Los Warpaints originales, las sustituciones y las descatalogadas en la web | aceptada; corregida en parte por ADR-0035            |
+| [0035](0035-lineas-antiguas-citadel.md)                 | Las líneas antiguas de Citadel                                             | aceptada                                             |
 
 ## Normas
 

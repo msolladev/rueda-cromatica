@@ -1,6 +1,6 @@
 # Datos curados de `catalog-builder`
 
-Este documento especifica los datos que mantiene el proyecto y cómo el builder genera `catalog.json` a partir de ellos. Las decisiones están en los ADR [0013](adr/0013-clasificacion-pinturas.md), [0014](adr/0014-origen-seleccion-color.md), [0015](adr/0015-fuentes-trazabilidad-licencias.md), [0019](adr/0019-alcance-minimo-mvp.md), [0030](adr/0030-datos-curados-dos-capas.md), [0031](adr/0031-varios-candidatos-color.md), [0032](adr/0032-desactivacion-fuentes-archivado.md), [0033](adr/0033-equivalencias-oficiales-lineas-vigentes.md) y [0034](adr/0034-warpaints-originales-sustituciones.md).
+Este documento especifica los datos que mantiene el proyecto y cómo el builder genera `catalog.json` a partir de ellos. Las decisiones están en los ADR [0013](adr/0013-clasificacion-pinturas.md), [0014](adr/0014-origen-seleccion-color.md), [0015](adr/0015-fuentes-trazabilidad-licencias.md), [0019](adr/0019-alcance-minimo-mvp.md), [0030](adr/0030-datos-curados-dos-capas.md), [0031](adr/0031-varios-candidatos-color.md), [0032](adr/0032-desactivacion-fuentes-archivado.md), [0033](adr/0033-equivalencias-oficiales-lineas-vigentes.md), [0034](adr/0034-warpaints-originales-sustituciones.md) y [0035](adr/0035-lineas-antiguas-citadel.md).
 
 ## 1. Principios
 
@@ -70,8 +70,9 @@ La clave de cada fuente actual:
 | `simogecko-citadel-colours-sampled` | el nombre                           | `Macragge Blue`                   |
 | `arcturus5404-miniature-paints`     | el grupo y el nombre                | `Warpaints/Matt Black`            |
 | las cartas de equivalencias (§3.1)  | el código, o la columna y el nombre | `72.051`, `Citadel/Abbadon Black` |
+| los documentos de GW (§3.3)         | el código, o el nombre              | `61-32`, `Necron Abyss`           |
 
-SimoGecko no tiene códigos, y su tabla oficial repite nombres entre tipos (Abaddon Black es `base` y `spray`), así que en ella el nombre solo no basta. Arcturus deja sin código muchas filas y repite nombres entre grupos, así que su clave es el grupo y el nombre. La tabla muestreada solo tiene Base y Layer, sin tipo y sin nombres repetidos.
+SimoGecko no tiene códigos, y su tabla oficial repite nombres entre tipos (Abaddon Black es `base` y `spray`), así que en ella el nombre solo no basta. Arcturus deja sin código muchas filas y repite nombres entre grupos, así que su clave es el grupo y el nombre; una fila que repite grupo y nombre, como las dos de Kommando Khaki de su tabla de Citadel, lleva detrás su número de aparición (`Foundation (discontinued)/Kommando Khaki (2)`). La tabla muestreada solo tiene Base y Layer, sin tipo y sin nombres repetidos.
 
 Un ejemplo real, la fila de Abyssal Turquoise en DonnervS:
 
@@ -93,17 +94,19 @@ Un ejemplo real, la fila de Abyssal Turquoise en DonnervS:
 
 Las cartas de conversión de los fabricantes, en PDF, con el reparto del [ADR-0033](adr/0033-equivalencias-oficiales-lineas-vigentes.md): entran las equivalencias entre líneas vigentes, y las de líneas descatalogadas llegan en el paso 5 de la fase 5.
 
-| Fuente                                        | Carta                                                  | Qué relaciona                                                                   |
-| --------------------------------------------- | ------------------------------------------------------ | ------------------------------------------------------------------------------- |
-| `vallejo-cc266`                               | CC266 de Vallejo                                       | Game Color con Game Air, Hobby Paint y Citadel; Wash y Xpress Color con Citadel |
-| `the-army-painter-fanatic-conversion-chart`   | Warpaints Fanatic Conversion Chart de The Army Painter | Fanatic con los Warpaints originales, Warpaints Air y Citadel                   |
-| `ak-interactive-3gen-equivalence-table`       | Tabla de equivalencias de AK (`EQUIVALENCIAS2023`)     | 3rd Gen con Model Color, Game Color, Citadel actual y Citadel antiguo           |
-| `the-army-painter-warpaints-conversion-chart` | Conversion Chart de The Army Painter (2020)            | Los Warpaints originales con Citadel (`GM`) y Vallejo (`AV`)                    |
+| Fuente                                         | Carta                                                  | Qué relaciona                                                                   |
+| ---------------------------------------------- | ------------------------------------------------------ | ------------------------------------------------------------------------------- |
+| `vallejo-cc266`                                | CC266 de Vallejo                                       | Game Color con Game Air, Hobby Paint y Citadel; Wash y Xpress Color con Citadel |
+| `the-army-painter-fanatic-conversion-chart`    | Warpaints Fanatic Conversion Chart de The Army Painter | Fanatic con los Warpaints originales, Warpaints Air y Citadel                   |
+| `ak-interactive-3gen-equivalence-table`        | Tabla de equivalencias de AK (`EQUIVALENCIAS2023`)     | 3rd Gen con Model Color, Game Color, Citadel actual y Citadel antiguo           |
+| `the-army-painter-warpaints-conversion-chart`  | Conversion Chart de The Army Painter (2020)            | Los Warpaints originales con Citadel (`GM`) y Vallejo (`AV`)                    |
+| `games-workshop-citadel-conversion-chart-2012` | Citadel Conversion Chart de Games Workshop (2012)      | Citadel Colour, Foundation y Washes con la gama de Citadel de 2012              |
 
 - **`paints`** nombra cada pintura una vez, en el orden en que aparece, aunque salga en varias filas. Su `group` es la columna o la línea de la carta. Su clave es el código tal como lo escribe la carta, si lo da (`72.051`, `AK11029`), con la columna delante si es un código de otra marca sin su prefijo (`Vallejo MC/951`); si no, la columna y el nombre literal (`Citadel/Abbadon Black`, `GW/Fulgrim Pink`, `WP/Matt White`), porque un mismo nombre puede estar en varias columnas. Una fila sin nombre en la carta, como las de AK, lleva `name` vacío. Ninguna lleva color.
 - **`equivalences`**: las parejas `{ from, to, note }` de claves de `paints`, en el orden y la dirección de la carta. Una casilla con dos códigos, como «049/047», son dos parejas con la nota «Casilla «049/047».». Una casilla vacía no da ninguna. Una pareja no puede unir una fila consigo misma ni repetirse.
-- **Lo que no entra se ignora** como en cualquier fuente: por grupo (Citadel antiguo con `discontinued-line-pending`, Game Air y Warpaints Air con `airbrush`, Hobby Paint con `out-of-scope-line`) o por clave (Dawnstone, que es Layer y Dry, con `ambiguous`; un Model Color retirado con `not-in-current-chart`; una errata que repite una pintura que la carta ya escribe bien, con `duplicate-row`).
+- **Lo que no entra se ignora** como en cualquier fuente: por grupo (Game Air y Warpaints Air con `airbrush`, Hobby Paint con `out-of-scope-line`) o por clave (Dawnstone, que es Layer y Dry, con `ambiguous`; un Model Color retirado con `not-in-current-chart`; una errata que repite una pintura que la carta ya escribe bien, con `duplicate-row`).
 - **Una errata** se resuelve con la clave literal en la ficha, cuya `note` cita la carta («CC266 escribe «Abbadon Black».»), sin añadir un alias.
+- **La carta de 2012** es la página 120 de la White Dwarf 388, una imagen sin texto: está transcrita a mano, sin importador ([ADR-0035](adr/0035-lineas-antiguas-citadel.md)). Sus columnas son `Old Citadel Colour` y `New paint range`, con las claves `Old/…` y `New/…`, y conserva el apóstrofo tipográfico («Gehenna’s Gold»). Un test coteja sus pinturas antiguas con los documentos de §3.3, que tienen texto.
 - **La carta de 2020** es una imagen sin texto: está transcrita a mano, sin importador ([ADR-0034](adr/0034-warpaints-originales-sustituciones.md)). Un fragmento de una casilla doble que es el nombre completo de otra casilla de su columna («Agrax/ Reikland») se transcribe con ese nombre, porque una pintura tiene una sola clave por fuente, y la nota de la pareja guarda la casilla literal. Un test coteja sus Warpaints con la carta de Fanatic y su clasificación con los recuentos del set completo de The Army Painter.
 
 Un ejemplo real, la fila de 72.051 Black de CC266:
@@ -124,7 +127,21 @@ Un ejemplo real, la fila de 72.051 Black de CC266:
 
 ### 3.2. Sustituciones
 
-Un documento del fabricante que dice que una pintura sustituye a otra ([ADR-0005](adr/0005-sustitucion-en-estado.md)) lista en `replacements` las parejas `{ from, to, note }`: la clave de la fila de la pintura descatalogada y la de la que la sustituye, como en `equivalences`. Una carta de conversión da equivalencias, no sustituciones. Solo un documento de tipo `manufacturer` puede tenerlas, y nombra como mucho una sustituta por pintura. Hoy ninguna fuente tiene sustituciones; las primeras llegan con la carta de GW de 2012.
+Un documento del fabricante que dice que una pintura sustituye a otra ([ADR-0005](adr/0005-sustitucion-en-estado.md)) lista en `replacements` las parejas `{ from, to, note }`: la clave de la fila de la pintura descatalogada y la de la que la sustituye, como en `equivalences`. Una carta de conversión da equivalencias, no sustituciones. Solo un documento de tipo `manufacturer` puede tenerlas, y nombra como mucho una sustituta por pintura. Hoy ninguna fuente tiene sustituciones: la carta de GW de 2012 es de conversión, y la página de los Washes de 2008 sustituye la línea de las tintas, no pinta a pinta ([ADR-0035](adr/0035-lineas-antiguas-citadel.md)).
+
+### 3.3. Documentos de Games Workshop de las líneas antiguas
+
+Prueban qué pinturas tenía cada línea antigua de Citadel ([ADR-0035](adr/0035-lineas-antiguas-citadel.md)). Ninguno da color.
+
+| Fuente                                      | Documento                                               | Qué prueba                                               |
+| ------------------------------------------- | ------------------------------------------------------- | -------------------------------------------------------- |
+| `games-workshop-paints-inks-checklist-2004` | Paints & Inks Range Checklist (2004), PDF con texto     | Citadel Colour: 65 pinturas y tintas con su código 61-xx |
+| `games-workshop-foundation-paints-2008`     | What Are Citadel Foundation Paints? (2008), página web  | Las 18 Foundation                                        |
+| `games-workshop-citadel-washes-2008`        | Using the New Citadel Washes (2008), página 4 de la web | Los 8 Washes                                             |
+
+- **Su original ya no existe**: cada uno se lee de una captura de la Wayback Machine cuyo SHA-1 coincide con el que da la API CDX, la misma que guarda su `archiveUrl`. `src/cli/source-files.ts` lista la captura en bruto (`<fecha>id_`) y el nombre de su fichero, porque una página termina en `/`. La carta de 2012 (§3.1) se lee igual.
+- **Lo que no entra**: el barniz y el bote vacío de la hoja de control, con `auxiliary`.
+- **Lo que su grupo no distingue**: la hoja de control no separa las tintas ni las metálicas, así que se corrigen en la ficha con una nota que cita su versión de bolsillo, que las agrupa en «INKS» y «METALLICS» (§8).
 
 ## 4. `brands/<brand-id>.json`
 
@@ -181,7 +198,7 @@ Un descarte real, el de Corax White, cuyo color en la tabla muestreada sale gris
 ## 5. `ignore-reasons.json`, `color-policy.json` y `tombstones.json`
 
 - **`ignore-reasons.json`**: los motivos de las filas ignoradas y de los candidatos de color descartados, cada uno con su `id` (un slug) y su `text`. Cada ignorada y cada descarte citan uno con `reasonId`, y su `note` recoge el detalle propio de ese caso. Por ejemplo, 73.300 Sepia Wash se ignora con `not-in-current-chart` y la nota «Carta CC266-Rev03 (2025).». El `text` es una explicación de curación, en castellano, y no se traduce: si algún día se publican los motivos, irá a `catalog.json` el ID y cada interfaz lo traducirá en sus ficheros de idioma, como hace la web con los tipos de pintura. Mientras no se publiquen, los IDs se pueden renombrar; desde que se publiquen, quedan congelados como los demás IDs.
-- **`color-policy.json`**: tres listas de fuentes, `measured`, `manufacturer` y `community`, en orden de preferencia dentro de su origen ([ADR-0014](adr/0014-origen-seleccion-color.md)). Hoy, DonnervS en `measured`, y en `community` DonnervS, las dos tablas de SimoGecko, la muestreada por delante de la oficial ([ADR-0031](adr/0031-varios-candidatos-color.md)), y Arcturus la última, que solo aporta los Warpaints originales ([ADR-0034](adr/0034-warpaints-originales-sustituciones.md)).
+- **`color-policy.json`**: tres listas de fuentes, `measured`, `manufacturer` y `community`, en orden de preferencia dentro de su origen ([ADR-0014](adr/0014-origen-seleccion-color.md)). Hoy, DonnervS en `measured`, y en `community` DonnervS, las dos tablas de SimoGecko, la muestreada por delante de la oficial ([ADR-0031](adr/0031-varios-candidatos-color.md)), y Arcturus la última, que solo aporta los Warpaints originales y las líneas antiguas de Citadel ([ADR-0034](adr/0034-warpaints-originales-sustituciones.md), [ADR-0035](adr/0035-lineas-antiguas-citadel.md)).
   - El `hex` y el `gradient` de una fuente toman el origen de la lista en la que aparece, `manufacturer` o `community`, y la fuente solo puede estar en una de las dos ([ADR-0019](adr/0019-alcance-minimo-mvp.md), decisión 2).
   - El `measuredHex` siempre es `measured`, y solo se usa si la fuente está además en `measured`.
   - Toda fuente que aporte `hex` o `gradient` tiene que estar en `manufacturer` o en `community`.
@@ -251,7 +268,7 @@ Se ejecutan a demanda, nunca en el build ni en la CI. Cada importador correspond
 
   Falla si una fila nueva no tiene regla para su grupo o si su ID propuesto ya existe. En esos casos, la pintura se da de alta a mano, con un sufijo si colisiona, o la fila se ignora. Una fuente que nunca propone fichas, como la tabla muestreada de SimoGecko, no tiene reglas: sus filas nuevas quedan pendientes, para añadir a mano su clave a la ficha que corresponda.
 
-El script de cada importador lee los ficheros de la fuente en el commit fijado en su `url`, transcribe y concilia. La lista de ficheros de cada fuente está en `src/cli/source-files.ts` y es la misma que descarga `archive-sources` (§9). Después reemplaza las filas del fichero de la fuente, conserva su `source` y sus ignoradas, añade las pinturas propuestas al fichero de su marca y muestra las diferencias y lo pendiente. No cambia nunca una pintura que ya existe: lo decide Miguel a la vista del informe (§8). Después hay que ejecutar `pnpm format` y `build-catalog`, y revisar el diff, con el del informe de discrepancias. `import-simogecko` importa las dos tablas de SimoGecko, cada una en su fichero. `import-arcturus` importa la tabla de The Army Painter de Arcturus y solo propone pinturas de los grupos de los Warpaints originales; una pintura del grupo cuyo tipo no es el del grupo, como las metálicas y los efectos de «Warpaints», se corrige en su ficha con una nota (§8). Un importador también propone descatalogada la pintura de una gama descatalogada.
+El script de cada importador lee los ficheros de la fuente en el commit fijado en su `url`, o en su captura si el original ya no existe (§3.3), transcribe y concilia. La lista de ficheros de cada fuente está en `src/cli/source-files.ts` y es la misma que descarga `archive-sources` (§9). Después reemplaza las filas del fichero de la fuente, conserva su `source` y sus ignoradas, añade las pinturas propuestas al fichero de su marca y muestra las diferencias y lo pendiente. No cambia nunca una pintura que ya existe: lo decide Miguel a la vista del informe (§8). Después hay que ejecutar `pnpm format` y `build-catalog`, y revisar el diff, con el del informe de discrepancias. `import-simogecko` importa las dos tablas de SimoGecko, cada una en su fichero. `import-arcturus` importa las tablas de The Army Painter y de Citadel de Arcturus y solo propone pinturas de los grupos de los Warpaints originales; una pintura del grupo cuyo tipo no es el del grupo, como las metálicas y los efectos de «Warpaints», se corrige en su ficha con una nota (§8). De su tabla de Citadel solo se toman los colores de las pinturas antiguas, que proponen los documentos de GW. `import-games-workshop` importa los tres documentos de GW de §3.3 y propone sus pinturas en la gama de cada línea; las tintas y las metálicas de la hoja de control se corrigen en su ficha. Un importador también propone descatalogada la pintura de una gama descatalogada.
 
 ### Cartas de equivalencias
 
@@ -260,7 +277,7 @@ El script de cada importador lee los ficheros de la fuente en el commit fijado e
 - **Transcribir**: `src/cli/pdf.ts` lee el texto del PDF con su posición, con [pdf.js](https://github.com/mozilla/pdf.js), y una función pura por carta, en `src/importers/`, lo convierte en filas y parejas con la regla de columnas de esa carta. Falla si sobra algún texto de la tabla o si las cabeceras cambian, y los tests fijan el número de filas de cada tabla.
 - **Conciliar**: una carta nunca propone pinturas. A cada fila nueva, ni clave ni ignorada, le añade su clave en la única pintura con su código o con su nombre (o un alias), letra por letra salvo el apóstrofo tipográfico, que cuenta como el recto. Lo demás (una errata, un nombre de dos pinturas, una pintura que no está en el catálogo) queda pendiente, para escribir la clave a mano o ignorar la fila. Solo añade claves: no cambia ningún otro campo de las fichas.
 
-La carta de Warpaints de 2020 no está en `import-charts`: es una imagen y se transcribió a mano (§3.1).
+Las cartas de Warpaints de 2020 y de GW de 2012 no están en `import-charts`: son imágenes y se transcribieron a mano (§3.1).
 
 Una revisión nueva de una carta se toma cambiando su `url` y `retrievedAt`, poniendo `archiveUrl` a `null` y ejecutando `import-charts` y `archive-sources`.
 
@@ -297,6 +314,7 @@ Para cada fuente con `url`:
 2. **Descarga** de los ficheros que todavía no están en `files`, en `<carpeta>/<source-id>/<nombre>`:
    - en una página de un fichero de GitHub, su fichero en bruto (`raw.githubusercontent.com`);
    - en una carpeta de GitHub, los ficheros en bruto que lee su importador, como los tres de DonnervS;
+   - en una fuente cuyo original ya no existe, como los documentos de GW, la captura en bruto que lista `src/cli/source-files.ts` (§3.3);
    - en cualquier otra fuente, como un PDF del fabricante, la propia `url`.
 
    Anota la `url`, el `name` y el `sha256` de cada uno, y quita de `files` los que la fuente ya no tiene.

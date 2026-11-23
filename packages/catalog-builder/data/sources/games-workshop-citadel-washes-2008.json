@@ -1,0 +1,115 @@
+{
+  "source": {
+    "id": "games-workshop-citadel-washes-2008",
+    "kind": "manufacturer",
+    "title": "Using the New Citadel Washes (page 4)",
+    "publisher": "Games Workshop",
+    "url": "http://uk.games-workshop.com/painting/washes/4/",
+    "archiveUrl": "https://web.archive.org/web/20080608042740/http://uk.games-workshop.com/painting/washes/4/",
+    "retrievedAt": "2026-11-23",
+    "license": "unknown",
+    "attribution": null
+  },
+  "disabled": null,
+  "files": [
+    {
+      "url": "https://web.archive.org/web/20080608042740id_/http://uk.games-workshop.com/painting/washes/4/",
+      "name": "washes-4.html",
+      "sha256": "44e832a651b9089d00f9f7ab21e533216926d4404baad767c3385d7327fad69e"
+    }
+  ],
+  "paints": [
+    {
+      "key": "Devlan Mud",
+      "group": "Citadel Washes",
+      "name": "Devlan Mud",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Gryphonne Sepia",
+      "group": "Citadel Washes",
+      "name": "Gryphonne Sepia",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Baal Red",
+      "group": "Citadel Washes",
+      "name": "Baal Red",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Thraka Green",
+      "group": "Citadel Washes",
+      "name": "Thraka Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Ogryn Flesh",
+      "group": "Citadel Washes",
+      "name": "Ogryn Flesh",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Leviathan Purple",
+      "group": "Citadel Washes",
+      "name": "Leviathan Purple",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Asurmen Blue",
+      "group": "Citadel Washes",
+      "name": "Asurmen Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Badab Black",
+      "group": "Citadel Washes",
+      "name": "Badab Black",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    }
+  ],
+  "equivalences": [],
+  "replacements": [],
+  "ignoredGroups": [],
+  "ignoredKeys": []
+}

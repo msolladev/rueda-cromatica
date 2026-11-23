@@ -1,7 +1,8 @@
 /**
- * The row counts of each chart, read from its curated transcription
- * (ADR-0033): what the chart shows when counted by hand. A new revision that
- * changes them makes this test fail, so its diff gets reviewed.
+ * The row counts of each chart and of each document of Games Workshop, read
+ * from its curated transcription (ADR-0033, ADR-0035): what the chart shows
+ * when counted by hand. A new revision that changes them makes this test
+ * fail, so its diff gets reviewed.
  */
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
@@ -148,6 +149,69 @@ describe("transcribed charts", () => {
       "AK 3G → Vallejo GC": 51,
       "AK 3G → New Citadel": 50,
       "AK 3G → Old Citadel": 50,
+    });
+  });
+  describe("documents of Games Workshop of the old lines", () => {
+    it("checklist of 2004: 65 paints and inks, and 2 auxiliary products", () => {
+      const id = "games-workshop-paints-inks-checklist-2004";
+      expect(read(id).paints).toHaveLength(67);
+      expect(read(id).ignoredKeys.map((k) => k.reasonId)).toEqual([
+        "auxiliary",
+        "auxiliary",
+      ]);
+    });
+
+    it("the 18 Foundation paints and the 8 Washes of 2008", () => {
+      expect(read("games-workshop-foundation-paints-2008").paints).toHaveLength(
+        18,
+      );
+      expect(read("games-workshop-citadel-washes-2008").paints).toHaveLength(8);
+    });
+  });
+
+  describe("Citadel conversion chart of 2012, transcribed by hand", () => {
+    const id = "games-workshop-citadel-conversion-chart-2012";
+    const chart = read(id);
+    const named = (group: string) =>
+      chart.paints.filter((p) => p.group === group).map((p) => p.name);
+
+    it("has its 72 squares, each an old colour and its new match", () => {
+      expect(named("Old Citadel Colour")).toHaveLength(72);
+      expect(named("New paint range")).toHaveLength(67);
+      expect(counts(id)).toEqual({
+        "Old Citadel Colour → New paint range": 72,
+      });
+    });
+
+    // A second reading: each old colour is in one of the documents of its
+    // line, which have text.
+    it("names old colours of the checklist of 2004, Foundation or Washes", () => {
+      const documents = new Set(
+        [
+          "games-workshop-paints-inks-checklist-2004",
+          "games-workshop-foundation-paints-2008",
+          "games-workshop-citadel-washes-2008",
+        ].flatMap((source) => read(source).paints.map((p) => p.name)),
+      );
+      expect(
+        named("Old Citadel Colour").filter((name) => !documents.has(name)),
+      ).toEqual([]);
+    });
+
+    // Tale of Painters (2012-03-23) points out the many-to-one matches.
+    it("matches several old colours to the same new one", () => {
+      const to = new Map<string, string[]>();
+      const name = new Map(chart.paints.map((p) => [p.key, p.name]));
+      for (const { from, to: target } of chart.equivalences) {
+        const list = to.get(name.get(target) ?? "") ?? [];
+        list.push(name.get(from) ?? "");
+        to.set(name.get(target) ?? "", list);
+      }
+      expect(to.get("Caliban Green")).toEqual([
+        "Dark Angels Green",
+        "Orkhide Shade",
+      ]);
+      expect(to.get("The Fang")).toEqual(["Shadow Grey", "Fenris Grey"]);
     });
   });
 });

@@ -12,10 +12,6 @@
     "text": "Producto auxiliar (medium, barniz, diluyente, retardante o imprimación), fuera del catálogo."
   },
   {
-    "id": "discontinued-line-pending",
-    "text": "Línea descatalogada que el catálogo todavía no tiene. Llega en el paso 5 de la fase 5."
-  },
-  {
     "id": "duplicate-row",
     "text": "Fila repetida en la fuente: la misma pintura ya tiene la clave de otra fila."
   },
@@ -26,6 +22,10 @@
   {
     "id": "newer-source",
     "text": "La línea toma sus datos de una fuente más actual; esta fuente solo aporta lo que las demás no tienen."
+  },
+  {
+    "id": "no-discontinuation-document",
+    "text": "Pintura que el fabricante ya no vende, pero ningún documento suyo dice que se retiró, así que no se puede marcar descatalogada."
   },
   {
     "id": "no-manufacturer-document",
