@@ -1,6 +1,6 @@
 # ADR-0013: Clasificación de pinturas: gamas, tipos y acabado
 
-- **Estado:** aceptada
+- **Estado:** aceptada; corregida en parte por [ADR-0035](0035-lineas-antiguas-citadel.md)
 - **Fecha:** 2026-11-07
 - **Sustituye a:** [ADR-0008](0008-clasificacion-pinturas.md)
 
