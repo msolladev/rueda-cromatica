@@ -12,6 +12,12 @@
       "status": "active"
     },
     {
+      "id": "citadel/citadel-colour",
+      "brandId": "citadel",
+      "name": "Citadel Colour",
+      "status": "discontinued"
+    },
+    {
       "id": "citadel/contrast",
       "brandId": "citadel",
       "name": "Contrast",
@@ -22,6 +28,12 @@
       "brandId": "citadel",
       "name": "Dry",
       "status": "active"
+    },
+    {
+      "id": "citadel/foundation",
+      "brandId": "citadel",
+      "name": "Foundation",
+      "status": "discontinued"
     },
     {
       "id": "citadel/layer",
@@ -40,6 +52,12 @@
       "brandId": "citadel",
       "name": "Technical",
       "status": "active"
+    },
+    {
+      "id": "citadel/washes",
+      "brandId": "citadel",
+      "name": "Washes",
+      "status": "discontinued"
     }
   ],
   "paints": [
@@ -56,6 +74,14 @@
       },
       "keys": [
         {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Abaddon Black"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Abaddon Black"
+        },
+        {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Abaddon Black"
         },
@@ -68,16 +94,12 @@
           "key": "GW/Abaddon Black"
         },
         {
-          "sourceId": "ak-interactive-3gen-equivalence-table",
-          "key": "New Citadel/Abaddon Black"
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Abaddon Black"
         },
         {
           "sourceId": "vallejo-cc266",
           "key": "Citadel/Abbadon Black"
-        },
-        {
-          "sourceId": "the-army-painter-warpaints-conversion-chart",
-          "key": "GM/Abaddon Black"
         }
       ],
       "colorChoice": null,
@@ -97,6 +119,14 @@
       },
       "keys": [
         {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Averland Sunset"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Averland Sunset"
+        },
+        {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Averland Sunset"
         },
@@ -107,10 +137,6 @@
         {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Averland Sunset"
-        },
-        {
-          "sourceId": "ak-interactive-3gen-equivalence-table",
-          "key": "New Citadel/Averland Sunset"
         }
       ],
       "colorChoice": null,
@@ -221,6 +247,14 @@
       },
       "keys": [
         {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Caledor Sky"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Caledor Sky"
+        },
+        {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Caledor Sky"
         },
@@ -229,20 +263,16 @@
           "key": "Caledor Sky"
         },
         {
-          "sourceId": "vallejo-cc266",
-          "key": "Citadel/Caledor Sky"
-        },
-        {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Caledor Sky"
         },
         {
-          "sourceId": "ak-interactive-3gen-equivalence-table",
-          "key": "New Citadel/Caledor Sky"
-        },
-        {
           "sourceId": "the-army-painter-warpaints-conversion-chart",
           "key": "GM/Caledor Sky"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Caledor Sky"
         }
       ],
       "colorChoice": null,
@@ -262,6 +292,14 @@
       },
       "keys": [
         {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Caliban Green"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Caliban Green"
+        },
+        {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Caliban Green"
         },
@@ -270,20 +308,16 @@
           "key": "Caliban Green"
         },
         {
-          "sourceId": "vallejo-cc266",
-          "key": "Citadel/Caliban Green"
-        },
-        {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Caliban Green"
         },
         {
-          "sourceId": "ak-interactive-3gen-equivalence-table",
-          "key": "New Citadel/Caliban Green"
-        },
-        {
           "sourceId": "the-army-painter-warpaints-conversion-chart",
           "key": "GM/Caliban Green"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Caliban Green"
         }
       ],
       "colorChoice": null,
@@ -303,6 +337,14 @@
       },
       "keys": [
         {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Castellan Green"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Castellan Green"
+        },
+        {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Castellan Green"
         },
@@ -311,16 +353,12 @@
           "key": "Castellan Green"
         },
         {
-          "sourceId": "vallejo-cc266",
-          "key": "Citadel/Castellan Green"
-        },
-        {
-          "sourceId": "ak-interactive-3gen-equivalence-table",
-          "key": "New Citadel/Castellan Green"
-        },
-        {
           "sourceId": "the-army-painter-warpaints-conversion-chart",
           "key": "GM/Castellan Green"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Castellan Green"
         }
       ],
       "colorChoice": null,
@@ -368,6 +406,10 @@
         "kind": "active"
       },
       "keys": [
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Celestra Grey"
+        },
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Celestra Grey"
@@ -460,6 +502,10 @@
       },
       "keys": [
         {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Daemonette Hide"
+        },
+        {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Daemonette Hide"
         },
@@ -468,16 +514,16 @@
           "key": "Daemonette Hide"
         },
         {
-          "sourceId": "vallejo-cc266",
-          "key": "Citadel/Daemonette Hide"
-        },
-        {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Daemonette Hide"
         },
         {
           "sourceId": "the-army-painter-warpaints-conversion-chart",
           "key": "GM/Daemonette Hide"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Daemonette Hide"
         }
       ],
       "colorChoice": null,
@@ -555,6 +601,14 @@
       },
       "keys": [
         {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Deathworld Forest"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Deathworld Forest"
+        },
+        {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Deathworld Forest"
         },
@@ -563,20 +617,16 @@
           "key": "Deathworld Forest"
         },
         {
-          "sourceId": "vallejo-cc266",
-          "key": "Citadel/Deathworld Forest"
-        },
-        {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Deathworld Forest"
         },
         {
-          "sourceId": "ak-interactive-3gen-equivalence-table",
-          "key": "New Citadel/Deathworld Forest"
-        },
-        {
           "sourceId": "the-army-painter-warpaints-conversion-chart",
           "key": "GM/Deathworld Forest"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Deathworld Forest"
         }
       ],
       "colorChoice": null,
@@ -845,16 +895,20 @@
       },
       "keys": [
         {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Jokaero Orange"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Jokaero Orange"
+        },
+        {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Jokaero Orange"
         },
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Jokaero Orange"
-        },
-        {
-          "sourceId": "ak-interactive-3gen-equivalence-table",
-          "key": "New Citadel/Jokaero Orange"
         },
         {
           "sourceId": "the-army-painter-warpaints-conversion-chart",
@@ -878,6 +932,14 @@
       },
       "keys": [
         {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Kantor Blue"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Kantor Blue"
+        },
+        {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Kantor Blue"
         },
@@ -886,20 +948,16 @@
           "key": "Kantor Blue"
         },
         {
-          "sourceId": "vallejo-cc266",
-          "key": "Citadel/Kantor Blue"
-        },
-        {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Kantor Blue"
         },
         {
-          "sourceId": "ak-interactive-3gen-equivalence-table",
-          "key": "New Citadel/Kantor Blue"
-        },
-        {
           "sourceId": "the-army-painter-warpaints-conversion-chart",
           "key": "GM/Kantor Blue"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Kantor Blue"
         }
       ],
       "colorChoice": null,
@@ -919,6 +977,14 @@
       },
       "keys": [
         {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Khorne Red"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Khorne Red"
+        },
+        {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Khorne Red"
         },
@@ -927,16 +993,12 @@
           "key": "Khorne Red"
         },
         {
-          "sourceId": "vallejo-cc266",
-          "key": "Citadel/Khorne Red"
-        },
-        {
-          "sourceId": "ak-interactive-3gen-equivalence-table",
-          "key": "New Citadel/Khorne Red"
-        },
-        {
           "sourceId": "the-army-painter-warpaints-conversion-chart",
           "key": "GM/Khorne Red"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Khorne Red"
         }
       ],
       "colorChoice": null,
@@ -956,16 +1018,20 @@
       },
       "keys": [
         {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Leadbelcher"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Leadbelcher"
+        },
+        {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Leadbelcher"
         },
         {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Leadbelcher"
-        },
-        {
-          "sourceId": "ak-interactive-3gen-equivalence-table",
-          "key": "New Citadel/Leadbelcher"
         },
         {
           "sourceId": "the-army-painter-warpaints-conversion-chart",
@@ -1014,6 +1080,14 @@
       },
       "keys": [
         {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Macragge Blue"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Macragge Blue"
+        },
+        {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Macragge Blue"
         },
@@ -1022,20 +1096,16 @@
           "key": "Macragge Blue"
         },
         {
-          "sourceId": "vallejo-cc266",
-          "key": "Citadel/Macragge Blue"
-        },
-        {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Macragge Blue"
         },
         {
-          "sourceId": "ak-interactive-3gen-equivalence-table",
-          "key": "New Citadel/Macragge Blue"
-        },
-        {
           "sourceId": "the-army-painter-warpaints-conversion-chart",
           "key": "GM/Macagge Blue"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Macragge Blue"
         }
       ],
       "colorChoice": null,
@@ -1054,6 +1124,10 @@
         "kind": "active"
       },
       "keys": [
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Mechanicus Standard Grey"
+        },
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Mechanicus Standard Grey"
@@ -1088,6 +1162,14 @@
       },
       "keys": [
         {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Mephiston Red"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Mephiston Red"
+        },
+        {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Mephiston Red"
         },
@@ -1098,10 +1180,6 @@
         {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Mephiston Red"
-        },
-        {
-          "sourceId": "ak-interactive-3gen-equivalence-table",
-          "key": "New Citadel/Mephiston Red"
         },
         {
           "sourceId": "the-army-painter-warpaints-conversion-chart",
@@ -1150,6 +1228,14 @@
       },
       "keys": [
         {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Mourfang Brown"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Mournfang Brown"
+        },
+        {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Mournfang Brown"
         },
@@ -1162,16 +1248,12 @@
           "key": "GW/Mournfang Brown"
         },
         {
-          "sourceId": "vallejo-cc266",
-          "key": "Citadel/Mourfang Brown"
-        },
-        {
-          "sourceId": "ak-interactive-3gen-equivalence-table",
-          "key": "New Citadel/Mourfang Brown"
-        },
-        {
           "sourceId": "the-army-painter-warpaints-conversion-chart",
           "key": "GM/Mournfang Brown"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Mourfang Brown"
         }
       ],
       "colorChoice": null,
@@ -1332,6 +1414,10 @@
       },
       "keys": [
         {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Rakarth Flesh"
+        },
+        {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Rakarth Flesh"
         },
@@ -1340,12 +1426,12 @@
           "key": "Rakarth Flesh"
         },
         {
-          "sourceId": "vallejo-cc266",
-          "key": "Citadel/Rackarth Flesh"
-        },
-        {
           "sourceId": "the-army-painter-warpaints-conversion-chart",
           "key": "GM/Rakarth Flesh"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Rackarth Flesh"
         }
       ],
       "colorChoice": null,
@@ -1364,6 +1450,10 @@
         "kind": "active"
       },
       "keys": [
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Ratskin Flesh"
+        },
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Ratskin Flesh"
@@ -1423,6 +1513,14 @@
       },
       "keys": [
         {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Rhinox Hide"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Rhinox Hide"
+        },
+        {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Rhinox Hide"
         },
@@ -1433,10 +1531,6 @@
         {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Rhinox Hide"
-        },
-        {
-          "sourceId": "ak-interactive-3gen-equivalence-table",
-          "key": "New Citadel/Rhinox Hide"
         },
         {
           "sourceId": "vallejo-cc266",
@@ -1481,6 +1575,14 @@
       },
       "keys": [
         {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Screamer Pink"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Screamer Pink"
+        },
+        {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Screamer Pink"
         },
@@ -1489,20 +1591,16 @@
           "key": "Screamer Pink"
         },
         {
-          "sourceId": "vallejo-cc266",
-          "key": "Citadel/Screamer Pink"
-        },
-        {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Screamer Pink"
         },
         {
-          "sourceId": "ak-interactive-3gen-equivalence-table",
-          "key": "New Citadel/Screamer Pink"
-        },
-        {
           "sourceId": "the-army-painter-warpaints-conversion-chart",
           "key": "GM/Screamer Pink"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Screamer Pink"
         }
       ],
       "colorChoice": null,
@@ -1547,6 +1645,14 @@
       },
       "keys": [
         {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Steel Legion Drab"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Steel Legion Drab"
+        },
+        {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Steel Legion Drab"
         },
@@ -1555,16 +1661,12 @@
           "key": "Steel Legion Drab"
         },
         {
-          "sourceId": "vallejo-cc266",
-          "key": "Citadel/Steel Legion Drab"
-        },
-        {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Steel Legion Drab"
         },
         {
-          "sourceId": "ak-interactive-3gen-equivalence-table",
-          "key": "New Citadel/Steel Legion Drab"
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Steel Legion Drab"
         }
       ],
       "colorChoice": null,
@@ -1617,6 +1719,14 @@
       },
       "keys": [
         {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/The Fang"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/The Fang"
+        },
+        {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/The Fang"
         },
@@ -1625,16 +1735,12 @@
           "key": "The Fang"
         },
         {
-          "sourceId": "vallejo-cc266",
-          "key": "Citadel/The Fang"
-        },
-        {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/The Fang"
         },
         {
-          "sourceId": "ak-interactive-3gen-equivalence-table",
-          "key": "New Citadel/The Fang"
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/The Fang"
         }
       ],
       "colorChoice": null,
@@ -1745,6 +1851,10 @@
       },
       "keys": [
         {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Warplock Bronze"
+        },
+        {
           "sourceId": "simogecko-citadel-colours",
           "key": "base/Warplock Bronze"
         },
@@ -1851,6 +1961,2012 @@
       "colorChoice": null,
       "rejectedColors": [],
       "note": null
+    },
+    {
+      "id": "citadel/citadel-colour/bad-moon-yellow",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Bad Moon Yellow",
+      "aliases": [],
+      "manufacturerCode": "61-11",
+      "type": "standard",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Old Citadel/Bad Moon Yellow"
+        },
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Bad Moon Yellow"
+        },
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-11"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": null
+    },
+    {
+      "id": "citadel/citadel-colour/bestial-brown",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Bestial Brown",
+      "aliases": [],
+      "manufacturerCode": "61-13",
+      "type": "standard",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Old Citadel/Bestial Brown"
+        },
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Bestial Brown"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Bestial Brown"
+        },
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-13"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": null
+    },
+    {
+      "id": "citadel/citadel-colour/black-ink",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Black Ink",
+      "aliases": [],
+      "manufacturerCode": "61-75",
+      "type": "ink",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Black Ink"
+        },
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-75"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": "Tinta: la hoja de control de bolsillo de GW de 2004 (PaintingChecklistSmall.pdf, captura de 2006-07-19) la nombra entre sus «INKS»."
+    },
+    {
+      "id": "citadel/citadel-colour/blazing-orange",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Blazing Orange",
+      "aliases": [],
+      "manufacturerCode": "61-07",
+      "type": "standard",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Old Citadel/Blazing Orange"
+        },
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Blazing Orange"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Blazing Orange"
+        },
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-07"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": null
+    },
+    {
+      "id": "citadel/citadel-colour/bleached-bone",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Bleached Bone",
+      "aliases": [],
+      "manufacturerCode": "61-17",
+      "type": "standard",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Old Citadel/Bleached Bone"
+        },
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Bleached Bone"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Bleached Bone"
+        },
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-17"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": null
+    },
+    {
+      "id": "citadel/citadel-colour/blood-red",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Blood Red",
+      "aliases": [],
+      "manufacturerCode": "61-06",
+      "type": "standard",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Old Citadel/Blood Red"
+        },
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Blood Red"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Blood Red"
+        },
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-06"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": null
+    },
+    {
+      "id": "citadel/citadel-colour/blue-ink",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Blue Ink",
+      "aliases": [],
+      "manufacturerCode": "61-71",
+      "type": "ink",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-71"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": "Tinta: la hoja de control de bolsillo de GW de 2004 (PaintingChecklistSmall.pdf, captura de 2006-07-19) la nombra entre sus «INKS»."
+    },
+    {
+      "id": "citadel/citadel-colour/boltgun-metal",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Boltgun Metal",
+      "aliases": [],
+      "manufacturerCode": "61-57",
+      "type": "standard",
+      "metallic": true,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Old Citadel/Boltgun Metal"
+        },
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Boltgun Metal"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Boltgun Metal"
+        },
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-57"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": "Metálica: la hoja de control de bolsillo de GW de 2004 (PaintingChecklistSmall.pdf, captura de 2006-07-19) la nombra entre sus «METALLICS»."
+    },
+    {
+      "id": "citadel/citadel-colour/brazen-brass",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Brazen Brass",
+      "aliases": [],
+      "manufacturerCode": "61-61",
+      "type": "standard",
+      "metallic": true,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Brazen Brass"
+        },
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-61"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": "Metálica: la hoja de control de bolsillo de GW de 2004 (PaintingChecklistSmall.pdf, captura de 2006-07-19) la nombra entre sus «METALLICS»."
+    },
+    {
+      "id": "citadel/citadel-colour/bronzed-flesh",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Bronzed Flesh",
+      "aliases": [],
+      "manufacturerCode": "61-22",
+      "type": "standard",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Bronzed Flesh"
+        },
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-22"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": null
+    },
+    {
+      "id": "citadel/citadel-colour/brown-ink",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Brown Ink",
+      "aliases": [],
+      "manufacturerCode": "61-68",
+      "type": "ink",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-68"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": "Tinta: la hoja de control de bolsillo de GW de 2004 (PaintingChecklistSmall.pdf, captura de 2006-07-19) la nombra entre sus «INKS»."
+    },
+    {
+      "id": "citadel/citadel-colour/bubonic-brown",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Bubonic Brown",
+      "aliases": [],
+      "manufacturerCode": "61-15",
+      "type": "standard",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Old Citadel/Bubonic Brown"
+        },
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Bubonic Brown"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Bubonic Brown"
+        },
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-15"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": null
+    },
+    {
+      "id": "citadel/citadel-colour/burnished-gold",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Burnished Gold",
+      "aliases": [],
+      "manufacturerCode": "61-62",
+      "type": "standard",
+      "metallic": true,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Burnished Gold"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Burnished Gold"
+        },
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-62"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": "Metálica: la hoja de control de bolsillo de GW de 2004 (PaintingChecklistSmall.pdf, captura de 2006-07-19) la nombra entre sus «METALLICS»."
+    },
+    {
+      "id": "citadel/citadel-colour/camo-green",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Camo Green",
+      "aliases": [],
+      "manufacturerCode": "61-44",
+      "type": "standard",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Camo Green"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Camo Green"
+        },
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-44"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": null
+    },
+    {
+      "id": "citadel/citadel-colour/catachan-green",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Catachan Green",
+      "aliases": [],
+      "manufacturerCode": "61-84",
+      "type": "standard",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Old Citadel/Catachan Green"
+        },
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Catachan Green"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Catachan Green"
+        },
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-84"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": null
+    },
+    {
+      "id": "citadel/citadel-colour/chainmail",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Chainmail",
+      "aliases": [],
+      "manufacturerCode": "61-56",
+      "type": "standard",
+      "metallic": true,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Old Citadel/Chainmail"
+        },
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Chainmail"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Chainmail"
+        },
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-56"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": "Metálica: la hoja de control de bolsillo de GW de 2004 (PaintingChecklistSmall.pdf, captura de 2006-07-19) la nombra entre sus «METALLICS»."
+    },
+    {
+      "id": "citadel/citadel-colour/chaos-black",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Chaos Black",
+      "aliases": [],
+      "manufacturerCode": "61-51",
+      "type": "standard",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Old Citadel/Chaos Black"
+        },
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Chaos Black"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Chaos Black"
+        },
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-51"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": null
+    },
+    {
+      "id": "citadel/citadel-colour/chestnut-ink",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Chestnut Ink",
+      "aliases": [],
+      "manufacturerCode": "61-69",
+      "type": "ink",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-69"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": "Tinta: la hoja de control de bolsillo de GW de 2004 (PaintingChecklistSmall.pdf, captura de 2006-07-19) la nombra entre sus «INKS»."
+    },
+    {
+      "id": "citadel/citadel-colour/codex-grey",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Codex Grey",
+      "aliases": [],
+      "manufacturerCode": "61-52",
+      "type": "standard",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Old Citadel/Coldex Grey"
+        },
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Codex Grey"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Codex Grey"
+        },
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-52"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": "La tabla de AK escribe «Coldex Grey»."
+    },
+    {
+      "id": "citadel/citadel-colour/dark-angels-green",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Dark Angels Green",
+      "aliases": [],
+      "manufacturerCode": "61-38",
+      "type": "standard",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Old Citadel/Dark Angels Green"
+        },
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Dark Angels Green"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Dark Angels Green"
+        },
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-38"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": null
+    },
+    {
+      "id": "citadel/citadel-colour/dark-flesh",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Dark Flesh",
+      "aliases": [],
+      "manufacturerCode": "61-18",
+      "type": "standard",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Old Citadel/Dark Flesh"
+        },
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Dark Flesh"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Dark Flesh"
+        },
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-18"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": null
+    },
+    {
+      "id": "citadel/citadel-colour/dark-green-ink",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Dark Green Ink",
+      "aliases": [],
+      "manufacturerCode": "61-74",
+      "type": "ink",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Dark Green Ink"
+        },
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-74"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": "Tinta: la hoja de control de bolsillo de GW de 2004 (PaintingChecklistSmall.pdf, captura de 2006-07-19) la nombra entre sus «INKS»."
+    },
+    {
+      "id": "citadel/citadel-colour/desert-yellow",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Desert Yellow",
+      "aliases": [],
+      "manufacturerCode": "61-83",
+      "type": "standard",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Old Citadel/Desert Yellow"
+        },
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Desert Yellow"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Desert Yellow"
+        },
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-83"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": null
+    },
+    {
+      "id": "citadel/citadel-colour/dwarf-bronze",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Dwarf Bronze",
+      "aliases": [],
+      "manufacturerCode": "61-60",
+      "type": "standard",
+      "metallic": true,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Old Citadel/Dwarft Bronze"
+        },
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Dwarf Bronze"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Dwarf Bronze"
+        },
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-60"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": "Metálica: la hoja de control de bolsillo de GW de 2004 (PaintingChecklistSmall.pdf, captura de 2006-07-19) la nombra entre sus «METALLICS». La tabla de AK escribe «Dwarft Bronze»."
+    },
+    {
+      "id": "citadel/citadel-colour/dwarf-flesh",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Dwarf Flesh",
+      "aliases": [],
+      "manufacturerCode": "61-21",
+      "type": "standard",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Dwarf Flesh"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Dwarf Flesh"
+        },
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-21"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": null
+    },
+    {
+      "id": "citadel/citadel-colour/elf-flesh",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Elf Flesh",
+      "aliases": [],
+      "manufacturerCode": "61-23",
+      "type": "standard",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Old Citadel/Elf Flesh"
+        },
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Elf Flesh"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Elf Flesh"
+        },
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-23"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": null
+    },
+    {
+      "id": "citadel/citadel-colour/enchanted-blue",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Enchanted Blue",
+      "aliases": [],
+      "manufacturerCode": "61-34",
+      "type": "standard",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Old Citadel/Enchanted Blue"
+        },
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Enchanted Blue"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Enchanted Blue"
+        },
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-34"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": null
+    },
+    {
+      "id": "citadel/citadel-colour/fiery-orange",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Fiery Orange",
+      "aliases": [],
+      "manufacturerCode": "61-08",
+      "type": "standard",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Old Citadel/Fiery Orange"
+        },
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Fiery Orange"
+        },
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-08"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": null
+    },
+    {
+      "id": "citadel/citadel-colour/flesh-wash",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Flesh Wash",
+      "aliases": [],
+      "manufacturerCode": "61-76",
+      "type": "wash",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation Wash (discontinued)/Flesh Wash"
+        },
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-76"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": "Lavado por su función (ADR-0013), aunque la hoja de control de bolsillo de GW de 2004 (PaintingChecklistSmall.pdf, captura de 2006-07-19) la lista entre sus «INKS»."
+    },
+    {
+      "id": "citadel/citadel-colour/fortress-grey",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Fortress Grey",
+      "aliases": [],
+      "manufacturerCode": "61-53",
+      "type": "standard",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Old Citadel/Fortress Grey"
+        },
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Fortress Grey"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Fortress Grey"
+        },
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-53"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": null
+    },
+    {
+      "id": "citadel/citadel-colour/goblin-green",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Goblin Green",
+      "aliases": [],
+      "manufacturerCode": "61-42",
+      "type": "standard",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Old Citadel/Goblin Green"
+        },
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Goblin Green"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Goblin Green"
+        },
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-42"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": null
+    },
+    {
+      "id": "citadel/citadel-colour/golden-yellow",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Golden Yellow",
+      "aliases": [],
+      "manufacturerCode": "61-09",
+      "type": "standard",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Old Citadel/Golden Yellow"
+        },
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Golden Yellow"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Golden Yellow"
+        },
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-09"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": null
+    },
+    {
+      "id": "citadel/citadel-colour/graveyard-earth",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Graveyard Earth",
+      "aliases": [],
+      "manufacturerCode": "61-81",
+      "type": "standard",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Old Citadel/Graveyard Earth"
+        },
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Graveyard Earth"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Graveyard Earth"
+        },
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-81"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": null
+    },
+    {
+      "id": "citadel/citadel-colour/hawk-turquoise",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Hawk Turquoise",
+      "aliases": [],
+      "manufacturerCode": "61-37",
+      "type": "standard",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Old Citadel/Hawk Turquoise"
+        },
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Hawk Turquoise"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Hawk Turquoise"
+        },
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-37"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": null
+    },
+    {
+      "id": "citadel/citadel-colour/ice-blue",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Ice Blue",
+      "aliases": [],
+      "manufacturerCode": "61-36",
+      "type": "standard",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Old Citadel/Ice Blue"
+        },
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Ice Blue"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Ice Blue"
+        },
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-36"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": null
+    },
+    {
+      "id": "citadel/citadel-colour/kommando-khaki",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Kommando Khaki",
+      "aliases": [],
+      "manufacturerCode": "61-82",
+      "type": "standard",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Kommando Khaki"
+        },
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-82"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": null
+    },
+    {
+      "id": "citadel/citadel-colour/liche-purple",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Liche Purple",
+      "aliases": [],
+      "manufacturerCode": "61-27",
+      "type": "standard",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Old Citadel/Liche Purple"
+        },
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Liche Purple"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Liche Purple"
+        },
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-27"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": null
+    },
+    {
+      "id": "citadel/citadel-colour/magenta-ink",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Magenta Ink",
+      "aliases": [],
+      "manufacturerCode": "61-65",
+      "type": "ink",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Magenta Ink"
+        },
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-65"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": "Tinta: la hoja de control de bolsillo de GW de 2004 (PaintingChecklistSmall.pdf, captura de 2006-07-19) la nombra entre sus «INKS»."
+    },
+    {
+      "id": "citadel/citadel-colour/midnight-blue",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Midnight Blue",
+      "aliases": [],
+      "manufacturerCode": "61-30",
+      "type": "standard",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Midnight Blue"
+        },
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-30"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": null
+    },
+    {
+      "id": "citadel/citadel-colour/mithril-silver",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Mithril Silver",
+      "aliases": [],
+      "manufacturerCode": "61-55",
+      "type": "standard",
+      "metallic": true,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Old Citadel/Mithril Silver"
+        },
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Mithril Silver"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Mithril Silver"
+        },
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-55"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": "Metálica: la hoja de control de bolsillo de GW de 2004 (PaintingChecklistSmall.pdf, captura de 2006-07-19) la nombra entre sus «METALLICS»."
+    },
+    {
+      "id": "citadel/citadel-colour/purple-ink",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Purple Ink",
+      "aliases": [],
+      "manufacturerCode": "61-70",
+      "type": "ink",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Purple Ink"
+        },
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-70"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": "Tinta: la hoja de control de bolsillo de GW de 2004 (PaintingChecklistSmall.pdf, captura de 2006-07-19) la nombra entre sus «INKS»."
+    },
+    {
+      "id": "citadel/citadel-colour/red-gore",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Red Gore",
+      "aliases": [],
+      "manufacturerCode": "61-05",
+      "type": "standard",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Old Citadel/Red Gore"
+        },
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Red Gore"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Red Gore"
+        },
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-05"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": null
+    },
+    {
+      "id": "citadel/citadel-colour/red-ink",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Red Ink",
+      "aliases": [],
+      "manufacturerCode": "61-64",
+      "type": "ink",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-64"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": "Tinta: la hoja de control de bolsillo de GW de 2004 (PaintingChecklistSmall.pdf, captura de 2006-07-19) la nombra entre sus «INKS»."
+    },
+    {
+      "id": "citadel/citadel-colour/regal-blue",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Regal Blue",
+      "aliases": [],
+      "manufacturerCode": "61-32",
+      "type": "standard",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Old Citadel/Regal Blue"
+        },
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Regal Blue"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Regal Blue"
+        },
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-32"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": null
+    },
+    {
+      "id": "citadel/citadel-colour/rotting-flesh",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Rotting Flesh",
+      "aliases": [],
+      "manufacturerCode": "61-43",
+      "type": "standard",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Rotting Flesh"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Rotting Flesh"
+        },
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-43"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": null
+    },
+    {
+      "id": "citadel/citadel-colour/scab-red",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Scab Red",
+      "aliases": [],
+      "manufacturerCode": "61-04",
+      "type": "standard",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Old Citadel/Scan Red"
+        },
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Scab Red"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Scab Red"
+        },
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-04"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": "La tabla de AK escribe «Scan Red»."
+    },
+    {
+      "id": "citadel/citadel-colour/scaly-green",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Scaly Green",
+      "aliases": [],
+      "manufacturerCode": "61-45",
+      "type": "standard",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Scaly Green"
+        },
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-45"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": null
+    },
+    {
+      "id": "citadel/citadel-colour/scorched-brown",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Scorched Brown",
+      "aliases": [],
+      "manufacturerCode": "61-12",
+      "type": "standard",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Old Citadel/Scorched Brown"
+        },
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Scorched Brown"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Scorched Brown"
+        },
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-12"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": null
+    },
+    {
+      "id": "citadel/citadel-colour/scorpion-green",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Scorpion Green",
+      "aliases": [],
+      "manufacturerCode": "61-40",
+      "type": "standard",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Old Citadel/Scorpion Green"
+        },
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Scorpion Green"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Scorpion Green"
+        },
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-40"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": null
+    },
+    {
+      "id": "citadel/citadel-colour/shadow-grey",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Shadow Grey",
+      "aliases": [],
+      "manufacturerCode": "61-48",
+      "type": "standard",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Old Citadel/Shadow Grey"
+        },
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Shadow Grey"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Shadow Grey"
+        },
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-48"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": null
+    },
+    {
+      "id": "citadel/citadel-colour/shining-gold",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Shining Gold",
+      "aliases": [],
+      "manufacturerCode": "61-63",
+      "type": "standard",
+      "metallic": true,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Shining Gold"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Shining Gold"
+        },
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-63"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": "Metálica: la hoja de control de bolsillo de GW de 2004 (PaintingChecklistSmall.pdf, captura de 2006-07-19) la nombra entre sus «METALLICS»."
+    },
+    {
+      "id": "citadel/citadel-colour/skull-white",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Skull White",
+      "aliases": [],
+      "manufacturerCode": "61-54",
+      "type": "standard",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Old Citadel/Skull White"
+        },
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Skull White"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Skull White"
+        },
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-54"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": null
+    },
+    {
+      "id": "citadel/citadel-colour/snakebite-leather",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Snakebite Leather",
+      "aliases": [],
+      "manufacturerCode": "61-14",
+      "type": "standard",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Snakebite Leather"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Snakebite Leather"
+        },
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-14"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": null
+    },
+    {
+      "id": "citadel/citadel-colour/snot-green",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Snot Green",
+      "aliases": [],
+      "manufacturerCode": "61-39",
+      "type": "standard",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Snot Green"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Snot Green"
+        },
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-39"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": null
+    },
+    {
+      "id": "citadel/citadel-colour/space-wolves-grey",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Space Wolves Grey",
+      "aliases": [],
+      "manufacturerCode": "61-49",
+      "type": "standard",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Space Wolves Grey"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Space Wolves Grey"
+        },
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-49"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": null
+    },
+    {
+      "id": "citadel/citadel-colour/sunburst-yellow",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Sunburst Yellow",
+      "aliases": [],
+      "manufacturerCode": "61-10",
+      "type": "standard",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Old Citadel/Sunburst Yellow"
+        },
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Sunburst Yellow"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Sunburst Yellow"
+        },
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-10"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": null
+    },
+    {
+      "id": "citadel/citadel-colour/tanned-flesh",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Tanned Flesh",
+      "aliases": [],
+      "manufacturerCode": "61-79",
+      "type": "standard",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Tanned Flesh"
+        },
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-79"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": null
+    },
+    {
+      "id": "citadel/citadel-colour/tentacle-pink",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Tentacle Pink",
+      "aliases": [],
+      "manufacturerCode": "61-29",
+      "type": "standard",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Old Citadel/Tentacle pink"
+        },
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Tentacle Pink"
+        },
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-29"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": "La tabla de AK escribe «Tentacle pink»."
+    },
+    {
+      "id": "citadel/citadel-colour/terracotta",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Terracotta",
+      "aliases": [],
+      "manufacturerCode": "61-80",
+      "type": "standard",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Terracotta"
+        },
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-80"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": null
+    },
+    {
+      "id": "citadel/citadel-colour/tin-bitz",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Tin Bitz",
+      "aliases": [],
+      "manufacturerCode": "61-58",
+      "type": "standard",
+      "metallic": true,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Tin Bitz"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Tin Bitz"
+        },
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-58"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": "Metálica: la hoja de control de bolsillo de GW de 2004 (PaintingChecklistSmall.pdf, captura de 2006-07-19) la nombra entre sus «METALLICS»."
+    },
+    {
+      "id": "citadel/citadel-colour/ultramarines-blue",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Ultramarines Blue",
+      "aliases": [],
+      "manufacturerCode": "61-33",
+      "type": "standard",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Old Citadel/Ultramarines Blue"
+        },
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Ultramarine Blue"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Ultramarines Blue"
+        },
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-33"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": "Arcturus escribe «Ultramarine Blue»."
+    },
+    {
+      "id": "citadel/citadel-colour/vermin-brown",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Vermin Brown",
+      "aliases": [],
+      "manufacturerCode": "61-19",
+      "type": "standard",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Old Citadel/Vermin Brown"
+        },
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Vermin Brown"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Vermin Brown"
+        },
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-19"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": null
+    },
+    {
+      "id": "citadel/citadel-colour/vomit-brown",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Vomit Brown",
+      "aliases": [],
+      "manufacturerCode": "61-16",
+      "type": "standard",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Old Citadel/Vomit Brown"
+        },
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Vomit Brown"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Vomit Brown"
+        },
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-16"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": null
+    },
+    {
+      "id": "citadel/citadel-colour/warlock-purple",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Warlock Purple",
+      "aliases": [],
+      "manufacturerCode": "61-28",
+      "type": "standard",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Old Citadel/Warlock Purple"
+        },
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Warlock Purple"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Warlock Purple"
+        },
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-28"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": null
+    },
+    {
+      "id": "citadel/citadel-colour/yellow-ink",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Yellow Ink",
+      "aliases": [],
+      "manufacturerCode": "61-67",
+      "type": "ink",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "games-workshop-paints-inks-checklist-2004",
+          "key": "61-67"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": "Tinta: la hoja de control de bolsillo de GW de 2004 (PaintingChecklistSmall.pdf, captura de 2006-07-19) la nombra entre sus «INKS»."
     },
     {
       "id": "citadel/contrast/aeldari-emerald",
@@ -3790,6 +5906,578 @@
       "note": null
     },
     {
+      "id": "citadel/foundation/adeptus-battlegrey",
+      "rangeId": "citadel/foundation",
+      "name": "Adeptus Battlegrey",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Adeptus Battlegrey"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Adeptus Battlegrey"
+        },
+        {
+          "sourceId": "games-workshop-foundation-paints-2008",
+          "key": "Adeptus Battlegrey"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": null
+    },
+    {
+      "id": "citadel/foundation/astronomican-grey",
+      "rangeId": "citadel/foundation",
+      "name": "Astronomican Grey",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Astronomicon Grey"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Astronomican Grey"
+        },
+        {
+          "sourceId": "games-workshop-foundation-paints-2008",
+          "key": "Astronomican Grey"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": "Arcturus escribe «Astronomicon Grey»."
+    },
+    {
+      "id": "citadel/foundation/calthan-brown",
+      "rangeId": "citadel/foundation",
+      "name": "Calthan Brown",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Calthan Brown"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Calthan Brown"
+        },
+        {
+          "sourceId": "games-workshop-foundation-paints-2008",
+          "key": "Calthan Brown"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": null
+    },
+    {
+      "id": "citadel/foundation/charadon-granite",
+      "rangeId": "citadel/foundation",
+      "name": "Charadon Granite",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Old Citadel/Charadon Granite"
+        },
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Charadon Granite"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Charadon Granite"
+        },
+        {
+          "sourceId": "games-workshop-foundation-paints-2008",
+          "key": "Charadon Granite"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": null
+    },
+    {
+      "id": "citadel/foundation/dheneb-stone",
+      "rangeId": "citadel/foundation",
+      "name": "Dheneb Stone",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Dheneb Stone"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Dheneb Stone"
+        },
+        {
+          "sourceId": "games-workshop-foundation-paints-2008",
+          "key": "Dheneb Stone"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": null
+    },
+    {
+      "id": "citadel/foundation/fenris-grey",
+      "rangeId": "citadel/foundation",
+      "name": "Fenris Grey",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Fenrys Grey"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Fenris Grey"
+        },
+        {
+          "sourceId": "games-workshop-foundation-paints-2008",
+          "key": "Fenris Grey"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": "Arcturus escribe «Fenrys Grey»."
+    },
+    {
+      "id": "citadel/foundation/gretchin-green",
+      "rangeId": "citadel/foundation",
+      "name": "Gretchin Green",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Old Citadel/Gretching Green"
+        },
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Gretchin Green"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Gretchin Green"
+        },
+        {
+          "sourceId": "games-workshop-foundation-paints-2008",
+          "key": "Gretchin Green"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": "La tabla de AK escribe «Gretching Green»."
+    },
+    {
+      "id": "citadel/foundation/hormagaunt-purple",
+      "rangeId": "citadel/foundation",
+      "name": "Hormagaunt Purple",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Hormagaunt Purple"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Hormagaunt Purple"
+        },
+        {
+          "sourceId": "games-workshop-foundation-paints-2008",
+          "key": "Hormagaunt Purple"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": null
+    },
+    {
+      "id": "citadel/foundation/iyanden-darksun",
+      "rangeId": "citadel/foundation",
+      "name": "Iyanden Darksun",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Old Citadel/Lyanden Darksun"
+        },
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Iyanden Darksun"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Iyanden Darksun"
+        },
+        {
+          "sourceId": "games-workshop-foundation-paints-2008",
+          "key": "Iyanden Darksun"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": "La tabla de AK escribe «Lyanden Darksun»."
+    },
+    {
+      "id": "citadel/foundation/khemri-brown",
+      "rangeId": "citadel/foundation",
+      "name": "Khemri Brown",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Khemri Brown"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Khemri Brown"
+        },
+        {
+          "sourceId": "games-workshop-foundation-paints-2008",
+          "key": "Khemri Brown"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": null
+    },
+    {
+      "id": "citadel/foundation/knarloc-green",
+      "rangeId": "citadel/foundation",
+      "name": "Knarloc Green",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Knarloc Green"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Knarloc Green"
+        },
+        {
+          "sourceId": "games-workshop-foundation-paints-2008",
+          "key": "Knarloc Green"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": null
+    },
+    {
+      "id": "citadel/foundation/macharius-solar-orange",
+      "rangeId": "citadel/foundation",
+      "name": "Macharius Solar Orange",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Old Citadel/Macharius Solar Orange"
+        },
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Macharius Solar Orange"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Macharius Solar Orange"
+        },
+        {
+          "sourceId": "games-workshop-foundation-paints-2008",
+          "key": "Macharius Solar Orange"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": null
+    },
+    {
+      "id": "citadel/foundation/mechrite-red",
+      "rangeId": "citadel/foundation",
+      "name": "Mechrite Red",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Old Citadel/Mechrite Red"
+        },
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Mechrite Red"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Mechrite Red"
+        },
+        {
+          "sourceId": "games-workshop-foundation-paints-2008",
+          "key": "Mechrite Red"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": null
+    },
+    {
+      "id": "citadel/foundation/mordian-blue",
+      "rangeId": "citadel/foundation",
+      "name": "Mordian Blue",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Old Citadel/Mordian Blue"
+        },
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Mordian Blue"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Mordian Blue"
+        },
+        {
+          "sourceId": "games-workshop-foundation-paints-2008",
+          "key": "Mordian Blue"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": null
+    },
+    {
+      "id": "citadel/foundation/necron-abyss",
+      "rangeId": "citadel/foundation",
+      "name": "Necron Abyss",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Necron Abyss"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Necron Abyss"
+        },
+        {
+          "sourceId": "games-workshop-foundation-paints-2008",
+          "key": "Necron Abyss"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": null
+    },
+    {
+      "id": "citadel/foundation/orkhide-shade",
+      "rangeId": "citadel/foundation",
+      "name": "Orkhide Shade",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Old Citadel/Orkhide Shade"
+        },
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Orkhide Shade"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Orkhide Shade"
+        },
+        {
+          "sourceId": "games-workshop-foundation-paints-2008",
+          "key": "Orkhide Shade"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": null
+    },
+    {
+      "id": "citadel/foundation/tallarn-flesh",
+      "rangeId": "citadel/foundation",
+      "name": "Tallarn Flesh",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "Old Citadel/Tallarn Flesh"
+        },
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Tallarn Flesh"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Tallarn Flesh"
+        },
+        {
+          "sourceId": "games-workshop-foundation-paints-2008",
+          "key": "Tallarn Flesh"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": null
+    },
+    {
+      "id": "citadel/foundation/tausept-ochre",
+      "rangeId": "citadel/foundation",
+      "name": "Tausept Ochre",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation (discontinued)/Tausept Ochre"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Tausept Ochre"
+        },
+        {
+          "sourceId": "games-workshop-foundation-paints-2008",
+          "key": "Tausept Ochre"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": null
+    },
+    {
       "id": "citadel/layer/administratum-grey",
       "rangeId": "citadel/layer",
       "name": "Administratum Grey",
@@ -3802,6 +6490,14 @@
       },
       "keys": [
         {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Administratum grey"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Administratum Grey"
+        },
+        {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Administratum Grey"
         },
@@ -3812,10 +6508,6 @@
         {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Administratum Grey"
-        },
-        {
-          "sourceId": "ak-interactive-3gen-equivalence-table",
-          "key": "New Citadel/Administratum grey"
         },
         {
           "sourceId": "the-army-painter-warpaints-conversion-chart",
@@ -3893,6 +6585,14 @@
       },
       "keys": [
         {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Altford Guard Blue"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Altdorf Guard Blue"
+        },
+        {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Altdorf Guard Blue"
         },
@@ -3903,10 +6603,6 @@
         {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Altdorf Guard Blue"
-        },
-        {
-          "sourceId": "ak-interactive-3gen-equivalence-table",
-          "key": "New Citadel/Altford Guard Blue"
         },
         {
           "sourceId": "the-army-painter-warpaints-conversion-chart",
@@ -3929,6 +6625,10 @@
         "kind": "active"
       },
       "keys": [
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Auric Armour Gold"
+        },
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Auric Armour Gold"
@@ -3992,6 +6692,10 @@
       },
       "keys": [
         {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Balor Brown"
+        },
+        {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Balor Brown"
         },
@@ -4000,16 +6704,16 @@
           "key": "Balor Brown"
         },
         {
-          "sourceId": "vallejo-cc266",
-          "key": "Citadel/Balor Brown"
-        },
-        {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Balor Brown"
         },
         {
           "sourceId": "the-army-painter-warpaints-conversion-chart",
           "key": "GM/Balor Brown"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Balor Brown"
         }
       ],
       "colorChoice": null,
@@ -4029,6 +6733,10 @@
       },
       "keys": [
         {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Baneblade Brown"
+        },
+        {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Baneblade Brown"
         },
@@ -4041,12 +6749,12 @@
           "key": "GW/Baneblade Brown"
         },
         {
-          "sourceId": "vallejo-cc266",
-          "key": "Citadel/Baneblade Brown (Layer)"
-        },
-        {
           "sourceId": "the-army-painter-warpaints-conversion-chart",
           "key": "GM/Baneblade Brown"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Baneblade Brown (Layer)"
         }
       ],
       "colorChoice": null,
@@ -4198,6 +6906,14 @@
       },
       "keys": [
         {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Cadian Fleshtone"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Cadian Fleshtone"
+        },
+        {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Cadian Fleshtone"
         },
@@ -4208,10 +6924,6 @@
         {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Cadian Fleshtone"
-        },
-        {
-          "sourceId": "ak-interactive-3gen-equivalence-table",
-          "key": "New Citadel/Cadian Fleshtone"
         },
         {
           "sourceId": "the-army-painter-warpaints-conversion-chart",
@@ -4463,6 +7175,14 @@
       },
       "keys": [
         {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Doombull Brown"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Doombull Brown"
+        },
+        {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Doombull Brown"
         },
@@ -4471,16 +7191,12 @@
           "key": "Doombull Brown"
         },
         {
-          "sourceId": "vallejo-cc266",
-          "key": "Citadel/Doombull Brown"
-        },
-        {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Doombull Brown"
         },
         {
-          "sourceId": "ak-interactive-3gen-equivalence-table",
-          "key": "New Citadel/Doombull Brown"
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Doombull Brown"
         }
       ],
       "colorChoice": null,
@@ -4541,6 +7257,10 @@
       },
       "keys": [
         {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Elysian Green"
+        },
+        {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Elysian Green"
         },
@@ -4549,12 +7269,12 @@
           "key": "Elysian Green"
         },
         {
-          "sourceId": "vallejo-cc266",
-          "key": "Citadel/Elysian Green"
-        },
-        {
           "sourceId": "the-army-painter-warpaints-conversion-chart",
           "key": "GM/Elysian Green"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Elysian Green"
         }
       ],
       "colorChoice": null,
@@ -4640,6 +7360,14 @@
       },
       "keys": [
         {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Evil Sunz Scarlet"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Evil Sunz Scarlet"
+        },
+        {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Evil Sunz Scarlet"
         },
@@ -4648,20 +7376,16 @@
           "key": "Evil Sunz Scarlet"
         },
         {
-          "sourceId": "vallejo-cc266",
-          "key": "Citadel/Evil Sunz Scarlet"
-        },
-        {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Evil Sunz Scarlet"
         },
         {
-          "sourceId": "ak-interactive-3gen-equivalence-table",
-          "key": "New Citadel/Evil Sunz Scarlet"
-        },
-        {
           "sourceId": "the-army-painter-warpaints-conversion-chart",
           "key": "GM/Evil Sunz Scarlet"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Evil Sunz Scarlet"
         }
       ],
       "colorChoice": null,
@@ -4680,6 +7404,10 @@
         "kind": "active"
       },
       "keys": [
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Fenrisian Grey"
+        },
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Fenrisian Grey"
@@ -4755,6 +7483,14 @@
       },
       "keys": [
         {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Flash Gitz Yellow"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Flash Gitz Yellow"
+        },
+        {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Flash Gitz Yellow"
         },
@@ -4763,20 +7499,16 @@
           "key": "Flash Gitz Yellow"
         },
         {
-          "sourceId": "vallejo-cc266",
-          "key": "Citadel/Flash Gitz Yellow"
-        },
-        {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Flash Gitz Yellow"
         },
         {
-          "sourceId": "ak-interactive-3gen-equivalence-table",
-          "key": "New Citadel/Flash Gitz Yellow"
-        },
-        {
           "sourceId": "the-army-painter-warpaints-conversion-chart",
           "key": "GM/Flash Gitz Yellow"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Flash Gitz Yellow"
         }
       ],
       "colorChoice": null,
@@ -4924,6 +7656,10 @@
       },
       "keys": [
         {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Gehenna’s Gold"
+        },
+        {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Gehenna's Gold"
         },
@@ -5011,12 +7747,16 @@
       },
       "keys": [
         {
-          "sourceId": "simogecko-citadel-colours",
-          "key": "layer/Hashut Copper"
-        },
-        {
           "sourceId": "ak-interactive-3gen-equivalence-table",
           "key": "New Citadel/Hashut Copper"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Hashut Copper"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Hashut Copper"
         }
       ],
       "colorChoice": null,
@@ -5061,12 +7801,16 @@
       },
       "keys": [
         {
-          "sourceId": "simogecko-citadel-colours",
-          "key": "layer/Ironbreaker"
-        },
-        {
           "sourceId": "ak-interactive-3gen-equivalence-table",
           "key": "New Citadel/Ironbreaker"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Ironbreaker"
+        },
+        {
+          "sourceId": "simogecko-citadel-colours",
+          "key": "layer/Ironbreaker"
         },
         {
           "sourceId": "the-army-painter-warpaints-conversion-chart",
@@ -5160,6 +7904,10 @@
       },
       "keys": [
         {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Karak Stone"
+        },
+        {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Karak Stone"
         },
@@ -5189,6 +7937,14 @@
       },
       "keys": [
         {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Kislev Flesh"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Kislev Flesh"
+        },
+        {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Kislev Flesh"
         },
@@ -5197,20 +7953,16 @@
           "key": "Kislev Flesh"
         },
         {
-          "sourceId": "vallejo-cc266",
-          "key": "Citadel/Kislev Flesh"
-        },
-        {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Kislev Flesh"
         },
         {
-          "sourceId": "ak-interactive-3gen-equivalence-table",
-          "key": "New Citadel/Kislev Flesh"
-        },
-        {
           "sourceId": "the-army-painter-warpaints-conversion-chart",
           "key": "GM/Kislev"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Kislev Flesh"
         }
       ],
       "colorChoice": null,
@@ -5313,6 +8065,10 @@
       },
       "keys": [
         {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Loren Forest"
+        },
+        {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Loren Forest"
         },
@@ -5342,6 +8098,14 @@
       },
       "keys": [
         {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Lothern Blue"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Lothern Blue"
+        },
+        {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Lothern Blue"
         },
@@ -5350,20 +8114,16 @@
           "key": "Lothern Blue"
         },
         {
-          "sourceId": "vallejo-cc266",
-          "key": "Citadel/Lothern Blue"
-        },
-        {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Lothern Blue"
         },
         {
-          "sourceId": "ak-interactive-3gen-equivalence-table",
-          "key": "New Citadel/Lothern Blue"
-        },
-        {
           "sourceId": "the-army-painter-warpaints-conversion-chart",
           "key": "GM/Lothern Blue"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Lothern Blue"
         }
       ],
       "colorChoice": null,
@@ -5412,6 +8172,14 @@
       },
       "keys": [
         {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Moot Green"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Moot Green"
+        },
+        {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Moot Green"
         },
@@ -5420,20 +8188,16 @@
           "key": "Moot Green"
         },
         {
-          "sourceId": "vallejo-cc266",
-          "key": "Citadel/Moot Green"
-        },
-        {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Moot Green"
         },
         {
-          "sourceId": "ak-interactive-3gen-equivalence-table",
-          "key": "New Citadel/Moot Green"
-        },
-        {
           "sourceId": "the-army-painter-warpaints-conversion-chart",
           "key": "GM/Moot Green"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Moot Green"
         }
       ],
       "colorChoice": null,
@@ -5606,16 +8370,20 @@
       },
       "keys": [
         {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Runefang Steel"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Runefang Steel"
+        },
+        {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Runefang Steel"
         },
         {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Runefang Steel"
-        },
-        {
-          "sourceId": "ak-interactive-3gen-equivalence-table",
-          "key": "New Citadel/Runefang Steel"
         },
         {
           "sourceId": "the-army-painter-warpaints-conversion-chart",
@@ -5771,6 +8539,14 @@
       },
       "keys": [
         {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Skrag Brown"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Skrag Brown"
+        },
+        {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Skrag Brown"
         },
@@ -5779,16 +8555,12 @@
           "key": "Skrag Brown"
         },
         {
-          "sourceId": "vallejo-cc266",
-          "key": "Citadel/Skrag Brown"
-        },
-        {
-          "sourceId": "ak-interactive-3gen-equivalence-table",
-          "key": "New Citadel/Skrag Brown"
-        },
-        {
           "sourceId": "the-army-painter-warpaints-conversion-chart",
           "key": "GM/Skrag Brown"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Skrag Brown"
         }
       ],
       "colorChoice": null,
@@ -5887,6 +8659,14 @@
       },
       "keys": [
         {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Sotek Green"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Sotek Green"
+        },
+        {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Sotek Green"
         },
@@ -5895,16 +8675,12 @@
           "key": "Sotek Green"
         },
         {
-          "sourceId": "vallejo-cc266",
-          "key": "Citadel/Sotek Green"
-        },
-        {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Sotek Green"
         },
         {
-          "sourceId": "ak-interactive-3gen-equivalence-table",
-          "key": "New Citadel/Sotek Green"
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Sotek Green"
         }
       ],
       "colorChoice": null,
@@ -5982,6 +8758,14 @@
       },
       "keys": [
         {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Stormvermin Fur"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Stormvermin Fur"
+        },
+        {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Stormvermin Fur"
         },
@@ -5992,10 +8776,6 @@
         {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Stormvermin Fur"
-        },
-        {
-          "sourceId": "ak-interactive-3gen-equivalence-table",
-          "key": "New Citadel/Stormvermin Fur"
         },
         {
           "sourceId": "the-army-painter-warpaints-conversion-chart",
@@ -6118,6 +8898,14 @@
       },
       "keys": [
         {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Tallarn Sand"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Tallarn Sand"
+        },
+        {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Tallarn Sand"
         },
@@ -6126,16 +8914,12 @@
           "key": "Tallarn Sand"
         },
         {
-          "sourceId": "vallejo-cc266",
-          "key": "Citadel/Tallarn Sand"
-        },
-        {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Tallarn Sand"
         },
         {
-          "sourceId": "ak-interactive-3gen-equivalence-table",
-          "key": "New Citadel/Tallarn Sand"
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Tallarn Sand"
         }
       ],
       "colorChoice": null,
@@ -6155,6 +8939,14 @@
       },
       "keys": [
         {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Tau Light Ochre"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Tau Light Ochre"
+        },
+        {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Tau Light Ochre"
         },
@@ -6163,20 +8955,16 @@
           "key": "Tau Light Ochre"
         },
         {
-          "sourceId": "vallejo-cc266",
-          "key": "Citadel/Tau Light Ochre"
-        },
-        {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Tau Light Ochre"
         },
         {
-          "sourceId": "ak-interactive-3gen-equivalence-table",
-          "key": "New Citadel/Tau Light Ochre"
-        },
-        {
           "sourceId": "the-army-painter-warpaints-conversion-chart",
           "key": "GM/Tau Light Ochre"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Tau Light Ochre"
         }
       ],
       "colorChoice": null,
@@ -6287,6 +9075,14 @@
       },
       "keys": [
         {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Troll Slayer Orange"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Troll Slayer Orange"
+        },
+        {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Troll Slayer Orange"
         },
@@ -6295,16 +9091,12 @@
           "key": "Troll Slayer Orange"
         },
         {
-          "sourceId": "vallejo-cc266",
-          "key": "Citadel/Troll Slayer Orange"
-        },
-        {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Troll Slayer Orange"
         },
         {
-          "sourceId": "ak-interactive-3gen-equivalence-table",
-          "key": "New Citadel/Troll Slayer Orange"
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Troll Slayer Orange"
         }
       ],
       "colorChoice": null,
@@ -6415,6 +9207,14 @@
       },
       "keys": [
         {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Ushabit Bone"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Ushabti Bone"
+        },
+        {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Ushabti Bone"
         },
@@ -6425,10 +9225,6 @@
         {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Ushabti Bone"
-        },
-        {
-          "sourceId": "ak-interactive-3gen-equivalence-table",
-          "key": "New Citadel/Ushabit Bone"
         }
       ],
       "colorChoice": null,
@@ -6473,6 +9269,14 @@
       },
       "keys": [
         {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Warboss Green"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Warboss Green"
+        },
+        {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Warboss Green"
         },
@@ -6481,16 +9285,12 @@
           "key": "Warboss Green"
         },
         {
-          "sourceId": "vallejo-cc266",
-          "key": "Citadel/Warboss Green"
-        },
-        {
-          "sourceId": "ak-interactive-3gen-equivalence-table",
-          "key": "New Citadel/Warboss Green"
-        },
-        {
           "sourceId": "the-army-painter-warpaints-conversion-chart",
           "key": "GM/Warboss Green"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Warboss Green"
         }
       ],
       "colorChoice": null,
@@ -6539,6 +9339,10 @@
       },
       "keys": [
         {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Warpstone Glow"
+        },
+        {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Warpstone Glow"
         },
@@ -6572,6 +9376,14 @@
       },
       "keys": [
         {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Wazdakka Red"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Wazdakka Red"
+        },
+        {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Wazdakka Red"
         },
@@ -6580,20 +9392,16 @@
           "key": "Wazdakka Red"
         },
         {
-          "sourceId": "vallejo-cc266",
-          "key": "Citadel/Wazdakka Red"
-        },
-        {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Wazdakka Red"
         },
         {
-          "sourceId": "ak-interactive-3gen-equivalence-table",
-          "key": "New Citadel/Wazdakka Red"
-        },
-        {
           "sourceId": "the-army-painter-warpaints-conversion-chart",
           "key": "GM/Wazdakka Red"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Wazdakka Red"
         }
       ],
       "colorChoice": null,
@@ -6613,6 +9421,14 @@
       },
       "keys": [
         {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/White Scar"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/White Scar"
+        },
+        {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/White Scar"
         },
@@ -6621,20 +9437,16 @@
           "key": "White Scar"
         },
         {
-          "sourceId": "vallejo-cc266",
-          "key": "Citadel/White Scar"
-        },
-        {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/White Scar"
         },
         {
-          "sourceId": "ak-interactive-3gen-equivalence-table",
-          "key": "New Citadel/White Scar"
-        },
-        {
           "sourceId": "the-army-painter-warpaints-conversion-chart",
           "key": "GM/White Scar"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/White Scar"
         }
       ],
       "colorChoice": null,
@@ -6712,6 +9524,14 @@
       },
       "keys": [
         {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Xereus Purple"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Xereus Purple"
+        },
+        {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Xereus Purple"
         },
@@ -6720,20 +9540,16 @@
           "key": "Xereus Purple"
         },
         {
-          "sourceId": "vallejo-cc266",
-          "key": "Citadel/Xereus Purple"
-        },
-        {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Xereus Purple"
         },
         {
-          "sourceId": "ak-interactive-3gen-equivalence-table",
-          "key": "New Citadel/Xereus Purple"
-        },
-        {
           "sourceId": "the-army-painter-warpaints-conversion-chart",
           "key": "GM/Xereus Purple"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Xereus Purple"
         }
       ],
       "colorChoice": null,
@@ -6753,6 +9569,14 @@
       },
       "keys": [
         {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Yriel Yellow"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Yriel Yellow"
+        },
+        {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Yriel Yellow"
         },
@@ -6761,20 +9585,16 @@
           "key": "Yriel Yellow"
         },
         {
-          "sourceId": "vallejo-cc266",
-          "key": "Citadel/Yriel Yellow"
-        },
-        {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Yriel Yellow"
         },
         {
-          "sourceId": "ak-interactive-3gen-equivalence-table",
-          "key": "New Citadel/Yriel Yellow"
-        },
-        {
           "sourceId": "the-army-painter-warpaints-conversion-chart",
           "key": "GM/Yriel Yellow"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Yriel Yellow"
         }
       ],
       "colorChoice": null,
@@ -6794,6 +9614,14 @@
       },
       "keys": [
         {
+          "sourceId": "ak-interactive-3gen-equivalence-table",
+          "key": "New Citadel/Zamesi Desert"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Zamesi Desert"
+        },
+        {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Zamesi Desert"
         },
@@ -6804,10 +9632,6 @@
         {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Zamesi Desert"
-        },
-        {
-          "sourceId": "ak-interactive-3gen-equivalence-table",
-          "key": "New Citadel/Zamesi Desert"
         },
         {
           "sourceId": "the-army-painter-warpaints-conversion-chart",
@@ -6831,12 +9655,12 @@
       },
       "keys": [
         {
-          "sourceId": "simogecko-citadel-colours",
-          "key": "shade/Agrax Earthshade"
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Agrax Earthshade"
         },
         {
-          "sourceId": "vallejo-cc266",
-          "key": "Citadel/Agrax Earthshade"
+          "sourceId": "simogecko-citadel-colours",
+          "key": "shade/Agrax Earthshade"
         },
         {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
@@ -6845,6 +9669,10 @@
         {
           "sourceId": "the-army-painter-warpaints-conversion-chart",
           "key": "GM/Agrax Earthshade"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Agrax Earthshade"
         }
       ],
       "colorChoice": null,
@@ -6918,6 +9746,10 @@
       },
       "keys": [
         {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Biel-Tan Green"
+        },
+        {
           "sourceId": "simogecko-citadel-colours",
           "key": "shade/Biel-Tan Green"
         },
@@ -6946,6 +9778,10 @@
         "kind": "active"
       },
       "keys": [
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Carroburg Crimson"
+        },
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "shade/Carroburg Crimson"
@@ -7018,6 +9854,10 @@
       },
       "keys": [
         {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Drakenhof Nightshade"
+        },
+        {
           "sourceId": "simogecko-citadel-colours",
           "key": "shade/Drakenhof Nightshade"
         },
@@ -7047,12 +9887,12 @@
       },
       "keys": [
         {
-          "sourceId": "simogecko-citadel-colours",
-          "key": "shade/Druchii Violet"
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Druchii Violet"
         },
         {
-          "sourceId": "vallejo-cc266",
-          "key": "Citadel/Druchii Violet"
+          "sourceId": "simogecko-citadel-colours",
+          "key": "shade/Druchii Violet"
         },
         {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
@@ -7061,6 +9901,10 @@
         {
           "sourceId": "the-army-painter-warpaints-conversion-chart",
           "key": "GM/Druchii Violet"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Druchii Violet"
         }
       ],
       "colorChoice": null,
@@ -7147,12 +9991,12 @@
       },
       "keys": [
         {
-          "sourceId": "simogecko-citadel-colours",
-          "key": "shade/Nuln Oil"
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Nuln Oil"
         },
         {
-          "sourceId": "vallejo-cc266",
-          "key": "Citadel/Nuln Oil"
+          "sourceId": "simogecko-citadel-colours",
+          "key": "shade/Nuln Oil"
         },
         {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
@@ -7161,6 +10005,10 @@
         {
           "sourceId": "the-army-painter-warpaints-conversion-chart",
           "key": "GM/Nuln Oil"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Nuln Oil"
         }
       ],
       "colorChoice": null,
@@ -7201,12 +10049,12 @@
       },
       "keys": [
         {
-          "sourceId": "simogecko-citadel-colours",
-          "key": "shade/Reikland Fleshshade"
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Reikland Fleshshade"
         },
         {
-          "sourceId": "vallejo-cc266",
-          "key": "Citadel/Reikland Fleshshade"
+          "sourceId": "simogecko-citadel-colours",
+          "key": "shade/Reikland Fleshshade"
         },
         {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
@@ -7215,6 +10063,10 @@
         {
           "sourceId": "the-army-painter-warpaints-conversion-chart",
           "key": "GM/Reikland Fleshshade"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Reikland Fleshshade"
         }
       ],
       "colorChoice": null,
@@ -7234,12 +10086,12 @@
       },
       "keys": [
         {
-          "sourceId": "simogecko-citadel-colours",
-          "key": "shade/Seraphim Sepia"
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "New/Seraphim Sepia"
         },
         {
-          "sourceId": "vallejo-cc266",
-          "key": "Citadel/Seraphim Sepia"
+          "sourceId": "simogecko-citadel-colours",
+          "key": "shade/Seraphim Sepia"
         },
         {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
@@ -7248,6 +10100,10 @@
         {
           "sourceId": "the-army-painter-warpaints-conversion-chart",
           "key": "GM/Seraphim Sepia"
+        },
+        {
+          "sourceId": "vallejo-cc266",
+          "key": "Citadel/Seraphim Sepia"
         }
       ],
       "colorChoice": null,
@@ -7688,6 +10544,242 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "technical/Waystone Green"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": null
+    },
+    {
+      "id": "citadel/washes/asurmen-blue",
+      "rangeId": "citadel/washes",
+      "name": "Asurmen Blue",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "wash",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation Wash (discontinued)/Asurmen Blue Wash"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Asurmen Blue"
+        },
+        {
+          "sourceId": "games-workshop-citadel-washes-2008",
+          "key": "Asurmen Blue"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": "Arcturus escribe «Asurmen Blue Wash»."
+    },
+    {
+      "id": "citadel/washes/baal-red",
+      "rangeId": "citadel/washes",
+      "name": "Baal Red",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "wash",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation Wash (discontinued)/Baal Red Wash"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Baal Red"
+        },
+        {
+          "sourceId": "games-workshop-citadel-washes-2008",
+          "key": "Baal Red"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": "Arcturus escribe «Baal Red Wash»."
+    },
+    {
+      "id": "citadel/washes/badab-black",
+      "rangeId": "citadel/washes",
+      "name": "Badab Black",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "wash",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation Wash (discontinued)/Badab Black Wash"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Badab Black"
+        },
+        {
+          "sourceId": "games-workshop-citadel-washes-2008",
+          "key": "Badab Black"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": "Arcturus escribe «Badab Black Wash»."
+    },
+    {
+      "id": "citadel/washes/devlan-mud",
+      "rangeId": "citadel/washes",
+      "name": "Devlan Mud",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "wash",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation Wash (discontinued)/Devlan Mud Wash"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Devlan Mud"
+        },
+        {
+          "sourceId": "games-workshop-citadel-washes-2008",
+          "key": "Devlan Mud"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": "Arcturus escribe «Devlan Mud Wash»."
+    },
+    {
+      "id": "citadel/washes/gryphonne-sepia",
+      "rangeId": "citadel/washes",
+      "name": "Gryphonne Sepia",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "wash",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation Wash (discontinued)/Gryphonne Sepia Wash"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Gryphonne Sepia"
+        },
+        {
+          "sourceId": "games-workshop-citadel-washes-2008",
+          "key": "Gryphonne Sepia"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": "Arcturus escribe «Gryphonne Sepia Wash»."
+    },
+    {
+      "id": "citadel/washes/leviathan-purple",
+      "rangeId": "citadel/washes",
+      "name": "Leviathan Purple",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "wash",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation Wash (discontinued)/Leviathan Purple Wash"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Leviathan Purple"
+        },
+        {
+          "sourceId": "games-workshop-citadel-washes-2008",
+          "key": "Leviathan Purple"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": "Arcturus escribe «Leviathan Purple Wash»."
+    },
+    {
+      "id": "citadel/washes/ogryn-flesh",
+      "rangeId": "citadel/washes",
+      "name": "Ogryn Flesh",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "wash",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "arcturus5404-miniature-paints",
+          "key": "Foundation Wash (discontinued)/Ogryn Flesh Wash"
+        },
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Ogryn Flesh"
+        },
+        {
+          "sourceId": "games-workshop-citadel-washes-2008",
+          "key": "Ogryn Flesh"
+        }
+      ],
+      "colorChoice": null,
+      "rejectedColors": [],
+      "note": "Arcturus escribe «Ogryn Flesh Wash»."
+    },
+    {
+      "id": "citadel/washes/thraka-green",
+      "rangeId": "citadel/washes",
+      "name": "Thraka Green",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "wash",
+      "metallic": false,
+      "status": {
+        "kind": "discontinued",
+        "replacementChoice": null
+      },
+      "keys": [
+        {
+          "sourceId": "games-workshop-citadel-conversion-chart-2012",
+          "key": "Old/Thraka Green"
+        },
+        {
+          "sourceId": "games-workshop-citadel-washes-2008",
+          "key": "Thraka Green"
         }
       ],
       "colorChoice": null,

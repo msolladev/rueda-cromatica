@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 1,
-    "dataVersion": "sha256:e0daaf25221ff4f6574aebd805082b1d2f9d3f49b862337ff7f96ba8bf12cbb6"
+    "dataVersion": "sha256:ca0448135dfc30c9095c075610e75da5cf1f9a4f42a162c29b52400f5f361140"
   },
   "sources": [
     {
@@ -20,9 +20,9 @@
       "kind": "third-party",
       "title": "miniature-paints",
       "publisher": "Arcturus5404",
-      "url": "https://github.com/Arcturus5404/miniature-paints/blob/22791a682e1d155da388f4f856cd7196cd9f2677/paints/Army_Painter.md",
-      "archiveUrl": "https://web.archive.org/web/20261122222422/https://github.com/Arcturus5404/miniature-paints/blob/22791a682e1d155da388f4f856cd7196cd9f2677/paints/Army_Painter.md",
-      "retrievedAt": "2026-11-22",
+      "url": "https://github.com/Arcturus5404/miniature-paints/tree/22791a682e1d155da388f4f856cd7196cd9f2677",
+      "archiveUrl": "https://web.archive.org/web/20261123121229/https://github.com/Arcturus5404/miniature-paints/tree/22791a682e1d155da388f4f856cd7196cd9f2677",
+      "retrievedAt": "2026-11-23",
       "license": "MIT",
       "attribution": null
     },
@@ -36,6 +36,50 @@
       "retrievedAt": "2026-11-13",
       "license": "MIT",
       "attribution": "DonnervS/miniature-paints, based on Arcturus5404/miniature-paints (MIT, © 2022 Rick Fleuren)"
+    },
+    {
+      "id": "games-workshop-citadel-conversion-chart-2012",
+      "kind": "manufacturer",
+      "title": "Citadel Conversion Chart",
+      "publisher": "Games Workshop",
+      "url": "http://www.games-workshop.com/MEDIA_CustomProductCatalog/m2320032a_Citadel_Conversion_Chart",
+      "archiveUrl": "https://web.archive.org/web/20120605023151/http://www.games-workshop.com/MEDIA_CustomProductCatalog/m2320032a_Citadel_Conversion_Chart",
+      "retrievedAt": "2026-11-23",
+      "license": "unknown",
+      "attribution": null
+    },
+    {
+      "id": "games-workshop-citadel-washes-2008",
+      "kind": "manufacturer",
+      "title": "Using the New Citadel Washes (page 4)",
+      "publisher": "Games Workshop",
+      "url": "http://uk.games-workshop.com/painting/washes/4/",
+      "archiveUrl": "https://web.archive.org/web/20080608042740/http://uk.games-workshop.com/painting/washes/4/",
+      "retrievedAt": "2026-11-23",
+      "license": "unknown",
+      "attribution": null
+    },
+    {
+      "id": "games-workshop-foundation-paints-2008",
+      "kind": "manufacturer",
+      "title": "What Are Citadel Foundation Paints?",
+      "publisher": "Games Workshop",
+      "url": "http://uk.games-workshop.com/painting/foundation-paints/1/",
+      "archiveUrl": "https://web.archive.org/web/20080417050427/http://uk.games-workshop.com/painting/foundation-paints/1/",
+      "retrievedAt": "2026-11-23",
+      "license": "unknown",
+      "attribution": null
+    },
+    {
+      "id": "games-workshop-paints-inks-checklist-2004",
+      "kind": "manufacturer",
+      "title": "Paints & Inks Range Checklist",
+      "publisher": "Games Workshop",
+      "url": "http://us.games-workshop.com/games/warhammer/painting/checklists/assets/PaintingChecklistCard.pdf",
+      "archiveUrl": "https://web.archive.org/web/20060719172124/http://us.games-workshop.com/games/warhammer/painting/checklists/assets/PaintingChecklistCard.pdf",
+      "retrievedAt": "2026-11-23",
+      "license": "unknown",
+      "attribution": null
     },
     {
       "id": "simogecko-citadel-colours",
@@ -138,6 +182,12 @@
       "status": "active"
     },
     {
+      "id": "citadel/citadel-colour",
+      "brandId": "citadel",
+      "name": "Citadel Colour",
+      "status": "discontinued"
+    },
+    {
       "id": "citadel/contrast",
       "brandId": "citadel",
       "name": "Contrast",
@@ -148,6 +198,12 @@
       "brandId": "citadel",
       "name": "Dry",
       "status": "active"
+    },
+    {
+      "id": "citadel/foundation",
+      "brandId": "citadel",
+      "name": "Foundation",
+      "status": "discontinued"
     },
     {
       "id": "citadel/layer",
@@ -166,6 +222,12 @@
       "brandId": "citadel",
       "name": "Technical",
       "status": "active"
+    },
+    {
+      "id": "citadel/washes",
+      "brandId": "citadel",
+      "name": "Washes",
+      "status": "discontinued"
     },
     {
       "id": "the-army-painter/speedpaint-2-0",
@@ -8502,6 +8564,1152 @@
       }
     },
     {
+      "id": "citadel/citadel-colour/bad-moon-yellow",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Bad Moon Yellow",
+      "aliases": [],
+      "manufacturerCode": "61-11",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#fff200",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/bestial-brown",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Bestial Brown",
+      "aliases": [],
+      "manufacturerCode": "61-13",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#7b4a39",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/black-ink",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Black Ink",
+      "aliases": [],
+      "manufacturerCode": "61-75",
+      "type": "ink",
+      "metallic": false,
+      "color": {
+        "hex": "#000000",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/blazing-orange",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Blazing Orange",
+      "aliases": [],
+      "manufacturerCode": "61-07",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#e65925",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/bleached-bone",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Bleached Bone",
+      "aliases": [],
+      "manufacturerCode": "61-17",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#eed5ac",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/blood-red",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Blood Red",
+      "aliases": [],
+      "manufacturerCode": "61-06",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#d2223e",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/blue-ink",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Blue Ink",
+      "aliases": [],
+      "manufacturerCode": "61-71",
+      "type": "ink",
+      "metallic": false,
+      "color": null,
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/boltgun-metal",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Boltgun Metal",
+      "aliases": [],
+      "manufacturerCode": "61-57",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#888789",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/brazen-brass",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Brazen Brass",
+      "aliases": [],
+      "manufacturerCode": "61-61",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#966747",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/bronzed-flesh",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Bronzed Flesh",
+      "aliases": [],
+      "manufacturerCode": "61-22",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#ec9a36",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/brown-ink",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Brown Ink",
+      "aliases": [],
+      "manufacturerCode": "61-68",
+      "type": "ink",
+      "metallic": false,
+      "color": null,
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/bubonic-brown",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Bubonic Brown",
+      "aliases": [],
+      "manufacturerCode": "61-15",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#b89142",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/burnished-gold",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Burnished Gold",
+      "aliases": [],
+      "manufacturerCode": "61-62",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#e0c068",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/camo-green",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Camo Green",
+      "aliases": [],
+      "manufacturerCode": "61-44",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#878d52",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/catachan-green",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Catachan Green",
+      "aliases": [],
+      "manufacturerCode": "61-84",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#455440",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/chainmail",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Chainmail",
+      "aliases": [],
+      "manufacturerCode": "61-56",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#8e8c91",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/chaos-black",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Chaos Black",
+      "aliases": [],
+      "manufacturerCode": "61-51",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#001522",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/chestnut-ink",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Chestnut Ink",
+      "aliases": [],
+      "manufacturerCode": "61-69",
+      "type": "ink",
+      "metallic": false,
+      "color": null,
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/codex-grey",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Codex Grey",
+      "aliases": [],
+      "manufacturerCode": "61-52",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#808285",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/dark-angels-green",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Dark Angels Green",
+      "aliases": [],
+      "manufacturerCode": "61-38",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#19553c",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/dark-flesh",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Dark Flesh",
+      "aliases": [],
+      "manufacturerCode": "61-18",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#683b31",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/dark-green-ink",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Dark Green Ink",
+      "aliases": [],
+      "manufacturerCode": "61-74",
+      "type": "ink",
+      "metallic": false,
+      "color": {
+        "hex": "#108473",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/desert-yellow",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Desert Yellow",
+      "aliases": [],
+      "manufacturerCode": "61-83",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#9c8855",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/dwarf-bronze",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Dwarf Bronze",
+      "aliases": [],
+      "manufacturerCode": "61-60",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#a26840",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/dwarf-flesh",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Dwarf Flesh",
+      "aliases": [],
+      "manufacturerCode": "61-21",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#da9382",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/elf-flesh",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Elf Flesh",
+      "aliases": [],
+      "manufacturerCode": "61-23",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#edae74",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/enchanted-blue",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Enchanted Blue",
+      "aliases": [],
+      "manufacturerCode": "61-34",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#0071b7",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/fiery-orange",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Fiery Orange",
+      "aliases": [],
+      "manufacturerCode": "61-08",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#f47920",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/flesh-wash",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Flesh Wash",
+      "aliases": [],
+      "manufacturerCode": "61-76",
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#ce8c42",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/fortress-grey",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Fortress Grey",
+      "aliases": [],
+      "manufacturerCode": "61-53",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#bcbdc0",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/goblin-green",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Goblin Green",
+      "aliases": [],
+      "manufacturerCode": "61-42",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#3d9353",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/golden-yellow",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Golden Yellow",
+      "aliases": [],
+      "manufacturerCode": "61-09",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#ffc20e",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/graveyard-earth",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Graveyard Earth",
+      "aliases": [],
+      "manufacturerCode": "61-81",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#665238",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/hawk-turquoise",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Hawk Turquoise",
+      "aliases": [],
+      "manufacturerCode": "61-37",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#008194",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/ice-blue",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Ice Blue",
+      "aliases": [],
+      "manufacturerCode": "61-36",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#81d3eb",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/kommando-khaki",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Kommando Khaki",
+      "aliases": [],
+      "manufacturerCode": "61-82",
+      "type": "standard",
+      "metallic": false,
+      "color": null,
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/liche-purple",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Liche Purple",
+      "aliases": [],
+      "manufacturerCode": "61-27",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#2c2d8b",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/magenta-ink",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Magenta Ink",
+      "aliases": [],
+      "manufacturerCode": "61-65",
+      "type": "ink",
+      "metallic": false,
+      "color": {
+        "hex": "#de007b",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/midnight-blue",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Midnight Blue",
+      "aliases": [],
+      "manufacturerCode": "61-30",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#002561",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/mithril-silver",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Mithril Silver",
+      "aliases": [],
+      "manufacturerCode": "61-55",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#b7bec5",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/purple-ink",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Purple Ink",
+      "aliases": [],
+      "manufacturerCode": "61-70",
+      "type": "ink",
+      "metallic": false,
+      "color": {
+        "hex": "#842994",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/red-gore",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Red Gore",
+      "aliases": [],
+      "manufacturerCode": "61-05",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#9d2b3f",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/red-ink",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Red Ink",
+      "aliases": [],
+      "manufacturerCode": "61-64",
+      "type": "ink",
+      "metallic": false,
+      "color": null,
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/regal-blue",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Regal Blue",
+      "aliases": [],
+      "manufacturerCode": "61-32",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#003f70",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/rotting-flesh",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Rotting Flesh",
+      "aliases": [],
+      "manufacturerCode": "61-43",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#b8c39e",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/scab-red",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Scab Red",
+      "aliases": [],
+      "manufacturerCode": "61-04",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#90263d",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/scaly-green",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Scaly Green",
+      "aliases": [],
+      "manufacturerCode": "61-45",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#006063",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/scorched-brown",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Scorched Brown",
+      "aliases": [],
+      "manufacturerCode": "61-12",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#5a422f",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/scorpion-green",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Scorpion Green",
+      "aliases": [],
+      "manufacturerCode": "61-40",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#65b345",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/shadow-grey",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Shadow Grey",
+      "aliases": [],
+      "manufacturerCode": "61-48",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#106993",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/shining-gold",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Shining Gold",
+      "aliases": [],
+      "manufacturerCode": "61-63",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#efb736",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/skull-white",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Skull White",
+      "aliases": [],
+      "manufacturerCode": "61-54",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#ffffff",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/snakebite-leather",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Snakebite Leather",
+      "aliases": [],
+      "manufacturerCode": "61-14",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#8c6c40",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/snot-green",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Snot Green",
+      "aliases": [],
+      "manufacturerCode": "61-39",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#006f45",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/space-wolves-grey",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Space Wolves Grey",
+      "aliases": [],
+      "manufacturerCode": "61-49",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#91bfdc",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/sunburst-yellow",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Sunburst Yellow",
+      "aliases": [],
+      "manufacturerCode": "61-10",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#ffd400",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/tanned-flesh",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Tanned Flesh",
+      "aliases": [],
+      "manufacturerCode": "61-79",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#a95c3e",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/tentacle-pink",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Tentacle Pink",
+      "aliases": [],
+      "manufacturerCode": "61-29",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#dc9dc6",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/terracotta",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Terracotta",
+      "aliases": [],
+      "manufacturerCode": "61-80",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#793721",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/tin-bitz",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Tin Bitz",
+      "aliases": [],
+      "manufacturerCode": "61-58",
+      "type": "standard",
+      "metallic": true,
+      "color": {
+        "hex": "#473f39",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/ultramarines-blue",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Ultramarines Blue",
+      "aliases": [],
+      "manufacturerCode": "61-33",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#0066b3",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/vermin-brown",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Vermin Brown",
+      "aliases": [],
+      "manufacturerCode": "61-19",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#843910",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/vomit-brown",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Vomit Brown",
+      "aliases": [],
+      "manufacturerCode": "61-16",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#ce8b3c",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/warlock-purple",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Warlock Purple",
+      "aliases": [],
+      "manufacturerCode": "61-28",
+      "type": "standard",
+      "metallic": false,
+      "color": {
+        "hex": "#a43e8b",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/citadel-colour/yellow-ink",
+      "rangeId": "citadel/citadel-colour",
+      "name": "Yellow Ink",
+      "aliases": [],
+      "manufacturerCode": "61-67",
+      "type": "ink",
+      "metallic": false,
+      "color": null,
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
       "id": "citadel/contrast/aeldari-emerald",
       "rangeId": "citadel/contrast",
       "name": "Aeldari Emerald",
@@ -9944,6 +11152,330 @@
       },
       "status": {
         "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/foundation/adeptus-battlegrey",
+      "rangeId": "citadel/foundation",
+      "name": "Adeptus Battlegrey",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#4a4c58",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/foundation/astronomican-grey",
+      "rangeId": "citadel/foundation",
+      "name": "Astronomican Grey",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#93abaf",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/foundation/calthan-brown",
+      "rangeId": "citadel/foundation",
+      "name": "Calthan Brown",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#7a4231",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/foundation/charadon-granite",
+      "rangeId": "citadel/foundation",
+      "name": "Charadon Granite",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#463f39",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/foundation/dheneb-stone",
+      "rangeId": "citadel/foundation",
+      "name": "Dheneb Stone",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#b8aca0",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/foundation/fenris-grey",
+      "rangeId": "citadel/foundation",
+      "name": "Fenris Grey",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#2c4363",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/foundation/gretchin-green",
+      "rangeId": "citadel/foundation",
+      "name": "Gretchin Green",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#7e6930",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/foundation/hormagaunt-purple",
+      "rangeId": "citadel/foundation",
+      "name": "Hormagaunt Purple",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#54496b",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/foundation/iyanden-darksun",
+      "rangeId": "citadel/foundation",
+      "name": "Iyanden Darksun",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#ad852e",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/foundation/khemri-brown",
+      "rangeId": "citadel/foundation",
+      "name": "Khemri Brown",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#73614d",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/foundation/knarloc-green",
+      "rangeId": "citadel/foundation",
+      "name": "Knarloc Green",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#48563c",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/foundation/macharius-solar-orange",
+      "rangeId": "citadel/foundation",
+      "name": "Macharius Solar Orange",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#b94023",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/foundation/mechrite-red",
+      "rangeId": "citadel/foundation",
+      "name": "Mechrite Red",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#a82014",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/foundation/mordian-blue",
+      "rangeId": "citadel/foundation",
+      "name": "Mordian Blue",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#244882",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/foundation/necron-abyss",
+      "rangeId": "citadel/foundation",
+      "name": "Necron Abyss",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#1a213d",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/foundation/orkhide-shade",
+      "rangeId": "citadel/foundation",
+      "name": "Orkhide Shade",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#26372d",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/foundation/tallarn-flesh",
+      "rangeId": "citadel/foundation",
+      "name": "Tallarn Flesh",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#b27b67",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/foundation/tausept-ochre",
+      "rangeId": "citadel/foundation",
+      "name": "Tausept Ochre",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "base",
+      "metallic": false,
+      "color": {
+        "hex": "#a06e3b",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
       }
     },
     {
@@ -12139,6 +13671,146 @@
       },
       "status": {
         "kind": "active"
+      }
+    },
+    {
+      "id": "citadel/washes/asurmen-blue",
+      "rangeId": "citadel/washes",
+      "name": "Asurmen Blue",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#273e51",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/washes/baal-red",
+      "rangeId": "citadel/washes",
+      "name": "Baal Red",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#630808",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/washes/badab-black",
+      "rangeId": "citadel/washes",
+      "name": "Badab Black",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#000000",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/washes/devlan-mud",
+      "rangeId": "citadel/washes",
+      "name": "Devlan Mud",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#393121",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/washes/gryphonne-sepia",
+      "rangeId": "citadel/washes",
+      "name": "Gryphonne Sepia",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#843910",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/washes/leviathan-purple",
+      "rangeId": "citadel/washes",
+      "name": "Leviathan Purple",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#842994",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/washes/ogryn-flesh",
+      "rangeId": "citadel/washes",
+      "name": "Ogryn Flesh",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "wash",
+      "metallic": false,
+      "color": {
+        "hex": "#ce8c42",
+        "origin": "community",
+        "sourceId": "arcturus5404-miniature-paints"
+      },
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
+      }
+    },
+    {
+      "id": "citadel/washes/thraka-green",
+      "rangeId": "citadel/washes",
+      "name": "Thraka Green",
+      "aliases": [],
+      "manufacturerCode": null,
+      "type": "wash",
+      "metallic": false,
+      "color": null,
+      "status": {
+        "kind": "discontinued",
+        "replacement": null
       }
     },
     {
@@ -26287,6 +27959,11 @@
     },
     {
       "from": "ak-interactive/3gen-acrylics/aquatic-turquoise",
+      "to": "citadel/citadel-colour/hawk-turquoise",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/aquatic-turquoise",
       "to": "citadel/layer/sotek-green",
       "sourceId": "ak-interactive-3gen-equivalence-table"
     },
@@ -26303,6 +27980,11 @@
     {
       "from": "ak-interactive/3gen-acrylics/ash-grey",
       "to": "vallejo/model-color/grey-green",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/basalt-grey",
+      "to": "citadel/citadel-colour/codex-grey",
       "sourceId": "ak-interactive-3gen-equivalence-table"
     },
     {
@@ -26327,6 +28009,11 @@
     },
     {
       "from": "ak-interactive/3gen-acrylics/beige-red",
+      "to": "citadel/citadel-colour/vomit-brown",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/beige-red",
       "to": "citadel/layer/tau-light-ochre",
       "sourceId": "ak-interactive-3gen-equivalence-table"
     },
@@ -26338,6 +28025,11 @@
     {
       "from": "ak-interactive/3gen-acrylics/black",
       "to": "citadel/base/abaddon-black",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/black",
+      "to": "citadel/citadel-colour/chaos-black",
       "sourceId": "ak-interactive-3gen-equivalence-table"
     },
     {
@@ -26357,12 +28049,22 @@
     },
     {
       "from": "ak-interactive/3gen-acrylics/black-green",
+      "to": "citadel/foundation/orkhide-shade",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/black-green",
       "to": "vallejo/model-color/black-green",
       "sourceId": "ak-interactive-3gen-equivalence-table"
     },
     {
       "from": "ak-interactive/3gen-acrylics/black-red",
       "to": "vallejo/model-color/black-red",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/blood-red",
+      "to": "citadel/citadel-colour/blood-red",
       "sourceId": "ak-interactive-3gen-equivalence-table"
     },
     {
@@ -26383,6 +28085,11 @@
     {
       "from": "ak-interactive/3gen-acrylics/blue-green",
       "to": "vallejo/model-color/blue-green",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/blue-violet",
+      "to": "citadel/citadel-colour/liche-purple",
       "sourceId": "ak-interactive-3gen-equivalence-table"
     },
     {
@@ -26417,12 +28124,22 @@
     },
     {
       "from": "ak-interactive/3gen-acrylics/british-khaki",
+      "to": "citadel/citadel-colour/graveyard-earth",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/british-khaki",
       "to": "vallejo/game-color/earth",
       "sourceId": "ak-interactive-3gen-equivalence-table"
     },
     {
       "from": "ak-interactive/3gen-acrylics/british-khaki",
       "to": "vallejo/model-color/english-uniform",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/bronze",
+      "to": "citadel/citadel-colour/dwarf-bronze",
       "sourceId": "ak-interactive-3gen-equivalence-table"
     },
     {
@@ -26447,6 +28164,11 @@
     },
     {
       "from": "ak-interactive/3gen-acrylics/buff",
+      "to": "citadel/citadel-colour/bleached-bone",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/buff",
       "to": "citadel/layer/ushabti-bone",
       "sourceId": "ak-interactive-3gen-equivalence-table"
     },
@@ -26463,6 +28185,11 @@
     {
       "from": "ak-interactive/3gen-acrylics/burn-orange",
       "to": "citadel/base/jokaero-orange",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/burn-orange",
+      "to": "citadel/foundation/macharius-solar-orange",
       "sourceId": "ak-interactive-3gen-equivalence-table"
     },
     {
@@ -26497,6 +28224,11 @@
     },
     {
       "from": "ak-interactive/3gen-acrylics/carmine",
+      "to": "citadel/citadel-colour/scab-red",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/carmine",
       "to": "vallejo/game-color/scarlet-red",
       "sourceId": "ak-interactive-3gen-equivalence-table"
     },
@@ -26523,6 +28255,11 @@
     {
       "from": "ak-interactive/3gen-acrylics/copper",
       "to": "vallejo/model-color/copper",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/cork",
+      "to": "citadel/foundation/tallarn-flesh",
       "sourceId": "ak-interactive-3gen-equivalence-table"
     },
     {
@@ -26567,6 +28304,11 @@
     },
     {
       "from": "ak-interactive/3gen-acrylics/dark-prussian-blue",
+      "to": "citadel/citadel-colour/regal-blue",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/dark-prussian-blue",
       "to": "vallejo/game-color/imperial-blue",
       "sourceId": "ak-interactive-3gen-equivalence-table"
     },
@@ -26592,6 +28334,11 @@
     },
     {
       "from": "ak-interactive/3gen-acrylics/dark-shadow-flesh",
+      "to": "citadel/citadel-colour/red-gore",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/dark-shadow-flesh",
       "to": "citadel/layer/wazdakka-red",
       "sourceId": "ak-interactive-3gen-equivalence-table"
     },
@@ -26613,6 +28360,11 @@
     {
       "from": "ak-interactive/3gen-acrylics/deep-blue",
       "to": "citadel/base/caledor-sky",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/deep-blue",
+      "to": "citadel/citadel-colour/enchanted-blue",
       "sourceId": "ak-interactive-3gen-equivalence-table"
     },
     {
@@ -26652,6 +28404,11 @@
     },
     {
       "from": "ak-interactive/3gen-acrylics/deep-sky-blue",
+      "to": "citadel/citadel-colour/ice-blue",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/deep-sky-blue",
       "to": "citadel/layer/lothern-blue",
       "sourceId": "ak-interactive-3gen-equivalence-table"
     },
@@ -26663,6 +28420,11 @@
     {
       "from": "ak-interactive/3gen-acrylics/deep-sky-blue",
       "to": "vallejo/model-color/deep-sky-blue",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/deep-yellow",
+      "to": "citadel/citadel-colour/sunburst-yellow",
       "sourceId": "ak-interactive-3gen-equivalence-table"
     },
     {
@@ -26683,6 +28445,11 @@
     {
       "from": "ak-interactive/3gen-acrylics/dirty-red",
       "to": "citadel/base/mephiston-red",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/dirty-red",
+      "to": "citadel/foundation/mechrite-red",
       "sourceId": "ak-interactive-3gen-equivalence-table"
     },
     {
@@ -26727,6 +28494,11 @@
     },
     {
       "from": "ak-interactive/3gen-acrylics/field-grey-base-1-green-uniform",
+      "to": "citadel/citadel-colour/catachan-green",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/field-grey-base-1-green-uniform",
       "to": "vallejo/game-color/cayman-green",
       "sourceId": "ak-interactive-3gen-equivalence-table"
     },
@@ -26743,6 +28515,11 @@
     {
       "from": "ak-interactive/3gen-acrylics/german-field-grey",
       "to": "vallejo/model-color/german-fieldgrey-wwii",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/german-grey",
+      "to": "citadel/foundation/charadon-granite",
       "sourceId": "ak-interactive-3gen-equivalence-table"
     },
     {
@@ -26767,7 +28544,17 @@
     },
     {
       "from": "ak-interactive/3gen-acrylics/golden-brown",
+      "to": "citadel/foundation/iyanden-darksun",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/golden-brown",
       "to": "vallejo/model-color/gold-brown",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/golden-yellow",
+      "to": "citadel/citadel-colour/golden-yellow",
       "sourceId": "ak-interactive-3gen-equivalence-table"
     },
     {
@@ -26822,6 +28609,11 @@
     },
     {
       "from": "ak-interactive/3gen-acrylics/grim-brown",
+      "to": "citadel/citadel-colour/scorched-brown",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/grim-brown",
       "to": "vallejo/game-color/charred-brown",
       "sourceId": "ak-interactive-3gen-equivalence-table"
     },
@@ -26833,6 +28625,11 @@
     {
       "from": "ak-interactive/3gen-acrylics/gun-metal",
       "to": "citadel/base/leadbelcher",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/gun-metal",
+      "to": "citadel/citadel-colour/boltgun-metal",
       "sourceId": "ak-interactive-3gen-equivalence-table"
     },
     {
@@ -26862,6 +28659,11 @@
     },
     {
       "from": "ak-interactive/3gen-acrylics/intense-pink",
+      "to": "citadel/citadel-colour/tentacle-pink",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/intense-pink",
       "to": "citadel/layer/emperors-children",
       "sourceId": "ak-interactive-3gen-equivalence-table"
     },
@@ -26882,6 +28684,11 @@
     },
     {
       "from": "ak-interactive/3gen-acrylics/intermediate-green",
+      "to": "citadel/citadel-colour/dark-angels-green",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/intermediate-green",
       "to": "vallejo/game-color/dark-green",
       "sourceId": "ak-interactive-3gen-equivalence-table"
     },
@@ -26893,6 +28700,11 @@
     {
       "from": "ak-interactive/3gen-acrylics/ivory",
       "to": "vallejo/model-color/ivory",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/japanese-brown",
+      "to": "citadel/citadel-colour/desert-yellow",
       "sourceId": "ak-interactive-3gen-equivalence-table"
     },
     {
@@ -26918,6 +28730,11 @@
     {
       "from": "ak-interactive/3gen-acrylics/leather-brown",
       "to": "vallejo/model-color/leather-brown",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/lemon-yellow",
+      "to": "citadel/citadel-colour/bad-moon-yellow",
       "sourceId": "ak-interactive-3gen-equivalence-table"
     },
     {
@@ -26952,12 +28769,22 @@
     },
     {
       "from": "ak-interactive/3gen-acrylics/light-green",
+      "to": "citadel/citadel-colour/scorpion-green",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/light-green",
       "to": "citadel/layer/moot-green",
       "sourceId": "ak-interactive-3gen-equivalence-table"
     },
     {
       "from": "ak-interactive/3gen-acrylics/light-green",
       "to": "vallejo/game-color/scorpy-green",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/light-orange",
+      "to": "citadel/citadel-colour/fiery-orange",
       "sourceId": "ak-interactive-3gen-equivalence-table"
     },
     {
@@ -26982,6 +28809,11 @@
     },
     {
       "from": "ak-interactive/3gen-acrylics/light-prussian-blue",
+      "to": "citadel/foundation/mordian-blue",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/light-prussian-blue",
       "to": "vallejo/model-color/prussian-blue",
       "sourceId": "ak-interactive-3gen-equivalence-table"
     },
@@ -26997,12 +28829,22 @@
     },
     {
       "from": "ak-interactive/3gen-acrylics/magenta",
+      "to": "citadel/citadel-colour/warlock-purple",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/magenta",
       "to": "vallejo/game-color/warlord-purple",
       "sourceId": "ak-interactive-3gen-equivalence-table"
     },
     {
       "from": "ak-interactive/3gen-acrylics/magenta",
       "to": "vallejo/model-color/magenta",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/mahogany-brown",
+      "to": "citadel/citadel-colour/dark-flesh",
       "sourceId": "ak-interactive-3gen-equivalence-table"
     },
     {
@@ -27033,6 +28875,11 @@
     {
       "from": "ak-interactive/3gen-acrylics/medium-flesh-tone",
       "to": "vallejo/model-color/medium-flesh-tone",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/medium-grey",
+      "to": "citadel/citadel-colour/fortress-grey",
       "sourceId": "ak-interactive-3gen-equivalence-table"
     },
     {
@@ -27072,6 +28919,11 @@
     },
     {
       "from": "ak-interactive/3gen-acrylics/middle-stone",
+      "to": "citadel/foundation/gretchin-green",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/middle-stone",
       "to": "vallejo/model-color/middle-stone",
       "sourceId": "ak-interactive-3gen-equivalence-table"
     },
@@ -27102,6 +28954,11 @@
     },
     {
       "from": "ak-interactive/3gen-acrylics/ochre",
+      "to": "citadel/citadel-colour/bubonic-brown",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/ochre",
       "to": "citadel/layer/zamesi-desert",
       "sourceId": "ak-interactive-3gen-equivalence-table"
     },
@@ -27118,6 +28975,11 @@
     {
       "from": "ak-interactive/3gen-acrylics/offwhite",
       "to": "vallejo/model-color/off-white",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/oily-steel",
+      "to": "citadel/citadel-colour/chainmail",
       "sourceId": "ak-interactive-3gen-equivalence-table"
     },
     {
@@ -27142,6 +29004,11 @@
     },
     {
       "from": "ak-interactive/3gen-acrylics/olive-green",
+      "to": "citadel/citadel-colour/goblin-green",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/olive-green",
       "to": "citadel/layer/warboss-green",
       "sourceId": "ak-interactive-3gen-equivalence-table"
     },
@@ -27153,6 +29020,11 @@
     {
       "from": "ak-interactive/3gen-acrylics/olive-green",
       "to": "vallejo/model-color/olive-green",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/orange-brown",
+      "to": "citadel/citadel-colour/vermin-brown",
       "sourceId": "ak-interactive-3gen-equivalence-table"
     },
     {
@@ -27173,6 +29045,11 @@
     {
       "from": "ak-interactive/3gen-acrylics/oxford",
       "to": "citadel/base/the-fang",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/oxford",
+      "to": "citadel/citadel-colour/shadow-grey",
       "sourceId": "ak-interactive-3gen-equivalence-table"
     },
     {
@@ -27213,6 +29090,11 @@
     {
       "from": "ak-interactive/3gen-acrylics/purulent-yellow",
       "to": "vallejo/model-color/german-yellow",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/radiant-flesh",
+      "to": "citadel/citadel-colour/elf-flesh",
       "sourceId": "ak-interactive-3gen-equivalence-table"
     },
     {
@@ -27262,6 +29144,11 @@
     },
     {
       "from": "ak-interactive/3gen-acrylics/scarlet-red",
+      "to": "citadel/citadel-colour/blazing-orange",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/scarlet-red",
       "to": "citadel/layer/troll-slayer-orange",
       "sourceId": "ak-interactive-3gen-equivalence-table"
     },
@@ -27273,6 +29160,11 @@
     {
       "from": "ak-interactive/3gen-acrylics/scarlet-red",
       "to": "vallejo/model-color/scarlet",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/silver",
+      "to": "citadel/citadel-colour/mithril-silver",
       "sourceId": "ak-interactive-3gen-equivalence-table"
     },
     {
@@ -27327,6 +29219,11 @@
     },
     {
       "from": "ak-interactive/3gen-acrylics/ultramarine",
+      "to": "citadel/citadel-colour/ultramarines-blue",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/ultramarine",
       "to": "citadel/layer/altdorf-guard-blue",
       "sourceId": "ak-interactive-3gen-equivalence-table"
     },
@@ -27357,6 +29254,11 @@
     },
     {
       "from": "ak-interactive/3gen-acrylics/waffen-brown",
+      "to": "citadel/citadel-colour/bestial-brown",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/waffen-brown",
       "to": "vallejo/game-color/beasty-brown",
       "sourceId": "ak-interactive-3gen-equivalence-table"
     },
@@ -27368,6 +29270,11 @@
     {
       "from": "ak-interactive/3gen-acrylics/waffen-red-brown",
       "to": "vallejo/model-color/flat-brown",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/white",
+      "to": "citadel/citadel-colour/skull-white",
       "sourceId": "ak-interactive-3gen-equivalence-table"
     },
     {
@@ -27392,6 +29299,11 @@
     },
     {
       "from": "ak-interactive/3gen-acrylics/yellow",
+      "to": "citadel/citadel-colour/sunburst-yellow",
+      "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "ak-interactive/3gen-acrylics/yellow",
       "to": "citadel/layer/flash-gitz-yellow",
       "sourceId": "ak-interactive-3gen-equivalence-table"
     },
@@ -27404,6 +29316,356 @@
       "from": "ak-interactive/3gen-acrylics/yellow",
       "to": "vallejo/model-color/flat-yellow",
       "sourceId": "ak-interactive-3gen-equivalence-table"
+    },
+    {
+      "from": "citadel/citadel-colour/bestial-brown",
+      "to": "citadel/base/mournfang-brown",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/citadel-colour/blazing-orange",
+      "to": "citadel/layer/troll-slayer-orange",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/citadel-colour/bleached-bone",
+      "to": "citadel/layer/ushabti-bone",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/citadel-colour/blood-red",
+      "to": "citadel/layer/evil-sunz-scarlet",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/citadel-colour/boltgun-metal",
+      "to": "citadel/base/leadbelcher",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/citadel-colour/bubonic-brown",
+      "to": "citadel/layer/zamesi-desert",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/citadel-colour/burnished-gold",
+      "to": "citadel/layer/auric-armour-gold",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/citadel-colour/camo-green",
+      "to": "citadel/layer/elysian-green",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/citadel-colour/catachan-green",
+      "to": "citadel/base/castellan-green",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/citadel-colour/chainmail",
+      "to": "citadel/layer/ironbreaker",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/citadel-colour/chaos-black",
+      "to": "citadel/base/abaddon-black",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/citadel-colour/dark-angels-green",
+      "to": "citadel/base/caliban-green",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/citadel-colour/dark-flesh",
+      "to": "citadel/layer/doombull-brown",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/citadel-colour/desert-yellow",
+      "to": "citadel/layer/tallarn-sand",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/citadel-colour/dwarf-bronze",
+      "to": "citadel/layer/hashut-copper",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/citadel-colour/dwarf-flesh",
+      "to": "citadel/base/ratskin-flesh",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/citadel-colour/elf-flesh",
+      "to": "citadel/layer/kislev-flesh",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/citadel-colour/enchanted-blue",
+      "to": "citadel/base/caledor-sky",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/citadel-colour/fortress-grey",
+      "to": "citadel/layer/administratum-grey",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/citadel-colour/goblin-green",
+      "to": "citadel/layer/warboss-green",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/citadel-colour/golden-yellow",
+      "to": "citadel/layer/yriel-yellow",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/citadel-colour/graveyard-earth",
+      "to": "citadel/base/steel-legion-drab",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/citadel-colour/hawk-turquoise",
+      "to": "citadel/layer/sotek-green",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/citadel-colour/ice-blue",
+      "to": "citadel/layer/lothern-blue",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/citadel-colour/kommando-khaki",
+      "to": "citadel/layer/karak-stone",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/citadel-colour/liche-purple",
+      "to": "citadel/layer/xereus-purple",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/citadel-colour/mithril-silver",
+      "to": "citadel/layer/runefang-steel",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/citadel-colour/red-gore",
+      "to": "citadel/layer/wazdakka-red",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/citadel-colour/regal-blue",
+      "to": "citadel/base/kantor-blue",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/citadel-colour/scab-red",
+      "to": "citadel/base/khorne-red",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/citadel-colour/scorched-brown",
+      "to": "citadel/base/rhinox-hide",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/citadel-colour/scorpion-green",
+      "to": "citadel/layer/moot-green",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/citadel-colour/shadow-grey",
+      "to": "citadel/base/the-fang",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/citadel-colour/shining-gold",
+      "to": "citadel/layer/gehennas-gold",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/citadel-colour/skull-white",
+      "to": "citadel/layer/white-scar",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/citadel-colour/snakebite-leather",
+      "to": "citadel/layer/balor-brown",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/citadel-colour/snot-green",
+      "to": "citadel/layer/warpstone-glow",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/citadel-colour/space-wolves-grey",
+      "to": "citadel/layer/fenrisian-grey",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/citadel-colour/sunburst-yellow",
+      "to": "citadel/layer/flash-gitz-yellow",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/citadel-colour/tin-bitz",
+      "to": "citadel/base/warplock-bronze",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/citadel-colour/ultramarines-blue",
+      "to": "citadel/layer/altdorf-guard-blue",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/citadel-colour/vermin-brown",
+      "to": "citadel/layer/skrag-brown",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/citadel-colour/vomit-brown",
+      "to": "citadel/layer/tau-light-ochre",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/citadel-colour/warlock-purple",
+      "to": "citadel/base/screamer-pink",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/foundation/adeptus-battlegrey",
+      "to": "citadel/base/mechanicus-standard-grey",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/foundation/astronomican-grey",
+      "to": "citadel/base/celestra-grey",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/foundation/calthan-brown",
+      "to": "citadel/base/mournfang-brown",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/foundation/charadon-granite",
+      "to": "citadel/layer/stormvermin-fur",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/foundation/dheneb-stone",
+      "to": "citadel/base/rakarth-flesh",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/foundation/fenris-grey",
+      "to": "citadel/base/the-fang",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/foundation/gretchin-green",
+      "to": "citadel/base/deathworld-forest",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/foundation/hormagaunt-purple",
+      "to": "citadel/base/daemonette-hide",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/foundation/iyanden-darksun",
+      "to": "citadel/base/averland-sunset",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/foundation/khemri-brown",
+      "to": "citadel/layer/baneblade-brown",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/foundation/knarloc-green",
+      "to": "citadel/layer/loren-forest",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/foundation/macharius-solar-orange",
+      "to": "citadel/base/jokaero-orange",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/foundation/mechrite-red",
+      "to": "citadel/base/mephiston-red",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/foundation/mordian-blue",
+      "to": "citadel/base/macragge-blue",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/foundation/necron-abyss",
+      "to": "citadel/base/kantor-blue",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/foundation/orkhide-shade",
+      "to": "citadel/base/caliban-green",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/foundation/tallarn-flesh",
+      "to": "citadel/layer/cadian-fleshtone",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/foundation/tausept-ochre",
+      "to": "citadel/layer/balor-brown",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/washes/asurmen-blue",
+      "to": "citadel/shade/drakenhof-nightshade",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/washes/baal-red",
+      "to": "citadel/shade/carroburg-crimson",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/washes/badab-black",
+      "to": "citadel/shade/nuln-oil",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/washes/devlan-mud",
+      "to": "citadel/shade/agrax-earthshade",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/washes/gryphonne-sepia",
+      "to": "citadel/shade/seraphim-sepia",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/washes/leviathan-purple",
+      "to": "citadel/shade/druchii-violet",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/washes/ogryn-flesh",
+      "to": "citadel/shade/reikland-fleshshade",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
+    },
+    {
+      "from": "citadel/washes/thraka-green",
+      "to": "citadel/shade/biel-tan-green",
+      "sourceId": "games-workshop-citadel-conversion-chart-2012"
     },
     {
       "from": "the-army-painter/warpaints-fanatic/abyssal-blue",

@@ -168,6 +168,12 @@ describe("searchColor", () => {
       ]),
     ).toEqual([
       ["Light Green", "AK Interactive", "similar", ["AK Interactive"]],
+      [
+        "Scorpion Green",
+        "Warhammer Colour",
+        "nearest-available",
+        ["Games Workshop"],
+      ],
       ["Leafy Green", "The Army Painter", "very-similar", ["The Army Painter"]],
       [
         "Snake Scales",
@@ -199,6 +205,7 @@ describe("searchColor", () => {
       moot?.official.map((link) => [link.direction, link.name, link.code]),
     ).toEqual([
       ["incoming", "Light Green", "AK11141"],
+      ["incoming", "Scorpion Green", "61-40"],
       ["incoming", "Leafy Green", "WP3056P"],
       ["incoming", "Snake Scales", "WP1453"],
       ["incoming", "Scorpy Green", "72.032"],

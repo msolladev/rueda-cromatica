@@ -411,6 +411,7 @@ test("on a phone, the official equivalences of a paint lead to another and back"
   });
   await expect(official.locator(".paint-name")).toHaveText([
     "Light Green",
+    "Scorpion Green",
     "Leafy Green",
     "Snake Scales",
     "Scorpy Green",

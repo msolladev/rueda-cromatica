@@ -7,7 +7,7 @@ const indexedIds = (index: ReturnType<typeof buildPaintIndex>): string[] =>
   index.brands.flatMap(({ paints }) => paints.map(({ paint }) => paint.id));
 
 describe("buildPaintIndex", () => {
-  it("indexes every paint of the catalog, by brand in catalog order", () => {
+  it("indexes every paint with colour, by brand in catalog order", () => {
     const catalog = realCatalog();
     const index = buildPaintIndex(catalog);
     expect(index.brands.map(({ brand }) => brand.id)).toEqual(
@@ -16,6 +16,7 @@ describe("buildPaintIndex", () => {
     expect(indexedIds(index)).toEqual(
       catalog
         .paints({ brandIds: "all", includeDiscontinued: true })
+        .filter((paint) => paint.color !== null)
         .map((paint) => paint.id),
     );
   });

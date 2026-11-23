@@ -671,7 +671,7 @@ describe("the paint search", () => {
     await vi.waitFor(() => {
       expect(options()).toHaveLength(9);
     });
-    expect(options().at(-1)?.textContent).toBe("Ver más pinturas (8 de 89)");
+    expect(options().at(-1)?.textContent).toBe("Ver más pinturas (8 de 95)");
     await userEvent.keyboard("{ArrowUp}{Enter}");
     await vi.waitFor(() => {
       expect(options()).toHaveLength(17);
@@ -713,6 +713,7 @@ describe("the paint search", () => {
     await vi.waitFor(() => {
       expect(names()).toEqual([
         "Light Green",
+        "Scorpion Green",
         "Leafy Green",
         "Snake Scales",
         "Scorpy Green",
@@ -787,7 +788,13 @@ describe("the paint search", () => {
       [...(links?.querySelectorAll(".official-link-name") ?? [])].map(
         (name) => name.textContent,
       ),
-    ).toEqual(["Light Green", "Leafy Green", "Snake Scales", "Scorpy Green"]);
+    ).toEqual([
+      "Light Green",
+      "Scorpion Green",
+      "Leafy Green",
+      "Snake Scales",
+      "Scorpy Green",
+    ]);
   });
 
   it("marks a discontinued paint, after the active ones, and says whether it has a replacement (docs/07 §15-16)", async () => {

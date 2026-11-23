@@ -67,6 +67,7 @@ describe("findOfficialEquivalences (docs/06 §10)", () => {
     expect(abaddon.outgoing).toEqual([]);
     expect(abaddon.incoming.map((m) => m.paint.id)).toEqual([
       "ak-interactive/3gen-acrylics/black",
+      "citadel/citadel-colour/chaos-black",
       "the-army-painter/warpaints-fanatic/matt-black",
       "the-army-painter/warpaints/matt-black",
       "vallejo/game-color/black",
