@@ -21,7 +21,10 @@ import {
 
 const WAYBACK = "https://web.archive.org";
 
-/** A file to download: where from and its name in the folder of the source. */
+/**
+ * A file of a source (`cli/source-files.ts`): where it is read and downloaded
+ * from, and its name in the folder of the source.
+ */
 export interface DownloadTarget {
   readonly url: string;
   readonly name: string;
@@ -50,19 +53,16 @@ export function downloadName(url: string): string {
 
 /**
  * What is missing in a source: its capture if it has none, and the files of
- * `fileUrls` (from `cli/source-files.ts`) not downloaded yet. A file already
+ * `targets` (from `cli/source-files.ts`) not downloaded yet. A file already
  * listed is never downloaded again, so running it twice does nothing more.
  * Fails if two files would get the same name.
  */
 export function planArchive(
   file: Pick<SourceFile, "source" | "files">,
-  fileUrls: readonly string[] | null,
+  targets: readonly DownloadTarget[] | null,
 ): Result<ArchivePlan, string> {
   const { url, archiveUrl } = file.source;
-  const expected = (fileUrls ?? []).map((u) => ({
-    url: u,
-    name: downloadName(u),
-  }));
+  const expected = targets ?? [];
   const names = expected.map((t) => t.name);
   const repeated = names.find((name, i) => names.indexOf(name) !== i);
   if (repeated !== undefined) {

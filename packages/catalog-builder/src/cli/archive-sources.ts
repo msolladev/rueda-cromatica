@@ -51,7 +51,7 @@ import {
   REPO_DIR,
   writeDataFile,
 } from "./data-files.ts";
-import { sourceFileUrls } from "./source-files.ts";
+import { sourceFiles } from "./source-files.ts";
 
 const DOWNLOADS_VARIABLE = "CATALOG_SOURCES_DIR";
 const IA_CONFIG = join(homedir(), ".config/internetarchive/ia.ini");
@@ -303,12 +303,12 @@ async function main(): Promise<number> {
       console.error(`  ✗ ${message}`);
     };
     console.log(id);
-    const urls = sourceFileUrls(file.source);
-    if (!urls.ok) {
-      fail(urls.error);
+    const targets = sourceFiles(file.source);
+    if (!targets.ok) {
+      fail(targets.error);
       continue;
     }
-    const plan = planArchive(file, urls.value);
+    const plan = planArchive(file, targets.value);
     if (!plan.ok) {
       fail(plan.error);
       continue;
@@ -361,7 +361,7 @@ async function main(): Promise<number> {
     const content = applyArchive(
       file,
       { archiveUrl, files: [...kept, ...downloaded] },
-      urls.value ?? [],
+      (targets.value ?? []).map((t) => t.url),
     );
     if (isDeepStrictEqual(content, sourceContent(file))) {
       if (pending.length === 0) console.log("  up to date");
