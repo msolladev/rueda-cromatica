@@ -10,8 +10,8 @@ describe("matchQuality", () => {
     [2, "very-similar"],
     [2.01, "similar"],
     [5, "similar"],
-    [5.01, "nearest-available"],
-    [42, "nearest-available"],
+    [5.01, "barely-similar"],
+    [42, "barely-similar"],
   ] as const)("labels ΔE %d as %s", (deltaE, quality) => {
     expect(matchQuality(deltaE)).toBe(quality);
   });

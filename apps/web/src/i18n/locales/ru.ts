@@ -149,7 +149,7 @@ export const ru: Messages = {
     "near-identical": "Почти идентичная",
     "very-similar": "Очень похожая",
     similar: "Похожая",
-    "nearest-available": "Ближайшая",
+    "barely-similar": "Малопохожая",
   },
   approximate: {
     allTitle: "Цвета приблизительные",

@@ -143,7 +143,7 @@ export const es: Messages = {
     "near-identical": "Casi idéntica",
     "very-similar": "Muy parecida",
     similar: "Parecida",
-    "nearest-available": "La más cercana",
+    "barely-similar": "Poco parecida",
   },
   approximate: {
     allTitle: "Los colores son aproximados",

@@ -42,8 +42,8 @@
   --q-very-bg: #ebf4d8;
   --q-similar: #6b4a00;
   --q-similar-bg: #fbefcc;
-  --q-nearest: #4f545b;
-  --q-nearest-bg: #eceef1;
+  --q-barely: #4f545b;
+  --q-barely-bg: #eceef1;
 
   /* Motion: fast at first and gentle at the end. */
   --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -99,8 +99,8 @@
     --q-very-bg: light-dark(#ebf4d8, #22301a);
     --q-similar: light-dark(#6b4a00, #f0d68a);
     --q-similar-bg: light-dark(#fbefcc, #2e2610);
-    --q-nearest: light-dark(#4f545b, #b5bac1);
-    --q-nearest-bg: light-dark(#eceef1, #2a2e34);
+    --q-barely: light-dark(#4f545b, #b5bac1);
+    --q-barely-bg: light-dark(#eceef1, #2a2e34);
   }
 }
 
@@ -2313,9 +2313,9 @@ brands per row. */
   color: var(--q-similar);
 }
 
-.paint-quality[data-quality="nearest-available"] {
-  background: var(--q-nearest-bg);
-  color: var(--q-nearest);
+.paint-quality[data-quality="barely-similar"] {
+  background: var(--q-barely-bg);
+  color: var(--q-barely);
 }
 
 .paint-details {

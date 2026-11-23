@@ -10,13 +10,13 @@
  * - `"near-identical"`: below what can be perceived;
  * - `"very-similar"`: within the demanding tolerance;
  * - `"similar"`: within the less demanding tolerance;
- * - `"nearest-available"`: the closest there is, without claiming that it is
- *   similar.
+ * - `"barely-similar"`: beyond every tolerance; it is shown, but it is not
+ *   claimed to be similar.
  */
 export type MatchQuality =
-  "near-identical" | "very-similar" | "similar" | "nearest-available";
+  "near-identical" | "very-similar" | "similar" | "barely-similar";
 
-/** Upper limits, inclusive, of each band. Beyond the last one: nearest-available. */
+/** Upper limits, inclusive, of each band. Beyond the last one: barely-similar. */
 export const MATCH_QUALITY_LIMITS = Object.freeze({
   /** Up to 1, about the smallest perceptible difference. */
   "near-identical": 1,
@@ -36,7 +36,7 @@ export function matchQuality(deltaE: number): MatchQuality {
     return "near-identical";
   if (rounded <= MATCH_QUALITY_LIMITS["very-similar"]) return "very-similar";
   if (rounded <= MATCH_QUALITY_LIMITS.similar) return "similar";
-  return "nearest-available";
+  return "barely-similar";
 }
 
 /**

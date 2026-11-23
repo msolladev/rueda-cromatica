@@ -143,7 +143,7 @@ export const gl: Messages = {
     "near-identical": "Case idéntica",
     "very-similar": "Moi parecida",
     similar: "Parecida",
-    "nearest-available": "A máis próxima",
+    "barely-similar": "Pouco parecida",
   },
   approximate: {
     allTitle: "As cores son aproximadas",

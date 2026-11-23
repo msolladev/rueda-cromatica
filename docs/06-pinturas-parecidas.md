@@ -25,7 +25,7 @@ Cada resultado lleva una etiqueta según su ΔE, redondeado a 2 decimales (§4).
 | ≤ 1      | `near-identical`          | Casi idéntica: por debajo de lo que se percibe   |
 | ≤ 2      | `very-similar`            | Muy parecida: dentro de la tolerancia exigente   |
 | ≤ 5      | `similar`                 | Parecida: dentro de la tolerancia menos exigente |
-| más de 5 | `nearest-available`       | La más cercana: no se afirma que sea parecida    |
+| más de 5 | `barely-similar`          | Poco parecida: no se afirma que sea parecida     |
 
 Los textos visibles de cada etiqueta los pone la web.
 

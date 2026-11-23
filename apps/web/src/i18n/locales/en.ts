@@ -144,7 +144,7 @@ export const en: Messages = {
     "near-identical": "Near identical",
     "very-similar": "Very similar",
     similar: "Similar",
-    "nearest-available": "Nearest available",
+    "barely-similar": "Barely similar",
   },
   approximate: {
     allTitle: "The colors are approximate",

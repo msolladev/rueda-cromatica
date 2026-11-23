@@ -149,7 +149,7 @@ export const it: Messages = {
     "near-identical": "Quasi identica",
     "very-similar": "Molto simile",
     similar: "Simile",
-    "nearest-available": "La più vicina",
+    "barely-similar": "Poco simile",
   },
   approximate: {
     allTitle: "I colori sono approssimati",

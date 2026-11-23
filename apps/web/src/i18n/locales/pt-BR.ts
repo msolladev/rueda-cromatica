@@ -147,7 +147,7 @@ export const ptBR: Messages = {
     "near-identical": "Quase idêntica",
     "very-similar": "Muito parecida",
     similar: "Parecida",
-    "nearest-available": "A mais próxima",
+    "barely-similar": "Pouco parecida",
   },
   approximate: {
     allTitle: "As cores são aproximadas",

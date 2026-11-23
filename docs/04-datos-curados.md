@@ -254,7 +254,7 @@ Por ejemplo, con la tabla muestreada de SimoGecko desactivada, Moot Green tendr�
 
 ### Informe de discrepancias
 
-Lista cada pintura cuyo color publicado y algún candidato que pierde, sin descartar, están a un ΔE2000 mayor que 5, el límite a partir del cual docs/06 §3 deja de llamarlos parecidos (`nearest-available`). Cada entrada lleva `paintId`, `published` y `other` (cada uno con `hex`, `origin` y `sourceId`) y `deltaE2000`, con 2 decimales. Va en el orden de las pinturas de `catalog.json` y, dentro de cada pintura, por prioridad. No hace fallar el build: sirve para revisar en el diff de git qué abre o cierra cada reimportación, y para decidir descartes o elecciones. Una discrepancia aceptada, en la que gana el color bueno, se queda en el informe.
+Lista cada pintura cuyo color publicado y algún candidato que pierde, sin descartar, están a un ΔE2000 mayor que 5, el límite a partir del cual docs/06 §3 deja de llamarlos parecidos (`barely-similar`). Cada entrada lleva `paintId`, `published` y `other` (cada uno con `hex`, `origin` y `sourceId`) y `deltaE2000`, con 2 decimales. Va en el orden de las pinturas de `catalog.json` y, dentro de cada pintura, por prioridad. No hace fallar el build: sirve para revisar en el diff de git qué abre o cierra cada reimportación, y para decidir descartes o elecciones. Una discrepancia aceptada, en la que gana el color bueno, se queda en el informe.
 
 ## 7. Importadores
 

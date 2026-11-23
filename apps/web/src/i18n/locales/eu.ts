@@ -148,7 +148,7 @@ export const eu: Messages = {
     "near-identical": "Ia berdina",
     "very-similar": "Oso antzekoa",
     similar: "Antzekoa",
-    "nearest-available": "Hurbilena",
+    "barely-similar": "Ez oso antzekoa",
   },
   approximate: {
     allTitle: "Koloreak gutxi gorabeherakoak dira",

@@ -139,7 +139,7 @@ export const zhHans: Messages = {
     "near-identical": "几乎相同",
     "very-similar": "非常相近",
     similar: "相近",
-    "nearest-available": "最接近的",
+    "barely-similar": "不太相近",
   },
   approximate: {
     allTitle: "颜色为近似值",
