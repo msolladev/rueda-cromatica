@@ -74,6 +74,10 @@
         {
           "sourceId": "vallejo-cc266",
           "key": "Citadel/Abbadon Black"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Abaddon Black"
         }
       ],
       "colorChoice": null,
@@ -132,11 +136,15 @@
         {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Balthasar Gold"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Balthazar Gold"
         }
       ],
       "colorChoice": null,
       "rejectedColors": [],
-      "note": null
+      "note": "La carta de Warpaints de 2020 escribe «Balthazar Gold»."
     },
     {
       "id": "citadel/base/barak-nar-burgundy",
@@ -190,6 +198,10 @@
         {
           "sourceId": "vallejo-cc266",
           "key": "Citadel/Bugmans Glow"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Bugman’s Glow"
         }
       ],
       "colorChoice": null,
@@ -227,6 +239,10 @@
         {
           "sourceId": "ak-interactive-3gen-equivalence-table",
           "key": "New Citadel/Caledor Sky"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Caledor Sky"
         }
       ],
       "colorChoice": null,
@@ -264,6 +280,10 @@
         {
           "sourceId": "ak-interactive-3gen-equivalence-table",
           "key": "New Citadel/Caliban Green"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Caliban Green"
         }
       ],
       "colorChoice": null,
@@ -297,6 +317,10 @@
         {
           "sourceId": "ak-interactive-3gen-equivalence-table",
           "key": "New Citadel/Castellan Green"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Castellan Green"
         }
       ],
       "colorChoice": null,
@@ -450,6 +474,10 @@
         {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Daemonette Hide"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Daemonette Hide"
         }
       ],
       "colorChoice": null,
@@ -479,6 +507,10 @@
         {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Death Guard Green"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Death Guard Green"
         }
       ],
       "colorChoice": null,
@@ -541,6 +573,10 @@
         {
           "sourceId": "ak-interactive-3gen-equivalence-table",
           "key": "New Citadel/Deathworld Forest"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Deathworld Forest"
         }
       ],
       "colorChoice": null,
@@ -570,11 +606,15 @@
         {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Dryad Bark"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Dryard Bark"
         }
       ],
       "colorChoice": null,
       "rejectedColors": [],
-      "note": null
+      "note": "La carta de Warpaints de 2020 escribe «Dryard Bark»."
     },
     {
       "id": "citadel/base/gal-vorbak-red",
@@ -815,6 +855,10 @@
         {
           "sourceId": "ak-interactive-3gen-equivalence-table",
           "key": "New Citadel/Jokaero Orange"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Jokaero Orange"
         }
       ],
       "colorChoice": null,
@@ -852,6 +896,10 @@
         {
           "sourceId": "ak-interactive-3gen-equivalence-table",
           "key": "New Citadel/Kantor Blue"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Kantor Blue"
         }
       ],
       "colorChoice": null,
@@ -885,6 +933,10 @@
         {
           "sourceId": "ak-interactive-3gen-equivalence-table",
           "key": "New Citadel/Khorne Red"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Khorne Red"
         }
       ],
       "colorChoice": null,
@@ -914,6 +966,10 @@
         {
           "sourceId": "ak-interactive-3gen-equivalence-table",
           "key": "New Citadel/Leadbelcher"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Leadbelcher"
         }
       ],
       "colorChoice": null,
@@ -976,11 +1032,15 @@
         {
           "sourceId": "ak-interactive-3gen-equivalence-table",
           "key": "New Citadel/Macragge Blue"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Macagge Blue"
         }
       ],
       "colorChoice": null,
       "rejectedColors": [],
-      "note": null
+      "note": "La carta de Warpaints de 2020 escribe «Macagge Blue»."
     },
     {
       "id": "citadel/base/mechanicus-standard-grey",
@@ -1005,6 +1065,10 @@
         {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Mechanicus Standard Grey"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Mechanicus Standard Grey"
         }
       ],
       "colorChoice": null,
@@ -1038,6 +1102,10 @@
         {
           "sourceId": "ak-interactive-3gen-equivalence-table",
           "key": "New Citadel/Mephiston Red"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Mephiston Red"
         }
       ],
       "colorChoice": null,
@@ -1100,6 +1168,10 @@
         {
           "sourceId": "ak-interactive-3gen-equivalence-table",
           "key": "New Citadel/Mourfang Brown"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Mournfang Brown"
         }
       ],
       "colorChoice": null,
@@ -1270,6 +1342,10 @@
         {
           "sourceId": "vallejo-cc266",
           "key": "Citadel/Rackarth Flesh"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Rakarth Flesh"
         }
       ],
       "colorChoice": null,
@@ -1299,6 +1375,10 @@
         {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Ratskin Flesh"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Ratskin Flesh"
         }
       ],
       "colorChoice": null,
@@ -1419,6 +1499,10 @@
         {
           "sourceId": "ak-interactive-3gen-equivalence-table",
           "key": "New Citadel/Screamer Pink"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Screamer Pink"
         }
       ],
       "colorChoice": null,
@@ -1605,6 +1689,10 @@
         {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Thousand Sons Blue"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Thousand Sons Blue"
         }
       ],
       "colorChoice": null,
@@ -1663,11 +1751,15 @@
         {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Warlock Bronze"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Warlock Bronze"
         }
       ],
       "colorChoice": null,
       "rejectedColors": [],
-      "note": "La carta de conversión de Fanatic escribe «Warlock Bronze»."
+      "note": "La carta de conversión de Fanatic escribe «Warlock Bronze». La carta de Warpaints de 2020 escribe «Warlock Bronze»."
     },
     {
       "id": "citadel/base/wraithbone",
@@ -1750,6 +1842,10 @@
         {
           "sourceId": "vallejo-cc266",
           "key": "Citadel/Zandri Dust"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Zandri Dust"
         }
       ],
       "colorChoice": null,
@@ -3318,6 +3414,10 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "dry/Hexos Palesun"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Hexos Palesun"
         }
       ],
       "colorChoice": null,
@@ -3444,6 +3544,10 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "dry/Niblet Green"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Niblet Green"
         }
       ],
       "colorChoice": null,
@@ -3507,6 +3611,10 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "dry/Ryza Rust"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Ryza Rust"
         }
       ],
       "colorChoice": null,
@@ -3708,11 +3816,15 @@
         {
           "sourceId": "ak-interactive-3gen-equivalence-table",
           "key": "New Citadel/Administratum grey"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Administorum Grey"
         }
       ],
       "colorChoice": null,
       "rejectedColors": [],
-      "note": "La tabla de equivalencias de AK escribe «Administratum grey»."
+      "note": "La tabla de equivalencias de AK escribe «Administratum grey». La carta de Warpaints de 2020 escribe «Administorum Grey»."
     },
     {
       "id": "citadel/layer/ahriman-blue",
@@ -3795,6 +3907,10 @@
         {
           "sourceId": "ak-interactive-3gen-equivalence-table",
           "key": "New Citadel/Altford Guard Blue"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Altdorf Guard Blue"
         }
       ],
       "colorChoice": null,
@@ -3820,6 +3936,10 @@
         {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Auric Armour Gold"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Auric Armour Gold"
         }
       ],
       "colorChoice": null,
@@ -3849,6 +3969,10 @@
         {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Baharroth Blue"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Baharroth Blue"
         }
       ],
       "colorChoice": null,
@@ -3882,6 +4006,10 @@
         {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Balor Brown"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Balor Brown"
         }
       ],
       "colorChoice": null,
@@ -3915,6 +4043,10 @@
         {
           "sourceId": "vallejo-cc266",
           "key": "Citadel/Baneblade Brown (Layer)"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Baneblade Brown"
         }
       ],
       "colorChoice": null,
@@ -3948,6 +4080,10 @@
         {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Bestigor Flesh"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Bestigor Flesh"
         }
       ],
       "colorChoice": null,
@@ -4010,6 +4146,10 @@
         {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Blue Horror"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Blue Horror"
         }
       ],
       "colorChoice": null,
@@ -4035,6 +4175,10 @@
         {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Brass Scorpion"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Brass Scorpion"
         }
       ],
       "colorChoice": null,
@@ -4068,6 +4212,10 @@
         {
           "sourceId": "ak-interactive-3gen-equivalence-table",
           "key": "New Citadel/Cadian Fleshtone"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Cadian Fleshtone"
         }
       ],
       "colorChoice": null,
@@ -4101,6 +4249,10 @@
         {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Calgar Blue"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Calgar Blue"
         }
       ],
       "colorChoice": null,
@@ -4366,6 +4518,10 @@
         {
           "sourceId": "ak-interactive-3gen-equivalence-table",
           "key": "New Citadel/Dorn Yellow"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Dorn Yellow"
         }
       ],
       "colorChoice": null,
@@ -4395,6 +4551,10 @@
         {
           "sourceId": "vallejo-cc266",
           "key": "Citadel/Elysian Green"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Elysian Green"
         }
       ],
       "colorChoice": null,
@@ -4428,11 +4588,15 @@
         {
           "sourceId": "ak-interactive-3gen-equivalence-table",
           "key": "New Citadel/Emperor’s Children"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Emperors Children"
         }
       ],
       "colorChoice": null,
       "rejectedColors": [],
-      "note": null
+      "note": "La carta de Warpaints de 2020 escribe «Emperors Children»."
     },
     {
       "id": "citadel/layer/eshin-grey",
@@ -4453,6 +4617,10 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Eshin Grey"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Eshin Grey"
         }
       ],
       "colorChoice": null,
@@ -4490,6 +4658,10 @@
         {
           "sourceId": "ak-interactive-3gen-equivalence-table",
           "key": "New Citadel/Evil Sunz Scarlet"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Evil Sunz Scarlet"
         }
       ],
       "colorChoice": null,
@@ -4519,6 +4691,10 @@
         {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Fenrisian Grey"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Fenrisian Grey"
         }
       ],
       "colorChoice": null,
@@ -4556,6 +4732,10 @@
         {
           "sourceId": "ak-interactive-3gen-equivalence-table",
           "key": "New Citadel/Fire Dragon Bright"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Fire Dragon Bright"
         }
       ],
       "colorChoice": null,
@@ -4593,6 +4773,10 @@
         {
           "sourceId": "ak-interactive-3gen-equivalence-table",
           "key": "New Citadel/Flash Gitz Yellow"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Flash Gitz Yellow"
         }
       ],
       "colorChoice": null,
@@ -4622,6 +4806,10 @@
         {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Flayed One Flesh"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Flayed One Flesh"
         }
       ],
       "colorChoice": null,
@@ -4655,6 +4843,10 @@
         {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Fulgrim Pink"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Fulgrim Pink"
         }
       ],
       "colorChoice": null,
@@ -4709,6 +4901,10 @@
         {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Gauss Blaster Green"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Gauss Blaster Green"
         }
       ],
       "colorChoice": null,
@@ -4730,11 +4926,15 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "layer/Gehenna's Gold"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Gehenna Gold"
         }
       ],
       "colorChoice": null,
       "rejectedColors": [],
-      "note": null
+      "note": "La carta de Warpaints de 2020 escribe «Gehenna Gold»."
     },
     {
       "id": "citadel/layer/genestealer-purple",
@@ -4759,6 +4959,10 @@
         {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Genestealer Purple"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Genestealer Purple"
         }
       ],
       "colorChoice": null,
@@ -4863,6 +5067,10 @@
         {
           "sourceId": "ak-interactive-3gen-equivalence-table",
           "key": "New Citadel/Ironbreaker"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Ironbreaker"
         }
       ],
       "colorChoice": null,
@@ -4900,6 +5108,10 @@
         {
           "sourceId": "ak-interactive-3gen-equivalence-table",
           "key": "New Citadel/Kabalite Green"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Kabalite Green"
         }
       ],
       "colorChoice": null,
@@ -4995,11 +5207,15 @@
         {
           "sourceId": "ak-interactive-3gen-equivalence-table",
           "key": "New Citadel/Kislev Flesh"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Kislev"
         }
       ],
       "colorChoice": null,
       "rejectedColors": [],
-      "note": null
+      "note": "La carta de Warpaints de 2020 escribe «Kislev/Ungor Flesh»."
     },
     {
       "id": "citadel/layer/knight-questor-flesh",
@@ -5053,11 +5269,15 @@
         {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Krieg Khaki"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Kreig Khaki"
         }
       ],
       "colorChoice": null,
       "rejectedColors": [],
-      "note": null
+      "note": "La carta de Warpaints de 2020 escribe «Kreig Khaki»."
     },
     {
       "id": "citadel/layer/liberator-gold",
@@ -5140,6 +5360,10 @@
         {
           "sourceId": "ak-interactive-3gen-equivalence-table",
           "key": "New Citadel/Lothern Blue"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Lothern Blue"
         }
       ],
       "colorChoice": null,
@@ -5206,6 +5430,10 @@
         {
           "sourceId": "ak-interactive-3gen-equivalence-table",
           "key": "New Citadel/Moot Green"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Moot Green"
         }
       ],
       "colorChoice": null,
@@ -5260,6 +5488,10 @@
         {
           "sourceId": "vallejo-cc266",
           "key": "Citadel/Ogryn Camo"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Ogryn Camo"
         }
       ],
       "colorChoice": null,
@@ -5289,6 +5521,10 @@
         {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Pallid Wych Flesh"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Pallid Wych Flesh"
         }
       ],
       "colorChoice": null,
@@ -5347,6 +5583,10 @@
         {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Pink Horor"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Pink Horror"
         }
       ],
       "colorChoice": null,
@@ -5376,11 +5616,15 @@
         {
           "sourceId": "ak-interactive-3gen-equivalence-table",
           "key": "New Citadel/Runefang Steel"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Runefang"
         }
       ],
       "colorChoice": null,
       "rejectedColors": [],
-      "note": null
+      "note": "La carta de Warpaints de 2020 escribe «Runefang/Stormhost Silver»."
     },
     {
       "id": "citadel/layer/russ-grey",
@@ -5405,6 +5649,10 @@
         {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Russ Grey"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Russ Grey"
         }
       ],
       "colorChoice": null,
@@ -5438,6 +5686,10 @@
         {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Screaming Skull"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Screaming Skull"
         }
       ],
       "colorChoice": null,
@@ -5467,6 +5719,10 @@
         {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Skarsnik Green"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Skarsnik Green"
         }
       ],
       "colorChoice": null,
@@ -5492,6 +5748,10 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Skavenblight Dinge"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Skavenblight Dinge"
         }
       ],
       "colorChoice": null,
@@ -5525,6 +5785,10 @@
         {
           "sourceId": "ak-interactive-3gen-equivalence-table",
           "key": "New Citadel/Skrag Brown"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Skrag Brown"
         }
       ],
       "colorChoice": null,
@@ -5571,6 +5835,10 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Slaanesh Grey"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Slaanesh Grey"
         }
       ],
       "colorChoice": null,
@@ -5691,6 +5959,10 @@
         {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Stormhost Silver"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Stormhost Silver"
         }
       ],
       "colorChoice": null,
@@ -5724,6 +5996,10 @@
         {
           "sourceId": "ak-interactive-3gen-equivalence-table",
           "key": "New Citadel/Stormvermin Fur"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Stormvermin Fur"
         }
       ],
       "colorChoice": null,
@@ -5753,6 +6029,10 @@
         {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Straken Green"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Straken Green"
         }
       ],
       "colorChoice": null,
@@ -5790,6 +6070,10 @@
         {
           "sourceId": "ak-interactive-3gen-equivalence-table",
           "key": "New Citadel/Sybarite Green"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Sybarite Green"
         }
       ],
       "colorChoice": null,
@@ -5889,6 +6173,10 @@
         {
           "sourceId": "ak-interactive-3gen-equivalence-table",
           "key": "New Citadel/Tau Light Ochre"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Tau Light Ochre"
         }
       ],
       "colorChoice": null,
@@ -5918,6 +6206,10 @@
         {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Teclis Blue"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Teclis Blue"
         }
       ],
       "colorChoice": null,
@@ -5947,6 +6239,10 @@
         {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Temple Guard Blue"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Temple Guard Blue"
         }
       ],
       "colorChoice": null,
@@ -6063,6 +6359,10 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Ulthuan Grey"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Ulthuan Grey"
         }
       ],
       "colorChoice": null,
@@ -6092,6 +6392,10 @@
         {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Ungor Flesh"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Ungor Flesh"
         }
       ],
       "colorChoice": null,
@@ -6183,6 +6487,10 @@
         {
           "sourceId": "ak-interactive-3gen-equivalence-table",
           "key": "New Citadel/Warboss Green"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Warboss Green"
         }
       ],
       "colorChoice": null,
@@ -6208,6 +6516,10 @@
         {
           "sourceId": "simogecko-citadel-colours-sampled",
           "key": "Warpfiend Grey"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Warpfiend Grey"
         }
       ],
       "colorChoice": null,
@@ -6237,6 +6549,10 @@
         {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Warpstone Glow"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Warpstone Glow"
         }
       ],
       "colorChoice": null,
@@ -6274,6 +6590,10 @@
         {
           "sourceId": "ak-interactive-3gen-equivalence-table",
           "key": "New Citadel/Wazdakka Red"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Wazdakka Red"
         }
       ],
       "colorChoice": null,
@@ -6311,6 +6631,10 @@
         {
           "sourceId": "ak-interactive-3gen-equivalence-table",
           "key": "New Citadel/White Scar"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/White Scar"
         }
       ],
       "colorChoice": null,
@@ -6406,6 +6730,10 @@
         {
           "sourceId": "ak-interactive-3gen-equivalence-table",
           "key": "New Citadel/Xereus Purple"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Xereus Purple"
         }
       ],
       "colorChoice": null,
@@ -6443,6 +6771,10 @@
         {
           "sourceId": "ak-interactive-3gen-equivalence-table",
           "key": "New Citadel/Yriel Yellow"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Yriel Yellow"
         }
       ],
       "colorChoice": null,
@@ -6476,6 +6808,10 @@
         {
           "sourceId": "ak-interactive-3gen-equivalence-table",
           "key": "New Citadel/Zamesi Desert"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Zamesi Desert"
         }
       ],
       "colorChoice": null,
@@ -6505,6 +6841,10 @@
         {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Agrax Earthshade"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Agrax Earthshade"
         }
       ],
       "colorChoice": null,
@@ -6530,6 +6870,10 @@
         {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Athonian Camoshade"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Athonian Camoshade"
         }
       ],
       "colorChoice": null,
@@ -6580,11 +6924,15 @@
         {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Biel-Tan Green"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Beil-Tan Green"
         }
       ],
       "colorChoice": null,
       "rejectedColors": [],
-      "note": null
+      "note": "La carta de Warpaints de 2020 escribe «Beil-Tan Green»."
     },
     {
       "id": "citadel/shade/carroburg-crimson",
@@ -6605,6 +6953,10 @@
         {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Carroburg Crimson"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Carroburg Crimson"
         }
       ],
       "colorChoice": null,
@@ -6672,6 +7024,10 @@
         {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Drakenhof Nightshade"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Drakenhof Nightshade"
         }
       ],
       "colorChoice": null,
@@ -6701,6 +7057,10 @@
         {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Druchii Violet"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Druchii Violet"
         }
       ],
       "colorChoice": null,
@@ -6797,6 +7157,10 @@
         {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Nuln Oil"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Nuln Oil"
         }
       ],
       "colorChoice": null,
@@ -6847,6 +7211,10 @@
         {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Reikland Fleshshade"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Reikland Fleshshade"
         }
       ],
       "colorChoice": null,
@@ -6876,6 +7244,10 @@
         {
           "sourceId": "the-army-painter-fanatic-conversion-chart",
           "key": "GW/Seraphim Sepia"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Seraphim Sepia"
         }
       ],
       "colorChoice": null,
@@ -7052,6 +7424,10 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "technical/Blood For The Blood God"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Blood For The Blood God"
         }
       ],
       "colorChoice": null,
@@ -7157,6 +7533,10 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "technical/Nurgles Rot"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Nurgle’s Rot"
         }
       ],
       "colorChoice": null,
@@ -7262,6 +7642,10 @@
         {
           "sourceId": "simogecko-citadel-colours",
           "key": "technical/Typhus Corrosion"
+        },
+        {
+          "sourceId": "the-army-painter-warpaints-conversion-chart",
+          "key": "GM/Typhus Corrosion"
         }
       ],
       "colorChoice": null,

@@ -39,7 +39,9 @@ export {
   type MatchOptions,
 } from "./matching/closest-paints.ts";
 export {
+  colorStandIn,
   findOfficialEquivalences,
+  type ColorStandIn,
   type OfficialEquivalences,
   type OfficialMatch,
 } from "./matching/official-equivalences.ts";

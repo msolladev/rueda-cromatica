@@ -89,6 +89,12 @@ export const de: Messages = {
     incoming: "{name} wird vorgeschlagen für",
     noneOutgoing: "Kein Dokument schlägt eine andere Farbe für {name} vor.",
     noneIncoming: "Kein Dokument schlägt {name} für eine andere Farbe vor.",
+    replacement: "{name} wird ersetzt durch",
+    noReplacement: "Kein Herstellerdokument nennt einen Ersatz für {name}.",
+    noColorUse:
+      "{name} hat im Katalog keine Farbe. Nimm eine ihrer Entsprechungen als Basis des Rads.",
+    noColorNone:
+      "{name} hat im Katalog weder eine Farbe noch veröffentlichte Entsprechungen, daher bewegt sich das Rad nicht.",
     none: "Kein Hersteller veröffentlicht eine Entsprechung für {name} ({label}).",
     noneInDetails: "Kein Hersteller verbindet sie mit einer anderen Farbe.",
     by: "Laut {publisher}, in {title}.",
@@ -120,6 +126,10 @@ export const de: Messages = {
     back: "Zurück zu {name}",
     chosen: "Basis: {name}, {brand} {range}.",
     typeMetallic: "{type}, metallisch",
+    noColor: "ohne Farbe",
+    standInReplacement: "Angezeigt wird {name}, ihr Ersatz laut {publisher}.",
+    standInEquivalence:
+      "Angezeigt wird {name}, ihre Entsprechung laut {publisher}.",
     rybNotice:
       "Der RYB-Farbkreis erreicht diesen Farbton nicht: Er nimmt den nächstgelegenen (ΔE {deltaE}).",
     useDigital: "Digitalen Farbkreis verwenden",

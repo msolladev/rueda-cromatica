@@ -16,8 +16,20 @@
     "text": "Línea descatalogada que el catálogo todavía no tiene. Llega en el paso 5 de la fase 5."
   },
   {
+    "id": "duplicate-row",
+    "text": "Fila repetida en la fuente: la misma pintura ya tiene la clave de otra fila."
+  },
+  {
     "id": "inconsistent-measurement",
     "text": "Medición poco fiable: las lecturas de la muestra no coinciden entre sí."
+  },
+  {
+    "id": "newer-source",
+    "text": "La línea toma sus datos de una fuente más actual; esta fuente solo aporta lo que las demás no tienen."
+  },
+  {
+    "id": "no-manufacturer-document",
+    "text": "Ningún documento del fabricante en los datos curados prueba que la pintura exista."
   },
   {
     "id": "not-in-catalog",

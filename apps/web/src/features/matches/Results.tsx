@@ -521,6 +521,25 @@ function PanelBody(props: PanelBodyProps): ReactNode {
     results.official === null ? null : (
       <OfficialBlock {...props} official={results.official} />
     );
+  // docs/07 §15: a chosen paint without colour that lends the wheel none.
+  // The closest paints would be those of a colour that is not the paint's.
+  const chosen = results.official;
+  if (chosen?.colorless === true && chosen.standIn === null) {
+    const related =
+      chosen.replacement !== null ||
+      chosen.outgoing.length > 0 ||
+      chosen.incoming.length > 0;
+    return (
+      <>
+        {official}
+        <p className="empty">
+          {format(related ? m.official.noColorUse : m.official.noColorNone, {
+            name: chosen.name,
+          })}
+        </p>
+      </>
+    );
+  }
   if (results.byBrand.length === 0) {
     return (
       <>
@@ -576,8 +595,9 @@ function PanelBody(props: PanelBodyProps): ReactNode {
 
 /**
  * The official equivalences of the chosen paint (docs/07 §16): apart from the
- * closest paints, with their own heading, in both directions, with the same
- * row and who states each one. With none, one line says so.
+ * closest paints, with their own heading, its replacement if it is
+ * discontinued, both directions, with the same row and who states each one.
+ * With none, one line says so.
  */
 function OfficialBlock({
   official,
@@ -588,7 +608,12 @@ function OfficialBlock({
   creditsPath,
   onUse,
 }: PanelBodyProps & { readonly official: OfficialResults }) {
-  const none = official.outgoing.length === 0 && official.incoming.length === 0;
+  const none =
+    !official.discontinued &&
+    official.outgoing.length === 0 &&
+    official.incoming.length === 0;
+  // A paint without colour is not measured against the wheel (§16).
+  const measured = official.colorless ? null : target;
   const group = (
     title: string,
     rows: OfficialResults["outgoing"],
@@ -604,7 +629,7 @@ function OfficialBlock({
             <PaintRow
               key={paint.id}
               paint={paint}
-              target={target}
+              target={measured}
               showBrand
               markApproximate={mixed}
               messages={m}
@@ -633,6 +658,12 @@ function OfficialBlock({
       ) : (
         <>
           <p className="official-intro">{m.official.intro}</p>
+          {official.discontinued &&
+            group(
+              format(m.official.replacement, { name: official.name }),
+              official.replacement === null ? [] : [official.replacement],
+              format(m.official.noReplacement, { name: official.name }),
+            )}
           {group(
             format(m.official.outgoing, { name: official.name }),
             official.outgoing,

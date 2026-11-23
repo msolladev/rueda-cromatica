@@ -88,6 +88,13 @@ export const ru: Messages = {
     incoming: "{name} предлагается для",
     noneOutgoing: "Ни один документ не предлагает другую краску для {name}.",
     noneIncoming: "Ни один документ не предлагает {name} для другой краски.",
+    replacement: "{name} заменяется на",
+    noReplacement:
+      "Ни один документ производителя не называет замену для {name}.",
+    noColorUse:
+      "У {name} нет цвета в каталоге. Используйте один из её эквивалентов как основу круга.",
+    noColorNone:
+      "У {name} нет ни цвета в каталоге, ни опубликованных эквивалентов, поэтому круг не двигается.",
     none: "Ни один производитель не публикует соответствие для {name} ({label}).",
     noneInDetails: "Ни один производитель не связывает её с другой краской.",
     by: "По данным {publisher}, в {title}.",
@@ -119,6 +126,10 @@ export const ru: Messages = {
     back: "Вернуться к {name}",
     chosen: "Основной: {name}, {brand} {range}.",
     typeMetallic: "{type}, металлик",
+    noColor: "без цвета",
+    standInReplacement: "Показан цвет {name}: её замена по данным {publisher}.",
+    standInEquivalence:
+      "Показан цвет {name}: её эквивалент по данным {publisher}.",
     rybNotice:
       "Круг RYB не достигает этого цвета: используется ближайший (ΔE {deltaE}).",
     useDigital: "Использовать цифровой круг",

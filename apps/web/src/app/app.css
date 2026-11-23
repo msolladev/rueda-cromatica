@@ -1515,13 +1515,27 @@ legend {
 }
 
 .paint-search-chosen,
+.paint-search-standin,
 .paint-search-back,
 .paint-search-ryb {
   animation: row-enter 0.3s var(--ease) both;
 }
 
-.paint-search-chosen {
+.paint-search-chosen,
+.paint-search-standin {
   padding-inline-start: 0.75rem;
+}
+
+.paint-search-standin {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* The chip «Discontinued», beside the brand, range and code. */
+.paint-search-chip {
+  margin-inline-start: 0.5rem;
+  vertical-align: 0.1em;
 }
 
 .paint-search-back {
@@ -1996,12 +2010,21 @@ legend {
   height: 1.5rem;
 }
 
-.split-any {
+/* A paint without colour (docs/07 §15): striped, in the rows and in the
+   search. */
+.split-any,
+.swatch-none {
   background: repeating-linear-gradient(
     45deg,
     var(--muted) 0 2px,
     transparent 2px 5px
   );
+}
+
+/* docs/07 §16: a paint not measured against the wheel shows its whole
+   swatch. */
+.split-whole {
+  grid-template-rows: 1fr;
 }
 
 .panel {

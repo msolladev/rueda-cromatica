@@ -83,6 +83,12 @@ export const en: Messages = {
     incoming: "{name} is proposed for",
     noneOutgoing: "No document proposes another paint for {name}.",
     noneIncoming: "No document proposes {name} for another paint.",
+    replacement: "{name} is replaced by",
+    noReplacement: "No manufacturer document names a replacement for {name}.",
+    noColorUse:
+      "{name} has no colour in the catalogue. Use one of its equivalences as the base of the wheel.",
+    noColorNone:
+      "{name} has no colour in the catalogue and no published equivalences, so the wheel does not move.",
     none: "No manufacturer publishes an equivalent for {name} ({label}).",
     noneInDetails: "No manufacturer relates it to another paint.",
     by: "According to {publisher}, in {title}.",
@@ -114,6 +120,11 @@ export const en: Messages = {
     back: "Back to {name}",
     chosen: "Base: {name}, {brand} {range}.",
     typeMetallic: "{type}, metallic",
+    noColor: "no colour",
+    standInReplacement:
+      "Showing {name}, its replacement according to {publisher}.",
+    standInEquivalence:
+      "Showing {name}, its equivalent according to {publisher}.",
     rybNotice:
       "The RYB wheel can't reach this color: it uses the closest one (ΔE {deltaE}).",
     useDigital: "Use the digital wheel",

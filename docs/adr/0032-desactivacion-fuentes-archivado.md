@@ -1,6 +1,6 @@
 # ADR-0032: Desactivación de fuentes y archivado
 
-- **Estado:** aceptada
+- **Estado:** aceptada; corregida en parte por [ADR-0034](0034-warpaints-originales-sustituciones.md)
 - **Fecha:** 2026-11-22
 
 ## Contexto

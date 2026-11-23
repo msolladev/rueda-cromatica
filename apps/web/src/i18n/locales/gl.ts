@@ -81,6 +81,13 @@ export const gl: Messages = {
     incoming: "{name} proponse para",
     noneOutgoing: "Ningún documento propón outra pintura para {name}.",
     noneIncoming: "Ningún documento propón {name} para outra pintura.",
+    replacement: "{name} substitúese por",
+    noReplacement:
+      "Ningún documento do fabricante nomea unha substituta de {name}.",
+    noColorUse:
+      "{name} non ten cor no catálogo. Usa unha das súas equivalencias como base da roda.",
+    noColorNone:
+      "{name} non ten cor no catálogo nin equivalencias publicadas, así que a roda non se move.",
     none: "Ningún fabricante publica unha equivalencia para {name} ({label}).",
     noneInDetails: "Ningún fabricante a relaciona con outra pintura.",
     by: "Segundo {publisher}, en {title}.",
@@ -112,6 +119,11 @@ export const gl: Messages = {
     back: "Volver a {name}",
     chosen: "Base: {name}, {brand} {range}.",
     typeMetallic: "{type}, metálica",
+    noColor: "sen cor",
+    standInReplacement:
+      "Amosando {name}, a súa substituta segundo {publisher}.",
+    standInEquivalence:
+      "Amosando {name}, a súa equivalente segundo {publisher}.",
     rybNotice:
       "A roda RYB non chega a esta cor: usa a máis parecida (ΔE {deltaE}).",
     useDigital: "Usar a roda dixital",

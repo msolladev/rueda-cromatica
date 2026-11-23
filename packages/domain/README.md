@@ -6,7 +6,7 @@ El dominio del catálogo de pinturas, en TypeScript puro, sin React ni navegador
 - `parseCatalog`, que valida el catálogo al cargarlo y construye el agregado `Catalog`, de solo lectura;
 - las reglas derivadas, como si el color de una pintura es aproximado o cuál es su sustituta;
 - la búsqueda de las pinturas más parecidas a un color, con el ΔE CIEDE2000;
-- las equivalencias oficiales de una pintura, en sus dos direcciones y medidas contra un color;
+- las equivalencias oficiales y la sustituta de una pintura, en sus dos direcciones y medidas contra un color, y la pintura cuyo color sustituye al de una pintura sin color;
 - la búsqueda de pinturas por lo que se escribe: su nombre, su código, su marca o su gama.
 
 Los errores esperables se devuelven como un `Result`, no se lanzan.

@@ -1,8 +1,10 @@
 /**
  * Builder process (docs/04 §6): reads the curated files, resolves the keys of
  * every source row, chooses each paint's colour among the candidates of its
- * rows, turns the equivalences of the charts into edges and assembles the
- * `catalog.json` document, without the disabled sources. Then validates it with `parseCatalog` and serialises it
+ * rows, turns the equivalences of the charts into edges, takes the
+ * replacements from the manufacturer documents and assembles the
+ * `catalog.json` document, without the disabled sources. Then validates it
+ * with `parseCatalog` and serialises it
  * deterministically (docs/02 §1), with the report of colour discrepancies and
  * the summary of the disabled sources. Pure: the files arrive already read.
  */
@@ -28,11 +30,14 @@ import {
 import { checkColorPolicy, selectColor, type ColorIssue } from "./color.ts";
 import {
   colorChange,
+  replacementChange,
   type ColorChange,
   type DisabledSourcesReport,
+  type ReplacementChange,
 } from "./disabled-sources.ts";
 import { colorDiscrepancies, type Discrepancy } from "./discrepancies.ts";
 import { officialEquivalences } from "./equivalences.ts";
+import { replacementClaims, selectReplacement } from "./replacements.ts";
 import { resolveKeys } from "./resolve.ts";
 
 export type { CuratedData };
@@ -87,9 +92,13 @@ export function buildCatalog(
   const disabled = new Set<SourceId>(
     sourceFiles.filter((f) => f.disabled !== null).map((f) => f.source.id),
   );
+  const enabledFiles = sourceFiles.filter((f) => !disabled.has(f.source.id));
+  const claims = replacementClaims(enabledFiles, resolution.owners);
+  const allClaims = replacementClaims(sourceFiles, resolution.owners);
   const paintItems: Located<Paint>[] = [];
   const discrepancies: Discrepancy[] = [];
   const colorChanges: ColorChange[] = [];
+  const replacementChanges: ReplacementChange[] = [];
   for (const file of brandFiles) {
     file.paints.forEach((curated, i) => {
       const origin = { file: file.name, path: `paints[${String(i)}]` };
@@ -110,9 +119,30 @@ export function buildCatalog(
       if (!ifEnabled.ok && ifEnabled !== selection) {
         report("With the disabled sources enabled: ", ifEnabled.error);
       }
-      if (!selection.ok) {
-        report("", selection.error);
-        return;
+      const replacement = selectReplacement(
+        curated,
+        claims.get(curated.id) ?? [],
+      );
+      const replacementIfEnabled =
+        disabled.size === 0
+          ? replacement
+          : selectReplacement(curated, allClaims.get(curated.id) ?? []);
+      if (!replacementIfEnabled.ok && replacementIfEnabled !== replacement) {
+        report(
+          "With the disabled sources enabled: ",
+          replacementIfEnabled.error,
+        );
+      }
+      if (!replacement.ok) report("", replacement.error);
+      if (!selection.ok) report("", selection.error);
+      if (!selection.ok || !replacement.ok) return;
+      if (replacementIfEnabled.ok) {
+        const change = replacementChange(
+          curated.id,
+          replacement.value,
+          replacementIfEnabled.value,
+        );
+        if (change !== null) replacementChanges.push(change);
       }
       const { color, others } = selection.value;
       discrepancies.push(...colorDiscrepancies(curated.id, color, others));
@@ -130,7 +160,10 @@ export function buildCatalog(
         type: curated.type,
         metallic: curated.metallic,
         color,
-        status: curated.status,
+        status:
+          curated.status.kind === "active"
+            ? curated.status
+            : { kind: "discontinued", replacement: replacement.value },
       };
       paintItems.push({ item, origin });
     });
@@ -161,8 +194,7 @@ export function buildCatalog(
     ),
   );
   const paints = sorted(paintItems);
-  const enabled = sourceFiles.filter((f) => !disabled.has(f.source.id));
-  const equivalences = officialEquivalences(enabled, resolution.owners);
+  const equivalences = officialEquivalences(enabledFiles, resolution.owners);
   // The edges that the disabled sources take away (ADR-0032).
   const lostEquivalences = officialEquivalences(
     sourceFiles.filter((f) => disabled.has(f.source.id)),
@@ -206,6 +238,7 @@ export function buildCatalog(
     disabledSources: [...disabled].sort(),
     colors: [...colorChanges].sort(byPaint),
     equivalences: lostEquivalences,
+    replacements: [...replacementChanges].sort(byPaint),
   };
   return ok({
     document,

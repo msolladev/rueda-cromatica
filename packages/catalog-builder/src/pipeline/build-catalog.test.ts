@@ -5,6 +5,7 @@ import {
   acmeFile,
   curatedData,
   globexFile,
+  type Fixtures,
   patchPaint,
   row,
 } from "../fixtures.ts";
@@ -279,6 +280,7 @@ describe("buildCatalog", () => {
           },
         ],
         equivalences: [],
+        replacements: [],
       });
       expect(disabledSourcesJson).toBe(
         `${JSON.stringify(disabledSources, null, 2)}\n`,
@@ -290,11 +292,13 @@ describe("buildCatalog", () => {
         disabledSources: ["hooli-forum"],
         colors: [],
         equivalences: [],
+        replacements: [],
       });
       expect(built(data()).disabledSources).toEqual({
         disabledSources: [],
         colors: [],
         equivalences: [],
+        replacements: [],
       });
     });
 
@@ -320,6 +324,181 @@ describe("buildCatalog", () => {
           message: "hooli-forum is disabled; remove the stale rejection",
         },
       ]);
+    });
+  });
+
+  describe("replacements (ADR-0005, ADR-0019 decision 1)", () => {
+    const discontinued = (
+      replacementChoice: { sourceId: string; note: string } | null = null,
+    ) => ({ status: { kind: "discontinued" as const, replacementChoice } });
+
+    /**
+     * Acme discontinues its Red and says that Globex Green replaces it. With
+     * `hooli`, a second manufacturer document says that Acme Blue does.
+     */
+    const withReplacement = (
+      hooli: "none" | "enabled" | "disabled" = "none",
+    ) => {
+      const input = data();
+      const acme = input.sources[0]?.content;
+      const [acmeBrand] = input.brands;
+      if (acme === undefined || acmeBrand === undefined) {
+        throw new Error("Fixture without sources or brands");
+      }
+      acme.replacements = [{ from: "AC-01", to: "GX-01", note: null }];
+      patchPaint(acmeBrand, 1, discontinued());
+      if (hooli !== "none") {
+        input.sources.push({
+          name: "sources/hooli-chart.json",
+          content: {
+            ...acme,
+            source: { ...acme.source, id: "hooli-chart", title: "Hooli chart" },
+            disabled: hooli === "disabled" ? { note: "Under review." } : null,
+            paints: [
+              row({ key: "R", group: "Acme", name: "Red", hex: null }),
+              row({ key: "B", group: "Acme", name: "Blue", hex: null }),
+            ],
+            replacements: [{ from: "R", to: "B", note: null }],
+            ignoredGroups: [],
+            ignoredKeys: [],
+          },
+        });
+        patchPaint(acmeBrand, 0, {
+          keys: [
+            { sourceId: "acme-chart", key: "AC-01" },
+            { sourceId: "hooli-chart", key: "R" },
+          ],
+        });
+        patchPaint(acmeBrand, 1, {
+          ...discontinued(),
+          keys: [
+            { sourceId: "acme-chart", key: "AC-02" },
+            { sourceId: "hooli-chart", key: "B" },
+          ],
+        });
+      }
+      return input;
+    };
+
+    /** Acme Red is index 0 of the Acme brand file. */
+    const choose = (input: Fixtures, sourceId: string) => {
+      const [acmeBrand] = input.brands;
+      if (acmeBrand === undefined) throw new Error("Fixture without brands");
+      patchPaint(acmeBrand, 0, discontinued({ sourceId, note: "Reviewed." }));
+      return input;
+    };
+
+    const statusOf = (input: Fixtures, id: string) =>
+      built(input).document.paints.find((p) => p.id === id)?.status;
+
+    it("publishes the replacement that the manufacturer document states", () => {
+      const input = withReplacement();
+      const [acmeBrand] = input.brands;
+      if (acmeBrand === undefined) throw new Error("Fixture without brands");
+      patchPaint(acmeBrand, 0, discontinued());
+      expect(statusOf(input, "acme/core/red")).toEqual({
+        kind: "discontinued",
+        replacement: {
+          paintId: "globex/standard/green",
+          sourceId: "acme-chart",
+        },
+      });
+      expect(statusOf(input, "acme/core/blue")).toEqual({
+        kind: "discontinued",
+        replacement: null,
+      });
+    });
+
+    it("fails if the replaced paint is still active", () => {
+      expect(issues(withReplacement())).toEqual([
+        expect.objectContaining({
+          file: "brands/acme.json",
+          path: "paints[0].status",
+          message: expect.stringContaining("mark it discontinued") as string,
+        }),
+      ]);
+    });
+
+    it("fails if two documents name different replacements, until one is chosen", () => {
+      const input = withReplacement("enabled");
+      const [acmeBrand] = input.brands;
+      if (acmeBrand === undefined) throw new Error("Fixture without brands");
+      patchPaint(acmeBrand, 0, discontinued());
+      expect(issues(input)).toEqual([
+        expect.objectContaining({
+          path: "paints[0].status",
+          message:
+            "The documents name different replacements: globex/standard/green (acme-chart), acme/core/blue (hooli-chart); choose one with replacementChoice",
+        }),
+      ]);
+      expect(statusOf(choose(input, "hooli-chart"), "acme/core/red")).toEqual({
+        kind: "discontinued",
+        replacement: { paintId: "acme/core/blue", sourceId: "hooli-chart" },
+      });
+    });
+
+    it("fails if the choice is not needed", () => {
+      expect(issues(choose(withReplacement(), "acme-chart"))).toEqual([
+        expect.objectContaining({
+          path: "paints[0].status.replacementChoice",
+          message: expect.stringContaining(
+            "do not contradict each other",
+          ) as string,
+        }),
+      ]);
+    });
+
+    it("leaves out the replacement of a disabled source, and lists it", () => {
+      const input = withReplacement("disabled");
+      const [acmeBrand] = input.brands;
+      if (acmeBrand === undefined) throw new Error("Fixture without brands");
+      // Only the disabled document names one for Blue.
+      input.sources[1]?.content.replacements.splice(0, 1, {
+        from: "B",
+        to: "R",
+        note: null,
+      });
+      patchPaint(acmeBrand, 0, discontinued());
+      const { document, disabledSources } = built(input);
+      expect(
+        document.paints.find((p) => p.id === "acme/core/blue")?.status,
+      ).toEqual({ kind: "discontinued", replacement: null });
+      expect(disabledSources.replacements).toEqual([
+        {
+          paintId: "acme/core/blue",
+          published: null,
+          ifEnabled: { paintId: "acme/core/red", sourceId: "hooli-chart" },
+        },
+      ]);
+    });
+
+    it("fails if the choice names a disabled source", () => {
+      const input = choose(withReplacement("disabled"), "hooli-chart");
+      expect(issues(input)).toEqual([
+        expect.objectContaining({
+          path: "paints[0].status.replacementChoice",
+          message:
+            "hooli-chart names no replacement for it; remove the choice (without it: globex/standard/green (acme-chart))",
+        }),
+      ]);
+    });
+
+    it("only takes replacements from a manufacturer document", () => {
+      const input = withReplacement();
+      const acme = input.sources[0]?.content;
+      const [acmeBrand] = input.brands;
+      if (acme === undefined || acmeBrand === undefined) {
+        throw new Error("Fixture without sources or brands");
+      }
+      acme.source.kind = "third-party";
+      patchPaint(acmeBrand, 0, discontinued());
+      expect(issues(input)).toContainEqual(
+        expect.objectContaining({
+          file: "sources/acme-chart.json",
+          path: "replacements[0]",
+          message: "Only a manufacturer document states replacements",
+        }),
+      );
     });
   });
 

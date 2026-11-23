@@ -114,6 +114,12 @@ export function reconcile(
       continue;
     }
     ids.add(id.data);
+    // A paint of a discontinued range is discontinued too (docs/02 §3).
+    const discontinued = current.brands.some((brand) =>
+      brand.ranges.some(
+        (r) => r.id === rule.rangeId && r.status === "discontinued",
+      ),
+    );
     proposals.push({
       id: id.data,
       rangeId: rangeIdSchema.parse(rule.rangeId),
@@ -122,7 +128,9 @@ export function reconcile(
       manufacturerCode: row.code,
       type: rule.type,
       metallic: rules?.metallic?.(row) ?? rule.metallic,
-      status: { kind: "active" },
+      status: discontinued
+        ? { kind: "discontinued", replacementChoice: null }
+        : { kind: "active" },
       keys: [{ sourceId, key: row.key }],
       colorChoice: null,
       rejectedColors: [],

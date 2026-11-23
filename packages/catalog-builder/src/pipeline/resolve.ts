@@ -201,6 +201,26 @@ function indexSource(
     pairs.add(pair);
   });
 
+  // A replacement needs a manufacturer document (ADR-0005), and a document
+  // names at most one replacement for each paint.
+  const replaced = new Set<string>();
+  file.replacements.forEach(({ from, to }, i) => {
+    const path = `replacements[${String(i)}]`;
+    if (file.source.kind !== "manufacturer") {
+      report(path, "Only a manufacturer document states replacements");
+    }
+    for (const [side, key] of [
+      ["from", from],
+      ["to", to],
+    ] as const) {
+      if (!rows.has(key)) report(`${path}.${side}`, `No row has key "${key}"`);
+    }
+    if (replaced.has(from)) {
+      report(path, `"${from}" has more than one replacement in this source`);
+    }
+    replaced.add(from);
+  });
+
   const ignoredGroups = new Set<string>();
   file.ignoredGroups.forEach(({ group, reasonId }, i) => {
     const path = `ignoredGroups[${String(i)}]`;

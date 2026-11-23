@@ -68,6 +68,11 @@ const CHARTS: readonly {
         rangeIds: ["the-army-painter/warpaints-fanatic"],
         by: "name",
       },
+      "Original Warpaints": {
+        brandId: "the-army-painter",
+        rangeIds: ["the-army-painter/warpaints"],
+        by: "name",
+      },
       "Citadel by Games Workshop": CITADEL,
     },
   },
