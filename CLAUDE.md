@@ -106,11 +106,15 @@ El alcance mínimo y lo aplazado están razonados en el [ADR-0019](docs/adr/0019
      - 5a, los Warpaints originales (carta de 2020 transcrita a mano y colores comunitarios de Arcturus), las sustituciones en el builder y las pinturas descatalogadas y sin color en la web: hecho ([ADR-0034](docs/adr/0034-warpaints-originales-sustituciones.md)). Ninguna tiene sustituta: The Army Painter sustituye la línea, no pinta a pinta.
      - 5b, las antiguas de Citadel: hecho ([ADR-0035](docs/adr/0035-lineas-antiguas-citadel.md)). Citadel Colour (con sus tintas), Foundation y los Washes de 2008, cada una desde un documento de GW archivado en la Wayback Machine, y la carta de GW de 2012 desde su fichero original archivado, transcrita a mano. Ninguna tiene sustituta: la carta es de conversión. Las Glaze quedan fuera hasta que un documento de GW diga que se retiraron, y las Edge ya son Layer.
 
-6. **Backend, administración del catálogo y sesiones de usuario**, la última fase ([ADR-0017](docs/adr/0017-arquitectura-objetivo-backend.md)). Incluye:
+6. **Backend, administración del catálogo y sesiones de usuario** ([ADR-0017](docs/adr/0017-arquitectura-objetivo-backend.md)). Incluye:
    - Una API REST con base de datos y una web de administración del catálogo, con el frontal y el backend separados.
    - Una instantánea pública del catálogo, pedida por versión de esquema, para que la PWA actualice su catálogo local sin volver a desplegarse. De la API, la PWA solo consume esa instantánea y los endpoints de usuario. La API de administración solo la usa `apps/admin`.
    - Cuentas, sesiones y roles (usuario y administrador), gestionados desde `apps/admin`, con los datos del usuario sincronizados entre dispositivos y offline primero.
    - La referencia de la API, con Scalar como candidato, a partir de su especificación OpenAPI. Se decide al elegir el framework de `apps/api`, porque de él depende cómo se obtiene el OpenAPI.
+
+7. **Color de gama amplia y simulación 3D**, la última fase. Están decididas, no son opcionales:
+   - **Display P3 y OKLCH**: la rueda calcula también en OKLCH, para que las armonías del modelo digital sean uniformes a la vista, y se dibuja en Display P3 en las pantallas que lo admiten. Antes hay que resolver qué se hace con un color fuera de sRGB, que no tiene ninguna pintura del catálogo cerca, porque todos sus hex son sRGB.
+   - **Simulación 3D**: una miniatura de ejemplo de pocos polígonos, en WebGL, pintada con los colores de la rueda o con pinturas de distintas marcas para compararlas, con la luz simulada y su dirección y hora del día ajustables. Tiene que funcionar sin conexión, y el modelo 3D necesita una licencia que permita usarlo.
 
 Pendiente fuera de la hoja de ruta:
 
