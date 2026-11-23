@@ -141,10 +141,12 @@ export const ca: Messages = {
     dry: "Pinzell sec",
   },
   quality: {
+    identical: "Idèntica",
     "near-identical": "Gairebé idèntica",
     "very-similar": "Molt semblant",
     similar: "Semblant",
-    "nearest-available": "La més propera",
+    "barely-similar": "Poc semblant",
+    different: "Diferent",
   },
   approximate: {
     allTitle: "Els colors són aproximats",

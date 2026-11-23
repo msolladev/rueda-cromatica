@@ -142,10 +142,12 @@ export const ja: Messages = {
     dry: "ドライブラシ",
   },
   quality: {
+    identical: "同じ",
     "near-identical": "ほぼ同じ",
     "very-similar": "とても近い",
     similar: "近い",
-    "nearest-available": "最も近いもの",
+    "barely-similar": "あまり近くない",
+    different: "異なる",
   },
   approximate: {
     allTitle: "色はおおよそのものです",

@@ -140,10 +140,12 @@ export const es: Messages = {
     dry: "Pincel seco",
   },
   quality: {
+    identical: "Idéntica",
     "near-identical": "Casi idéntica",
     "very-similar": "Muy parecida",
     similar: "Parecida",
-    "nearest-available": "La más cercana",
+    "barely-similar": "Poco parecida",
+    different: "Distinta",
   },
   approximate: {
     allTitle: "Los colores son aproximados",

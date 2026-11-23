@@ -6,7 +6,7 @@
  */
 import {
   colorDifference,
-  matchQuality,
+  MATCH_QUALITY_LIMITS,
   type PaintColor,
   type PaintId,
 } from "@chromatic-wheel/domain";
@@ -23,7 +23,7 @@ export interface Discrepancy {
 
 /**
  * The losing candidates of a paint that are not similar to its colour: those
- * labelled `nearest-available` by `matchQuality`, ΔE > 5. In the order of the
+ * beyond the `similar` band of `matchQuality`, ΔE > 5. In the order of the
  * candidates, by priority.
  */
 export function colorDiscrepancies(
@@ -35,8 +35,9 @@ export function colorDiscrepancies(
   return others.flatMap(({ color: other }) => {
     const deltaE = colorDifference(published.hex, other.hex);
     if (!deltaE.ok) throw new Error(`Builder bug: ${deltaE.error.kind}`);
-    return matchQuality(deltaE.value) === "nearest-available"
-      ? [{ paintId, published, other, deltaE2000: roundDeltaE(deltaE.value) }]
+    const rounded = roundDeltaE(deltaE.value);
+    return rounded > MATCH_QUALITY_LIMITS.similar
+      ? [{ paintId, published, other, deltaE2000: rounded }]
       : [];
   });
 }

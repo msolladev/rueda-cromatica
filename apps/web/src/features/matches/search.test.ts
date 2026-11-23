@@ -47,7 +47,7 @@ describe("searchColor", () => {
     expect(citadel?.paints[0]).toMatchObject({
       rangeName: "Layer",
       type: "layer",
-      quality: "near-identical",
+      quality: "identical",
       reasons: ["community-color"],
       origin: "community",
       sourceName: "SimoGecko",
@@ -171,17 +171,17 @@ describe("searchColor", () => {
       [
         "Scorpion Green",
         "Warhammer Colour",
-        "nearest-available",
+        "barely-similar",
         ["Games Workshop"],
       ],
       ["Leafy Green", "The Army Painter", "very-similar", ["The Army Painter"]],
       [
         "Snake Scales",
         "The Army Painter",
-        "nearest-available",
+        "barely-similar",
         ["The Army Painter"],
       ],
-      ["Scorpy Green", "Vallejo", "nearest-available", ["Acrylicos Vallejo"]],
+      ["Scorpy Green", "Vallejo", "barely-similar", ["Acrylicos Vallejo"]],
     ]);
     expect(official).toMatchObject({
       discontinued: false,

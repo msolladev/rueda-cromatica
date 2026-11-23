@@ -147,10 +147,12 @@ export const fr: Messages = {
     dry: "Brossage à sec",
   },
   quality: {
+    identical: "Identique",
     "near-identical": "Presque identique",
     "very-similar": "Très proche",
     similar: "Proche",
-    "nearest-available": "La plus proche",
+    "barely-similar": "Peu proche",
+    different: "Différente",
   },
   approximate: {
     allTitle: "Les couleurs sont approximatives",

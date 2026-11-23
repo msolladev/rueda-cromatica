@@ -145,10 +145,12 @@ export const eu: Messages = {
     dry: "Pintzel lehorra",
   },
   quality: {
+    identical: "Berdina",
     "near-identical": "Ia berdina",
     "very-similar": "Oso antzekoa",
     similar: "Antzekoa",
-    "nearest-available": "Hurbilena",
+    "barely-similar": "Ez oso antzekoa",
+    different: "Desberdina",
   },
   approximate: {
     allTitle: "Koloreak gutxi gorabeherakoak dira",
