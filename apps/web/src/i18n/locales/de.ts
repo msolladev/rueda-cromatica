@@ -146,10 +146,12 @@ export const de: Messages = {
     dry: "Trockenbürsten",
   },
   quality: {
+    identical: "Identisch",
     "near-identical": "Fast identisch",
     "very-similar": "Sehr ähnlich",
     similar: "Ähnlich",
     "barely-similar": "Wenig ähnlich",
+    different: "Anders",
   },
   approximate: {
     allTitle: "Die Farbwerte sind ungefähr",

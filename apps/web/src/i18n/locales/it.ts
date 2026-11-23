@@ -146,10 +146,12 @@ export const it: Messages = {
     dry: "Pennello asciutto",
   },
   quality: {
+    identical: "Identica",
     "near-identical": "Quasi identica",
     "very-similar": "Molto simile",
     similar: "Simile",
     "barely-similar": "Poco simile",
+    different: "Diversa",
   },
   approximate: {
     allTitle: "I colori sono approssimati",

@@ -47,7 +47,7 @@ describe("searchColor", () => {
     expect(citadel?.paints[0]).toMatchObject({
       rangeName: "Layer",
       type: "layer",
-      quality: "near-identical",
+      quality: "identical",
       reasons: ["community-color"],
       origin: "community",
       sourceName: "SimoGecko",

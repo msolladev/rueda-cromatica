@@ -38,12 +38,16 @@
   /* Quality labels (docs/06 §3), from the closest to the farthest. */
   --q-identical: #17633a;
   --q-identical-bg: #dff3e6;
-  --q-very: #3d5f12;
-  --q-very-bg: #ebf4d8;
-  --q-similar: #6b4a00;
-  --q-similar-bg: #fbefcc;
-  --q-barely: #4f545b;
-  --q-barely-bg: #eceef1;
+  --q-near: #3d5f12;
+  --q-near-bg: #ebf4d8;
+  --q-very: #6b4a00;
+  --q-very-bg: #fbefcc;
+  --q-similar: #7f3d0a;
+  --q-similar-bg: #fde4cf;
+  --q-barely: #8a2f2b;
+  --q-barely-bg: #f7e1df;
+  --q-different: #4f545b;
+  --q-different-bg: #eceef1;
 
   /* Motion: fast at first and gentle at the end. */
   --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -95,12 +99,16 @@
     --error-text: light-dark(#8c1d18, #ffb4ab);
     --q-identical: light-dark(#17633a, #8fe0a6);
     --q-identical-bg: light-dark(#dff3e6, #15301e);
-    --q-very: light-dark(#3d5f12, #bfe08f);
-    --q-very-bg: light-dark(#ebf4d8, #22301a);
-    --q-similar: light-dark(#6b4a00, #f0d68a);
-    --q-similar-bg: light-dark(#fbefcc, #2e2610);
-    --q-barely: light-dark(#4f545b, #b5bac1);
-    --q-barely-bg: light-dark(#eceef1, #2a2e34);
+    --q-near: light-dark(#3d5f12, #bfe08f);
+    --q-near-bg: light-dark(#ebf4d8, #22301a);
+    --q-very: light-dark(#6b4a00, #f0d68a);
+    --q-very-bg: light-dark(#fbefcc, #2e2610);
+    --q-similar: light-dark(#7f3d0a, #f5bd8c);
+    --q-similar-bg: light-dark(#fde4cf, #33220f);
+    --q-barely: light-dark(#8a2f2b, #eeaaa4);
+    --q-barely-bg: light-dark(#f7e1df, #351b19);
+    --q-different: light-dark(#4f545b, #b5bac1);
+    --q-different-bg: light-dark(#eceef1, #2a2e34);
   }
 }
 
@@ -2298,9 +2306,14 @@ brands per row. */
   font-variant-numeric: tabular-nums;
 }
 
-.paint-quality[data-quality="near-identical"] {
+.paint-quality[data-quality="identical"] {
   background: var(--q-identical-bg);
   color: var(--q-identical);
+}
+
+.paint-quality[data-quality="near-identical"] {
+  background: var(--q-near-bg);
+  color: var(--q-near);
 }
 
 .paint-quality[data-quality="very-similar"] {
@@ -2316,6 +2329,11 @@ brands per row. */
 .paint-quality[data-quality="barely-similar"] {
   background: var(--q-barely-bg);
   color: var(--q-barely);
+}
+
+.paint-quality[data-quality="different"] {
+  background: var(--q-different-bg);
+  color: var(--q-different);
 }
 
 .paint-details {

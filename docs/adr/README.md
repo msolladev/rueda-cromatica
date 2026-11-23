@@ -27,7 +27,7 @@ Cada fichero recoge una decisión relevante: su contexto, la decisión tomada, l
 | [0019](0019-alcance-minimo-mvp.md)                      | Alcance mínimo del MVP                                                     | aceptada; corregida en parte por ADR-0030            |
 | [0020](0020-rueda-paquete-independiente.md)             | La rueda de color como paquete independiente                               | aceptada; corregida en parte por ADR-0021 y ADR-0027 |
 | [0021](0021-cambio-modelo-conserva-color.md)            | El cambio de modelo conserva el color base                                 | aceptada                                             |
-| [0022](0022-busqueda-pinturas-parecidas.md)             | Búsqueda de las pinturas parecidas                                         | aceptada                                             |
+| [0022](0022-busqueda-pinturas-parecidas.md)             | Búsqueda de las pinturas parecidas                                         | aceptada; corregida en parte por ADR-0036            |
 | [0023](0023-documentacion-tecnica.md)                   | Documentación técnica                                                      | aceptada; corregida en parte por ADR-0028            |
 | [0024](0024-web.md)                                     | La web: integración, estado, prerenderizado y PWA                          | aceptada; corregida en parte por ADR-0027            |
 | [0025](0025-estabilidad-ids-etiqueta-publicacion.md)    | Estabilidad de IDs frente a la etiqueta de publicación                     | aceptada; corregida en parte por ADR-0028            |
@@ -41,6 +41,7 @@ Cada fichero recoge una decisión relevante: su contexto, la decisión tomada, l
 | [0033](0033-equivalencias-oficiales-lineas-vigentes.md) | Equivalencias oficiales entre líneas vigentes                              | aceptada                                             |
 | [0034](0034-warpaints-originales-sustituciones.md)      | Los Warpaints originales, las sustituciones y las descatalogadas en la web | aceptada; corregida en parte por ADR-0035            |
 | [0035](0035-lineas-antiguas-citadel.md)                 | Las líneas antiguas de Citadel                                             | aceptada                                             |
+| [0036](0036-tramos-cercania.md)                         | Seis tramos en la etiqueta de cercanía                                     | aceptada                                             |
 
 ## Normas
 

@@ -144,10 +144,12 @@ export const ptBR: Messages = {
     dry: "Pincel seco",
   },
   quality: {
+    identical: "Idêntica",
     "near-identical": "Quase idêntica",
     "very-similar": "Muito parecida",
     similar: "Parecida",
     "barely-similar": "Pouco parecida",
+    different: "Diferente",
   },
   approximate: {
     allTitle: "As cores são aproximadas",

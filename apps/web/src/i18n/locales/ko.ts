@@ -142,10 +142,12 @@ export const ko: Messages = {
     dry: "드라이브러시",
   },
   quality: {
+    identical: "같음",
     "near-identical": "거의 같음",
     "very-similar": "매우 비슷함",
     similar: "비슷함",
     "barely-similar": "별로 비슷하지 않음",
+    different: "다름",
   },
   approximate: {
     allTitle: "색은 근삿값입니다",

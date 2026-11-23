@@ -50,7 +50,7 @@ describe("findClosestPaints", () => {
     const [first] = closest.byBrand[0]?.matches ?? [];
     expect(first?.paint.id).toBe("citadel/layer/moot-green");
     expect(first?.deltaE2000).toBe(0);
-    expect(first?.quality).toBe("near-identical");
+    expect(first?.quality).toBe("identical");
   });
 
   it("returns `limit` paints per brand, 3 by default", () => {

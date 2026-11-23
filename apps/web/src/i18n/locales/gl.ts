@@ -140,10 +140,12 @@ export const gl: Messages = {
     dry: "Pincel seco",
   },
   quality: {
+    identical: "Idéntica",
     "near-identical": "Case idéntica",
     "very-similar": "Moi parecida",
     similar: "Parecida",
     "barely-similar": "Pouco parecida",
+    different: "Distinta",
   },
   approximate: {
     allTitle: "As cores son aproximadas",

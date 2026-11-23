@@ -1,6 +1,6 @@
 # Pinturas parecidas
 
-Este documento especifica el módulo `matching` de `@chromatic-wheel/domain`: la búsqueda de las pinturas del catálogo más parecidas a un color, que son las equivalencias calculadas de [docs/01](01-modelo-dominio.md) §4, y las equivalencias oficiales de una pintura medidas con el mismo criterio (§10). Por qué se decidió así está en el [ADR-0022](adr/0022-busqueda-pinturas-parecidas.md), el [ADR-0033](adr/0033-equivalencias-oficiales-lineas-vigentes.md) y el [ADR-0034](adr/0034-warpaints-originales-sustituciones.md).
+Este documento especifica el módulo `matching` de `@chromatic-wheel/domain`: la búsqueda de las pinturas del catálogo más parecidas a un color, que son las equivalencias calculadas de [docs/01](01-modelo-dominio.md) §4, y las equivalencias oficiales de una pintura medidas con el mismo criterio (§10). Por qué se decidió así está en el [ADR-0022](adr/0022-busqueda-pinturas-parecidas.md), el [ADR-0036](adr/0036-tramos-cercania.md), el [ADR-0033](adr/0033-equivalencias-oficiales-lineas-vigentes.md) y el [ADR-0034](adr/0034-warpaints-originales-sustituciones.md).
 
 ## 1. Principios
 
@@ -20,12 +20,14 @@ Este documento especifica el módulo `matching` de `@chromatic-wheel/domain`: la
 
 Cada resultado lleva una etiqueta según su ΔE, redondeado a 2 decimales (§4). Los límites son inclusivos:
 
-| ΔE2000   | Etiqueta (`MatchQuality`) | Significado                                      |
-| -------- | ------------------------- | ------------------------------------------------ |
-| ≤ 1      | `near-identical`          | Casi idéntica: por debajo de lo que se percibe   |
-| ≤ 2      | `very-similar`            | Muy parecida: dentro de la tolerancia exigente   |
-| ≤ 5      | `similar`                 | Parecida: dentro de la tolerancia menos exigente |
-| más de 5 | `barely-similar`          | Poco parecida: no se afirma que sea parecida     |
+| ΔE2000    | Etiqueta (`MatchQuality`) | Significado                                      |
+| --------- | ------------------------- | ------------------------------------------------ |
+| 0         | `identical`               | Idéntica: el mismo color                         |
+| ≤ 1       | `near-identical`          | Casi idéntica: por debajo de lo que se percibe   |
+| ≤ 2       | `very-similar`            | Muy parecida: dentro de la tolerancia exigente   |
+| ≤ 5       | `similar`                 | Parecida: dentro de la tolerancia menos exigente |
+| ≤ 15      | `barely-similar`          | Poco parecida: no se afirma que sea parecida     |
+| más de 15 | `different`               | Distinta: es otro color                          |
 
 Los textos visibles de cada etiqueta los pone la web.
 
@@ -34,6 +36,7 @@ Los textos visibles de cada etiqueta los pone la web.
 - **1**: con kL = kC = kH = 1, un ΔE2000 de 1 se considera aproximadamente la diferencia mínima perceptible ([Wikipedia, «Color difference»](https://en.wikipedia.org/wiki/Color_difference); [MetricGate](https://metricgate.com/docs/delta-e-ciede2000/)). Hay quien la sitúa en 0,5 ([Graeme Gill, lista ColorSync, 2009](https://lists.apple.com/archives/colorsync-users/2009/Jul/msg00163.html)), pero es una opinión informal.
 - **2**: Paravina et al. (2015) miden en ΔE2000 un umbral de perceptibilidad del 50 % de 0,8 y uno de aceptabilidad del 50 % de 1,8, con muestras dentales medidas ([Journal of Esthetic and Restorative Dentistry, DOI 10.1111/jerd.12149](https://doi.org/10.1111/jerd.12149)). La tolerancia habitual en impresión profesional es de 2 a 3 ([Hybrid Helix](https://blog.hybridhelix.com/?p=2470)).
 - **5**: tolerancia aceptada en trabajos de color menos críticos ([Hybrid Helix](https://blog.hybridhelix.com/?p=2470)). Es una convención de la industria, sin norma CIE.
+- **15**: es una decisión del proyecto, sin fuente ([ADR-0036](adr/0036-tramos-cercania.md)). No se ha encontrado ninguna para un límite por encima de 5 en ΔE2000: las escalas que llegan más lejos están en ΔE\*ab, y el comité TC 1-63 de la CIE, que estudia CIEDE2000 por encima de 5, no ha publicado conclusiones ([informe de progreso de 2011](https://color.li.tu-berlin.de/CIE_1_63_ARP11.PDF)).
 
 **Límites de esta interpretación:**
 

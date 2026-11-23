@@ -136,10 +136,12 @@ export const zhHans: Messages = {
     dry: "干刷",
   },
   quality: {
+    identical: "相同",
     "near-identical": "几乎相同",
     "very-similar": "非常相近",
     similar: "相近",
     "barely-similar": "不太相近",
+    different: "不同",
   },
   approximate: {
     allTitle: "颜色为近似值",

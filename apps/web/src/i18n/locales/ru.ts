@@ -146,10 +146,12 @@ export const ru: Messages = {
     dry: "Для драйбраша",
   },
   quality: {
+    identical: "Идентичная",
     "near-identical": "Почти идентичная",
     "very-similar": "Очень похожая",
     similar: "Похожая",
     "barely-similar": "Малопохожая",
+    different: "Другая",
   },
   approximate: {
     allTitle: "Цвета приблизительные",

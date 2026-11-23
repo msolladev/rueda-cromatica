@@ -49,7 +49,7 @@ describe("findOfficialEquivalences (docs/06 §10)", () => {
         "the-army-painter/warpaints/matt-black",
         ["the-army-painter-warpaints-conversion-chart"],
         0,
-        "near-identical",
+        "identical",
       ],
     ]);
     expect(black.replacement).toBeNull();

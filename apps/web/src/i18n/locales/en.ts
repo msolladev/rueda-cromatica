@@ -141,10 +141,12 @@ export const en: Messages = {
     dry: "Dry",
   },
   quality: {
+    identical: "Identical",
     "near-identical": "Near identical",
     "very-similar": "Very similar",
     similar: "Similar",
     "barely-similar": "Barely similar",
+    different: "Different",
   },
   approximate: {
     allTitle: "The colors are approximate",
