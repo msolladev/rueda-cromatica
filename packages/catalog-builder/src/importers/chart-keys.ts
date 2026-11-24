@@ -7,7 +7,7 @@
  * catalog). Only keys are added: no other field of a paint changes. Pure.
  */
 import type { SourceId } from "@chromatic-wheel/domain";
-import type { BrandFile, CuratedPaint, SourceRow } from "../curated/files.ts";
+import type { BrandFile, CuratedPaint, SourceRow } from "../model/curated.ts";
 import { resolveKeys, type ResolveInput } from "../pipeline/resolve.ts";
 
 /** Where the paints of a group are: a brand, or some of its ranges. */
@@ -36,6 +36,18 @@ const sameLetters = (name: string): string => name.replaceAll("’", "'");
 
 /** The rule of each group; a group without a rule proposes nothing. */
 export type KeyRules = Readonly<Record<string, KeyRule>>;
+
+/** The code of the chart as it is, as the manufacturer code. */
+export const sameCode = (literal: string): string => literal;
+
+/** A three-digit code of the chart, as the manufacturer code of a range. */
+export const prefixedCode =
+  (prefix: string) =>
+  (literal: string): string | null =>
+    /^\d{3}$/.test(literal) ? `${prefix}.${literal}` : null;
+
+/** The Citadel paints, by name: the charts give no Citadel code. */
+export const CITADEL_BY_NAME = { brandId: "citadel", by: "name" } as const;
 
 export interface KeyProposals {
   /** The brand files whose paints get keys, with their paints in place. */

@@ -7,7 +7,7 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
-import { brandFileSchema, sourceFileSchema } from "../curated/files.ts";
+import { brandFileSchema, sourceFileSchema } from "../model/curated.ts";
 
 const read = (id: string) =>
   sourceFileSchema.parse(

@@ -8,6 +8,7 @@
  */
 import { err, type Result } from "@chromatic-wheel/domain";
 import { chartCollector, type Transcription } from "./chart.ts";
+import { CITADEL_BY_NAME, type KeyRules } from "./chart-keys.ts";
 import { near, textItems, type PdfText, type PdfTextItem } from "./pdf-text.ts";
 
 /** The name of each Fanatic colour, in its hexagon. */
@@ -88,3 +89,18 @@ export function transcribeFanaticChart(
   }
   return chart.result();
 }
+
+/** How the rows of each slot of the chart find their curated paint. */
+export const FANATIC_CHART_KEYS: KeyRules = {
+  "Warpaints Fanatic": {
+    brandId: "the-army-painter",
+    rangeIds: ["the-army-painter/warpaints-fanatic"],
+    by: "name",
+  },
+  "Original Warpaints": {
+    brandId: "the-army-painter",
+    rangeIds: ["the-army-painter/warpaints"],
+    by: "name",
+  },
+  "Citadel by Games Workshop": CITADEL_BY_NAME,
+};

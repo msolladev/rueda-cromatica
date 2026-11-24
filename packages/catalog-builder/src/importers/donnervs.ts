@@ -5,7 +5,7 @@
  */
 import { err, ok, type Result } from "@chromatic-wheel/domain";
 import { z } from "zod";
-import type { SourceRow } from "../curated/files.ts";
+import type { SourceRow } from "../model/curated.ts";
 import type { ProposalRules } from "./reconcile.ts";
 
 /** The files of the repository that are transcribed, one per brand. */

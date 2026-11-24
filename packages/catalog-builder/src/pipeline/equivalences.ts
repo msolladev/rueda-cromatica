@@ -11,7 +11,7 @@ import {
   type OfficialEquivalence,
   type PaintId,
 } from "@chromatic-wheel/domain";
-import type { SourceFile } from "../curated/files.ts";
+import type { SourceFile } from "../model/curated.ts";
 import { keyOf } from "./resolve.ts";
 
 /**

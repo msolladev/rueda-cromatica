@@ -13,7 +13,7 @@ import type {
   IgnoreReason,
   SourceFile,
   SourceRow,
-} from "../curated/files.ts";
+} from "../model/curated.ts";
 
 export interface ResolveInput {
   readonly sources: readonly SourceFile[];

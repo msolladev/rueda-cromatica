@@ -29,21 +29,20 @@ import {
   parseJobStatus,
   parseSaveAnswer,
   planArchive,
+  readCurated,
+  readSourceFile,
   retryWait,
   s3Authorization,
   saveRequest,
   sha256,
+  sourceContent,
+  sourceFiles,
   statusRequest,
   WAYBACK_GAP_MS,
   type CaptureFailure,
   type RequestFailure,
-} from "../archive/archive-sources.ts";
-import {
-  readCurated,
-  readSourceFile,
-  sourceContent,
   type SourceDownload,
-} from "../curated/files.ts";
+} from "../index.ts";
 import {
   dataPath,
   printIssues,
@@ -51,7 +50,6 @@ import {
   REPO_DIR,
   writeDataFile,
 } from "./data-files.ts";
-import { sourceFiles } from "./source-files.ts";
 
 const DOWNLOADS_VARIABLE = "CATALOG_SOURCES_DIR";
 const IA_CONFIG = join(homedir(), ".config/internetarchive/ia.ini");

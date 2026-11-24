@@ -9,18 +9,25 @@ import {
   patchPaint,
   row,
 } from "../fixtures.ts";
-import { buildCatalog, type CuratedData } from "./build-catalog.ts";
+import { readCurated, type CuratedData } from "../curated/files.ts";
+import { buildCatalog } from "./build-catalog.ts";
 
 const data = curatedData;
 
+/** Reads the files and builds, as `build-catalog` does. */
+const build = (input: CuratedData) => {
+  const curated = readCurated(input);
+  return curated.ok ? buildCatalog(curated.value) : curated;
+};
+
 function built(input: CuratedData) {
-  const result = buildCatalog(input);
+  const result = build(input);
   if (!result.ok) throw new Error(JSON.stringify(result.error));
   return result.value;
 }
 
 function issues(input: CuratedData) {
-  const result = buildCatalog(input);
+  const result = build(input);
   if (result.ok) throw new Error("Expected the build to fail");
   return result.error;
 }

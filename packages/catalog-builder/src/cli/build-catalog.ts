@@ -9,14 +9,15 @@
  */
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname } from "node:path";
-import { readTombstonesFile } from "../curated/files.ts";
-import { buildCatalog } from "../pipeline/build-catalog.ts";
-import { formatDisabledSources } from "../pipeline/disabled-sources.ts";
 import {
+  buildCatalog,
   catalogIds,
   checkIdStability,
+  formatDisabledSources,
   formatStabilityIssues,
-} from "../pipeline/id-stability.ts";
+  readCurated,
+  readTombstonesFile,
+} from "../index.ts";
 import {
   dataPath,
   DISABLED_SOURCES_FILE,
@@ -37,7 +38,8 @@ async function main(check: boolean): Promise<number> {
   }
 
   const tombstones = readTombstonesFile(files.value.tombstones);
-  const result = buildCatalog(files.value.data);
+  const curated = readCurated(files.value.data);
+  const result = curated.ok ? buildCatalog(curated.value) : curated;
   const issues = [
     ...(tombstones.ok ? [] : tombstones.error),
     ...(result.ok ? [] : result.error),

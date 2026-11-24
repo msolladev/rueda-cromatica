@@ -6,8 +6,7 @@
 import { readdir, readFile, writeFile } from "node:fs/promises";
 import { join, relative, resolve } from "node:path";
 import { err, ok, type Result } from "@chromatic-wheel/domain";
-import type { DataIssue, RawFile } from "../curated/files.ts";
-import type { CuratedData } from "../pipeline/build-catalog.ts";
+import type { CuratedData, DataIssue, RawFile } from "../index.ts";
 
 const PACKAGE_DIR = resolve(import.meta.dirname, "../..");
 export const REPO_DIR = resolve(PACKAGE_DIR, "../..");

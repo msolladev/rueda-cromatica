@@ -8,8 +8,8 @@ import {
   downloadName,
   type DownloadTarget,
 } from "../archive/archive-sources.ts";
-import { ARCTURUS_FILES } from "../importers/arcturus.ts";
-import { DONNERVS_FILES } from "../importers/donnervs.ts";
+import { ARCTURUS_FILES } from "./arcturus.ts";
+import { DONNERVS_FILES } from "./donnervs.ts";
 
 /** A GitHub URL pinned to a commit: `…/blob/<sha>/<path>` or `…/tree/<sha>`. */
 export interface PinnedGitHub {
@@ -132,7 +132,7 @@ function sourceFileUrls(
   const files = TREE_FILES[source.id];
   if (files === undefined) {
     return err(
-      `${source.id}: its URL is a GitHub folder; list its files in TREE_FILES of src/cli/source-files.ts`,
+      `${source.id}: its URL is a GitHub folder; list its files in TREE_FILES of src/importers/source-files.ts`,
     );
   }
   const folder = pinned.path === "" ? "" : `${pinned.path}/`;

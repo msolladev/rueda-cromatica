@@ -4,11 +4,8 @@ import {
   type SourceId,
 } from "@chromatic-wheel/domain";
 import { describe, expect, it } from "vitest";
-import {
-  readSourceFile,
-  sourceRowSchema,
-  type ColorPolicy,
-} from "../curated/files.ts";
+import { readSourceFile } from "../curated/files.ts";
+import { sourceRowSchema, type ColorPolicy } from "../model/curated.ts";
 import { acmeSource, row, valid, type Row } from "../fixtures.ts";
 import {
   checkColorPolicy,

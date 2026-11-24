@@ -4,10 +4,10 @@
  */
 import {
   readCurated,
-  type Curated,
   type CuratedData,
   type RawFile,
 } from "./curated/files.ts";
+import type { Curated } from "./model/curated.ts";
 
 export interface Row {
   key: string;
@@ -237,6 +237,26 @@ export function curatedData(): Fixtures {
     ignoreReasons: reasonsFile(),
     colorPolicy: policyFile(),
   };
+}
+
+/**
+ * The fictitious curated data with an invented chart of Hooli, without rows,
+ * that will name Acme and Globex paints.
+ */
+export function withChart(): Fixtures {
+  const data = curatedData();
+  const acme = acmeSource();
+  data.sources.push({
+    name: "sources/hooli-chart.json",
+    content: {
+      ...acme.content,
+      source: { ...acme.content.source, id: "hooli-chart", title: "Hooli" },
+      paints: [],
+      ignoredGroups: [],
+      ignoredKeys: [],
+    },
+  });
+  return data;
 }
 
 /** The fictitious curated data, validated; fails the test if it is not. */
