@@ -16,6 +16,7 @@ Es un proyecto de aprendizaje del ecosistema Node/TS: prioriza las buenas práct
 - **Madurez de dependencias**: `minimumReleaseAge` de 7 días en `pnpm-workspace.yaml`, y `cooldown` equivalente en Dependabot. Las versiones compartidas entre paquetes van en el `catalog:` de pnpm.
 - **Tests**: Vitest, obligatorios en `domain`, `catalog-builder`, `color-wheel` y `apps/web`. El componente de la rueda y la web se prueban en un navegador real (modo navegador de Vitest con Playwright), con axe-core para la accesibilidad; la rueda, además, con entrada real de ratón y táctil. La web compilada tiene tests de extremo a extremo con `@playwright/test`: rutas, contenido sin JavaScript y funcionamiento sin conexión ([ADR-0024](docs/adr/0024-web.md)).
 - **CI/CD**: GitHub Actions ([ADR-0011](docs/adr/0011-ci-cd.md)).
+- **Backend, en la fase 6** ([ADR-0038](docs/adr/0038-stack-backend.md)): `apps/api` con NestJS sobre Express, validación y OpenAPI desde Zod con `nestjs-zod`, referencia con Scalar, PostgreSQL y Prisma 7; rutas con la versión siempre explícita (`/api/v1/…`) y fechas siempre en UTC. `apps/admin` con React y Vite, en castellano con un diccionario tipado. Autenticación con Better Auth ([ADR-0039](docs/adr/0039-cuentas-sesiones-datos-usuario.md)).
 - **Entornos**: desarrollo en WSL 2, preproducción y producción en el homelab, cada una en su VM y con la misma configuración del servidor, en `apps/web/deploy/` ([ADR-0012](docs/adr/0012-entornos.md), [ADR-0026](docs/adr/0026-preproduccion-homelab.md), [ADR-0028](docs/adr/0028-produccion-homelab.md)). Cómo se despliega y cómo se vuelve atrás, en [docs/08](docs/08-despliegue.md).
 - **Ramas**: el trabajo entra en `preprod` con un PR (_squash_), y cada push a `preprod` despliega en preproducción si pasa la CI. `preprod` llega a `main` con un PR fusionado con un commit de merge; cada push a `main` despliega en producción si pasa la CI y crea la etiqueta `release/` de la publicación. Las dos ramas están protegidas. El repositorio es público, con los PR limitados a los colaboradores.
 
@@ -28,10 +29,10 @@ El monorepo está montado. `domain` ya tiene el contrato del catálogo (esquema,
 - `packages/catalog-builder`: script Node que importa las fuentes, las normaliza (culori para el punto medio de los degradados) y genera `catalog.json`. Arquitectura hexagonal en sus bordes (disco y red).
 - `apps/web`: React, solo presentación. La lógica vive en el dominio y la rueda en `color-wheel`. Cada página de cada idioma se prerenderiza en el build, y el navegador la toma ([docs/07](docs/07-web.md), [ADR-0024](docs/adr/0024-web.md)).
 - `docs/`: especificaciones, y `docs/adr/` con los ADR.
-- Futuro, en la fase 6 ([ADR-0017](docs/adr/0017-arquitectura-objetivo-backend.md)):
-  - `apps/api`: backend REST con base de datos, que expone la instantánea pública del catálogo.
-  - `apps/admin`: frontal de mantenimiento del catálogo.
-  - `packages/importers`: la importación de fuentes, extraída de `catalog-builder`.
+- Futuro, en la fase 6 ([ADR-0017](docs/adr/0017-arquitectura-objetivo-backend.md), [ADR-0037](docs/adr/0037-catalogo-en-base-de-datos.md)):
+  - `apps/api`: backend REST con PostgreSQL. Guarda el catálogo curado, sus cambios pendientes, el historial y las publicaciones, y las cuentas y las preferencias. Habla con la base de datos, la red y la Wayback Machine.
+  - `apps/admin`: frontal de mantenimiento del catálogo y de los usuarios.
+  - `packages/catalog-builder` se queda como paquete puro, con los importadores y la generación del catálogo, que usa `apps/api`. Tras la migración desaparecen su CLI y `data/`.
 
 ## Catálogo
 
@@ -40,6 +41,7 @@ El monorepo está montado. `domain` ya tiene el contrato del catálogo (esquema,
 - Se carga con `fetch` y se valida al cargarlo. No se importa en el bundle.
 - `build-catalog` comprueba la estabilidad de IDs frente al `catalog.json` de la última etiqueta `release/` y las lápidas de `data/tombstones.json` ([docs/03](docs/03-identificadores.md) §6-7, [ADR-0025](docs/adr/0025-estabilidad-ids-etiqueta-publicacion.md), [ADR-0028](docs/adr/0028-produccion-homelab.md)).
 - El detalle está en [docs/02-esquema-catalog-json.md](docs/02-esquema-catalog-json.md).
+- En la fase 6 la fuente de verdad pasa a la base de datos, la referencia de los IDs a la última publicación, y cada publicación vuelve a desplegar la web con su catálogo ([ADR-0037](docs/adr/0037-catalogo-en-base-de-datos.md)). Hasta la migración, todo lo anterior sigue vigente.
 
 ## Reglas de dominio
 
@@ -76,7 +78,7 @@ El alcance mínimo y lo aplazado están razonados en el [ADR-0019](docs/adr/0019
   - Army Painter: Warpaints Fanatic y Speedpaint 2.0.
   - AK: 3rd Gen y Quick Gen.
   - Fuera del catálogo: productos sin color (mediums, barnices, diluyentes).
-- **Futuro** (no implementar sin pedirlo): mi colección, recetas, lista de la compra, cuentagotas sobre foto, sugerencia de lavados, mezclas, ángulos ajustables en la plantilla de la rueda, tutorial guiado de la rueda (cuando el MVP esté completo y haya usuarios reales), icono de ayuda de la rueda personalizable por la web, Tone Pro, líneas de aerógrafo, Spray, Speedpaint 1.0, búsqueda por código antiguo y una página estática por pintura con sus equivalentes en las otras marcas, para el SEO.
+- **Futuro** (no implementar sin pedirlo): mi colección, recetas, lista de la compra, cuentagotas sobre foto, sugerencia de lavados, mezclas, ángulos ajustables en la plantilla de la rueda, tutorial guiado de la rueda (cuando el MVP esté completo y haya usuarios reales), icono de ayuda de la rueda personalizable por la web, Tone Pro, líneas de aerógrafo, Spray, Speedpaint 1.0, búsqueda por código antiguo, una página estática por pintura con sus equivalentes en las otras marcas, para el SEO, los datos propios del administrador (como un color medido) como una fuente más del catálogo, y el inicio de sesión con correo y contraseña o con llaves de acceso.
 - **Búsqueda por nombre**, en el MVP ([ADR-0029](docs/adr/0029-buscador-pinturas-mvp.md), [docs/06](docs/06-pinturas-parecidas.md) §9): en el nombre, los alias, el código, la marca y la gama, desde 3 caracteres, sin distinguir mayúsculas, apóstrofos ni acentos y por fragmentos (`tigers skin` encuentra «Tiger's Eye Skin»), y sobre todo el catálogo, sin los filtros de los resultados. Después, tolerante a faltas de ortografía (`boney` encuentra «Bony»), con un orden por pesos según el dato que coincide. Con eso sobrarán los alias que hoy cubren erratas, como «Nurgles Rot», «Tigers Eye Skin» y «Boney Spikes».
 - Si una propuesta se sale del MVP, indícalo antes de implementarla.
 
@@ -106,17 +108,31 @@ El alcance mínimo y lo aplazado están razonados en el [ADR-0019](docs/adr/0019
      - 5a, los Warpaints originales (carta de 2020 transcrita a mano y colores comunitarios de Arcturus), las sustituciones en el builder y las pinturas descatalogadas y sin color en la web: hecho ([ADR-0034](docs/adr/0034-warpaints-originales-sustituciones.md)). Ninguna tiene sustituta: The Army Painter sustituye la línea, no pinta a pinta.
      - 5b, las antiguas de Citadel: hecho ([ADR-0035](docs/adr/0035-lineas-antiguas-citadel.md)). Citadel Colour (con sus tintas), Foundation y los Washes de 2008, cada una desde un documento de GW archivado en la Wayback Machine, y la carta de GW de 2012 desde su fichero original archivado, transcrita a mano. Ninguna tiene sustituta: la carta es de conversión. Las Glaze quedan fuera hasta que un documento de GW diga que se retiraron, y las Edge ya son Layer.
 
-6. **Backend, administración del catálogo y sesiones de usuario** ([ADR-0017](docs/adr/0017-arquitectura-objetivo-backend.md)). Incluye:
-   - Una API REST con base de datos y una web de administración del catálogo, con el frontal y el backend separados.
-   - Una instantánea pública del catálogo, pedida por versión de esquema, para que la PWA actualice su catálogo local sin volver a desplegarse. De la API, la PWA solo consume esa instantánea y los endpoints de usuario. La API de administración solo la usa `apps/admin`.
-   - Cuentas, sesiones y roles (usuario y administrador), gestionados desde `apps/admin`, con los datos del usuario sincronizados entre dispositivos y offline primero.
-   - La referencia de la API, con Scalar como candidato, a partir de su especificación OpenAPI. Se decide al elegir el framework de `apps/api`, porque de él depende cómo se obtiene el OpenAPI.
+6. **Backend, administración del catálogo y sesiones de usuario**. Diseño cerrado ([ADR-0037](docs/adr/0037-catalogo-en-base-de-datos.md) a [ADR-0040](docs/adr/0040-despliegue-fase-6.md), que corrigen en parte el [ADR-0017](docs/adr/0017-arquitectura-objetivo-backend.md)):
+   - **El catálogo**: se edita en la base de datos desde `apps/admin`, con cambios pendientes comunes, una vista previa frente a lo publicado y un único «Publicar», que guarda una publicación inmutable y vuelve a desplegar la web con ella. La PWA lo recibe por el precaché, como hoy. Los IDs se comprueban contra la última publicación, y una lápida puede decir qué pintura queda. Las importaciones se lanzan desde `apps/admin` y sus propuestas entran como pendientes; las filas de las fuentes son de solo lectura.
+   - **Los usuarios**: la cuenta es opcional. Se entra con GitHub, Google o Microsoft, con sesiones en la base de datos y una cookie. En esta fase solo se sincronizan las preferencias, y gana el último cambio de cada una. Solo se guarda lo estrictamente necesario (el identificador del proveedor y el correo), con la descarga de los datos y el borrado de la cuenta en autoservicio, y una página de privacidad.
+   - **El despliegue**: todo en la VM de cada entorno, con Docker Compose; la API bajo `/api` de la web y de `apps/admin` (`colorwheel-admin.msolla.dev` y `colorwheel-admin-preprod.msolla.dev`); copias diarias cifradas en el NAS, con una prueba de restauración mensual; preproducción con el catálogo de producción y sin datos de usuarios; y los tests con un catálogo de prueba congelado.
+
+   Sesiones, en orden:
+   1. **Separar `catalog-builder`**: la lógica pura de los importadores y de la generación, por un lado, y la lectura y escritura de `data/`, la red y git, por otro, sin cambiar `catalog.json`. No depende de nada.
+   2. **El esqueleto de `apps/api`**: NestJS, `nestjs-zod`, la especificación OpenAPI con Scalar, las rutas `/api/v1`, Prisma con PostgreSQL en desarrollo y en la CI, y el formato de las fechas. No depende de nada.
+   3. **El catálogo en la base de datos**: sus tablas, la carga desde `data/` que se puede repetir, la generación desde la base de datos idéntica a `catalog.json`, la tabla de publicaciones, las lápidas con la pintura que queda y `GET /api/v1/catalog`. Depende de la 1 y la 2.
+   4. **El despliegue de la API y PostgreSQL** en los dos entornos: Docker Compose, las VM a 4 GB, `/api` en el Nginx de la web, las migraciones al desplegar, las copias en el NAS con su prueba de restauración y la carga del catálogo en preproducción. Depende de la 3. Incluye los pasos manuales del homelab en docs/08.
+   5. **La autenticación**: Better Auth con los tres proveedores, las sesiones, los roles, el primer administrador, los guards y el test de los datos que no se guardan. Depende de la 4.
+   6. **El esqueleto de `apps/admin`**: React y Vite, el diccionario, el inicio de sesión, el cliente tipado desde OpenAPI y su despliegue en su subdominio. Depende de la 5.
+   7. **Editar y publicar el catálogo**: las fichas, las decisiones de color, las claves y las ignoradas como cambios pendientes, el historial, la vista previa, «Publicar» con sus comprobaciones y el despliegue que lanza, y la web compilada con la publicación y probada con el catálogo de prueba. Depende de la 3 y la 6.
+   8. **Las importaciones desde `apps/admin`**: las transcripciones y la conciliación como pendientes, `archive-sources` en la API, y los informes de discrepancias y de fuentes desactivadas como pantallas. Depende de la 7.
+   9. **La migración definitiva**: la carga final, y se borran `data/`, la CLI y el `catalog.json` del repositorio. Se actualizan docs/02, 03, 04, 07 y 08 y el README. Depende de la 8.
+   10. **Las cuentas en la web**: el inicio de sesión opcional, la sincronización de las preferencias, la página de privacidad en los 13 idiomas, la descarga de los datos y el borrado de la cuenta, y la gestión de los roles en `apps/admin`. Depende de la 5 y la 6, y puede ir antes de la 7.
 
 7. **Color de gama amplia y simulación 3D**, la última fase. Están decididas, no son opcionales:
    - **Display P3 y OKLCH**: la rueda calcula también en OKLCH, para que las armonías del modelo digital sean uniformes a la vista, y se dibuja en Display P3 en las pantallas que lo admiten. Antes hay que resolver qué se hace con un color fuera de sRGB, que no tiene ninguna pintura del catálogo cerca, porque todos sus hex son sRGB.
    - **Simulación 3D**: una miniatura de ejemplo de pocos polígonos, en WebGL, pintada con los colores de la rueda o con pinturas de distintas marcas para compararlas, con la luz simulada y su dirección y hora del día ajustables. Tiene que funcionar sin conexión, y el modelo 3D necesita una licencia que permita usarlo.
 
 Pendiente fuera de la hoja de ruta:
+
+- Que el código de `catalog-builder` que escribe `data/` formatee él mismo con Prettier, declarado en el paquete, para no tener que ejecutar `pnpm format` después de importar.
+- Antes de que haya usuarios reales con cuenta, decidir la copia de seguridad fuera de casa, la tercera de la regla 3-2-1 ([ADR-0040](docs/adr/0040-despliegue-fase-6.md)).
 
 - Antes de cualquier despliegue público, revisar las fuentes con licencia `unknown` o `terms-of-use`.
 - Antes de cualquier despliegue público, revisar los textos de la web en catalán, euskera, gallego, francés, alemán, italiano, portugués, ruso, chino, japonés y coreano, que nadie ha revisado.
