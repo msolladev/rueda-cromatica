@@ -7,12 +7,6 @@
  *
  * The files are fetched at the commit pinned in the source's `url`.
  */
-import { sourceIdSchema } from "@chromatic-wheel/domain";
-import { ARCTURUS_RULES, transcribeArcturus } from "../importers/arcturus.ts";
-import { fileText, rowsOnly, runImport } from "./run-import.ts";
+import { runImports } from "./run-import.ts";
 
-process.exitCode = await runImport({
-  sourceId: sourceIdSchema.parse("arcturus5404-miniature-paints"),
-  transcribe: (files) => rowsOnly(transcribeArcturus(files.map(fileText))),
-  rules: ARCTURUS_RULES,
-});
+await runImports(["arcturus5404-miniature-paints"]);

@@ -8,6 +8,12 @@
 import { err, type Result } from "@chromatic-wheel/domain";
 import { chartCollector, type Transcription } from "./chart.ts";
 import {
+  CITADEL_BY_NAME,
+  prefixedCode,
+  sameCode,
+  type KeyRules,
+} from "./chart-keys.ts";
+import {
   cellText,
   near,
   textItems,
@@ -146,3 +152,26 @@ export function transcribeAk3GenEquivalences(
   });
   return chart.result();
 }
+
+/** How the rows of each column of the table find their curated paint. */
+export const AK_3GEN_KEYS: KeyRules = {
+  "AK 3G": {
+    brandId: "ak-interactive",
+    rangeIds: ["ak-interactive/3gen-acrylics"],
+    by: "code",
+    code: sameCode,
+  },
+  "Vallejo MC": {
+    brandId: "vallejo",
+    rangeIds: ["vallejo/model-color"],
+    by: "code",
+    code: prefixedCode("70"),
+  },
+  "Vallejo GC": {
+    brandId: "vallejo",
+    rangeIds: ["vallejo/game-color"],
+    by: "code",
+    code: prefixedCode("72"),
+  },
+  "New Citadel": CITADEL_BY_NAME,
+};

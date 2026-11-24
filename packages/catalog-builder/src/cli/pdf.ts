@@ -2,7 +2,7 @@
  * Reads the text of a PDF with pdf.js, the reader of Firefox (ADR-0033), for
  * the chart importers. Only the text and its positions: nothing is rendered.
  */
-import type { PdfPage, PdfText } from "../importers/pdf-text.ts";
+import type { PdfPage, PdfText } from "../index.ts";
 
 /**
  * pdf.js, loaded once. On loading, it warns that it cannot render without its

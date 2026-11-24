@@ -26,7 +26,7 @@ El monorepo está montado. `domain` ya tiene el contrato del catálogo (esquema,
 
 - `packages/color-wheel`: la rueda completa, solo con colores y sin pinturas: los modelos RYB y digital, las armonías, el esquema de miniatura (culori, y spectral.js para las mezclas) y el dibujo con la plantilla giratoria y sus controles. Es un componente completo y agnóstico del framework, que se inicializa sobre un contenedor y se entrega compilado a JS con sus tipos. No depende de `domain`. Se diseña como publicable, pero no se publica en npm ([ADR-0020](docs/adr/0020-rueda-paquete-independiente.md), [docs/05](docs/05-rueda-de-color.md)).
 - `packages/domain`: TS puro, con el modelo del catálogo, su validación (Zod), la búsqueda de la pintura más parecida con el Delta E (culori) y la búsqueda por nombre ([docs/06](docs/06-pinturas-parecidas.md)). Sin dependencias de React ni del navegador.
-- `packages/catalog-builder`: script Node que importa las fuentes, las normaliza (culori para el punto medio de los degradados) y genera `catalog.json`. Arquitectura hexagonal en sus bordes (disco y red).
+- `packages/catalog-builder`: importa las fuentes, las normaliza (culori para el punto medio de los degradados) y genera `catalog.json`. Su API es la lógica pura, sin disco, red, git ni PDF, que usará `apps/api`; la CLI de `src/cli/` lee y escribe `data/` y solo usa esa API. ESLint vigila la frontera ([ADR-0041](docs/adr/0041-frontera-logica-pura-catalog-builder.md)).
 - `apps/web`: React, solo presentación. La lógica vive en el dominio y la rueda en `color-wheel`. Cada página de cada idioma se prerenderiza en el build, y el navegador la toma ([docs/07](docs/07-web.md), [ADR-0024](docs/adr/0024-web.md)).
 - `docs/`: especificaciones, y `docs/adr/` con los ADR.
 - Futuro, en la fase 6 ([ADR-0017](docs/adr/0017-arquitectura-objetivo-backend.md), [ADR-0037](docs/adr/0037-catalogo-en-base-de-datos.md)):
@@ -114,7 +114,7 @@ El alcance mínimo y lo aplazado están razonados en el [ADR-0019](docs/adr/0019
    - **El despliegue**: todo en la VM de cada entorno, con Docker Compose; la API bajo `/api` de la web y de `apps/admin` (`colorwheel-admin.msolla.dev` y `colorwheel-admin-preprod.msolla.dev`); copias diarias cifradas en el NAS, con una prueba de restauración mensual; preproducción con el catálogo de producción y sin datos de usuarios; y los tests con un catálogo de prueba congelado.
 
    Sesiones, en orden:
-   1. **Separar `catalog-builder`**: la lógica pura de los importadores y de la generación, por un lado, y la lectura y escritura de `data/`, la red y git, por otro, sin cambiar `catalog.json`. No depende de nada.
+   1. **Separar `catalog-builder`**: la lógica pura de los importadores y de la generación, por un lado, y la lectura y escritura de `data/`, la red y git, por otro, sin cambiar `catalog.json`. No depende de nada. Hecho ([ADR-0041](docs/adr/0041-frontera-logica-pura-catalog-builder.md)).
    2. **El esqueleto de `apps/api`**: NestJS, `nestjs-zod`, la especificación OpenAPI con Scalar, las rutas `/api/v1`, Prisma con PostgreSQL en desarrollo y en la CI, y el formato de las fechas. No depende de nada.
    3. **El catálogo en la base de datos**: sus tablas, la carga desde `data/` que se puede repetir, la generación desde la base de datos idéntica a `catalog.json`, la tabla de publicaciones, las lápidas con la pintura que queda y `GET /api/v1/catalog`. Depende de la 1 y la 2.
    4. **El despliegue de la API y PostgreSQL** en los dos entornos: Docker Compose, las VM a 4 GB, `/api` en el Nginx de la web, las migraciones al desplegar, las copias en el NAS con su prueba de restauración y la carga del catálogo en preproducción. Depende de la 3. Incluye los pasos manuales del homelab en docs/08.
@@ -131,7 +131,6 @@ El alcance mínimo y lo aplazado están razonados en el [ADR-0019](docs/adr/0019
 
 Pendiente fuera de la hoja de ruta:
 
-- Que el código de `catalog-builder` que escribe `data/` formatee él mismo con Prettier, declarado en el paquete, para no tener que ejecutar `pnpm format` después de importar.
 - Antes de que haya usuarios reales con cuenta, decidir la copia de seguridad fuera de casa, la tercera de la regla 3-2-1 ([ADR-0040](docs/adr/0040-despliegue-fase-6.md)).
 
 - Antes de cualquier despliegue público, revisar las fuentes con licencia `unknown` o `terms-of-use`.

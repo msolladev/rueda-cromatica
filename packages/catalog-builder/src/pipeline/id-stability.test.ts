@@ -3,8 +3,8 @@ import {
   ID_COLLECTIONS,
   type IdCollection,
   type Tombstones,
-} from "../curated/files.ts";
-import { curatedData } from "../fixtures.ts";
+} from "../model/curated.ts";
+import { curated } from "../fixtures.ts";
 import { buildCatalog } from "./build-catalog.ts";
 import {
   catalogIds,
@@ -26,7 +26,7 @@ const RETIRED: Readonly<Record<IdCollection, string>> = {
 
 /** The IDs of the catalog built from the fixtures. */
 function current(): CatalogIds {
-  const built = buildCatalog(curatedData());
+  const built = buildCatalog(curated());
   if (!built.ok) throw new Error(JSON.stringify(built.error));
   const ids = catalogIds(built.value.document);
   if (!ids.ok) throw new Error(ids.error);

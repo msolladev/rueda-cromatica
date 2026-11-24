@@ -12,7 +12,7 @@ import {
   type Replacement,
   type Result,
 } from "@chromatic-wheel/domain";
-import type { CuratedPaint, SourceFile } from "../curated/files.ts";
+import type { CuratedPaint, SourceFile } from "../model/curated.ts";
 import type { ColorIssue } from "./color.ts";
 import { keyOf } from "./resolve.ts";
 

@@ -17,12 +17,12 @@ import {
   type SourceDownload,
   type SourceFile,
   type SourceFileContent,
-} from "../curated/files.ts";
+} from "../model/curated.ts";
 
 const WAYBACK = "https://web.archive.org";
 
 /**
- * A file of a source (`cli/source-files.ts`): where it is read and downloaded
+ * A file of a source (`importers/source-files.ts`): where it is read and downloaded
  * from, and its name in the folder of the source.
  */
 export interface DownloadTarget {
@@ -53,7 +53,7 @@ export function downloadName(url: string): string {
 
 /**
  * What is missing in a source: its capture if it has none, and the files of
- * `targets` (from `cli/source-files.ts`) not downloaded yet. A file already
+ * `targets` (from `importers/source-files.ts`) not downloaded yet. A file already
  * listed is never downloaded again, so running it twice does nothing more.
  * Fails if two files would get the same name.
  */

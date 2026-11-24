@@ -4,7 +4,7 @@
  * pairs of keys, in the chart's order and direction. Pure.
  */
 import { err, ok, type Result } from "@chromatic-wheel/domain";
-import type { EquivalenceRow, SourceRow } from "../curated/files.ts";
+import type { EquivalenceRow, SourceRow } from "../model/curated.ts";
 
 /** The literal transcription of a source. */
 export interface Transcription {

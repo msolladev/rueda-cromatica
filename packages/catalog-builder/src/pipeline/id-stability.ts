@@ -9,7 +9,7 @@ import {
   ID_COLLECTIONS,
   type IdCollection,
   type Tombstones,
-} from "../curated/files.ts";
+} from "../model/curated.ts";
 
 /** The IDs of each collection of a catalog. */
 export type CatalogIds = Readonly<Record<IdCollection, ReadonlySet<string>>>;

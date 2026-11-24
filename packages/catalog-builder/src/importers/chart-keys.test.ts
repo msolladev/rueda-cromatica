@@ -1,32 +1,14 @@
 import { sourceIdSchema } from "@chromatic-wheel/domain";
 import { describe, expect, it } from "vitest";
-import { sourceRowSchema } from "../curated/files.ts";
+import { sourceRowSchema } from "../model/curated.ts";
 import {
-  acmeSource,
   curated,
-  curatedData,
   patchPaint,
   row,
+  withChart,
   type Fixtures,
 } from "../fixtures.ts";
 import { proposeKeys, type KeyRules } from "./chart-keys.ts";
-
-/** An invented chart of Hooli that names Acme and Globex paints. */
-function withChart(): Fixtures {
-  const data = curatedData();
-  const acme = acmeSource();
-  data.sources.push({
-    name: "sources/hooli-chart.json",
-    content: {
-      ...acme.content,
-      source: { ...acme.content.source, id: "hooli-chart", title: "Hooli" },
-      paints: [],
-      ignoredGroups: [],
-      ignoredKeys: [],
-    },
-  });
-  return data;
-}
 
 const brand = (data: Fixtures, index: number) => {
   const file = data.brands[index];

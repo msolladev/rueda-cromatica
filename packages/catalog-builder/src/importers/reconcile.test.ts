@@ -1,6 +1,6 @@
 import { sourceIdSchema } from "@chromatic-wheel/domain";
 import { describe, expect, it } from "vitest";
-import { sourceRowSchema } from "../curated/files.ts";
+import { sourceRowSchema } from "../model/curated.ts";
 import { curated, curatedData, row, valid, type Row } from "../fixtures.ts";
 import { reconcile, type ProposalRules } from "./reconcile.ts";
 

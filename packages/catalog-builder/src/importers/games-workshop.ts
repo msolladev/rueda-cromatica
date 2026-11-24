@@ -2,12 +2,12 @@
  * Importers of the old documents of Games Workshop that prove which paints
  * each discontinued Citadel line had (ADR-0035): the paints and inks
  * checklist of 2004 and the Foundation and Washes pages of its website of
- * 2008. Their original URLs are gone; `cli/source-files.ts` reads them from their
+ * 2008. Their original URLs are gone; `importers/source-files.ts` reads them from their
  * captures in the Wayback Machine. None gives a colour. Pure: each receives
  * the file already read.
  */
 import { err, ok, type Result } from "@chromatic-wheel/domain";
-import type { SourceRow } from "../curated/files.ts";
+import type { SourceRow } from "../model/curated.ts";
 import { chartCollector } from "./chart.ts";
 import { textItems, type PdfText } from "./pdf-text.ts";
 import type { ProposalRules } from "./reconcile.ts";

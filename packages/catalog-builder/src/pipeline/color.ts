@@ -20,7 +20,7 @@ import type {
   RejectedColor,
   SourceFile,
   SourceRow,
-} from "../curated/files.ts";
+} from "../model/curated.ts";
 import type { ResolvedRow } from "./resolve.ts";
 
 const toLab = converter("lab65");

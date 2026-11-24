@@ -1,6 +1,6 @@
 # ADR-0018: Organización del código y patrones
 
-- **Estado:** aceptada; corregida en parte por ADR-0024
+- **Estado:** aceptada; corregida en parte por ADR-0024 y ADR-0041
 - **Fecha:** 2026-11-08
 
 ## Contexto

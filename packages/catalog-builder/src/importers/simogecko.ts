@@ -5,7 +5,7 @@
  * receive the Markdown already read.
  */
 import { err, ok, type Result } from "@chromatic-wheel/domain";
-import type { SourceRow } from "../curated/files.ts";
+import type { SourceRow } from "../model/curated.ts";
 import type { ProposalRules } from "./reconcile.ts";
 
 /** A hex, or a `dark_light` gradient, as the table writes them. */

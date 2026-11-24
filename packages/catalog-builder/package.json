@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
   "scripts": {
     "archive-sources": "node src/cli/archive-sources.ts",
     "build-catalog": "node src/cli/build-catalog.ts",
@@ -24,6 +27,7 @@
     "@types/culori": "catalog:",
     "@types/node": "catalog:",
     "pdfjs-dist": "6.5.438",
+    "prettier": "catalog:",
     "typescript": "catalog:",
     "vitest": "catalog:"
   }

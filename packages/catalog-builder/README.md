@@ -1,6 +1,11 @@
 # @chromatic-wheel/catalog-builder
 
-Herramienta de línea de comandos que genera `apps/web/public/catalog.json`, el catálogo de pinturas que carga la web. No es una librería: no la importa ningún otro paquete.
+Genera `apps/web/public/catalog.json`, el catálogo de pinturas que carga la web. Tiene dos partes ([ADR-0041](../../docs/adr/0041-frontera-logica-pura-catalog-builder.md)):
+
+- **La lógica pura**, que es la API del paquete (`src/index.ts`): el modelo de los datos curados, la generación del catálogo y sus informes, la estabilidad de IDs, los importadores y la parte pura de `archive-sources`. No lee ni escribe ficheros, no descarga, no lee PDF y no consulta git: lo recibe todo ya leído. La usará `apps/api` en la fase 6 ([ADR-0037](../../docs/adr/0037-catalogo-en-base-de-datos.md)).
+- **La CLI**, en `src/cli/`, que lee y escribe `data/`, descarga las fuentes, lee los PDF, consulta git e imprime. Solo usa la API del paquete. Desaparece con la migración a la base de datos.
+
+ESLint falla si un módulo puro importa un módulo de Node (salvo `node:crypto`), pdf.js, Prettier o `src/cli/`, o si usa `fetch`, `process` o `console`.
 
 - **El builder** lee los datos que mantiene el proyecto, en `data/`, en dos capas: lo que dice cada fuente, transcrito de forma literal en `data/sources/`, y las pinturas curadas de cada marca en `data/brands/`, con las claves que las cruzan con las filas de cada fuente. Comprueba que cada fila tenga su pintura o esté ignorada con su motivo, elige el color de cada pintura entre los candidatos de sus fuentes y escribe el catálogo de forma determinista. Falla en lugar de adivinar, y no escribe nada si algo no cuadra. La CI lo vuelve a generar y falla si no coincide con el versionado.
 - **El color**: gana el mejor candidato por origen (`measured` > `manufacturer` > `community`) y, dentro de cada origen, por el orden de `data/color-policy.json`. Cada ficha puede descartar candidatos, con un motivo, o elegir uno a mano, con una nota. Los dos fijan el hex que se revisó, y el build falla si la fuente lo cambia. Además, el builder escribe `reports/color-discrepancies.json` con las pinturas en las que el color publicado y otro candidato están a un ΔE mayor que 5, para revisarlas en el diff.
@@ -12,6 +17,34 @@ Herramienta de línea de comandos que genera `apps/web/public/catalog.json`, el 
 - **`archive-sources`** busca o solicita una captura de cada fuente en la Wayback Machine y descarga sus ficheros a una carpeta fuera del repositorio, con su SHA-256. Se ejecuta a demanda y solo hace lo que falta.
 
 Los comandos están en el [README de la raíz](../../README.md#comandos).
+
+## Estructura
+
+```
+src/
+  model/       el modelo de los datos curados: esquemas, tipos y comprobaciones
+  curated/     la lectura validada de los ficheros de data/
+  pipeline/    la generación del catálogo, sus informes y la estabilidad de IDs
+  importers/   la transcripción de cada fuente, sus reglas y la conciliación
+  archive/     la parte pura de archive-sources
+  cli/         los comandos: disco, red, git, PDF y mensajes
+  index.ts     la API pública
+```
+
+## Ejemplo
+
+Generar el catálogo a partir de los ficheros ya leídos, como hace `build-catalog`:
+
+```ts
+import { buildCatalog, readCurated } from "@chromatic-wheel/catalog-builder";
+
+const curated = readCurated({ sources, brands, ignoreReasons, colorPolicy });
+const built = curated.ok ? buildCatalog(curated.value) : curated;
+if (built.ok) console.log(built.value.json);
+else console.error(built.error);
+```
+
+Cada fichero es su nombre dentro de `data/` y su contenido ya interpretado como JSON, como `{ name: "brands/citadel.json", content }`.
 
 ## Documentación
 

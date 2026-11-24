@@ -6,7 +6,8 @@
  * `catalog.json` document, without the disabled sources. Then validates it
  * with `parseCatalog` and serialises it
  * deterministically (docs/02 §1), with the report of colour discrepancies and
- * the summary of the disabled sources. Pure: the files arrive already read.
+ * the summary of the disabled sources. Pure: the curated data arrives already
+ * read and validated.
  */
 import { createHash } from "node:crypto";
 import {
@@ -22,11 +23,7 @@ import {
   type Result,
   type SourceId,
 } from "@chromatic-wheel/domain";
-import {
-  readCurated,
-  type CuratedData,
-  type DataIssue,
-} from "../curated/files.ts";
+import type { Curated, DataIssue } from "../model/curated.ts";
 import { checkColorPolicy, selectColor, type ColorIssue } from "./color.ts";
 import {
   colorChange,
@@ -39,8 +36,6 @@ import { colorDiscrepancies, type Discrepancy } from "./discrepancies.ts";
 import { officialEquivalences } from "./equivalences.ts";
 import { replacementClaims, selectReplacement } from "./replacements.ts";
 import { resolveKeys } from "./resolve.ts";
-
-export type { CuratedData };
 
 export interface BuiltCatalog {
   readonly document: CatalogDocument;
@@ -68,19 +63,18 @@ interface Located<T> {
 }
 
 export function buildCatalog(
-  data: CuratedData,
+  curated: Curated,
 ): Result<BuiltCatalog, readonly DataIssue[]> {
-  // 1. Load and check every file, collecting all issues.
-  const curated = readCurated(data);
-  if (!curated.ok) return err(curated.error);
-  const { sources: sourceFiles, brands: brandFiles, policy } = curated.value;
+  // 1. Every file was loaded and checked by `readCurated` (docs/04 §6).
+  const { sources: sourceFiles, brands: brandFiles } = curated;
+  const { policy } = curated.policy;
 
   // 2. Key resolution: every row has one paint or is ignored.
-  const resolution = resolveKeys(curated.value);
+  const resolution = resolveKeys(curated);
   const issues: DataIssue[] = [
     ...resolution.issues,
     ...checkColorPolicy(policy, sourceFiles).map((message) => ({
-      file: data.colorPolicy.name,
+      file: curated.policy.name,
       path: "",
       message,
     })),

@@ -11,7 +11,7 @@ import {
   latestRelease,
   RELEASE_TAG_PREFIX,
   type PublishedCatalog,
-} from "../pipeline/id-stability.ts";
+} from "../index.ts";
 import { OUTPUT_FILE, REPO_DIR } from "./data-files.ts";
 
 const run = promisify(execFile);

@@ -7,6 +7,7 @@
  */
 import { err, type Result } from "@chromatic-wheel/domain";
 import { chartCollector, type Transcription } from "./chart.ts";
+import { CITADEL_BY_NAME, sameCode, type KeyRules } from "./chart-keys.ts";
 import {
   cellText,
   near,
@@ -251,3 +252,11 @@ function nearest(
   }
   return best;
 }
+
+/** How the rows of each table of CC266 find their curated paint. */
+export const CC266_KEYS: KeyRules = {
+  "Game Color": { brandId: "vallejo", by: "code", code: sameCode },
+  "Game Color Wash": { brandId: "vallejo", by: "code", code: sameCode },
+  "Xpress Color": { brandId: "vallejo", by: "code", code: sameCode },
+  Citadel: CITADEL_BY_NAME,
+};

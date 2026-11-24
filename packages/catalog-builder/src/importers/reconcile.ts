@@ -21,7 +21,7 @@ import type {
   CuratedPaint,
   DataIssue,
   SourceRow,
-} from "../curated/files.ts";
+} from "../model/curated.ts";
 import { resolveKeys, type ResolveInput } from "../pipeline/resolve.ts";
 import { proposeSlug } from "./slug.ts";
 

@@ -173,6 +173,9 @@ catalogs:
     culori:
       specifier: 4.0.2
       version: 4.0.2
+    prettier:
+      specifier: 3.10.1
+      version: 3.10.1
     typescript:
       specifier: 6.0.3
       version: 6.0.3
@@ -218,7 +221,7 @@ importers:
         specifier: runtime:26.13.0
         version: runtime:26.13.0
       prettier:
-        specifier: 3.10.1
+        specifier: 'catalog:'
         version: 3.10.1
       typedoc:
         specifier: 0.28.20
@@ -318,6 +321,9 @@ importers:
       pdfjs-dist:
         specifier: 6.5.438
         version: 6.5.438
+      prettier:
+        specifier: 'catalog:'
+        version: 3.10.1
       typescript:
         specifier: 'catalog:'
         version: 6.0.3
