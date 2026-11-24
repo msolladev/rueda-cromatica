@@ -1,6 +1,6 @@
 # ADR-0025: Estabilidad de IDs frente a la etiqueta de publicación
 
-- **Estado:** aceptada; corregida en parte por [ADR-0028](0028-produccion-homelab.md)
+- **Estado:** aceptada; corregida en parte por [ADR-0028](0028-produccion-homelab.md) y [ADR-0037](0037-catalogo-en-base-de-datos.md)
 - **Fecha:** 2026-11-19
 
 ## Contexto

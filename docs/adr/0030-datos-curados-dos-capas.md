@@ -1,6 +1,6 @@
 # ADR-0030: Datos curados en dos capas
 
-- **Estado:** aceptada
+- **Estado:** aceptada; corregida en parte por [ADR-0037](0037-catalogo-en-base-de-datos.md)
 - **Fecha:** 2026-11-22
 - **Corrige en parte:** [ADR-0019](0019-alcance-minimo-mvp.md)
 
