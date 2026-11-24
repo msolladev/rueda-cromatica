@@ -1,0 +1,26 @@
+# PostgreSQL for development (docs/09 §6): the official image, the one of the
+# CI and the environments (ADR-0040), only reachable from this machine. Its
+# data live in a volume, so they survive `db:down`; `db:reset` deletes them.
+name: chromatic-wheel-dev
+
+services:
+  postgres:
+    image: postgres:18.7-trixie@sha256:c699303802144847d238196173655dbbecf7a96aeca1565f2b02eb671a1f0b6b
+    environment:
+      # Only for this local database, which is never exposed: production
+      # takes its own from the environment's machine.
+      POSTGRES_USER: chromatic_wheel
+      POSTGRES_PASSWORD: chromatic_wheel
+      POSTGRES_DB: chromatic_wheel
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready --username chromatic_wheel"]
+      interval: 2s
+      timeout: 5s
+      retries: 15
+
+volumes:
+  postgres-data:

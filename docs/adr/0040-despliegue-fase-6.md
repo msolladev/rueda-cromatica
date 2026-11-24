@@ -1,6 +1,6 @@
 # ADR-0040: El despliegue de la fase 6
 
-- **Estado:** aceptada
+- **Estado:** aceptada; corregida en parte por [ADR-0042](0042-esqueleto-api.md)
 - **Fecha:** 2026-11-24
 
 ## Contexto

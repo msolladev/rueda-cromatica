@@ -22,7 +22,13 @@ const PURE_MESSAGE =
   "The pure logic of catalog-builder does not reach the disk, the network, git or PDF files (ADR-0037): do it in src/cli/ and pass the data in.";
 
 export default defineConfig(
-  globalIgnores(["**/dist/", "**/dev-dist/", "**/coverage/"]),
+  globalIgnores([
+    "**/dist/",
+    "**/dev-dist/",
+    "**/coverage/",
+    // The client that Prisma generates (docs/09 §6).
+    "apps/api/src/generated/",
+  ]),
   js.configs.recommended,
   tseslint.configs.strictTypeChecked,
   {
@@ -47,7 +53,17 @@ export default defineConfig(
     rules: { "react-refresh/only-export-components": "off" },
   },
   {
-    files: ["packages/catalog-builder/**/*.ts"],
+    // NestJS declares its modules as empty classes with a decorator.
+    files: ["apps/api/**/*.ts"],
+    rules: {
+      "@typescript-eslint/no-extraneous-class": [
+        "error",
+        { allowWithDecorator: true },
+      ],
+    },
+  },
+  {
+    files: ["apps/api/**/*.ts", "packages/catalog-builder/**/*.ts"],
     languageOptions: { globals: globals.node },
   },
   {

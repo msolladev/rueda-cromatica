@@ -61,3 +61,5 @@ export {
   type PaintSearchIndex,
   type TextRange,
 } from "./search/paint-search.ts";
+
+export { instantSchema, toInstant, type Instant } from "./time/instant.ts";

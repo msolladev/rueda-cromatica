@@ -28,3 +28,17 @@ updates:
       interval: weekly
     cooldown:
       default-days: 7
+
+  # The PostgreSQL image of development and the CI (apps/api), pinned by
+  # version and digest. A new major version needs its data migrated, so it is
+  # a decision of its own, not an update.
+  - package-ecosystem: docker-compose
+    directory: /apps/api
+    target-branch: preprod
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 7
+    ignore:
+      - dependency-name: postgres
+        update-types: [version-update:semver-major]

@@ -1,0 +1,39 @@
+# @chromatic-wheel/api
+
+La API REST de la rueda, con NestJS y PostgreSQL. Guardará el catálogo curado, sus publicaciones, las cuentas y las preferencias. Hoy es el esqueleto, sin funcionalidad de negocio:
+
+- las rutas bajo `/api`, con la versión siempre explícita (`/api/v1/…`);
+- la validación de las peticiones y las respuestas con Zod, que también genera la especificación OpenAPI;
+- la referencia de la API con Scalar;
+- PostgreSQL con Prisma 7 y sus migraciones;
+- `GET /api/v1/health`, que comprueba que la API y su base de datos responden.
+
+Las reglas comunes a todas las rutas están en [docs/09](../../docs/09-api.md), y las rutas, en la referencia que sirve la propia API.
+
+## Ejemplo
+
+Con Docker en marcha, desde la raíz del repositorio:
+
+```sh
+pnpm --filter @chromatic-wheel/api db:up   # PostgreSQL de desarrollo
+pnpm --filter @chromatic-wheel/api dev     # la API en http://localhost:3000
+```
+
+```sh
+curl http://localhost:3000/api/v1/health
+# {"status":"ok","checkedAt":"2027-03-01T09:00:00.000Z"}
+```
+
+La referencia está en `http://localhost:3000/api/v1/reference`.
+
+## Comandos
+
+Con `pnpm --filter @chromatic-wheel/api <script>`:
+
+- `db:up` / `db:down`: arranca o para la PostgreSQL de desarrollo (`compose.yaml`). Sus datos se conservan en un volumen.
+- `db:reset`: la para y borra sus datos.
+- `db:migrate`: crea una migración con los cambios de `prisma/schema.prisma` y la aplica a la base de datos de desarrollo ([docs/09](../../docs/09-api.md) §6).
+- `dev`: la API con recarga al cambiar el código, con las variables de `.env.development`.
+- `build` / `start`: compila la API en `dist/` y la arranca. `start` toma la configuración de las variables de entorno ([docs/09](../../docs/09-api.md) §2).
+- `test`: los tests unitarios y los de integración, que necesitan la PostgreSQL de `db:up` ([docs/09](../../docs/09-api.md) §7).
+- `typecheck`: los tipos, con el cliente de Prisma recién generado.

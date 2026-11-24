@@ -22,7 +22,7 @@ feat/x ──PR (squash)──▶ preprod ──PR (merge)──▶ main
 
 El workflow `ci.yml` llama a `deploy.yml` con el entorno de la rama: `preprod` con `preprod` y `main` con `production`. `deploy.yml` es el mismo para todos los entornos:
 
-1. **`verify`**, en un runner de GitHub: la misma verificación que los PR (la acción `.github/actions/verify`), con el build compilado con el `SITE_ORIGIN` del entorno. Incluye los tests de extremo a extremo y las comprobaciones del servidor sobre ese mismo `dist`. Después sube como artefacto de la ejecución el `dist` y la referencia de la API (`dist/reference/`).
+1. **`verify`**, en un runner de GitHub: la misma verificación que los PR (la acción `.github/actions/verify`), con el build compilado con el `SITE_ORIGIN` del entorno. Incluye los tests de integración de la API, con su PostgreSQL de Docker Compose ([docs/09](09-api.md) §7), los tests de extremo a extremo y las comprobaciones del servidor sobre ese mismo `dist`. Después sube como artefacto de la ejecución el `dist` y la referencia de la API (`dist/reference/`).
 2. **`deploy`**, en el runner propio de la VM del entorno, solo si el anterior ha pasado. Descarga ese artefacto, sin compilar nada, y ejecuta `apps/web/deploy/deploy.sh` con el entorno:
    1. monta la imagen de esa versión, con el commit en su nombre (`colorwheel-web:<commit>`);
    2. la arranca junto a la que sirve, solo accesible desde la propia VM, y le pasa las comprobaciones (`smoke-check.sh`);
