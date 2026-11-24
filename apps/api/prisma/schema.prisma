@@ -1,0 +1,14 @@
+// The database of the API (docs/09 §6). Every change is a migration in SQL,
+// reviewed in the pull request, that also works with the previous version of
+// the API (ADR-0040). Every date is a `DateTime @db.Timestamptz(3)`: Prisma's
+// default, `timestamp`, has no time zone (ADR-0038).
+
+generator client {
+  provider     = "prisma-client"
+  output       = "../src/generated/prisma"
+  moduleFormat = "esm"
+}
+
+datasource db {
+  provider = "postgresql"
+}

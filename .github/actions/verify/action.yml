@@ -2,7 +2,7 @@
 # the deployed branches, which build with their environment's origin (docs/08). It runs
 # after a checkout with the full history and the tags.
 name: Verify
-description: Installs, checks, tests and builds the monorepo, and checks the web's server of every environment with the built web.
+description: Installs, checks, tests (the API's with its PostgreSQL) and builds the monorepo, and checks the web's server of every environment with the built web.
 
 inputs:
   site-origin:
@@ -52,6 +52,10 @@ runs:
       run: pnpm --filter @chromatic-wheel/color-wheel exec playwright install-deps chromium firefox
       shell: bash
 
+    # The PostgreSQL of the API's integration tests (docs/09 §7): the same
+    # compose.yaml as in development, with the database of its .env.test.
+    - run: pnpm --filter @chromatic-wheel/api db:up
+      shell: bash
     - run: pnpm test
       shell: bash
     # Step 4 (ADR-0011): regenerates catalog.json and fails if it differs from the

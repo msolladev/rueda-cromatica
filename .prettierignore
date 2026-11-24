@@ -5,3 +5,4 @@ coverage/
 apps/web/public/catalog.json
 packages/catalog-builder/reports/color-discrepancies.json
 packages/catalog-builder/reports/disabled-sources.json
+apps/api/src/generated/
