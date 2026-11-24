@@ -27,6 +27,7 @@
     "@types/culori": "catalog:",
     "@types/node": "catalog:",
     "pdfjs-dist": "6.5.438",
+    "prettier": "catalog:",
     "typescript": "catalog:",
     "vitest": "catalog:"
   }

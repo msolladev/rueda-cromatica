@@ -390,7 +390,7 @@ async function main(): Promise<number> {
       `\n${String(left)} source(s) incomplete; what is missing stays empty in their files. Run the same command again later: it only does what is missing.`,
     );
   }
-  console.log("\nNext: pnpm format, then build-catalog, and review the diff.");
+  console.log("\nNext: build-catalog, and review the diff.");
   return left > 0 ? 1 : 0;
 }
 

@@ -6,6 +6,7 @@
 import { readdir, readFile, writeFile } from "node:fs/promises";
 import { join, relative, resolve } from "node:path";
 import { err, ok, type Result } from "@chromatic-wheel/domain";
+import { format, resolveConfig } from "prettier";
 import type { CuratedData, DataIssue, RawFile } from "../index.ts";
 
 const PACKAGE_DIR = resolve(import.meta.dirname, "../..");
@@ -108,14 +109,21 @@ export async function readDataFile(name: string): Promise<RawFile | string> {
   }
 }
 
-/** Writes a data file as JSON; `pnpm format` gives it its final layout. */
+/**
+ * Writes a data file as JSON, formatted with Prettier and the configuration of
+ * the repository, as `pnpm format` would leave it. Prettier keeps an object
+ * on several lines if it already was, so it gets the JSON indented, as the
+ * curated files are written.
+ */
 export async function writeDataFile(
   name: string,
   content: unknown,
 ): Promise<void> {
-  await writeFile(
-    join(DATA_DIR, name),
-    `${JSON.stringify(content, null, 2)}\n`,
-    "utf8",
-  );
+  const path = join(DATA_DIR, name);
+  const options = await resolveConfig(path);
+  const text = await format(JSON.stringify(content, null, 2), {
+    ...options,
+    filepath: path,
+  });
+  await writeFile(path, text, "utf8");
 }
