@@ -23,7 +23,7 @@ Cada fichero recoge una decisión relevante: su contexto, la decisión tomada, l
 | [0015](0015-fuentes-trazabilidad-licencias.md)          | Fuentes: trazabilidad, licencias y desactivación                           | aceptada; aplazada en parte por ADR-0019             |
 | [0016](0016-datos-curados-json.md)                      | Datos curados en JSON de dos capas                                         | sustituida por ADR-0019                              |
 | [0017](0017-arquitectura-objetivo-backend.md)           | Arquitectura objetivo con backend                                          | aceptada; corregida en parte por ADR-0037 y ADR-0039 |
-| [0018](0018-organizacion-codigo-patrones.md)            | Organización del código y patrones                                         | aceptada; corregida en parte por ADR-0024            |
+| [0018](0018-organizacion-codigo-patrones.md)            | Organización del código y patrones                                         | aceptada; corregida en parte por ADR-0024 y ADR-0041 |
 | [0019](0019-alcance-minimo-mvp.md)                      | Alcance mínimo del MVP                                                     | aceptada; corregida en parte por ADR-0030            |
 | [0020](0020-rueda-paquete-independiente.md)             | La rueda de color como paquete independiente                               | aceptada; corregida en parte por ADR-0021 y ADR-0027 |
 | [0021](0021-cambio-modelo-conserva-color.md)            | El cambio de modelo conserva el color base                                 | aceptada                                             |
@@ -46,6 +46,7 @@ Cada fichero recoge una decisión relevante: su contexto, la decisión tomada, l
 | [0038](0038-stack-backend.md)                           | El stack de `apps/api` y `apps/admin`                                      | aceptada                                             |
 | [0039](0039-cuentas-sesiones-datos-usuario.md)          | Cuentas, sesiones y datos del usuario                                      | aceptada                                             |
 | [0040](0040-despliegue-fase-6.md)                       | El despliegue de la fase 6                                                 | aceptada                                             |
+| [0041](0041-frontera-logica-pura-catalog-builder.md)    | La frontera de la lógica pura de `catalog-builder`                         | aceptada                                             |
 
 ## Normas
 

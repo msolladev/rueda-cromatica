@@ -64,5 +64,5 @@ A 2026-11-22, las tres fuentes son repositorios de GitHub, con la `url` fijada a
 
 - `catalog.json` no cambia mientras no se desactive ninguna fuente, y el resumen empieza vacío.
 - Al desactivar la tabla muestreada de SimoGecko, el build falla por el descarte de Corax White y por su motivo, que se queda sin uso. Quitados los dos, cambia el color de 128 pinturas. Al desactivar la tabla oficial, 144 pinturas se quedan sin color.
-- Los importadores y `archive-sources` comparten la lista de ficheros de cada fuente, en `src/cli/source-files.ts`.
+- Los importadores y `archive-sources` comparten la lista de ficheros de cada fuente, en `src/importers/source-files.ts`.
 - El documento oficial de Save Page Now 2 es un Google Doc que no se puede leer sin navegador. Este ADR sigue una copia de 2023 archivada en archive.org.

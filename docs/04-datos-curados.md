@@ -139,7 +139,7 @@ Prueban qué pinturas tenía cada línea antigua de Citadel ([ADR-0035](adr/0035
 | `games-workshop-foundation-paints-2008`     | What Are Citadel Foundation Paints? (2008), página web  | Las 18 Foundation                                        |
 | `games-workshop-citadel-washes-2008`        | Using the New Citadel Washes (2008), página 4 de la web | Los 8 Washes                                             |
 
-- **Su original ya no existe**: cada uno se lee de una captura de la Wayback Machine cuyo SHA-1 coincide con el que da la API CDX, la misma que guarda su `archiveUrl`. `src/cli/source-files.ts` lista la captura en bruto (`<fecha>id_`) y el nombre de su fichero, porque una página termina en `/`. La carta de 2012 (§3.1) se lee igual.
+- **Su original ya no existe**: cada uno se lee de una captura de la Wayback Machine cuyo SHA-1 coincide con el que da la API CDX, la misma que guarda su `archiveUrl`. `src/importers/source-files.ts` lista la captura en bruto (`<fecha>id_`) y el nombre de su fichero, porque una página termina en `/`. La carta de 2012 (§3.1) se lee igual.
 - **Lo que no entra**: el barniz y el bote vacío de la hoja de control, con `auxiliary`.
 - **Lo que su grupo no distingue**: la hoja de control no separa las tintas ni las metálicas, así que se corrigen en la ficha con una nota que cita su versión de bolsillo, que las agrupa en «INKS» y «METALLICS» (§8).
 
@@ -258,7 +258,7 @@ Lista cada pintura cuyo color publicado y algún candidato que pierde, sin desca
 
 ## 7. Importadores
 
-Se ejecutan a demanda, nunca en el build ni en la CI. Cada importador corresponde a una fuente y tiene dos partes puras, sin acceso a disco ni a red, que se reutilizarán en `packages/importers` en la fase 6 ([ADR-0017](adr/0017-arquitectura-objetivo-backend.md)):
+Se ejecutan a demanda, nunca en el build ni en la CI. Cada importador corresponde a una fuente y tiene dos partes puras, sin acceso a disco ni a red, que usará `apps/api` en la fase 6 ([ADR-0037](adr/0037-catalogo-en-base-de-datos.md), [ADR-0041](adr/0041-frontera-logica-pura-catalog-builder.md)):
 
 - **Transcribir**: recibe el contenido de la fuente ya leído y devuelve sus filas literales (§3). No interpreta nada.
 - **Conciliar**: recibe la transcripción nueva y los datos curados, y devuelve:
@@ -268,13 +268,13 @@ Se ejecutan a demanda, nunca en el build ni en la CI. Cada importador correspond
 
   Falla si una fila nueva no tiene regla para su grupo o si su ID propuesto ya existe. En esos casos, la pintura se da de alta a mano, con un sufijo si colisiona, o la fila se ignora. Una fuente que nunca propone fichas, como la tabla muestreada de SimoGecko, no tiene reglas: sus filas nuevas quedan pendientes, para añadir a mano su clave a la ficha que corresponda.
 
-El script de cada importador lee los ficheros de la fuente en el commit fijado en su `url`, o en su captura si el original ya no existe (§3.3), transcribe y concilia. La lista de ficheros de cada fuente está en `src/cli/source-files.ts` y es la misma que descarga `archive-sources` (§9). Después reemplaza las filas del fichero de la fuente, conserva su `source` y sus ignoradas, añade las pinturas propuestas al fichero de su marca y muestra las diferencias y lo pendiente. No cambia nunca una pintura que ya existe: lo decide Miguel a la vista del informe (§8). Después hay que ejecutar `pnpm format` y `build-catalog`, y revisar el diff, con el del informe de discrepancias. `import-simogecko` importa las dos tablas de SimoGecko, cada una en su fichero. `import-arcturus` importa las tablas de The Army Painter y de Citadel de Arcturus y solo propone pinturas de los grupos de los Warpaints originales; una pintura del grupo cuyo tipo no es el del grupo, como las metálicas y los efectos de «Warpaints», se corrige en su ficha con una nota (§8). De su tabla de Citadel solo se toman los colores de las pinturas antiguas, que proponen los documentos de GW. `import-games-workshop` importa los tres documentos de GW de §3.3 y propone sus pinturas en la gama de cada línea; las tintas y las metálicas de la hoja de control se corrigen en su ficha. Un importador también propone descatalogada la pintura de una gama descatalogada.
+El script de cada importador lee los ficheros de la fuente en el commit fijado en su `url`, o en su captura si el original ya no existe (§3.3), transcribe y concilia. La lista de ficheros de cada fuente está en `src/importers/source-files.ts` y es la misma que descarga `archive-sources` (§9). Cómo se lee cada fuente (como texto o como PDF), su transcripción y sus reglas están en `src/importers/registry.ts`, y la conciliación de una importación, en `src/importers/import-source.ts`; el script solo descarga, lee los PDF y escribe. Después reemplaza las filas del fichero de la fuente, conserva su `source` y sus ignoradas, añade las pinturas propuestas al fichero de su marca, ya formateados con Prettier, y muestra las diferencias y lo pendiente. No cambia nunca una pintura que ya existe: lo decide Miguel a la vista del informe (§8). Después hay que ejecutar `build-catalog` y revisar el diff, con el del informe de discrepancias. `import-simogecko` importa las dos tablas de SimoGecko, cada una en su fichero. `import-arcturus` importa las tablas de The Army Painter y de Citadel de Arcturus y solo propone pinturas de los grupos de los Warpaints originales; una pintura del grupo cuyo tipo no es el del grupo, como las metálicas y los efectos de «Warpaints», se corrige en su ficha con una nota (§8). De su tabla de Citadel solo se toman los colores de las pinturas antiguas, que proponen los documentos de GW. `import-games-workshop` importa los tres documentos de GW de §3.3 y propone sus pinturas en la gama de cada línea; las tintas y las metálicas de la hoja de control se corrigen en su ficha. Un importador también propone descatalogada la pintura de una gama descatalogada.
 
 ### Cartas de equivalencias
 
 `import-charts` transcribe las tres cartas de §3.1 desde la `url` de cada una, que es su PDF ([ADR-0033](adr/0033-equivalencias-oficiales-lineas-vigentes.md)):
 
-- **Transcribir**: `src/cli/pdf.ts` lee el texto del PDF con su posición, con [pdf.js](https://github.com/mozilla/pdf.js), y una función pura por carta, en `src/importers/`, lo convierte en filas y parejas con la regla de columnas de esa carta. Falla si sobra algún texto de la tabla o si las cabeceras cambian, y los tests fijan el número de filas de cada tabla.
+- **Transcribir**: `src/cli/pdf.ts` lee el texto del PDF con su posición, con [pdf.js](https://github.com/mozilla/pdf.js), y una función pura por carta, en `src/importers/`, lo convierte en filas y parejas con la regla de columnas de esa carta. En el mismo módulo están las reglas con las que sus filas encuentran su pintura. Falla si sobra algún texto de la tabla o si las cabeceras cambian, y los tests fijan el número de filas de cada tabla.
 - **Conciliar**: una carta nunca propone pinturas. A cada fila nueva, ni clave ni ignorada, le añade su clave en la única pintura con su código o con su nombre (o un alias), letra por letra salvo el apóstrofo tipográfico, que cuenta como el recto. Lo demás (una errata, un nombre de dos pinturas, una pintura que no está en el catálogo) queda pendiente, para escribir la clave a mano o ignorar la fila. Solo añade claves: no cambia ningún otro campo de las fichas.
 
 Las cartas de Warpaints de 2020 y de GW de 2012 no están en `import-charts`: son imágenes y se transcribieron a mano (§3.1).
@@ -284,7 +284,7 @@ Una revisión nueva de una carta se toma cambiando su `url` y `retrievedAt`, pon
 ### Añadir una fuente nueva
 
 1. Crear `sources/<source-id>.json` con su `source`, `"disabled": null`, `"files": []`, sus filas, `ignoredGroups` e `ignoredKeys`, y, si aporta colores, añadirla a su lista de `color-policy.json`.
-2. Si la fuente se va a volver a importar, escribir su importador en `src/importers/`: la transcripción y las reglas de sus grupos, con sus tests, y su script en `src/cli/`. Si su `url` es una carpeta de GitHub, listar sus ficheros en `src/cli/source-files.ts`.
+2. Si la fuente se va a volver a importar, escribir su importador en `src/importers/`: la transcripción y las reglas de sus grupos, con sus tests, y su entrada en `src/importers/registry.ts`. Después, su script en `src/cli/`, que solo nombra las fuentes que importa. Si su `url` es una carpeta de GitHub, listar sus ficheros en `src/importers/source-files.ts`.
 3. Cubrir cada fila: con la clave en una pintura existente, con una pintura nueva o ignorándola por su grupo o por su clave, con un motivo de `ignore-reasons.json`.
 4. Ejecutar `build-catalog`, que falla mientras quede alguna fila sin cubrir.
 
@@ -314,12 +314,12 @@ Para cada fuente con `url`:
 2. **Descarga** de los ficheros que todavía no están en `files`, en `<carpeta>/<source-id>/<nombre>`:
    - en una página de un fichero de GitHub, su fichero en bruto (`raw.githubusercontent.com`);
    - en una carpeta de GitHub, los ficheros en bruto que lee su importador, como los tres de DonnervS;
-   - en una fuente cuyo original ya no existe, como los documentos de GW, la captura en bruto que lista `src/cli/source-files.ts` (§3.3);
+   - en una fuente cuyo original ya no existe, como los documentos de GW, la captura en bruto que lista `src/importers/source-files.ts` (§3.3);
    - en cualquier otra fuente, como un PDF del fabricante, la propia `url`.
 
    Anota la `url`, el `name` y el `sha256` de cada uno, y quita de `files` los que la fuente ya no tiene.
 
-3. **Escritura** del fichero de la fuente, solo si algo ha cambiado. Después hay que ejecutar `pnpm format` y `build-catalog`, y revisar el diff.
+3. **Escritura** del fichero de la fuente, solo si algo ha cambiado, ya formateado con Prettier. Después hay que ejecutar `build-catalog` y revisar el diff.
 
 - **Reejecución**: solo hace lo que falta, así que se ejecuta otra vez hasta que no falte nada, sin efectos duplicados. Una captura solicitada que no termina a tiempo la encuentra la siguiente ejecución con la API CDX.
 - **Ritmo**: una petición a la Wayback Machine cada 5 segundos como mucho, sondeos incluidos. Internet Archive no publica sus límites; sus usuarios hablan de entre 30 y 60 peticiones por minuto, y Save Page Now 2 admite 12 capturas por minuto.
