@@ -5,12 +5,8 @@
  * source file and the brand files that change, once they pass their own
  * checks.
  */
-import {
-  dataPath,
-  printIssues,
-  readCuratedFiles,
-  writeDataFile,
-} from "./data-files.ts";
+import { dataPath, printIssues, readCuratedFiles } from "./data-files.ts";
+import { writeDataFile } from "./write-data-file.ts";
 import {
   importerOf,
   importSource,

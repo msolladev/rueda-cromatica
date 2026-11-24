@@ -235,6 +235,9 @@ importers:
 
   apps/api:
     dependencies:
+      '@chromatic-wheel/catalog-builder':
+        specifier: workspace:*
+        version: link:../../packages/catalog-builder
       '@chromatic-wheel/domain':
         specifier: workspace:*
         version: link:../../packages/domain

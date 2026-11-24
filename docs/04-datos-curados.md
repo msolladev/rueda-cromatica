@@ -202,7 +202,7 @@ Un descarte real, el de Corax White, cuyo color en la tabla muestreada sale gris
   - El `hex` y el `gradient` de una fuente toman el origen de la lista en la que aparece, `manufacturer` o `community`, y la fuente solo puede estar en una de las dos ([ADR-0019](adr/0019-alcance-minimo-mvp.md), decisión 2).
   - El `measuredHex` siempre es `measured`, y solo se usa si la fuente está además en `measured`.
   - Toda fuente que aporte `hex` o `gradient` tiene que estar en `manufacturer` o en `community`.
-- **`tombstones.json`**: los IDs retirados por errores de alta, con su motivo, en sus cuatro colecciones ([docs/03](03-identificadores.md) §6).
+- **`tombstones.json`**: los IDs retirados por errores de alta, con su motivo, en sus cuatro colecciones, y en la de una pintura, la pintura que queda o `null` ([docs/03](03-identificadores.md) §6).
 
 ## 6. Proceso del builder
 

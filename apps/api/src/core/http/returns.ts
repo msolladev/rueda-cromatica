@@ -17,8 +17,22 @@ export function Returns(
   status: HttpStatus = HttpStatus.OK,
 ): MethodDecorator {
   return applyDecorators(
-    HttpCode(status),
+    Documents(schema, status),
     SerializeOptions({ schema }),
+  );
+}
+
+/**
+ * Only documents what a route answers, without validating it: for a route
+ * that sends a stored document exactly as it is, validated when it was
+ * stored, because validating it again would write it anew (docs/09 §3).
+ */
+export function Documents(
+  schema: z.ZodType,
+  status: HttpStatus = HttpStatus.OK,
+): MethodDecorator {
+  return applyDecorators(
+    HttpCode(status),
     ApiResponse({ status, standardSchema: schema }),
   );
 }

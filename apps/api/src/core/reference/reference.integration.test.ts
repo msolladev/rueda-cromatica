@@ -44,9 +44,45 @@ describe("the reference, on the web's host", () => {
       paths: Record<string, unknown>;
       components: { schemas: Record<string, unknown> };
     };
-    expect(Object.keys(document.paths)).toEqual(["/api/v1/health"]);
+    expect(Object.keys(document.paths)).toEqual([
+      "/api/v1/health",
+      "/api/v1/catalog",
+    ]);
     expect(document.components.schemas["Health"]).toMatchObject({
       properties: { checkedAt: { type: "string", format: "date-time" } },
+    });
+  });
+
+  it("describes the catalog with its parameter and its schema, unvalidated when served", async () => {
+    const response = await request(app.getHttpServer())
+      .get("/api/v1/openapi.json")
+      .set("Host", REFERENCE_HOST);
+    const document = response.body as {
+      paths: Record<
+        string,
+        {
+          get: {
+            parameters: readonly { name: string; in: string }[];
+            responses: Record<string, unknown>;
+          };
+        }
+      >;
+    };
+    const route = document.paths["/api/v1/catalog"]?.get;
+    expect(route?.parameters).toContainEqual(
+      expect.objectContaining({
+        name: "schemaVersion",
+        in: "query",
+        required: true,
+      }),
+    );
+    expect(Object.keys(route?.responses ?? {})).toEqual(["200", "304", "404"]);
+    expect(route?.responses["200"]).toMatchObject({
+      content: {
+        "application/json": {
+          schema: { properties: { meta: {}, paints: {} } },
+        },
+      },
     });
   });
 

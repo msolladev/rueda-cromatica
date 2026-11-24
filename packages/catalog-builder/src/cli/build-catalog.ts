@@ -64,10 +64,10 @@ async function main(check: boolean): Promise<number> {
     published: published.value,
     disabledSources: new Set(result.value.disabledSources.disabledSources),
   });
-  const release = published.value?.release ?? null;
+  const release = published.value?.label ?? null;
   if (unstable.length > 0) {
     const report = formatStabilityIssues(unstable, {
-      release,
+      published: release,
       tombstonesFile: dataPath(TOMBSTONES_FILE),
     });
     console.error(report);
