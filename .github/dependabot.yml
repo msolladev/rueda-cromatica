@@ -20,11 +20,37 @@ updates:
     cooldown:
       default-days: 7
 
-  # The web's Nginx image, pinned by version and digest.
+  # The images of the web (Nginx) and the API (Node), pinned by version and
+  # digest. The API's Node is also that of devEngines, which a test keeps
+  # equal: its update needs both.
   - package-ecosystem: docker
-    directory: /apps/web/deploy
+    directories: [/apps/web/deploy, /apps/api/deploy]
     target-branch: preprod
     schedule:
       interval: weekly
     cooldown:
       default-days: 7
+
+  # restic, of the backups (deploy/compose.yaml), pinned by version and
+  # digest. PostgreSQL is in the Compose of apps/api, which the deploy reuses.
+  - package-ecosystem: docker-compose
+    directory: /deploy
+    target-branch: preprod
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 7
+
+  # The PostgreSQL image of development, the CI and the environments
+  # (apps/api, reused by deploy/compose.yaml), pinned by version and digest. A new major version needs its data migrated, so it is
+  # a decision of its own, not an update.
+  - package-ecosystem: docker-compose
+    directory: /apps/api
+    target-branch: preprod
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 7
+    ignore:
+      - dependency-name: postgres
+        update-types: [version-update:semver-major]

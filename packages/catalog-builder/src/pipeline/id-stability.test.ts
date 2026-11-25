@@ -1,10 +1,11 @@
 import { describe, expect, it } from "vitest";
 import {
   ID_COLLECTIONS,
+  tombstonesFileSchema,
   type IdCollection,
   type Tombstones,
-} from "../curated/files.ts";
-import { acmeFile, globexFile, sourcesFile } from "../fixtures.ts";
+} from "../model/curated.ts";
+import { curated } from "../fixtures.ts";
 import { buildCatalog } from "./build-catalog.ts";
 import {
   catalogIds,
@@ -26,10 +27,7 @@ const RETIRED: Readonly<Record<IdCollection, string>> = {
 
 /** The IDs of the catalog built from the fixtures. */
 function current(): CatalogIds {
-  const built = buildCatalog({
-    sources: sourcesFile(),
-    brands: [acmeFile(), globexFile()],
-  });
+  const built = buildCatalog(curated());
   if (!built.ok) throw new Error(JSON.stringify(built.error));
   const ids = catalogIds(built.value.document);
   if (!ids.ok) throw new Error(ids.error);
@@ -43,22 +41,27 @@ const withId = (
 ): CatalogIds => ({ ...ids, [collection]: new Set([...ids[collection], id]) });
 
 const noTombstones: Tombstones = {
-  sources: new Set(),
-  brands: new Set(),
-  ranges: new Set(),
-  paints: new Set(),
+  sources: [],
+  brands: [],
+  ranges: [],
+  paints: [],
 };
 
-const tombstoned = (collection: IdCollection, id: string): Tombstones => ({
-  ...noTombstones,
-  [collection]: new Set([id]),
-});
+const tombstoned = (collection: IdCollection, id: string): Tombstones =>
+  tombstonesFileSchema.parse({
+    ...noTombstones,
+    [collection]: [
+      collection === "paints"
+        ? { id, reason: "Registered twice.", remainingPaintId: null }
+        : { id, reason: "Registered twice." },
+    ],
+  });
 
 describe("checkIdStability (docs/03 §7)", () => {
   describe.each(ID_COLLECTIONS)("%s", (collection) => {
     const id = RETIRED[collection];
     const published = {
-      release: "release/2026-12-01",
+      label: "release/2026-12-01",
       ids: withId(current(), collection, id),
     };
 
@@ -68,6 +71,7 @@ describe("checkIdStability (docs/03 §7)", () => {
           current: current(),
           tombstones: noTombstones,
           published,
+          disabledSources: new Set(),
         }),
       ).toEqual([{ kind: "missing", collection, id }]);
     });
@@ -78,6 +82,7 @@ describe("checkIdStability (docs/03 §7)", () => {
           current: current(),
           tombstones: tombstoned(collection, id),
           published,
+          disabledSources: new Set(),
         }),
       ).toEqual([]);
     });
@@ -88,6 +93,7 @@ describe("checkIdStability (docs/03 §7)", () => {
           current: withId(current(), collection, id),
           tombstones: tombstoned(collection, id),
           published,
+          disabledSources: new Set(),
         }),
       ).toEqual([{ kind: "reused", collection, id }]);
     });
@@ -99,7 +105,8 @@ describe("checkIdStability (docs/03 §7)", () => {
       checkIdStability({
         current: ids,
         tombstones: noTombstones,
-        published: { release: "release/2026-12-01", ids },
+        published: { label: "release/2026-12-01", ids },
+        disabledSources: new Set(),
       }),
     ).toEqual([]);
   });
@@ -110,6 +117,7 @@ describe("checkIdStability (docs/03 §7)", () => {
         current: current(),
         tombstones: noTombstones,
         published: null,
+        disabledSources: new Set(),
       }),
     ).toEqual([]);
   });
@@ -120,8 +128,50 @@ describe("checkIdStability (docs/03 §7)", () => {
         current: current(),
         tombstones: tombstoned("paints", "acme/core/red"),
         published: null,
+        disabledSources: new Set(),
       }),
     ).toEqual([{ kind: "reused", collection: "paints", id: "acme/core/red" }]);
+  });
+
+  it("accepts a published source that is disabled, and only a source (ADR-0019, 5)", () => {
+    const published = {
+      label: "release/2026-12-01",
+      ids: withId(withId(current(), "sources", "initech"), "brands", "initech"),
+    };
+    expect(
+      checkIdStability({
+        current: current(),
+        tombstones: noTombstones,
+        published,
+        disabledSources: new Set(["initech"]),
+      }),
+    ).toEqual([{ kind: "missing", collection: "brands", id: "initech" }]);
+  });
+
+  it("fails when the paint a tombstone says remains is not in the catalog", () => {
+    const tombstones = (remainingPaintId: string): Tombstones =>
+      tombstonesFileSchema.parse({
+        ...noTombstones,
+        paints: [
+          { id: RETIRED.paints, reason: "Duplicate.", remainingPaintId },
+        ],
+      });
+    const check = (remainingPaintId: string) =>
+      checkIdStability({
+        current: current(),
+        tombstones: tombstones(remainingPaintId),
+        published: null,
+        disabledSources: new Set(),
+      });
+    expect(check("acme/core/red")).toEqual([]);
+    expect(check("acme/core/teal")).toEqual([
+      {
+        kind: "remaining-missing",
+        collection: "paints",
+        id: RETIRED.paints,
+        remainingPaintId: "acme/core/teal",
+      },
+    ]);
   });
 
   it("does not mix up collections that share a slug", () => {
@@ -131,6 +181,7 @@ describe("checkIdStability (docs/03 §7)", () => {
         current: withId(current(), "sources", "initech"),
         tombstones: tombstoned("brands", "initech"),
         published: null,
+        disabledSources: new Set(),
       }),
     ).toEqual([]);
   });
@@ -144,7 +195,7 @@ describe("formatStabilityIssues", () => {
         { kind: "reused", collection: "brands", id: "initech" },
       ],
       {
-        release: "release/2026-12-01",
+        published: "release/2026-12-01",
         tombstonesFile: "packages/catalog-builder/data/tombstones.json",
       },
     );
@@ -155,21 +206,39 @@ describe("formatStabilityIssues", () => {
         "    A published ID is never deleted. If the product is no longer sold, restore it",
         '    with status "discontinued". If it was a registration error, add it to',
         "    packages/catalog-builder/data/tombstones.json with its reason (docs/03 §6):",
-        '      "paints": [{ "id": "acme/core/purple", "reason": "…" }]',
+        '      "paints": [{ "id": "acme/core/purple", "reason": "…", "remainingPaintId": null }]',
         "  brands initech: tombstoned, and a tombstoned ID is never reused.",
         "    Choose another ID (docs/03 §3).",
       ].join("\n"),
     );
   });
 
-  it("says when there is no release yet", () => {
+  it("says when nothing is published yet", () => {
     const report = formatStabilityIssues(
       [{ kind: "reused", collection: "brands", id: "initech" }],
-      { release: null, tombstonesFile: "tombstones.json" },
+      { published: null, tombstonesFile: "tombstones.json" },
     );
     expect(report.split("\n")[0]).toBe(
-      "ID stability (no release yet, only the tombstones are checked):",
+      "ID stability (nothing published yet, only the tombstones are checked):",
     );
+  });
+
+  it("says which remaining paint is missing", () => {
+    const report = formatStabilityIssues(
+      [
+        {
+          kind: "remaining-missing",
+          collection: "paints",
+          id: "acme/core/purple",
+          remainingPaintId: "acme/core/teal",
+        },
+      ],
+      { published: null, tombstonesFile: "tombstones.json" },
+    );
+    expect(report.split("\n").slice(1)).toEqual([
+      "  paints acme/core/purple: its tombstone says acme/core/teal remains, but that paint",
+      "    is not in the catalog. Name a paint of the catalog, or null.",
+    ]);
   });
 });
 

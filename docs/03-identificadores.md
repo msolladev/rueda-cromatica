@@ -67,7 +67,8 @@ El cambio de nombre de una marca sigue la misma regla: el ID no cambia, y el nom
 
 - Un ID publicado no se borra nunca: la pintura se marca como descatalogada.
 - La única excepción son los errores de alta. Esos IDs se retiran con una lápida en `packages/catalog-builder/data/tombstones.json`, y un ID retirado no se reutiliza jamás.
-- El fichero tiene las cuatro colecciones del catálogo (`sources`, `brands`, `ranges` y `paints`), porque una marca y una fuente pueden compartir slug. Cada lápida lleva el ID y el motivo; la fecha y el commit están en git:
+- El fichero tiene las cuatro colecciones del catálogo (`sources`, `brands`, `ranges` y `paints`), porque una marca y una fuente pueden compartir slug. Cada lápida lleva el ID y el motivo; la fecha y el commit están en git.
+- La lápida de una pintura dice además qué pintura queda, en `remainingPaintId`, o `null`: por ejemplo, la que se conserva de un duplicado, para que lo que eligió un usuario pueda pasar a ella ([ADR-0037](adr/0037-catalogo-en-base-de-datos.md), [ADR-0043](adr/0043-catalogo-en-postgresql.md)).
 
 ```json
 {
@@ -77,7 +78,8 @@ El cambio de nombre de una marca sigue la misma regla: el ID no cambia, y el nom
   "paints": [
     {
       "id": "citadel/base/administratum-grey",
-      "reason": "Duplicate of citadel/layer/administratum-grey; it only exists in Layer."
+      "reason": "Duplicate of citadel/layer/administratum-grey; it only exists in Layer.",
+      "remainingPaintId": "citadel/layer/administratum-grey"
     }
   ]
 }
@@ -91,11 +93,15 @@ Compara el catálogo generado con el de la última publicación: el `catalog.jso
 
 1. Todo ID publicado sigue existiendo o figura en las lápidas.
 2. Ningún ID de las lápidas aparece en el catálogo nuevo.
+3. La pintura que queda de una lápida está en el catálogo nuevo.
 
 Se aplica a pinturas, gamas, marcas y fuentes.
 
+Una fuente desactivada sale del catálogo, pero su fichero sigue en los datos curados, así que su ID no cuenta como desaparecido y no lleva lápida: vuelve al reactivarla ([ADR-0019](adr/0019-alcance-minimo-mvp.md), decisión 5, y [ADR-0032](adr/0032-desactivacion-fuentes-archivado.md)). Sus pinturas se quedan, con otro color o sin él ([docs/04](04-datos-curados.md) §6).
+
 - Lo ejecuta `build-catalog`, también con `--check`, y si falla no escribe nada. El mensaje dice cómo arreglar cada caso y, para un ID que desaparece, da la lápida lista para pegar.
-- Mientras no haya ninguna etiqueta, solo se comprueba la regla 2: ningún usuario guarda IDs todavía, así que se pueden corregir libremente.
+- Mientras no haya ninguna etiqueta, solo se comprueban las reglas 2 y 3: ningún usuario guarda IDs todavía, así que se pueden corregir libremente.
+- `apps/api` aplica las mismas reglas al catálogo generado desde su base de datos, contra su última publicación ([docs/09](09-api.md) §8).
 - Cada publicación en producción crea su etiqueta: `release/AAAA-MM-DD` la primera del día, con la fecha en UTC, y `release/AAAA-MM-DD.2`, `.3`… las siguientes del mismo día. La más reciente es la de fecha y número mayores. Las etiquetas de `release/` con otro formato hacen fallar el builder, y `next-release-tag` da la de una publicación nueva.
 - Necesita el historial completo de git y las etiquetas. En un clon superficial, el builder falla.
 

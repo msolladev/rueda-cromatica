@@ -1,6 +1,6 @@
 # Pinturas parecidas
 
-Este documento especifica el módulo `matching` de `@chromatic-wheel/domain`: la búsqueda de las pinturas del catálogo más parecidas a un color, que son las equivalencias calculadas de [docs/01](01-modelo-dominio.md) §4. Por qué se decidió así está en el [ADR-0022](adr/0022-busqueda-pinturas-parecidas.md).
+Este documento especifica el módulo `matching` de `@chromatic-wheel/domain`: la búsqueda de las pinturas del catálogo más parecidas a un color, que son las equivalencias calculadas de [docs/01](01-modelo-dominio.md) §4, y las equivalencias oficiales de una pintura medidas con el mismo criterio (§10). Por qué se decidió así está en el [ADR-0022](adr/0022-busqueda-pinturas-parecidas.md), el [ADR-0036](adr/0036-tramos-cercania.md), el [ADR-0033](adr/0033-equivalencias-oficiales-lineas-vigentes.md) y el [ADR-0034](adr/0034-warpaints-originales-sustituciones.md).
 
 ## 1. Principios
 
@@ -20,12 +20,14 @@ Este documento especifica el módulo `matching` de `@chromatic-wheel/domain`: la
 
 Cada resultado lleva una etiqueta según su ΔE, redondeado a 2 decimales (§4). Los límites son inclusivos:
 
-| ΔE2000   | Etiqueta (`MatchQuality`) | Significado                                      |
-| -------- | ------------------------- | ------------------------------------------------ |
-| ≤ 1      | `near-identical`          | Casi idéntica: por debajo de lo que se percibe   |
-| ≤ 2      | `very-similar`            | Muy parecida: dentro de la tolerancia exigente   |
-| ≤ 5      | `similar`                 | Parecida: dentro de la tolerancia menos exigente |
-| más de 5 | `nearest-available`       | La más cercana: no se afirma que sea parecida    |
+| ΔE2000    | Etiqueta (`MatchQuality`) | Significado                                      |
+| --------- | ------------------------- | ------------------------------------------------ |
+| 0         | `identical`               | Idéntica: el mismo color                         |
+| ≤ 1       | `near-identical`          | Casi idéntica: por debajo de lo que se percibe   |
+| ≤ 2       | `very-similar`            | Muy parecida: dentro de la tolerancia exigente   |
+| ≤ 5       | `similar`                 | Parecida: dentro de la tolerancia menos exigente |
+| ≤ 15      | `barely-similar`          | Poco parecida: no se afirma que sea parecida     |
+| más de 15 | `different`               | Distinta: es otro color                          |
 
 Los textos visibles de cada etiqueta los pone la web.
 
@@ -34,6 +36,7 @@ Los textos visibles de cada etiqueta los pone la web.
 - **1**: con kL = kC = kH = 1, un ΔE2000 de 1 se considera aproximadamente la diferencia mínima perceptible ([Wikipedia, «Color difference»](https://en.wikipedia.org/wiki/Color_difference); [MetricGate](https://metricgate.com/docs/delta-e-ciede2000/)). Hay quien la sitúa en 0,5 ([Graeme Gill, lista ColorSync, 2009](https://lists.apple.com/archives/colorsync-users/2009/Jul/msg00163.html)), pero es una opinión informal.
 - **2**: Paravina et al. (2015) miden en ΔE2000 un umbral de perceptibilidad del 50 % de 0,8 y uno de aceptabilidad del 50 % de 1,8, con muestras dentales medidas ([Journal of Esthetic and Restorative Dentistry, DOI 10.1111/jerd.12149](https://doi.org/10.1111/jerd.12149)). La tolerancia habitual en impresión profesional es de 2 a 3 ([Hybrid Helix](https://blog.hybridhelix.com/?p=2470)).
 - **5**: tolerancia aceptada en trabajos de color menos críticos ([Hybrid Helix](https://blog.hybridhelix.com/?p=2470)). Es una convención de la industria, sin norma CIE.
+- **15**: es una decisión del proyecto, sin fuente ([ADR-0036](adr/0036-tramos-cercania.md)). No se ha encontrado ninguna para un límite por encima de 5 en ΔE2000: las escalas que llegan más lejos están en ΔE\*ab, y el comité TC 1-63 de la CIE, que estudia CIEDE2000 por encima de 5, no ha publicado conclusiones ([informe de progreso de 2011](https://color.li.tu-berlin.de/CIE_1_63_ARP11.PDF)).
 
 **Límites de esta interpretación:**
 
@@ -120,14 +123,14 @@ La web construye el índice al cargar el catálogo y busca con el resultado de l
 
 ## 9. Búsqueda por nombre
 
-Encuentra pinturas por lo que se escribe, para empezar la rueda desde una pintura que se tiene ([ADR-0029](adr/0029-buscador-pinturas-mvp.md)). Tiene su propio índice, que la web construye al cargar el catálogo, con todas las pinturas con color, también las descatalogadas: quien tiene una puede empezar por ella.
+Encuentra pinturas por lo que se escribe, para empezar la rueda desde una pintura que se tiene ([ADR-0029](adr/0029-buscador-pinturas-mvp.md)). Tiene su propio índice, que la web construye al cargar el catálogo, con todas las pinturas, también las descatalogadas y las que no tienen color: quien tiene una puede empezar por ella ([ADR-0034](adr/0034-warpaints-originales-sustituciones.md)).
 
 ### 9.1. Qué encuentra
 
 - **Dónde busca**: en el nombre de la pintura, sus alias, su código del fabricante, el nombre de su marca y sus alias, y el nombre de su gama.
 - **Cada palabra escrita** tiene que estar en alguno de ellos, en cualquier orden y por fragmentos: `tigers skin` encuentra «Tiger's Eye Skin», y `vallejo black`, las Black de Vallejo.
 - **Sin distinguir** mayúsculas, acentos ni apóstrofos. En el código tampoco cuentan los puntos, los guiones, las barras ni los espacios: `70950` encuentra `70.950`.
-- **Desde 3 caracteres**, contados como los cuenta una persona (`isSearchable`) y sin los espacios de alrededor. Con menos, no busca: con «re» coinciden 492 pinturas.
+- **Desde 3 caracteres**, contados como los cuenta una persona (`isSearchable`) y sin los espacios de alrededor. Con menos, no busca: con «re» coinciden 522 pinturas.
 - **Sobre todo el catálogo**: no aplica los filtros de los resultados (§6.1), que deciden qué pinturas se proponen como parecidas, no cuáles existen.
 - **Dónde coincide**: cada resultado dice en qué tramos del nombre, la marca, la gama y el código está lo escrito, para resaltarlo. Lo que coincide en un alias no se resalta, porque el alias no se muestra.
 - La tolerancia a las faltas de ortografía (`boney` encuentra «Bony») queda para después.
@@ -140,10 +143,33 @@ Encuentra pinturas por lo que se escribe, para empezar la rueda desde una pintur
 4. Cada palabra escrita está dentro del nombre o de un alias: «Bloodred».
 5. Alguna palabra solo está en la marca, la gama o el código.
 
-Dentro de cada grupo, por nombre, marca y gama, sin acentos ni mayúsculas, y al final por ID, comparados por unidad de código y sin _locale_, como §4.
+Dentro de cada grupo, las vigentes antes que las descatalogadas: con `matt white`, el Matt White de Warpaints Fanatic antes que el de los Warpaints originales. Después, por nombre, marca y gama, sin acentos ni mayúsculas, y al final por ID, comparados por unidad de código y sin _locale_, como §4.
 
 Cuando la búsqueda tolere faltas de ortografía, este orden pasará a ser por pesos según el dato que coincide. Está en una función aparte para poder sustituirla sin tocar la web.
 
 ### 9.3. Rendimiento
 
-Busca en el índice en memoria, de forma síncrona. Medido el 2026-11-21 en el mismo equipo que §7, con 7 búsquedas distintas («red», «lothern», «vallejo black», «70950»…) repetidas 300 veces después de 50 de calentamiento, sobre las 1393 pinturas: mediana de 0,16 ms y percentil 95 de 0,33 ms. Está muy por debajo de un fotograma (16 ms), así que la web no necesita retardo ni descartar búsquedas antiguas. No hay medidas en un móvil.
+Busca en el índice en memoria, de forma síncrona. Medido el 2026-11-21 en el mismo equipo que §7, con 7 búsquedas distintas («red», «lothern», «vallejo black», «70950»…) repetidas 300 veces después de 50 de calentamiento, sobre las 1393 pinturas que había entonces: mediana de 0,16 ms y percentil 95 de 0,33 ms. Está muy por debajo de un fotograma (16 ms), así que la web no necesita retardo ni descartar búsquedas antiguas. No hay medidas en un móvil.
+
+## 10. Equivalencias oficiales de una pintura
+
+Lo que los fabricantes afirman en sus cartas ([ADR-0004](adr/0004-equivalencias-dirigidas.md)), para mostrarlo con la misma fila que las pinturas parecidas sin mezclarlo con ellas ([docs/07](07-web.md) §16):
+
+- **La sustituta**, si la pintura está descatalogada y un documento del fabricante la nombra ([ADR-0005](adr/0005-sustitucion-en-estado.md)), con ese documento. Es la sustituta directa, no el final de la cadena.
+- **Las dos direcciones, por separado**: las salientes, cuyas aristas salen de la pintura, y las entrantes, que llegan a ella. Una arista solo se lee en su dirección: no se infieren ni las inversas ni las transitivas.
+- **Una entrada por cada otra pintura**, con todas las fuentes que afirman esa arista, en el orden del catálogo. Las entradas van en el orden del catálogo de la otra pintura, así que salen agrupadas por marca.
+- **Medida contra un color**, el de la rueda, con el ΔE, la etiqueta de §3 y el aviso de color aproximado, como un resultado de §6. Una pintura sin color sale igual, sin ΔE ni etiqueta. Sin color con el que medir, como cuando la pintura elegida no tiene color, ninguna lleva ΔE.
+- **Sin filtros ni límite**: son lo que dice la fuente, no candidatas.
+- Un color que no es `#rrggbb` es un error esperable; una pintura que no está en el catálogo, un error de programación.
+
+### 10.1. La pintura que presta su color
+
+Una pintura sin color no puede ser la base de la rueda. `colorStandIn` da la pintura cuyo color la sustituye cuando no hay nada que elegir ([docs/07](07-web.md) §15):
+
+1. el final de su cadena de sustitutas, si tiene color;
+2. si no tiene sustituta, su única equivalente oficial, en cualquier dirección, si tiene color;
+3. si no, ninguna: con varias equivalentes elige la persona, y sin ninguna no hay color.
+
+Una pintura con color no necesita ninguna.
+
+Las firmas de `findOfficialEquivalences` y `colorStandIn` están en la referencia de la API, que se genera con `pnpm docs:api` ([README](../README.md#comandos)).

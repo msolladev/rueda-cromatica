@@ -70,9 +70,34 @@ export const eu: Messages = {
     hexFrom: "{hex}, iturria: {source} ({origin})",
     color: "Kolorea",
     exactColor: "Zehatza",
+    noColor: "Kolorerik gabe",
     metallic: "Metalikoa",
     discontinued: "Katalogotik kanpo",
     chosen: "Aukeratua",
+  },
+  official: {
+    heading: "Baliokidetasun ofizialak",
+    intro:
+      "Fabrikatzaileek beren kartetan diotena, ez kalkulatutako kolorea. Bakoitzak norabide bakarrean balio du.",
+    outgoing: "{name} pinturarako proposatzen da",
+    incoming: "{name} hauetarako proposatzen da",
+    noneOutgoing:
+      "Ez dago {name} pinturarako beste pinturarik proposatzen duen dokumenturik.",
+    noneIncoming:
+      "Ez dago {name} beste pintura baterako proposatzen duen dokumenturik.",
+    replacement: "{name} pinturaren ordezkoa",
+    noReplacement:
+      "Fabrikatzailearen inongo dokumentuk ez du {name} pinturaren ordezkorik izendatzen.",
+    noColorUse:
+      "{name} pinturak ez du kolorerik katalogoan. Erabili bere baliokideetako bat gurpilaren oinarri gisa.",
+    noColorNone:
+      "{name} pinturak ez du kolorerik katalogoan, ezta argitaratutako baliokiderik ere; beraz, gurpila ez da mugitzen.",
+    none: "Ez dago {name} pinturaren ({label}) baliokiderik argitaratzen duen fabrikatzailerik.",
+    noneInDetails:
+      "Ez dago beste pintura batekin lotzen duen fabrikatzailerik.",
+    by: "{publisher}(r)en arabera, hemen: {title}.",
+    use: "Erabili {name} gurpilaren oinarri gisa",
+    useShort: "Erabili oinarri gisa",
   },
   filters: {
     title: "Iragazkiak",
@@ -99,6 +124,11 @@ export const eu: Messages = {
     back: "Itzuli honetara: {name}",
     chosen: "Oinarria: {name}, {brand} {range}.",
     typeMetallic: "{type}, metalikoa",
+    noColor: "kolorerik gabe",
+    standInReplacement:
+      "{name} erakusten da, {publisher}(e)ren arabera haren ordezkoa.",
+    standInEquivalence:
+      "{name} erakusten da, {publisher}(e)ren arabera haren baliokidea.",
     rybNotice:
       "RYB gurpilak ez du kolore hau lortzen: antzekoena erabiltzen du (ΔE {deltaE}).",
     useDigital: "Erabili gurpil digitala",
@@ -115,10 +145,12 @@ export const eu: Messages = {
     dry: "Pintzel lehorra",
   },
   quality: {
+    identical: "Berdina",
     "near-identical": "Ia berdina",
     "very-similar": "Oso antzekoa",
     similar: "Antzekoa",
-    "nearest-available": "Hurbilena",
+    "barely-similar": "Ez oso antzekoa",
+    different: "Desberdina",
   },
   approximate: {
     allTitle: "Koloreak gutxi gorabeherakoak dira",

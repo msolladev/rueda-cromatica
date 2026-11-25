@@ -4,7 +4,7 @@
  *
  *   pnpm --filter @chromatic-wheel/catalog-builder --silent next-release-tag
  */
-import { nextRelease } from "../pipeline/id-stability.ts";
+import { nextRelease } from "../index.ts";
 import { releaseTags } from "./published-catalog.ts";
 
 const tags = await releaseTags();

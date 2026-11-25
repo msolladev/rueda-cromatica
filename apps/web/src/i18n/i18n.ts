@@ -67,7 +67,6 @@ export function localeOfSlug(slug: string): Locale | undefined {
   return LOCALES.find((locale) => localeSlug(locale) === slug);
 }
 
-/** Replaces each `{name}` of `template` with its value. */
 /** What separates the parts of a line: «Vallejo · Game Color · 72.059». */
 export const SEPARATOR = " · ";
 
@@ -82,6 +81,7 @@ export function formatDeltaE(deltaE: number, locale: string): string {
   }).format(deltaE);
 }
 
+/** Replaces each `{name}` of `template` with its value. */
 export function format(
   template: string,
   values: Readonly<Record<string, string | number>>,
@@ -90,4 +90,25 @@ export function format(
     const value = values[name];
     return value === undefined ? match : String(value);
   });
+}
+
+/**
+ * Like {@link format}, but a value can be anything, such as a link: returns
+ * the pieces in order, the text between the values as strings.
+ */
+export function formatParts<T>(
+  template: string,
+  values: Readonly<Record<string, T>>,
+): readonly (string | T)[] {
+  const parts: (string | T)[] = [];
+  let at = 0;
+  for (const match of template.matchAll(/\{(\w+)\}/g)) {
+    const name = match[1] ?? "";
+    if (!(name in values)) continue;
+    if (match.index > at) parts.push(template.slice(at, match.index));
+    parts.push(values[name] as T);
+    at = match.index + match[0].length;
+  }
+  if (at < template.length) parts.push(template.slice(at));
+  return parts;
 }

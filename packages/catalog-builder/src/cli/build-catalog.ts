@@ -1,66 +1,51 @@
 /**
- * Entry point of the builder (docs/04 §3). Reads the curated files, runs the
+ * Entry point of the builder (docs/04 §6). Reads the curated files, runs the
  * pure pipeline, checks the ID stability against the latest release (docs/03
- * §7) and writes `catalog.json`. With `--check` it writes nothing and fails if
- * the versioned file is out of date (ADR-0011, CI step 4).
+ * §7) and writes `catalog.json`, the colour discrepancy report and the
+ * summary of the disabled sources. With `--check` it writes nothing and fails
+ * if any of those versioned files is out of date (ADR-0011, CI step 4).
  *
  *   pnpm --filter @chromatic-wheel/catalog-builder build-catalog [--check]
  */
-import { mkdir, readdir, readFile, writeFile } from "node:fs/promises";
-import { basename, dirname, join } from "node:path";
-import { readTombstonesFile } from "../curated/files.ts";
-import { buildCatalog } from "../pipeline/build-catalog.ts";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { dirname } from "node:path";
 import {
+  buildCatalog,
   catalogIds,
   checkIdStability,
+  formatDisabledSources,
   formatStabilityIssues,
-} from "../pipeline/id-stability.ts";
+  readCurated,
+  readTombstonesFile,
+} from "../index.ts";
 import {
-  BRANDS_DIR,
+  dataPath,
+  DISABLED_SOURCES_FILE,
+  DISCREPANCIES_FILE,
   fromRepo,
   OUTPUT_FILE,
-  readJson,
-  SOURCES_FILE,
+  printIssues,
+  readCuratedFiles,
   TOMBSTONES_FILE,
 } from "./data-files.ts";
 import { readPublishedCatalog } from "./published-catalog.ts";
 
 async function main(check: boolean): Promise<number> {
-  // Alphabetical order, so the run does not depend on the file system.
-  const brandNames = (await readdir(BRANDS_DIR))
-    .filter((name) => name.endsWith(".json"))
-    .sort();
-  const paths = [
-    TOMBSTONES_FILE,
-    SOURCES_FILE,
-    ...brandNames.map((n) => join(BRANDS_DIR, n)),
-  ];
-  const pathOf = new Map(paths.map((path) => [basename(path), path]));
-  const files = await Promise.all(paths.map(readJson));
-
-  const unreadable = files.filter((file) => typeof file === "string");
-  if (unreadable.length > 0) {
-    for (const message of unreadable) console.error(message);
+  const files = await readCuratedFiles();
+  if (!files.ok) {
+    for (const message of files.error) console.error(message);
     return 1;
   }
-  const [tombstonesFile, sources, ...brands] = files.filter(
-    (file) => typeof file !== "string",
-  );
-  if (tombstonesFile === undefined || sources === undefined) {
-    throw new Error("Unreachable: tombstones or sources not read");
-  }
 
-  const tombstones = readTombstonesFile(tombstonesFile);
-  const result = buildCatalog({ sources, brands });
+  const tombstones = readTombstonesFile(files.value.tombstones);
+  const curated = readCurated(files.value.data);
+  const result = curated.ok ? buildCatalog(curated.value) : curated;
   const issues = [
     ...(tombstones.ok ? [] : tombstones.error),
     ...(result.ok ? [] : result.error),
   ];
   if (!tombstones.ok || !result.ok) {
-    for (const issue of issues) {
-      const file = pathOf.get(issue.file) ?? issue.file;
-      console.error(`${fromRepo(file)} ${issue.path}: ${issue.message}`);
-    }
+    printIssues(issues);
     console.error(`\n${String(issues.length)} issue(s); nothing written.`);
     return 1;
   }
@@ -77,12 +62,13 @@ async function main(check: boolean): Promise<number> {
     current: current.value,
     tombstones: tombstones.value,
     published: published.value,
+    disabledSources: new Set(result.value.disabledSources.disabledSources),
   });
-  const release = published.value?.release ?? null;
+  const release = published.value?.label ?? null;
   if (unstable.length > 0) {
     const report = formatStabilityIssues(unstable, {
-      release,
-      tombstonesFile: fromRepo(TOMBSTONES_FILE),
+      published: release,
+      tombstonesFile: dataPath(TOMBSTONES_FILE),
     });
     console.error(report);
     console.error(`\n${String(unstable.length)} issue(s); nothing written.`);
@@ -94,24 +80,50 @@ async function main(check: boolean): Promise<number> {
       : `IDs stable against ${release}.`,
   );
 
-  const output = fromRepo(OUTPUT_FILE);
+  const outputs = [
+    { path: OUTPUT_FILE, content: result.value.json },
+    { path: DISCREPANCIES_FILE, content: result.value.discrepanciesJson },
+    {
+      path: DISABLED_SOURCES_FILE,
+      content: result.value.disabledSourcesJson,
+    },
+  ];
+  for (const line of formatDisabledSources(result.value.disabledSources)) {
+    console.log(line);
+  }
   if (check) {
-    const current = await readFile(OUTPUT_FILE, "utf8").catch(() => null);
-    if (current !== result.value.json) {
+    let stale = 0;
+    for (const { path, content } of outputs) {
+      const current = await readFile(path, "utf8").catch(() => null);
+      if (current === content) {
+        console.log(`${fromRepo(path)} is up to date.`);
+      } else {
+        stale++;
+        console.error(`${fromRepo(path)} is out of date.`);
+      }
+    }
+    if (stale > 0) {
       console.error(
-        `${output} is out of date. Run: pnpm --filter @chromatic-wheel/catalog-builder build-catalog`,
+        "Run: pnpm --filter @chromatic-wheel/catalog-builder build-catalog",
       );
       return 1;
     }
-    console.log(`${output} is up to date.`);
     return 0;
   }
 
-  await mkdir(dirname(OUTPUT_FILE), { recursive: true });
-  await writeFile(OUTPUT_FILE, result.value.json, "utf8");
+  for (const { path, content } of outputs) {
+    await mkdir(dirname(path), { recursive: true });
+    await writeFile(path, content, "utf8");
+  }
   const { meta, paints } = result.value.document;
   console.log(
-    `${output}: ${String(paints.length)} paints, ${meta.dataVersion}`,
+    `${fromRepo(OUTPUT_FILE)}: ${String(paints.length)} paints, ${meta.dataVersion}`,
+  );
+  console.log(
+    `${fromRepo(DISCREPANCIES_FILE)}: ${String(result.value.discrepancies.length)} colour discrepancies`,
+  );
+  console.log(
+    `${fromRepo(DISABLED_SOURCES_FILE)}: ${String(result.value.disabledSources.disabledSources.length)} disabled source(s)`,
   );
   return 0;
 }

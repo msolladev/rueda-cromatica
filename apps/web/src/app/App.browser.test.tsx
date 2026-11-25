@@ -641,13 +641,13 @@ describe("the paint search", () => {
     const notice = await vi.waitFor(() =>
       query(".paint-search-ryb", HTMLElement),
     );
-    expect(notice.textContent).toContain("ΔE 8,6");
+    expect(notice.textContent).toContain("ΔE 6,8");
     await userEvent.click(query(".paint-search-ryb button", HTMLButtonElement));
     await vi.waitFor(() => {
       expect(container.querySelector(".paint-search-ryb")).toBeNull();
       expect(
         activePanel().querySelector(".panel-heading code")?.textContent,
-      ).toBe("#2c9bcc");
+      ).toBe("#3394c3");
     });
   });
 
@@ -671,7 +671,7 @@ describe("the paint search", () => {
     await vi.waitFor(() => {
       expect(options()).toHaveLength(9);
     });
-    expect(options().at(-1)?.textContent).toBe("Ver más pinturas (8 de 83)");
+    expect(options().at(-1)?.textContent).toBe("Ver más pinturas (8 de 95)");
     await userEvent.keyboard("{ArrowUp}{Enter}");
     await vi.waitFor(() => {
       expect(options()).toHaveLength(17);
@@ -699,6 +699,234 @@ describe("the paint search", () => {
     await userEvent.click(back);
     await vi.waitFor(() => {
       expect(field().value).toBe("Moot Green");
+    });
+  });
+
+  it("shows the official equivalences of the chosen paint, and jumps to one and back (docs/07 §16)", async () => {
+    await ready();
+    await choose("moot green");
+    const official = () => query(".official", HTMLElement);
+    const names = () =>
+      [...official().querySelectorAll(".paint .paint-name")].map(
+        (name) => name.textContent,
+      );
+    await vi.waitFor(() => {
+      expect(names()).toEqual([
+        "Light Green",
+        "Scorpion Green",
+        "Leafy Green",
+        "Snake Scales",
+        "Scorpy Green",
+      ]);
+    });
+    expect(official().querySelector("h4")?.textContent).toBe(
+      "Equivalencias oficiales",
+    );
+    expect(official().textContent).toContain(
+      "Ningún documento propone otra pintura para Moot Green.",
+    );
+    const scorpy = [...official().querySelectorAll(".paint")].at(-1);
+    expect(scorpy?.querySelector(".paint-sources")?.textContent).toBe(
+      "Según Acrylicos Vallejo, en Game Color chart (CC266).",
+    );
+    expect(scorpy?.querySelector(".paint-quality")?.textContent).toContain(
+      "ΔE",
+    );
+    await animationsFinished();
+    await expectNoAxeViolations();
+
+    const use = scorpy?.querySelector(".use-as-base");
+    if (!(use instanceof HTMLButtonElement)) throw new Error("No button");
+    expect(use.getAttribute("aria-label")).toBe(
+      "Usar Scorpy Green como base de la rueda",
+    );
+    await userEvent.click(use);
+    await vi.waitFor(() => {
+      expect(field().value).toBe("Scorpy Green");
+      expect(names()).toEqual([
+        "Moot Green",
+        "Light Green",
+        "Mouldy Clothes",
+        "Snake Scales",
+      ]);
+    });
+    const back = query(".paint-search-back button", HTMLButtonElement);
+    expect(back.textContent).toBe("Volver a Moot Green");
+    await userEvent.click(back);
+    await vi.waitFor(() => {
+      expect(field().value).toBe("Moot Green");
+      expect(container.querySelector(".paint-search-back")).toBeNull();
+    });
+  });
+
+  it("says so when the chosen paint has no official equivalences", async () => {
+    await ready();
+    await choose("brassy");
+    await vi.waitFor(() => {
+      expect(query(".official", HTMLElement).textContent).toBe(
+        "Equivalencias oficialesNingún fabricante publica una equivalencia para Brassy Brass (Vallejo · Game Color · 72.058).",
+      );
+    });
+  });
+
+  it("lists the official equivalences of a row in its «Details»", async () => {
+    await ready();
+    await choose("moot green");
+    const row = await vi.waitFor(() => {
+      const found = firstOf("Warhammer Colour");
+      if (found === undefined || found === null) throw new Error("No row");
+      return found;
+    });
+    await userEvent.click(
+      query(".brand-group .paint-details summary", HTMLElement),
+    );
+    const links = row.querySelector(".official-links");
+    expect(links?.querySelector("p")?.textContent).toBe(
+      "Moot Green se propone para",
+    );
+    expect(
+      [...(links?.querySelectorAll(".official-link-name") ?? [])].map(
+        (name) => name.textContent,
+      ),
+    ).toEqual([
+      "Light Green",
+      "Scorpion Green",
+      "Leafy Green",
+      "Snake Scales",
+      "Scorpy Green",
+    ]);
+  });
+
+  it("marks a discontinued paint, after the active ones, and says whether it has a replacement (docs/07 §15-16)", async () => {
+    await ready();
+    await userEvent.click(field());
+    await userEvent.keyboard("necromancer cloak");
+    await vi.waitFor(() => {
+      expect(options().map((option) => option.textContent)).toEqual([
+        "Necromancer Cloak · EstándarThe Army Painter · Warpaints · WP1443Descatalogada",
+      ]);
+    });
+    await animationsFinished();
+    await expectNoAxeViolations();
+    await userEvent.clear(field());
+    await userEvent.keyboard("matt white");
+    await vi.waitFor(() => {
+      const [fanatic, original] = options().map((o) => o.textContent);
+      expect(fanatic).toContain("Warpaints Fanatic");
+      expect(fanatic).not.toContain("Descatalogada");
+      expect(original).toContain("Warpaints · WP1102Descatalogada");
+    });
+    await userEvent.keyboard("{ArrowDown}{ArrowDown}{Enter}");
+    await vi.waitFor(() => {
+      expect(query(".paint-search-chosen", HTMLElement).textContent).toBe(
+        "The Army Painter · Warpaints · WP1102Descatalogada",
+      );
+      const official = query(".official", HTMLElement);
+      expect(official.querySelector("h5")?.textContent).toBe(
+        "Matt White se sustituye por",
+      );
+      expect(official.textContent).toContain(
+        "Ningún documento del fabricante nombra una sustituta de Matt White.",
+      );
+    });
+    await animationsFinished();
+    await expectNoAxeViolations();
+  });
+
+  describe("a paint without colour (docs/07 §15)", () => {
+    /**
+     * The catalog the page downloads, with the original Snake Scales
+     * without colour and, if asked, replaced by Moot Green: fictitious,
+     * because the catalog has no such paint yet.
+     */
+    async function withoutColor(replaced: boolean): Promise<string> {
+      const real = window.fetch.bind(window);
+      const catalog = (await (await real("/catalog.json")).json()) as {
+        paints: {
+          id: string;
+          color: { hex: string } | null;
+          status: unknown;
+        }[];
+      };
+      const find = (id: string) => {
+        const paint = catalog.paints.find((p) => p.id === id);
+        if (paint === undefined) throw new Error(`No ${id}`);
+        return paint;
+      };
+      const snake = find("the-army-painter/warpaints/snake-scales");
+      snake.color = null;
+      snake.status = {
+        kind: "discontinued",
+        replacement: replaced
+          ? {
+              paintId: "citadel/layer/moot-green",
+              sourceId: "the-army-painter-warpaints-conversion-chart",
+            }
+          : null,
+      };
+      vi.spyOn(window, "fetch").mockImplementation(async (...args) => {
+        const [input] = args;
+        const url = input instanceof Request ? input.url : input.toString();
+        return url.endsWith("/catalog.json")
+          ? new Response(JSON.stringify(catalog))
+          : real(...args);
+      });
+      return find("citadel/layer/moot-green").color?.hex ?? "";
+    }
+
+    const baseHex = () =>
+      query('[role="tabpanel"] .panel-heading code', HTMLElement).textContent;
+
+    it("is striped in the search, and the wheel takes its replacement's colour", async () => {
+      const moot = await withoutColor(true);
+      await ready();
+      await userEvent.click(field());
+      await userEvent.keyboard("snake scales");
+      await vi.waitFor(() => {
+        expect(options()).toHaveLength(1);
+      });
+      const option = options()[0];
+      expect(option?.querySelector(".swatch-none")).not.toBeNull();
+      expect(option?.textContent).toContain("sin color");
+      await animationsFinished();
+      await expectNoAxeViolations();
+      await userEvent.keyboard("{ArrowDown}{Enter}");
+      await vi.waitFor(() => {
+        expect(field().value).toBe("Snake Scales");
+        expect(query(".paint-search-standin", HTMLElement).textContent).toBe(
+          "Mostrando Moot Green, su sustituta según The Army Painter.",
+        );
+        expect(baseHex()).toBe(moot);
+        const official = query(".official", HTMLElement);
+        expect(official.querySelector("h5")?.textContent).toBe(
+          "Snake Scales se sustituye por",
+        );
+        // Not measured against the wheel: whole swatches, without ΔE.
+        expect(official.querySelectorAll(".split-whole").length).toBe(
+          official.querySelectorAll(".paint").length,
+        );
+        expect(official.querySelector(".paint-quality")).toBeNull();
+      });
+      await animationsFinished();
+      await expectNoAxeViolations();
+    });
+
+    it("leaves the wheel where it is with several equivalents, and says to use one", async () => {
+      await withoutColor(false);
+      await ready();
+      const before = baseHex();
+      await choose("snake scales");
+      await vi.waitFor(() => {
+        expect(field().value).toBe("Snake Scales");
+        expect(activePanel().textContent).toContain(
+          "Snake Scales no tiene color en el catálogo. Usa una de sus equivalencias como base de la rueda.",
+        );
+      });
+      expect(baseHex()).toBe(before);
+      expect(container.querySelector(".paint-search-standin")).toBeNull();
+      expect(activePanel().querySelector(".brand-groups")).toBeNull();
+      await animationsFinished();
+      await expectNoAxeViolations();
     });
   });
 

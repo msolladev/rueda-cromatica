@@ -70,9 +70,31 @@ export const es: Messages = {
     hexFrom: "{hex}, de {source} ({origin})",
     color: "Color",
     exactColor: "Exacto",
+    noColor: "Sin color",
     metallic: "Metálica",
     discontinued: "Descatalogada",
     chosen: "Elegida",
+  },
+  official: {
+    heading: "Equivalencias oficiales",
+    intro:
+      "Lo que dicen los fabricantes en sus cartas, no el color calculado. Cada una vale en un solo sentido.",
+    outgoing: "Para {name} se propone",
+    incoming: "{name} se propone para",
+    noneOutgoing: "Ningún documento propone otra pintura para {name}.",
+    noneIncoming: "Ningún documento propone {name} para otra pintura.",
+    replacement: "{name} se sustituye por",
+    noReplacement:
+      "Ningún documento del fabricante nombra una sustituta de {name}.",
+    noColorUse:
+      "{name} no tiene color en el catálogo. Usa una de sus equivalencias como base de la rueda.",
+    noColorNone:
+      "{name} no tiene color en el catálogo ni equivalencias publicadas, así que la rueda no se mueve.",
+    none: "Ningún fabricante publica una equivalencia para {name} ({label}).",
+    noneInDetails: "Ningún fabricante la relaciona con otra pintura.",
+    by: "Según {publisher}, en {title}.",
+    use: "Usar {name} como base de la rueda",
+    useShort: "Usar como base",
   },
   filters: {
     title: "Filtros",
@@ -99,6 +121,9 @@ export const es: Messages = {
     back: "Volver a {name}",
     chosen: "Base: {name}, {brand} {range}.",
     typeMetallic: "{type}, metálica",
+    noColor: "sin color",
+    standInReplacement: "Mostrando {name}, su sustituta según {publisher}.",
+    standInEquivalence: "Mostrando {name}, su equivalente según {publisher}.",
     rybNotice:
       "La rueda RYB no llega a este color: usa el más parecido (ΔE {deltaE}).",
     useDigital: "Usar la rueda digital",
@@ -115,10 +140,12 @@ export const es: Messages = {
     dry: "Pincel seco",
   },
   quality: {
+    identical: "Idéntica",
     "near-identical": "Casi idéntica",
     "very-similar": "Muy parecida",
     similar: "Parecida",
-    "nearest-available": "La más cercana",
+    "barely-similar": "Poco parecida",
+    different: "Distinta",
   },
   approximate: {
     allTitle: "Los colores son aproximados",

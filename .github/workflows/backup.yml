@@ -1,0 +1,51 @@
+name: Backup
+
+# The backups of each environment's database (docs/08 §8, ADR-0040): every
+# night, and the restore test on the first day of each month, on the
+# self-hosted runner of each environment's machine. A failure, or a night
+# that did not run, ends in red, and GitHub warns by email. GitHub only runs
+# the schedules of main, so each environment takes the scripts of its own
+# branch: the preproduction tries their changes first.
+on:
+  schedule:
+    - cron: "30 3 * * *"
+    - cron: "30 4 1 * *"
+  workflow_dispatch:
+    inputs:
+      task:
+        description: What to run
+        type: choice
+        options: [backup, restore-test]
+        default: backup
+      environment:
+        description: Where
+        type: choice
+        options: [preprod, production]
+        default: production
+
+permissions:
+  contents: read
+
+jobs:
+  backup:
+    strategy:
+      fail-fast: false
+      matrix:
+        # Both on schedule; a manual run, only in its environment.
+        environment: ${{ github.event_name == 'schedule' && fromJSON('["preprod","production"]') || fromJSON(format('["{0}"]', inputs.environment)) }}
+    # The runner of the machine runs one job at a time, so a backup never
+    # overlaps a deploy: it waits for it.
+    runs-on: [self-hosted, "colorwheel-${{ matrix.environment }}"]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ matrix.environment == 'production' && 'main' || 'preprod' }}
+          persist-credentials: false
+          sparse-checkout: |
+            deploy
+            apps/api/compose.yaml
+          sparse-checkout-cone-mode: false
+      - run: deploy/backup/"$TASK".sh "$ENVIRONMENT"
+        env:
+          TASK: ${{ github.event.schedule == '30 4 1 * *' && 'restore-test' || inputs.task || 'backup' }}
+          ENVIRONMENT: ${{ matrix.environment }}

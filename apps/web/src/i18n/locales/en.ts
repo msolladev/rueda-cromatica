@@ -70,9 +70,30 @@ export const en: Messages = {
     hexFrom: "{hex}, from {source} ({origin})",
     color: "Color",
     exactColor: "Exact",
+    noColor: "No color",
     metallic: "Metallic",
     discontinued: "Discontinued",
     chosen: "Chosen",
+  },
+  official: {
+    heading: "Official equivalents",
+    intro:
+      "What the manufacturers say in their charts, not the calculated color. Each one holds in one direction only.",
+    outgoing: "Proposed for {name}",
+    incoming: "{name} is proposed for",
+    noneOutgoing: "No document proposes another paint for {name}.",
+    noneIncoming: "No document proposes {name} for another paint.",
+    replacement: "{name} is replaced by",
+    noReplacement: "No manufacturer document names a replacement for {name}.",
+    noColorUse:
+      "{name} has no colour in the catalogue. Use one of its equivalences as the base of the wheel.",
+    noColorNone:
+      "{name} has no colour in the catalogue and no published equivalences, so the wheel does not move.",
+    none: "No manufacturer publishes an equivalent for {name} ({label}).",
+    noneInDetails: "No manufacturer relates it to another paint.",
+    by: "According to {publisher}, in {title}.",
+    use: "Use {name} as the base of the wheel",
+    useShort: "Use as base",
   },
   filters: {
     title: "Filters",
@@ -99,6 +120,11 @@ export const en: Messages = {
     back: "Back to {name}",
     chosen: "Base: {name}, {brand} {range}.",
     typeMetallic: "{type}, metallic",
+    noColor: "no colour",
+    standInReplacement:
+      "Showing {name}, its replacement according to {publisher}.",
+    standInEquivalence:
+      "Showing {name}, its equivalent according to {publisher}.",
     rybNotice:
       "The RYB wheel can't reach this color: it uses the closest one (ΔE {deltaE}).",
     useDigital: "Use the digital wheel",
@@ -115,10 +141,12 @@ export const en: Messages = {
     dry: "Dry",
   },
   quality: {
+    identical: "Identical",
     "near-identical": "Near identical",
     "very-similar": "Very similar",
     similar: "Similar",
-    "nearest-available": "Nearest available",
+    "barely-similar": "Barely similar",
+    different: "Different",
   },
   approximate: {
     allTitle: "The colors are approximate",

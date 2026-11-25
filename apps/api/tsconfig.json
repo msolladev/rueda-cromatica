@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "types": ["node"],
+    // NestJS's decorators (ADR-0038): the legacy ones of TypeScript, with the
+    // type metadata of its dependency injection. Neither can be stripped on
+    // the fly like a type, so the API is compiled (tsconfig.build.json).
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "erasableSyntaxOnly": false
+  },
+  "include": ["src", "test", "*.config.ts"]
+}

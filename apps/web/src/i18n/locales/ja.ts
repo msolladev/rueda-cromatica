@@ -72,9 +72,30 @@ export const ja: Messages = {
     hexFrom: "{hex}（出典：{source}、{origin}）",
     color: "色",
     exactColor: "正確",
+    noColor: "色なし",
     metallic: "メタリック",
     discontinued: "廃番",
     chosen: "選択中",
+  },
+  official: {
+    heading: "公式の対応",
+    intro:
+      "メーカーがチャートで示している対応で、計算した色ではありません。それぞれ一方向にのみ成り立ちます。",
+    outgoing: "{name} に対して提案されているもの",
+    incoming: "{name} が提案されている対象",
+    noneOutgoing: "{name} に対して別の塗料を提案している資料はありません。",
+    noneIncoming: "{name} を別の塗料に対して提案している資料はありません。",
+    replacement: "{name} の後継品",
+    noReplacement: "{name} の後継品を示すメーカーの資料はありません。",
+    noColorUse:
+      "{name} にはカタログ上の色がありません。対応する塗料のいずれかをホイールのベースにしてください。",
+    noColorNone:
+      "{name} にはカタログ上の色も公表された対応塗料もないため、ホイールは動きません。",
+    none: "{name}（{label}）の対応を公開しているメーカーはありません。",
+    noneInDetails: "ほかの塗料と対応づけているメーカーはありません。",
+    by: "{publisher} による（{title}）。",
+    use: "{name} をホイールのベースにする",
+    useShort: "ベースにする",
   },
   filters: {
     title: "フィルター",
@@ -101,6 +122,10 @@ export const ja: Messages = {
     back: "{name} に戻る",
     chosen: "ベース：{name}、{brand} {range}。",
     typeMetallic: "{type}、メタリック",
+    noColor: "色なし",
+    standInReplacement: "{name} を表示しています（{publisher} による後継品）。",
+    standInEquivalence:
+      "{name} を表示しています（{publisher} による対応塗料）。",
     rybNotice:
       "RYB ホイールではこの色に届きません。最も近い色を使います（ΔE {deltaE}）。",
     useDigital: "デジタルホイールを使う",
@@ -117,10 +142,12 @@ export const ja: Messages = {
     dry: "ドライブラシ",
   },
   quality: {
+    identical: "同じ",
     "near-identical": "ほぼ同じ",
     "very-similar": "とても近い",
     similar: "近い",
-    "nearest-available": "最も近いもの",
+    "barely-similar": "あまり近くない",
+    different: "異なる",
   },
   approximate: {
     allTitle: "色はおおよそのものです",

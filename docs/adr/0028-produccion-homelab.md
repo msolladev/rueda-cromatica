@@ -1,6 +1,6 @@
 # ADR-0028: Producción en el homelab
 
-- **Estado:** aceptada
+- **Estado:** aceptada; corregida en parte por [ADR-0044](0044-despliegue-api-postgresql.md)
 - **Fecha:** 2026-11-21
 
 ## Contexto

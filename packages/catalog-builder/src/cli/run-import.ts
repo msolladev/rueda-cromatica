@@ -1,99 +1,162 @@
 /**
- * Flow shared by the importer entry points (docs/04 §4): reads the source and
- * the brand file, fetches the source at its pinned commit, merges and writes
- * the brand file. The importer logic itself stays pure.
+ * Flow shared by the importer entry points (docs/04 §7): fetches the files of
+ * each source at the URL of its file, reads them as text or as a PDF,
+ * imports them with the package's pure logic (`importSource`) and writes the
+ * source file and the brand files that change, once they pass their own
+ * checks.
  */
-import { writeFile } from "node:fs/promises";
-import { join } from "node:path";
-import type { Result } from "@chromatic-wheel/domain";
-import { readBrandFile, readSourcesFile } from "../curated/files.ts";
-import { mergePaints, type ImportedPaint } from "../importers/merge.ts";
-import { BRANDS_DIR, fromRepo, readJson, SOURCES_FILE } from "./data-files.ts";
-
-/** A GitHub URL pinned to a commit: `…/blob/<sha>/<path>` or `…/tree/<sha>`. */
-export interface PinnedGitHub {
-  readonly repo: string;
-  readonly commit: string;
-  readonly path: string;
-}
-
-const PINNED_URL =
-  /^https:\/\/github\.com\/([^/]+\/[^/]+)\/(?:blob|tree)\/([0-9a-f]{40})(?:\/(.*))?$/;
-
-export const rawUrl = (pinned: PinnedGitHub, path = pinned.path): string =>
-  `https://raw.githubusercontent.com/${pinned.repo}/${pinned.commit}/${path}`;
-
-export interface ImportOptions {
-  readonly sourceId: string;
-  readonly brandId: string;
-  /** The raw file to fetch, from the pinned URL of the source. */
-  readonly fileUrl: (pinned: PinnedGitHub) => string;
-  readonly read: (
-    text: string,
-    sourceId: string,
-  ) => Result<readonly ImportedPaint[], readonly string[]>;
-}
+import { dataPath, printIssues, readCuratedFiles } from "./data-files.ts";
+import { writeDataFile } from "./write-data-file.ts";
+import {
+  importerOf,
+  importSource,
+  readBrandFile,
+  readCurated,
+  readSourceFile,
+  sourceContent,
+  sourceFiles,
+  type SourceImporter,
+  type Transcribed,
+} from "../index.ts";
+import { readPdfText } from "./pdf.ts";
 
 function fail(messages: readonly string[]): number {
   for (const message of messages) console.error(message);
   return 1;
 }
 
-export async function runImport(options: ImportOptions): Promise<number> {
-  const brandPath = join(BRANDS_DIR, `${options.brandId}.json`);
-  const sourcesFile = await readJson(SOURCES_FILE);
-  const brandFile = await readJson(brandPath);
-  if (typeof sourcesFile === "string") return fail([sourcesFile]);
-  if (typeof brandFile === "string") return fail([brandFile]);
-
-  const sources = readSourcesFile(sourcesFile);
-  if (!sources.ok) {
-    return fail(sources.error.map((i) => `${i.path}: ${i.message}`));
+/** Fetches the files of a source and transcribes them. */
+async function transcribe(
+  importer: SourceImporter,
+  urls: readonly string[],
+): Promise<Transcribed | string> {
+  const fetched: { name: string; bytes: Uint8Array }[] = [];
+  for (const url of urls) {
+    const response = await fetch(url);
+    if (!response.ok) {
+      return `Could not fetch ${url}: HTTP ${String(response.status)}`;
+    }
+    fetched.push({
+      name: url,
+      bytes: new Uint8Array(await response.arrayBuffer()),
+    });
   }
-  const source = sources.value.find((s) => s.id === options.sourceId);
-  const match = PINNED_URL.exec(source?.url ?? "");
-  if (match === null) {
-    return fail([
-      `${fromRepo(SOURCES_FILE)}: ${options.sourceId} needs a GitHub URL pinned to a commit`,
-    ]);
+  if (importer.format === "pdf") {
+    const pdfs = [];
+    for (const { bytes } of fetched) pdfs.push(await readPdfText(bytes));
+    return importer.transcribe(pdfs);
   }
-  const [, repo = "", commit = "", path = ""] = match;
-
-  const current = readBrandFile(brandFile);
-  if (!current.ok) {
-    return fail(current.error.map((i) => `${i.file} ${i.path}: ${i.message}`));
-  }
-
-  const url = options.fileUrl({ repo, commit, path });
-  const response = await fetch(url);
-  if (!response.ok) {
-    return fail([`Could not fetch ${url}: HTTP ${String(response.status)}`]);
-  }
-
-  const imported = options.read(await response.text(), options.sourceId);
-  if (!imported.ok) return fail(imported.error);
-  const merged = mergePaints(current.value.paints, imported.value);
-  if (!merged.ok) return fail(merged.error);
-
-  const content = {
-    brand: current.value.brand,
-    ranges: current.value.ranges,
-    paints: merged.value.paints,
-  };
-  // Never write a file the builder would reject.
-  const check = readBrandFile({ name: brandFile.name, content });
-  if (!check.ok) {
-    return fail(check.error.map((i) => `${i.file} ${i.path}: ${i.message}`));
-  }
-  await writeFile(brandPath, `${JSON.stringify(content, null, 2)}\n`, "utf8");
-
-  console.log(
-    `${fromRepo(brandPath)}: ${String(merged.value.paints.length)} paints`,
+  const decoder = new TextDecoder();
+  return importer.transcribe(
+    fetched.map(({ name, bytes }) => ({ name, text: decoder.decode(bytes) })),
   );
-  if (merged.value.missing.length > 0) {
-    console.log("\nNo longer in the source (kept, decide by hand):");
-    for (const paint of merged.value.missing) console.log(`  ${paint.id}`);
+}
+
+/** Imports one source; 0 if it went well. */
+async function runImport(sourceId: string): Promise<number> {
+  const importer = importerOf(sourceId);
+  if (importer === null) return fail([`No importer for ${sourceId}`]);
+  const files = await readCuratedFiles();
+  if (!files.ok) return fail(files.error);
+  const curated = readCurated(files.value.data);
+  if (!curated.ok) {
+    printIssues(curated.error);
+    return 1;
   }
-  console.log("\nNext: pnpm format, then build-catalog, and review the diff.");
+
+  const source = curated.value.sources.find((s) => s.source.id === sourceId);
+  if (source === undefined) return fail([`No source file for ${sourceId}`]);
+  const targets = sourceFiles(source.source);
+  if (!targets.ok) {
+    return fail([`${dataPath(source.name)}: ${targets.error}`]);
+  }
+  if (targets.value === null || targets.value.length === 0) {
+    return fail([`${dataPath(source.name)}: ${sourceId} has no URL`]);
+  }
+
+  const transcription = await transcribe(
+    importer,
+    targets.value.map(({ url }) => url),
+  );
+  if (typeof transcription === "string") return fail([transcription]);
+  if (!transcription.ok) return fail(transcription.error);
+
+  const result = importSource({
+    curated: curated.value,
+    source,
+    importer,
+    transcription: transcription.value,
+  });
+  if (!result.ok) return fail(result.error);
+  const imported = result.value;
+
+  // Never write a file that does not pass its own checks.
+  const sourceWrite = {
+    name: imported.source.name,
+    content: sourceContent(imported.source),
+  };
+  const brandWrites = imported.brands.map((brand) => ({
+    name: brand.name,
+    content: { brand: brand.brand, ranges: brand.ranges, paints: brand.paints },
+  }));
+  const invalid = [
+    readSourceFile(sourceWrite),
+    ...brandWrites.map(readBrandFile),
+  ].flatMap((check) => (check.ok ? [] : check.error));
+  if (invalid.length > 0) {
+    printIssues(invalid);
+    return 1;
+  }
+  const writes = [sourceWrite, ...brandWrites];
+  for (const write of writes) await writeDataFile(write.name, write.content);
+
+  const { paints, equivalences } = imported.source;
+  console.log(
+    `${dataPath(source.name)}: ${String(paints.length)} rows, ${String(equivalences.length)} equivalences, ${String(imported.proposals.length)} new paint(s)`,
+  );
+  for (const paint of imported.proposals) console.log(`  + ${paint.id}`);
+  const { keys, differences, pending } = imported;
+  if (keys !== null) {
+    console.log(
+      `  ${String(keys.added.length)} key(s) added to curated paints`,
+    );
+    if (keys.unmatched.length > 0) {
+      console.log("\nRows without a single paint (key or ignore by hand):");
+      for (const { key, candidates } of keys.unmatched) {
+        const which =
+          candidates.length === 0 ? "no paint" : candidates.join(", ");
+        console.log(`  "${key}": ${which}`);
+      }
+    }
+  }
+  if (differences.length > 0) {
+    console.log(
+      "\nChanged in the source, kept in the curated paints (decide by hand):",
+    );
+    for (const d of differences) {
+      console.log(
+        `  ${d.paintId} ${d.field}: source ${String(d.source)}, curated ${String(d.curated)}`,
+      );
+    }
+  }
+  if (pending.length > 0) {
+    console.log("\nThe builder will reject these until they are decided:");
+    printIssues(pending);
+  }
   return 0;
+}
+
+/**
+ * Imports the sources in order, stopping at the first that fails, and sets
+ * the exit code.
+ */
+export async function runImports(sourceIds: readonly string[]): Promise<void> {
+  for (const sourceId of sourceIds) {
+    const code = await runImport(sourceId);
+    if (code !== 0) {
+      process.exitCode = code;
+      return;
+    }
+  }
+  console.log("\nNext: build-catalog, and review the diff.");
 }

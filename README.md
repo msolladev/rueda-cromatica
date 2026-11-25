@@ -9,10 +9,11 @@ Está publicada en [colorwheel.msolla.dev](https://colorwheel.msolla.dev/).
 - **Rueda de color** continua, con un anillo de tono y un triángulo de blanco y negro, y una plantilla giratoria. Calcula en el modelo RYB, el de la pintura física, o en el digital. Genera las armonías (complementario, complementario dividido, análogos, análogos con acento, tríada, tétrada, cuadrado y monocromático) y un esquema de miniatura: la base con su sombra y su luz, su tríada y su complementario, con mezclas que simulan pigmentos.
 - **Pinturas parecidas**: para cada color, las pinturas más cercanas de cada marca por ΔE CIEDE2000, o las más cercanas de todas, con filtros por marca y tipo, y una etiqueta de cercanía. Avisa cuando el color de una pintura es aproximado.
 - **Buscador de pinturas**: se busca una pintura que se tiene, por su nombre, su código o su marca, y su color pasa a ser la base de la rueda.
-- **Catálogo** de las líneas vigentes de Warhammer Colour (antes Citadel), Vallejo, The Army Painter y AK Interactive: unas 1400 pinturas.
+- **Equivalencias oficiales**: para la pintura elegida, lo que dicen las cartas de conversión de Vallejo, The Army Painter, AK y Games Workshop, en sus dos direcciones y con quién lo afirma, aparte de las pinturas parecidas.
+- **Catálogo** de las líneas vigentes de Warhammer Colour (antes Citadel), Vallejo, The Army Painter y AK Interactive, y de las descatalogadas: los Warpaints originales de The Army Painter y las líneas antiguas de Citadel (Citadel Colour, con sus tintas, Foundation y los Washes de 2008). Unas 1600 pinturas. Una pintura descatalogada se encuentra en el buscador y dice qué la sustituye, si el fabricante lo dice.
 - **Preferencias** (marcas, filtros, vista, tema, idioma, rueda y la pintura elegida) guardadas en el navegador.
 
-Las equivalencias oficiales entre marcas, las líneas descatalogadas y las cuentas de usuario llegan en fases posteriores. La hoja de ruta está en el [CLAUDE.md](CLAUDE.md#estado-y-hoja-de-ruta), y el alcance del MVP, razonado en el [ADR-0019](docs/adr/0019-alcance-minimo-mvp.md).
+Las cuentas de usuario llegan después. La hoja de ruta está en el [CLAUDE.md](CLAUDE.md#estado-y-hoja-de-ruta), y el alcance del MVP, razonado en el [ADR-0019](docs/adr/0019-alcance-minimo-mvp.md).
 
 ## Paquetes
 
@@ -22,6 +23,7 @@ Las equivalencias oficiales entre marcas, las líneas descatalogadas y las cuent
 | [`packages/domain`](packages/domain/README.md)                   | El modelo del catálogo de pinturas, la búsqueda de las pinturas parecidas y la búsqueda por nombre |
 | [`packages/catalog-builder`](packages/catalog-builder/README.md) | El script que importa las fuentes de datos y genera `catalog.json`                                 |
 | [`apps/web`](apps/web/README.md)                                 | La PWA                                                                                             |
+| [`apps/api`](apps/api/README.md)                                 | La API REST, con NestJS y PostgreSQL. Hoy, el catálogo en su base de datos                         |
 
 ## Documentación
 
@@ -35,13 +37,14 @@ Las especificaciones describen cómo funciona hoy cada parte; los ADR, por qué 
 - [docs/06](docs/06-pinturas-parecidas.md): las pinturas parecidas y la búsqueda por nombre.
 - [docs/07](docs/07-web.md): la web.
 - [docs/08](docs/08-despliegue.md): el despliegue y cómo volver atrás.
+- [docs/09](docs/09-api.md): la API.
 - [docs/adr](docs/adr/README.md): las decisiones de arquitectura, con su índice.
 - [docs/investigacion](docs/investigacion/README.md): los informes de investigación, fechados.
 - La referencia de la API de `color-wheel` y `domain` se genera con `pnpm docs:api` y se publica en `/reference/` de la web.
 
 ## Ramas y despliegue
 
-El trabajo entra en `preprod` con un PR fusionado con _squash_, y cada push a `preprod` despliega en preproducción si pasa la CI. `preprod` llega a `main` con un PR fusionado con un commit de merge, y cada push a `main` despliega en producción y crea la etiqueta `release/` de la publicación. Los dos entornos están en un homelab. El detalle, en [docs/08](docs/08-despliegue.md).
+El trabajo entra en `preprod` con un PR fusionado con _squash_, y cada push a `preprod` despliega en preproducción si pasa la CI. `preprod` llega a `main` con un PR fusionado con un commit de merge, y cada push a `main` despliega en producción y crea la etiqueta `release/` de la publicación. Los dos entornos están en un homelab, con la web, la API y PostgreSQL en Docker Compose (`deploy/`), y copias diarias de la base de datos en el NAS. El detalle, en [docs/08](docs/08-despliegue.md).
 
 ## Instalación
 
@@ -56,6 +59,8 @@ Los tests de navegador de `color-wheel` y `apps/web`, y los de extremo a extremo
 - `pnpm --filter @chromatic-wheel/color-wheel install-browsers` (la versión recortada para tests) y `pnpm --filter @chromatic-wheel/web install-browsers` (Chromium completo y Firefox, para los tests de extremo a extremo), una vez y cada vez que cambie la versión de Playwright;
 - en WSL, además, las librerías del sistema: `pnpm --filter @chromatic-wheel/color-wheel exec playwright install-deps chromium`, que pide la contraseña de `sudo`.
 
+Los tests de integración de `apps/api` necesitan su PostgreSQL, que se ejecuta con Docker: Docker Desktop con la integración de WSL. Se arranca con `pnpm --filter @chromatic-wheel/api db:up` antes de `pnpm test` ([docs/09](docs/09-api.md) §7).
+
 ## Comandos
 
 Desde la raíz:
@@ -64,15 +69,24 @@ Desde la raíz:
 - `pnpm lint`: ESLint con tipos en todo el monorepo.
 - `pnpm format` / `pnpm format:check`: aplica o comprueba el formato de Prettier.
 - `pnpm typecheck`: `tsc` en la raíz y en cada paquete.
-- `pnpm test`: Vitest en `domain`, `catalog-builder`, `color-wheel` y `apps/web`. Los proyectos de navegador necesitan Chromium (ver «Instalación»).
-- `pnpm build`: build de `color-wheel` (Vite en modo librería y `tsc`) y de `apps/web` (Vite, prerenderizado de cada página y PWA). `SITE_ORIGIN` da el origen de las URL absolutas de la web.
+- `pnpm test`: Vitest en `domain`, `catalog-builder`, `color-wheel`, `apps/web` y `apps/api`. Los proyectos de navegador necesitan Chromium, y los de integración de la API, su PostgreSQL (ver «Instalación»).
+- `pnpm build`: build de `color-wheel` (Vite en modo librería y `tsc`), de `apps/web` (Vite, prerenderizado de cada página y PWA) y de `apps/api` (`nest build`). `SITE_ORIGIN` da el origen de las URL absolutas de la web.
 - `pnpm --filter @chromatic-wheel/web test:e2e`: tests de extremo a extremo de la web compilada, con Playwright. Antes hay que ejecutar `pnpm build`.
 - `pnpm docs:api`: genera la referencia de la API de `color-wheel` y `domain` en `dist/reference/`, que se abre con `dist/reference/index.html`. Falla si TypeDoc da algún aviso ([ADR-0023](docs/adr/0023-documentacion-tecnica.md)).
 - `pnpm --filter @chromatic-wheel/web dev`: servidor de desarrollo de la web, que renderiza cada página como el build.
 - `pnpm --filter @chromatic-wheel/web preview`: sirve la web compilada en `http://localhost:4173/`.
+- `pnpm --filter @chromatic-wheel/api db:up`: arranca la PostgreSQL de desarrollo de la API, con Docker Compose. `db:down` la para, y `db:reset` además borra sus datos.
+- `pnpm --filter @chromatic-wheel/api dev`: la API en `http://localhost:3000`, con recarga al cambiar el código, y su referencia en `http://localhost:3000/api/v1/reference`.
+- `pnpm --filter @chromatic-wheel/api catalog:load`: carga los datos de `packages/catalog-builder/data/` en la base de datos de desarrollo de la API y, si todavía no hay ninguna publicación, guarda como primera el `catalog.json` de la última etiqueta `release/`. Se puede repetir ([docs/09](docs/09-api.md) §8.3).
+- `pnpm --filter @chromatic-wheel/api catalog:pack <fichero>`: escribe en un único JSON los datos de `data/` y el `catalog.json` de la última etiqueta, que cada despliegue carga en la base de datos de su entorno, donde no hay ni repositorio ni historial ([docs/09](docs/09-api.md) §8.3). Lo usa la CI.
+- `pnpm --filter @chromatic-wheel/api db:migrate`: crea la migración de los cambios de su `schema.prisma` y la aplica en desarrollo ([docs/09](docs/09-api.md) §6).
 - `pnpm --filter @chromatic-wheel/color-wheel dev`: página de pruebas de la rueda, con el código fuente ([docs/05](docs/05-rueda-de-color.md) §8.4). Con `--host`, para abrirla desde el móvil.
-- `pnpm --filter @chromatic-wheel/catalog-builder build-catalog`: regenera `apps/web/public/catalog.json` a partir de los datos, y falla sin escribir nada si un ID publicado desaparece sin lápida o si reaparece uno retirado ([docs/03](docs/03-identificadores.md) §6-7). Con `--check` no escribe nada y falla si el versionado está desactualizado.
-- `pnpm --filter @chromatic-wheel/catalog-builder import-simogecko`: importa Citadel de la tabla de SimoGecko a `data/brands/citadel.json`. Se ejecuta a demanda; después, `pnpm format` y `build-catalog`.
-- `pnpm --filter @chromatic-wheel/catalog-builder import-donnervs <brand-id>`: igual, para una marca desde los datos de DonnervS.
+- `pnpm --filter @chromatic-wheel/catalog-builder build-catalog`: regenera `apps/web/public/catalog.json`, el informe de discrepancias de color entre fuentes y el resumen de las fuentes desactivadas a partir de los datos, y falla sin escribir nada si un ID publicado desaparece sin lápida o si reaparece uno retirado ([docs/03](docs/03-identificadores.md) §6-7). Con `--check` no escribe nada y falla si el versionado está desactualizado.
+- `pnpm --filter @chromatic-wheel/catalog-builder import-simogecko`: transcribe las dos tablas de SimoGecko (Citadel), la oficial y la muestreada, en `data/sources/`, propone las pinturas nuevas de la oficial y lista lo que hay que decidir a mano ([docs/04](docs/04-datos-curados.md) §7). Se ejecuta a demanda; después, `build-catalog`.
+- `pnpm --filter @chromatic-wheel/catalog-builder import-donnervs`: igual, con los datos de DonnervS de AK Interactive, The Army Painter y Vallejo.
+- `pnpm --filter @chromatic-wheel/catalog-builder import-arcturus`: igual, con las tablas de The Army Painter y de Citadel de Arcturus, de las que solo se toman los Warpaints originales y el color de las líneas antiguas de Citadel.
+- `pnpm --filter @chromatic-wheel/catalog-builder import-games-workshop`: transcribe los documentos de Games Workshop de las líneas antiguas de Citadel desde sus capturas en la Wayback Machine, en `data/sources/`, y propone sus pinturas ([docs/04](docs/04-datos-curados.md) §3.3). Se ejecuta a demanda; después, `build-catalog`.
+- `pnpm --filter @chromatic-wheel/catalog-builder import-charts`: transcribe las cartas de equivalencias en PDF de Vallejo, The Army Painter y AK en `data/sources/` y añade sus claves a las fichas, y lista lo que hay que decidir a mano ([docs/04](docs/04-datos-curados.md) §7). Se ejecuta a demanda; después, `build-catalog`.
+- `CATALOG_SOURCES_DIR=<carpeta> pnpm --filter @chromatic-wheel/catalog-builder archive-sources`: archiva cada fuente en la Wayback Machine y descarga sus ficheros, con su SHA-256, a esa carpeta, fuera del repositorio. Solo hace lo que falta. Para solicitar capturas nuevas necesita las claves de archive.org en `~/.config/internetarchive/ia.ini` ([docs/04](docs/04-datos-curados.md) §9). Se ejecuta a demanda; después, `build-catalog`.
 - `pnpm --filter @chromatic-wheel/catalog-builder --silent next-release-tag`: escribe la etiqueta de una publicación hecha hoy ([docs/03](docs/03-identificadores.md) §7). La usa el despliegue a producción.
 - `pnpm --filter <paquete> <script>`: ejecuta un script de un paquete concreto.

@@ -2,8 +2,9 @@
  * The paint search above the wheel (docs/07 §15): a field with suggestions
  * (the combobox pattern of the APG, with Downshift) that makes a paint the
  * base of the wheel. Under it, while the base is that paint, its brand, range
- * and code; once the wheel moves away, «Back to…»; and, if the RYB wheel does
- * not reach its color, a notice that offers the digital wheel.
+ * and code, and, for a paint without colour, whose colour the wheel shows;
+ * once the wheel moves away, «Back to…»; and, if the RYB wheel does not reach
+ * its color, a notice that offers the digital wheel.
  */
 import {
   isSearchable,
@@ -32,6 +33,7 @@ import {
 } from "../../app/icons.tsx";
 import { format, formatDeltaE, SEPARATOR } from "../../i18n/i18n.ts";
 import type { Messages } from "../../i18n/messages.ts";
+import type { StandInView } from "../matches/search.ts";
 
 /** How many suggestions are shown at first, and added by «See more». */
 export const PAGE = 8;
@@ -60,6 +62,8 @@ export interface PaintSearchProps {
   readonly index: PaintSearchIndex | null;
   /** The paint the base comes from, if it still is the base. */
   readonly chosen: PaintChoice | null;
+  /** For a chosen paint without colour, the paint whose colour the wheel shows. */
+  readonly standIn: StandInView | null;
   /** The paint the base came from until the wheel moved, for «Back to…». */
   readonly previous: Paint | null;
   /** How far the RYB wheel is from the chosen paint, if it is in RYB. */
@@ -86,6 +90,7 @@ function skipDownshift(event: SyntheticEvent): void {
 export function PaintSearch({
   index,
   chosen,
+  standIn,
   previous,
   rybDeltaE,
   messages: m,
@@ -173,11 +178,7 @@ export function PaintSearch({
         {format(m.search.hint, { min: String(MIN_QUERY_LENGTH) })}
       </p>
       <div className="paint-search-field">
-        <span
-          className="swatch"
-          style={{ background: chosen?.paint.color?.hex }}
-          aria-hidden="true"
-        />
+        <Swatch paint={chosen?.paint ?? null} />
         <input
           className="paint-search-input"
           {...getInputProps({
@@ -266,22 +267,33 @@ export function PaintSearch({
             })}
         </ul>
       </div>
-      {chosenShown !== null ? (
+      {chosenShown !== null && (
         <p className="paint-search-chosen" id="paint-search-meta">
           <PaintDetails choice={chosenShown} />
+          <Status paint={chosenShown.paint} messages={m} />
         </p>
-      ) : (
-        previous !== null &&
-        !open && (
-          <p className="paint-search-back">
-            <button type="button" className="link-button" onClick={onBack}>
-              <RotateCcwIcon />
-              <span className="link-text">
-                {format(m.search.back, { name: previous.name })}
-              </span>
-            </button>
-          </p>
-        )
+      )}
+      {chosenShown !== null && standIn !== null && (
+        <p className="paint-search-standin">
+          {format(
+            standIn.via === "replacement"
+              ? m.search.standInReplacement
+              : m.search.standInEquivalence,
+            { name: standIn.name, publisher: standIn.publisher },
+          )}
+        </p>
+      )}
+      {/* After moving the wheel, or after jumping to an official equivalent,
+          the paint it came from (docs/07 §15-16). */}
+      {previous !== null && !open && (
+        <p className="paint-search-back">
+          <button type="button" className="link-button" onClick={onBack}>
+            <RotateCcwIcon />
+            <span className="link-text">
+              {format(m.search.back, { name: previous.name })}
+            </span>
+          </button>
+        </p>
       )}
       {chosenShown !== null &&
         rybDeltaE !== null &&
@@ -331,11 +343,7 @@ function Suggestion({
   const type = m.paintTypes[paint.type];
   return (
     <>
-      <span
-        className="swatch"
-        style={{ background: paint.color?.hex }}
-        aria-hidden="true"
-      />
+      <Swatch paint={paint} />
       <span className="paint-search-text">
         <span className="paint-search-name">
           <Highlighted text={paint.name} ranges={highlights?.name} />
@@ -348,8 +356,54 @@ function Suggestion({
         </span>
         <span className="paint-search-meta">
           <PaintDetails choice={choice} />
+          <Status paint={paint} messages={m} />
         </span>
       </span>
+    </>
+  );
+}
+
+/**
+ * The swatch of a paint; striped if it has no colour (docs/07 §15), which
+ * {@link Status} says in words.
+ */
+function Swatch({ paint }: { readonly paint: Paint | null }) {
+  const hex = paint?.color?.hex;
+  return (
+    <span
+      className={
+        paint !== null && hex === undefined ? "swatch swatch-none" : "swatch"
+      }
+      style={{ background: hex }}
+      aria-hidden="true"
+    />
+  );
+}
+
+/**
+ * Whether a paint is discontinued, as a chip, and whether it has no colour,
+ * for the screen reader: the swatch only shows it (docs/07 §15).
+ */
+function Status({
+  paint,
+  messages: m,
+}: {
+  readonly paint: Paint;
+  readonly messages: Messages;
+}) {
+  return (
+    <>
+      {paint.color === null && (
+        <span className="visually-hidden">
+          {SEPARATOR}
+          {m.search.noColor}
+        </span>
+      )}
+      {paint.status.kind === "discontinued" && (
+        <span className="chip chip-chosen paint-search-chip">
+          {m.results.discontinued}
+        </span>
+      )}
     </>
   );
 }

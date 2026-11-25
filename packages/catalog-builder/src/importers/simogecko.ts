@@ -1,86 +1,117 @@
 /**
- * Importer for the SimoGecko/CitadelColours official colours table: the
- * swatch colours of citadelcolour.com, collected by a third party, so their
- * origin is `community` (ADR-0014). Pure: receives the Markdown already read.
+ * Importers for the two tables of SimoGecko/CitadelColours (docs/04 §7): the
+ * official one, with the swatch colours of citadelcolour.com, and the sampled
+ * one, with colours averaged from photos of painted swatches. Pure: they
+ * receive the Markdown already read.
  */
-import {
-  err,
-  ok,
-  toHexColor,
-  type PaintType,
-  type Result,
-} from "@chromatic-wheel/domain";
-import { gradientMidpoint } from "./color.ts";
-import type { ImportedPaint } from "./merge.ts";
+import { err, ok, type Result } from "@chromatic-wheel/domain";
+import type { SourceRow } from "../model/curated.ts";
+import type { ProposalRules } from "./reconcile.ts";
 
-/** MVP lines (ADR-0019) by the table's `Type`; `null` lines are left out. */
-const LINES: Readonly<
-  Record<string, { readonly rangeId: string; readonly type: PaintType } | null>
-> = {
-  base: { rangeId: "citadel/base", type: "base" },
-  layer: { rangeId: "citadel/layer", type: "layer" },
-  shade: { rangeId: "citadel/shade", type: "wash" },
-  contrast: { rangeId: "citadel/contrast", type: "contrast" },
-  technical: { rangeId: "citadel/technical", type: "technical" },
-  dry: { rangeId: "citadel/dry", type: "dry" },
-  spray: null,
-  air: null,
-};
-
-/** `medium` covers products without colour (varnishes, mediums, thinners). */
-const FINISHES = new Set(["", "metal", "medium", "gloss", "texture"]);
-
+/** A hex, or a `dark_light` gradient, as the table writes them. */
 const COLOR_CELL = /^`(#[0-9a-f]{6})(?:_(#[0-9a-f]{6}))?`$/i;
 
-/** Names misspelt in the table, with the manufacturer page that proves it. */
-const NAME_ERRATA: Readonly<Record<string, string>> = {
-  // https://www.warhammer.com/en-GB/shop/Technical-Nurgles-Rot-2019
-  "Nurgles Rot": "Nurgle's Rot",
-};
-
-export function importSimoGecko(
+/**
+ * Transcribes every row of the table, literally. The table has no codes and
+ * repeats names across types (Abaddon Black is a `base` and a `spray`), so
+ * the key is the type and the name: `base/Abaddon Black`.
+ */
+export function transcribeSimoGecko(
   markdown: string,
-  sourceId: string,
-): Result<readonly ImportedPaint[], readonly string[]> {
-  const paints: ImportedPaint[] = [];
+): Result<readonly SourceRow[], readonly string[]> {
+  const rows: SourceRow[] = [];
   const issues: string[] = [];
 
   markdown.split("\n").forEach((line, i) => {
     const cells = tableCells(line);
     // Data rows are the ones whose colour cell is code-formatted.
     if (cells?.[3]?.startsWith("`") !== true) return;
-    const [written = "", typeCell = "", finish = "", colorCell = ""] = cells;
-    const name = NAME_ERRATA[written] ?? written;
-    const at = `line ${String(i + 1)}`;
-
-    if (!Object.hasOwn(LINES, typeCell)) {
-      issues.push(`${at}: unknown type "${typeCell}"`);
+    const [name = "", group = "", finish = "", colorCell = ""] = cells;
+    const color = COLOR_CELL.exec(colorCell);
+    if (color === null || name === "" || group === "") {
+      issues.push(`line ${String(i + 1)}: unreadable row "${line.trim()}"`);
       return;
     }
-    if (!FINISHES.has(finish)) {
-      issues.push(`${at}: unknown finish "${finish}"`);
-      return;
-    }
-    const target = LINES[typeCell];
-    if (target === null || target === undefined || finish === "medium") return;
-
-    const hex = colorOf(colorCell);
-    if (hex === null || name === "") {
-      issues.push(`${at}: unreadable row "${line.trim()}"`);
-      return;
-    }
-    paints.push({
-      rangeId: target.rangeId,
+    const [, first = "", second] = color;
+    rows.push({
+      key: `${group}/${name}`,
+      group,
       name,
-      manufacturerCode: null,
-      type: target.type,
-      metallic: finish === "metal",
-      color: { hex, origin: "community", sourceId },
+      code: null,
+      hex: second === undefined ? first : null,
+      gradient: second === undefined ? null : { dark: first, light: second },
+      measuredHex: null,
+      finish: finish === "" ? null : finish,
+      colourless: false,
     });
   });
 
-  return issues.length > 0 ? err(issues) : ok(paints);
+  return issues.length > 0 ? err(issues) : ok(rows);
 }
+
+/** How a new row of the table becomes a proposed paint (ADR-0013). */
+export const SIMOGECKO_RULES: ProposalRules = {
+  groups: {
+    base: { rangeId: "citadel/base", type: "base", metallic: false },
+    layer: { rangeId: "citadel/layer", type: "layer", metallic: false },
+    shade: { rangeId: "citadel/shade", type: "wash", metallic: false },
+    contrast: {
+      rangeId: "citadel/contrast",
+      type: "contrast",
+      metallic: false,
+    },
+    technical: {
+      rangeId: "citadel/technical",
+      type: "technical",
+      metallic: false,
+    },
+    dry: { rangeId: "citadel/dry", type: "dry", metallic: false },
+  },
+  metallic: (row) => row.finish === "metal",
+};
+
+/** The only group of the sampled table, which has no type column: its title. */
+export const SAMPLED_GROUP = "Citadel Colours Sampled Values";
+
+/**
+ * Transcribes every row of the sampled table, literally. It only lists Base
+ * and Layer paints, without their type, and no name repeats, so the key is the
+ * name. It proposes no paints (its rows are keys of existing ones), so its
+ * importer has no rules.
+ */
+export function transcribeSimoGeckoSampled(
+  markdown: string,
+): Result<readonly SourceRow[], readonly string[]> {
+  const rows: SourceRow[] = [];
+  const issues: string[] = [];
+
+  markdown.split("\n").forEach((line, i) => {
+    const cells = tableCells(line);
+    // Data rows are the ones whose HEX cell is code-formatted.
+    if (cells?.[2]?.startsWith("`") !== true) return;
+    const [name = "", , hexCell = ""] = cells;
+    const hex = HEX_CELL.exec(hexCell)?.[1];
+    if (hex === undefined || name === "") {
+      issues.push(`line ${String(i + 1)}: unreadable row "${line.trim()}"`);
+      return;
+    }
+    rows.push({
+      key: name,
+      group: SAMPLED_GROUP,
+      name,
+      code: null,
+      hex,
+      gradient: null,
+      measuredHex: null,
+      finish: null,
+      colourless: false,
+    });
+  });
+
+  return issues.length > 0 ? err(issues) : ok(rows);
+}
+
+const HEX_CELL = /^`(#[0-9a-f]{6})`$/i;
 
 function tableCells(line: string): string[] | null {
   const trimmed = line.trim();
@@ -89,14 +120,4 @@ function tableCells(line: string): string[] | null {
     .replace(/^\||\|$/g, "")
     .split("|")
     .map((cell) => cell.trim());
-}
-
-/** A single hex, or the midpoint of a `dark_light` gradient. */
-function colorOf(cell: string): string | null {
-  const match = COLOR_CELL.exec(cell);
-  if (match === null) return null;
-  const [, first = "", second] = match;
-  return second === undefined
-    ? toHexColor(first)
-    : gradientMidpoint(first, second);
 }

@@ -71,10 +71,42 @@ export interface Messages {
     readonly hexFrom: string;
     readonly color: string;
     readonly exactColor: string;
+    /** The hex of a paint without colour (only official equivalents show one). */
+    readonly noColor: string;
     readonly metallic: string;
     readonly discontinued: string;
     /** The chip of the paint chosen in the search (docs/07 §15). */
     readonly chosen: string;
+  };
+  /** The official equivalences (docs/07 §2 and §16). */
+  readonly official: {
+    readonly heading: string;
+    readonly intro: string;
+    /** «Para {name} se propone»: the edges whose origin is the paint. */
+    readonly outgoing: string;
+    /** «{name} se propone para»: the edges whose destination is the paint. */
+    readonly incoming: string;
+    readonly noneOutgoing: string;
+    readonly noneIncoming: string;
+    /** «{name} se sustituye por»: the replacement of a discontinued paint. */
+    readonly replacement: string;
+    readonly noReplacement: string;
+    /**
+     * Instead of the closest paints, for a chosen paint without colour that
+     * has equivalences to use as the base, or none.
+     */
+    readonly noColorUse: string;
+    readonly noColorNone: string;
+    /** «… para {name} ({label})», when the chosen paint has none. */
+    readonly none: string;
+    /** In «Details», when the paint has none. */
+    readonly noneInDetails: string;
+    /** «Según {publisher}, en {title}.», with the title as a link. */
+    readonly by: string;
+    /** The accessible name of the button that makes a paint the base. */
+    readonly use: string;
+    /** Its tooltip. */
+    readonly useShort: string;
   };
   readonly filters: {
     readonly title: string;
@@ -113,6 +145,14 @@ export interface Messages {
     readonly chosen: string;
     /** The type of a metallic paint in a suggestion: «{type}, metallic». */
     readonly typeMetallic: string;
+    /** For the screen reader, beside a paint without colour. */
+    readonly noColor: string;
+    /**
+     * Under a chosen paint without colour: whose colour the wheel shows,
+     * `{name}`, and who relates them, `{publisher}`.
+     */
+    readonly standInReplacement: string;
+    readonly standInEquivalence: string;
     /** The RYB wheel does not reach the paint: `{deltaE}`. */
     readonly rybNotice: string;
     readonly useDigital: string;
@@ -189,7 +229,7 @@ export interface Messages {
     readonly body: string;
     readonly backHome: string;
   };
-  /** The footer (docs/07 §16). */
+  /** The footer (docs/07 §17). */
   readonly footer: {
     readonly credits: string;
     /** What the web does, under its name. */

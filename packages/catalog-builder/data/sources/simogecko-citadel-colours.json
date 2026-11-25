@@ -1,0 +1,4123 @@
+{
+  "source": {
+    "id": "simogecko-citadel-colours",
+    "kind": "third-party",
+    "title": "Citadel Official Colours Table",
+    "publisher": "SimoGecko",
+    "url": "https://github.com/SimoGecko/CitadelColours/blob/0ea153b7c6e747cf15691dd16b8e8cc6a4551244/tables/citadel_official_colors_table.md",
+    "archiveUrl": "https://web.archive.org/web/20261122155136/https://github.com/SimoGecko/CitadelColours/blob/0ea153b7c6e747cf15691dd16b8e8cc6a4551244/tables/citadel_official_colors_table.md",
+    "retrievedAt": "2026-11-12",
+    "license": "unknown",
+    "attribution": "SimoGecko/CitadelColours"
+  },
+  "disabled": null,
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/SimoGecko/CitadelColours/0ea153b7c6e747cf15691dd16b8e8cc6a4551244/tables/citadel_official_colors_table.md",
+      "name": "citadel_official_colors_table.md",
+      "sha256": "d16a1c0328fa41801fe6e5356c8f07b72e8166bf745edf6b87a1afa766b1e2bb"
+    }
+  ],
+  "paints": [
+    {
+      "key": "spray/Chaos Black",
+      "group": "spray",
+      "name": "Chaos Black",
+      "code": null,
+      "hex": "#000000",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "spray/Death Guard Green",
+      "group": "spray",
+      "name": "Death Guard Green",
+      "code": null,
+      "hex": "#556229",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "spray/Grey Seer",
+      "group": "spray",
+      "name": "Grey Seer",
+      "code": null,
+      "hex": "#A2A5A7",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "spray/Macragge Blue",
+      "group": "spray",
+      "name": "Macragge Blue",
+      "code": null,
+      "hex": "#0F3D7C",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "spray/Mechanicus Standard Grey",
+      "group": "spray",
+      "name": "Mechanicus Standard Grey",
+      "code": null,
+      "hex": "#39484A",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "spray/Mephiston Red",
+      "group": "spray",
+      "name": "Mephiston Red",
+      "code": null,
+      "hex": "#960C09",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "spray/White Scar",
+      "group": "spray",
+      "name": "White Scar",
+      "code": null,
+      "hex": "#FFFFFF",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "spray/Wraithbone",
+      "group": "spray",
+      "name": "Wraithbone",
+      "code": null,
+      "hex": "#DBD1B2",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "spray/Zandri Dust",
+      "group": "spray",
+      "name": "Zandri Dust",
+      "code": null,
+      "hex": "#988E56",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "spray/Munitorum Varnish",
+      "group": "spray",
+      "name": "Munitorum Varnish",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#DADADA",
+        "light": "#FFFFFF"
+      },
+      "measuredHex": null,
+      "finish": "medium",
+      "colourless": false
+    },
+    {
+      "key": "spray/Leadbelcher",
+      "group": "spray",
+      "name": "Leadbelcher",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#151E24",
+        "light": "#F0F0F0"
+      },
+      "measuredHex": null,
+      "finish": "metal",
+      "colourless": false
+    },
+    {
+      "key": "spray/Retributor Armour",
+      "group": "spray",
+      "name": "Retributor Armour",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#89571D",
+        "light": "#FFFFFF"
+      },
+      "measuredHex": null,
+      "finish": "metal",
+      "colourless": false
+    },
+    {
+      "key": "base/Abaddon Black",
+      "group": "base",
+      "name": "Abaddon Black",
+      "code": null,
+      "hex": "#000000",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "base/Averland Sunset",
+      "group": "base",
+      "name": "Averland Sunset",
+      "code": null,
+      "hex": "#FBB81C",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "base/Barak-Nar Burgundy",
+      "group": "base",
+      "name": "Barak-Nar Burgundy",
+      "code": null,
+      "hex": "#451636",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "base/Bugman's Glow",
+      "group": "base",
+      "name": "Bugman's Glow",
+      "code": null,
+      "hex": "#804C43",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "base/Caledor Sky",
+      "group": "base",
+      "name": "Caledor Sky",
+      "code": null,
+      "hex": "#366699",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "base/Caliban Green",
+      "group": "base",
+      "name": "Caliban Green",
+      "code": null,
+      "hex": "#003D15",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "base/Castellan Green",
+      "group": "base",
+      "name": "Castellan Green",
+      "code": null,
+      "hex": "#264715",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "base/Catachan Flesh",
+      "group": "base",
+      "name": "Catachan Flesh",
+      "code": null,
+      "hex": "#442B25",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "base/Celestra Grey",
+      "group": "base",
+      "name": "Celestra Grey",
+      "code": null,
+      "hex": "#8BA3A3",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "base/Corax White",
+      "group": "base",
+      "name": "Corax White",
+      "code": null,
+      "hex": "#FFFFFF",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "base/Corvus Black",
+      "group": "base",
+      "name": "Corvus Black",
+      "code": null,
+      "hex": "#171314",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "base/Daemonette Hide",
+      "group": "base",
+      "name": "Daemonette Hide",
+      "code": null,
+      "hex": "#655F81",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "base/Death Guard Green",
+      "group": "base",
+      "name": "Death Guard Green",
+      "code": null,
+      "hex": "#6D774D",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "base/Death Korps Drab",
+      "group": "base",
+      "name": "Death Korps Drab",
+      "code": null,
+      "hex": "#3D4539",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "base/Deathworld Forest",
+      "group": "base",
+      "name": "Deathworld Forest",
+      "code": null,
+      "hex": "#556229",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "base/Dryad Bark",
+      "group": "base",
+      "name": "Dryad Bark",
+      "code": null,
+      "hex": "#2B2A24",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "base/Gal Vorbak Red",
+      "group": "base",
+      "name": "Gal Vorbak Red",
+      "code": null,
+      "hex": "#4B213C",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "base/Grey Seer",
+      "group": "base",
+      "name": "Grey Seer",
+      "code": null,
+      "hex": "#A2A5A7",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "base/Hobgrot Hide",
+      "group": "base",
+      "name": "Hobgrot Hide",
+      "code": null,
+      "hex": "#A1812A",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "base/Incubi Darkness",
+      "group": "base",
+      "name": "Incubi Darkness",
+      "code": null,
+      "hex": "#082E32",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "base/Ionrach Skin",
+      "group": "base",
+      "name": "Ionrach Skin",
+      "code": null,
+      "hex": "#97A384",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "base/Jokaero Orange",
+      "group": "base",
+      "name": "Jokaero Orange",
+      "code": null,
+      "hex": "#ED3814",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "base/Kantor Blue",
+      "group": "base",
+      "name": "Kantor Blue",
+      "code": null,
+      "hex": "#02134E",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "base/Khorne Red",
+      "group": "base",
+      "name": "Khorne Red",
+      "code": null,
+      "hex": "#650001",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "base/Lupercal Green",
+      "group": "base",
+      "name": "Lupercal Green",
+      "code": null,
+      "hex": "#002C2B",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "base/Macragge Blue",
+      "group": "base",
+      "name": "Macragge Blue",
+      "code": null,
+      "hex": "#0F3D7C",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "base/Mechanicus Standard Grey",
+      "group": "base",
+      "name": "Mechanicus Standard Grey",
+      "code": null,
+      "hex": "#39484A",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "base/Mephiston Red",
+      "group": "base",
+      "name": "Mephiston Red",
+      "code": null,
+      "hex": "#960C09",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "base/Morghast Bone",
+      "group": "base",
+      "name": "Morghast Bone",
+      "code": null,
+      "hex": "#C0A973",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "base/Mournfang Brown",
+      "group": "base",
+      "name": "Mournfang Brown",
+      "code": null,
+      "hex": "#490F06",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "base/Naggaroth Night",
+      "group": "base",
+      "name": "Naggaroth Night",
+      "code": null,
+      "hex": "#3B2B50",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "base/Night Lords Blue",
+      "group": "base",
+      "name": "Night Lords Blue",
+      "code": null,
+      "hex": "#002B5C",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "base/Nocturne Green",
+      "group": "base",
+      "name": "Nocturne Green",
+      "code": null,
+      "hex": "#162A29",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "base/Orruk Flesh",
+      "group": "base",
+      "name": "Orruk Flesh",
+      "code": null,
+      "hex": "#8CC276",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "base/Phoenician Purple",
+      "group": "base",
+      "name": "Phoenician Purple",
+      "code": null,
+      "hex": "#440052",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "base/Rakarth Flesh",
+      "group": "base",
+      "name": "Rakarth Flesh",
+      "code": null,
+      "hex": "#9C998D",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "base/Ratskin Flesh",
+      "group": "base",
+      "name": "Ratskin Flesh",
+      "code": null,
+      "hex": "#A86648",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "base/Rhinox Hide",
+      "group": "base",
+      "name": "Rhinox Hide",
+      "code": null,
+      "hex": "#462F30",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "base/Screamer Pink",
+      "group": "base",
+      "name": "Screamer Pink",
+      "code": null,
+      "hex": "#7A0E44",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "base/Steel Legion Drab",
+      "group": "base",
+      "name": "Steel Legion Drab",
+      "code": null,
+      "hex": "#584E2D",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "base/Stegadon Scale Green",
+      "group": "base",
+      "name": "Stegadon Scale Green",
+      "code": null,
+      "hex": "#06455D",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "base/The Fang",
+      "group": "base",
+      "name": "The Fang",
+      "code": null,
+      "hex": "#405B71",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "base/Thondia Brown",
+      "group": "base",
+      "name": "Thondia Brown",
+      "code": null,
+      "hex": "#54302A",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "base/Thousand Sons Blue",
+      "group": "base",
+      "name": "Thousand Sons Blue",
+      "code": null,
+      "hex": "#00506F",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "base/Waaagh! Flesh",
+      "group": "base",
+      "name": "Waaagh! Flesh",
+      "code": null,
+      "hex": "#0B3B36",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "base/Wraithbone",
+      "group": "base",
+      "name": "Wraithbone",
+      "code": null,
+      "hex": "#DBD1B2",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "base/XV-88",
+      "group": "base",
+      "name": "XV-88",
+      "code": null,
+      "hex": "#6C4811",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "base/Zandri Dust",
+      "group": "base",
+      "name": "Zandri Dust",
+      "code": null,
+      "hex": "#988E56",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "base/Balthasar Gold",
+      "group": "base",
+      "name": "Balthasar Gold",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#1D0F07",
+        "light": "#FFC28A"
+      },
+      "measuredHex": null,
+      "finish": "metal",
+      "colourless": false
+    },
+    {
+      "key": "base/Grey Knights Steel",
+      "group": "base",
+      "name": "Grey Knights Steel",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#465863",
+        "light": "#FFFFFF"
+      },
+      "measuredHex": null,
+      "finish": "metal",
+      "colourless": false
+    },
+    {
+      "key": "base/Iron Hands Steel",
+      "group": "base",
+      "name": "Iron Hands Steel",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#44423F",
+        "light": "#EFEDE9"
+      },
+      "measuredHex": null,
+      "finish": "metal",
+      "colourless": false
+    },
+    {
+      "key": "base/Iron Warriors",
+      "group": "base",
+      "name": "Iron Warriors",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#292725",
+        "light": "#D2D2D2"
+      },
+      "measuredHex": null,
+      "finish": "metal",
+      "colourless": false
+    },
+    {
+      "key": "base/Leadbelcher",
+      "group": "base",
+      "name": "Leadbelcher",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#151E24",
+        "light": "#F0F0F0"
+      },
+      "measuredHex": null,
+      "finish": "metal",
+      "colourless": false
+    },
+    {
+      "key": "base/Retributor Armour",
+      "group": "base",
+      "name": "Retributor Armour",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#89571D",
+        "light": "#FFFFFF"
+      },
+      "measuredHex": null,
+      "finish": "metal",
+      "colourless": false
+    },
+    {
+      "key": "base/Runelord Brass",
+      "group": "base",
+      "name": "Runelord Brass",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#190E07",
+        "light": "#F5EDE3"
+      },
+      "measuredHex": null,
+      "finish": "metal",
+      "colourless": false
+    },
+    {
+      "key": "base/Screaming Bell",
+      "group": "base",
+      "name": "Screaming Bell",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#642F1F",
+        "light": "#F8E6BA"
+      },
+      "measuredHex": null,
+      "finish": "metal",
+      "colourless": false
+    },
+    {
+      "key": "base/Warplock Bronze",
+      "group": "base",
+      "name": "Warplock Bronze",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#440808",
+        "light": "#F2C2A8"
+      },
+      "measuredHex": null,
+      "finish": "metal",
+      "colourless": false
+    },
+    {
+      "key": "layer/Administratum Grey",
+      "group": "layer",
+      "name": "Administratum Grey",
+      "code": null,
+      "hex": "#989C94",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Ahriman Blue",
+      "group": "layer",
+      "name": "Ahriman Blue",
+      "code": null,
+      "hex": "#00708A",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Alaitoc Blue",
+      "group": "layer",
+      "name": "Alaitoc Blue",
+      "code": null,
+      "hex": "#2F4F85",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Altdorf Guard Blue",
+      "group": "layer",
+      "name": "Altdorf Guard Blue",
+      "code": null,
+      "hex": "#2D4696",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Baharroth Blue",
+      "group": "layer",
+      "name": "Baharroth Blue",
+      "code": null,
+      "hex": "#54BDCA",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Balor Brown",
+      "group": "layer",
+      "name": "Balor Brown",
+      "code": null,
+      "hex": "#875408",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Baneblade Brown",
+      "group": "layer",
+      "name": "Baneblade Brown",
+      "code": null,
+      "hex": "#8F7C68",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Bestigor Flesh",
+      "group": "layer",
+      "name": "Bestigor Flesh",
+      "code": null,
+      "hex": "#D08951",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Bloodreaver Flesh",
+      "group": "layer",
+      "name": "Bloodreaver Flesh",
+      "code": null,
+      "hex": "#6A4848",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Blue Horror",
+      "group": "layer",
+      "name": "Blue Horror",
+      "code": null,
+      "hex": "#9EB5CE",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Cadian Fleshtone",
+      "group": "layer",
+      "name": "Cadian Fleshtone",
+      "code": null,
+      "hex": "#C47652",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Calgar Blue",
+      "group": "layer",
+      "name": "Calgar Blue",
+      "code": null,
+      "hex": "#2A497F",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Dark Reaper",
+      "group": "layer",
+      "name": "Dark Reaper",
+      "code": null,
+      "hex": "#354D4C",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Dawnstone",
+      "group": "layer",
+      "name": "Dawnstone",
+      "code": null,
+      "hex": "#697068",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Deathclaw Brown",
+      "group": "layer",
+      "name": "Deathclaw Brown",
+      "code": null,
+      "hex": "#AF634F",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Dechala Lilac",
+      "group": "layer",
+      "name": "Dechala Lilac",
+      "code": null,
+      "hex": "#B598C9",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Deepkin Flesh",
+      "group": "layer",
+      "name": "Deepkin Flesh",
+      "code": null,
+      "hex": "#A9B79F",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Doombull Brown",
+      "group": "layer",
+      "name": "Doombull Brown",
+      "code": null,
+      "hex": "#570003",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Dorn Yellow",
+      "group": "layer",
+      "name": "Dorn Yellow",
+      "code": null,
+      "hex": "#FFF55A",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Elysian Green",
+      "group": "layer",
+      "name": "Elysian Green",
+      "code": null,
+      "hex": "#6B8C37",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Emperor's Children",
+      "group": "layer",
+      "name": "Emperor's Children",
+      "code": null,
+      "hex": "#B74073",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Eshin Grey",
+      "group": "layer",
+      "name": "Eshin Grey",
+      "code": null,
+      "hex": "#484B4E",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Evil Sunz Scarlet",
+      "group": "layer",
+      "name": "Evil Sunz Scarlet",
+      "code": null,
+      "hex": "#C01411",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Fenrisian Grey",
+      "group": "layer",
+      "name": "Fenrisian Grey",
+      "code": null,
+      "hex": "#6D94B3",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Fire Dragon Bright",
+      "group": "layer",
+      "name": "Fire Dragon Bright",
+      "code": null,
+      "hex": "#F4874E",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Flash Gitz Yellow",
+      "group": "layer",
+      "name": "Flash Gitz Yellow",
+      "code": null,
+      "hex": "#FFF300",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Flayed One Flesh",
+      "group": "layer",
+      "name": "Flayed One Flesh",
+      "code": null,
+      "hex": "#EEC483",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Fulgrim Pink",
+      "group": "layer",
+      "name": "Fulgrim Pink",
+      "code": null,
+      "hex": "#F3ABCA",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Gauss Blaster Green",
+      "group": "layer",
+      "name": "Gauss Blaster Green",
+      "code": null,
+      "hex": "#7FC1A5",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Genestealer Purple",
+      "group": "layer",
+      "name": "Genestealer Purple",
+      "code": null,
+      "hex": "#7658A5",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Gorthor Brown",
+      "group": "layer",
+      "name": "Gorthor Brown",
+      "code": null,
+      "hex": "#5F463F",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Hoeth Blue",
+      "group": "layer",
+      "name": "Hoeth Blue",
+      "code": null,
+      "hex": "#4C78AF",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Kabalite Green",
+      "group": "layer",
+      "name": "Kabalite Green",
+      "code": null,
+      "hex": "#008962",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Kakophoni Purple",
+      "group": "layer",
+      "name": "Kakophoni Purple",
+      "code": null,
+      "hex": "#8869AE",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Karak Stone",
+      "group": "layer",
+      "name": "Karak Stone",
+      "code": null,
+      "hex": "#B7945C",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Kislev Flesh",
+      "group": "layer",
+      "name": "Kislev Flesh",
+      "code": null,
+      "hex": "#D1A570",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Knight-Questor Flesh",
+      "group": "layer",
+      "name": "Knight-Questor Flesh",
+      "code": null,
+      "hex": "#996563",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Krieg Khaki",
+      "group": "layer",
+      "name": "Krieg Khaki",
+      "code": null,
+      "hex": "#BCBB7E",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Loren Forest",
+      "group": "layer",
+      "name": "Loren Forest",
+      "code": null,
+      "hex": "#486C25",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Lothern Blue",
+      "group": "layer",
+      "name": "Lothern Blue",
+      "code": null,
+      "hex": "#2C9BCC",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Lugganath Orange",
+      "group": "layer",
+      "name": "Lugganath Orange",
+      "code": null,
+      "hex": "#F69B82",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Moot Green",
+      "group": "layer",
+      "name": "Moot Green",
+      "code": null,
+      "hex": "#3DAF44",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Nurgling Green",
+      "group": "layer",
+      "name": "Nurgling Green",
+      "code": null,
+      "hex": "#7E975E",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Ogryn Camo",
+      "group": "layer",
+      "name": "Ogryn Camo",
+      "code": null,
+      "hex": "#96A648",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Pallid Wych Flesh",
+      "group": "layer",
+      "name": "Pallid Wych Flesh",
+      "code": null,
+      "hex": "#CACCBB",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Phalanx Yellow",
+      "group": "layer",
+      "name": "Phalanx Yellow",
+      "code": null,
+      "hex": "#FFE200",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Pink Horror",
+      "group": "layer",
+      "name": "Pink Horror",
+      "code": null,
+      "hex": "#8E2757",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Russ Grey",
+      "group": "layer",
+      "name": "Russ Grey",
+      "code": null,
+      "hex": "#507085",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Screaming Skull",
+      "group": "layer",
+      "name": "Screaming Skull",
+      "code": null,
+      "hex": "#B9C099",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Skarsnik Green",
+      "group": "layer",
+      "name": "Skarsnik Green",
+      "code": null,
+      "hex": "#588F6B",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Skavenblight Dinge",
+      "group": "layer",
+      "name": "Skavenblight Dinge",
+      "code": null,
+      "hex": "#45413B",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Skrag Brown",
+      "group": "layer",
+      "name": "Skrag Brown",
+      "code": null,
+      "hex": "#8B4806",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Slaanesh Grey",
+      "group": "layer",
+      "name": "Slaanesh Grey",
+      "code": null,
+      "hex": "#8B8893",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Sons of Horus Green",
+      "group": "layer",
+      "name": "Sons of Horus Green",
+      "code": null,
+      "hex": "#00545E",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Sotek Green",
+      "group": "layer",
+      "name": "Sotek Green",
+      "code": null,
+      "hex": "#0B6371",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Squig Orange",
+      "group": "layer",
+      "name": "Squig Orange",
+      "code": null,
+      "hex": "#A74D42",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Stormvermin Fur",
+      "group": "layer",
+      "name": "Stormvermin Fur",
+      "code": null,
+      "hex": "#6D655F",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Straken Green",
+      "group": "layer",
+      "name": "Straken Green",
+      "code": null,
+      "hex": "#597F1C",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Sybarite Green",
+      "group": "layer",
+      "name": "Sybarite Green",
+      "code": null,
+      "hex": "#17A166",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Tallarn Sand",
+      "group": "layer",
+      "name": "Tallarn Sand",
+      "code": null,
+      "hex": "#A07409",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Tau Light Ochre",
+      "group": "layer",
+      "name": "Tau Light Ochre",
+      "code": null,
+      "hex": "#BC6B10",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Teclis Blue",
+      "group": "layer",
+      "name": "Teclis Blue",
+      "code": null,
+      "hex": "#3877BF",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Temple Guard Blue",
+      "group": "layer",
+      "name": "Temple Guard Blue",
+      "code": null,
+      "hex": "#239489",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Thunderhawk Blue",
+      "group": "layer",
+      "name": "Thunderhawk Blue",
+      "code": null,
+      "hex": "#396A70",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Troll Slayer Orange",
+      "group": "layer",
+      "name": "Troll Slayer Orange",
+      "code": null,
+      "hex": "#F16C23",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Tuskgor Fur",
+      "group": "layer",
+      "name": "Tuskgor Fur",
+      "code": null,
+      "hex": "#863231",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Ulthuan Grey",
+      "group": "layer",
+      "name": "Ulthuan Grey",
+      "code": null,
+      "hex": "#C4DDD5",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Ungor Flesh",
+      "group": "layer",
+      "name": "Ungor Flesh",
+      "code": null,
+      "hex": "#D1A560",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Ushabti Bone",
+      "group": "layer",
+      "name": "Ushabti Bone",
+      "code": null,
+      "hex": "#ABA173",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Vulkan Green",
+      "group": "layer",
+      "name": "Vulkan Green",
+      "code": null,
+      "hex": "#223C2E",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Warboss Green",
+      "group": "layer",
+      "name": "Warboss Green",
+      "code": null,
+      "hex": "#317E57",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Warpfiend Grey",
+      "group": "layer",
+      "name": "Warpfiend Grey",
+      "code": null,
+      "hex": "#66656E",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Warpstone Glow",
+      "group": "layer",
+      "name": "Warpstone Glow",
+      "code": null,
+      "hex": "#0F702A",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Wazdakka Red",
+      "group": "layer",
+      "name": "Wazdakka Red",
+      "code": null,
+      "hex": "#880804",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/White Scar",
+      "group": "layer",
+      "name": "White Scar",
+      "code": null,
+      "hex": "#FFFFFF",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Wild Rider Red",
+      "group": "layer",
+      "name": "Wild Rider Red",
+      "code": null,
+      "hex": "#E82E1B",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Word Bearers Red",
+      "group": "layer",
+      "name": "Word Bearers Red",
+      "code": null,
+      "hex": "#620104",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Xereus Purple",
+      "group": "layer",
+      "name": "Xereus Purple",
+      "code": null,
+      "hex": "#47125A",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Yriel Yellow",
+      "group": "layer",
+      "name": "Yriel Yellow",
+      "code": null,
+      "hex": "#FFD900",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Zamesi Desert",
+      "group": "layer",
+      "name": "Zamesi Desert",
+      "code": null,
+      "hex": "#D89D1B",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "layer/Auric Armour Gold",
+      "group": "layer",
+      "name": "Auric Armour Gold",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#B05A25",
+        "light": "#FFF3C7"
+      },
+      "measuredHex": null,
+      "finish": "metal",
+      "colourless": false
+    },
+    {
+      "key": "layer/Brass Scorpion",
+      "group": "layer",
+      "name": "Brass Scorpion",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#3D0700",
+        "light": "#FFC266"
+      },
+      "measuredHex": null,
+      "finish": "metal",
+      "colourless": false
+    },
+    {
+      "key": "layer/Canoptek Alloy",
+      "group": "layer",
+      "name": "Canoptek Alloy",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#967F7A",
+        "light": "#FFFEFE"
+      },
+      "measuredHex": null,
+      "finish": "metal",
+      "colourless": false
+    },
+    {
+      "key": "layer/Castellax Bronze",
+      "group": "layer",
+      "name": "Castellax Bronze",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#3D0700",
+        "light": "#FCEBD3"
+      },
+      "measuredHex": null,
+      "finish": "metal",
+      "colourless": false
+    },
+    {
+      "key": "layer/Fulgurite Copper",
+      "group": "layer",
+      "name": "Fulgurite Copper",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#6D2711",
+        "light": "#E7D9CD"
+      },
+      "measuredHex": null,
+      "finish": "metal",
+      "colourless": false
+    },
+    {
+      "key": "layer/Gehenna's Gold",
+      "group": "layer",
+      "name": "Gehenna's Gold",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#722A0B",
+        "light": "#FFD233"
+      },
+      "measuredHex": null,
+      "finish": "metal",
+      "colourless": false
+    },
+    {
+      "key": "layer/Hashut Copper",
+      "group": "layer",
+      "name": "Hashut Copper",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#492109",
+        "light": "#FFD08A"
+      },
+      "measuredHex": null,
+      "finish": "metal",
+      "colourless": false
+    },
+    {
+      "key": "layer/Ironbreaker",
+      "group": "layer",
+      "name": "Ironbreaker",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#414141",
+        "light": "#F4F4F4"
+      },
+      "measuredHex": null,
+      "finish": "metal",
+      "colourless": false
+    },
+    {
+      "key": "layer/Liberator Gold",
+      "group": "layer",
+      "name": "Liberator Gold",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#886625",
+        "light": "#FFFFFF"
+      },
+      "measuredHex": null,
+      "finish": "metal",
+      "colourless": false
+    },
+    {
+      "key": "layer/Runefang Steel",
+      "group": "layer",
+      "name": "Runefang Steel",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#797F82",
+        "light": "#F3F3F3"
+      },
+      "measuredHex": null,
+      "finish": "metal",
+      "colourless": false
+    },
+    {
+      "key": "layer/Skullcrusher Brass",
+      "group": "layer",
+      "name": "Skullcrusher Brass",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#C38841",
+        "light": "#FFFFFF"
+      },
+      "measuredHex": null,
+      "finish": "metal",
+      "colourless": false
+    },
+    {
+      "key": "layer/Stormhost Silver",
+      "group": "layer",
+      "name": "Stormhost Silver",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#9DA3A7",
+        "light": "#FAFAFA"
+      },
+      "measuredHex": null,
+      "finish": "metal",
+      "colourless": false
+    },
+    {
+      "key": "layer/Sycorax Bronze",
+      "group": "layer",
+      "name": "Sycorax Bronze",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#59322D",
+        "light": "#FFFFFF"
+      },
+      "measuredHex": null,
+      "finish": "metal",
+      "colourless": false
+    },
+    {
+      "key": "shade/Agrax Earthshade",
+      "group": "shade",
+      "name": "Agrax Earthshade",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#2D190C",
+        "light": "#E2DAC8"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "shade/Athonian Camoshade",
+      "group": "shade",
+      "name": "Athonian Camoshade",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#1C1C10",
+        "light": "#FDFEBF"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "shade/Berserker Bloodshade",
+      "group": "shade",
+      "name": "Berserker Bloodshade",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#B8083E",
+        "light": "#DFDAD6"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "shade/Biel-Tan Green",
+      "group": "shade",
+      "name": "Biel-Tan Green",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#132E21",
+        "light": "#AEDCA2"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "shade/Carroburg Crimson",
+      "group": "shade",
+      "name": "Carroburg Crimson",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#310808",
+        "light": "#FFB7EB"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "shade/Casandora Yellow",
+      "group": "shade",
+      "name": "Casandora Yellow",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#E78035",
+        "light": "#FCEFBC"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "shade/Coelia Greenshade",
+      "group": "shade",
+      "name": "Coelia Greenshade",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#113431",
+        "light": "#20B8AC"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "shade/Drakenhof Nightshade",
+      "group": "shade",
+      "name": "Drakenhof Nightshade",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#0A131B",
+        "light": "#E6E8F3"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "shade/Druchii Violet",
+      "group": "shade",
+      "name": "Druchii Violet",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#250B27",
+        "light": "#BF8EC3"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "shade/Fuegan Orange",
+      "group": "shade",
+      "name": "Fuegan Orange",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#6C1C03",
+        "light": "#DF9F68"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "shade/Kroak Green",
+      "group": "shade",
+      "name": "Kroak Green",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#7DBF92",
+        "light": "#DFDAD6"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "shade/Mortarion Grime",
+      "group": "shade",
+      "name": "Mortarion Grime",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#AFA400",
+        "light": "#DFDAD6"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "shade/Nuln Oil",
+      "group": "shade",
+      "name": "Nuln Oil",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#101010",
+        "light": "#DFD9D6"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "shade/Poxwalker",
+      "group": "shade",
+      "name": "Poxwalker",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#54989C",
+        "light": "#DFDAD6"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "shade/Reikland Fleshshade",
+      "group": "shade",
+      "name": "Reikland Fleshshade",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#311908",
+        "light": "#FFD5B7"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "shade/Seraphim Sepia",
+      "group": "shade",
+      "name": "Seraphim Sepia",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#2E1F08",
+        "light": "#E9AE7D"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "shade/Soulblight Grey",
+      "group": "shade",
+      "name": "Soulblight Grey",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#A6A1A5",
+        "light": "#DFDAD6"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "shade/Targor Rageshade",
+      "group": "shade",
+      "name": "Targor Rageshade",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#614E66",
+        "light": "#DFDAD6"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "shade/Tyran Blue",
+      "group": "shade",
+      "name": "Tyran Blue",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#0083CA",
+        "light": "#DFDAD6"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "technical/Nihilakh Oxide",
+      "group": "technical",
+      "name": "Nihilakh Oxide",
+      "code": null,
+      "hex": "#66B39A",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "technical/Nurgles Rot",
+      "group": "technical",
+      "name": "Nurgles Rot",
+      "code": null,
+      "hex": "#9D8B16",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "technical/Tesseract Glow",
+      "group": "technical",
+      "name": "Tesseract Glow",
+      "code": null,
+      "hex": "#49AD33",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "technical/Typhus Corrosion",
+      "group": "technical",
+      "name": "Typhus Corrosion",
+      "code": null,
+      "hex": "#373A22",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "technical/Blood For The Blood God",
+      "group": "technical",
+      "name": "Blood For The Blood God",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#600005",
+        "light": "#925053"
+      },
+      "measuredHex": null,
+      "finish": "gloss",
+      "colourless": false
+    },
+    {
+      "key": "technical/Soulstone Blue",
+      "group": "technical",
+      "name": "Soulstone Blue",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#01154B",
+        "light": "#566387"
+      },
+      "measuredHex": null,
+      "finish": "gloss",
+      "colourless": false
+    },
+    {
+      "key": "technical/Spiritstone Red",
+      "group": "technical",
+      "name": "Spiritstone Red",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#7C1100",
+        "light": "#a86055"
+      },
+      "measuredHex": null,
+      "finish": "gloss",
+      "colourless": false
+    },
+    {
+      "key": "technical/Waystone Green",
+      "group": "technical",
+      "name": "Waystone Green",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#00381F",
+        "light": "#547a69"
+      },
+      "measuredHex": null,
+      "finish": "gloss",
+      "colourless": false
+    },
+    {
+      "key": "technical/Ardcoat",
+      "group": "technical",
+      "name": "Ardcoat",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#DADADA",
+        "light": "#FFFFFF"
+      },
+      "measuredHex": null,
+      "finish": "medium",
+      "colourless": false
+    },
+    {
+      "key": "technical/Contrast Medium",
+      "group": "technical",
+      "name": "Contrast Medium",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#DADADA",
+        "light": "#FFFFFF"
+      },
+      "measuredHex": null,
+      "finish": "medium",
+      "colourless": false
+    },
+    {
+      "key": "technical/Lahmian Medium",
+      "group": "technical",
+      "name": "Lahmian Medium",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#DADADA",
+        "light": "#FFFFFF"
+      },
+      "measuredHex": null,
+      "finish": "medium",
+      "colourless": false
+    },
+    {
+      "key": "technical/Stormshield",
+      "group": "technical",
+      "name": "Stormshield",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#DADADA",
+        "light": "#FFFFFF"
+      },
+      "measuredHex": null,
+      "finish": "medium",
+      "colourless": false
+    },
+    {
+      "key": "technical/Agrellan Badland",
+      "group": "technical",
+      "name": "Agrellan Badland",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#948165",
+        "light": "#b39e80"
+      },
+      "measuredHex": null,
+      "finish": "texture",
+      "colourless": false
+    },
+    {
+      "key": "technical/Agrellan Earth",
+      "group": "technical",
+      "name": "Agrellan Earth",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#948165",
+        "light": "#b39e80"
+      },
+      "measuredHex": null,
+      "finish": "texture",
+      "colourless": false
+    },
+    {
+      "key": "technical/Armageddon Dust",
+      "group": "technical",
+      "name": "Armageddon Dust",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#d2ad00",
+        "light": "#e8d36f"
+      },
+      "measuredHex": null,
+      "finish": "texture",
+      "colourless": false
+    },
+    {
+      "key": "technical/Astrogranite",
+      "group": "technical",
+      "name": "Astrogranite",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#767675",
+        "light": "#9d9d9d"
+      },
+      "measuredHex": null,
+      "finish": "texture",
+      "colourless": false
+    },
+    {
+      "key": "technical/Martian Ironcrust",
+      "group": "technical",
+      "name": "Martian Ironcrust",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#9b5041",
+        "light": "#cf705d"
+      },
+      "measuredHex": null,
+      "finish": "texture",
+      "colourless": false
+    },
+    {
+      "key": "technical/Martian Ironearth",
+      "group": "technical",
+      "name": "Martian Ironearth",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#9b5041",
+        "light": "#cf705d"
+      },
+      "measuredHex": null,
+      "finish": "texture",
+      "colourless": false
+    },
+    {
+      "key": "technical/Mordant Earth",
+      "group": "technical",
+      "name": "Mordant Earth",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#171314",
+        "light": "#4b4849"
+      },
+      "measuredHex": null,
+      "finish": "texture",
+      "colourless": false
+    },
+    {
+      "key": "technical/Stirland Mud",
+      "group": "technical",
+      "name": "Stirland Mud",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#482b00",
+        "light": "#70490d"
+      },
+      "measuredHex": null,
+      "finish": "texture",
+      "colourless": false
+    },
+    {
+      "key": "technical/Valhallan Blizzard",
+      "group": "technical",
+      "name": "Valhallan Blizzard",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#e1e1e1",
+        "light": "#ffffff"
+      },
+      "measuredHex": null,
+      "finish": "texture",
+      "colourless": false
+    },
+    {
+      "key": "contrast/Aeldari Emerald",
+      "group": "contrast",
+      "name": "Aeldari Emerald",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#005959",
+        "light": "#008973"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "contrast/Aethermatic Blue",
+      "group": "contrast",
+      "name": "Aethermatic Blue",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#006D83",
+        "light": "#82BCC8"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "contrast/Aggaros Dunes",
+      "group": "contrast",
+      "name": "Aggaros Dunes",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#554C36",
+        "light": "#D0BF6D"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "contrast/Akhelian Green",
+      "group": "contrast",
+      "name": "Akhelian Green",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#004354",
+        "light": "#007B9B"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "contrast/Apothecary White",
+      "group": "contrast",
+      "name": "Apothecary White",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#8FADC8",
+        "light": "#F6FBFF"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "contrast/Asurmen Blue",
+      "group": "contrast",
+      "name": "Asurmen Blue",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#00325F",
+        "light": "#0083CA"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "contrast/Baal Red",
+      "group": "contrast",
+      "name": "Baal Red",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#C01823",
+        "light": "#D51C29"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "contrast/Bad Moon Yellow",
+      "group": "contrast",
+      "name": "Bad Moon Yellow",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#FBAD18",
+        "light": "#FFE100"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "contrast/Basilicanum Grey",
+      "group": "contrast",
+      "name": "Basilicanum Grey",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#000000",
+        "light": "#989897"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "contrast/Black Legion",
+      "group": "contrast",
+      "name": "Black Legion",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#000000",
+        "light": "#434345"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "contrast/Black Templar",
+      "group": "contrast",
+      "name": "Black Templar",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#000000",
+        "light": "#6A6A69"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "contrast/Blood Angels Red",
+      "group": "contrast",
+      "name": "Blood Angels Red",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#76080B",
+        "light": "#C11519"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "contrast/Briar Queen Chill",
+      "group": "contrast",
+      "name": "Briar Queen Chill",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#4394A8",
+        "light": "#91BDCA"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "contrast/Celestium Blue",
+      "group": "contrast",
+      "name": "Celestium Blue",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#003C77",
+        "light": "#275996"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "contrast/Creed Camo",
+      "group": "contrast",
+      "name": "Creed Camo",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#004E1B",
+        "light": "#5D9272"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "contrast/Cygor Brown",
+      "group": "contrast",
+      "name": "Cygor Brown",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#2F0D0A",
+        "light": "#754A47"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "contrast/Dark Angels Green",
+      "group": "contrast",
+      "name": "Dark Angels Green",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#000000",
+        "light": "#004E45"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "contrast/Darkoath Flesh",
+      "group": "contrast",
+      "name": "Darkoath Flesh",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#87524F",
+        "light": "#D89987"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "contrast/Doomfire Magenta",
+      "group": "contrast",
+      "name": "Doomfire Magenta",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#A70063",
+        "light": "#EC008C"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "contrast/Dreadful Visage",
+      "group": "contrast",
+      "name": "Dreadful Visage",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#896F8E",
+        "light": "#E4D3DF"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "contrast/Flesh Tearers Red",
+      "group": "contrast",
+      "name": "Flesh Tearers Red",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#3A0100",
+        "light": "#880E0B"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "contrast/Frostheart",
+      "group": "contrast",
+      "name": "Frostheart",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#003B54",
+        "light": "#006EA0"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "contrast/Fyreslayer Flesh",
+      "group": "contrast",
+      "name": "Fyreslayer Flesh",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#5D4231",
+        "light": "#BD7866"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "contrast/Garaghak's Sewer",
+      "group": "contrast",
+      "name": "Garaghak's Sewer",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#4F4135",
+        "light": "#8D6019"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "contrast/Gore-Grunta Fur",
+      "group": "contrast",
+      "name": "Gore-Grunta Fur",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#543927",
+        "light": "#8F4001"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "contrast/Gryph-Charger Grey",
+      "group": "contrast",
+      "name": "Gryph-Charger Grey",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#004E74",
+        "light": "#AAC9DA"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "contrast/Gryph-Hound Orange",
+      "group": "contrast",
+      "name": "Gryph-Hound Orange",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#7C2303",
+        "light": "#E96134"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "contrast/Guilliman Flesh",
+      "group": "contrast",
+      "name": "Guilliman Flesh",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#912D20",
+        "light": "#D1A194"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "contrast/Gutrippa Flesh",
+      "group": "contrast",
+      "name": "Gutrippa Flesh",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#145F1F",
+        "light": "#94B18E"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "contrast/Hexwraith Flame",
+      "group": "contrast",
+      "name": "Hexwraith Flame",
+      "code": null,
+      "hex": "#00A237",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "contrast/Imperial Fist",
+      "group": "contrast",
+      "name": "Imperial Fist",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#F9A01B",
+        "light": "#FDBA12"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "contrast/Ironjawz Yellow",
+      "group": "contrast",
+      "name": "Ironjawz Yellow",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#AB7709",
+        "light": "#FFCF62"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "contrast/Iyanden Yellow",
+      "group": "contrast",
+      "name": "Iyanden Yellow",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#D26B04",
+        "light": "#FBC827"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "contrast/Karandras Green",
+      "group": "contrast",
+      "name": "Karandras Green",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#004B20",
+        "light": "#00A850"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "contrast/Kroxigor Scales",
+      "group": "contrast",
+      "name": "Kroxigor Scales",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#005A70",
+        "light": "#0099AA"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "contrast/Leviadon Blue",
+      "group": "contrast",
+      "name": "Leviadon Blue",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#000000",
+        "light": "#002D59"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "contrast/Leviathan Purple",
+      "group": "contrast",
+      "name": "Leviathan Purple",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#07074E",
+        "light": "#27004B"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "contrast/Luxion Purple",
+      "group": "contrast",
+      "name": "Luxion Purple",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#27004B",
+        "light": "#431E75"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "contrast/Magmadroth Flame",
+      "group": "contrast",
+      "name": "Magmadroth Flame",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#D64A28",
+        "light": "#F26524"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "contrast/Magos Purple",
+      "group": "contrast",
+      "name": "Magos Purple",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#662357",
+        "light": "#C2A7C3"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "contrast/Mantis Warriors Green",
+      "group": "contrast",
+      "name": "Mantis Warriors Green",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#2B621D",
+        "light": "#8FB15D"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "contrast/Militarum Green",
+      "group": "contrast",
+      "name": "Militarum Green",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#5F6D00",
+        "light": "#989C4D"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "contrast/Nazdreg Yellow",
+      "group": "contrast",
+      "name": "Nazdreg Yellow",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#4E3700",
+        "light": "#D99A00"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "contrast/Nighthaunt Gloom",
+      "group": "contrast",
+      "name": "Nighthaunt Gloom",
+      "code": null,
+      "hex": "#4C838A",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "contrast/Ork Flesh",
+      "group": "contrast",
+      "name": "Ork Flesh",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#004E1B",
+        "light": "#00832B"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "contrast/Plaguebearer Flesh",
+      "group": "contrast",
+      "name": "Plaguebearer Flesh",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#596B02",
+        "light": "#C8CEA3"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "contrast/Pylar Glacier",
+      "group": "contrast",
+      "name": "Pylar Glacier",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#009EDE",
+        "light": "#74C0EB"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "contrast/Ratling Grime",
+      "group": "contrast",
+      "name": "Ratling Grime",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#3E3B39",
+        "light": "#8E8684"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "contrast/Shyish Purple",
+      "group": "contrast",
+      "name": "Shyish Purple",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#1F0137",
+        "light": "#573F6A"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "contrast/Sigvald Burgundy",
+      "group": "contrast",
+      "name": "Sigvald Burgundy",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#590048",
+        "light": "#810054"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "contrast/Skeleton Horde",
+      "group": "contrast",
+      "name": "Skeleton Horde",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#918158",
+        "light": "#EBE2C2"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "contrast/Snakebite Leather",
+      "group": "contrast",
+      "name": "Snakebite Leather",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#554431",
+        "light": "#B26B0C"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "contrast/Space Wolves Grey",
+      "group": "contrast",
+      "name": "Space Wolves Grey",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#002C51",
+        "light": "#8FADC8"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "contrast/Stormfiend",
+      "group": "contrast",
+      "name": "Stormfiend",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#00416B",
+        "light": "#00628F"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "contrast/Striking Scorpion Green",
+      "group": "contrast",
+      "name": "Striking Scorpion Green",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#004E1E",
+        "light": "#12B259"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "contrast/Talassar Blue",
+      "group": "contrast",
+      "name": "Talassar Blue",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#002C59",
+        "light": "#0073C2"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "contrast/Terradon Turquoise",
+      "group": "contrast",
+      "name": "Terradon Turquoise",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#00494F",
+        "light": "#008DA5"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "contrast/Ultramarines Blue",
+      "group": "contrast",
+      "name": "Ultramarines Blue",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#000A37",
+        "light": "#294F86"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "contrast/Volupus Pink",
+      "group": "contrast",
+      "name": "Volupus Pink",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#530011",
+        "light": "#8F0243"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "contrast/Warp Lightning",
+      "group": "contrast",
+      "name": "Warp Lightning",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#004E1B",
+        "light": "#00964E"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "contrast/Wyldwood",
+      "group": "contrast",
+      "name": "Wyldwood",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#381D17",
+        "light": "#6A504B"
+      },
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "air/Abaddon Black",
+      "group": "air",
+      "name": "Abaddon Black",
+      "code": null,
+      "hex": "#000000",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "air/Administratum Grey",
+      "group": "air",
+      "name": "Administratum Grey",
+      "code": null,
+      "hex": "#8F9690",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "air/Angron Red Clear",
+      "group": "air",
+      "name": "Angron Red Clear",
+      "code": null,
+      "hex": "#E21823",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "air/Averland Sunset",
+      "group": "air",
+      "name": "Averland Sunset",
+      "code": null,
+      "hex": "#FBB81C",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "air/Baneblade Brown",
+      "group": "air",
+      "name": "Baneblade Brown",
+      "code": null,
+      "hex": "#8F7C68",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "air/Caliban Green",
+      "group": "air",
+      "name": "Caliban Green",
+      "code": null,
+      "hex": "#003D15",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "air/Calth Blue Clear",
+      "group": "air",
+      "name": "Calth Blue Clear",
+      "code": null,
+      "hex": "#0087D1",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "air/Castellan Green",
+      "group": "air",
+      "name": "Castellan Green",
+      "code": null,
+      "hex": "#264715",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "air/Corvus Black",
+      "group": "air",
+      "name": "Corvus Black",
+      "code": null,
+      "hex": "#171314",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "air/Dawnstone",
+      "group": "air",
+      "name": "Dawnstone",
+      "code": null,
+      "hex": "#697068",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "air/Deathworld Forest",
+      "group": "air",
+      "name": "Deathworld Forest",
+      "code": null,
+      "hex": "#556229",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "air/Eidolon Purple Clear",
+      "group": "air",
+      "name": "Eidolon Purple Clear",
+      "code": null,
+      "hex": "#7D4D99",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "air/Elysian Green",
+      "group": "air",
+      "name": "Elysian Green",
+      "code": null,
+      "hex": "#6B8C37",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "air/Evil Sunz Scarlet",
+      "group": "air",
+      "name": "Evil Sunz Scarlet",
+      "code": null,
+      "hex": "#C01411",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "air/Fenrisian Grey",
+      "group": "air",
+      "name": "Fenrisian Grey",
+      "code": null,
+      "hex": "#6D94B3",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "air/Flash Gitz Yellow",
+      "group": "air",
+      "name": "Flash Gitz Yellow",
+      "code": null,
+      "hex": "#FFF300",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "air/Kantor Blue",
+      "group": "air",
+      "name": "Kantor Blue",
+      "code": null,
+      "hex": "#02134E",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "air/Khorne Red",
+      "group": "air",
+      "name": "Khorne Red",
+      "code": null,
+      "hex": "#650001",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "air/Kislev Flesh",
+      "group": "air",
+      "name": "Kislev Flesh",
+      "code": null,
+      "hex": "#D1A570",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "air/Lothern Blue",
+      "group": "air",
+      "name": "Lothern Blue",
+      "code": null,
+      "hex": "#2C9BCC",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "air/Macragge Blue",
+      "group": "air",
+      "name": "Macragge Blue",
+      "code": null,
+      "hex": "#0F3D7C",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "air/Mechanicus Standard Grey",
+      "group": "air",
+      "name": "Mechanicus Standard Grey",
+      "code": null,
+      "hex": "#39484A",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "air/Mephiston Red",
+      "group": "air",
+      "name": "Mephiston Red",
+      "code": null,
+      "hex": "#960C09",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "air/Moot Green",
+      "group": "air",
+      "name": "Moot Green",
+      "code": null,
+      "hex": "#3DAF44",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "air/Mortarion Green Clear",
+      "group": "air",
+      "name": "Mortarion Green Clear",
+      "code": null,
+      "hex": "#00832B",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "air/Mournfang Brown",
+      "group": "air",
+      "name": "Mournfang Brown",
+      "code": null,
+      "hex": "#490F06",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "air/Night Lords Blue",
+      "group": "air",
+      "name": "Night Lords Blue",
+      "code": null,
+      "hex": "#002B5C",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "air/Ogryn Camo",
+      "group": "air",
+      "name": "Ogryn Camo",
+      "code": null,
+      "hex": "#96A648",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "air/Phalanx Yellow",
+      "group": "air",
+      "name": "Phalanx Yellow",
+      "code": null,
+      "hex": "#FFE200",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "air/Phoenician Purple",
+      "group": "air",
+      "name": "Phoenician Purple",
+      "code": null,
+      "hex": "#440052",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "air/Russ Grey",
+      "group": "air",
+      "name": "Russ Grey",
+      "code": null,
+      "hex": "#507085",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "air/Tallarn Sand",
+      "group": "air",
+      "name": "Tallarn Sand",
+      "code": null,
+      "hex": "#A07409",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "air/Temple Guard Blue",
+      "group": "air",
+      "name": "Temple Guard Blue",
+      "code": null,
+      "hex": "#239489",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "air/The Fang",
+      "group": "air",
+      "name": "The Fang",
+      "code": null,
+      "hex": "#405B71",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "air/Troll Slayer Orange",
+      "group": "air",
+      "name": "Troll Slayer Orange",
+      "code": null,
+      "hex": "#F16C23",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "air/Typhon Ash",
+      "group": "air",
+      "name": "Typhon Ash",
+      "code": null,
+      "hex": "#E4D8C1",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "air/Ulthuan Grey",
+      "group": "air",
+      "name": "Ulthuan Grey",
+      "code": null,
+      "hex": "#C4DDD5",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "air/Ushabti Bone",
+      "group": "air",
+      "name": "Ushabti Bone",
+      "code": null,
+      "hex": "#ABA173",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "air/White Scar",
+      "group": "air",
+      "name": "White Scar",
+      "code": null,
+      "hex": "#FFFFFF",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "air/Zandri Dust",
+      "group": "air",
+      "name": "Zandri Dust",
+      "code": null,
+      "hex": "#988E56",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "air/Air Caste Thinner",
+      "group": "air",
+      "name": "Air Caste Thinner",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#DADADA",
+        "light": "#FFFFFF"
+      },
+      "measuredHex": null,
+      "finish": "medium",
+      "colourless": false
+    },
+    {
+      "key": "air/Balthasar Gold",
+      "group": "air",
+      "name": "Balthasar Gold",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#1D0F07",
+        "light": "#FFC28A"
+      },
+      "measuredHex": null,
+      "finish": "metal",
+      "colourless": false
+    },
+    {
+      "key": "air/Grey Knights Steel",
+      "group": "air",
+      "name": "Grey Knights Steel",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#465863",
+        "light": "#FFFFFF"
+      },
+      "measuredHex": null,
+      "finish": "metal",
+      "colourless": false
+    },
+    {
+      "key": "air/Leadbelcher",
+      "group": "air",
+      "name": "Leadbelcher",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#151E24",
+        "light": "#F0F0F0"
+      },
+      "measuredHex": null,
+      "finish": "metal",
+      "colourless": false
+    },
+    {
+      "key": "air/Runefang Steel",
+      "group": "air",
+      "name": "Runefang Steel",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#797F82",
+        "light": "#F3F3F3"
+      },
+      "measuredHex": null,
+      "finish": "metal",
+      "colourless": false
+    },
+    {
+      "key": "air/Thallax Gold",
+      "group": "air",
+      "name": "Thallax Gold",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#722A0B",
+        "light": "#FFE898"
+      },
+      "measuredHex": null,
+      "finish": "metal",
+      "colourless": false
+    },
+    {
+      "key": "air/Valdor Gold",
+      "group": "air",
+      "name": "Valdor Gold",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#6D2711",
+        "light": "#E7D9CD"
+      },
+      "measuredHex": null,
+      "finish": "metal",
+      "colourless": false
+    },
+    {
+      "key": "dry/Astorath Red",
+      "group": "dry",
+      "name": "Astorath Red",
+      "code": null,
+      "hex": "#A9311E",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "dry/Dawnstone",
+      "group": "dry",
+      "name": "Dawnstone",
+      "code": null,
+      "hex": "#697068",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "dry/Eldar Flesh",
+      "group": "dry",
+      "name": "Eldar Flesh",
+      "code": null,
+      "hex": "#E8C07F",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "dry/Etherium Blue",
+      "group": "dry",
+      "name": "Etherium Blue",
+      "code": null,
+      "hex": "#9EB5CE",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "dry/Golgfag Brown",
+      "group": "dry",
+      "name": "Golgfag Brown",
+      "code": null,
+      "hex": "#8F502A",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "dry/Hexos Palesun",
+      "group": "dry",
+      "name": "Hexos Palesun",
+      "code": null,
+      "hex": "#FFF55A",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "dry/Hoeth Blue",
+      "group": "dry",
+      "name": "Hoeth Blue",
+      "code": null,
+      "hex": "#4C78AF",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "dry/Imrik Blue",
+      "group": "dry",
+      "name": "Imrik Blue",
+      "code": null,
+      "hex": "#208ABF",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "dry/Longbeard Grey",
+      "group": "dry",
+      "name": "Longbeard Grey",
+      "code": null,
+      "hex": "#DBDCC6",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "dry/Lucius Lilac",
+      "group": "dry",
+      "name": "Lucius Lilac",
+      "code": null,
+      "hex": "#B598C9",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "dry/Niblet Green",
+      "group": "dry",
+      "name": "Niblet Green",
+      "code": null,
+      "hex": "#378C35",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "dry/Nurgling Green",
+      "group": "dry",
+      "name": "Nurgling Green",
+      "code": null,
+      "hex": "#7E975E",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "dry/Praxeti White",
+      "group": "dry",
+      "name": "Praxeti White",
+      "code": null,
+      "hex": "#FFFFFF",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "dry/Ryza Rust",
+      "group": "dry",
+      "name": "Ryza Rust",
+      "code": null,
+      "hex": "#F16C23",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "dry/Skink Blue",
+      "group": "dry",
+      "name": "Skink Blue",
+      "code": null,
+      "hex": "#54BDCA",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "dry/Stormfang",
+      "group": "dry",
+      "name": "Stormfang",
+      "code": null,
+      "hex": "#5A7FA3",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "dry/Sylvaneth Bark",
+      "group": "dry",
+      "name": "Sylvaneth Bark",
+      "code": null,
+      "hex": "#4E483B",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "dry/Terminatus Stone",
+      "group": "dry",
+      "name": "Terminatus Stone",
+      "code": null,
+      "hex": "#C8B79D",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "dry/Tyrant Skull",
+      "group": "dry",
+      "name": "Tyrant Skull",
+      "code": null,
+      "hex": "#C8C483",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "dry/Underhive Ash",
+      "group": "dry",
+      "name": "Underhive Ash",
+      "code": null,
+      "hex": "#BCBB7E",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "dry/Wrack White",
+      "group": "dry",
+      "name": "Wrack White",
+      "code": null,
+      "hex": "#D3D0CF",
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "dry/Golden Griffon",
+      "group": "dry",
+      "name": "Golden Griffon",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#886625",
+        "light": "#FFFFFF"
+      },
+      "measuredHex": null,
+      "finish": "metal",
+      "colourless": false
+    },
+    {
+      "key": "dry/Necron Compound",
+      "group": "dry",
+      "name": "Necron Compound",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#9DA3A7",
+        "light": "#FAFAFA"
+      },
+      "measuredHex": null,
+      "finish": "metal",
+      "colourless": false
+    },
+    {
+      "key": "dry/Sigmarite",
+      "group": "dry",
+      "name": "Sigmarite",
+      "code": null,
+      "hex": null,
+      "gradient": {
+        "dark": "#C6863A",
+        "light": "#F5C971"
+      },
+      "measuredHex": null,
+      "finish": "metal",
+      "colourless": false
+    }
+  ],
+  "equivalences": [],
+  "replacements": [],
+  "ignoredGroups": [
+    {
+      "group": "air",
+      "reasonId": "airbrush",
+      "note": null
+    },
+    {
+      "group": "spray",
+      "reasonId": "spray",
+      "note": null
+    }
+  ],
+  "ignoredKeys": [
+    {
+      "key": "technical/Ardcoat",
+      "reasonId": "auxiliary",
+      "note": null
+    },
+    {
+      "key": "technical/Contrast Medium",
+      "reasonId": "auxiliary",
+      "note": null
+    },
+    {
+      "key": "technical/Lahmian Medium",
+      "reasonId": "auxiliary",
+      "note": null
+    },
+    {
+      "key": "technical/Stormshield",
+      "reasonId": "auxiliary",
+      "note": null
+    }
+  ]
+}

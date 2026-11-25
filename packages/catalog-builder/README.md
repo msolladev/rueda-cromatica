@@ -1,12 +1,51 @@
 # @chromatic-wheel/catalog-builder
 
-Herramienta de línea de comandos que genera `apps/web/public/catalog.json`, el catálogo de pinturas que carga la web. No es una librería: no la importa ningún otro paquete.
+Genera `apps/web/public/catalog.json`, el catálogo de pinturas que carga la web. Tiene dos partes ([ADR-0041](../../docs/adr/0041-frontera-logica-pura-catalog-builder.md)):
 
-- **El builder** lee los datos que mantiene el proyecto, en `data/` (las fuentes y un fichero por marca), los valida con los esquemas de `domain` y escribe el catálogo de forma determinista. Falla en lugar de adivinar, y no escribe nada si algo no cuadra. La CI lo vuelve a generar y falla si no coincide con el versionado.
-- **La estabilidad de IDs**: el builder compara los IDs con los del catálogo de la última publicación (la etiqueta de git `release/` más reciente, [docs/03](../../docs/03-identificadores.md) §7) y con las lápidas de `data/tombstones.json`. Un ID publicado no puede desaparecer salvo que se retire con una lápida, y un ID retirado no puede volver. Mientras no haya ninguna publicación, solo se comprueban las lápidas.
-- **Los importadores** traen las pinturas de una fuente externa (la tabla de SimoGecko para Citadel y los datos de DonnervS para el resto de marcas) y actualizan el fichero de la marca en `data/brands/`. Se ejecutan a demanda, y el cambio se revisa en el diff de git antes del commit.
+- **La lógica pura**, que es la API del paquete (`src/index.ts`): el modelo de los datos curados, la generación del catálogo y sus informes, la estabilidad de IDs, los importadores y la parte pura de `archive-sources`. No lee ni escribe ficheros, no descarga, no lee PDF y no consulta git: lo recibe todo ya leído. La usará `apps/api` en la fase 6 ([ADR-0037](../../docs/adr/0037-catalogo-en-base-de-datos.md)).
+- **La CLI**, en `src/cli/`, que lee y escribe `data/`, descarga las fuentes, lee los PDF, consulta git e imprime. Solo usa la API del paquete. Desaparece con la migración a la base de datos.
+- **La lectura de `data/` y de la última etiqueta `release/`**, en una segunda entrada, `@chromatic-wheel/catalog-builder/data` (`src/cli/data.ts`), para que `apps/api` cargue esos datos en su base de datos ([ADR-0043](../../docs/adr/0043-catalogo-en-postgresql.md)). Desaparece con `data/`.
+
+ESLint falla si un módulo puro importa un módulo de Node (salvo `node:crypto`), pdf.js, Prettier o `src/cli/`, o si usa `fetch`, `process` o `console`.
+
+- **El builder** lee los datos que mantiene el proyecto, en `data/`, en dos capas: lo que dice cada fuente, transcrito de forma literal en `data/sources/`, y las pinturas curadas de cada marca en `data/brands/`, con las claves que las cruzan con las filas de cada fuente. Comprueba que cada fila tenga su pintura o esté ignorada con su motivo, elige el color de cada pintura entre los candidatos de sus fuentes y escribe el catálogo de forma determinista. Falla en lugar de adivinar, y no escribe nada si algo no cuadra. La CI lo vuelve a generar y falla si no coincide con el versionado.
+- **El color**: gana el mejor candidato por origen (`measured` > `manufacturer` > `community`) y, dentro de cada origen, por el orden de `data/color-policy.json`. Cada ficha puede descartar candidatos, con un motivo, o elegir uno a mano, con una nota. Los dos fijan el hex que se revisó, y el build falla si la fuente lo cambia. Además, el builder escribe `reports/color-discrepancies.json` con las pinturas en las que el color publicado y otro candidato están a un ΔE mayor que 5, para revisarlas en el diff.
+- **Las equivalencias oficiales**: las cartas de conversión de los fabricantes se transcriben con sus parejas de filas, y cada pareja cuyas dos filas son claves de pinturas es una arista de `catalog.json`, con la carta como fuente. Si una de las dos está ignorada, por ejemplo por ser de una línea descatalogada, la arista no se publica.
+- **Las sustituciones**: un documento del fabricante que dice que una pintura sustituye a otra lista esas parejas en su fichero, y el builder publica la sustituta de cada pintura descatalogada. La ficha solo elige si dos documentos se contradicen; si no elige, el build falla.
+- **Las fuentes desactivadas**: una fuente con `disabled` en su fichero sale de `catalog.json` y no da colores, equivalencias ni sustituciones, así que sus pinturas pasan al siguiente candidato o se quedan sin color, sin cambiar de ID. El builder escribe en `reports/disabled-sources.json` lo que cambia, comparando el build con todas las fuentes y sin las desactivadas.
+- **La estabilidad de IDs**: el builder compara los IDs con los del catálogo de la última publicación (la etiqueta de git `release/` más reciente, [docs/03](../../docs/03-identificadores.md) §7) y con las lápidas de `data/tombstones.json`. Un ID publicado no puede desaparecer salvo que se retire con una lápida o sea el de una fuente desactivada, un ID retirado no puede volver, y la pintura que queda de una lápida tiene que estar en el catálogo. Mientras no haya ninguna publicación, solo se comprueban las lápidas.
+- **Los importadores** transcriben una fuente externa (las dos tablas de SimoGecko para Citadel, la oficial y la muestreada, los datos de DonnervS para el resto de marcas, las tablas de Arcturus para los Warpaints originales y el color de las líneas antiguas de Citadel, y los documentos de Games Workshop de esas líneas) en su fichero de `data/sources/`, proponen una pintura para cada fila nueva y listan lo que hay que decidir a mano. Los documentos cuyo original ya no existe se leen de su captura en la Wayback Machine. Las cartas de equivalencias en PDF se leen con pdf.js, y en lugar de proponer pinturas añaden su clave a la única pintura con su código o su nombre. Las cartas de Warpaints de 2020 y de GW de 2012, que son imágenes, están transcritas a mano. Nunca cambian otra cosa de una pintura que ya existe. Se ejecutan a demanda, y el cambio se revisa en el diff de git antes del commit.
+- **`archive-sources`** busca o solicita una captura de cada fuente en la Wayback Machine y descarga sus ficheros a una carpeta fuera del repositorio, con su SHA-256. Se ejecuta a demanda y solo hace lo que falta.
 
 Los comandos están en el [README de la raíz](../../README.md#comandos).
+
+## Estructura
+
+```
+src/
+  model/       el modelo de los datos curados: esquemas, tipos y comprobaciones
+  curated/     la lectura validada de los ficheros de data/
+  pipeline/    la generación del catálogo, sus informes y la estabilidad de IDs
+  importers/   la transcripción de cada fuente, sus reglas y la conciliación
+  archive/     la parte pura de archive-sources
+  cli/         los comandos: disco, red, git, PDF y mensajes
+  index.ts     la API pública
+```
+
+## Ejemplo
+
+Generar el catálogo a partir de los ficheros ya leídos, como hace `build-catalog`:
+
+```ts
+import { buildCatalog, readCurated } from "@chromatic-wheel/catalog-builder";
+
+const curated = readCurated({ sources, brands, ignoreReasons, colorPolicy });
+const built = curated.ok ? buildCatalog(curated.value) : curated;
+if (built.ok) console.log(built.value.json);
+else console.error(built.error);
+```
+
+Cada fichero es su nombre dentro de `data/` y su contenido ya interpretado como JSON, como `{ name: "brands/citadel.json", content }`.
 
 ## Documentación
 

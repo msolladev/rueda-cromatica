@@ -38,12 +38,16 @@
   /* Quality labels (docs/06 §3), from the closest to the farthest. */
   --q-identical: #17633a;
   --q-identical-bg: #dff3e6;
-  --q-very: #3d5f12;
-  --q-very-bg: #ebf4d8;
-  --q-similar: #6b4a00;
-  --q-similar-bg: #fbefcc;
-  --q-nearest: #4f545b;
-  --q-nearest-bg: #eceef1;
+  --q-near: #3d5f12;
+  --q-near-bg: #ebf4d8;
+  --q-very: #6b4a00;
+  --q-very-bg: #fbefcc;
+  --q-similar: #7f3d0a;
+  --q-similar-bg: #fde4cf;
+  --q-barely: #8a2f2b;
+  --q-barely-bg: #f7e1df;
+  --q-different: #4f545b;
+  --q-different-bg: #eceef1;
 
   /* Motion: fast at first and gentle at the end. */
   --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -95,12 +99,16 @@
     --error-text: light-dark(#8c1d18, #ffb4ab);
     --q-identical: light-dark(#17633a, #8fe0a6);
     --q-identical-bg: light-dark(#dff3e6, #15301e);
-    --q-very: light-dark(#3d5f12, #bfe08f);
-    --q-very-bg: light-dark(#ebf4d8, #22301a);
-    --q-similar: light-dark(#6b4a00, #f0d68a);
-    --q-similar-bg: light-dark(#fbefcc, #2e2610);
-    --q-nearest: light-dark(#4f545b, #b5bac1);
-    --q-nearest-bg: light-dark(#eceef1, #2a2e34);
+    --q-near: light-dark(#3d5f12, #bfe08f);
+    --q-near-bg: light-dark(#ebf4d8, #22301a);
+    --q-very: light-dark(#6b4a00, #f0d68a);
+    --q-very-bg: light-dark(#fbefcc, #2e2610);
+    --q-similar: light-dark(#7f3d0a, #f5bd8c);
+    --q-similar-bg: light-dark(#fde4cf, #33220f);
+    --q-barely: light-dark(#8a2f2b, #eeaaa4);
+    --q-barely-bg: light-dark(#f7e1df, #351b19);
+    --q-different: light-dark(#4f545b, #b5bac1);
+    --q-different-bg: light-dark(#eceef1, #2a2e34);
   }
 }
 
@@ -753,7 +761,15 @@ legend {
   }
 }
 
-.theme-options label::after {
+/* The tooltip of the controls named only by an icon: the theme (docs/07
+   §11) and «Use as base» (docs/07 §16). Under the control, on hover with a
+   short delay or at once with the keyboard focus; the name is also in the
+   control's accessible name. */
+.has-tooltip {
+  position: relative;
+}
+
+.has-tooltip::after {
   content: attr(data-tooltip);
   position: absolute;
   top: calc(100% + 0.6rem);
@@ -775,14 +791,14 @@ legend {
 }
 
 @media (hover: hover) {
-  .theme-options label:hover::after {
+  .has-tooltip:hover::after {
     opacity: 1;
     translate: -50% 0;
     transition-delay: 0.3s;
   }
 }
 
-.theme-options label:has(input:focus-visible)::after {
+.has-tooltip:is(:focus-visible, :has(:focus-visible))::after {
   opacity: 1;
   translate: -50% 0;
 }
@@ -1507,13 +1523,27 @@ legend {
 }
 
 .paint-search-chosen,
+.paint-search-standin,
 .paint-search-back,
 .paint-search-ryb {
   animation: row-enter 0.3s var(--ease) both;
 }
 
-.paint-search-chosen {
+.paint-search-chosen,
+.paint-search-standin {
   padding-inline-start: 0.75rem;
+}
+
+.paint-search-standin {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* The chip «Discontinued», beside the brand, range and code. */
+.paint-search-chip {
+  margin-inline-start: 0.5rem;
+  vertical-align: 0.1em;
 }
 
 .paint-search-back {
@@ -1988,12 +2018,21 @@ legend {
   height: 1.5rem;
 }
 
-.split-any {
+/* A paint without colour (docs/07 §15): striped, in the rows and in the
+   search. */
+.split-any,
+.swatch-none {
   background: repeating-linear-gradient(
     45deg,
     var(--muted) 0 2px,
     transparent 2px 5px
   );
+}
+
+/* docs/07 §16: a paint not measured against the wheel shows its whole
+   swatch. */
+.split-whole {
+  grid-template-rows: 1fr;
 }
 
 .panel {
@@ -2120,9 +2159,64 @@ brands per row. */
 
 .paint-name {
   grid-area: name;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
   min-width: 0;
   font-weight: 600;
   overflow-wrap: anywhere;
+}
+
+/* docs/07 §16: an official equivalent, with who states it under its range. */
+.paint[data-sources] {
+  grid-template-areas:
+    "split name name"
+    "split range range"
+    "split sources sources"
+    "split chips quality"
+    ". details details";
+}
+
+.paint-sources {
+  grid-area: sources;
+  min-width: 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+/* The button that makes a paint the base: the wheel's icon, in the accent,
+   beside the name. Its target is larger than it looks (WCAG 2.5.8). */
+.use-as-base {
+  flex: none;
+  display: inline-grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  margin-block: -0.4rem;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-small);
+  background: transparent;
+  color: var(--accent);
+  cursor: pointer;
+  transition:
+    background-color 0.15s,
+    scale 0.1s;
+}
+
+.use-as-base .icon {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+.use-as-base:active {
+  scale: 0.92;
+}
+
+@media (hover: hover) {
+  .use-as-base:hover {
+    background: var(--chip);
+  }
 }
 
 .paint-range {
@@ -2212,9 +2306,14 @@ brands per row. */
   font-variant-numeric: tabular-nums;
 }
 
-.paint-quality[data-quality="near-identical"] {
+.paint-quality[data-quality="identical"] {
   background: var(--q-identical-bg);
   color: var(--q-identical);
+}
+
+.paint-quality[data-quality="near-identical"] {
+  background: var(--q-near-bg);
+  color: var(--q-near);
 }
 
 .paint-quality[data-quality="very-similar"] {
@@ -2227,9 +2326,14 @@ brands per row. */
   color: var(--q-similar);
 }
 
-.paint-quality[data-quality="nearest-available"] {
-  background: var(--q-nearest-bg);
-  color: var(--q-nearest);
+.paint-quality[data-quality="barely-similar"] {
+  background: var(--q-barely-bg);
+  color: var(--q-barely);
+}
+
+.paint-quality[data-quality="different"] {
+  background: var(--q-different-bg);
+  color: var(--q-different);
 }
 
 .paint-details {
@@ -2290,6 +2394,58 @@ brands per row. */
 
 .empty {
   margin: 0.5rem 0;
+  color: var(--muted);
+}
+
+/* docs/07 §16: the official equivalences of the chosen paint, above the
+   closest paints of the base and apart from them. */
+.official {
+  padding-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.official-heading {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+.official-intro {
+  margin: 0.25rem 0 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* In «Details», the official equivalences take the whole width under their
+   title, so that they read well on a phone; each one, its name with the
+   button, then its brand and who states it. */
+.paint-details .official-details {
+  grid-column: 1 / -1;
+}
+.official-links p {
+  margin: 0;
+}
+
+.official-links ul {
+  margin: 0.15rem 0 0.4rem;
+  padding: 0;
+  list-style: none;
+}
+
+.official-links li {
+  display: grid;
+  padding-block: 0.15rem;
+}
+
+.official-link-name {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-weight: 600;
+}
+
+.official-link-meta {
+  font-size: 0.8rem;
   color: var(--muted);
 }
 
@@ -2630,7 +2786,7 @@ brands per row. */
 
 /* ---------- Footer and the page for `/` ---------- */
 
-/* docs/07 §16: on top, a strip with the twelve hues of the wheel, which the
+/* docs/07 §17: on top, a strip with the twelve hues of the wheel, which the
    footer computes from the wheel (`--hue-strip`). */
 .footer {
   background: var(--surface);

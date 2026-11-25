@@ -129,7 +129,7 @@ describe("reduce", () => {
   });
 
   describe("the chosen paint", () => {
-    const lothern = { id: "citadel/layer/lothern-blue", hex: "#2c9bcc" };
+    const lothern = { id: "citadel/layer/lothern-blue", hex: "#3394c3" };
     const wheel = (color: string) => ({
       color,
       model: "ryb" as const,
@@ -141,7 +141,7 @@ describe("reduce", () => {
       const state = run(
         { type: "select-tab", index: 2 },
         { type: "choose-paint", paint: lothern },
-        { type: "wheel-changed", wheel: wheel("#2C9BCC") },
+        { type: "wheel-changed", wheel: wheel("#3394C3") },
       );
       expect(state.tab).toBe(0);
       expect(state.preferences.paint).toBe(lothern);
@@ -155,6 +155,23 @@ describe("reduce", () => {
       );
       expect(state.preferences.paint).toBeNull();
       expect(state.previousPaint).toBe(lothern);
+    });
+
+    it("remembers the one it leaves for an official equivalent (docs/07 §16)", () => {
+      const moot = { id: "citadel/layer/moot-green", hex: "#3daf44" };
+      const jumped = run(
+        { type: "choose-paint", paint: lothern },
+        { type: "choose-paint", paint: moot, remember: true },
+      );
+      expect(jumped.preferences.paint).toBe(moot);
+      expect(jumped.previousPaint).toBe(lothern);
+      const back = run(
+        { type: "choose-paint", paint: lothern },
+        { type: "choose-paint", paint: moot, remember: true },
+        { type: "choose-paint", paint: lothern },
+      );
+      expect(back.preferences.paint).toBe(lothern);
+      expect(back.previousPaint).toBeNull();
     });
 
     it("is forgotten, with «Back to…», when the search is emptied", () => {

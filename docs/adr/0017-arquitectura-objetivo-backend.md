@@ -1,6 +1,6 @@
 # ADR-0017: Arquitectura objetivo con backend
 
-- **Estado:** aceptada
+- **Estado:** aceptada; corregida en parte por [ADR-0037](0037-catalogo-en-base-de-datos.md) y [ADR-0039](0039-cuentas-sesiones-datos-usuario.md)
 - **Fecha:** 2026-11-07
 
 ## Contexto

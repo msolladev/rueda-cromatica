@@ -38,6 +38,13 @@ export {
   type MatchingError,
   type MatchOptions,
 } from "./matching/closest-paints.ts";
+export {
+  colorStandIn,
+  findOfficialEquivalences,
+  type ColorStandIn,
+  type OfficialEquivalences,
+  type OfficialMatch,
+} from "./matching/official-equivalences.ts";
 export { buildPaintIndex, type PaintIndex } from "./matching/paint-index.ts";
 export {
   MATCH_QUALITY_LIMITS,
@@ -54,3 +61,5 @@ export {
   type PaintSearchIndex,
   type TextRange,
 } from "./search/paint-search.ts";
+
+export { instantSchema, toInstant, type Instant } from "./time/instant.ts";

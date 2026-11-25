@@ -3,9 +3,17 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./data": "./src/cli/data.ts"
+  },
   "scripts": {
+    "archive-sources": "node src/cli/archive-sources.ts",
     "build-catalog": "node src/cli/build-catalog.ts",
+    "import-arcturus": "node src/cli/import-arcturus.ts",
+    "import-charts": "node src/cli/import-charts.ts",
     "import-donnervs": "node src/cli/import-donnervs.ts",
+    "import-games-workshop": "node src/cli/import-games-workshop.ts",
     "import-simogecko": "node src/cli/import-simogecko.ts",
     "next-release-tag": "node src/cli/next-release-tag.ts",
     "typecheck": "tsc",
@@ -19,6 +27,8 @@
   "devDependencies": {
     "@types/culori": "catalog:",
     "@types/node": "catalog:",
+    "pdfjs-dist": "6.5.438",
+    "prettier": "catalog:",
     "typescript": "catalog:",
     "vitest": "catalog:"
   }

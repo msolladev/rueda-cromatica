@@ -61,7 +61,9 @@ test.describe("without JavaScript", () => {
     await expect(page.locator(".panel")).toHaveCount(6);
     for (const panel of await page.locator(".panel").all())
       await expect(panel).toBeVisible();
-    await expect(page.getByText("Moot Green").first()).toBeVisible();
+    await expect(
+      page.locator(".paint-name", { hasText: "Moot Green" }).first(),
+    ).toBeVisible();
     // Playwright turns scripts off without changing how <noscript> is
     // parsed, so its text is checked in the HTML.
     expect(await page.content()).toContain(
@@ -74,6 +76,12 @@ test.describe("without JavaScript", () => {
     await expect(
       page.getByRole("heading", { name: "Citadel Official Colours Table" }),
     ).toBeVisible();
+    for (const chart of [
+      "Game Color chart (CC266)",
+      "Warpaints Fanatic Conversion Chart",
+    ]) {
+      await expect(page.getByRole("heading", { name: chart })).toBeVisible();
+    }
     await expect(
       page.getByRole("heading", { name: "react", exact: false }).first(),
     ).toBeVisible();
@@ -377,6 +385,81 @@ test("the install banner arrives with the page where the browser installs apps, 
     .locator("h1")
     .evaluate((heading) => heading.getBoundingClientRect().top);
   expect(top).toBe(firstTop);
+});
+
+test("on a phone, the official equivalences of a paint lead to another and back", async ({
+  browser,
+}) => {
+  const context = await browser.newContext({
+    viewport: { width: 360, height: 740 },
+    hasTouch: true,
+    isMobile: true,
+  });
+  const page = await context.newPage();
+  await page.goto("/es/");
+  const field = page.getByRole("combobox", {
+    name: "Empieza por una pintura que tengas",
+  });
+  await expect(field).toBeEnabled();
+  await field.fill("moot green");
+  await page
+    .getByRole("option", { name: /Moot Green/ })
+    .first()
+    .tap();
+  const official = page.getByRole("region", {
+    name: "Equivalencias oficiales",
+  });
+  await expect(official.locator(".paint-name")).toHaveText([
+    "Light Green",
+    "Scorpion Green",
+    "Leafy Green",
+    "Snake Scales",
+    "Scorpy Green",
+  ]);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBe(
+    360,
+  );
+  await official
+    .getByRole("button", { name: "Usar Scorpy Green como base de la rueda" })
+    .tap();
+  await expect(field).toHaveValue("Scorpy Green");
+  await page.getByRole("button", { name: "Volver a Moot Green" }).tap();
+  await expect(field).toHaveValue("Moot Green");
+  await context.close();
+});
+
+test("on a phone, a discontinued paint says so, and whether it has a replacement", async ({
+  browser,
+}) => {
+  const context = await browser.newContext({
+    viewport: { width: 360, height: 740 },
+    hasTouch: true,
+    isMobile: true,
+  });
+  const page = await context.newPage();
+  await page.goto("/es/");
+  const field = page.getByRole("combobox", {
+    name: "Empieza por una pintura que tengas",
+  });
+  await expect(field).toBeEnabled();
+  await field.fill("necromancer cloak");
+  const option = page.getByRole("option", { name: /Necromancer Cloak/ });
+  await expect(option).toContainText("Descatalogada");
+  await option.tap();
+  await expect(field).toHaveValue("Necromancer Cloak");
+  const official = page.getByRole("region", {
+    name: "Equivalencias oficiales",
+  });
+  await expect(official.locator("h5").first()).toHaveText(
+    "Necromancer Cloak se sustituye por",
+  );
+  await expect(official).toContainText(
+    "Ningún documento del fabricante nombra una sustituta de Necromancer Cloak.",
+  );
+  expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBe(
+    360,
+  );
+  await context.close();
 });
 
 test("no page is wider than a phone's screen", async ({ page }) => {

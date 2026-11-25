@@ -1,0 +1,7555 @@
+{
+  "source": {
+    "id": "the-army-painter-fanatic-conversion-chart",
+    "kind": "manufacturer",
+    "title": "Warpaints Fanatic Conversion Chart",
+    "publisher": "The Army Painter",
+    "url": "https://cdn.shopify.com/s/files/1/0636/1232/1970/files/A3_Fanatic_Colour_Conversion_Chart_WEB.pdf",
+    "archiveUrl": "https://web.archive.org/web/20261122174559/https://cdn.shopify.com/s/files/1/0636/1232/1970/files/A3_Fanatic_Colour_Conversion_Chart_WEB.pdf",
+    "retrievedAt": "2026-11-22",
+    "license": "unknown",
+    "attribution": null
+  },
+  "disabled": null,
+  "files": [
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0636/1232/1970/files/A3_Fanatic_Colour_Conversion_Chart_WEB.pdf",
+      "name": "A3_Fanatic_Colour_Conversion_Chart_WEB.pdf",
+      "sha256": "a5fe4775bcca5e1b1c23948bd091d661e65ad1ec1ead7105d487944a09c335f2"
+    }
+  ],
+  "paints": [
+    {
+      "key": "Fanatic/Brigade Grey",
+      "group": "Warpaints Fanatic",
+      "name": "Brigade Grey",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Spaceship Exterior",
+      "group": "Original Warpaints",
+      "name": "Spaceship Exterior",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Corax White",
+      "group": "Citadel by Games Workshop",
+      "name": "Corax White",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Company Grey",
+      "group": "Warpaints Fanatic",
+      "name": "Company Grey",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Company Grey",
+      "group": "Warpaints Air",
+      "name": "Company Grey",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Grey Seer",
+      "group": "Citadel by Games Workshop",
+      "name": "Grey Seer",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Ash Grey",
+      "group": "Warpaints Fanatic",
+      "name": "Ash Grey",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Ash Grey",
+      "group": "Original Warpaints",
+      "name": "Ash Grey",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Administratum Grey",
+      "group": "Citadel by Games Workshop",
+      "name": "Administratum Grey",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Uniform Grey",
+      "group": "Warpaints Fanatic",
+      "name": "Uniform Grey",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Uniform Grey",
+      "group": "Original Warpaints",
+      "name": "Uniform Grey",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Uniform Grey",
+      "group": "Warpaints Air",
+      "name": "Uniform Grey",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Dawnstone",
+      "group": "Citadel by Games Workshop",
+      "name": "Dawnstone",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Deep Grey",
+      "group": "Warpaints Fanatic",
+      "name": "Deep Grey",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Necromancer Cloak",
+      "group": "Original Warpaints",
+      "name": "Necromancer Cloak",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Mechanicus Standard Grey",
+      "group": "Citadel by Games Workshop",
+      "name": "Mechanicus Standard Grey",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Matt Black",
+      "group": "Warpaints Fanatic",
+      "name": "Matt Black",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Matt Black",
+      "group": "Original Warpaints",
+      "name": "Matt Black",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Matt Black",
+      "group": "Warpaints Air",
+      "name": "Matt Black",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Abaddon Black",
+      "group": "Citadel by Games Workshop",
+      "name": "Abaddon Black",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Urban Buff",
+      "group": "Warpaints Fanatic",
+      "name": "Urban Buff",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Kobold Skin",
+      "group": "Original Warpaints",
+      "name": "Kobold Skin",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Kobold Skin",
+      "group": "Warpaints Air",
+      "name": "Kobold Skin",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Command Khaki",
+      "group": "Warpaints Fanatic",
+      "name": "Command Khaki",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Gnome Cheecks",
+      "group": "Warpaints Air",
+      "name": "Gnome Cheecks",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Knight-Questor Flesh",
+      "group": "Citadel by Games Workshop",
+      "name": "Knight-Questor Flesh",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Paratrooper Tan",
+      "group": "Warpaints Fanatic",
+      "name": "Paratrooper Tan",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Monster Brown",
+      "group": "Original Warpaints",
+      "name": "Monster Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Baneblade Brown",
+      "group": "Citadel by Games Workshop",
+      "name": "Baneblade Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Leather Brown",
+      "group": "Warpaints Fanatic",
+      "name": "Leather Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Leather Brown",
+      "group": "Original Warpaints",
+      "name": "Leather Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Leather Brown",
+      "group": "Warpaints Air",
+      "name": "Leather Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Mournfang Brown",
+      "group": "Citadel by Games Workshop",
+      "name": "Mournfang Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Bootstrap Brown",
+      "group": "Warpaints Fanatic",
+      "name": "Bootstrap Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Werewolf Fur",
+      "group": "Original Warpaints",
+      "name": "Werewolf Fur",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Brigandine Brown",
+      "group": "Warpaints Fanatic",
+      "name": "Brigandine Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Hardened Carapace",
+      "group": "Original Warpaints",
+      "name": "Hardened Carapace",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Magnolia Brown",
+      "group": "Warpaints Air",
+      "name": "Magnolia Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Rhinox Hide",
+      "group": "Citadel by Games Workshop",
+      "name": "Rhinox Hide",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Pearl Skin",
+      "group": "Warpaints Fanatic",
+      "name": "Pearl Skin",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Mummy Robes",
+      "group": "Original Warpaints",
+      "name": "Mummy Robes",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Opal Skin",
+      "group": "Warpaints Fanatic",
+      "name": "Opal Skin",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Opal Skin",
+      "group": "Original Warpaints",
+      "name": "Opal Skin",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Ruby Skin",
+      "group": "Warpaints Fanatic",
+      "name": "Ruby Skin",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Ruby Skin",
+      "group": "Original Warpaints",
+      "name": "Ruby Skin",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Barbarian Flesh",
+      "group": "Warpaints Fanatic",
+      "name": "Barbarian Flesh",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Barbarian Flesh",
+      "group": "Original Warpaints",
+      "name": "Barbarian Flesh",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Barbarian Flesh",
+      "group": "Warpaints Air",
+      "name": "Barbarian Flesh",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Bestigor Flesh",
+      "group": "Citadel by Games Workshop",
+      "name": "Bestigor Flesh",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Agate Skin",
+      "group": "Warpaints Fanatic",
+      "name": "Agate Skin",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Cadian Fleshtone",
+      "group": "Citadel by Games Workshop",
+      "name": "Cadian Fleshtone",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Moonstone Skin",
+      "group": "Warpaints Fanatic",
+      "name": "Moonstone Skin",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Scar Tissue",
+      "group": "Original Warpaints",
+      "name": "Scar Tissue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Matt White",
+      "group": "Warpaints Fanatic",
+      "name": "Matt White",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Matt White",
+      "group": "Original Warpaints",
+      "name": "Matt White",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Matt White",
+      "group": "Warpaints Air",
+      "name": "Matt White",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/White Scar",
+      "group": "Citadel by Games Workshop",
+      "name": "White Scar",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Brainmatter Beige",
+      "group": "Warpaints Fanatic",
+      "name": "Brainmatter Beige",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Brainmatter Beige",
+      "group": "Original Warpaints",
+      "name": "Brainmatter Beige",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Pallid Wych Flesh",
+      "group": "Citadel by Games Workshop",
+      "name": "Pallid Wych Flesh",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Worn Stone",
+      "group": "Warpaints Fanatic",
+      "name": "Worn Stone",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Drake Tooth",
+      "group": "Original Warpaints",
+      "name": "Drake Tooth",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Wraithbone",
+      "group": "Citadel by Games Workshop",
+      "name": "Wraithbone",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Great Hall Grey",
+      "group": "Warpaints Fanatic",
+      "name": "Great Hall Grey",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Stone Golem",
+      "group": "Original Warpaints",
+      "name": "Stone Golem",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Gargoyle Grey",
+      "group": "Warpaints Fanatic",
+      "name": "Gargoyle Grey",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Ionrach Skin",
+      "group": "Citadel by Games Workshop",
+      "name": "Ionrach Skin",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Grey Castle",
+      "group": "Warpaints Fanatic",
+      "name": "Grey Castle",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Combat Fatigues",
+      "group": "Original Warpaints",
+      "name": "Combat Fatigues",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Barren Dune",
+      "group": "Warpaints Fanatic",
+      "name": "Barren Dune",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Troll Claws",
+      "group": "Original Warpaints",
+      "name": "Troll Claws",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Ungor Flesh",
+      "group": "Citadel by Games Workshop",
+      "name": "Ungor Flesh",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Burnt Turf",
+      "group": "Warpaints Fanatic",
+      "name": "Burnt Turf",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Hemp Rope",
+      "group": "Original Warpaints",
+      "name": "Hemp Rope",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Zamesi Desert",
+      "group": "Citadel by Games Workshop",
+      "name": "Zamesi Desert",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Wasteland Clay",
+      "group": "Warpaints Fanatic",
+      "name": "Wasteland Clay",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Basilisk Brown",
+      "group": "Original Warpaints",
+      "name": "Basilisk Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Yellow Dune",
+      "group": "Warpaints Air",
+      "name": "Yellow Dune",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Balor Brown",
+      "group": "Citadel by Games Workshop",
+      "name": "Balor Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Desert Yellow",
+      "group": "Warpaints Fanatic",
+      "name": "Desert Yellow",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Desert Yellow",
+      "group": "Original Warpaints",
+      "name": "Desert Yellow",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Desert Yellow",
+      "group": "Warpaints Air",
+      "name": "Desert Yellow",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Hobgrot Hide",
+      "group": "Citadel by Games Workshop",
+      "name": "Hobgrot Hide",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Prairie Ochre",
+      "group": "Warpaints Fanatic",
+      "name": "Prairie Ochre",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Sulfide Ochre",
+      "group": "Original Warpaints",
+      "name": "Sulfide Ochre",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Barren Yellow",
+      "group": "Warpaints Air",
+      "name": "Barren Yellow",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Tallarn Sand",
+      "group": "Citadel by Games Workshop",
+      "name": "Tallarn Sand",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Tundra Taupe",
+      "group": "Warpaints Fanatic",
+      "name": "Tundra Taupe",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Venom Wyrm",
+      "group": "Original Warpaints",
+      "name": "Venom Wyrm",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Deathworld Forest",
+      "group": "Citadel by Games Workshop",
+      "name": "Deathworld Forest",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Leopard Stone Skin",
+      "group": "Warpaints Fanatic",
+      "name": "Leopard Stone Skin",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Centaur Skin",
+      "group": "Original Warpaints",
+      "name": "Centaur Skin",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Tourmaline Skin",
+      "group": "Warpaints Fanatic",
+      "name": "Tourmaline Skin",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Jasper Skin",
+      "group": "Warpaints Fanatic",
+      "name": "Jasper Skin",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Dorado Skin",
+      "group": "Original Warpaints",
+      "name": "Dorado Skin",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Topaz Skin",
+      "group": "Warpaints Fanatic",
+      "name": "Topaz Skin",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Topaz Skin",
+      "group": "Original Warpaints",
+      "name": "Topaz Skin",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Tiger’s Eye Skin",
+      "group": "Warpaints Fanatic",
+      "name": "Tiger’s Eye Skin",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Tiger’s Eye Skin",
+      "group": "Original Warpaints",
+      "name": "Tiger’s Eye Skin",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Husk Brown",
+      "group": "Warpaints Air",
+      "name": "Husk Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Tuskgor Fur",
+      "group": "Citadel by Games Workshop",
+      "name": "Tuskgor Fur",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Carnelian Skin",
+      "group": "Warpaints Fanatic",
+      "name": "Carnelian Skin",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Chaotic Red",
+      "group": "Original Warpaints",
+      "name": "Chaotic Red",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Chaotic Red",
+      "group": "Warpaints Air",
+      "name": "Chaotic Red",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Bloodreaver Flesh",
+      "group": "Citadel by Games Workshop",
+      "name": "Bloodreaver Flesh",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Frost Blue",
+      "group": "Warpaints Fanatic",
+      "name": "Frost Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Ice Storm",
+      "group": "Original Warpaints",
+      "name": "Ice Storm",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Runic Cobalt",
+      "group": "Warpaints Fanatic",
+      "name": "Runic Cobalt",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Fog Grey",
+      "group": "Original Warpaints",
+      "name": "Fog Grey",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Fenrisian Grey",
+      "group": "Citadel by Games Workshop",
+      "name": "Fenrisian Grey",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Wolf Grey",
+      "group": "Warpaints Fanatic",
+      "name": "Wolf Grey",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Wolf Grey",
+      "group": "Original Warpaints",
+      "name": "Wolf Grey",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Russ Grey",
+      "group": "Citadel by Games Workshop",
+      "name": "Russ Grey",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Stratos Blue",
+      "group": "Warpaints Fanatic",
+      "name": "Stratos Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Griffon Blue",
+      "group": "Original Warpaints",
+      "name": "Griffon Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Thunderous Blue",
+      "group": "Warpaints Fanatic",
+      "name": "Thunderous Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/The Fang",
+      "group": "Citadel by Games Workshop",
+      "name": "The Fang",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Night Sky",
+      "group": "Warpaints Fanatic",
+      "name": "Night Sky",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Dark Reaper",
+      "group": "Citadel by Games Workshop",
+      "name": "Dark Reaper",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Pale Sand",
+      "group": "Warpaints Fanatic",
+      "name": "Pale Sand",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Hobgoblin Hue",
+      "group": "Warpaints Air",
+      "name": "Hobgoblin Hue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Bony Spikes",
+      "group": "Warpaints Fanatic",
+      "name": "Bony Spikes",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Bleached Bone",
+      "group": "Warpaints Air",
+      "name": "Bleached Bone",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Screaming Skull",
+      "group": "Citadel by Games Workshop",
+      "name": "Screaming Skull",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Ancient Stone",
+      "group": "Warpaints Fanatic",
+      "name": "Ancient Stone",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Skeleton Bone",
+      "group": "Warpaints Fanatic",
+      "name": "Skeleton Bone",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Skeleton Bone",
+      "group": "Original Warpaints",
+      "name": "Skeleton Bone",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Skeleton Bone",
+      "group": "Warpaints Air",
+      "name": "Skeleton Bone",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Ushabti Bone",
+      "group": "Citadel by Games Workshop",
+      "name": "Ushabti Bone",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Tomb King Tan",
+      "group": "Warpaints Fanatic",
+      "name": "Tomb King Tan",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Banshee Brown",
+      "group": "Original Warpaints",
+      "name": "Banshee Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Karak Stone",
+      "group": "Citadel by Games Workshop",
+      "name": "Karak Stone",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Dusty Skull",
+      "group": "Warpaints Fanatic",
+      "name": "Dusty Skull",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Stormvermin Fur",
+      "group": "Citadel by Games Workshop",
+      "name": "Stormvermin Fur",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Quartz Skin",
+      "group": "Warpaints Fanatic",
+      "name": "Quartz Skin",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Dorado Skin",
+      "group": "Warpaints Fanatic",
+      "name": "Dorado Skin",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Corpse Pale",
+      "group": "Original Warpaints",
+      "name": "Corpse Pale",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Flayed One Flesh",
+      "group": "Citadel by Games Workshop",
+      "name": "Flayed One Flesh",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Amber Skin",
+      "group": "Warpaints Fanatic",
+      "name": "Amber Skin",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Amber Skin",
+      "group": "Original Warpaints",
+      "name": "Amber Skin",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Charred Bone",
+      "group": "Warpaints Air",
+      "name": "Charred Bone",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Kislev Flesh",
+      "group": "Citadel by Games Workshop",
+      "name": "Kislev Flesh",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Mocca Skin",
+      "group": "Warpaints Fanatic",
+      "name": "Mocca Skin",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Steel Legion Drab",
+      "group": "Citadel by Games Workshop",
+      "name": "Steel Legion Drab",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Onyx Skin",
+      "group": "Warpaints Fanatic",
+      "name": "Onyx Skin",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Gorthor Brown",
+      "group": "Citadel by Games Workshop",
+      "name": "Gorthor Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Obsidian Skin",
+      "group": "Warpaints Fanatic",
+      "name": "Obsidian Skin",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Onyx Skin",
+      "group": "Original Warpaints",
+      "name": "Onyx Skin",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Dryad Bark",
+      "group": "Citadel by Games Workshop",
+      "name": "Dryad Bark",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Augur Blue",
+      "group": "Warpaints Fanatic",
+      "name": "Augur Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Gorgon Hide",
+      "group": "Original Warpaints",
+      "name": "Gorgon Hide",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Storm Wolf",
+      "group": "Warpaints Air",
+      "name": "Storm Wolf",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Blue Horror",
+      "group": "Citadel by Games Workshop",
+      "name": "Blue Horror",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Baron Blue",
+      "group": "Warpaints Fanatic",
+      "name": "Baron Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Consul Blue",
+      "group": "Warpaints Air",
+      "name": "Consul Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Alpha Blue",
+      "group": "Warpaints Fanatic",
+      "name": "Alpha Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Calgar Blue",
+      "group": "Citadel by Games Workshop",
+      "name": "Calgar Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Ultramarine Blue",
+      "group": "Warpaints Fanatic",
+      "name": "Ultramarine Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Ultramarine Blue",
+      "group": "Original Warpaints",
+      "name": "Ultramarine Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Ultramarine Blue",
+      "group": "Warpaints Air",
+      "name": "Ultramarine Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Altdorf Guard Blue",
+      "group": "Citadel by Games Workshop",
+      "name": "Altdorf Guard Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Gothic Blue",
+      "group": "Warpaints Fanatic",
+      "name": "Gothic Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Macragge Blue",
+      "group": "Citadel by Games Workshop",
+      "name": "Macragge Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Triumphant Navy",
+      "group": "Warpaints Fanatic",
+      "name": "Triumphant Navy",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Dark Sky",
+      "group": "Original Warpaints",
+      "name": "Dark Sky",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Dark Sky",
+      "group": "Warpaints Air",
+      "name": "Dark Sky",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Kantor Blue",
+      "group": "Citadel by Games Workshop",
+      "name": "Kantor Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Ice Yellow",
+      "group": "Warpaints Fanatic",
+      "name": "Ice Yellow",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Arid Earth",
+      "group": "Original Warpaints",
+      "name": "Arid Earth",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Cosmic Dust",
+      "group": "Warpaints Air",
+      "name": "Cosmic Dust",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Dorn Yellow",
+      "group": "Citadel by Games Workshop",
+      "name": "Dorn Yellow",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Space Dust",
+      "group": "Warpaints Fanatic",
+      "name": "Space Dust",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Moon Dust",
+      "group": "Original Warpaints",
+      "name": "Moon Dust",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Moon Dust",
+      "group": "Warpaints Air",
+      "name": "Moon Dust",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Flash Gitz Yellow",
+      "group": "Citadel by Games Workshop",
+      "name": "Flash Gitz Yellow",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Warped Yellow",
+      "group": "Warpaints Fanatic",
+      "name": "Warped Yellow",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Babe Blonde",
+      "group": "Original Warpaints",
+      "name": "Babe Blonde",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Meteor Rock",
+      "group": "Warpaints Air",
+      "name": "Meteor Rock",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Phalanx Yellow",
+      "group": "Citadel by Games Workshop",
+      "name": "Phalanx Yellow",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Daemonic Yellow",
+      "group": "Warpaints Fanatic",
+      "name": "Daemonic Yellow",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Daemonic Yellow",
+      "group": "Original Warpaints",
+      "name": "Daemonic Yellow",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Daemonic Yellow",
+      "group": "Warpaints Air",
+      "name": "Daemonic Yellow",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Fiendish Yellow",
+      "group": "Warpaints Fanatic",
+      "name": "Fiendish Yellow",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Fire Lizard",
+      "group": "Original Warpaints",
+      "name": "Fire Lizard",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Averland Sunset",
+      "group": "Citadel by Games Workshop",
+      "name": "Averland Sunset",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Demigod Flames",
+      "group": "Warpaints Fanatic",
+      "name": "Demigod Flames",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Tau Light Ochre",
+      "group": "Citadel by Games Workshop",
+      "name": "Tau Light Ochre",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/True Brass",
+      "group": "Warpaints Fanatic",
+      "name": "True Brass",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Canoptek Alloy",
+      "group": "Citadel by Games Workshop",
+      "name": "Canoptek Alloy",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Weapon Bronze",
+      "group": "Warpaints Fanatic",
+      "name": "Weapon Bronze",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Weapon Bronze",
+      "group": "Original Warpaints",
+      "name": "Weapon Bronze",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Weapon Bronze",
+      "group": "Warpaints Air",
+      "name": "Weapon Bronze",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Brass Scorpion",
+      "group": "Citadel by Games Workshop",
+      "name": "Brass Scorpion",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/True Copper",
+      "group": "Warpaints Fanatic",
+      "name": "True Copper",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/True Copper",
+      "group": "Original Warpaints",
+      "name": "True Copper",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/True Copper",
+      "group": "Warpaints Air",
+      "name": "True Copper",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Balthasar Gold",
+      "group": "Citadel by Games Workshop",
+      "name": "Balthasar Gold",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Evil Chrome",
+      "group": "Warpaints Fanatic",
+      "name": "Evil Chrome",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Evil Chrome",
+      "group": "Warpaints Air",
+      "name": "Evil Chrome",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Sycorax Bronze",
+      "group": "Citadel by Games Workshop",
+      "name": "Sycorax Bronze",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Red Copper",
+      "group": "Warpaints Fanatic",
+      "name": "Red Copper",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Screaming Bell",
+      "group": "Citadel by Games Workshop",
+      "name": "Screaming Bell",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Rough Iron",
+      "group": "Warpaints Fanatic",
+      "name": "Rough Iron",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Rough Iron",
+      "group": "Original Warpaints",
+      "name": "Rough Iron",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Rough Iron",
+      "group": "Warpaints Air",
+      "name": "Rough Iron",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Warlock Bronze",
+      "group": "Citadel by Games Workshop",
+      "name": "Warlock Bronze",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Bright Sapphire",
+      "group": "Warpaints Fanatic",
+      "name": "Bright Sapphire",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Arctic Gem",
+      "group": "Warpaints Fanatic",
+      "name": "Arctic Gem",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Electric Blue",
+      "group": "Original Warpaints",
+      "name": "Electric Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Ionic Blue",
+      "group": "Warpaints Air",
+      "name": "Ionic Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Hoeth Blue",
+      "group": "Citadel by Games Workshop",
+      "name": "Hoeth Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Crystal Blue",
+      "group": "Warpaints Fanatic",
+      "name": "Crystal Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Crystal Blue",
+      "group": "Original Warpaints",
+      "name": "Crystal Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Crystal Blue",
+      "group": "Warpaints Air",
+      "name": "Crystal Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Teclis Blue",
+      "group": "Citadel by Games Workshop",
+      "name": "Teclis Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Royal Blue",
+      "group": "Warpaints Fanatic",
+      "name": "Royal Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Viking Blue",
+      "group": "Original Warpaints",
+      "name": "Viking Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Sapphire Gem",
+      "group": "Warpaints Air",
+      "name": "Sapphire Gem",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Regal Blue",
+      "group": "Warpaints Fanatic",
+      "name": "Regal Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Caledor Sky",
+      "group": "Citadel by Games Workshop",
+      "name": "Caledor Sky",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Imperial Navy",
+      "group": "Warpaints Fanatic",
+      "name": "Imperial Navy",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Deep Blue",
+      "group": "Original Warpaints",
+      "name": "Deep Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Nightlords Blue",
+      "group": "Citadel by Games Workshop",
+      "name": "Nightlords Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Inner Light",
+      "group": "Warpaints Fanatic",
+      "name": "Inner Light",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Phoenix Flames",
+      "group": "Original Warpaints",
+      "name": "Phoenix Flames",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Glowing Inferno",
+      "group": "Warpaints Fanatic",
+      "name": "Glowing Inferno",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Incursion Orange",
+      "group": "Warpaints Air",
+      "name": "Incursion Orange",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Yriel Yellow",
+      "group": "Citadel by Games Workshop",
+      "name": "Yriel Yellow",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Flickering Flame",
+      "group": "Warpaints Fanatic",
+      "name": "Flickering Flame",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Orange Magma",
+      "group": "Warpaints Air",
+      "name": "Orange Magma",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Lava Orange",
+      "group": "Warpaints Fanatic",
+      "name": "Lava Orange",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Lava Orange",
+      "group": "Original Warpaints",
+      "name": "Lava Orange",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Lava Orange",
+      "group": "Warpaints Air",
+      "name": "Lava Orange",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Fire Dragon Bright",
+      "group": "Citadel by Games Workshop",
+      "name": "Fire Dragon Bright",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Burning Ore",
+      "group": "Warpaints Fanatic",
+      "name": "Burning Ore",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Mythical Orange",
+      "group": "Original Warpaints",
+      "name": "Mythical Orange",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Archangel Red",
+      "group": "Warpaints Air",
+      "name": "Archangel Red",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Troll Slayer Orange",
+      "group": "Citadel by Games Workshop",
+      "name": "Troll Slayer Orange",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Molten Lava",
+      "group": "Warpaints Fanatic",
+      "name": "Molten Lava",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Molten Orange",
+      "group": "Warpaints Air",
+      "name": "Molten Orange",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Gemstone Red",
+      "group": "Warpaints Fanatic",
+      "name": "Gemstone Red",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Gemstone",
+      "group": "Original Warpaints",
+      "name": "Gemstone",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Gemstone",
+      "group": "Warpaints Air",
+      "name": "Gemstone",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Death Metal",
+      "group": "Warpaints Fanatic",
+      "name": "Death Metal",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Cobalt Metal",
+      "group": "Warpaints Fanatic",
+      "name": "Cobalt Metal",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Grey Knights Steel",
+      "group": "Citadel by Games Workshop",
+      "name": "Grey Knights Steel",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Bright Gold",
+      "group": "Warpaints Fanatic",
+      "name": "Bright Gold",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Bright Gold",
+      "group": "Original Warpaints",
+      "name": "Bright Gold",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Bright Gold",
+      "group": "Warpaints Air",
+      "name": "Bright Gold",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Auric Armour Gold",
+      "group": "Citadel by Games Workshop",
+      "name": "Auric Armour Gold",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Greedy Gold",
+      "group": "Warpaints Fanatic",
+      "name": "Greedy Gold",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Greedy Gold",
+      "group": "Original Warpaints",
+      "name": "Greedy Gold",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Greedy Gold",
+      "group": "Warpaints Air",
+      "name": "Greedy Gold",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Retributor Armour",
+      "group": "Citadel by Games Workshop",
+      "name": "Retributor Armour",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Tainted Gold",
+      "group": "Warpaints Fanatic",
+      "name": "Tainted Gold",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Tainted Gold",
+      "group": "Original Warpaints",
+      "name": "Tainted Gold",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Tainted Gold",
+      "group": "Warpaints Air",
+      "name": "Tainted Gold",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Aegis Aqua",
+      "group": "Warpaints Fanatic",
+      "name": "Aegis Aqua",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Voidshield Blue",
+      "group": "Original Warpaints",
+      "name": "Voidshield Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Shieldwall Blue",
+      "group": "Warpaints Fanatic",
+      "name": "Shieldwall Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Lothern Blue",
+      "group": "Citadel by Games Workshop",
+      "name": "Lothern Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Phalanx Blue",
+      "group": "Warpaints Fanatic",
+      "name": "Phalanx Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Troglodyte Blue",
+      "group": "Original Warpaints",
+      "name": "Troglodyte Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Tidal Blue",
+      "group": "Warpaints Fanatic",
+      "name": "Tidal Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Ahriman Blue",
+      "group": "Citadel by Games Workshop",
+      "name": "Ahriman Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Abyssal Blue",
+      "group": "Warpaints Fanatic",
+      "name": "Abyssal Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Twilight Sky",
+      "group": "Warpaints Air",
+      "name": "Twilight Sky",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Thousand Sons Blue",
+      "group": "Citadel by Games Workshop",
+      "name": "Thousand Sons Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Deep Ocean Blue",
+      "group": "Warpaints Fanatic",
+      "name": "Deep Ocean Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Thunder Storm",
+      "group": "Warpaints Air",
+      "name": "Thunder Storm",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Stegadon Scale Green",
+      "group": "Citadel by Games Workshop",
+      "name": "Stegadon Scale Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Raging Rouge",
+      "group": "Warpaints Fanatic",
+      "name": "Raging Rouge",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Ratskin Flesh",
+      "group": "Citadel by Games Workshop",
+      "name": "Ratskin Flesh",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Violent Vermillion",
+      "group": "Warpaints Fanatic",
+      "name": "Violent Vermillion",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Nomad Flesh",
+      "group": "Warpaints Air",
+      "name": "Nomad Flesh",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Lugganath Orange",
+      "group": "Citadel by Games Workshop",
+      "name": "Lugganath Orange",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Sacred Scarlet",
+      "group": "Warpaints Fanatic",
+      "name": "Sacred Scarlet",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Legendary Red",
+      "group": "Warpaints Fanatic",
+      "name": "Legendary Red",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Squig Orange",
+      "group": "Citadel by Games Workshop",
+      "name": "Squig Orange",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Angelic Red",
+      "group": "Warpaints Fanatic",
+      "name": "Angelic Red",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Mars Red",
+      "group": "Original Warpaints",
+      "name": "Mars Red",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Wild Rider Red",
+      "group": "Citadel by Games Workshop",
+      "name": "Wild Rider Red",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Resplendent Red",
+      "group": "Warpaints Fanatic",
+      "name": "Resplendent Red",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Abomination Gore",
+      "group": "Original Warpaints",
+      "name": "Abomination Gore",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Evil Sunz Scarlet",
+      "group": "Citadel by Games Workshop",
+      "name": "Evil Sunz Scarlet",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Mithril",
+      "group": "Warpaints Fanatic",
+      "name": "Mithril",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Stormhost Silver",
+      "group": "Citadel by Games Workshop",
+      "name": "Stormhost Silver",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Shining Silver",
+      "group": "Warpaints Fanatic",
+      "name": "Shining Silver",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Shining Silver",
+      "group": "Original Warpaints",
+      "name": "Shining Silver",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Shining Silver",
+      "group": "Warpaints Air",
+      "name": "Shining Silver",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Runefang Steel",
+      "group": "Citadel by Games Workshop",
+      "name": "Runefang Steel",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Plate Mail Metal",
+      "group": "Warpaints Fanatic",
+      "name": "Plate Mail Metal",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Plate Mail Metal",
+      "group": "Original Warpaints",
+      "name": "Plate Mail Metal",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Plate Mail Metal",
+      "group": "Warpaints Air",
+      "name": "Plate Mail Metal",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Iron Hands Steel",
+      "group": "Citadel by Games Workshop",
+      "name": "Iron Hands Steel",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Gun Metal",
+      "group": "Warpaints Fanatic",
+      "name": "Gun Metal",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Gun Metal",
+      "group": "Original Warpaints",
+      "name": "Gun Metal",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Gun Metal",
+      "group": "Warpaints Air",
+      "name": "Gun Metal",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Leadbelcher",
+      "group": "Citadel by Games Workshop",
+      "name": "Leadbelcher",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Glittering Green",
+      "group": "Warpaints Fanatic",
+      "name": "Glittering Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Glitter Green",
+      "group": "Original Warpaints",
+      "name": "Glitter Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Glitter Green",
+      "group": "Warpaints Air",
+      "name": "Glitter Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Dark Emerald",
+      "group": "Warpaints Fanatic",
+      "name": "Dark Emerald",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Marine Mist",
+      "group": "Warpaints Fanatic",
+      "name": "Marine Mist",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Toxic Mist",
+      "group": "Original Warpaints",
+      "name": "Toxic Mist",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Toxic Mist",
+      "group": "Warpaints Air",
+      "name": "Toxic Mist",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Neptune Glow",
+      "group": "Warpaints Fanatic",
+      "name": "Neptune Glow",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Aquamarine",
+      "group": "Warpaints Fanatic",
+      "name": "Aquamarine",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Phantasmal Blue",
+      "group": "Warpaints Air",
+      "name": "Phantasmal Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Baharroth Blue",
+      "group": "Citadel by Games Workshop",
+      "name": "Baharroth Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Turquoise Siren",
+      "group": "Warpaints Fanatic",
+      "name": "Turquoise Siren",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Royal Cloak",
+      "group": "Original Warpaints",
+      "name": "Royal Cloak",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Hydra Turquoise",
+      "group": "Warpaints Fanatic",
+      "name": "Hydra Turquoise",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Hydra Turquoise",
+      "group": "Original Warpaints",
+      "name": "Hydra Turquoise",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Hydra Turquoise",
+      "group": "Warpaints Air",
+      "name": "Hydra Turquoise",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Temple Guard Blue",
+      "group": "Citadel by Games Workshop",
+      "name": "Temple Guard Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Deep Azure",
+      "group": "Warpaints Fanatic",
+      "name": "Deep Azure",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Ocean Depths",
+      "group": "Warpaints Air",
+      "name": "Ocean Depths",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Sotek Green",
+      "group": "Citadel by Games Workshop",
+      "name": "Sotek Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Buffed Hide",
+      "group": "Warpaints Fanatic",
+      "name": "Buffed Hide",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Deathclaw Brown",
+      "group": "Citadel by Games Workshop",
+      "name": "Deathclaw Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Ruddy Umber",
+      "group": "Warpaints Fanatic",
+      "name": "Ruddy Umber",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Tanned Flesh",
+      "group": "Original Warpaints",
+      "name": "Tanned Flesh",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Viper Brown",
+      "group": "Warpaints Air",
+      "name": "Viper Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Bugman’s Glow",
+      "group": "Citadel by Games Workshop",
+      "name": "Bugman’s Glow",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Fur Brown",
+      "group": "Warpaints Fanatic",
+      "name": "Fur Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Fur Brown",
+      "group": "Original Warpaints",
+      "name": "Fur Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Fur Brown",
+      "group": "Warpaints Air",
+      "name": "Fur Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Dryad Brown",
+      "group": "Warpaints Fanatic",
+      "name": "Dryad Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Cypress Brown",
+      "group": "Warpaints Air",
+      "name": "Cypress Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Doombull Brown",
+      "group": "Citadel by Games Workshop",
+      "name": "Doombull Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Tree Ancient",
+      "group": "Warpaints Fanatic",
+      "name": "Tree Ancient",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Dirt Spatter",
+      "group": "Original Warpaints",
+      "name": "Dirt Spatter",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Catachan Flesh",
+      "group": "Citadel by Games Workshop",
+      "name": "Catachan Flesh",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Oak Brown",
+      "group": "Warpaints Fanatic",
+      "name": "Oak Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Oak Brown",
+      "group": "Original Warpaints",
+      "name": "Oak Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Oak Brown",
+      "group": "Warpaints Air",
+      "name": "Oak Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Light Tone",
+      "group": "Warpaints Fanatic",
+      "name": "Light Tone",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Light Tone",
+      "group": "Original Warpaints",
+      "name": "Light Tone",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Sepia Tone",
+      "group": "Warpaints Fanatic",
+      "name": "Sepia Tone",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Mid Brown",
+      "group": "Original Warpaints",
+      "name": "Mid Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Seraphim Sepia",
+      "group": "Citadel by Games Workshop",
+      "name": "Seraphim Sepia",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Soft Tone",
+      "group": "Warpaints Fanatic",
+      "name": "Soft Tone",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Soft Tone",
+      "group": "Original Warpaints",
+      "name": "Soft Tone",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Rust Tone",
+      "group": "Warpaints Fanatic",
+      "name": "Rust Tone",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Strong Tone",
+      "group": "Warpaints Fanatic",
+      "name": "Strong Tone",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Strong Tone",
+      "group": "Original Warpaints",
+      "name": "Strong Tone",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Agrax Earthshade",
+      "group": "Citadel by Games Workshop",
+      "name": "Agrax Earthshade",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Dark Tone",
+      "group": "Warpaints Fanatic",
+      "name": "Dark Tone",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Dark Tone",
+      "group": "Original Warpaints",
+      "name": "Dark Tone",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Nuln Oil",
+      "group": "Citadel by Games Workshop",
+      "name": "Nuln Oil",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Amulet Aqua",
+      "group": "Warpaints Fanatic",
+      "name": "Amulet Aqua",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Hazardous Smog",
+      "group": "Warpaints Air",
+      "name": "Hazardous Smog",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Aqua Alchemy",
+      "group": "Warpaints Fanatic",
+      "name": "Aqua Alchemy",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Talisman Teal",
+      "group": "Warpaints Fanatic",
+      "name": "Talisman Teal",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Elemental Bolt",
+      "group": "Original Warpaints",
+      "name": "Elemental Bolt",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Elemental Bolt",
+      "group": "Warpaints Air",
+      "name": "Elemental Bolt",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Pharaoh Guard",
+      "group": "Warpaints Fanatic",
+      "name": "Pharaoh Guard",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Wizards Orb",
+      "group": "Original Warpaints",
+      "name": "Wizards Orb",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Wizards Orb",
+      "group": "Warpaints Air",
+      "name": "Wizards Orb",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Temple Gate Teal",
+      "group": "Warpaints Fanatic",
+      "name": "Temple Gate Teal",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Ruinous Spell",
+      "group": "Warpaints Air",
+      "name": "Ruinous Spell",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Kabalite Green",
+      "group": "Citadel by Games Workshop",
+      "name": "Kabalite Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Scarab Green",
+      "group": "Warpaints Fanatic",
+      "name": "Scarab Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Obsidian Pigment Toner",
+      "group": "Original Warpaints",
+      "name": "Obsidian Pigment Toner",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Incubi Darkness",
+      "group": "Citadel by Games Workshop",
+      "name": "Incubi Darkness",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Raging Rose",
+      "group": "Warpaints Fanatic",
+      "name": "Raging Rose",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Wyrmling Red",
+      "group": "Warpaints Air",
+      "name": "Wyrmling Red",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Blood Chalice",
+      "group": "Warpaints Fanatic",
+      "name": "Blood Chalice",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Pure Red",
+      "group": "Warpaints Fanatic",
+      "name": "Pure Red",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Pure Red",
+      "group": "Original Warpaints",
+      "name": "Pure Red",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Pure Red",
+      "group": "Warpaints Air",
+      "name": "Pure Red",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Dragon Red",
+      "group": "Warpaints Fanatic",
+      "name": "Dragon Red",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Dragon Red",
+      "group": "Original Warpaints",
+      "name": "Dragon Red",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Dragon Red",
+      "group": "Warpaints Air",
+      "name": "Dragon Red",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Mephiston Red",
+      "group": "Citadel by Games Workshop",
+      "name": "Mephiston Red",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Wyvern Fury",
+      "group": "Warpaints Fanatic",
+      "name": "Wyvern Fury",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Vampire Red",
+      "group": "Original Warpaints",
+      "name": "Vampire Red",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Rebel Red",
+      "group": "Warpaints Air",
+      "name": "Rebel Red",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Wazdakka Red",
+      "group": "Citadel by Games Workshop",
+      "name": "Wazdakka Red",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Basilisk Red",
+      "group": "Warpaints Fanatic",
+      "name": "Basilisk Red",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Crusted Sore",
+      "group": "Original Warpaints",
+      "name": "Crusted Sore",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Chimera Red",
+      "group": "Warpaints Air",
+      "name": "Chimera Red",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Word Bearers Red",
+      "group": "Citadel by Games Workshop",
+      "name": "Word Bearers Red",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Magenta Tone",
+      "group": "Warpaints Fanatic",
+      "name": "Magenta Tone",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Carroburg Crimson",
+      "group": "Citadel by Games Workshop",
+      "name": "Carroburg Crimson",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Purple Tone",
+      "group": "Warpaints Fanatic",
+      "name": "Purple Tone",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Purple Tone",
+      "group": "Original Warpaints",
+      "name": "Purple Tone",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Druchii Violet",
+      "group": "Citadel by Games Workshop",
+      "name": "Druchii Violet",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Blue Tone",
+      "group": "Warpaints Fanatic",
+      "name": "Blue Tone",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Blue Tone",
+      "group": "Original Warpaints",
+      "name": "Blue Tone",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Tyran Blue",
+      "group": "Citadel by Games Workshop",
+      "name": "Tyran Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Dark Blue Tone",
+      "group": "Warpaints Fanatic",
+      "name": "Dark Blue Tone",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Drakenhof Nightshade",
+      "group": "Citadel by Games Workshop",
+      "name": "Drakenhof Nightshade",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Military Shade",
+      "group": "Warpaints Fanatic",
+      "name": "Military Shade",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Military Shader",
+      "group": "Original Warpaints",
+      "name": "Military Shader",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Athonian Camoshade",
+      "group": "Citadel by Games Workshop",
+      "name": "Athonian Camoshade",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Green Tone",
+      "group": "Warpaints Fanatic",
+      "name": "Green Tone",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Green Tone",
+      "group": "Original Warpaints",
+      "name": "Green Tone",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Biel-Tan Green",
+      "group": "Citadel by Games Workshop",
+      "name": "Biel-Tan Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Ferocious Green",
+      "group": "Warpaints Fanatic",
+      "name": "Ferocious Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Kraken Skin",
+      "group": "Original Warpaints",
+      "name": "Kraken Skin",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Feral Green",
+      "group": "Warpaints Air",
+      "name": "Feral Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Gauss Blaster Green",
+      "group": "Citadel by Games Workshop",
+      "name": "Gauss Blaster Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Wild Green",
+      "group": "Warpaints Fanatic",
+      "name": "Wild Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Eternal Hunt",
+      "group": "Warpaints Fanatic",
+      "name": "Eternal Hunt",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Goblin Green",
+      "group": "Original Warpaints",
+      "name": "Goblin Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Goblin Green",
+      "group": "Warpaints Air",
+      "name": "Goblin Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Sybarite Green",
+      "group": "Citadel by Games Workshop",
+      "name": "Sybarite Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Greenskin",
+      "group": "Warpaints Fanatic",
+      "name": "Greenskin",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Greenskin",
+      "group": "Original Warpaints",
+      "name": "Greenskin",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Greenskin",
+      "group": "Warpaints Air",
+      "name": "Greenskin",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Warpstone Glow",
+      "group": "Citadel by Games Workshop",
+      "name": "Warpstone Glow",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Guardian Green",
+      "group": "Warpaints Fanatic",
+      "name": "Guardian Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Savage Green",
+      "group": "Warpaints Air",
+      "name": "Savage Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Angel Green",
+      "group": "Warpaints Fanatic",
+      "name": "Angel Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Angel Green",
+      "group": "Original Warpaints",
+      "name": "Angel Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Angel Green",
+      "group": "Warpaints Air",
+      "name": "Angel Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Caliban Green",
+      "group": "Citadel by Games Workshop",
+      "name": "Caliban Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Doomfire Drab",
+      "group": "Warpaints Fanatic",
+      "name": "Doomfire Drab",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Pink Potion",
+      "group": "Warpaints Fanatic",
+      "name": "Pink Potion",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Weird Elixir",
+      "group": "Warpaints Fanatic",
+      "name": "Weird Elixir",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Fey Pink",
+      "group": "Warpaints Air",
+      "name": "Fey Pink",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Fulgrim Pink",
+      "group": "Citadel by Games Workshop",
+      "name": "Fulgrim Pink",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Pixie Pink",
+      "group": "Warpaints Fanatic",
+      "name": "Pixie Pink",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Pixie Pink",
+      "group": "Original Warpaints",
+      "name": "Pixie Pink",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Pixie Pink",
+      "group": "Warpaints Air",
+      "name": "Pixie Pink",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Emperor’s Children",
+      "group": "Citadel by Games Workshop",
+      "name": "Emperor’s Children",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Impish Rouge",
+      "group": "Warpaints Fanatic",
+      "name": "Impish Rouge",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Wicked Pink",
+      "group": "Warpaints Fanatic",
+      "name": "Wicked Pink",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Warlock Purple",
+      "group": "Original Warpaints",
+      "name": "Warlock Purple",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Warlock Purple",
+      "group": "Warpaints Air",
+      "name": "Warlock Purple",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Pink Horor",
+      "group": "Citadel by Games Workshop",
+      "name": "Pink Horor",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Strong Skin Shade",
+      "group": "Warpaints Fanatic",
+      "name": "Strong Skin Shade",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Strong Skin Wash",
+      "group": "Original Warpaints",
+      "name": "Strong Skin Wash",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Reikland Fleshshade",
+      "group": "Citadel by Games Workshop",
+      "name": "Reikland Fleshshade",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Dark Skin Shade",
+      "group": "Warpaints Fanatic",
+      "name": "Dark Skin Shade",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Dark Skin Wash",
+      "group": "Original Warpaints",
+      "name": "Dark Skin Wash",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Targor Rageshade",
+      "group": "Citadel by Games Workshop",
+      "name": "Targor Rageshade",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Orange Tone",
+      "group": "Warpaints Fanatic",
+      "name": "Orange Tone",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Fuegan Orange",
+      "group": "Citadel by Games Workshop",
+      "name": "Fuegan Orange",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Red Tone",
+      "group": "Warpaints Fanatic",
+      "name": "Red Tone",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Red Tone",
+      "group": "Original Warpaints",
+      "name": "Red Tone",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Dark Red Tone",
+      "group": "Warpaints Fanatic",
+      "name": "Dark Red Tone",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Berserker Bloodshade",
+      "group": "Citadel by Games Workshop",
+      "name": "Berserker Bloodshade",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Afterglow",
+      "group": "Warpaints Fanatic",
+      "name": "Afterglow",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Vivid Volt",
+      "group": "Warpaints Fanatic",
+      "name": "Vivid Volt",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Poisonous Cloud",
+      "group": "Original Warpaints",
+      "name": "Poisonous Cloud",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Electric Lime",
+      "group": "Warpaints Fanatic",
+      "name": "Electric Lime",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Canopy Green",
+      "group": "Warpaints Air",
+      "name": "Canopy Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Rainforest",
+      "group": "Warpaints Fanatic",
+      "name": "Rainforest",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Jungle Green",
+      "group": "Original Warpaints",
+      "name": "Jungle Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Jungle Green",
+      "group": "Warpaints Air",
+      "name": "Jungle Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Leafy Green",
+      "group": "Warpaints Fanatic",
+      "name": "Leafy Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Moot Green",
+      "group": "Citadel by Games Workshop",
+      "name": "Moot Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Emerald Forest",
+      "group": "Warpaints Fanatic",
+      "name": "Emerald Forest",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Snake Scales",
+      "group": "Original Warpaints",
+      "name": "Snake Scales",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Undergrowth Green",
+      "group": "Warpaints Air",
+      "name": "Undergrowth Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Kraken Lavender",
+      "group": "Warpaints Fanatic",
+      "name": "Kraken Lavender",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Orc Blood",
+      "group": "Original Warpaints",
+      "name": "Orc Blood",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Violet Coven",
+      "group": "Warpaints Fanatic",
+      "name": "Violet Coven",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Oozing Purple",
+      "group": "Original Warpaints",
+      "name": "Oozing Purple",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Dechala Lilac",
+      "group": "Citadel by Games Workshop",
+      "name": "Dechala Lilac",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Hexed Violet",
+      "group": "Warpaints Fanatic",
+      "name": "Hexed Violet",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Daemonette Hide",
+      "group": "Citadel by Games Workshop",
+      "name": "Daemonette Hide",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Cultist Purple",
+      "group": "Warpaints Fanatic",
+      "name": "Cultist Purple",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Genestealer Purple",
+      "group": "Citadel by Games Workshop",
+      "name": "Genestealer Purple",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Alien Purple",
+      "group": "Warpaints Fanatic",
+      "name": "Alien Purple",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Alien Purple",
+      "group": "Original Warpaints",
+      "name": "Alien Purple",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Alien Purple",
+      "group": "Warpaints Air",
+      "name": "Alien Purple",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Terrestrial Titan",
+      "group": "Warpaints Fanatic",
+      "name": "Terrestrial Titan",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Broodmother Purple",
+      "group": "Warpaints Air",
+      "name": "Broodmother Purple",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Naggaroth Night",
+      "group": "Citadel by Games Workshop",
+      "name": "Naggaroth Night",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Mossy Green",
+      "group": "Warpaints Fanatic",
+      "name": "Mossy Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Leviathan Light",
+      "group": "Warpaints Air",
+      "name": "Leviathan Light",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Deepkin Flesh",
+      "group": "Citadel by Games Workshop",
+      "name": "Deepkin Flesh",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Forest Faun",
+      "group": "Warpaints Fanatic",
+      "name": "Forest Faun",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Scaly Hide",
+      "group": "Original Warpaints",
+      "name": "Scaly Hide",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Autumn Sage",
+      "group": "Warpaints Fanatic",
+      "name": "Autumn Sage",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Patagon Pine",
+      "group": "Warpaints Fanatic",
+      "name": "Patagon Pine",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Skarsnik Green",
+      "group": "Citadel by Games Workshop",
+      "name": "Skarsnik Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Medieval Forest",
+      "group": "Warpaints Fanatic",
+      "name": "Medieval Forest",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Evergreen Fog",
+      "group": "Warpaints Fanatic",
+      "name": "Evergreen Fog",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Sons of Horus Green",
+      "group": "Citadel by Games Workshop",
+      "name": "Sons of Horus Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Diviner Light",
+      "group": "Warpaints Fanatic",
+      "name": "Diviner Light",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Enchanted Pink",
+      "group": "Warpaints Fanatic",
+      "name": "Enchanted Pink",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Spellbound Fuchsia",
+      "group": "Warpaints Fanatic",
+      "name": "Spellbound Fuchsia",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Witchbane Plum",
+      "group": "Warpaints Air",
+      "name": "Witchbane Plum",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Kakophoni Purple",
+      "group": "Citadel by Games Workshop",
+      "name": "Kakophoni Purple",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Warlock Magenta",
+      "group": "Warpaints Fanatic",
+      "name": "Warlock Magenta",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Xereus Purple",
+      "group": "Citadel by Games Workshop",
+      "name": "Xereus Purple",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Magecast Magenta",
+      "group": "Warpaints Fanatic",
+      "name": "Magecast Magenta",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Diabolic Plum",
+      "group": "Warpaints Fanatic",
+      "name": "Diabolic Plum",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Phoenician Purple",
+      "group": "Citadel by Games Workshop",
+      "name": "Phoenician Purple",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Grotesque Green",
+      "group": "Warpaints Fanatic",
+      "name": "Grotesque Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Zombie Flesh",
+      "group": "Warpaints Air",
+      "name": "Zombie Flesh",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Krieg Khaki",
+      "group": "Citadel by Games Workshop",
+      "name": "Krieg Khaki",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Necrotic Flesh",
+      "group": "Warpaints Fanatic",
+      "name": "Necrotic Flesh",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Necrotic Flesh",
+      "group": "Original Warpaints",
+      "name": "Necrotic Flesh",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Necrotic Flesh",
+      "group": "Warpaints Air",
+      "name": "Necrotic Flesh",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Nurgling Green",
+      "group": "Citadel by Games Workshop",
+      "name": "Nurgling Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Olive Drab",
+      "group": "Warpaints Fanatic",
+      "name": "Olive Drab",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Witch Brew",
+      "group": "Original Warpaints",
+      "name": "Witch Brew",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Straken Green",
+      "group": "Citadel by Games Workshop",
+      "name": "Straken Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Camouflage Green",
+      "group": "Warpaints Fanatic",
+      "name": "Camouflage Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Commando Green",
+      "group": "Original Warpaints",
+      "name": "Commando Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Gremlin Green",
+      "group": "Warpaints Air",
+      "name": "Gremlin Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Death Guard Green",
+      "group": "Citadel by Games Workshop",
+      "name": "Death Guard Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Army Green",
+      "group": "Warpaints Fanatic",
+      "name": "Army Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Army Green",
+      "group": "Original Warpaints",
+      "name": "Army Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Army Green",
+      "group": "Warpaints Air",
+      "name": "Army Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Loren Forest",
+      "group": "Citadel by Games Workshop",
+      "name": "Loren Forest",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Woodland Camo",
+      "group": "Warpaints Fanatic",
+      "name": "Woodland Camo",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Elf Green",
+      "group": "Original Warpaints",
+      "name": "Elf Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Militia Green",
+      "group": "Warpaints Air",
+      "name": "Militia Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Waaagh! Flesh",
+      "group": "Citadel by Games Workshop",
+      "name": "Waaagh! Flesh",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Wilted Rose",
+      "group": "Warpaints Fanatic",
+      "name": "Wilted Rose",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Mutant Hue",
+      "group": "Original Warpaints",
+      "name": "Mutant Hue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Figgy Pink",
+      "group": "Warpaints Fanatic",
+      "name": "Figgy Pink",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Coven Purple",
+      "group": "Warpaints Air",
+      "name": "Coven Purple",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Forbidden Fruit",
+      "group": "Warpaints Fanatic",
+      "name": "Forbidden Fruit",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Toxic Boils",
+      "group": "Original Warpaints",
+      "name": "Toxic Boils",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Elder Flower",
+      "group": "Warpaints Fanatic",
+      "name": "Elder Flower",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "AIR/Fairy Pink",
+      "group": "Warpaints Air",
+      "name": "Fairy Pink",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Moldy Wine",
+      "group": "Warpaints Fanatic",
+      "name": "Moldy Wine",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Wasteland Soil",
+      "group": "Original Warpaints",
+      "name": "Wasteland Soil",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Screamer Pink",
+      "group": "Citadel by Games Workshop",
+      "name": "Screamer Pink",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fanatic/Mulled Berry",
+      "group": "Warpaints Fanatic",
+      "name": "Mulled Berry",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "WP/Grimoire Purple",
+      "group": "Original Warpaints",
+      "name": "Grimoire Purple",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "GW/Gal Vorbak Red",
+      "group": "Citadel by Games Workshop",
+      "name": "Gal Vorbak Red",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    }
+  ],
+  "equivalences": [
+    {
+      "from": "Fanatic/Brigade Grey",
+      "to": "WP/Spaceship Exterior",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Brigade Grey",
+      "to": "GW/Corax White",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Company Grey",
+      "to": "AIR/Company Grey",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Company Grey",
+      "to": "GW/Grey Seer",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Ash Grey",
+      "to": "WP/Ash Grey",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Ash Grey",
+      "to": "GW/Administratum Grey",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Uniform Grey",
+      "to": "WP/Uniform Grey",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Uniform Grey",
+      "to": "AIR/Uniform Grey",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Uniform Grey",
+      "to": "GW/Dawnstone",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Deep Grey",
+      "to": "WP/Necromancer Cloak",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Deep Grey",
+      "to": "GW/Mechanicus Standard Grey",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Matt Black",
+      "to": "WP/Matt Black",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Matt Black",
+      "to": "AIR/Matt Black",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Matt Black",
+      "to": "GW/Abaddon Black",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Urban Buff",
+      "to": "WP/Kobold Skin",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Urban Buff",
+      "to": "AIR/Kobold Skin",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Command Khaki",
+      "to": "AIR/Gnome Cheecks",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Command Khaki",
+      "to": "GW/Knight-Questor Flesh",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Paratrooper Tan",
+      "to": "WP/Monster Brown",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Paratrooper Tan",
+      "to": "GW/Baneblade Brown",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Leather Brown",
+      "to": "WP/Leather Brown",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Leather Brown",
+      "to": "AIR/Leather Brown",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Leather Brown",
+      "to": "GW/Mournfang Brown",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Bootstrap Brown",
+      "to": "WP/Werewolf Fur",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Brigandine Brown",
+      "to": "WP/Hardened Carapace",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Brigandine Brown",
+      "to": "AIR/Magnolia Brown",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Brigandine Brown",
+      "to": "GW/Rhinox Hide",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Pearl Skin",
+      "to": "WP/Mummy Robes",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Opal Skin",
+      "to": "WP/Opal Skin",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Ruby Skin",
+      "to": "WP/Ruby Skin",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Barbarian Flesh",
+      "to": "WP/Barbarian Flesh",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Barbarian Flesh",
+      "to": "AIR/Barbarian Flesh",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Barbarian Flesh",
+      "to": "GW/Bestigor Flesh",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Agate Skin",
+      "to": "GW/Cadian Fleshtone",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Moonstone Skin",
+      "to": "WP/Scar Tissue",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Matt White",
+      "to": "WP/Matt White",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Matt White",
+      "to": "AIR/Matt White",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Matt White",
+      "to": "GW/White Scar",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Brainmatter Beige",
+      "to": "WP/Brainmatter Beige",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Brainmatter Beige",
+      "to": "GW/Pallid Wych Flesh",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Worn Stone",
+      "to": "WP/Drake Tooth",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Worn Stone",
+      "to": "GW/Wraithbone",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Great Hall Grey",
+      "to": "WP/Stone Golem",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Gargoyle Grey",
+      "to": "GW/Ionrach Skin",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Grey Castle",
+      "to": "WP/Combat Fatigues",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Barren Dune",
+      "to": "WP/Troll Claws",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Barren Dune",
+      "to": "GW/Ungor Flesh",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Burnt Turf",
+      "to": "WP/Hemp Rope",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Burnt Turf",
+      "to": "GW/Zamesi Desert",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Wasteland Clay",
+      "to": "WP/Basilisk Brown",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Wasteland Clay",
+      "to": "AIR/Yellow Dune",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Wasteland Clay",
+      "to": "GW/Balor Brown",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Desert Yellow",
+      "to": "WP/Desert Yellow",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Desert Yellow",
+      "to": "AIR/Desert Yellow",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Desert Yellow",
+      "to": "GW/Hobgrot Hide",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Prairie Ochre",
+      "to": "WP/Sulfide Ochre",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Prairie Ochre",
+      "to": "AIR/Barren Yellow",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Prairie Ochre",
+      "to": "GW/Tallarn Sand",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Tundra Taupe",
+      "to": "WP/Venom Wyrm",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Tundra Taupe",
+      "to": "GW/Deathworld Forest",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Leopard Stone Skin",
+      "to": "WP/Centaur Skin",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Jasper Skin",
+      "to": "WP/Dorado Skin",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Topaz Skin",
+      "to": "WP/Topaz Skin",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Tiger’s Eye Skin",
+      "to": "WP/Tiger’s Eye Skin",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Tiger’s Eye Skin",
+      "to": "AIR/Husk Brown",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Tiger’s Eye Skin",
+      "to": "GW/Tuskgor Fur",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Carnelian Skin",
+      "to": "WP/Chaotic Red",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Carnelian Skin",
+      "to": "AIR/Chaotic Red",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Carnelian Skin",
+      "to": "GW/Bloodreaver Flesh",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Frost Blue",
+      "to": "WP/Ice Storm",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Runic Cobalt",
+      "to": "WP/Fog Grey",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Runic Cobalt",
+      "to": "GW/Fenrisian Grey",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Wolf Grey",
+      "to": "WP/Wolf Grey",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Wolf Grey",
+      "to": "GW/Russ Grey",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Stratos Blue",
+      "to": "WP/Griffon Blue",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Thunderous Blue",
+      "to": "GW/The Fang",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Night Sky",
+      "to": "GW/Dark Reaper",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Pale Sand",
+      "to": "AIR/Hobgoblin Hue",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Pale Sand",
+      "to": "GW/Wraithbone",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Bony Spikes",
+      "to": "AIR/Bleached Bone",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Bony Spikes",
+      "to": "GW/Screaming Skull",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Skeleton Bone",
+      "to": "WP/Skeleton Bone",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Skeleton Bone",
+      "to": "AIR/Skeleton Bone",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Skeleton Bone",
+      "to": "GW/Ushabti Bone",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Tomb King Tan",
+      "to": "WP/Banshee Brown",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Tomb King Tan",
+      "to": "GW/Karak Stone",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Dusty Skull",
+      "to": "GW/Stormvermin Fur",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Dorado Skin",
+      "to": "WP/Corpse Pale",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Dorado Skin",
+      "to": "GW/Flayed One Flesh",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Amber Skin",
+      "to": "WP/Amber Skin",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Amber Skin",
+      "to": "AIR/Charred Bone",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Amber Skin",
+      "to": "GW/Kislev Flesh",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Mocca Skin",
+      "to": "GW/Steel Legion Drab",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Onyx Skin",
+      "to": "GW/Gorthor Brown",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Obsidian Skin",
+      "to": "WP/Onyx Skin",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Obsidian Skin",
+      "to": "GW/Dryad Bark",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Augur Blue",
+      "to": "WP/Gorgon Hide",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Augur Blue",
+      "to": "AIR/Storm Wolf",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Augur Blue",
+      "to": "GW/Blue Horror",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Baron Blue",
+      "to": "AIR/Consul Blue",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Alpha Blue",
+      "to": "GW/Calgar Blue",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Ultramarine Blue",
+      "to": "WP/Ultramarine Blue",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Ultramarine Blue",
+      "to": "AIR/Ultramarine Blue",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Ultramarine Blue",
+      "to": "GW/Altdorf Guard Blue",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Gothic Blue",
+      "to": "GW/Macragge Blue",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Triumphant Navy",
+      "to": "WP/Dark Sky",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Triumphant Navy",
+      "to": "AIR/Dark Sky",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Triumphant Navy",
+      "to": "GW/Kantor Blue",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Ice Yellow",
+      "to": "WP/Arid Earth",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Ice Yellow",
+      "to": "AIR/Cosmic Dust",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Ice Yellow",
+      "to": "GW/Dorn Yellow",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Space Dust",
+      "to": "WP/Moon Dust",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Space Dust",
+      "to": "AIR/Moon Dust",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Space Dust",
+      "to": "GW/Flash Gitz Yellow",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Warped Yellow",
+      "to": "WP/Babe Blonde",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Warped Yellow",
+      "to": "AIR/Meteor Rock",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Warped Yellow",
+      "to": "GW/Phalanx Yellow",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Daemonic Yellow",
+      "to": "WP/Daemonic Yellow",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Daemonic Yellow",
+      "to": "AIR/Daemonic Yellow",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Fiendish Yellow",
+      "to": "WP/Fire Lizard",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Fiendish Yellow",
+      "to": "GW/Averland Sunset",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Demigod Flames",
+      "to": "GW/Tau Light Ochre",
+      "note": null
+    },
+    {
+      "from": "Fanatic/True Brass",
+      "to": "GW/Canoptek Alloy",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Weapon Bronze",
+      "to": "WP/Weapon Bronze",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Weapon Bronze",
+      "to": "AIR/Weapon Bronze",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Weapon Bronze",
+      "to": "GW/Brass Scorpion",
+      "note": null
+    },
+    {
+      "from": "Fanatic/True Copper",
+      "to": "WP/True Copper",
+      "note": null
+    },
+    {
+      "from": "Fanatic/True Copper",
+      "to": "AIR/True Copper",
+      "note": null
+    },
+    {
+      "from": "Fanatic/True Copper",
+      "to": "GW/Balthasar Gold",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Evil Chrome",
+      "to": "AIR/Evil Chrome",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Evil Chrome",
+      "to": "GW/Sycorax Bronze",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Red Copper",
+      "to": "GW/Screaming Bell",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Rough Iron",
+      "to": "WP/Rough Iron",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Rough Iron",
+      "to": "AIR/Rough Iron",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Rough Iron",
+      "to": "GW/Warlock Bronze",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Arctic Gem",
+      "to": "WP/Electric Blue",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Arctic Gem",
+      "to": "AIR/Ionic Blue",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Arctic Gem",
+      "to": "GW/Hoeth Blue",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Crystal Blue",
+      "to": "WP/Crystal Blue",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Crystal Blue",
+      "to": "AIR/Crystal Blue",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Crystal Blue",
+      "to": "GW/Teclis Blue",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Royal Blue",
+      "to": "WP/Viking Blue",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Royal Blue",
+      "to": "AIR/Sapphire Gem",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Regal Blue",
+      "to": "GW/Caledor Sky",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Imperial Navy",
+      "to": "WP/Deep Blue",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Imperial Navy",
+      "to": "GW/Nightlords Blue",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Inner Light",
+      "to": "WP/Phoenix Flames",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Glowing Inferno",
+      "to": "AIR/Incursion Orange",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Glowing Inferno",
+      "to": "GW/Yriel Yellow",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Flickering Flame",
+      "to": "AIR/Orange Magma",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Lava Orange",
+      "to": "WP/Lava Orange",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Lava Orange",
+      "to": "AIR/Lava Orange",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Lava Orange",
+      "to": "GW/Fire Dragon Bright",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Burning Ore",
+      "to": "WP/Mythical Orange",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Burning Ore",
+      "to": "AIR/Archangel Red",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Burning Ore",
+      "to": "GW/Troll Slayer Orange",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Molten Lava",
+      "to": "AIR/Molten Orange",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Gemstone Red",
+      "to": "WP/Gemstone",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Gemstone Red",
+      "to": "AIR/Gemstone",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Cobalt Metal",
+      "to": "GW/Grey Knights Steel",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Bright Gold",
+      "to": "WP/Bright Gold",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Bright Gold",
+      "to": "AIR/Bright Gold",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Bright Gold",
+      "to": "GW/Auric Armour Gold",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Greedy Gold",
+      "to": "WP/Greedy Gold",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Greedy Gold",
+      "to": "AIR/Greedy Gold",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Greedy Gold",
+      "to": "GW/Retributor Armour",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Tainted Gold",
+      "to": "WP/Tainted Gold",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Tainted Gold",
+      "to": "AIR/Tainted Gold",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Aegis Aqua",
+      "to": "WP/Voidshield Blue",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Shieldwall Blue",
+      "to": "GW/Lothern Blue",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Phalanx Blue",
+      "to": "WP/Troglodyte Blue",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Tidal Blue",
+      "to": "GW/Ahriman Blue",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Abyssal Blue",
+      "to": "AIR/Twilight Sky",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Abyssal Blue",
+      "to": "GW/Thousand Sons Blue",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Deep Ocean Blue",
+      "to": "AIR/Thunder Storm",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Deep Ocean Blue",
+      "to": "GW/Stegadon Scale Green",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Raging Rouge",
+      "to": "GW/Ratskin Flesh",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Violent Vermillion",
+      "to": "AIR/Nomad Flesh",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Violent Vermillion",
+      "to": "GW/Lugganath Orange",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Legendary Red",
+      "to": "GW/Squig Orange",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Angelic Red",
+      "to": "WP/Mars Red",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Angelic Red",
+      "to": "GW/Wild Rider Red",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Resplendent Red",
+      "to": "WP/Abomination Gore",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Resplendent Red",
+      "to": "GW/Evil Sunz Scarlet",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Mithril",
+      "to": "GW/Stormhost Silver",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Shining Silver",
+      "to": "WP/Shining Silver",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Shining Silver",
+      "to": "AIR/Shining Silver",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Shining Silver",
+      "to": "GW/Runefang Steel",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Plate Mail Metal",
+      "to": "WP/Plate Mail Metal",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Plate Mail Metal",
+      "to": "AIR/Plate Mail Metal",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Plate Mail Metal",
+      "to": "GW/Iron Hands Steel",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Gun Metal",
+      "to": "WP/Gun Metal",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Gun Metal",
+      "to": "AIR/Gun Metal",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Gun Metal",
+      "to": "GW/Leadbelcher",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Glittering Green",
+      "to": "WP/Glitter Green",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Glittering Green",
+      "to": "AIR/Glitter Green",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Marine Mist",
+      "to": "WP/Toxic Mist",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Marine Mist",
+      "to": "AIR/Toxic Mist",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Aquamarine",
+      "to": "AIR/Phantasmal Blue",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Aquamarine",
+      "to": "GW/Baharroth Blue",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Turquoise Siren",
+      "to": "WP/Royal Cloak",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Hydra Turquoise",
+      "to": "WP/Hydra Turquoise",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Hydra Turquoise",
+      "to": "AIR/Hydra Turquoise",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Hydra Turquoise",
+      "to": "GW/Temple Guard Blue",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Deep Azure",
+      "to": "AIR/Ocean Depths",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Deep Azure",
+      "to": "GW/Sotek Green",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Buffed Hide",
+      "to": "GW/Deathclaw Brown",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Ruddy Umber",
+      "to": "WP/Tanned Flesh",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Ruddy Umber",
+      "to": "AIR/Viper Brown",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Ruddy Umber",
+      "to": "GW/Bugman’s Glow",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Fur Brown",
+      "to": "WP/Fur Brown",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Fur Brown",
+      "to": "AIR/Fur Brown",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Dryad Brown",
+      "to": "AIR/Cypress Brown",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Dryad Brown",
+      "to": "GW/Doombull Brown",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Tree Ancient",
+      "to": "WP/Dirt Spatter",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Tree Ancient",
+      "to": "GW/Catachan Flesh",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Oak Brown",
+      "to": "WP/Oak Brown",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Oak Brown",
+      "to": "AIR/Oak Brown",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Light Tone",
+      "to": "WP/Light Tone",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Sepia Tone",
+      "to": "WP/Mid Brown",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Sepia Tone",
+      "to": "GW/Seraphim Sepia",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Soft Tone",
+      "to": "WP/Soft Tone",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Strong Tone",
+      "to": "WP/Strong Tone",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Strong Tone",
+      "to": "GW/Agrax Earthshade",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Dark Tone",
+      "to": "WP/Dark Tone",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Dark Tone",
+      "to": "GW/Nuln Oil",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Amulet Aqua",
+      "to": "AIR/Hazardous Smog",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Talisman Teal",
+      "to": "WP/Elemental Bolt",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Talisman Teal",
+      "to": "AIR/Elemental Bolt",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Pharaoh Guard",
+      "to": "WP/Wizards Orb",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Pharaoh Guard",
+      "to": "AIR/Wizards Orb",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Temple Gate Teal",
+      "to": "AIR/Ruinous Spell",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Temple Gate Teal",
+      "to": "GW/Kabalite Green",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Scarab Green",
+      "to": "WP/Obsidian Pigment Toner",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Scarab Green",
+      "to": "GW/Incubi Darkness",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Raging Rose",
+      "to": "AIR/Wyrmling Red",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Pure Red",
+      "to": "WP/Pure Red",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Pure Red",
+      "to": "AIR/Pure Red",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Dragon Red",
+      "to": "WP/Dragon Red",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Dragon Red",
+      "to": "AIR/Dragon Red",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Dragon Red",
+      "to": "GW/Mephiston Red",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Wyvern Fury",
+      "to": "WP/Vampire Red",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Wyvern Fury",
+      "to": "AIR/Rebel Red",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Wyvern Fury",
+      "to": "GW/Wazdakka Red",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Basilisk Red",
+      "to": "WP/Crusted Sore",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Basilisk Red",
+      "to": "AIR/Chimera Red",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Basilisk Red",
+      "to": "GW/Word Bearers Red",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Magenta Tone",
+      "to": "GW/Carroburg Crimson",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Purple Tone",
+      "to": "WP/Purple Tone",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Purple Tone",
+      "to": "GW/Druchii Violet",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Blue Tone",
+      "to": "WP/Blue Tone",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Blue Tone",
+      "to": "GW/Tyran Blue",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Dark Blue Tone",
+      "to": "GW/Drakenhof Nightshade",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Military Shade",
+      "to": "WP/Military Shader",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Military Shade",
+      "to": "GW/Athonian Camoshade",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Green Tone",
+      "to": "WP/Green Tone",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Green Tone",
+      "to": "GW/Biel-Tan Green",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Ferocious Green",
+      "to": "WP/Kraken Skin",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Ferocious Green",
+      "to": "AIR/Feral Green",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Ferocious Green",
+      "to": "GW/Gauss Blaster Green",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Eternal Hunt",
+      "to": "WP/Goblin Green",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Eternal Hunt",
+      "to": "AIR/Goblin Green",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Eternal Hunt",
+      "to": "GW/Sybarite Green",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Greenskin",
+      "to": "WP/Greenskin",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Greenskin",
+      "to": "AIR/Greenskin",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Greenskin",
+      "to": "GW/Warpstone Glow",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Guardian Green",
+      "to": "AIR/Savage Green",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Angel Green",
+      "to": "WP/Angel Green",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Angel Green",
+      "to": "AIR/Angel Green",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Angel Green",
+      "to": "GW/Caliban Green",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Weird Elixir",
+      "to": "AIR/Fey Pink",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Weird Elixir",
+      "to": "GW/Fulgrim Pink",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Pixie Pink",
+      "to": "WP/Pixie Pink",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Pixie Pink",
+      "to": "AIR/Pixie Pink",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Pixie Pink",
+      "to": "GW/Emperor’s Children",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Wicked Pink",
+      "to": "WP/Warlock Purple",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Wicked Pink",
+      "to": "AIR/Warlock Purple",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Wicked Pink",
+      "to": "GW/Pink Horor",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Strong Skin Shade",
+      "to": "WP/Strong Skin Wash",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Strong Skin Shade",
+      "to": "GW/Reikland Fleshshade",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Dark Skin Shade",
+      "to": "WP/Dark Skin Wash",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Dark Skin Shade",
+      "to": "GW/Targor Rageshade",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Orange Tone",
+      "to": "GW/Fuegan Orange",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Red Tone",
+      "to": "WP/Red Tone",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Dark Red Tone",
+      "to": "GW/Berserker Bloodshade",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Vivid Volt",
+      "to": "WP/Poisonous Cloud",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Electric Lime",
+      "to": "AIR/Canopy Green",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Rainforest",
+      "to": "WP/Jungle Green",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Rainforest",
+      "to": "AIR/Jungle Green",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Leafy Green",
+      "to": "GW/Moot Green",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Emerald Forest",
+      "to": "WP/Snake Scales",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Emerald Forest",
+      "to": "AIR/Undergrowth Green",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Kraken Lavender",
+      "to": "WP/Orc Blood",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Violet Coven",
+      "to": "WP/Oozing Purple",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Violet Coven",
+      "to": "GW/Dechala Lilac",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Hexed Violet",
+      "to": "GW/Daemonette Hide",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Cultist Purple",
+      "to": "GW/Genestealer Purple",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Alien Purple",
+      "to": "WP/Alien Purple",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Alien Purple",
+      "to": "AIR/Alien Purple",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Terrestrial Titan",
+      "to": "AIR/Broodmother Purple",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Terrestrial Titan",
+      "to": "GW/Naggaroth Night",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Mossy Green",
+      "to": "AIR/Leviathan Light",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Mossy Green",
+      "to": "GW/Deepkin Flesh",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Forest Faun",
+      "to": "WP/Scaly Hide",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Patagon Pine",
+      "to": "GW/Skarsnik Green",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Evergreen Fog",
+      "to": "GW/Sons of Horus Green",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Spellbound Fuchsia",
+      "to": "AIR/Witchbane Plum",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Spellbound Fuchsia",
+      "to": "GW/Kakophoni Purple",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Warlock Magenta",
+      "to": "GW/Xereus Purple",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Diabolic Plum",
+      "to": "GW/Phoenician Purple",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Grotesque Green",
+      "to": "AIR/Zombie Flesh",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Grotesque Green",
+      "to": "GW/Krieg Khaki",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Necrotic Flesh",
+      "to": "WP/Necrotic Flesh",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Necrotic Flesh",
+      "to": "AIR/Necrotic Flesh",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Necrotic Flesh",
+      "to": "GW/Nurgling Green",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Olive Drab",
+      "to": "WP/Witch Brew",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Olive Drab",
+      "to": "GW/Straken Green",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Camouflage Green",
+      "to": "WP/Commando Green",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Camouflage Green",
+      "to": "AIR/Gremlin Green",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Camouflage Green",
+      "to": "GW/Death Guard Green",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Army Green",
+      "to": "WP/Army Green",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Army Green",
+      "to": "AIR/Army Green",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Army Green",
+      "to": "GW/Loren Forest",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Woodland Camo",
+      "to": "WP/Elf Green",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Woodland Camo",
+      "to": "AIR/Militia Green",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Woodland Camo",
+      "to": "GW/Waaagh! Flesh",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Wilted Rose",
+      "to": "WP/Mutant Hue",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Figgy Pink",
+      "to": "AIR/Coven Purple",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Figgy Pink",
+      "to": "GW/Fulgrim Pink",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Forbidden Fruit",
+      "to": "WP/Toxic Boils",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Elder Flower",
+      "to": "AIR/Fairy Pink",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Moldy Wine",
+      "to": "WP/Wasteland Soil",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Moldy Wine",
+      "to": "GW/Screamer Pink",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Mulled Berry",
+      "to": "WP/Grimoire Purple",
+      "note": null
+    },
+    {
+      "from": "Fanatic/Mulled Berry",
+      "to": "GW/Gal Vorbak Red",
+      "note": null
+    }
+  ],
+  "replacements": [],
+  "ignoredGroups": [
+    {
+      "group": "Warpaints Air",
+      "reasonId": "airbrush",
+      "note": null
+    }
+  ],
+  "ignoredKeys": [
+    {
+      "key": "GW/Dawnstone",
+      "reasonId": "ambiguous",
+      "note": "Dawnstone es Layer y Dry, y la carta no dice cuál."
+    },
+    {
+      "key": "GW/Hoeth Blue",
+      "reasonId": "ambiguous",
+      "note": "Hoeth Blue es Layer y Dry, y la carta no dice cuál."
+    },
+    {
+      "key": "GW/Nurgling Green",
+      "reasonId": "ambiguous",
+      "note": "Nurgling Green es Layer y Dry, y la carta no dice cuál."
+    }
+  ]
+}

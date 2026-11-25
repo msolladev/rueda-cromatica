@@ -1,6 +1,6 @@
 # ADR-0022: Búsqueda de las pinturas parecidas
 
-- **Estado:** aceptada
+- **Estado:** aceptada; corregida en parte por [ADR-0036](0036-tramos-cercania.md)
 - **Fecha:** 2026-11-18
 
 ## Contexto

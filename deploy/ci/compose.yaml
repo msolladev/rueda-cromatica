@@ -1,0 +1,10 @@
+# What the CI changes of ../compose.yaml (ADR-0011): the backups in a local
+# volume, because its runner has no NAS. The volume belongs to root, while
+# the NAS maps every user to the one of its export, so restic runs as root
+# here, still without capabilities.
+services:
+  backup:
+    user: "0:0"
+
+volumes:
+  backups: !override {}

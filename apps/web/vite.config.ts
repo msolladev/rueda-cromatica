@@ -22,7 +22,7 @@ const SITE_ORIGIN = (
 
 /**
  * The commit the web is built from, and its date, for the version in the
- * footer (docs/07 §16). Empty if there is no git, as in a copy of the code
+ * footer (docs/07 §17). Empty if there is no git, as in a copy of the code
  * without its history.
  */
 function commitOf(): { readonly hash: string; readonly date: string } {

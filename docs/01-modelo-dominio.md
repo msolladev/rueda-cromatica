@@ -68,7 +68,7 @@ Cada color guarda tres cosas: el hex sRGB, su origen y la fuente. Los orígenes 
 - `manufacturer`: hex publicado por el fabricante.
 - `community`: cualquier otro, incluidos los hex sacados de fotos y por scraping.
 
-Cada pintura tiene un único color, que se fija al importar sus datos ([04-datos-curados.md](04-datos-curados.md)). Elegir entre varios candidatos por prioridad `measured` > `manufacturer` > `community` está aplazado ([ADR-0019](adr/0019-alcance-minimo-mvp.md)). Si ninguna fuente aporta un hex, el color es `null`: la pintura sigue apareciendo en el catálogo y en las equivalencias oficiales, pero no en la rueda ni en las equivalencias calculadas ([ADR-0014](adr/0014-origen-seleccion-color.md)).
+Cada pintura tiene un único color, que el builder elige entre los candidatos de sus fuentes por prioridad `measured` > `manufacturer` > `community`, salvo una elección manual ([04-datos-curados.md](04-datos-curados.md) §6, [ADR-0031](adr/0031-varios-candidatos-color.md)). Si ninguna fuente aporta un hex, el color es `null`: la pintura sigue apareciendo en el catálogo y en las equivalencias oficiales, pero no en la rueda ni en las equivalencias calculadas ([ADR-0014](adr/0014-origen-seleccion-color.md)).
 
 ### Estado y sustituta (`PaintStatus`, `Replacement`)
 
@@ -91,7 +91,7 @@ Es el agregado de solo lectura que se construye al cargar `catalog.json` ya vali
 | `sourceContributions(catalog)`     | Cada fuente, en el orden del catálogo, con lo que respalda: los colores de pintura por marca y gama, y cuántas sustituciones y equivalencias oficiales. Es lo que la interfaz atribuye a cada fuente en «Créditos y fuentes» ([ADR-0015](adr/0015-fuentes-trazabilidad-licencias.md)).                                              |
 | `resolveReplacement(catalog, id)`  | Sigue la cadena de sustitutas hasta llegar a una pintura activa o al final de la cadena, y devuelve esa pintura. Devuelve `null` si la pintura no tiene sustituta. Un `id` que no está en el catálogo es un error de programación y lanza una excepción. Siempre termina, porque los ciclos están prohibidos.                       |
 | Equivalencias calculadas           | Se calculan con CIEDE2000 en el cliente y nunca se persisten. Excluyen las pinturas sin color. Si el origen o el destino tienen un color aproximado, el resultado lleva `approximate: true` y la interfaz lo avisa. Las etiquetas de calidad, el orden y los filtros están en [06-pinturas-parecidas.md](06-pinturas-parecidas.md). |
-| Equivalencias oficiales            | Se leen solo en su dirección. No se infieren ni las inversas ni las transitivas.                                                                                                                                                                                                                                                    |
+| Equivalencias oficiales            | Se leen solo en su dirección. No se infieren ni las inversas ni las transitivas. Las de una pintura, en las dos direcciones y medidas contra un color como las calculadas, las da `findOfficialEquivalences` ([06-pinturas-parecidas.md](06-pinturas-parecidas.md) §10).                                                            |
 
 ## 5. Invariantes
 

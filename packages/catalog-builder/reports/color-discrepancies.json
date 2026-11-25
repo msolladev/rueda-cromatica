@@ -1,0 +1,1514 @@
+[
+  {
+    "paintId": "citadel/base/averland-sunset",
+    "published": {
+      "hex": "#c58336",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#fbb81c",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 17.77
+  },
+  {
+    "paintId": "citadel/base/barak-nar-burgundy",
+    "published": {
+      "hex": "#361f29",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#451636",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 9.02
+  },
+  {
+    "paintId": "citadel/base/caledor-sky",
+    "published": {
+      "hex": "#0a4c94",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#366699",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 8.71
+  },
+  {
+    "paintId": "citadel/base/caliban-green",
+    "published": {
+      "hex": "#182e28",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#003d15",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 14.21
+  },
+  {
+    "paintId": "citadel/base/castellan-green",
+    "published": {
+      "hex": "#313324",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#264715",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 14.52
+  },
+  {
+    "paintId": "citadel/base/corvus-black",
+    "published": {
+      "hex": "#191c20",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#171314",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 5.12
+  },
+  {
+    "paintId": "citadel/base/daemonette-hide",
+    "published": {
+      "hex": "#4b435c",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#655f81",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 10.36
+  },
+  {
+    "paintId": "citadel/base/death-guard-green",
+    "published": {
+      "hex": "#646447",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#6d774d",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 8.15
+  },
+  {
+    "paintId": "citadel/base/death-korps-drab",
+    "published": {
+      "hex": "#292924",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#3d4539",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 10.3
+  },
+  {
+    "paintId": "citadel/base/deathworld-forest",
+    "published": {
+      "hex": "#4d492e",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#556229",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 11.95
+  },
+  {
+    "paintId": "citadel/base/dryad-bark",
+    "published": {
+      "hex": "#332827",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#2b2a24",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 8.16
+  },
+  {
+    "paintId": "citadel/base/gal-vorbak-red",
+    "published": {
+      "hex": "#441c22",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#4b213c",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 9.07
+  },
+  {
+    "paintId": "citadel/base/hobgrot-hide",
+    "published": {
+      "hex": "#977848",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#a1812a",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 7.99
+  },
+  {
+    "paintId": "citadel/base/incubi-darkness",
+    "published": {
+      "hex": "#13252b",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#082e32",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 6.16
+  },
+  {
+    "paintId": "citadel/base/ionrach-skin",
+    "published": {
+      "hex": "#9f9d82",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#97a384",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 5.92
+  },
+  {
+    "paintId": "citadel/base/jokaero-orange",
+    "published": {
+      "hex": "#ba613f",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#ed3814",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 10.76
+  },
+  {
+    "paintId": "citadel/base/kantor-blue",
+    "published": {
+      "hex": "#142134",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#02134e",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 10.28
+  },
+  {
+    "paintId": "citadel/base/khorne-red",
+    "published": {
+      "hex": "#602025",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#650001",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 8.98
+  },
+  {
+    "paintId": "citadel/base/macragge-blue",
+    "published": {
+      "hex": "#1c3167",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#0f3d7c",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 5.31
+  },
+  {
+    "paintId": "citadel/base/mechanicus-standard-grey",
+    "published": {
+      "hex": "#404951",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#39484a",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 5.4
+  },
+  {
+    "paintId": "citadel/base/mephiston-red",
+    "published": {
+      "hex": "#912724",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#960c09",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 5.42
+  },
+  {
+    "paintId": "citadel/base/morghast-bone",
+    "published": {
+      "hex": "#ba9f81",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#c0a973",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 7.92
+  },
+  {
+    "paintId": "citadel/base/mournfang-brown",
+    "published": {
+      "hex": "#523322",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#490f06",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 11.63
+  },
+  {
+    "paintId": "citadel/base/naggaroth-night",
+    "published": {
+      "hex": "#221c34",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#3b2b50",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 7.66
+  },
+  {
+    "paintId": "citadel/base/night-lords-blue",
+    "published": {
+      "hex": "#111a28",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#002b5c",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 11.98
+  },
+  {
+    "paintId": "citadel/base/nocturne-green",
+    "published": {
+      "hex": "#1c2121",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#162a29",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 7.06
+  },
+  {
+    "paintId": "citadel/base/orruk-flesh",
+    "published": {
+      "hex": "#7b874e",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#8cc276",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 18.21
+  },
+  {
+    "paintId": "citadel/base/phoenician-purple",
+    "published": {
+      "hex": "#302546",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#440052",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 12.17
+  },
+  {
+    "paintId": "citadel/base/rakarth-flesh",
+    "published": {
+      "hex": "#917f76",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#9c998d",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 11.54
+  },
+  {
+    "paintId": "citadel/base/rhinox-hide",
+    "published": {
+      "hex": "#211413",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#462f30",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 10.18
+  },
+  {
+    "paintId": "citadel/base/screamer-pink",
+    "published": {
+      "hex": "#5c1e33",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#7a0e44",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 7.34
+  },
+  {
+    "paintId": "citadel/base/steel-legion-drab",
+    "published": {
+      "hex": "#675241",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#584e2d",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 10.32
+  },
+  {
+    "paintId": "citadel/base/stegadon-scale-green",
+    "published": {
+      "hex": "#192d38",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#06455d",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 9.48
+  },
+  {
+    "paintId": "citadel/base/the-fang",
+    "published": {
+      "hex": "#303d57",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#405b71",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 11.58
+  },
+  {
+    "paintId": "citadel/base/thondia-brown",
+    "published": {
+      "hex": "#31241f",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#54302a",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 10.89
+  },
+  {
+    "paintId": "citadel/base/waaagh-flesh",
+    "published": {
+      "hex": "#31473a",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#0b3b36",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 7.88
+  },
+  {
+    "paintId": "citadel/base/wraithbone",
+    "published": {
+      "hex": "#c9beae",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#dbd1b2",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 7.23
+  },
+  {
+    "paintId": "citadel/base/xv-88",
+    "published": {
+      "hex": "#745438",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#6c4811",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 8.09
+  },
+  {
+    "paintId": "citadel/base/zandri-dust",
+    "published": {
+      "hex": "#9a7d60",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#988e56",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 12.65
+  },
+  {
+    "paintId": "citadel/layer/administratum-grey",
+    "published": {
+      "hex": "#888c8f",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#989c94",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 7.9
+  },
+  {
+    "paintId": "citadel/layer/alaitoc-blue",
+    "published": {
+      "hex": "#17466f",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#2f4f85",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 5.23
+  },
+  {
+    "paintId": "citadel/layer/baharroth-blue",
+    "published": {
+      "hex": "#33b4cf",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#54bdca",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 5.16
+  },
+  {
+    "paintId": "citadel/layer/balor-brown",
+    "published": {
+      "hex": "#966326",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#875408",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 5.79
+  },
+  {
+    "paintId": "citadel/layer/baneblade-brown",
+    "published": {
+      "hex": "#736153",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#8f7c68",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 10.89
+  },
+  {
+    "paintId": "citadel/layer/bestigor-flesh",
+    "published": {
+      "hex": "#d4793f",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#d08951",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 5.31
+  },
+  {
+    "paintId": "citadel/layer/bloodreaver-flesh",
+    "published": {
+      "hex": "#4f2f2b",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#6a4848",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 8.75
+  },
+  {
+    "paintId": "citadel/layer/cadian-fleshtone",
+    "published": {
+      "hex": "#a86c5a",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#c47652",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 8.2
+  },
+  {
+    "paintId": "citadel/layer/calgar-blue",
+    "published": {
+      "hex": "#4e6fc0",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#2a497f",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 14.95
+  },
+  {
+    "paintId": "citadel/layer/dark-reaper",
+    "published": {
+      "hex": "#2a3740",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#354d4c",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 10.67
+  },
+  {
+    "paintId": "citadel/layer/dawnstone",
+    "published": {
+      "hex": "#595f68",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#697068",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 11.59
+  },
+  {
+    "paintId": "citadel/layer/deathclaw-brown",
+    "published": {
+      "hex": "#9f5435",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#af634f",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 7.14
+  },
+  {
+    "paintId": "citadel/layer/dechala-lilac",
+    "published": {
+      "hex": "#ac97d8",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#b598c9",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 5.18
+  },
+  {
+    "paintId": "citadel/layer/deepkin-flesh",
+    "published": {
+      "hex": "#b6baab",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#a9b79f",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 5.6
+  },
+  {
+    "paintId": "citadel/layer/doombull-brown",
+    "published": {
+      "hex": "#461b15",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#570003",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 7.59
+  },
+  {
+    "paintId": "citadel/layer/dorn-yellow",
+    "published": {
+      "hex": "#f1d985",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#fff55a",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 10.6
+  },
+  {
+    "paintId": "citadel/layer/elysian-green",
+    "published": {
+      "hex": "#6a6932",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#6b8c37",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 14.48
+  },
+  {
+    "paintId": "citadel/layer/emperors-children",
+    "published": {
+      "hex": "#e2639b",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#b74073",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 13.62
+  },
+  {
+    "paintId": "citadel/layer/eshin-grey",
+    "published": {
+      "hex": "#2e3034",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#484b4e",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 8.84
+  },
+  {
+    "paintId": "citadel/layer/evil-sunz-scarlet",
+    "published": {
+      "hex": "#b52a2d",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#c01411",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 5.81
+  },
+  {
+    "paintId": "citadel/layer/fenrisian-grey",
+    "published": {
+      "hex": "#5d7b94",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#6d94b3",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 9.11
+  },
+  {
+    "paintId": "citadel/layer/fire-dragon-bright",
+    "published": {
+      "hex": "#f36c2b",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#f4874e",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 6.24
+  },
+  {
+    "paintId": "citadel/layer/flash-gitz-yellow",
+    "published": {
+      "hex": "#f4b809",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#fff300",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 17.3
+  },
+  {
+    "paintId": "citadel/layer/flayed-one-flesh",
+    "published": {
+      "hex": "#cfb697",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#eec483",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 9.38
+  },
+  {
+    "paintId": "citadel/layer/fulgrim-pink",
+    "published": {
+      "hex": "#f2ade2",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#f3abca",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 6.25
+  },
+  {
+    "paintId": "citadel/layer/gauss-blaster-green",
+    "published": {
+      "hex": "#7fd4bb",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#7fc1a5",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 5.32
+  },
+  {
+    "paintId": "citadel/layer/hoeth-blue",
+    "published": {
+      "hex": "#0d62a0",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#4c78af",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 9.36
+  },
+  {
+    "paintId": "citadel/layer/kabalite-green",
+    "published": {
+      "hex": "#034c44",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#008962",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 22.04
+  },
+  {
+    "paintId": "citadel/layer/kakophoni-purple",
+    "published": {
+      "hex": "#966a9f",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#8869ae",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 6.1
+  },
+  {
+    "paintId": "citadel/layer/karak-stone",
+    "published": {
+      "hex": "#937e69",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#b7945c",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 12.73
+  },
+  {
+    "paintId": "citadel/layer/kislev-flesh",
+    "published": {
+      "hex": "#c6906d",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#d1a570",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 8.78
+  },
+  {
+    "paintId": "citadel/layer/knight-questor-flesh",
+    "published": {
+      "hex": "#6f4942",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#996563",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 12.5
+  },
+  {
+    "paintId": "citadel/layer/krieg-khaki",
+    "published": {
+      "hex": "#ada879",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#bcbb7e",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 5.89
+  },
+  {
+    "paintId": "citadel/layer/loren-forest",
+    "published": {
+      "hex": "#414b33",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#486c25",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 15.13
+  },
+  {
+    "paintId": "citadel/layer/moot-green",
+    "published": {
+      "hex": "#5d9a32",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#3daf44",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 7.72
+  },
+  {
+    "paintId": "citadel/layer/nurgling-green",
+    "published": {
+      "hex": "#82885a",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#7e975e",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 6.67
+  },
+  {
+    "paintId": "citadel/layer/ogryn-camo",
+    "published": {
+      "hex": "#9d8f57",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#96a648",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 11.61
+  },
+  {
+    "paintId": "citadel/layer/pallid-wych-flesh",
+    "published": {
+      "hex": "#d2c4bd",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#caccbb",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 10.56
+  },
+  {
+    "paintId": "citadel/layer/pink-horror",
+    "published": {
+      "hex": "#b74855",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#8e2757",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 15.22
+  },
+  {
+    "paintId": "citadel/layer/russ-grey",
+    "published": {
+      "hex": "#4d657f",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#507085",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 5.55
+  },
+  {
+    "paintId": "citadel/layer/screaming-skull",
+    "published": {
+      "hex": "#d1be9f",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#b9c099",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 11.44
+  },
+  {
+    "paintId": "citadel/layer/skarsnik-green",
+    "published": {
+      "hex": "#749357",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#588f6b",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 9.09
+  },
+  {
+    "paintId": "citadel/layer/skavenblight-dinge",
+    "published": {
+      "hex": "#373739",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#45413b",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 6.17
+  },
+  {
+    "paintId": "citadel/layer/skrag-brown",
+    "published": {
+      "hex": "#884126",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#8b4806",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 9.25
+  },
+  {
+    "paintId": "citadel/layer/slaanesh-grey",
+    "published": {
+      "hex": "#887e99",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#8b8893",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 7.78
+  },
+  {
+    "paintId": "citadel/layer/sons-of-horus-green",
+    "published": {
+      "hex": "#325256",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#00545e",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 5.98
+  },
+  {
+    "paintId": "citadel/layer/sotek-green",
+    "published": {
+      "hex": "#00556b",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#0b6371",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 6.24
+  },
+  {
+    "paintId": "citadel/layer/stormvermin-fur",
+    "published": {
+      "hex": "#555450",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#6d655f",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 7.7
+  },
+  {
+    "paintId": "citadel/layer/straken-green",
+    "published": {
+      "hex": "#656a48",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#597f1c",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 14.07
+  },
+  {
+    "paintId": "citadel/layer/sybarite-green",
+    "published": {
+      "hex": "#258d6e",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#17a166",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 8.95
+  },
+  {
+    "paintId": "citadel/layer/tallarn-sand",
+    "published": {
+      "hex": "#836b4c",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#a07409",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 13.93
+  },
+  {
+    "paintId": "citadel/layer/tau-light-ochre",
+    "published": {
+      "hex": "#c57d49",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#bc6b10",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 8.15
+  },
+  {
+    "paintId": "citadel/layer/temple-guard-blue",
+    "published": {
+      "hex": "#0295b6",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#239489",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 16.6
+  },
+  {
+    "paintId": "citadel/layer/thunderhawk-blue",
+    "published": {
+      "hex": "#2f4b59",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#396a70",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 12.57
+  },
+  {
+    "paintId": "citadel/layer/troll-slayer-orange",
+    "published": {
+      "hex": "#e6491b",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#f16c23",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 9.26
+  },
+  {
+    "paintId": "citadel/layer/tuskgor-fur",
+    "published": {
+      "hex": "#8d4338",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#863231",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 5.16
+  },
+  {
+    "paintId": "citadel/layer/ulthuan-grey",
+    "published": {
+      "hex": "#c1c9cb",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#c4ddd5",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 9.29
+  },
+  {
+    "paintId": "citadel/layer/ungor-flesh",
+    "published": {
+      "hex": "#dd9552",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#d1a560",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 8.34
+  },
+  {
+    "paintId": "citadel/layer/ushabti-bone",
+    "published": {
+      "hex": "#bfa781",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#aba173",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 6.99
+  },
+  {
+    "paintId": "citadel/layer/vulkan-green",
+    "published": {
+      "hex": "#232f26",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#223c2e",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 6.47
+  },
+  {
+    "paintId": "citadel/layer/warboss-green",
+    "published": {
+      "hex": "#476b43",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#317e57",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 8.57
+  },
+  {
+    "paintId": "citadel/layer/warpfiend-grey",
+    "published": {
+      "hex": "#645d73",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#66656e",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 7.16
+  },
+  {
+    "paintId": "citadel/layer/warpstone-glow",
+    "published": {
+      "hex": "#075e2e",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#0f702a",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 7
+  },
+  {
+    "paintId": "citadel/layer/wazdakka-red",
+    "published": {
+      "hex": "#a1343b",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#880804",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 12.26
+  },
+  {
+    "paintId": "citadel/layer/wild-rider-red",
+    "published": {
+      "hex": "#e03f39",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#e82e1b",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 5.23
+  },
+  {
+    "paintId": "citadel/layer/word-bearers-red",
+    "published": {
+      "hex": "#672220",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#620104",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 6.06
+  },
+  {
+    "paintId": "citadel/layer/xereus-purple",
+    "published": {
+      "hex": "#3a2746",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#47125a",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 10.07
+  },
+  {
+    "paintId": "citadel/layer/yriel-yellow",
+    "published": {
+      "hex": "#f3a014",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#ffd900",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 18.52
+  },
+  {
+    "paintId": "citadel/layer/zamesi-desert",
+    "published": {
+      "hex": "#b08047",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours-sampled"
+    },
+    "other": {
+      "hex": "#d89d1b",
+      "origin": "community",
+      "sourceId": "simogecko-citadel-colours"
+    },
+    "deltaE2000": 13.82
+  }
+]

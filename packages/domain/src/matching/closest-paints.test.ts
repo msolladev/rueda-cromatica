@@ -12,10 +12,10 @@ import {
 } from "./closest-paints.ts";
 import { indexOf, realDraft } from "./fixtures.ts";
 
-// Real colours of the catalog: Moot Green is #3daf44 and Light Stone (AK) is
-// #cfa344. The expected paints and ΔE values come from `catalog.json`.
-const MOOT_GREEN = "#3daf44";
-const LIGHT_STONE = "#cfa344";
+// Real colours of the catalog: Moot Green is #5d9a32 and Light Orange (AK) is
+// #ef7a3b. The expected paints and ΔE values come from `catalog.json`.
+const MOOT_GREEN = "#5d9a32";
+const LIGHT_ORANGE = "#ef7a3b";
 const WHITE = "#ffffff";
 
 const ALL_TYPES: readonly PaintType[] = [
@@ -50,7 +50,7 @@ describe("findClosestPaints", () => {
     const [first] = closest.byBrand[0]?.matches ?? [];
     expect(first?.paint.id).toBe("citadel/layer/moot-green");
     expect(first?.deltaE2000).toBe(0);
-    expect(first?.quality).toBe("near-identical");
+    expect(first?.quality).toBe("identical");
   });
 
   it("returns `limit` paints per brand, 3 by default", () => {
@@ -104,8 +104,8 @@ describe("findClosestPaints", () => {
 
   describe("candidate filter", () => {
     it("offers only opaque, non-metallic paints by default", () => {
-      // Tesseract Glow (technical, ΔE 2.71) and Hexwraith Flame (contrast,
-      // 4.80) are closer than Sybarite Green (layer, 9.69).
+      // Tesseract Glow (technical, ΔE 6.34) and Mantis Warriors Green
+      // (contrast, 6.42) are closer than Niblet Green (dry, 7.39).
       expect(
         idsOf(
           search(MOOT_GREEN, { brandIds: [brandId("citadel")] }),
@@ -113,8 +113,8 @@ describe("findClosestPaints", () => {
         ),
       ).toEqual([
         "citadel/layer/moot-green",
-        "citadel/layer/sybarite-green",
-        "citadel/base/orruk-flesh",
+        "citadel/dry/niblet-green",
+        "citadel/layer/skarsnik-green",
       ]);
     });
 
@@ -130,13 +130,13 @@ describe("findClosestPaints", () => {
       ).toEqual([
         "citadel/layer/moot-green",
         "citadel/technical/tesseract-glow",
-        "citadel/contrast/hexwraith-flame",
+        "citadel/contrast/mantis-warriors-green",
       ]);
     });
 
     it("offers metallic paints only when asked", () => {
       const ak = { brandIds: [brandId("ak-interactive")], limit: 4 };
-      // Metallic Green (ΔE 10.86) is the fourth closest standard paint.
+      // Metallic Green (ΔE 5.37) would be the second closest AK paint.
       expect(idsOf(search(MOOT_GREEN, ak), "ak-interactive")).not.toContain(
         "ak-interactive/3gen-acrylics/metallic-green",
       );
@@ -174,8 +174,8 @@ describe("findClosestPaints", () => {
     };
 
     it("are not offered by default", () => {
-      expect(firstCitadel()).toBe("citadel/layer/sybarite-green");
-      expect(firstCitadel(false)).toBe("citadel/layer/sybarite-green");
+      expect(firstCitadel()).toBe("citadel/dry/niblet-green");
+      expect(firstCitadel(false)).toBe("citadel/dry/niblet-green");
     });
 
     it("are offered when asked", () => {
@@ -190,7 +190,7 @@ describe("findClosestPaints", () => {
       brandIds: [brandId("citadel")],
     });
     expect(result.ok && result.value.byBrand[0]?.matches[0]?.paint.id).toBe(
-      "citadel/layer/sybarite-green",
+      "citadel/dry/niblet-green",
     );
   });
 
@@ -250,25 +250,25 @@ describe("findClosestPaints", () => {
     });
 
     it("compares ΔE at 2 decimals, so near ties also go by ID", () => {
-      // Zamesi Desert is at 4.5760 and Ungor Flesh at 4.5801: both 4.58.
+      // Fire Dragon Bright is at 3.2875 and Ryza Rust at 3.2897: both 3.29.
       const [first, second] =
-        search(LIGHT_STONE, { brandIds: [brandId("citadel")] }).byBrand[0]
+        search(LIGHT_ORANGE, { brandIds: [brandId("citadel")] }).byBrand[0]
           ?.matches ?? [];
-      expect(first?.paint.id).toBe("citadel/layer/ungor-flesh");
-      expect(second?.paint.id).toBe("citadel/layer/zamesi-desert");
+      expect(first?.paint.id).toBe("citadel/dry/ryza-rust");
+      expect(second?.paint.id).toBe("citadel/layer/fire-dragon-bright");
       expect(first?.deltaE2000).toBeGreaterThan(second?.deltaE2000 ?? 0);
     });
 
     it("gives the same result for the same input", () => {
       const options = { brandIds: "all", limit: 10 } as const;
-      expect(search(LIGHT_STONE, options)).toEqual(
-        search(LIGHT_STONE, options),
+      expect(search(LIGHT_ORANGE, options)).toEqual(
+        search(LIGHT_ORANGE, options),
       );
     });
   });
 
   it("accepts the hex in any case", () => {
-    expect(search("#3DAF44", { brandIds: "all" })).toEqual(
+    expect(search("#5D9A32", { brandIds: "all" })).toEqual(
       search(MOOT_GREEN, { brandIds: "all" }),
     );
   });
@@ -296,13 +296,13 @@ describe("findClosestPaints", () => {
 
 describe("rankOverall", () => {
   it("ranks every brand's matches together, up to `limit`", () => {
-    // Moot Green (Citadel, 0) and, with 7.44 and 7.55, Ferocious Green (Army
-    // Painter) and Clear Green (AK).
+    // Moot Green (Citadel, 0) and, with 1.05 and 2.71, Leafy Green (Army
+    // Painter) and Light Green (AK).
     const ranked = rankOverall(search(MOOT_GREEN, { brandIds: "all" }));
     expect(ranked.map((match) => match.paint.id)).toEqual([
       "citadel/layer/moot-green",
-      "the-army-painter/warpaints-fanatic/ferocious-green",
-      "ak-interactive/3gen-acrylics/clear-green",
+      "the-army-painter/warpaints-fanatic/leafy-green",
+      "ak-interactive/3gen-acrylics/light-green",
     ]);
   });
 

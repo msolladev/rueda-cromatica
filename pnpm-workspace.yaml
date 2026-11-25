@@ -8,12 +8,29 @@ savePrefix: ""
 # Only versions published at least 7 days ago (in minutes).
 minimumReleaseAge: 10080
 
+# pdfjs-dist (catalog-builder) only extracts text from the charts: its native
+# canvas, used to render pages, is not needed.
+ignoredOptionalDependencies:
+  - "@napi-rs/canvas"
+
 # Versions shared between packages (`catalog:` protocol).
 catalog:
   "@types/culori": 4.0.1
   "@types/node": 26.6.6
   culori: 4.0.2
+  prettier: 3.10.1
   typescript: 6.0.3
   vite: 8.3.8
   vitest: 5.1.0
   zod: 4.6.7
+
+# Install scripts (apps/api). Allowed: @prisma/engines, which downloads the
+# migration engine. Denied: prisma, which only checks the Node version (fixed
+# by devEngines); @scarf/scarf, which only sends install telemetry (from
+# swagger-ui-dist, of @nestjs/swagger); and vue-demi, which adapts Vue for
+# whoever compiles with it, while the API only serves Scalar's prebuilt bundle.
+allowBuilds:
+  "@prisma/engines": true
+  "@scarf/scarf": false
+  prisma: false
+  vue-demi: false

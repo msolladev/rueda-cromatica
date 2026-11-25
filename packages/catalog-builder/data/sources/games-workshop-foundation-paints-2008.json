@@ -1,0 +1,225 @@
+{
+  "source": {
+    "id": "games-workshop-foundation-paints-2008",
+    "kind": "manufacturer",
+    "title": "What Are Citadel Foundation Paints?",
+    "publisher": "Games Workshop",
+    "url": "http://uk.games-workshop.com/painting/foundation-paints/1/",
+    "archiveUrl": "https://web.archive.org/web/20080417050427/http://uk.games-workshop.com/painting/foundation-paints/1/",
+    "retrievedAt": "2026-11-23",
+    "license": "unknown",
+    "attribution": null
+  },
+  "disabled": null,
+  "files": [
+    {
+      "url": "https://web.archive.org/web/20080417050427id_/http://uk.games-workshop.com/painting/foundation-paints/1/",
+      "name": "foundation-paints-1.html",
+      "sha256": "8aacaa7cc10523eea1ebbdb9421d87727d5899c3f6ecd0e995a97d22f1097014"
+    }
+  ],
+  "paints": [
+    {
+      "key": "Adeptus Battlegrey",
+      "group": "Citadel Foundation Paints",
+      "name": "Adeptus Battlegrey",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Astronomican Grey",
+      "group": "Citadel Foundation Paints",
+      "name": "Astronomican Grey",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Calthan Brown",
+      "group": "Citadel Foundation Paints",
+      "name": "Calthan Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Charadon Granite",
+      "group": "Citadel Foundation Paints",
+      "name": "Charadon Granite",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Dheneb Stone",
+      "group": "Citadel Foundation Paints",
+      "name": "Dheneb Stone",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Fenris Grey",
+      "group": "Citadel Foundation Paints",
+      "name": "Fenris Grey",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Gretchin Green",
+      "group": "Citadel Foundation Paints",
+      "name": "Gretchin Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Hormagaunt Purple",
+      "group": "Citadel Foundation Paints",
+      "name": "Hormagaunt Purple",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Iyanden Darksun",
+      "group": "Citadel Foundation Paints",
+      "name": "Iyanden Darksun",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Khemri Brown",
+      "group": "Citadel Foundation Paints",
+      "name": "Khemri Brown",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Knarloc Green",
+      "group": "Citadel Foundation Paints",
+      "name": "Knarloc Green",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Macharius Solar Orange",
+      "group": "Citadel Foundation Paints",
+      "name": "Macharius Solar Orange",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Mechrite Red",
+      "group": "Citadel Foundation Paints",
+      "name": "Mechrite Red",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Mordian Blue",
+      "group": "Citadel Foundation Paints",
+      "name": "Mordian Blue",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Necron Abyss",
+      "group": "Citadel Foundation Paints",
+      "name": "Necron Abyss",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Orkhide Shade",
+      "group": "Citadel Foundation Paints",
+      "name": "Orkhide Shade",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Tallarn Flesh",
+      "group": "Citadel Foundation Paints",
+      "name": "Tallarn Flesh",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    },
+    {
+      "key": "Tausept Ochre",
+      "group": "Citadel Foundation Paints",
+      "name": "Tausept Ochre",
+      "code": null,
+      "hex": null,
+      "gradient": null,
+      "measuredHex": null,
+      "finish": null,
+      "colourless": false
+    }
+  ],
+  "equivalences": [],
+  "replacements": [],
+  "ignoredGroups": [],
+  "ignoredKeys": []
+}

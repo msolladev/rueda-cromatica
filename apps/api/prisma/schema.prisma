@@ -1,0 +1,376 @@
+// The database of the API (docs/09 §6). Every change is a migration in SQL,
+// reviewed in the pull request, that also works with the previous version of
+// the API (ADR-0040). Every instant is a `DateTime @db.Timestamptz(3)`:
+// Prisma's default, `timestamp`, has no time zone (ADR-0038). A calendar day
+// without a time is a `DateTime @db.Date` (docs/09 §4).
+
+generator client {
+  provider     = "prisma-client"
+  output       = "../src/generated/prisma"
+  moduleFormat = "esm"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ── The draft of the catalog (ADR-0043) ─────────────────────
+//
+// The same three layers as `data/` (ADR-0037): what each source says, the
+// curated brands with their paints, and the rules. Every table has an
+// internal `id` that never leaves the database; the catalog's own IDs
+// (`citadel/base/abaddon-black`) are `catalog_id`. The database only
+// guarantees identity and membership: the rules of the catalog stay in
+// `catalog-builder`, which checks them in the preview and when publishing.
+// `position` keeps the order of every list, which reaches the reports.
+
+/// A source: the document as it goes to `catalog.json`. Written by the
+/// administrator; a source is never deleted, only disabled.
+model Source {
+  id           BigInt   @id @default(autoincrement())
+  catalogId    String   @unique @map("catalog_id")
+  position     Int      @unique
+  kind         String
+  title        String
+  publisher    String
+  url          String?
+  archiveUrl   String?  @map("archive_url")
+  /// A calendar date, not an instant: the day the source was retrieved.
+  retrievedAt  DateTime @map("retrieved_at") @db.Date
+  license      String
+  attribution  String?
+  /// Why it is disabled, or null if it is enabled (ADR-0032).
+  disabledNote String?  @map("disabled_note")
+
+  downloads          SourceDownload[]
+  rows               SourceRow[]
+  equivalences       SourceEquivalence[]
+  replacements       SourceReplacement[]
+  ignoredGroups      IgnoredGroup[]
+  ignoredKeys        IgnoredKey[]
+  colorPolicy        ColorPolicyEntry[]
+  paintKeys          PaintKey[]
+  rejectedColors     RejectedColor[]
+  colorChoices       Paint[]             @relation("ColorChoice")
+  replacementChoices Paint[]             @relation("ReplacementChoice")
+
+  @@map("sources")
+}
+
+/// A file of a source downloaded by `archive-sources`.
+model SourceDownload {
+  id       BigInt @id @default(autoincrement())
+  sourceId BigInt @map("source_id")
+  position Int
+  url      String
+  name     String
+  sha256   String
+
+  source Source @relation(fields: [sourceId], references: [id])
+
+  @@unique([sourceId, position])
+  @@unique([sourceId, name])
+  @@map("source_files")
+}
+
+/// A row of a source, copied literally. Only its import writes it.
+model SourceRow {
+  id            BigInt  @id @default(autoincrement())
+  sourceId      BigInt  @map("source_id")
+  position      Int
+  key           String
+  group         String
+  /// Empty in a few rows, as the source publishes them.
+  name          String
+  code          String?
+  hex           String?
+  gradientDark  String? @map("gradient_dark")
+  gradientLight String? @map("gradient_light")
+  measuredHex   String? @map("measured_hex")
+  finish        String?
+  colourless    Boolean
+
+  source           Source              @relation(fields: [sourceId], references: [id])
+  equivalencesFrom SourceEquivalence[] @relation("EquivalenceFrom")
+  equivalencesTo   SourceEquivalence[] @relation("EquivalenceTo")
+  replacementsFrom SourceReplacement[] @relation("ReplacementFrom")
+  replacementsTo   SourceReplacement[] @relation("ReplacementTo")
+
+  @@unique([sourceId, key])
+  @@unique([sourceId, position])
+  @@map("source_rows")
+}
+
+/// An equivalence of a conversion chart: two rows of the same source. Its
+/// import writes it with the rows, so it points to them.
+model SourceEquivalence {
+  id       BigInt  @id @default(autoincrement())
+  sourceId BigInt  @map("source_id")
+  position Int
+  fromKey  String  @map("from_key")
+  toKey    String  @map("to_key")
+  note     String?
+
+  source  Source    @relation(fields: [sourceId], references: [id])
+  fromRow SourceRow @relation("EquivalenceFrom", fields: [sourceId, fromKey], references: [sourceId, key])
+  toRow   SourceRow @relation("EquivalenceTo", fields: [sourceId, toKey], references: [sourceId, key])
+
+  @@unique([sourceId, position])
+  @@unique([sourceId, fromKey, toKey])
+  @@index([sourceId, toKey])
+  @@map("source_equivalences")
+}
+
+/// A replacement stated by a manufacturer document: two rows of the source.
+model SourceReplacement {
+  id       BigInt  @id @default(autoincrement())
+  sourceId BigInt  @map("source_id")
+  position Int
+  fromKey  String  @map("from_key")
+  toKey    String  @map("to_key")
+  note     String?
+
+  source  Source    @relation(fields: [sourceId], references: [id])
+  fromRow SourceRow @relation("ReplacementFrom", fields: [sourceId, fromKey], references: [sourceId, key])
+  toRow   SourceRow @relation("ReplacementTo", fields: [sourceId, toKey], references: [sourceId, key])
+
+  @@unique([sourceId, position])
+  @@unique([sourceId, fromKey, toKey])
+  @@index([sourceId, toKey])
+  @@map("source_replacements")
+}
+
+/// Why a group, a row or a colour candidate is left out.
+model IgnoreReason {
+  id       BigInt @id @default(autoincrement())
+  slug     String @unique
+  position Int    @unique
+  text     String
+
+  ignoredGroups  IgnoredGroup[]
+  ignoredKeys    IgnoredKey[]
+  rejectedColors RejectedColor[]
+
+  @@map("ignore_reasons")
+}
+
+/// A whole group of a source left out of the catalog.
+model IgnoredGroup {
+  id       BigInt  @id @default(autoincrement())
+  sourceId BigInt  @map("source_id")
+  position Int
+  group    String
+  reasonId BigInt  @map("reason_id")
+  note     String?
+
+  source Source       @relation(fields: [sourceId], references: [id])
+  reason IgnoreReason @relation(fields: [reasonId], references: [id])
+
+  @@unique([sourceId, group])
+  @@unique([sourceId, position])
+  @@index([reasonId])
+  @@map("ignored_groups")
+}
+
+/// A single row of a source left out of the catalog. It does not point to
+/// the row: an import may remove it, and then `catalog-builder` reports the
+/// ignore as stale instead of the import failing (ADR-0043).
+model IgnoredKey {
+  id       BigInt  @id @default(autoincrement())
+  sourceId BigInt  @map("source_id")
+  position Int
+  key      String
+  reasonId BigInt  @map("reason_id")
+  note     String?
+
+  source Source       @relation(fields: [sourceId], references: [id])
+  reason IgnoreReason @relation(fields: [reasonId], references: [id])
+
+  @@unique([sourceId, key])
+  @@unique([sourceId, position])
+  @@index([reasonId])
+  @@map("ignored_keys")
+}
+
+/// The sources of each colour origin, in order of preference (ADR-0014).
+model ColorPolicyEntry {
+  id       BigInt @id @default(autoincrement())
+  origin   String
+  position Int
+  sourceId BigInt @map("source_id")
+
+  source Source @relation(fields: [sourceId], references: [id])
+
+  @@unique([origin, sourceId])
+  @@unique([origin, position])
+  @@index([sourceId])
+  @@map("color_policy")
+}
+
+/// A brand, with its aliases.
+model Brand {
+  id        BigInt   @id @default(autoincrement())
+  catalogId String   @unique @map("catalog_id")
+  position  Int      @unique
+  name      String
+  aliases   String[]
+
+  ranges Range[]
+  paints Paint[]
+
+  @@map("brands")
+}
+
+/// A range of a brand.
+model Range {
+  id        BigInt @id @default(autoincrement())
+  catalogId String @unique @map("catalog_id")
+  brandId   BigInt @map("brand_id")
+  position  Int
+  name      String
+  status    String
+
+  brand  Brand   @relation(fields: [brandId], references: [id])
+  paints Paint[]
+
+  @@unique([brandId, position])
+  @@map("ranges")
+}
+
+/// A curated paint: the paint of `catalog.json` without its colour, which
+/// comes from the rows of its keys, plus its colour decisions and a note. It
+/// belongs to the brand whose list it is in, and to one of its ranges.
+model Paint {
+  id                        BigInt   @id @default(autoincrement())
+  catalogId                 String   @unique @map("catalog_id")
+  brandId                   BigInt   @map("brand_id")
+  position                  Int
+  rangeId                   BigInt   @map("range_id")
+  name                      String
+  aliases                   String[]
+  manufacturerCode          String?  @map("manufacturer_code")
+  type                      String
+  metallic                  Boolean
+  /// `active` or `discontinued`.
+  statusKind                String   @map("status_kind")
+  /// The document whose replacement is published when two disagree.
+  replacementChoiceSourceId BigInt?  @map("replacement_choice_source_id")
+  replacementChoiceNote     String?  @map("replacement_choice_note")
+  /// The candidate published instead of the one the priority picks.
+  colorChoiceSourceId       BigInt?  @map("color_choice_source_id")
+  colorChoiceOrigin         String?  @map("color_choice_origin")
+  colorChoiceHex            String?  @map("color_choice_hex")
+  colorChoiceNote           String?  @map("color_choice_note")
+  note                      String?
+
+  brand             Brand           @relation(fields: [brandId], references: [id])
+  range             Range           @relation(fields: [rangeId], references: [id])
+  replacementChoice Source?         @relation("ReplacementChoice", fields: [replacementChoiceSourceId], references: [id], onDelete: Restrict)
+  colorChoice       Source?         @relation("ColorChoice", fields: [colorChoiceSourceId], references: [id], onDelete: Restrict)
+  keys              PaintKey[]
+  rejectedColors    RejectedColor[]
+  remainingOf       Tombstone[]
+
+  @@unique([brandId, position])
+  @@index([rangeId])
+  @@index([replacementChoiceSourceId])
+  @@index([colorChoiceSourceId])
+  @@map("paints")
+}
+
+/// Which row of a source is a paint. It does not point to the row: an
+/// import may remove it, and it may not change a paint, so
+/// `catalog-builder` reports the key as stale instead (ADR-0043).
+model PaintKey {
+  id       BigInt @id @default(autoincrement())
+  paintId  BigInt @map("paint_id")
+  position Int
+  sourceId BigInt @map("source_id")
+  key      String
+
+  paint  Paint  @relation(fields: [paintId], references: [id], onDelete: Cascade)
+  source Source @relation(fields: [sourceId], references: [id])
+
+  @@unique([paintId, position])
+  @@unique([paintId, sourceId])
+  /// A row is the key of one paint at most.
+  @@unique([sourceId, key])
+  @@map("paint_keys")
+}
+
+/// A colour candidate of a paint left out, with the hex it gave when it was
+/// reviewed (ADR-0031).
+model RejectedColor {
+  id       BigInt  @id @default(autoincrement())
+  paintId  BigInt  @map("paint_id")
+  position Int
+  sourceId BigInt  @map("source_id")
+  origin   String
+  hex      String
+  reasonId BigInt  @map("reason_id")
+  note     String?
+
+  paint  Paint        @relation(fields: [paintId], references: [id], onDelete: Cascade)
+  source Source       @relation(fields: [sourceId], references: [id])
+  reason IgnoreReason @relation(fields: [reasonId], references: [id])
+
+  @@unique([paintId, position])
+  @@unique([paintId, sourceId, origin])
+  @@index([sourceId])
+  @@index([reasonId])
+  @@map("rejected_colors")
+}
+
+/// An ID retired because of a registration error (docs/03 §6). It points to
+/// nothing, because the ID no longer exists; a paint's tombstone may point to
+/// the paint that remains.
+model Tombstone {
+  id               BigInt  @id @default(autoincrement())
+  /// `sources`, `brands`, `ranges` or `paints`.
+  collection       String
+  catalogId        String  @map("catalog_id")
+  position         Int
+  reason           String
+  remainingPaintId BigInt? @map("remaining_paint_id")
+
+  remainingPaint Paint? @relation(fields: [remainingPaintId], references: [id], onDelete: Restrict)
+
+  @@unique([collection, catalogId])
+  @@unique([collection, position])
+  @@index([remainingPaintId])
+  @@map("tombstones")
+}
+
+// ── The publications (ADR-0043) ─────────────────────────────
+
+/// A publication, which is never modified. The latest one is what the web
+/// is built with, and the reference of the IDs.
+model Publication {
+  id          BigInt   @id @default(autoincrement())
+  uuid        String   @unique @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  publishedAt DateTime @map("published_at") @db.Timestamptz(3)
+  /// The release tag it was taken from: only the first one (ADR-0043). The
+  /// author of the others arrives with the users, in session 5.
+  releaseTag  String?  @map("release_tag")
+  /// The draft as it was when published, to compare it with the current one;
+  /// null in the first one, whose `data/` had an older format.
+  draft       Json?
+
+  catalogs PublicationCatalog[]
+
+  @@map("publications")
+}
+
+/// The exact text of the catalog of a publication, in one schema version.
+model PublicationCatalog {
+  id            BigInt @id @default(autoincrement())
+  publicationId BigInt @map("publication_id")
+  schemaVersion Int    @map("schema_version")
+  dataVersion   String @map("data_version")
+  content       String
+
+  publication Publication @relation(fields: [publicationId], references: [id])
+
+  @@unique([publicationId, schemaVersion])
+  @@map("publication_catalogs")
+}

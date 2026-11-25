@@ -1,7 +1,8 @@
 /**
  * The closest paints of each color of the wheel (docs/07 §1-3): the view
  * selector, the filters, the approximate-color notice, one tab per color, the
- * legend of the split swatch and the panel of the selected color.
+ * legend of the split swatch and the panel of the selected color, with the
+ * official equivalences of the chosen paint in the base's (docs/07 §16).
  */
 import {
   colorNames,
@@ -43,8 +44,8 @@ import {
   type EntranceControl,
 } from "./entrance.ts";
 import { Filters, type BrandOption } from "./Filters.tsx";
-import { PaintRow } from "./PaintRow.tsx";
-import type { ColorResults, PaintView } from "./search.ts";
+import { PaintRow, type UsePaint } from "./PaintRow.tsx";
+import type { ColorResults, OfficialResults, PaintView } from "./search.ts";
 import { prefersReducedMotion } from "../../app/motion.ts";
 
 /** What a color's panel shows. */
@@ -76,8 +77,10 @@ export interface ResultsProps {
   readonly onPreview: (index: number | null) => void;
   /** The rows that enter or leave, shared with the page (entrance.ts). */
   readonly rows: EntranceControl;
-  /** Where the notice's «Sources» link goes. */
+  /** Where the notice's «Sources» link and the documents of the official equivalences go. */
   readonly creditsPath: string;
+  /** Makes an official equivalent the base (docs/07 §16). */
+  readonly onUse: UsePaint;
   readonly onRetry: () => void;
   readonly onUpdate: () => void;
 }
@@ -427,6 +430,8 @@ function PanelBody(props: PanelBodyProps): ReactNode {
     mixed,
     locale,
     entrance,
+    creditsPath,
+    onUse,
   } = props;
   switch (panel.kind) {
     case "empty":
@@ -478,6 +483,8 @@ function PanelBody(props: PanelBodyProps): ReactNode {
       markApproximate={mixed}
       messages={m}
       locale={locale}
+      creditsPath={creditsPath}
+      onUse={onUse}
     />
   );
   // «See more» while there are more, and «See less» once it showed more.
@@ -510,45 +517,166 @@ function PanelBody(props: PanelBodyProps): ReactNode {
         )}
       </div>
     ) : null;
+  const official =
+    results.official === null ? null : (
+      <OfficialBlock {...props} official={results.official} />
+    );
+  // docs/07 §15: a chosen paint without colour that lends the wheel none.
+  // The closest paints would be those of a colour that is not the paint's.
+  const chosen = results.official;
+  if (chosen?.colorless === true && chosen.standIn === null) {
+    const related =
+      chosen.replacement !== null ||
+      chosen.outgoing.length > 0 ||
+      chosen.incoming.length > 0;
+    return (
+      <>
+        {official}
+        <p className="empty">
+          {format(related ? m.official.noColorUse : m.official.noColorNone, {
+            name: chosen.name,
+          })}
+        </p>
+      </>
+    );
+  }
   if (results.byBrand.length === 0) {
-    return <p className="empty">{m.results.noBrands}</p>;
+    return (
+      <>
+        {official}
+        <p className="empty">{m.results.noBrands}</p>
+      </>
+    );
   }
   if (view === "overall") {
     return (
-      <div className="brand-group">
-        <PaintList
-          entrance={entrance}
-          groupKey={OVERALL}
-          count={results.overall.length}
-        >
-          {results.overall.map((paint, i) => row(paint, true, OVERALL, i))}
-        </PaintList>
-        {moreOrLess(OVERALL, results.overallHasMore, results.overall.length)}
-      </div>
+      <>
+        {official}
+        <div className="brand-group">
+          <PaintList
+            entrance={entrance}
+            groupKey={OVERALL}
+            count={results.overall.length}
+          >
+            {results.overall.map((paint, i) => row(paint, true, OVERALL, i))}
+          </PaintList>
+          {moreOrLess(OVERALL, results.overallHasMore, results.overall.length)}
+        </div>
+      </>
     );
   }
   return (
-    <div className="brand-groups">
-      {results.byBrand.map((brand) => (
-        <div className="brand-group" key={brand.brandId}>
-          <h4 className="brand-heading">{brand.brandName}</h4>
-          {brand.paints.length === 0 ? (
-            <p className="empty">{m.results.noPaints}</p>
-          ) : (
-            <PaintList
-              entrance={entrance}
-              groupKey={brand.brandId}
-              count={brand.paints.length}
-            >
-              {brand.paints.map((paint, i) =>
-                row(paint, false, brand.brandId, i),
-              )}
-            </PaintList>
-          )}
-          {moreOrLess(brand.brandId, brand.hasMore, brand.paints.length)}
-        </div>
-      ))}
+    <>
+      {official}
+      <div className="brand-groups">
+        {results.byBrand.map((brand) => (
+          <div className="brand-group" key={brand.brandId}>
+            <h4 className="brand-heading">{brand.brandName}</h4>
+            {brand.paints.length === 0 ? (
+              <p className="empty">{m.results.noPaints}</p>
+            ) : (
+              <PaintList
+                entrance={entrance}
+                groupKey={brand.brandId}
+                count={brand.paints.length}
+              >
+                {brand.paints.map((paint, i) =>
+                  row(paint, false, brand.brandId, i),
+                )}
+              </PaintList>
+            )}
+            {moreOrLess(brand.brandId, brand.hasMore, brand.paints.length)}
+          </div>
+        ))}
+      </div>
+    </>
+  );
+}
+
+/**
+ * The official equivalences of the chosen paint (docs/07 §16): apart from the
+ * closest paints, with their own heading, its replacement if it is
+ * discontinued, both directions, with the same row and who states each one.
+ * With none, one line says so.
+ */
+function OfficialBlock({
+  official,
+  target,
+  mixed,
+  messages: m,
+  locale,
+  creditsPath,
+  onUse,
+}: PanelBodyProps & { readonly official: OfficialResults }) {
+  const none =
+    !official.discontinued &&
+    official.outgoing.length === 0 &&
+    official.incoming.length === 0;
+  // A paint without colour is not measured against the wheel (§16).
+  const measured = official.colorless ? null : target;
+  const group = (
+    title: string,
+    rows: OfficialResults["outgoing"],
+    empty: string,
+  ) => (
+    <div className="official-group">
+      <h5 className="brand-heading">{title}</h5>
+      {rows.length === 0 ? (
+        <p className="empty">{empty}</p>
+      ) : (
+        <ol className="paints">
+          {rows.map(({ paint, sources }) => (
+            <PaintRow
+              key={paint.id}
+              paint={paint}
+              target={measured}
+              showBrand
+              markApproximate={mixed}
+              messages={m}
+              locale={locale}
+              creditsPath={creditsPath}
+              onUse={onUse}
+              sources={sources}
+            />
+          ))}
+        </ol>
+      )}
     </div>
+  );
+  return (
+    <section className="official" aria-labelledby="official-heading">
+      <h4 id="official-heading" className="official-heading">
+        {m.official.heading}
+      </h4>
+      {none ? (
+        <p className="empty">
+          {format(m.official.none, {
+            name: official.name,
+            label: official.label,
+          })}
+        </p>
+      ) : (
+        <>
+          <p className="official-intro">{m.official.intro}</p>
+          {official.discontinued &&
+            group(
+              format(m.official.replacement, { name: official.name }),
+              official.replacement === null ? [] : [official.replacement],
+              format(m.official.noReplacement, { name: official.name }),
+            )}
+          {group(
+            format(m.official.outgoing, { name: official.name }),
+            official.outgoing,
+            format(m.official.noneOutgoing, { name: official.name }),
+          )}
+          {group(
+            format(m.official.incoming, { name: official.name }),
+            official.incoming,
+            format(m.official.noneIncoming, { name: official.name }),
+          )}
+        </>
+      )}
+    </section>
   );
 }
 

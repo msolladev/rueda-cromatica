@@ -74,7 +74,7 @@ describe("parsePreferences", () => {
   });
 
   it("keeps the chosen paint, and forgets one that is missing or not valid", () => {
-    const paint = { id: "citadel/layer/lothern-blue", hex: "#2c9bcc" };
+    const paint = { id: "citadel/layer/lothern-blue", hex: "#3394c3" };
     expect(parsePreferences({ ...valid, paint })?.paint).toEqual(paint);
     // Saved before the search existed.
     const before = Object.fromEntries(

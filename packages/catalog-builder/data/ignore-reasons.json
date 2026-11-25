@@ -1,0 +1,54 @@
+[
+  {
+    "id": "airbrush",
+    "text": "Pintura de aerógrafo, fuera del alcance del MVP."
+  },
+  {
+    "id": "ambiguous",
+    "text": "La fuente no deja claro de qué pintura se trata: el nombre corresponde a más de una, o la casilla no se entiende."
+  },
+  {
+    "id": "auxiliary",
+    "text": "Producto auxiliar (medium, barniz, diluyente, retardante o imprimación), fuera del catálogo."
+  },
+  {
+    "id": "duplicate-row",
+    "text": "Fila repetida en la fuente: la misma pintura ya tiene la clave de otra fila."
+  },
+  {
+    "id": "inconsistent-measurement",
+    "text": "Medición poco fiable: las lecturas de la muestra no coinciden entre sí."
+  },
+  {
+    "id": "newer-source",
+    "text": "La línea toma sus datos de una fuente más actual; esta fuente solo aporta lo que las demás no tienen."
+  },
+  {
+    "id": "no-discontinuation-document",
+    "text": "Pintura que el fabricante ya no vende, pero ningún documento suyo dice que se retiró, así que no se puede marcar descatalogada."
+  },
+  {
+    "id": "no-manufacturer-document",
+    "text": "Ningún documento del fabricante en los datos curados prueba que la pintura exista."
+  },
+  {
+    "id": "not-in-catalog",
+    "text": "Pintura que el catálogo no tiene: ninguna de sus fuentes de color la recoge."
+  },
+  {
+    "id": "not-in-current-chart",
+    "text": "No figura en la carta vigente del fabricante."
+  },
+  {
+    "id": "out-of-scope-line",
+    "text": "Línea fuera del alcance del MVP."
+  },
+  {
+    "id": "photo-artifact",
+    "text": "Color desvirtuado por la foto (iluminación o balance de blancos), lejos del de la pintura."
+  },
+  {
+    "id": "spray",
+    "text": "Spray, fuera del alcance del MVP."
+  }
+]

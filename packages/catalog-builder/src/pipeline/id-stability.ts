@@ -1,7 +1,7 @@
 /**
- * ID stability (docs/03 §6-7): compares the generated catalog with the one of
- * the latest release and with the tombstones. Pure: git and the disk are read
- * by the entry point.
+ * ID stability (docs/03 §6-7): compares the generated catalog with the latest
+ * published one and with the tombstones. Pure: whoever calls it reads the
+ * published catalog, from a git tag or from the database.
  */
 import { err, isoDateSchema, ok, type Result } from "@chromatic-wheel/domain";
 import { z } from "zod";
@@ -9,14 +9,17 @@ import {
   ID_COLLECTIONS,
   type IdCollection,
   type Tombstones,
-} from "../curated/files.ts";
+} from "../model/curated.ts";
 
 /** The IDs of each collection of a catalog. */
 export type CatalogIds = Readonly<Record<IdCollection, ReadonlySet<string>>>;
 
-/** The catalog of a release, as read from its tag. */
+/**
+ * The IDs of the latest published catalog, with what to call it in the
+ * messages, such as its release tag.
+ */
 export interface PublishedCatalog {
-  readonly release: string;
+  readonly label: string;
   readonly ids: CatalogIds;
 }
 
@@ -32,6 +35,13 @@ export type StabilityIssue =
       readonly kind: "reused";
       readonly collection: IdCollection;
       readonly id: string;
+    }
+  /** Rule 3: the paint a tombstone says remains is not in the catalog. */
+  | {
+      readonly kind: "remaining-missing";
+      readonly collection: "paints";
+      readonly id: string;
+      readonly remainingPaintId: string;
     };
 
 export const RELEASE_TAG_PREFIX = "release/";
@@ -141,53 +151,87 @@ export function catalogIds(content: unknown): Result<CatalogIds, string> {
 }
 
 /**
- * Checks both rules of docs/03 §7 on the four collections. Without a release
- * yet, only rule 2 applies: until then IDs can be corrected freely.
+ * Checks the rules of docs/03 §7 on the four collections. Without a published
+ * catalog yet, only rules 2 and 3 apply: until then IDs can be corrected
+ * freely. A
+ * disabled source leaves the catalog but keeps its file in the curated data,
+ * so its ID is not missing: it comes back if the source is enabled again
+ * (ADR-0019, decision 5).
  */
 export function checkIdStability(input: {
   readonly current: CatalogIds;
   readonly tombstones: Tombstones;
   readonly published: PublishedCatalog | null;
+  readonly disabledSources: ReadonlySet<string>;
 }): readonly StabilityIssue[] {
-  const { current, tombstones, published } = input;
-  return ID_COLLECTIONS.flatMap((collection): StabilityIssue[] => {
-    const now = current[collection];
-    const retired = tombstones[collection];
-    const missing = [...(published?.ids[collection] ?? [])]
-      .filter((id) => !now.has(id) && !retired.has(id))
-      .map((id) => ({ kind: "missing" as const, collection, id }));
-    const reused = [...retired]
-      .filter((id) => now.has(id))
-      .map((id) => ({ kind: "reused" as const, collection, id }));
-    return [...missing, ...reused].sort((a, b) => (a.id < b.id ? -1 : 1));
-  });
+  const { current, tombstones, published, disabledSources } = input;
+  const byCollection = ID_COLLECTIONS.flatMap(
+    (collection): StabilityIssue[] => {
+      const now = current[collection];
+      const retired = new Set<string>(
+        tombstones[collection].map(({ id }) => id),
+      );
+      const kept = collection === "sources" ? disabledSources : new Set();
+      const missing = [...(published?.ids[collection] ?? [])]
+        .filter((id) => !now.has(id) && !retired.has(id) && !kept.has(id))
+        .map((id) => ({ kind: "missing" as const, collection, id }));
+      const reused = [...retired]
+        .filter((id) => now.has(id))
+        .map((id) => ({ kind: "reused" as const, collection, id }));
+      return [...missing, ...reused].sort((a, b) => (a.id < b.id ? -1 : 1));
+    },
+  );
+  const remaining = tombstones.paints.flatMap(({ id, remainingPaintId }) =>
+    remainingPaintId === null || current.paints.has(remainingPaintId)
+      ? []
+      : [
+          {
+            kind: "remaining-missing" as const,
+            collection: "paints" as const,
+            id,
+            remainingPaintId,
+          },
+        ],
+  );
+  return [...byCollection, ...remaining];
 }
 
 /** The report shown when the check fails, with how to fix each issue. */
 export function formatStabilityIssues(
   issues: readonly StabilityIssue[],
   options: {
-    readonly release: string | null;
+    readonly published: string | null;
     readonly tombstonesFile: string;
   },
 ): string {
   const heading =
-    options.release === null
-      ? "ID stability (no release yet, only the tombstones are checked):"
-      : `ID stability against ${options.release}:`;
-  const lines = issues.flatMap(({ kind, collection, id }) =>
-    kind === "missing"
-      ? [
+    options.published === null
+      ? "ID stability (nothing published yet, only the tombstones are checked):"
+      : `ID stability against ${options.published}:`;
+  const lines = issues.flatMap((issue) => {
+    const { collection, id } = issue;
+    switch (issue.kind) {
+      case "missing":
+        return [
           `  ${collection} ${id}: published but missing.`,
           `    A published ID is never deleted. If the product is no longer sold, restore it`,
           `    with status "discontinued". If it was a registration error, add it to`,
           `    ${options.tombstonesFile} with its reason (docs/03 §6):`,
-          `      "${collection}": [{ "id": "${id}", "reason": "…" }]`,
-        ]
-      : [
+          collection === "paints"
+            ? `      "paints": [{ "id": "${id}", "reason": "…", "remainingPaintId": null }]`
+            : `      "${collection}": [{ "id": "${id}", "reason": "…" }]`,
+        ];
+      case "reused":
+        return [
           `  ${collection} ${id}: tombstoned, and a tombstoned ID is never reused.`,
           `    Choose another ID (docs/03 §3).`,
-        ],
-  );
+        ];
+      case "remaining-missing":
+        return [
+          `  paints ${id}: its tombstone says ${issue.remainingPaintId} remains, but that paint`,
+          `    is not in the catalog. Name a paint of the catalog, or null.`,
+        ];
+    }
+  });
   return [heading, ...lines].join("\n");
 }

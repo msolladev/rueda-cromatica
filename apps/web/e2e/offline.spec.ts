@@ -87,3 +87,25 @@ test("says there is a new version and updates when asked", async ({ page }) => {
     page.getByRole("status").filter({ hasText: "There is a new version." }),
   ).toHaveCount(0);
 });
+
+test("never answers the API from its caches (ADR-0040)", async ({
+  page,
+  context,
+}) => {
+  await page.goto("/es/");
+  await waitForServiceWorker(page);
+  await context.setOffline(true);
+  // Offline, only the service worker could answer: it must not.
+  const answered = await page.evaluate(async () =>
+    Promise.all(
+      ["/api/v1/health", "/api/v1/catalog?schemaVersion=1"].map((path) =>
+        fetch(path).then(
+          () => true,
+          () => false,
+        ),
+      ),
+    ),
+  );
+  expect(answered).toEqual([false, false]);
+  await expect(page.goto("/api/v1/reference")).rejects.toThrow();
+});
