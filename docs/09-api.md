@@ -71,7 +71,7 @@ Este documento especifica `apps/api`: la API REST que guardará el catálogo cur
 - **De integración** (`*.integration.test.ts`): la API entera, configurada como en `main.ts` y arrancada en el proceso del test, con peticiones HTTP reales y su PostgreSQL. Prueban el prefijo y la versión de las rutas, la validación de las peticiones y las respuestas, los instantes en UTC, la base de datos y la referencia.
 - **La base de datos de los tests**, `chromatic_wheel_test`, está en la misma PostgreSQL que la de desarrollo, con su URL en `.env.test`. Antes de cada ejecución se borra, se vuelve a crear y se migra con `prisma migrate deploy`, como en el despliegue. Solo se borra una base de datos cuyo nombre acabe en `_test`.
 - **Después de migrarla, se compara con `schema.prisma`**: un cambio del esquema sin su migración hace fallar los tests.
-- **Los ficheros de integración se ejecutan de uno en uno**, porque comparten la base de datos y algunos escriben en ella. Cada uno prepara lo que necesita, como cargar `data/` (§8).
+- **Los ficheros de integración se ejecutan de uno en uno**, porque comparten la base de datos y algunos escriben en ella. Cada uno prepara lo que necesita, y lo común está en `test/`: arrancar la API (`app.ts`) y cargar `data/` y la última etiqueta, sin publicaciones (`catalog.ts`, §8).
 - **En la CI**, la acción `verify` arranca el mismo `compose.yaml` antes de los tests ([ADR-0042](adr/0042-esqueleto-api.md)).
 
 ## 8. Catálogo

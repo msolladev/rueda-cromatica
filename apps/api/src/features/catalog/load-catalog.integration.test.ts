@@ -1,14 +1,13 @@
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
-import {
-  readCuratedFiles,
-  readReleaseCatalog,
-  type CuratedFiles,
-  type ReleaseCatalog,
+import type {
+  CuratedFiles,
+  ReleaseCatalog,
 } from "@chromatic-wheel/catalog-builder/data";
 import type { NestExpressApplication } from "@nestjs/platform-express";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { createTestApp } from "../../../test/app.ts";
+import { loadCatalog, prepareCatalog } from "../../../test/catalog.ts";
 import { PrismaService } from "../../core/database/prisma.service.ts";
 import { CatalogBuildService } from "./catalog-build.service.ts";
 import { DraftService } from "./draft.service.ts";
@@ -22,31 +21,16 @@ let prisma: PrismaService;
 let files: CuratedFiles;
 let release: ReleaseCatalog;
 
-async function load() {
-  const loaded = await app.get(LoadCatalogService).load(files, release);
-  if (!loaded.ok) throw new Error(JSON.stringify(loaded.error));
-  return loaded.value;
-}
+const load = () => loadCatalog(app, { files, release });
 
 async function build() {
   return app.get(CatalogBuildService).build();
 }
 
 beforeAll(async () => {
-  const [read, latest] = await Promise.all([
-    readCuratedFiles(),
-    readReleaseCatalog(),
-  ]);
-  if (!read.ok || !latest.ok || latest.value === null) {
-    throw new Error("The tests need data/ and a release tag");
-  }
-  files = read.value;
-  release = latest.value;
   app = await createTestApp();
   prisma = app.get(PrismaService);
-  await prisma.publicationCatalog.deleteMany();
-  await prisma.publication.deleteMany();
-  await load();
+  ({ files, release } = await prepareCatalog(app));
 });
 
 afterAll(async () => {
