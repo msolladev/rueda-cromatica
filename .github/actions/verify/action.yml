@@ -91,16 +91,18 @@ runs:
         openssl rand -hex 32 >"$secrets/postgres-password"
         openssl rand -hex 32 >"$secrets/backup-password"
         chmod 444 "$secrets"/*
-        export SECRETS_DIR="$secrets" COLORWHEEL_COMPOSE_FILES="$PWD/deploy/ci/compose.yaml"
+        export SECRETS_DIR="$secrets"
+        # Only the backups change in the CI: deploy.sh runs as on the machines.
+        ci_files="$PWD/deploy/ci/compose.yaml"
         source deploy/compose.sh
         for file in apps/web/deploy/environments/*.conf; do
           environment="$(basename "$file" .conf)"
           echo "::group::Machine of $environment"
           deploy/deploy.sh "$environment" apps/web/dist dist/reference api.tar catalog-pack.json \
             "ci-$environment" http://localhost:8080
-          deploy/backup/backup.sh "$environment"
-          deploy/backup/restore-test.sh "$environment"
-          compose --profile candidate --profile backup down --volumes
+          COLORWHEEL_COMPOSE_FILES="$ci_files" deploy/backup/backup.sh "$environment"
+          COLORWHEEL_COMPOSE_FILES="$ci_files" deploy/backup/restore-test.sh "$environment"
+          COLORWHEEL_COMPOSE_FILES="$ci_files" compose --profile candidate --profile backup down --volumes
           echo "::endgroup::"
         done
       shell: bash

@@ -10,7 +10,8 @@ colorwheel_config="${COLORWHEEL_CONFIG:-/etc/colorwheel/colorwheel.env}"
 compose() {
   local options=(--project-name colorwheel --file "$(dirname "${BASH_SOURCE[0]}")/compose.yaml")
   local file
-  for file in ${COLORWHEEL_COMPOSE_FILES//:/ }; do options+=(--file "$file"); done
+  local extra="${COLORWHEEL_COMPOSE_FILES:-}"
+  for file in ${extra//:/ }; do options+=(--file "$file"); done
   [[ -f "$colorwheel_config" ]] && options+=(--env-file "$colorwheel_config")
   docker compose "${options[@]}" "$@"
 }
