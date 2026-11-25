@@ -390,50 +390,52 @@ export type IdCollection = (typeof ID_COLLECTIONS)[number];
 const tombstone = <T extends z.ZodType>(id: T) =>
   z.strictObject({ id, reason: text }).readonly();
 
-/** The IDs retired because of registration errors (docs/03 §6). */
+/**
+ * The IDs retired because of registration errors (docs/03 §6). A paint's
+ * tombstone may say which paint remains, such as the one kept of a duplicate
+ * (ADR-0037), so that what a user chose can move to it.
+ */
 export const tombstonesFileSchema = z
   .strictObject({
     sources: z.array(tombstone(sourceIdSchema)).readonly(),
     brands: z.array(tombstone(brandIdSchema)).readonly(),
     ranges: z.array(tombstone(rangeIdSchema)).readonly(),
-    paints: z.array(tombstone(paintIdSchema)).readonly(),
+    paints: z
+      .array(
+        z
+          .strictObject({
+            id: paintIdSchema,
+            reason: text,
+            remainingPaintId: paintIdSchema.nullable(),
+          })
+          .readonly(),
+      )
+      .readonly(),
   })
   .readonly();
 
-export type TombstonesFileContent = z.infer<typeof tombstonesFileSchema>;
-
-/** The retired IDs of each collection. */
-export type Tombstones = Readonly<Record<IdCollection, ReadonlySet<string>>>;
+/** The tombstones of the four collections, already validated. */
+export type Tombstones = z.infer<typeof tombstonesFileSchema>;
 
 /**
- * The retired IDs of each collection, with the checks of the tombstones: an
- * ID may appear only once per collection.
+ * The checks of the tombstones beyond their schema: an ID may appear only
+ * once per collection. Whether the remaining paint is in the catalog is
+ * checked with the ID stability (docs/03 §7).
  */
-export function retiredIds(content: TombstonesFileContent): {
-  readonly tombstones: Tombstones;
-  readonly issues: readonly PathIssue[];
-} {
-  const issues: PathIssue[] = [];
-  const ids = (collection: IdCollection): ReadonlySet<string> => {
-    const seen = new Set<string>();
-    content[collection].forEach(({ id }, i) => {
-      if (seen.has(id)) {
-        issues.push({
-          path: `${collection}[${String(i)}].id`,
-          message: `${id} is already tombstoned`,
-        });
-      }
-      seen.add(id);
-    });
-    return seen;
-  };
-  const tombstones = {
-    sources: ids("sources"),
-    brands: ids("brands"),
-    ranges: ids("ranges"),
-    paints: ids("paints"),
-  };
-  return { tombstones, issues };
+export function tombstoneIssues(tombstones: Tombstones): PathIssue[] {
+  return ID_COLLECTIONS.flatMap((collection) => {
+    const ids = tombstones[collection].map(({ id }) => id);
+    return ids.flatMap((id, i) =>
+      ids.indexOf(id) < i
+        ? [
+            {
+              path: `${collection}[${String(i)}].id`,
+              message: `${id} is already tombstoned`,
+            },
+          ]
+        : [],
+    );
+  });
 }
 
 // ── All the curated data ─────────────────────────────────────

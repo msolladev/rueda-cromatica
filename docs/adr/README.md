@@ -47,7 +47,8 @@ Cada fichero recoge una decisión relevante: su contexto, la decisión tomada, l
 | [0039](0039-cuentas-sesiones-datos-usuario.md)          | Cuentas, sesiones y datos del usuario                                      | aceptada                                                       |
 | [0040](0040-despliegue-fase-6.md)                       | El despliegue de la fase 6                                                 | aceptada; corregida en parte por ADR-0042                      |
 | [0041](0041-frontera-logica-pura-catalog-builder.md)    | La frontera de la lógica pura de `catalog-builder`                         | aceptada                                                       |
-| [0042](0042-esqueleto-api.md)                           | El esqueleto de `apps/api`                                                 | aceptada                                                       |
+| [0042](0042-esqueleto-api.md)                           | El esqueleto de `apps/api`                                                 | aceptada; corregida en parte por ADR-0043                      |
+| [0043](0043-catalogo-en-postgresql.md)                  | El catálogo en PostgreSQL                                                  | aceptada                                                       |
 
 ## Normas
 

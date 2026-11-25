@@ -1,6 +1,6 @@
 # ADR-0042: El esqueleto de `apps/api`
 
-- **Estado:** aceptada
+- **Estado:** aceptada; corregida en parte por [ADR-0043](0043-catalogo-en-postgresql.md)
 - **Fecha:** 2026-11-24
 
 ## Contexto

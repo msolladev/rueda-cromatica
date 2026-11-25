@@ -48,8 +48,8 @@ import {
   printIssues,
   readCuratedFiles,
   REPO_DIR,
-  writeDataFile,
 } from "./data-files.ts";
+import { writeDataFile } from "./write-data-file.ts";
 
 const DOWNLOADS_VARIABLE = "CATALOG_SOURCES_DIR";
 const IA_CONFIG = join(homedir(), ".config/internetarchive/ia.ini");

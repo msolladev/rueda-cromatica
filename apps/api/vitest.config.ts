@@ -34,6 +34,8 @@ export default defineConfig({
           include: ["src/**/*.integration.test.ts"],
           env: integrationEnv,
           globalSetup: ["test/database.ts"],
+          // One file after another: they share the database, and some write.
+          fileParallelism: false,
         },
       },
     ],

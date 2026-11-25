@@ -225,15 +225,28 @@ describe("readTombstonesFile (docs/03 §6)", () => {
   };
 
   it("accepts an ID and its reason per entry, by collection", () => {
-    const result = readTombstonesFile(
-      file({
+    const paint = {
+      id: "acme/core/purple",
+      reason: "Registered twice.",
+      remainingPaintId: "acme/core/red",
+    };
+    const result = readTombstonesFile(file({ ...empty, paints: [paint] }));
+    expect(result.ok ? result.value.paints : null).toEqual([paint]);
+  });
+
+  it("requires a paint's tombstone to say which paint remains, or null (ADR-0037)", () => {
+    expect(
+      issuePaths({
         ...empty,
         paints: [{ id: "acme/core/purple", reason: "Registered twice." }],
       }),
-    );
-    expect(result.ok ? [...result.value.paints] : null).toEqual([
-      "acme/core/purple",
-    ]);
+    ).toEqual(["paints[0].remainingPaintId"]);
+    expect(
+      issuePaths({
+        ...empty,
+        brands: [{ id: "initech", reason: "No.", remainingPaintId: null }],
+      }),
+    ).toEqual(["brands[0]"]);
   });
 
   it("requires a reason", () => {

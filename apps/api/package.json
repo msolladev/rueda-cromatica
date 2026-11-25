@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "prisma generate && nest build",
+    "catalog:load": "prisma generate && nest start --entryFile cli/load-catalog --env-file .env.development",
     "db:down": "docker compose down",
     "db:migrate": "prisma generate && pnpm --env-file=.env.development exec prisma migrate dev",
     "db:reset": "docker compose down --volumes",
@@ -16,6 +17,7 @@
     "typecheck": "prisma generate && tsc"
   },
   "dependencies": {
+    "@chromatic-wheel/catalog-builder": "workspace:*",
     "@chromatic-wheel/domain": "workspace:*",
     "@nestjs/common": "12.5.1",
     "@nestjs/core": "12.5.1",

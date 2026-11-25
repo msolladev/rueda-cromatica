@@ -4,7 +4,8 @@
   "private": true,
   "type": "module",
   "exports": {
-    ".": "./src/index.ts"
+    ".": "./src/index.ts",
+    "./data": "./src/cli/data.ts"
   },
   "scripts": {
     "archive-sources": "node src/cli/archive-sources.ts",

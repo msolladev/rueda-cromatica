@@ -14,9 +14,9 @@ import {
   colorPolicyIssues,
   ignoreReasonsFileSchema,
   ignoreReasonsIssues,
-  retiredIds,
   sourceFileSchema,
   sourceIssues,
+  tombstoneIssues,
   tombstonesFileSchema,
   type BrandFile,
   type ColorPolicy,
@@ -107,8 +107,8 @@ export function readColorPolicyFile(file: RawFile): FileResult<ColorPolicy> {
 export function readTombstonesFile(file: RawFile): FileResult<Tombstones> {
   const parsed = tombstonesFileSchema.safeParse(file.content);
   if (!parsed.success) return err(zodIssues(file.name, parsed.error));
-  const { tombstones, issues } = retiredIds(parsed.data);
-  return issues.length > 0 ? err(located(file, issues)) : ok(tombstones);
+  const issues = located(file, tombstoneIssues(parsed.data));
+  return issues.length > 0 ? err(issues) : ok(parsed.data);
 }
 
 // ── All the curated files ────────────────────────────────────

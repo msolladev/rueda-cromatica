@@ -3,15 +3,14 @@
  * (docs/04 §2 and §6), and the reading of those files shared by the
  * entry points.
  */
-import { readdir, readFile, writeFile } from "node:fs/promises";
+import { readdir, readFile } from "node:fs/promises";
 import { join, relative, resolve } from "node:path";
 import { err, ok, type Result } from "@chromatic-wheel/domain";
-import { format, resolveConfig } from "prettier";
 import type { CuratedData, DataIssue, RawFile } from "../index.ts";
 
 const PACKAGE_DIR = resolve(import.meta.dirname, "../..");
 export const REPO_DIR = resolve(PACKAGE_DIR, "../..");
-const DATA_DIR = join(PACKAGE_DIR, "data");
+export const DATA_DIR = join(PACKAGE_DIR, "data");
 export const SOURCES_DIR = "sources";
 export const BRANDS_DIR = "brands";
 export const TOMBSTONES_FILE = "tombstones.json";
@@ -107,23 +106,4 @@ export async function readDataFile(name: string): Promise<RawFile | string> {
   } catch (error) {
     return `${fromRepo(path)}: ${error instanceof Error ? error.message : String(error)}`;
   }
-}
-
-/**
- * Writes a data file as JSON, formatted with Prettier and the configuration of
- * the repository, as `pnpm format` would leave it. Prettier keeps an object
- * on several lines if it already was, so it gets the JSON indented, as the
- * curated files are written.
- */
-export async function writeDataFile(
-  name: string,
-  content: unknown,
-): Promise<void> {
-  const path = join(DATA_DIR, name);
-  const options = await resolveConfig(path);
-  const text = await format(JSON.stringify(content, null, 2), {
-    ...options,
-    filepath: path,
-  });
-  await writeFile(path, text, "utf8");
 }
