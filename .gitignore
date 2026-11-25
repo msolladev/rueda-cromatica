@@ -8,3 +8,6 @@ test-results/
 playwright-report/
 # The client that Prisma generates (apps/api, docs/09 §6).
 apps/api/src/generated/
+# What the CI packs for the deploy (docs/08 §2).
+/api.tar
+/catalog-pack.json

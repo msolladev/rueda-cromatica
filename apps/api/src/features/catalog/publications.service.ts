@@ -19,6 +19,15 @@ export interface PublishedText {
   readonly content: string;
 }
 
+/** A publication and the exact text of its catalog in each schema version. */
+export interface StoredPublication {
+  readonly uuid: string;
+  readonly catalogs: readonly {
+    readonly schemaVersion: number;
+    readonly content: string;
+  }[];
+}
+
 /**
  * The publications (ADR-0043): each one keeps the exact text of its catalog
  * and is never modified. The latest one is what the web is built with, and
@@ -44,6 +53,26 @@ export class PublicationsService {
       },
     });
     return latest?.catalogs[0] ?? null;
+  }
+
+  /**
+   * A publication with its catalogs, the latest one or the one of a UUID, or
+   * `null` if there is none. The restore test compares them (docs/08 §8).
+   */
+  async stored(
+    which: "latest" | { readonly uuid: string },
+  ): Promise<StoredPublication | null> {
+    return this.prisma.publication.findFirst({
+      where: which === "latest" ? {} : { uuid: which.uuid },
+      orderBy: { id: "desc" },
+      select: {
+        uuid: true,
+        catalogs: {
+          orderBy: { schemaVersion: "asc" },
+          select: { schemaVersion: true, content: true },
+        },
+      },
+    });
   }
 
   /** The IDs of the latest publication, or `null` before the first one. */

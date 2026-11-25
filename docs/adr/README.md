@@ -33,7 +33,7 @@ Cada fichero recoge una decisión relevante: su contexto, la decisión tomada, l
 | [0025](0025-estabilidad-ids-etiqueta-publicacion.md)    | Estabilidad de IDs frente a la etiqueta de publicación                     | aceptada; corregida en parte por ADR-0028 y ADR-0037           |
 | [0026](0026-preproduccion-homelab.md)                   | Preproducción en el homelab                                                | aceptada; corregida en parte por ADR-0028                      |
 | [0027](0027-lenguas-cooficiales-espana.md)              | Las lenguas cooficiales de España                                          | aceptada                                                       |
-| [0028](0028-produccion-homelab.md)                      | Producción en el homelab                                                   | aceptada                                                       |
+| [0028](0028-produccion-homelab.md)                      | Producción en el homelab                                                   | aceptada; corregida en parte por ADR-0044                      |
 | [0029](0029-buscador-pinturas-mvp.md)                   | Buscador de pinturas en el MVP                                             | aceptada                                                       |
 | [0030](0030-datos-curados-dos-capas.md)                 | Datos curados en dos capas                                                 | aceptada; corregida en parte por ADR-0037                      |
 | [0031](0031-varios-candidatos-color.md)                 | Varios candidatos de color por pintura                                     | aceptada                                                       |
@@ -45,10 +45,11 @@ Cada fichero recoge una decisión relevante: su contexto, la decisión tomada, l
 | [0037](0037-catalogo-en-base-de-datos.md)               | El catálogo en la base de datos                                            | aceptada                                                       |
 | [0038](0038-stack-backend.md)                           | El stack de `apps/api` y `apps/admin`                                      | aceptada; corregida en parte por ADR-0042                      |
 | [0039](0039-cuentas-sesiones-datos-usuario.md)          | Cuentas, sesiones y datos del usuario                                      | aceptada                                                       |
-| [0040](0040-despliegue-fase-6.md)                       | El despliegue de la fase 6                                                 | aceptada; corregida en parte por ADR-0042                      |
+| [0040](0040-despliegue-fase-6.md)                       | El despliegue de la fase 6                                                 | aceptada; corregida en parte por ADR-0042 y ADR-0044           |
 | [0041](0041-frontera-logica-pura-catalog-builder.md)    | La frontera de la lógica pura de `catalog-builder`                         | aceptada                                                       |
 | [0042](0042-esqueleto-api.md)                           | El esqueleto de `apps/api`                                                 | aceptada; corregida en parte por ADR-0043                      |
 | [0043](0043-catalogo-en-postgresql.md)                  | El catálogo en PostgreSQL                                                  | aceptada                                                       |
+| [0044](0044-despliegue-api-postgresql.md)               | El despliegue de la API y PostgreSQL                                       | aceptada                                                       |
 
 ## Normas
 
