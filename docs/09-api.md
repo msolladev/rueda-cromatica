@@ -10,7 +10,7 @@ Este documento especifica `apps/api`: la API REST que guardará el catálogo cur
   - `src/core/`: lo que necesita cualquier API para funcionar, haga lo que haga: la configuración, la base de datos, la comprobación de que responde, la validación de las respuestas y la referencia;
   - `src/features/`: un módulo de NestJS por funcionalidad del producto, como el catálogo, las preferencias o la administración, cada uno con sus controladores y sus servicios.
 - **Hoy tiene el catálogo** (§8): su borrador, sus publicaciones y la ruta que sirve el publicado. Los cambios pendientes y «Publicar» llegan en la sesión 7 de la fase 6, y la autenticación en la 5.
-- **`src/cli/`** tiene los comandos que se ejecutan a demanda, con NestJS sin su servidor HTTP: hoy, la carga del catálogo (§8).
+- **`src/cli/`** tiene los comandos que se ejecutan a demanda: hoy, la carga del catálogo y su paquete (§8.3), y la comprobación de una copia restaurada ([docs/08](08-despliegue.md) §8.1). Los que usan la base de datos arrancan NestJS sin su servidor HTTP.
 
 ## 2. Rutas
 
@@ -23,9 +23,10 @@ Este documento especifica `apps/api`: la API REST que guardará el catálogo cur
 - **Fuera de los grupos**, dos rutas técnicas sin sesión:
   - `GET /api/v1/health`: responde 200 si la API funciona y su base de datos responde a una consulta, y 503 si no. La usan las comprobaciones del despliegue.
   - la referencia (§5).
-- **La API sirve detrás del Nginx de cada frontal**, bajo su `/api` ([ADR-0040](adr/0040-despliegue-fase-6.md)), así que no necesita CORS.
+- **La API sirve detrás del Nginx de cada frontal**, bajo su `/api` ([ADR-0040](adr/0040-despliegue-fase-6.md)), así que no necesita CORS. Ese Nginx le pasa el `Host` original, comprime sus respuestas y limita las peticiones de cada visitante: 10 por segundo de media, con ráfagas de 20, y después 429 ([docs/08](08-despliegue.md) §3.1).
 - **Su configuración llega por variables de entorno**, que se validan al arrancar. Si falta una o no es válida, la API no arranca, y el mensaje dice cuál:
   - `DATABASE_URL`, obligatoria: la PostgreSQL a la que se conecta;
+  - `DATABASE_PASSWORD_FILE`: un fichero con la contraseña de esa PostgreSQL, que completa `DATABASE_URL`. En los entornos, la contraseña no va en la URL, sino en el mismo fichero secreto que lee PostgreSQL ([docs/08](08-despliegue.md) §3). La usan también las migraciones;
   - `HOST` y `PORT`: dónde escucha, por defecto `127.0.0.1:3000`;
   - `REFERENCE_HOSTS`: los hosts que sirven la referencia (§5).
 
@@ -57,13 +58,13 @@ Este documento especifica `apps/api`: la API REST que guardará el catálogo cur
 
 - **El esquema** está en `apps/api/prisma/schema.prisma`. Prisma genera desde él un cliente con sus tipos en `src/generated/prisma/`, fuera de git, al instalar, al comprobar los tipos, al probar y al compilar.
 - **Cada cambio de estructura es una migración en SQL**, en `prisma/migrations/`, que se revisa en el PR. Se crea con `db:migrate` (`prisma migrate dev`) contra la base de datos de desarrollo.
-- **El despliegue aplica las migraciones** con `prisma migrate deploy` antes de arrancar la API nueva (sesión 4).
+- **El despliegue aplica las migraciones** con `prisma migrate deploy`, con la imagen de la API nueva, antes de arrancarla ([docs/08](08-despliegue.md) §2). Por eso la CLI de Prisma es una dependencia de producción.
 - **Cada migración funciona también con la versión anterior de la API**, porque la vuelta atrás automática devuelve la imagen, pero no la base de datos: primero se amplía (una columna nueva) y, en un despliegue posterior, cuando ya nadie la usa, se recorta (se quita la vieja) ([ADR-0040](adr/0040-despliegue-fase-6.md)).
 - **Cada tabla tiene una clave primaria `bigint` interna**, `id`, que nunca sale de la base de datos ni aparece en una ruta. Lo que tiene un ID propio lo guarda en una columna única: el del catálogo en `catalog_id` (`citadel/base/abaddon-black`), y el de un motivo, en `slug`. Lo que no lo tiene y se nombra en las rutas, como una publicación, lleva además `uuid`, un UUID v4 aleatorio. Las filas que dependen de otra se nombran por ella y por su clave natural ([ADR-0043](adr/0043-catalogo-en-postgresql.md)).
 - **La base de datos solo garantiza identidad y pertenencia**: las claves únicas y las FK. Una FK solo une datos del mismo escritor, o algo que no puede desaparecer; las reglas de los datos se quedan en el código que los genera.
 - **Las listas guardan su orden** en una columna `position`.
 - **Las inserciones de muchas filas van por tandas de 1000**, una tras otra: PostgreSQL admite 32 767 parámetros por instrucción, y por encima Prisma enviaría varias a la vez por la misma conexión.
-- **En desarrollo**, la PostgreSQL 18.7 oficial con Docker Compose (`apps/api/compose.yaml`), solo accesible desde la propia máquina, con sus datos en un volumen. La base de datos `chromatic_wheel` es la de desarrollo, y `.env.development` tiene su URL.
+- **En desarrollo**, la PostgreSQL 18.7 oficial con Docker Compose (`apps/api/compose.yaml`), solo accesible desde la propia máquina, con sus datos en un volumen. Los entornos heredan ese mismo servicio (`deploy/compose.yaml`), sin su puerto ni sus credenciales, así que la imagen está fijada en un solo sitio. La base de datos `chromatic_wheel` es la de desarrollo, y `.env.development` tiene su URL.
 
 ## 7. Tests
 
@@ -101,11 +102,14 @@ pnpm --filter @chromatic-wheel/api catalog:load
 - Lee `data/` y el `catalog.json` de la última etiqueta `release/` con `@chromatic-wheel/catalog-builder/data`, y valida cada fichero como `build-catalog`.
 - Sustituye el borrador entero, en una sola transacción, y guarda la primera publicación si todavía no hay ninguna. Las publicaciones no se tocan nunca, así que se puede repetir.
 - Usa la base de datos de `.env.development`. Necesita el historial y las etiquetas de git, como `build-catalog`.
-- Desaparece con `data/` en la sesión 9.
+- **En los entornos**, que no tienen ni el repositorio ni su historial, la carga se hace en dos pasos ([docs/08](08-despliegue.md) §2):
+  - la CI escribe el **paquete del catálogo** con `pnpm --filter @chromatic-wheel/api catalog:pack <fichero>`: los ficheros de `data/` y el `catalog.json` de la última etiqueta, ya leídos, en un único JSON, con la fecha de la etiqueta como un instante en UTC;
+  - cada despliegue lo carga con la imagen nueva de la API, después de las migraciones: `node dist/cli/load-catalog.js --from <fichero>`. Comprueba la forma del paquete y valida cada fichero como sin él.
+- Desaparece con `data/` en la sesión 9, igual que el paquete.
 
 ### 8.4. `GET /api/v1/catalog?schemaVersion=1`
 
 - **El catálogo de la última publicación**, en la versión del esquema que pide `schemaVersion`, obligatorio, exactamente como se publicó. Lo descarga el build de la web, y cualquiera puede leerlo, sin sesión.
 - **404** si no hay nada publicado, o si la última publicación no tiene esa versión. Nunca sirve una publicación anterior, que estaría desfasada.
 - **Caché**: `Cache-Control: public, no-cache` y un `ETag` con su `dataVersion`. Se puede guardar, pero se revalida antes de cada uso, y responde 304 mientras no cambia.
-- **El límite de peticiones y la compresión** los pone el Nginx de cada entorno, para toda la API (sesión 4).
+- **El límite de peticiones y la compresión** los pone el Nginx de cada entorno, para toda la API (§2). Con la compresión, el `ETag` llega débil (`W/"…"`), y la API lo sigue reconociendo y responde 304.

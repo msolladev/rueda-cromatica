@@ -1,6 +1,6 @@
 # ADR-0040: El despliegue de la fase 6
 
-- **Estado:** aceptada; corregida en parte por [ADR-0042](0042-esqueleto-api.md)
+- **Estado:** aceptada; corregida en parte por [ADR-0042](0042-esqueleto-api.md) y [ADR-0044](0044-despliegue-api-postgresql.md)
 - **Fecha:** 2026-11-24
 
 ## Contexto

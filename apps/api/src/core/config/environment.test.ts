@@ -36,3 +36,40 @@ describe("parseEnvironment", () => {
     );
   });
 });
+
+describe("the password of DATABASE_PASSWORD_FILE", () => {
+  const files: Record<string, string> = {
+    "/run/secrets/postgres-password": "s3cr/t:@x\n",
+  };
+  const readFile = (path: string): string => {
+    const content = files[path];
+    if (content === undefined) throw new Error(`ENOENT: ${path}`);
+    return content;
+  };
+
+  it("goes into DATABASE_URL, encoded and without the final line break", () => {
+    const environment = parseEnvironment(
+      {
+        DATABASE_URL:
+          "postgresql://chromatic_wheel@postgres:5432/chromatic_wheel",
+        DATABASE_PASSWORD_FILE: "/run/secrets/postgres-password",
+      },
+      readFile,
+    );
+    expect(environment.DATABASE_URL).toBe(
+      "postgresql://chromatic_wheel:s3cr%2Ft%3A%40x@postgres:5432/chromatic_wheel",
+    );
+    expect(decodeURIComponent(new URL(environment.DATABASE_URL).password)).toBe(
+      "s3cr/t:@x",
+    );
+  });
+
+  it("stops the API if the file cannot be read, naming the variable", () => {
+    expect(() =>
+      parseEnvironment(
+        { DATABASE_URL, DATABASE_PASSWORD_FILE: "/missing" },
+        readFile,
+      ),
+    ).toThrow(/DATABASE_PASSWORD_FILE[\s\S]*ENOENT/);
+  });
+});

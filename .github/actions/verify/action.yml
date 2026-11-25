@@ -2,7 +2,7 @@
 # the deployed branches, which build with their environment's origin (docs/08). It runs
 # after a checkout with the full history and the tags.
 name: Verify
-description: Installs, checks, tests (the API's with its PostgreSQL) and builds the monorepo, and checks the web's server of every environment with the built web.
+description: Installs, checks, tests (the API's with its PostgreSQL) and builds the monorepo, packs the API and the catalog, and deploys them with the built web to a machine of every environment, with its checks and its backups.
 
 inputs:
   site-origin:
@@ -73,24 +73,34 @@ runs:
     - run: pnpm --filter @chromatic-wheel/web test:e2e
       shell: bash
 
-    # The web's server (docs/08) with this same build and reference, in every
-    # environment: routes, «Page not found», redirects, cache and indexing.
+    # What the deploy builds the images from (docs/08 §2): the API with its
+    # production dependencies, and the catalog pack of data/ and the latest
+    # release tag, which the deploy loads into the database.
     - run: |
+        apps/api/deploy/pack.sh api.tar
+        pnpm --filter @chromatic-wheel/api catalog:pack catalog-pack.json
+      shell: bash
+
+    # The machine of every environment (docs/08), with this same build:
+    # deploy.sh itself, on this runner, with the web's and the API's checks
+    # before and after replacing the version (routes, «Page not found»,
+    # redirects, cache, indexing, the API and its limit), and then the backup
+    # and the restore test, with a local volume instead of the NAS.
+    - run: |
+        secrets="$(mktemp -d)"
+        openssl rand -hex 32 >"$secrets/postgres-password"
+        openssl rand -hex 32 >"$secrets/backup-password"
+        chmod 444 "$secrets"/*
+        export SECRETS_DIR="$secrets" COLORWHEEL_COMPOSE_FILES="$PWD/deploy/ci/compose.yaml"
+        source deploy/compose.sh
         for file in apps/web/deploy/environments/*.conf; do
           environment="$(basename "$file" .conf)"
-          echo "::group::Server of $environment"
-          docker build --tag "colorwheel-web:ci-$environment" \
-            --build-arg ENVIRONMENT="$environment" \
-            --build-context site=apps/web/dist --build-context reference=dist/reference \
-            apps/web/deploy
-          docker run --detach --name colorwheel-web --publish 127.0.0.1:8080:8080 \
-            --read-only --tmpfs /tmp "colorwheel-web:ci-$environment"
-          for _ in $(seq 30); do
-            curl --silent --output /dev/null http://127.0.0.1:8080/ && break
-            sleep 0.5
-          done
-          apps/web/deploy/smoke-check.sh http://127.0.0.1:8080 "$environment"
-          docker rm --force colorwheel-web >/dev/null
+          echo "::group::Machine of $environment"
+          deploy/deploy.sh "$environment" apps/web/dist dist/reference api.tar catalog-pack.json \
+            "ci-$environment" http://localhost:8080
+          deploy/backup/backup.sh "$environment"
+          deploy/backup/restore-test.sh "$environment"
+          compose --profile candidate --profile backup down --volumes
           echo "::endgroup::"
         done
       shell: bash

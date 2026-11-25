@@ -6,6 +6,7 @@
   "scripts": {
     "build": "prisma generate && nest build",
     "catalog:load": "prisma generate && nest start --entryFile cli/load-catalog --env-file .env.development",
+    "catalog:pack": "node src/cli/pack-catalog.ts",
     "db:down": "docker compose down",
     "db:migrate": "prisma generate && pnpm --env-file=.env.development exec prisma migrate dev",
     "db:reset": "docker compose down --volumes",
@@ -26,6 +27,7 @@
     "@prisma/adapter-pg": "7.10.1",
     "@prisma/client": "7.10.1",
     "@scalar/api-reference": "1.80.0",
+    "prisma": "7.10.1",
     "reflect-metadata": "0.2.2",
     "rxjs": "7.8.2",
     "zod": "catalog:"
@@ -38,7 +40,6 @@
     "@types/pg": "8.23.1",
     "@types/supertest": "7.2.1",
     "pg": "8.23.1",
-    "prisma": "7.10.1",
     "supertest": "7.3.2",
     "typescript": "catalog:",
     "vitest": "catalog:"

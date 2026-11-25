@@ -44,7 +44,7 @@ Las especificaciones describen cómo funciona hoy cada parte; los ADR, por qué 
 
 ## Ramas y despliegue
 
-El trabajo entra en `preprod` con un PR fusionado con _squash_, y cada push a `preprod` despliega en preproducción si pasa la CI. `preprod` llega a `main` con un PR fusionado con un commit de merge, y cada push a `main` despliega en producción y crea la etiqueta `release/` de la publicación. Los dos entornos están en un homelab. El detalle, en [docs/08](docs/08-despliegue.md).
+El trabajo entra en `preprod` con un PR fusionado con _squash_, y cada push a `preprod` despliega en preproducción si pasa la CI. `preprod` llega a `main` con un PR fusionado con un commit de merge, y cada push a `main` despliega en producción y crea la etiqueta `release/` de la publicación. Los dos entornos están en un homelab, con la web, la API y PostgreSQL en Docker Compose (`deploy/`), y copias diarias de la base de datos en el NAS. El detalle, en [docs/08](docs/08-despliegue.md).
 
 ## Instalación
 
@@ -78,6 +78,7 @@ Desde la raíz:
 - `pnpm --filter @chromatic-wheel/api db:up`: arranca la PostgreSQL de desarrollo de la API, con Docker Compose. `db:down` la para, y `db:reset` además borra sus datos.
 - `pnpm --filter @chromatic-wheel/api dev`: la API en `http://localhost:3000`, con recarga al cambiar el código, y su referencia en `http://localhost:3000/api/v1/reference`.
 - `pnpm --filter @chromatic-wheel/api catalog:load`: carga los datos de `packages/catalog-builder/data/` en la base de datos de desarrollo de la API y, si todavía no hay ninguna publicación, guarda como primera el `catalog.json` de la última etiqueta `release/`. Se puede repetir ([docs/09](docs/09-api.md) §8.3).
+- `pnpm --filter @chromatic-wheel/api catalog:pack <fichero>`: escribe en un único JSON los datos de `data/` y el `catalog.json` de la última etiqueta, que cada despliegue carga en la base de datos de su entorno, donde no hay ni repositorio ni historial ([docs/09](docs/09-api.md) §8.3). Lo usa la CI.
 - `pnpm --filter @chromatic-wheel/api db:migrate`: crea la migración de los cambios de su `schema.prisma` y la aplica en desarrollo ([docs/09](docs/09-api.md) §6).
 - `pnpm --filter @chromatic-wheel/color-wheel dev`: página de pruebas de la rueda, con el código fuente ([docs/05](docs/05-rueda-de-color.md) §8.4). Con `--host`, para abrirla desde el móvil.
 - `pnpm --filter @chromatic-wheel/catalog-builder build-catalog`: regenera `apps/web/public/catalog.json`, el informe de discrepancias de color entre fuentes y el resumen de las fuentes desactivadas a partir de los datos, y falla sin escribir nada si un ID publicado desaparece sin lápida o si reaparece uno retirado ([docs/03](docs/03-identificadores.md) §6-7). Con `--check` no escribe nada y falla si el versionado está desactualizado.

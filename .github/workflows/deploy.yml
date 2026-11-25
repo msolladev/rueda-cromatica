@@ -16,8 +16,8 @@ permissions:
 
 jobs:
   # The same verification as the pull requests, built with the environment's
-  # origin. Its `dist` is what the deploy serves, without building it again
-  # (ADR-0011).
+  # origin. Its `dist`, the packed API and the catalog pack are what the
+  # deploy serves and loads, without building them again (ADR-0011).
   verify:
     runs-on: ubuntu-26.04
     # The environment's variables, without recording a deployment.
@@ -39,10 +39,12 @@ jobs:
           site-origin: ${{ vars.SITE_ORIGIN }}
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
-          name: web-dist
+          name: deploy
           path: |
             apps/web/dist/
             dist/reference/
+            api.tar
+            catalog-pack.json
           if-no-files-found: error
           retention-days: 7
 
@@ -62,11 +64,16 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
-          sparse-checkout: apps/web/deploy
+          sparse-checkout: |
+            deploy
+            apps/web/deploy
+            apps/api/deploy
+            apps/api/compose.yaml
+          sparse-checkout-cone-mode: false
       - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
         with:
-          name: web-dist
-      - run: apps/web/deploy/deploy.sh "$ENVIRONMENT" apps/web/dist dist/reference "$GITHUB_SHA" "$SITE_ORIGIN"
+          name: deploy
+      - run: deploy/deploy.sh "$ENVIRONMENT" apps/web/dist dist/reference api.tar catalog-pack.json "$GITHUB_SHA" "$SITE_ORIGIN"
         env:
           ENVIRONMENT: ${{ inputs.environment }}
           SITE_ORIGIN: ${{ vars.SITE_ORIGIN }}

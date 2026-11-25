@@ -1,0 +1,147 @@
+# What runs on the machine of each environment (docs/08, ADR-0040): the web,
+# the API and PostgreSQL, and, on demand, the candidates of a deploy and the
+# backups. deploy.sh and the backup workflow run it with the variables of
+# the environment's machine (docs/08 §7):
+#   VERSION          the commit of the images to serve (deploy.sh);
+#   REFERENCE_HOSTS  the web's host, the only one with the API reference;
+#   SECRETS_DIR      the folder of the secrets, /etc/colorwheel/secrets;
+#   NAS_ADDRESS, NAS_BACKUP_PATH  the NFS export of the backups.
+# None of them is in the repository.
+name: colorwheel
+
+# Every container: read-only, without capabilities, unable to gain
+# privileges, and with its logs rotated.
+x-hardened: &hardened
+  read_only: true
+  cap_drop: [ALL]
+  security_opt: [no-new-privileges:true]
+  logging:
+    driver: json-file
+    options:
+      max-size: 10m
+      max-file: "3"
+
+services:
+  # The same image and settings as in development (apps/api/compose.yaml),
+  # without its port or its password: only the containers of this file reach
+  # it.
+  postgres:
+    extends:
+      file: ../apps/api/compose.yaml
+      service: postgres
+    <<: *hardened
+    user: postgres
+    restart: unless-stopped
+    ports: !reset []
+    environment: !override
+      POSTGRES_USER: chromatic_wheel
+      POSTGRES_DB: chromatic_wheel
+      POSTGRES_PASSWORD_FILE: /run/secrets/postgres-password
+    secrets: [postgres-password]
+    tmpfs:
+      - /tmp
+      - /var/run/postgresql:uid=999,gid=999
+
+  api:
+    image: colorwheel-api:${VERSION:-none}
+    # Built on this machine by deploy.sh, never pulled.
+    pull_policy: never
+    <<: *hardened
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgresql://chromatic_wheel@postgres:5432/chromatic_wheel
+      DATABASE_PASSWORD_FILE: /run/secrets/postgres-password
+      REFERENCE_HOSTS: ${REFERENCE_HOSTS:-}
+    secrets: [postgres-password]
+    tmpfs: [/tmp]
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test:
+        - CMD
+        - node
+        - --eval
+        - 'fetch("http://127.0.0.1:3000/api/v1/health").then((r) => process.exit(r.ok ? 0 : 1), () => process.exit(1))'
+      interval: 10s
+      timeout: 5s
+      start_period: 20s
+      start_interval: 1s
+      retries: 3
+
+  # It does not wait for the API: if the API is down, the web still serves
+  # its pages and /api answers with an error.
+  web:
+    image: colorwheel-web:${VERSION:-none}
+    pull_policy: never
+    <<: *hardened
+    restart: unless-stopped
+    # Nginx Proxy Manager forwards to this port.
+    ports: ["8080:8080"]
+    tmpfs: [/tmp]
+
+  # The candidates of a deploy (deploy.sh), checked without traffic. In the
+  # network `candidate`, the API is `api`, so the candidate web reaches it
+  # with the same configuration; in the default one, it is `api-candidate`,
+  # so the live web never reaches it.
+  api-candidate:
+    extends: api
+    profiles: [candidate]
+    restart: "no"
+    networks:
+      default: {}
+      candidate:
+        aliases: [api]
+
+  web-candidate:
+    extends: web
+    profiles: [candidate]
+    restart: "no"
+    ports: !override ["127.0.0.1:8081:8080"]
+    networks: [candidate]
+
+  # The temporary PostgreSQL of the monthly restore test (docs/08 §8):
+  # PostgreSQL itself, with its data in memory, gone when it stops.
+  restore-postgres:
+    extends: postgres
+    profiles: [restore]
+    restart: "no"
+    volumes: !reset []
+    tmpfs:
+      - /tmp
+      - /var/run/postgresql:uid=999,gid=999
+      - /var/lib/postgresql:uid=999,gid=999
+
+  # The backups (deploy/backup/, docs/08 §8): restic, with its repository in
+  # the NFS export of the NAS, mounted only while it runs.
+  backup:
+    image: restic/restic:0.19.1@sha256:136600b6ff6843d61d355f7f71f460a166429f35de6fd11b568fece3c9a4d510
+    <<: *hardened
+    profiles: [backup]
+    user: "65534:65534"
+    environment:
+      RESTIC_REPOSITORY: /repository
+      RESTIC_PASSWORD_FILE: /run/secrets/backup-password
+      RESTIC_CACHE_DIR: /tmp/restic
+    secrets: [backup-password]
+    tmpfs: [/tmp]
+    volumes:
+      - backups:/repository
+
+networks:
+  candidate: {}
+
+volumes:
+  postgres-data: {}
+  backups:
+    driver: local
+    driver_opts:
+      type: nfs
+      o: addr=${NAS_ADDRESS:-none},nfsvers=4,rw,hard
+      device: ":${NAS_BACKUP_PATH:-none}"
+
+secrets:
+  postgres-password:
+    file: ${SECRETS_DIR:-/etc/colorwheel/secrets}/postgres-password
+  backup-password:
+    file: ${SECRETS_DIR:-/etc/colorwheel/secrets}/backup-password
